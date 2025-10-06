@@ -1524,8 +1524,169 @@ const drugData = [
                 ]
             }
         ]
+    },
+    {
+        system: 'Reproductive/Gynecology',
+        therapeutic_classes: [
+            {
+                name: 'Hormonal Contraceptives',
+                pharma_classes: [
+                    {
+                        name: 'Combined Oral Contraceptives',
+                        mechanism: 'Estrogen and progestin suppress LH/FSH, prevent ovulation.',
+                        side_effects: ['Thromboembolism', 'Hypertension', 'Breast tenderness', 'Nausea'],
+                        interactions: 'CYP450 inducers reduce efficacy, antibiotics may reduce efficacy.',
+                        interaction_explanation: 'CYP450 INDUCERS: MECHANISM - Rifampin, phenytoin increase hepatic metabolism of contraceptive hormones, reducing levels. CONSEQUENCE - Breakthrough bleeding and contraceptive failure. Use backup contraception.',
+                        drugs: [
+                            { name: 'Ethinyl Estradiol/Norethindrone', features: 'First-generation progestin combination.', choice: 'Contraception, menstrual regulation.', indications: ['Contraception', 'Menstrual Irregularities'], contraindications: ['Thromboembolism History', 'Smoking >35 years'] },
+                            { name: 'Ethinyl Estradiol/Levonorgestrel', features: 'Second-generation progestin, androgenic.', choice: 'Contraception with good cycle control.', indications: ['Contraception'], contraindications: ['Thromboembolism History', 'Severe Hypertension'] },
+                            { name: 'Ethinyl Estradiol/Drospirenone', features: 'Anti-androgenic progestin, antimineralocorticoid.', choice: 'PMDD, acne, contraception.', indications: ['Contraception', 'PMDD', 'Acne'], contraindications: ['Renal Impairment', 'Hyperkalemia'] }
+                        ]
+                    },
+                    {
+                        name: 'Progestin-Only Contraceptives',
+                        mechanism: 'Thicken cervical mucus, thin endometrium, some ovulation suppression.',
+                        side_effects: ['Irregular bleeding', 'Weight gain', 'Mood changes'],
+                        interactions: 'CYP450 inducers reduce efficacy.',
+                        drugs: [
+                            { name: 'Norethindrone (Mini-pill)', features: 'Daily oral progestin-only pill.', choice: 'Breastfeeding, estrogen contraindications.', indications: ['Contraception in Breastfeeding'], contraindications: ['Active Liver Disease', 'Breast Cancer'] },
+                            { name: 'Medroxyprogesterone (Depo)', features: 'Injectable, 3-month duration.', choice: 'Long-acting contraception, compliance issues.', indications: ['Long-Term Contraception'], contraindications: ['Osteoporosis', 'Breast Cancer'] },
+                            { name: 'Levonorgestrel IUD', features: 'Intrauterine, 5-year duration.', choice: 'Long-term contraception, heavy periods.', indications: ['Long-Term Contraception', 'Heavy Menstrual Bleeding'], contraindications: ['PID', 'Distorted Uterine Cavity'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Reproductive Hormones',
+                pharma_classes: [
+                    {
+                        name: 'Estrogens',
+                        mechanism: 'Estrogen receptor agonists, multiple physiologic effects.',
+                        side_effects: ['Thromboembolism', 'Breast cancer risk', 'Endometrial hyperplasia'],
+                        interactions: 'CYP450 inducers reduce levels.',
+                        drugs: [
+                            { name: 'Estradiol', features: 'Bioidentical estrogen, multiple formulations.', choice: 'Menopausal hormone therapy.', indications: ['Menopausal Symptoms', 'Osteoporosis Prevention'], contraindications: ['Breast Cancer', 'Thromboembolism History'] },
+                            { name: 'Conjugated Estrogens', features: 'Mixed estrogens from pregnant mare urine.', choice: 'Menopausal symptoms, postmenopausal osteoporosis.', indications: ['Menopausal Symptoms', 'Atrophic Vaginitis'], contraindications: ['Breast Cancer', 'Liver Disease'] }
+                        ]
+                    },
+                    {
+                        name: 'Progestins',
+                        mechanism: 'Progesterone receptor agonists, oppose estrogen effects.',
+                        side_effects: ['Weight gain', 'Mood changes', 'Breast tenderness'],
+                        interactions: 'CYP450 interactions vary by agent.',
+                        drugs: [
+                            { name: 'Progesterone', features: 'Bioidentical, multiple routes available.', choice: 'Luteal phase support, HRT.', indications: ['Luteal Phase Deficiency', 'Menopausal HRT'], contraindications: ['Breast Cancer', 'Liver Disease'] },
+                            { name: 'Medroxyprogesterone', features: 'Synthetic progestin, oral and injectable.', choice: 'Abnormal uterine bleeding, contraception.', indications: ['Abnormal Uterine Bleeding', 'Contraception'], contraindications: ['Pregnancy', 'Breast Cancer'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Labor and Delivery',
+                pharma_classes: [
+                    {
+                        name: 'Oxytocics',
+                        mechanism: 'Stimulate uterine contractions via oxytocin receptors.',
+                        side_effects: ['Uterine rupture', 'Water intoxication', 'Hypotension'],
+                        interactions: 'Vasoconstrictors (severe hypertension).',
+                        drugs: [
+                            { name: 'Oxytocin', features: 'Endogenous hormone, IV/IM administration.', choice: 'Labor induction, postpartum hemorrhage.', indications: ['Labor Induction', 'Postpartum Hemorrhage'], contraindications: ['Fetal Distress', 'Placenta Previa'] },
+                            { name: 'Methylergonovine', features: 'Ergot alkaloid, prolonged uterine contraction.', choice: 'Postpartum hemorrhage, incomplete abortion.', indications: ['Postpartum Hemorrhage'], contraindications: ['Hypertension', 'Labor Induction'] }
+                        ]
+                    },
+                    {
+                        name: 'Tocolytics',
+                        mechanism: 'Suppress uterine contractions to delay preterm labor.',
+                        side_effects: ['Pulmonary edema', 'Tachycardia', 'Hyperglycemia'],
+                        interactions: 'Beta-agonists with corticosteroids increase pulmonary edema risk.',
+                        drugs: [
+                            { name: 'Terbutaline', features: 'β2-agonist, off-label use for tocolysis.', choice: 'Acute tocolysis, short-term use only.', indications: ['Preterm Labor'], contraindications: ['Maternal Heart Disease', 'Severe Preeclampsia'] },
+                            { name: 'Nifedipine', features: 'Calcium channel blocker, oral administration.', choice: 'Tocolysis maintenance therapy.', indications: ['Preterm Labor'], contraindications: ['Maternal Hypotension'] }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ];
+
+// Global app object to hold all functions
+window.DrugApp = {};
+
+// Global search functions
+function searchByIndication(indication) {
+    console.log('searchByIndication called with:', indication);
+    // Switch to search view and search for all drugs with this indication
+    window.DrugApp.renderSearchView();
+    setTimeout(() => {
+        const searchInput = document.getElementById('drug-search-input');
+        const indicationRadio = document.querySelector('input[name="search-type"][value="indication"]');
+        console.log('Found elements:', { searchInput, indicationRadio });
+        if (indicationRadio) indicationRadio.checked = true;
+        if (searchInput) searchInput.value = indication;
+        window.DrugApp.performSearch(indication, 'indication');
+    }, 100);
+}
+
+function searchByContraindication(contraindication) {
+    console.log('searchByContraindication called with:', contraindication);
+    // Switch to search view and search for all drugs to avoid with this condition
+    window.DrugApp.renderSearchView();
+    setTimeout(() => {
+        const searchInput = document.getElementById('drug-search-input');
+        if (searchInput) searchInput.value = contraindication;
+        // Special search type for contraindications
+        window.DrugApp.performContraindicationSearch(contraindication);
+    }, 100);
+}
+
+function searchBySideEffect(sideEffect) {
+    console.log('searchBySideEffect called with:', sideEffect);
+    window.DrugApp.renderSearchView();
+    setTimeout(() => {
+        const searchInput = document.getElementById('drug-search-input');
+        const sideEffectRadio = document.querySelector('input[name="search-type"][value="side-effect"]');
+        if (sideEffectRadio) sideEffectRadio.checked = true;
+        if (searchInput) searchInput.value = sideEffect;
+        window.DrugApp.performSearch(sideEffect, 'side-effect');
+    }, 100);
+}
+
+function searchByMechanism(mechanism) {
+    console.log('searchByMechanism called with:', mechanism);
+    window.DrugApp.renderSearchView();
+    setTimeout(() => {
+        const searchInput = document.getElementById('drug-search-input');
+        const mechanismRadio = document.querySelector('input[name="search-type"][value="mechanism"]');
+        if (mechanismRadio) mechanismRadio.checked = true;
+        if (searchInput) searchInput.value = mechanism;
+        window.DrugApp.performSearch(mechanism, 'mechanism');
+    }, 100);
+}
+
+function searchByClass(drugClass) {
+    console.log('searchByClass called with:', drugClass);
+    window.DrugApp.renderSearchView();
+    setTimeout(() => {
+        const searchInput = document.getElementById('drug-search-input');
+        const classRadio = document.querySelector('input[name="search-type"][value="class"]');
+        if (classRadio) classRadio.checked = true;
+        if (searchInput) searchInput.value = drugClass;
+        window.DrugApp.performSearch(drugClass, 'class');
+    }, 100);
+}
+
+function searchBySystem(system) {
+    console.log('searchBySystem called with:', system);
+    window.DrugApp.renderSearchView();
+    setTimeout(() => {
+        const searchInput = document.getElementById('drug-search-input');
+        const systemRadio = document.querySelector('input[name="search-type"][value="system"]');
+        if (systemRadio) systemRadio.checked = true;
+        if (searchInput) searchInput.value = system;
+        window.DrugApp.performSearch(system, 'system');
+    }, 100);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const mainContainer = document.getElementById('column-container');
@@ -1533,6 +1694,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const comparisonList = [];
     let lastState = { func: showSystems, args: [] };
     let searchableData = [];
+    
+    // Forward declarations for global access - assign after functions are defined
+    setTimeout(() => {
+        window.DrugApp.renderSearchView = renderSearchView;
+        window.DrugApp.performSearch = performSearch;
+        window.DrugApp.performContraindicationSearch = performContraindicationSearch;
+    }, 0);
 
     function parseInteractionTags(interactionText) {
         const interactionLower = interactionText.toLowerCase();
@@ -1877,13 +2045,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="detail-section">
                 <h3>Indications</h3>
                 <div class="tag-container">
-                    ${drug.indications.map(indication => `<span class="tag indication">${indication}</span>`).join('')}
+                    ${drug.indications.map((indication, index) => `<span class="tag indication clickable-tag" data-indication="${indication}" data-index="${index}" style="cursor: pointer;" title="Click to find all drugs for ${indication}">${indication}</span>`).join('')}
                 </div>
             </div>
             <div class="detail-section">
                 <h3>Contraindications</h3>
                 <div class="tag-container">
-                    ${drug.contraindications.map(contraindication => `<span class="tag contraindication">${contraindication}</span>`).join('')}
+                    ${drug.contraindications.map((contraindication, index) => `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" data-index="${index}" style="cursor: pointer;" title="Click to find all drugs to avoid with ${contraindication}">${contraindication}</span>`).join('')}
                 </div>
             </div>
             <div class="detail-section">
@@ -1923,10 +2091,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchControls = document.createElement('div');
         searchControls.className = 'search-controls';
         searchControls.innerHTML = `
-            <input type="text" class="search-input" placeholder="Search by drug name or indication..." id="drug-search-input">
+            <input type="text" class="search-input" placeholder="Search drugs by name, indication, side effect, mechanism, class, or system..." id="drug-search-input">
             <div class="search-options">
                 <label><input type="radio" name="search-type" value="drug" checked> Drug Name</label>
                 <label><input type="radio" name="search-type" value="indication"> Indication</label>
+                <label><input type="radio" name="search-type" value="contraindication"> Contraindication (Drugs to Avoid)</label>
+                <label><input type="radio" name="search-type" value="side-effect"> Side Effect</label>
+                <label><input type="radio" name="search-type" value="mechanism"> Mechanism of Action</label>
+                <label><input type="radio" name="search-type" value="class"> Drug Class</label>
+                <label><input type="radio" name="search-type" value="system"> Body System</label>
                 <button id="toggle-indications" class="header-btn" style="margin-left: 20px;">Show Indication Browser</button>
             </div>
         `;
@@ -1997,7 +2170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="drug-section-title">Indications</div>
                     <div class="tag-container">
                         ${drug.indications.map(indication => 
-                            `<span class="tag indication" onclick="filterByTag('indication', '${indication}')">${indication}</span>`
+                            `<span class="tag indication clickable-tag" data-indication="${indication}" style="cursor: pointer;" title="Click to find all drugs for ${indication}">${indication}</span>`
                         ).join('')}
                     </div>
                 </div>
@@ -2006,7 +2179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="drug-section-title">Contraindications</div>
                     <div class="tag-container">
                         ${drug.contraindications.map(contraindication => 
-                            `<span class="tag contraindication" onclick="filterByTag('contraindication', '${contraindication}')">${contraindication}</span>`
+                            `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;" title="Click to find all drugs to avoid with ${contraindication}">${contraindication}</span>`
                         ).join('')}
                     </div>
                 </div>
@@ -2044,7 +2217,87 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        function performSearch(query, searchType) {
+
+    function performContraindicationSearch(query) {
+        const resultsContainer = document.getElementById('search-results');
+        if (!query.trim()) {
+            resultsContainer.innerHTML = '';
+            return;
+        }
+        
+        // Search for drugs that have this contraindication
+        const results = searchableData.filter(item => {
+            const drug = item.pointers.drug;
+            return drug.contraindications && drug.contraindications.some(contraindication => 
+                contraindication.toLowerCase().includes(query.toLowerCase())
+            );
+        });
+        
+        resultsContainer.innerHTML = '';
+        if (results.length === 0) {
+            resultsContainer.innerHTML = '<p>No drugs found with this contraindication.</p>';
+            return;
+        }
+        
+        // Add header explaining what we're showing
+        const header = document.createElement('div');
+        header.style.marginBottom = '20px';
+        header.style.padding = '15px';
+        header.style.backgroundColor = '#fff3cd';
+        header.style.border = '1px solid #ffeaa7';
+        header.style.borderRadius = '8px';
+        header.innerHTML = `<strong>⚠️ Drugs to AVOID in patients with: ${query}</strong><br><small>The following ${results.length} drugs are contraindicated for this condition:</small>`;
+        resultsContainer.appendChild(header);
+        
+        // Change results container to grid layout
+        resultsContainer.className = 'drug-grid';
+        
+        results.forEach(result => {
+            const { system, therapeuticClass, pharmaClass, drug } = result.pointers;
+            
+            const drugCard = document.createElement('div');
+            drugCard.className = 'drug-card';
+            drugCard.style.borderLeft = '4px solid #e74c3c'; // Red border for contraindications
+            
+            drugCard.innerHTML = `
+                <div class="drug-name">${drug.name}</div>
+                <div class="drug-section">
+                    <div class="drug-section-title">Drug Class</div>
+                    <span class="tag class">${pharmaClass.name}</span>
+                </div>
+                <div class="drug-section">
+                    <div class="drug-section-title">System</div>
+                    <span class="tag system">${system.system}</span>
+                </div>
+                <div class="drug-section">
+                    <div class="drug-section-title">Why Contraindicated</div>
+                    <div class="tag-container">
+                        ${drug.contraindications.filter(c => c.toLowerCase().includes(query.toLowerCase())).map(contraindication => `<span class="tag contraindication">${contraindication}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="drug-section">
+                    <div class="drug-section-title">All Contraindications</div>
+                    <div class="tag-container">
+                        ${drug.contraindications.map(contraindication => `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;">${contraindication}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            drugCard.onclick = () => {
+                showDrugDetail(drug, pharmaClass, system, therapeuticClass);
+            };
+            
+            resultsContainer.appendChild(drugCard);
+        });
+    }
+
+    function performSearch(query, searchType) {
+            // If searching by contraindication, use the special function
+            if (searchType === 'contraindication') {
+                performContraindicationSearch(query);
+                return;
+            }
+
             const resultsContainer = document.getElementById('search-results');
             if (!query.trim()) {
                 resultsContainer.innerHTML = '';
@@ -2052,12 +2305,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const results = searchableData.filter(item => {
+                const { system, therapeuticClass, pharmaClass, drug } = item.pointers;
+                const queryLower = query.toLowerCase();
+                
                 if (searchType === 'drug') {
-                    return item.drugName.toLowerCase().includes(query.toLowerCase());
-                } else {
+                    return item.drugName.toLowerCase().includes(queryLower);
+                } else if (searchType === 'indication') {
                     return item.indications.some(indication => 
-                        indication.toLowerCase().includes(query.toLowerCase())
+                        indication.toLowerCase().includes(queryLower)
                     );
+                } else if (searchType === 'contraindication') {
+                    return drug.contraindications && drug.contraindications.some(contraindication => 
+                        contraindication.toLowerCase().includes(queryLower)
+                    );
+                } else if (searchType === 'side-effect') {
+                    return pharmaClass.side_effects && pharmaClass.side_effects.some(effect => 
+                        effect.toLowerCase().includes(queryLower)
+                    );
+                } else if (searchType === 'mechanism') {
+                    return pharmaClass.mechanism && pharmaClass.mechanism.toLowerCase().includes(queryLower);
+                } else if (searchType === 'class') {
+                    return pharmaClass.name.toLowerCase().includes(queryLower) || 
+                           therapeuticClass.name.toLowerCase().includes(queryLower);
+                } else if (searchType === 'system') {
+                    return system.system.toLowerCase().includes(queryLower);
                 }
             });
 
@@ -2098,7 +2369,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="drug-section-title">Indications</div>
                         <div class="tag-container">
                             ${drug.indications.map(indication => 
-                                `<span class="tag indication" onclick="filterByTag('indication', '${indication}')">${indication}</span>`
+                                `<span class="tag indication clickable-tag" data-indication="${indication}" style="cursor: pointer;" title="Click to find all drugs for ${indication}">${indication}</span>`
                             ).join('')}
                         </div>
                     </div>
@@ -2107,7 +2378,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="drug-section-title">Contraindications</div>
                         <div class="tag-container">
                             ${drug.contraindications.map(contraindication => 
-                                `<span class="tag contraindication" onclick="filterByTag('contraindication', '${contraindication}')">${contraindication}</span>`
+                                `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;" title="Click to find all drugs to avoid with ${contraindication}">${contraindication}</span>`
                             ).join('')}
                         </div>
                     </div>
@@ -2240,7 +2511,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="drug-section-title">Indications</div>
                     <div class="tag-container">
                         ${drug.indications.map(indication => 
-                            `<span class="tag indication" onclick="filterByTag('indication', '${indication}')">${indication}</span>`
+                            `<span class="tag indication clickable-tag" data-indication="${indication}" style="cursor: pointer;" title="Click to find all drugs for ${indication}">${indication}</span>`
                         ).join('')}
                     </div>
                 </div>
@@ -2249,7 +2520,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="drug-section-title">Contraindications</div>
                     <div class="tag-container">
                         ${drug.contraindications.map(contraindication => 
-                            `<span class="tag contraindication" onclick="filterByTag('contraindication', '${contraindication}')">${contraindication}</span>`
+                            `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;" title="Click to find all drugs to avoid with ${contraindication}">${contraindication}</span>`
                         ).join('')}
                     </div>
                 </div>
@@ -2321,13 +2592,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="detail-section">
                     <h3>Indications</h3>
                     <div class="tag-container">
-                        ${item.drug.indications.map(indication => `<span class="tag indication">${indication}</span>`).join('')}
+                        ${item.drug.indications.map(indication => `<span class="tag indication clickable-tag" data-indication="${indication}" style="cursor: pointer;" title="Click to find all drugs for ${indication}">${indication}</span>`).join('')}
                     </div>
                 </div>
                 <div class="detail-section">
                     <h3>Contraindications</h3>
                     <div class="tag-container">
-                        ${item.drug.contraindications.map(contraindication => `<span class="tag contraindication">${contraindication}</span>`).join('')}
+                        ${item.drug.contraindications.map(contraindication => `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;" title="Click to find all drugs to avoid with ${contraindication}">${contraindication}</span>`).join('')}
                     </div>
                 </div>
                 <div class="detail-section">
@@ -2352,6 +2623,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateHeaderControls();
     }
+
+    // Universal event listener for clickable tags with debug logging
+    document.addEventListener('click', function(e) {
+        console.log('Click detected on:', e.target);
+        console.log('Classes:', e.target.classList);
+        
+        // Check for clickable tags or any tag with appropriate classes
+        if (e.target.classList.contains('clickable-tag') || e.target.classList.contains('tag')) {
+            console.log('Tag found!');
+            
+            if (e.target.dataset.indication) {
+                console.log('Calling searchByIndication with:', e.target.dataset.indication);
+                searchByIndication(e.target.dataset.indication);
+            } else if (e.target.dataset.contraindication) {
+                console.log('Calling searchByContraindication with:', e.target.dataset.contraindication);
+                searchByContraindication(e.target.dataset.contraindication);
+            } else if (e.target.classList.contains('side-effect')) {
+                console.log('Calling searchBySideEffect with:', e.target.textContent);
+                searchBySideEffect(e.target.textContent);
+            } else if (e.target.classList.contains('mechanism')) {
+                console.log('Calling searchByMechanism with:', e.target.textContent);
+                searchByMechanism(e.target.textContent);
+            } else if (e.target.classList.contains('class') || e.target.classList.contains('subclass')) {
+                console.log('Calling searchByClass with:', e.target.textContent);
+                searchByClass(e.target.textContent);
+            } else if (e.target.classList.contains('system')) {
+                console.log('Calling searchBySystem with:', e.target.textContent);
+                searchBySystem(e.target.textContent);
+            }
+        }
+    });
 
     // Initialize
     flattenDrugData();
