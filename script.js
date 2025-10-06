@@ -249,6 +249,21 @@ const drugData = [
                         ]
                     }
                 ]
+            },
+            {
+                name: 'Positive Inotropes',
+                pharma_classes: [
+                    {
+                        name: 'Cardiac Glycosides',
+                        mechanism: 'Inhibit Na+/K+-ATPase pump, increasing intracellular calcium and cardiac contractility.',
+                        side_effects: ['Arrhythmias', 'Nausea', 'Visual disturbances', 'Confusion'],
+                        interactions: 'Diuretics (hypokalemia increases toxicity), amiodarone, quinidine.',
+                        interaction_explanation: 'DIURETICS: MECHANISM - Digoxin toxicity is potentiated by hypokalemia because potassium competes with digoxin for binding to Na+/K+-ATPase. CONSEQUENCE - Low potassium increases digoxin binding and toxicity, leading to dangerous arrhythmias. AMIODARONE/QUINIDINE: MECHANISM - These drugs inhibit P-glycoprotein, reducing digoxin clearance. CONSEQUENCE - Increased digoxin levels requiring dose reduction.',
+                        drugs: [
+                            { name: 'Digoxin', features: 'Narrow therapeutic window, requires monitoring.', choice: 'Atrial fibrillation rate control, heart failure.', indications: ['Atrial Fibrillation', 'Heart Failure'], contraindications: ['Ventricular Arrhythmias', 'Hypertrophic Cardiomyopathy'] }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -343,6 +358,21 @@ const drugData = [
                             { name: 'Olanzapine', features: 'Highly effective but significant metabolic effects.', choice: 'Treatment-resistant schizophrenia.', indications: ['Schizophrenia', 'Bipolar Disorder'], contraindications: ['Diabetes Risk'] },
                             { name: 'Quetiapine', features: 'Very sedating, used off-label for sleep.', choice: 'Bipolar depression.', indications: ['Schizophrenia', 'Bipolar Disorder'], contraindications: ['Hypersensitivity'] },
                             { name: 'Aripiprazole', features: 'Dopamine partial agonist, activating.', choice: 'Stable schizophrenia with metabolic concerns.', indications: ['Schizophrenia', 'Bipolar Disorder'], contraindications: ['Hypersensitivity'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Anesthetics',
+                pharma_classes: [
+                    {
+                        name: 'Intravenous Anesthetics',
+                        mechanism: 'Various mechanisms including GABA potentiation and NMDA antagonism.',
+                        side_effects: ['Respiratory depression', 'Hypotension', 'Injection site pain'],
+                        interactions: 'CNS depressants (additive effects).',
+                        drugs: [
+                            { name: 'Propofol', features: 'Rapid onset/offset, milky appearance.', choice: 'Induction and maintenance of anesthesia, sedation.', indications: ['General Anesthesia', 'Procedural Sedation'], contraindications: ['Egg/Soy Allergy', 'Severe Cardiac Disease'] },
+                            { name: 'Ketamine', features: 'NMDA antagonist, dissociative anesthetic.', choice: 'Anesthesia with hemodynamic instability.', indications: ['General Anesthesia', 'Pain Management', 'Depression'], contraindications: ['Increased Intracranial Pressure', 'Psychosis'] }
                         ]
                     }
                 ]
@@ -612,6 +642,39 @@ const drugData = [
                         drugs: [
                             { name: 'Oseltamivir', features: 'Oral bioavailability.', choice: 'Influenza treatment and prophylaxis.', indications: ['Influenza'], contraindications: ['Hypersensitivity'] },
                             { name: 'Zanamivir', features: 'Inhaled formulation.', choice: 'Influenza (when oseltamivir resistant).', indications: ['Influenza'], contraindications: ['Asthma', 'COPD'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Antimalarials',
+                pharma_classes: [
+                    {
+                        name: 'Quinoline Antimalarials',
+                        mechanism: 'Interfere with heme detoxification in Plasmodium parasites.',
+                        side_effects: ['Cinchonism', 'Hemolysis in G6PD deficiency', 'Retinal toxicity'],
+                        interactions: 'QT-prolonging drugs increase arrhythmia risk.',
+                        drugs: [
+                            { name: 'Chloroquine', features: 'Oral and parenteral, resistance widespread.', choice: 'Malaria in chloroquine-sensitive areas.', indications: ['Malaria', 'Amebiasis'], contraindications: ['G6PD Deficiency', 'Retinal Disease'] },
+                            { name: 'Quinine', features: 'IV for severe malaria, narrow therapeutic window.', choice: 'Severe malaria, chloroquine-resistant P. falciparum.', indications: ['Severe Malaria'], contraindications: ['G6PD Deficiency', 'Optic Neuritis'] },
+                            { name: 'Hydroxychloroquine', features: 'Less toxic than chloroquine, immunomodulatory.', choice: 'Rheumatoid arthritis, SLE, malaria prophylaxis.', indications: ['Rheumatoid Arthritis', 'SLE', 'Malaria'], contraindications: ['Retinal Disease', 'G6PD Deficiency'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Anti-Tuberculosis Drugs',
+                pharma_classes: [
+                    {
+                        name: 'First-Line Anti-TB Agents',
+                        mechanism: 'Various mechanisms targeting mycobacterial metabolism and cell wall synthesis.',
+                        side_effects: ['Hepatotoxicity', 'Peripheral neuropathy', 'Optic neuritis'],
+                        interactions: 'Rifampin is major CYP450 inducer.',
+                        drugs: [
+                            { name: 'Rifampin', features: 'Potent CYP450 inducer, orange-red secretions.', choice: 'First-line anti-TB therapy.', indications: ['Tuberculosis', 'Latent TB'], contraindications: ['Severe Liver Disease'] },
+                            { name: 'Isoniazid', features: 'Bactericidal against actively dividing mycobacteria.', choice: 'First-line anti-TB, latent TB treatment.', indications: ['Tuberculosis', 'Latent TB'], contraindications: ['Severe Liver Disease', 'Peripheral Neuropathy'] },
+                            { name: 'Ethambutol', features: 'Bacteriostatic, monitor for optic neuritis.', choice: 'First-line anti-TB to prevent resistance.', indications: ['Tuberculosis'], contraindications: ['Optic Neuritis', 'Renal Impairment'] },
+                            { name: 'Pyrazinamide', features: 'Active in acidic environment, sterilizing activity.', choice: 'Intensive phase anti-TB therapy.', indications: ['Tuberculosis'], contraindications: ['Severe Liver Disease', 'Gout'] }
                         ]
                     }
                 ]
@@ -1602,6 +1665,23 @@ const drugData = [
                         drugs: [
                             { name: 'Terbutaline', features: 'β2-agonist, off-label use for tocolysis.', choice: 'Acute tocolysis, short-term use only.', indications: ['Preterm Labor'], contraindications: ['Maternal Heart Disease', 'Severe Preeclampsia'] },
                             { name: 'Nifedipine', features: 'Calcium channel blocker, oral administration.', choice: 'Tocolysis maintenance therapy.', indications: ['Preterm Labor'], contraindications: ['Maternal Hypotension'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Erectile Dysfunction',
+                pharma_classes: [
+                    {
+                        name: 'PDE5 Inhibitors',
+                        mechanism: 'Inhibit phosphodiesterase-5, increasing cGMP levels and causing vasodilation.',
+                        side_effects: ['Headache', 'Flushing', 'Nasal congestion', 'Visual disturbances'],
+                        interactions: 'Nitrates (severe hypotension), alpha-blockers (hypotension).',
+                        interaction_explanation: 'NITRATES: MECHANISM - Nitrates increase cGMP levels through nitric oxide release. PDE5 inhibitors prevent cGMP breakdown by inhibiting phosphodiesterase-5. CONSEQUENCE - Synergistic vasodilation leads to severe, potentially life-threatening hypotension that may not respond to fluids and requires vasopressors.',
+                        drugs: [
+                            { name: 'Sildenafil', features: 'First PDE5 inhibitor, 4-hour duration.', choice: 'Erectile dysfunction, pulmonary hypertension.', indications: ['Erectile Dysfunction', 'Pulmonary Hypertension'], contraindications: ['Nitrate Use', 'Severe Cardiac Disease'] },
+                            { name: 'Tadalafil', features: 'Longest duration (36 hours), daily dosing option.', choice: 'ED with desire for spontaneity.', indications: ['Erectile Dysfunction', 'BPH'], contraindications: ['Nitrate Use', 'Severe Hepatic Impairment'] },
+                            { name: 'Vardenafil', features: 'Intermediate duration, less visual side effects.', choice: 'ED in patients with visual concerns.', indications: ['Erectile Dysfunction'], contraindications: ['Nitrate Use', 'QT Prolongation'] }
                         ]
                     }
                 ]
