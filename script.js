@@ -1697,75 +1697,99 @@ window.DrugApp = {};
 function searchByIndication(indication) {
     console.log('searchByIndication called with:', indication);
     // Switch to search view and search for all drugs with this indication
-    window.DrugApp.renderSearchView();
-    setTimeout(() => {
-        const searchInput = document.getElementById('drug-search-input');
-        const indicationRadio = document.querySelector('input[name="search-type"][value="indication"]');
-        console.log('Found elements:', { searchInput, indicationRadio });
-        if (indicationRadio) indicationRadio.checked = true;
-        if (searchInput) searchInput.value = indication;
-        window.DrugApp.performSearch(indication, 'indication');
-    }, 100);
+    if (window.DrugApp && window.DrugApp.renderSearchView) {
+        window.DrugApp.renderSearchView();
+        setTimeout(() => {
+            const searchInput = document.getElementById('drug-search-input');
+            const indicationRadio = document.querySelector('input[name="search-type"][value="indication"]');
+            console.log('Found elements:', { searchInput, indicationRadio });
+            if (indicationRadio) indicationRadio.checked = true;
+            if (searchInput) searchInput.value = indication;
+            if (window.DrugApp.performSearch) {
+                window.DrugApp.performSearch(indication, 'indication');
+            }
+        }, 100);
+    }
 }
 
 function searchByContraindication(contraindication) {
     console.log('searchByContraindication called with:', contraindication);
     // Switch to search view and search for all drugs to avoid with this condition
-    window.DrugApp.renderSearchView();
-    setTimeout(() => {
-        const searchInput = document.getElementById('drug-search-input');
-        if (searchInput) searchInput.value = contraindication;
-        // Special search type for contraindications
-        window.DrugApp.performContraindicationSearch(contraindication);
-    }, 100);
+    if (window.DrugApp && window.DrugApp.renderSearchView) {
+        window.DrugApp.renderSearchView();
+        setTimeout(() => {
+            const searchInput = document.getElementById('drug-search-input');
+            if (searchInput) searchInput.value = contraindication;
+            // Special search type for contraindications
+            if (window.DrugApp.performContraindicationSearch) {
+                window.DrugApp.performContraindicationSearch(contraindication);
+            }
+        }, 100);
+    }
 }
 
 function searchBySideEffect(sideEffect) {
     console.log('searchBySideEffect called with:', sideEffect);
-    window.DrugApp.renderSearchView();
-    setTimeout(() => {
-        const searchInput = document.getElementById('drug-search-input');
-        const sideEffectRadio = document.querySelector('input[name="search-type"][value="side-effect"]');
-        if (sideEffectRadio) sideEffectRadio.checked = true;
-        if (searchInput) searchInput.value = sideEffect;
-        window.DrugApp.performSearch(sideEffect, 'side-effect');
-    }, 100);
+    if (window.DrugApp && window.DrugApp.renderSearchView) {
+        window.DrugApp.renderSearchView();
+        setTimeout(() => {
+            const searchInput = document.getElementById('drug-search-input');
+            const sideEffectRadio = document.querySelector('input[name="search-type"][value="side-effect"]');
+            if (sideEffectRadio) sideEffectRadio.checked = true;
+            if (searchInput) searchInput.value = sideEffect;
+            if (window.DrugApp.performSearch) {
+                window.DrugApp.performSearch(sideEffect, 'side-effect');
+            }
+        }, 100);
+    }
 }
 
 function searchByMechanism(mechanism) {
     console.log('searchByMechanism called with:', mechanism);
-    window.DrugApp.renderSearchView();
-    setTimeout(() => {
-        const searchInput = document.getElementById('drug-search-input');
-        const mechanismRadio = document.querySelector('input[name="search-type"][value="mechanism"]');
-        if (mechanismRadio) mechanismRadio.checked = true;
-        if (searchInput) searchInput.value = mechanism;
-        window.DrugApp.performSearch(mechanism, 'mechanism');
-    }, 100);
+    if (window.DrugApp && window.DrugApp.renderSearchView) {
+        window.DrugApp.renderSearchView();
+        setTimeout(() => {
+            const searchInput = document.getElementById('drug-search-input');
+            const mechanismRadio = document.querySelector('input[name="search-type"][value="mechanism"]');
+            if (mechanismRadio) mechanismRadio.checked = true;
+            if (searchInput) searchInput.value = mechanism;
+            if (window.DrugApp.performSearch) {
+                window.DrugApp.performSearch(mechanism, 'mechanism');
+            }
+        }, 100);
+    }
 }
 
 function searchByClass(drugClass) {
     console.log('searchByClass called with:', drugClass);
-    window.DrugApp.renderSearchView();
-    setTimeout(() => {
-        const searchInput = document.getElementById('drug-search-input');
-        const classRadio = document.querySelector('input[name="search-type"][value="class"]');
-        if (classRadio) classRadio.checked = true;
-        if (searchInput) searchInput.value = drugClass;
-        window.DrugApp.performSearch(drugClass, 'class');
-    }, 100);
+    if (window.DrugApp && window.DrugApp.renderSearchView) {
+        window.DrugApp.renderSearchView();
+        setTimeout(() => {
+            const searchInput = document.getElementById('drug-search-input');
+            const classRadio = document.querySelector('input[name="search-type"][value="class"]');
+            if (classRadio) classRadio.checked = true;
+            if (searchInput) searchInput.value = drugClass;
+            if (window.DrugApp.performSearch) {
+                window.DrugApp.performSearch(drugClass, 'class');
+            }
+        }, 100);
+    }
 }
 
 function searchBySystem(system) {
     console.log('searchBySystem called with:', system);
-    window.DrugApp.renderSearchView();
-    setTimeout(() => {
-        const searchInput = document.getElementById('drug-search-input');
-        const systemRadio = document.querySelector('input[name="search-type"][value="system"]');
-        if (systemRadio) systemRadio.checked = true;
-        if (searchInput) searchInput.value = system;
-        window.DrugApp.performSearch(system, 'system');
-    }, 100);
+    if (window.DrugApp && window.DrugApp.renderSearchView) {
+        window.DrugApp.renderSearchView();
+        setTimeout(() => {
+            const searchInput = document.getElementById('drug-search-input');
+            const systemRadio = document.querySelector('input[name="search-type"][value="system"]');
+            if (systemRadio) systemRadio.checked = true;
+            if (searchInput) searchInput.value = system;
+            if (window.DrugApp.performSearch) {
+                window.DrugApp.performSearch(system, 'system');
+            }
+        }, 100);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1775,12 +1799,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastState = { func: showSystems, args: [] };
     let searchableData = [];
     
-    // Forward declarations for global access - assign after functions are defined
-    setTimeout(() => {
-        window.DrugApp.renderSearchView = renderSearchView;
-        window.DrugApp.performSearch = performSearch;
-        window.DrugApp.performContraindicationSearch = performContraindicationSearch;
-    }, 0);
 
     function parseInteractionTags(interactionText) {
         const interactionLower = interactionText.toLowerCase();
@@ -1855,6 +1873,20 @@ document.addEventListener('DOMContentLoaded', () => {
             headerControls.appendChild(compareButton);
         }
     }
+
+    const backToNavigation = function() {
+        // Restore the main navigation container
+        mainContainer.className = '';
+        mainContainer.id = 'column-container';
+        
+        // Restore the last saved navigation state
+        if (lastState && lastState.func) {
+            lastState.func.apply(null, lastState.args);
+        } else {
+            showSystems();
+        }
+    };
+    window.DrugApp.backToNavigation = backToNavigation;
 
     function handleCompareClick(drug, pharmaClass, button) {
         const index = comparisonList.findIndex(item => item.drug.name === drug.name);
@@ -2155,7 +2187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHeaderControls();
     }
 
-    function renderSearchView() {
+    const renderSearchView = function() {
         mainContainer.innerHTML = '';
         mainContainer.className = '';
         mainContainer.id = 'search-view-container';
@@ -2164,7 +2196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         searchHeader.className = 'search-header';
         searchHeader.innerHTML = `
             <h2>Drug Search</h2>
-            <button class="header-btn" onclick="location.reload()">Back to Navigation</button>
+            <button class="header-btn" onclick="window.DrugApp.backToNavigation()">Back to Navigation</button>
         `;
         mainContainer.appendChild(searchHeader);
 
@@ -2296,9 +2328,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    };
+    window.DrugApp.renderSearchView = renderSearchView;
 
-
-    function performContraindicationSearch(query) {
+    const performContraindicationSearch = function(query) {
         const resultsContainer = document.getElementById('search-results');
         if (!query.trim()) {
             resultsContainer.innerHTML = '';
@@ -2369,9 +2402,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             resultsContainer.appendChild(drugCard);
         });
-    }
+    };
+    window.DrugApp.performContraindicationSearch = performContraindicationSearch;
 
-    function performSearch(query, searchType) {
+    const performSearch = function(query, searchType) {
             // If searching by contraindication, use the special function
             if (searchType === 'contraindication') {
                 performContraindicationSearch(query);
@@ -2498,8 +2532,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 resultsContainer.appendChild(drugCard);
             });
-        }
-    }
+        };
 
     // Global function for tag filtering
     window.filterByTag = function(tagType, tagValue) {
@@ -2641,6 +2674,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsContainer.appendChild(drugCard);
         });
     };
+    window.DrugApp.performSearch = performSearch;
 
     function renderCompareView() {
         if (comparisonList.length === 0) return;
@@ -2709,6 +2743,13 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Click detected on:', e.target);
         console.log('Classes:', e.target.classList);
         
+        // Check if the tag is inside a column-item (main navigation view)
+        const isInColumnItem = e.target.closest('.column-item');
+        if (isInColumnItem) {
+            console.log('Tag is in column navigation - ignoring click');
+            return;
+        }
+        
         // Check for clickable tags or any tag with appropriate classes
         if (e.target.classList.contains('clickable-tag') || e.target.classList.contains('tag')) {
             console.log('Tag found!');
@@ -2738,4 +2779,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize
     flattenDrugData();
     showSystems();
+
 });

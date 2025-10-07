@@ -7,16 +7,20 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 header {
     background-color: #ffffff;
-    padding: 20px 40px;
+    padding: 20px 40px 24px;
     border-bottom: 1px solid #e0e0e0;
     text-align: center;
     flex-shrink: 0;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 header h1 {
@@ -33,12 +37,11 @@ header p {
 }
 
 #header-controls {
-    position: absolute;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4px;
 }
 
 .header-btn, .compare-view-button {
@@ -105,6 +108,7 @@ header p {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    gap: 12px;
 }
 
 .search-input {
@@ -114,12 +118,30 @@ header p {
     font-size: 1.2rem;
     border-radius: 8px;
     border: 1px solid #ccc;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+}
+
+.search-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
 }
 
 .search-options label {
     margin: 0 10px;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.search-options button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .indications-container {
@@ -166,6 +188,13 @@ header p {
 
 .drug-section {
     margin-bottom: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #ecf0f1;
+}
+
+.drug-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
 }
 
 .drug-section-title {
@@ -346,11 +375,17 @@ header p {
     border: 1px solid #3498db;
     color: #3498db;
     border-radius: 4px;
-    padding: 4px 8px;
-    font-size: 0.8rem;
+    padding: 5px 12px;
+    font-size: 0.78rem;
     cursor: pointer;
     margin-left: 10px;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .compare-btn:hover {
@@ -362,6 +397,7 @@ header p {
     background-color: #27ae60;
     border-color: #27ae60;
     color: white;
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.25);
 }
 
 .detail-view-column {
@@ -388,4 +424,40 @@ header p {
     border-bottom: 2px solid #3498db;
     padding-bottom: 5px;
     margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 18px 24px 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 16px 16px 20px;
+    }
+
+    #header-controls {
+        width: 100%;
+    }
+
+    .search-controls {
+        align-items: stretch;
+    }
+
+    .search-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-options label {
+        margin: 0;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .search-options button {
+        margin: 0;
+        width: 100%;
+    }
 }
