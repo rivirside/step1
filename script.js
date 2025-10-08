@@ -1696,6 +1696,10 @@ window.DrugApp = {};
 // Global search functions
 function searchByIndication(indication) {
     console.log('searchByIndication called with:', indication);
+    trackEvent('shortcut_search', {
+        trigger: 'indication_tag',
+        value: indication
+    });
     // Switch to search view and search for all drugs with this indication
     if (window.DrugApp && window.DrugApp.renderSearchView) {
         window.DrugApp.renderSearchView();
@@ -1714,6 +1718,10 @@ function searchByIndication(indication) {
 
 function searchByContraindication(contraindication) {
     console.log('searchByContraindication called with:', contraindication);
+    trackEvent('shortcut_search', {
+        trigger: 'contraindication_tag',
+        value: contraindication
+    });
     // Switch to search view and search for all drugs to avoid with this condition
     if (window.DrugApp && window.DrugApp.renderSearchView) {
         window.DrugApp.renderSearchView();
@@ -1730,6 +1738,10 @@ function searchByContraindication(contraindication) {
 
 function searchBySideEffect(sideEffect) {
     console.log('searchBySideEffect called with:', sideEffect);
+    trackEvent('shortcut_search', {
+        trigger: 'side_effect_tag',
+        value: sideEffect
+    });
     if (window.DrugApp && window.DrugApp.renderSearchView) {
         window.DrugApp.renderSearchView();
         setTimeout(() => {
@@ -1746,6 +1758,10 @@ function searchBySideEffect(sideEffect) {
 
 function searchByMechanism(mechanism) {
     console.log('searchByMechanism called with:', mechanism);
+    trackEvent('shortcut_search', {
+        trigger: 'mechanism_tag',
+        value: mechanism
+    });
     if (window.DrugApp && window.DrugApp.renderSearchView) {
         window.DrugApp.renderSearchView();
         setTimeout(() => {
@@ -1762,6 +1778,10 @@ function searchByMechanism(mechanism) {
 
 function searchByClass(drugClass) {
     console.log('searchByClass called with:', drugClass);
+    trackEvent('shortcut_search', {
+        trigger: 'class_tag',
+        value: drugClass
+    });
     if (window.DrugApp && window.DrugApp.renderSearchView) {
         window.DrugApp.renderSearchView();
         setTimeout(() => {
@@ -1778,6 +1798,10 @@ function searchByClass(drugClass) {
 
 function searchBySystem(system) {
     console.log('searchBySystem called with:', system);
+    trackEvent('shortcut_search', {
+        trigger: 'system_tag',
+        value: system
+    });
     if (window.DrugApp && window.DrugApp.renderSearchView) {
         window.DrugApp.renderSearchView();
         setTimeout(() => {
@@ -1792,13 +1816,79 @@ function searchBySystem(system) {
     }
 }
 
+const analyticsQueue = [];
+
+const resolveGtag = () => {
+    if (typeof window === 'undefined') return null;
+    if (typeof window.gtag === 'function') return window.gtag;
+    if (window.Step1Analytics && typeof window.Step1Analytics.gtag === 'function') {
+        return window.Step1Analytics.gtag;
+    }
+    return null;
+};
+
+const flushAnalyticsQueue = () => {
+    const gtag = resolveGtag();
+    if (!gtag || !analyticsQueue.length) return;
+    while (analyticsQueue.length) {
+        const { eventName, params } = analyticsQueue.shift();
+        gtag('event', eventName, params);
+    }
+};
+
+const trackEvent = (eventName, params = {}) => {
+    const payload = { ...params };
+    const gtag = resolveGtag();
+    if (gtag) {
+        gtag('event', eventName, payload);
+        return;
+    }
+    analyticsQueue.push({ eventName, params: payload });
+};
+
+window.addEventListener('load', flushAnalyticsQueue);
+
 document.addEventListener('DOMContentLoaded', () => {
     const mainContainer = document.getElementById('column-container');
     const headerControls = document.getElementById('header-controls');
     const comparisonList = [];
     let lastState = { func: showSystems, args: [] };
     let searchableData = [];
-    
+
+    const debounce = (fn, delay = 300) => {
+        let timeoutId;
+        return (...args) => {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => fn.apply(null, args), delay);
+        };
+    };
+
+    let lastSearchLog = { fingerprint: '', timestamp: 0 };
+    let latestSearchOutcome = null;
+
+    const logSearchInteraction = debounce((searchType, value) => {
+        const trimmed = value.trim();
+        if (!trimmed) return;
+        const normalized = trimmed.toLowerCase();
+        const fingerprint = `${searchType}:${normalized}`;
+        const now = Date.now();
+        if (fingerprint === lastSearchLog.fingerprint && now - lastSearchLog.timestamp < 5000) {
+            return;
+        }
+        lastSearchLog = { fingerprint, timestamp: now };
+        const payload = {
+            search_type: searchType,
+            query_length: Math.min(trimmed.length, 100)
+        };
+        if (
+            latestSearchOutcome &&
+            latestSearchOutcome.type === searchType &&
+            latestSearchOutcome.query === normalized
+        ) {
+            payload.results_count = latestSearchOutcome.resultsCount;
+        }
+        trackEvent('search_input', payload);
+    }, 700);
 
     function parseInteractionTags(interactionText) {
         const interactionLower = interactionText.toLowerCase();
@@ -1890,7 +1980,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleCompareClick(drug, pharmaClass, button) {
         const index = comparisonList.findIndex(item => item.drug.name === drug.name);
-        if (index > -1) {
+        const action = index > -1 ? 'remove' : 'add';
+        if (action === 'remove') {
             comparisonList.splice(index, 1);
             button.innerText = 'Compare';
             button.classList.remove('added');
@@ -1900,6 +1991,12 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.add('added');
         }
         updateHeaderControls();
+        trackEvent('compare_toggle', {
+            action,
+            drug_name: drug.name,
+            class_name: pharmaClass.name,
+            list_size: comparisonList.length
+        });
     }
 
     function createColumn(title, items, onItemClick, keyFunction = item => item, tagType = 'default') {
@@ -1935,6 +2032,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showSystems() {
         saveLastState(showSystems, []);
         mainContainer.innerHTML = '';
+        trackEvent('view_navigation', { level: 'system' });
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, system => system.system, 'system');
         mainContainer.appendChild(systemsColumn);
         updateHeaderControls();
@@ -1943,6 +2041,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function showTherapeuticClasses(system) {
         saveLastState(showTherapeuticClasses, [system]);
         mainContainer.innerHTML = '';
+        trackEvent('view_navigation', {
+            level: 'therapeutic_class',
+            system: system.system
+        });
         
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, s => s.system, 'system');
         systemsColumn.querySelectorAll('.column-item').forEach((item, index) => {
@@ -1962,6 +2064,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function showPharmaClasses(system, therapeuticClass) {
         saveLastState(showPharmaClasses, [system, therapeuticClass]);
         mainContainer.innerHTML = '';
+        trackEvent('view_navigation', {
+            level: 'pharma_class',
+            system: system.system,
+            therapeutic_class: therapeuticClass.name
+        });
         
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, s => s.system, 'system');
         systemsColumn.querySelectorAll('.column-item').forEach((item, index) => {
@@ -1991,6 +2098,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function showDrugs(system, therapeuticClass, pharmaClass) {
         saveLastState(showDrugs, [system, therapeuticClass, pharmaClass]);
         mainContainer.innerHTML = '';
+        trackEvent('view_navigation', {
+            level: 'drug_list',
+            system: system.system,
+            therapeutic_class: therapeuticClass.name,
+            class_name: pharmaClass.name
+        });
         
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, s => s.system, 'system');
         systemsColumn.querySelectorAll('.column-item').forEach((item, index) => {
@@ -2063,6 +2176,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function showDrugDetail(system, therapeuticClass, pharmaClass, drug) {
         saveLastState(showDrugDetail, [system, therapeuticClass, pharmaClass, drug]);
         mainContainer.innerHTML = '';
+
+        trackEvent('view_drug_detail', {
+            drug_name: drug.name,
+            class_name: pharmaClass.name,
+            therapeutic_class: therapeuticClass.name,
+            system: system.system
+        });
         
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, s => s.system, 'system');
         systemsColumn.querySelectorAll('.column-item').forEach((item, index) => {
@@ -2192,6 +2312,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContainer.className = '';
         mainContainer.id = 'search-view-container';
 
+        trackEvent('view_search', {});
+
         const searchHeader = document.createElement('div');
         searchHeader.className = 'search-header';
         searchHeader.innerHTML = `
@@ -2246,13 +2368,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // Toggle functionality for indications browser
         const toggleButton = document.getElementById('toggle-indications');
         toggleButton.addEventListener('click', () => {
-            if (indicationsContainer.style.display === 'none') {
+            const opening = indicationsContainer.style.display === 'none';
+            if (opening) {
                 indicationsContainer.style.display = 'block';
                 toggleButton.textContent = 'Hide Indication Browser';
             } else {
                 indicationsContainer.style.display = 'none';
                 toggleButton.textContent = 'Show Indication Browser';
             }
+            trackEvent('toggle_indication_browser', {
+                state: opening ? 'open' : 'closed'
+            });
         });
 
         const resultsContainer = document.createElement('div');
@@ -2318,13 +2444,16 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', (e) => {
             const searchType = document.querySelector('input[name="search-type"]:checked').value;
             performSearch(e.target.value, searchType);
+            logSearchInteraction(searchType, e.target.value);
         });
 
         document.querySelectorAll('input[name="search-type"]').forEach(radio => {
             radio.addEventListener('change', () => {
+                trackEvent('search_option_change', { search_type: radio.value });
                 const currentSearch = searchInput.value;
                 if (currentSearch) {
                     performSearch(currentSearch, radio.value);
+                    logSearchInteraction(radio.value, currentSearch);
                 }
             });
         });
@@ -2333,7 +2462,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const performContraindicationSearch = function(query) {
         const resultsContainer = document.getElementById('search-results');
-        if (!query.trim()) {
+        const trimmedQuery = query.trim();
+        if (!trimmedQuery) {
             resultsContainer.innerHTML = '';
             return;
         }
@@ -2342,8 +2472,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const results = searchableData.filter(item => {
             const drug = item.pointers.drug;
             return drug.contraindications && drug.contraindications.some(contraindication => 
-                contraindication.toLowerCase().includes(query.toLowerCase())
+                contraindication.toLowerCase().includes(trimmedQuery.toLowerCase())
             );
+        });
+
+        trackEvent('search_contraindication', {
+            query_length: Math.min(trimmedQuery.length, 100),
+            results_count: results.length
         });
         
         resultsContainer.innerHTML = '';
@@ -2413,14 +2548,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const resultsContainer = document.getElementById('search-results');
-            if (!query.trim()) {
+            const trimmedQuery = query.trim();
+            if (!trimmedQuery) {
                 resultsContainer.innerHTML = '';
+                latestSearchOutcome = null;
                 return;
             }
 
             const results = searchableData.filter(item => {
                 const { system, therapeuticClass, pharmaClass, drug } = item.pointers;
-                const queryLower = query.toLowerCase();
+                const queryLower = trimmedQuery.toLowerCase();
                 
                 if (searchType === 'drug') {
                     return item.drugName.toLowerCase().includes(queryLower);
@@ -2444,6 +2581,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (searchType === 'system') {
                     return system.system.toLowerCase().includes(queryLower);
                 }
+            });
+
+            latestSearchOutcome = {
+                type: searchType,
+                query: trimmedQuery.toLowerCase(),
+                resultsCount: results.length
+            };
+
+            trackEvent('search_results', {
+                search_type: searchType,
+                query_length: Math.min(trimmedQuery.length, 100),
+                results_count: results.length
             });
 
             resultsContainer.innerHTML = '';
@@ -2538,6 +2687,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.filterByTag = function(tagType, tagValue) {
         const resultsContainer = document.getElementById('search-results');
         let filteredResults = [];
+        trackEvent('tag_filter', {
+            tag_type: tagType,
+            tag_value: tagValue ? tagValue.slice(0, 50) : ''
+        });
 
         switch(tagType) {
             case 'system':
@@ -2681,6 +2834,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mainContainer.innerHTML = '';
         mainContainer.className = 'compare-view-container';
+
+        trackEvent('view_compare', {
+            items: comparisonList.map(item => item.drug.name),
+            item_count: comparisonList.length
+        });
 
         comparisonList.forEach(item => {
             const detailColumn = document.createElement('div');
