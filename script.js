@@ -3,7 +3,7 @@ const drugData = [
         system: 'Autonomic Nervous System',
         therapeutic_classes: [
             {
-                name: 'Cholinergic Agonists',
+                name: 'Cholinergic Agonists (Parasympathomimetics)',
                 pharma_classes: [
                     {
                         name: 'Direct Muscarinic Agonists',
@@ -12,7 +12,9 @@ const drugData = [
                         interactions: 'Anticholinergics antagonize effects.',
                         drugs: [
                             { name: 'Bethanechol', features: 'Selective for M3 receptors.', choice: 'Postoperative urinary retention.', indications: ['Urinary Retention', 'Gastroparesis'], contraindications: ['Asthma', 'COPD', 'Mechanical Obstruction'] },
-                            { name: 'Pilocarpine', features: 'Crosses blood-brain barrier.', choice: 'Glaucoma, xerostomia.', indications: ['Glaucoma', 'Dry Mouth'], contraindications: ['Narrow-angle Glaucoma', 'Asthma'] }
+                            { name: 'Pilocarpine', features: 'Crosses blood-brain barrier.', choice: 'Glaucoma, xerostomia.', indications: ['Glaucoma', 'Dry Mouth'], contraindications: ['Narrow-angle Glaucoma', 'Asthma'] },
+                            { name: 'Carbachol', features: 'Resistant to AChE, strong nicotinic activity.', choice: 'Pupil constriction for glaucoma.', indications: ['Glaucoma', 'Miosis Induction'], contraindications: ['Asthma', 'COPD'] },
+                            { name: 'Methacholine', features: 'Potent muscarinic agonist, short-acting.', choice: 'Bronchial hyperreactivity challenge test.', indications: ['Asthma Diagnosis'], contraindications: ['Severe Asthma', 'Recent MI', 'Arrhythmia'] }
                         ]
                     },
                     {
@@ -23,13 +25,17 @@ const drugData = [
                         drugs: [
                             { name: 'Neostigmine', features: 'Does not cross BBB.', choice: 'Reversal of neuromuscular blockade.', indications: ['Myasthenia Gravis', 'Neuromuscular Blockade Reversal'], contraindications: ['Mechanical Obstruction'] },
                             { name: 'Physostigmine', features: 'Crosses blood-brain barrier.', choice: 'Anticholinergic poisoning antidote.', indications: ['Anticholinergic Toxicity'], contraindications: ['Asthma', 'Mechanical Obstruction'] },
-                            { name: 'Pyridostigmine', features: 'Longer duration than neostigmine.', choice: 'Chronic myasthenia gravis treatment.', indications: ['Myasthenia Gravis'], contraindications: ['Mechanical Obstruction'] }
+                            { name: 'Pyridostigmine', features: 'Longer duration than neostigmine.', choice: 'Chronic myasthenia gravis treatment.', indications: ['Myasthenia Gravis'], contraindications: ['Mechanical Obstruction'] },
+                            { name: 'Edrophonium', features: 'Very short-acting AChE inhibitor.', choice: 'Tensilon test to diagnose myasthenia gravis.', indications: ['Myasthenia Diagnosis'], contraindications: ['Asthma', 'Mechanical Obstruction'] },
+                            { name: 'Donepezil', features: 'Lipophilic, CNS penetration.', choice: 'Alzheimer disease symptomatic therapy.', indications: ['Alzheimer Disease'], contraindications: ['Bradycardia', 'Heart Block'] },
+                            { name: 'Rivastigmine', features: 'Transdermal option, less hepatic metabolism.', choice: 'Dementia with parkinsonism.', indications: ['Alzheimer Disease', 'Parkinson Dementia'], contraindications: ['Hypersensitivity'] },
+                            { name: 'Galantamine', features: 'Also modulates nicotinic receptors.', choice: 'Alzheimer disease mild-to-moderate.', indications: ['Alzheimer Disease'], contraindications: ['Severe Hepatic Impairment'] }
                         ]
                     }
                 ]
             },
             {
-                name: 'Cholinergic Antagonists',
+                name: 'Cholinergic Antagonists (Parasympatholytics)',
                 pharma_classes: [
                     {
                         name: 'Muscarinic Antagonists',
@@ -40,7 +46,15 @@ const drugData = [
                             { name: 'Atropine', features: 'Crosses BBB, systemic effects.', choice: 'Bradycardia, organophosphate poisoning.', indications: ['Bradycardia', 'Organophosphate Poisoning'], contraindications: ['Narrow-angle Glaucoma', 'BPH'] },
                             { name: 'Scopolamine', features: 'High CNS penetration.', choice: 'Motion sickness prevention.', indications: ['Motion Sickness', 'Postoperative Nausea'], contraindications: ['Narrow-angle Glaucoma'] },
                             { name: 'Ipratropium', features: 'Quaternary ammonium, minimal systemic absorption.', choice: 'COPD bronchodilation.', indications: ['COPD', 'Asthma'], contraindications: ['Soy/Peanut Allergy'] },
-                            { name: 'Tiotropium', features: 'Once-daily LAMA.', choice: 'COPD maintenance therapy.', indications: ['COPD'], contraindications: ['Narrow-angle Glaucoma'] }
+                            { name: 'Tiotropium', features: 'Once-daily LAMA.', choice: 'COPD maintenance therapy.', indications: ['COPD'], contraindications: ['Narrow-angle Glaucoma'] },
+                            { name: 'Benztropine', features: 'Central acting M1 antagonist.', choice: 'Parkinson tremor and dystonia.', indications: ['Parkinson Disease', 'Acute Dystonia'], contraindications: ['Narrow-angle Glaucoma', 'Tardive Dyskinesia'] },
+                            { name: 'Trihexyphenidyl', features: 'Central antimuscarinic similar to benztropine.', choice: 'Adjunct therapy for Parkinsonism.', indications: ['Parkinson Disease'], contraindications: ['Narrow-angle Glaucoma', 'Prostatic Hypertrophy'] },
+                            { name: 'Glycopyrrolate', features: 'Quaternary, no CNS penetration.', choice: 'Preoperative secretion control, IBS.', indications: ['Peptic Ulcer Adjunct', 'Excess Drooling'], contraindications: ['Severe Ulcerative Colitis'] },
+                            { name: 'Oxybutynin', features: 'Selective for bladder M3 receptors.', choice: 'Urge urinary incontinence.', indications: ['Overactive Bladder'], contraindications: ['Urinary Retention', 'Gastric Retention'] },
+                            { name: 'Tolterodine', features: 'Bladder-selective antimuscarinic.', choice: 'Chronic overactive bladder.', indications: ['Overactive Bladder'], contraindications: ['Urinary Retention'] },
+                            { name: 'Homatropine/Tropicamide', features: 'Short-acting mydriatics.', choice: 'Mydriasis for eye exams.', indications: ['Ophthalmic Dilation'], contraindications: ['Narrow-angle Glaucoma'] },
+                            { name: 'Dicyclomine', features: 'GI-selective antispasmodic.', choice: 'Irritable bowel syndrome cramping.', indications: ['IBS'], contraindications: ['Severe Ulcerative Colitis', 'Obstructive Uropathy'] },
+                            { name: 'Hyoscyamine', features: 'GI antispasmodic, sublingual option.', choice: 'Adjunct for IBS symptom control.', indications: ['IBS'], contraindications: ['Narrow-angle Glaucoma'] }
                         ]
                     },
                     {
@@ -56,7 +70,7 @@ const drugData = [
                 ]
             },
             {
-                name: 'Adrenergic Agonists',
+                name: 'Adrenergic Agonists (Sympathomimetics)',
                 pharma_classes: [
                     {
                         name: 'Mixed α/β Agonists',
@@ -69,6 +83,33 @@ const drugData = [
                         ]
                     },
                     {
+                        name: 'Dopamine Receptor Agonists',
+                        mechanism: 'Dose-dependent stimulation of dopamine, β1, and α1 receptors.',
+                        side_effects: ['Arrhythmias', 'Tachycardia', 'Extravasation injury'],
+                        interactions: 'MAOIs and β-blockers modify response.',
+                        drugs: [
+                            { name: 'Dopamine', features: 'Low dose renal vasodilation, high dose α1.', choice: 'Unstable bradycardia, cardiogenic shock.', indications: ['Shock', 'Heart Failure'], contraindications: ['Pheochromocytoma', 'Tachyarrhythmias'] }
+                        ]
+                    },
+                    {
+                        name: 'β1-Selective Agonists',
+                        mechanism: 'Preferential stimulation of β1 receptors increases inotropy and chronotropy.',
+                        side_effects: ['Tachyarrhythmias', 'Angina', 'Hypertension'],
+                        interactions: 'Beta-blockers blunt effects.',
+                        drugs: [
+                            { name: 'Dobutamine', features: 'Predominantly β1 with mild β2/α1 activity.', choice: 'Acute decompensated heart failure.', indications: ['Heart Failure', 'Cardiac Stress Testing'], contraindications: ['Idiopathic Hypertrophic Subaortic Stenosis'] }
+                        ]
+                    },
+                    {
+                        name: 'Non-selective β Agonists',
+                        mechanism: 'Stimulate both β1 and β2 receptors strongly.',
+                        side_effects: ['Tachycardia', 'Arrhythmias', 'Hypotension from β2 vasodilation'],
+                        interactions: 'Beta-blockers antagonize effects.',
+                        drugs: [
+                            { name: 'Isoproterenol', features: 'Powerful β1/β2 agonist, minimal α activity.', choice: 'Refractory bradycardia with torsades from long QT.', indications: ['Bradycardia', 'Torsades de Pointes'], contraindications: ['Tachyarrhythmias'] }
+                        ]
+                    },
+                    {
                         name: 'Selective β2 Agonists',
                         mechanism: 'Selective stimulation of β2 receptors causing bronchodilation.',
                         side_effects: ['Tachycardia', 'Tremor', 'Hypokalemia'],
@@ -76,13 +117,43 @@ const drugData = [
                         drugs: [
                             { name: 'Albuterol', features: 'Short-acting, rescue medication.', choice: 'Acute bronchospasm.', indications: ['Asthma', 'COPD'], contraindications: ['Hypersensitivity'] },
                             { name: 'Salmeterol', features: 'Long-acting, maintenance therapy.', choice: 'Asthma controller (with ICS).', indications: ['Asthma', 'COPD'], contraindications: ['Asthma Monotherapy'] },
-                            { name: 'Formoterol', features: 'Long-acting with rapid onset.', choice: 'COPD maintenance therapy.', indications: ['Asthma', 'COPD'], contraindications: ['Asthma Monotherapy'] }
+                            { name: 'Formoterol', features: 'Long-acting with rapid onset.', choice: 'COPD maintenance therapy.', indications: ['Asthma', 'COPD'], contraindications: ['Asthma Monotherapy'] },
+                            { name: 'Terbutaline', features: 'β2 selective, systemic administration.', choice: 'Tocolysis and asthma exacerbations.', indications: ['Asthma', 'Preterm Labor'], contraindications: ['Cardiac Disease', 'Hyperthyroidism'] }
+                        ]
+                    },
+                    {
+                        name: 'α1-Selective Agonists',
+                        mechanism: 'Stimulate α1 receptors causing vasoconstriction and increased tone.',
+                        side_effects: ['Hypertension', 'Reflex bradycardia', 'Piloerection'],
+                        interactions: 'MAOIs enhance effects, α-blockers antagonize.',
+                        drugs: [
+                            { name: 'Phenylephrine', features: 'Pure α1 agonist.', choice: 'Hypotension, nasal decongestant, mydriasis.', indications: ['Hypotension', 'Nasal Congestion'], contraindications: ['Severe Hypertension'] },
+                            { name: 'Midodrine', features: 'Prodrug activating α1 receptors.', choice: 'Neurogenic orthostatic hypotension.', indications: ['Orthostatic Hypotension'], contraindications: ['Severe Organic Heart Disease', 'Urinary Retention'] }
+                        ]
+                    },
+                    {
+                        name: 'Indirect Sympathomimetics',
+                        mechanism: 'Increase synaptic catecholamines via release or reuptake inhibition.',
+                        side_effects: ['Tachycardia', 'Hypertension', 'CNS stimulation'],
+                        interactions: 'MAOIs and sympathomimetics potentiate hypertensive crises.',
+                        drugs: [
+                            { name: 'Amphetamine', features: 'Promotes release of catecholamines.', choice: 'ADHD, narcolepsy.', indications: ['ADHD', 'Narcolepsy'], contraindications: ['Severe Hypertension', 'Cardiac Disease'] },
+                            { name: 'Ephedrine', features: 'Mixed direct/indirect sympathomimetic.', choice: 'Nasal decongestant, hypotension in anesthesia.', indications: ['Hypotension', 'Nasal Congestion'], contraindications: ['Tachyarrhythmias'] }
+                        ]
+                    },
+                    {
+                        name: 'Reuptake Inhibitors',
+                        mechanism: 'Block catecholamine reuptake pumps at synaptic clefts.',
+                        side_effects: ['Arrhythmias', 'Hypertension', 'Seizures'],
+                        interactions: 'Sympathomimetics enhance toxicity.',
+                        drugs: [
+                            { name: 'Cocaine', features: 'Blocks NE reuptake, local anesthetic.', choice: 'Topical anesthetic for ENT procedures.', indications: ['Local Anesthesia'], contraindications: ['Beta Blocker Use', 'Cardiovascular Disease'] }
                         ]
                     }
                 ]
             },
             {
-                name: 'Adrenergic Antagonists',
+                name: 'Adrenergic Antagonists (Sympatholytics)',
                 pharma_classes: [
                     {
                         name: 'Beta Blockers',
@@ -94,7 +165,12 @@ const drugData = [
                             { name: 'Propranolol', features: 'Non-selective, crosses BBB.', choice: 'Anxiety, migraine prophylaxis.', indications: ['Hypertension', 'Anxiety', 'Migraine'], contraindications: ['Asthma', 'COPD', 'Heart Block'] },
                             { name: 'Metoprolol', features: 'β1-selective (cardioselective).', choice: 'Hypertension with asthma/COPD.', indications: ['Hypertension', 'Heart Failure'], contraindications: ['Decompensated Heart Failure', 'Heart Block'] },
                             { name: 'Atenolol', features: 'β1-selective, renally excreted.', choice: 'Hypertension, post-MI.', indications: ['Hypertension', 'Post-MI'], contraindications: ['Heart Block', 'Severe Bradycardia'] },
-                            { name: 'Carvedilol', features: 'Combined α/β blocker.', choice: 'Heart failure with proven mortality benefit.', indications: ['Heart Failure', 'Hypertension'], contraindications: ['Decompensated Heart Failure'] }
+                            { name: 'Carvedilol', features: 'Combined α/β blocker.', choice: 'Heart failure with proven mortality benefit.', indications: ['Heart Failure', 'Hypertension'], contraindications: ['Decompensated Heart Failure'] },
+                            { name: 'Esmolol', features: 'Ultra–short acting β1 blocker.', choice: 'Acute SVT, intraoperative control.', indications: ['Supraventricular Tachycardia', 'Thyroid Storm'], contraindications: ['Sinus Bradycardia', 'Heart Block'] },
+                            { name: 'Timolol', features: 'Non-selective, ophthalmic use.', choice: 'Open-angle glaucoma topical therapy.', indications: ['Glaucoma'], contraindications: ['Asthma', 'COPD'] },
+                            { name: 'Nadolol', features: 'Non-selective, long half-life.', choice: 'Portal hypertension variceal prophylaxis.', indications: ['Hypertension', 'Variceal Bleeding Prophylaxis'], contraindications: ['Asthma', 'Heart Block'] },
+                            { name: 'Nebivolol', features: 'β1 blocker with NO-mediated vasodilation.', choice: 'Hypertension with metabolic syndrome.', indications: ['Hypertension'], contraindications: ['Severe Hepatic Impairment'] },
+                            { name: 'Labetalol', features: 'α1 and β blockade, IV or PO.', choice: 'Hypertensive emergency, pregnancy.', indications: ['Hypertensive Emergency', 'Pregnancy Hypertension'], contraindications: ['Asthma', 'Heart Block'] }
                         ]
                     },
                     {
@@ -104,7 +180,22 @@ const drugData = [
                         interactions: 'Other antihypertensives (additive effects).',
                         drugs: [
                             { name: 'Prazosin', features: 'Selective α1-blocker.', choice: 'Hypertension, BPH, PTSD nightmares.', indications: ['Hypertension', 'BPH', 'PTSD'], contraindications: ['Hypotension'] },
-                            { name: 'Doxazosin', features: 'Long-acting α1-blocker.', choice: 'BPH with hypertension.', indications: ['Hypertension', 'BPH'], contraindications: ['Hypotension'] }
+                            { name: 'Doxazosin', features: 'Long-acting α1-blocker.', choice: 'BPH with hypertension.', indications: ['Hypertension', 'BPH'], contraindications: ['Hypotension'] },
+                            { name: 'Terazosin', features: 'α1 blocker with smooth muscle relaxation.', choice: 'BPH symptom relief.', indications: ['BPH'], contraindications: ['Hypotension'] },
+                            { name: 'Tamsulosin', features: 'Uroselective α1A antagonist.', choice: 'BPH with minimal blood pressure effect.', indications: ['BPH'], contraindications: ['Sulfa Allergy'] },
+                            { name: 'Phenoxybenzamine', features: 'Irreversible non-selective α blocker.', choice: 'Preoperative pheochromocytoma preparation.', indications: ['Pheochromocytoma'], contraindications: ['Angina', 'Severe Hypotension'] },
+                            { name: 'Phentolamine', features: 'Reversible non-selective α blocker.', choice: 'Hypertensive crisis from MAOI/tyramine.', indications: ['Pheochromocytoma', 'Cocaine Extravasation'], contraindications: ['Coronary Artery Disease'] }
+                        ]
+                    },
+                    {
+                        name: 'Central α2 Agonists',
+                        mechanism: 'Stimulate central α2 receptors to reduce sympathetic outflow.',
+                        side_effects: ['Sedation', 'Rebound hypertension', 'Dry mouth'],
+                        interactions: 'CNS depressants enhance sedation.',
+                        drugs: [
+                            { name: 'Clonidine', features: 'Lipophilic, rapid onset oral/patch.', choice: 'Resistant hypertension, ADHD adjunct.', indications: ['Hypertension', 'ADHD'], contraindications: ['Depression', 'Severe Coronary Insufficiency'] },
+                            { name: 'Methyldopa', features: 'Converted to α-methylnorepinephrine.', choice: 'Hypertension during pregnancy.', indications: ['Pregnancy Hypertension'], contraindications: ['Hepatic Disease', 'MAOI Therapy'] },
+                            { name: 'Tizanidine', features: 'Imidazoline derivative, muscle relaxant.', choice: 'Spasticity management.', indications: ['Muscle Spasticity'], contraindications: ['Severe Hepatic Impairment'] }
                         ]
                     }
                 ]
@@ -139,6 +230,26 @@ const drugData = [
                             { name: 'Losartan', features: 'First ARB, active metabolite.', choice: 'ACE inhibitor alternative, cough intolerance.', indications: ['Hypertension', 'Diabetic Nephropathy'], contraindications: ['Pregnancy'] },
                             { name: 'Valsartan', features: 'Proven mortality benefit in HF.', choice: 'Heart failure with ACE inhibitor intolerance.', indications: ['Hypertension', 'Heart Failure'], contraindications: ['Pregnancy'] },
                             { name: 'Irbesartan', features: 'Excellent renal protection.', choice: 'Diabetic nephropathy protection.', indications: ['Hypertension', 'Diabetic Nephropathy'], contraindications: ['Pregnancy'] }
+                        ]
+                    },
+                    {
+                        name: 'Direct Vasodilators',
+                        mechanism: 'Directly relax arteriolar smooth muscle to reduce afterload (± preload).',
+                        side_effects: ['Reflex tachycardia', 'Fluid retention', 'Headache', 'Hypertrichosis (minoxidil)'],
+                        interactions: 'Often require concomitant β-blocker/diuretic to blunt reflex responses.',
+                        drugs: [
+                            { name: 'Hydralazine', features: 'Increases cGMP -> smooth muscle relaxation.', choice: 'Severe HTN, HF (with nitrates) in pregnancy or AA patients.', indications: ['Severe Hypertension', 'Heart Failure'], contraindications: ['Coronary Artery Disease', 'Rheumatic Heart Disease in Mitral Stenosis'] },
+                            { name: 'Minoxidil', features: 'Opens K+ channels -> hyperpolarization.', choice: 'Refractory hypertension, topical for alopecia.', indications: ['Refractory Hypertension', 'Alopecia'], contraindications: ['Pheochromocytoma'] }
+                        ]
+                    },
+                    {
+                        name: 'Hypertensive Emergency Agents',
+                        mechanism: 'Rapidly lower blood pressure via potent arterial dilatation and renal vasodilation.',
+                        side_effects: ['Hypotension', 'Cyanide toxicity (nitroprusside)', 'Tachycardia', 'Nausea'],
+                        interactions: 'Additive hypotension with other vasodilators.',
+                        drugs: [
+                            { name: 'Sodium Nitroprusside', features: 'IV, short acting, releases NO and cyanide.', choice: 'Hypertensive emergencies with acute target-organ damage.', indications: ['Hypertensive Emergency'], contraindications: ['Renal Failure without thiosulfate'] },
+                            { name: 'Fenoldopam', features: 'D1 agonist -> renal vasodilation, natriuresis.', choice: 'Hypertensive emergency with acute kidney injury.', indications: ['Hypertensive Emergency', 'Postoperative Hypertension'], contraindications: ['Sulfite Sensitivity'] }
                         ]
                     },
                     {
@@ -230,6 +341,16 @@ const drugData = [
                             { name: 'Amiodarone', features: 'Complex pharmacology, very long half-life.', choice: 'Life-threatening arrhythmias.', indications: ['Atrial Fibrillation', 'Ventricular Arrhythmias'], contraindications: ['Iodine Allergy', 'Heart Block'] },
                             { name: 'Sotalol', features: 'Combined beta-blocking and Class III effects.', choice: 'Atrial fibrillation with rate control.', indications: ['Atrial Fibrillation', 'Ventricular Tachycardia'], contraindications: ['Asthma', 'Long QT', 'Heart Block'] }
                         ]
+                    },
+                    {
+                        name: 'Miscellaneous (Class V)',
+                        mechanism: 'Act through unique pathways to acutely slow AV node conduction or stabilize myocardium.',
+                        side_effects: ['Flushing (adenosine)', 'Chest discomfort', 'Hypotension', 'Bradycardia'],
+                        interactions: 'Dipyridamole and carbamazepine potentiate adenosine; methylxanthines antagonize.',
+                        drugs: [
+                            { name: 'Adenosine', features: 'Very short acting, activates K+ efflux in AV node.', choice: 'Acute supraventricular tachycardia conversion.', indications: ['Paroxysmal SVT'], contraindications: ['Second/Third-Degree AV Block', 'Asthma'] },
+                            { name: 'Magnesium Sulfate', features: 'Stabilizes cardiac membrane, suppresses early afterdepolarizations.', choice: 'Torsades de pointes, digoxin toxicity.', indications: ['Torsades de Pointes', 'Digoxin Toxicity'], contraindications: ['AV Block', 'Renal Failure'] }
+                        ]
                     }
                 ]
             },
@@ -247,6 +368,44 @@ const drugData = [
                             { name: 'Rosuvastatin', features: 'Most potent statin.', choice: 'High-intensity statin therapy.', indications: ['Hyperlipidemia'], contraindications: ['Active Liver Disease', 'Pregnancy'] },
                             { name: 'Pravastatin', features: 'Hydrophilic, fewer interactions.', choice: 'Multiple drug interactions concern.', indications: ['Hyperlipidemia'], contraindications: ['Active Liver Disease', 'Pregnancy'] }
                         ]
+                    },
+                    {
+                        name: 'Cholesterol Absorption Inhibitors',
+                        mechanism: 'Block NPC1L1 transporter at intestinal brush border to reduce cholesterol absorption.',
+                        side_effects: ['Diarrhea', 'Elevated LFTs (with statins)'],
+                        interactions: 'Bile acid resins decrease ezetimibe absorption.',
+                        drugs: [
+                            { name: 'Ezetimibe', features: 'Add-on for LDL reduction when statins insufficient.', choice: 'Hyperlipidemia intolerant of high-dose statin.', indications: ['Hyperlipidemia'], contraindications: ['Active Liver Disease'] }
+                        ]
+                    },
+                    {
+                        name: 'Bile Acid Sequestrants',
+                        mechanism: 'Bind bile acids in intestine, forcing hepatic conversion of cholesterol to bile acids.',
+                        side_effects: ['GI distress', 'Decreased fat-soluble vitamins'],
+                        interactions: 'Reduce absorption of many drugs (digoxin, warfarin).',
+                        drugs: [
+                            { name: 'Cholestyramine', features: 'Powder formulation, lowers LDL modestly.', choice: 'Hyperlipidemia in patients intolerant to statins.', indications: ['Hyperlipidemia', 'Pruritus from Cholestasis'], contraindications: ['Complete Biliary Obstruction'] },
+                            { name: 'Colesevelam', features: 'Tablet, better tolerated.', choice: 'Adjunct LDL lowering with fewer GI effects.', indications: ['Hyperlipidemia'], contraindications: ['Triglycerides >500 mg/dL'] }
+                        ]
+                    },
+                    {
+                        name: 'Fibrates',
+                        mechanism: 'Activate PPAR-α to increase lipoprotein lipase activity and lower triglycerides.',
+                        side_effects: ['Myopathy (especially with statins)', 'Gallstones'],
+                        interactions: 'Gemfibrozil increases statin levels via OATP inhibition.',
+                        drugs: [
+                            { name: 'Gemfibrozil', features: 'Potent TG lowering.', choice: 'Severe hypertriglyceridemia to prevent pancreatitis.', indications: ['Hypertriglyceridemia'], contraindications: ['Gallbladder Disease', 'Severe Renal/Hepatic Dysfunction'] },
+                            { name: 'Fenofibrate', features: 'Safer with statins, once-daily.', choice: 'Hypertriglyceridemia with mixed dyslipidemia.', indications: ['Hypertriglyceridemia'], contraindications: ['Severe Renal Impairment'] }
+                        ]
+                    },
+                    {
+                        name: 'Niacin',
+                        mechanism: 'Inhibits hepatic VLDL synthesis and adipose lipolysis, raising HDL.',
+                        side_effects: ['Flushing', 'Hyperglycemia', 'Hyperuricemia', 'Hepatotoxicity'],
+                        interactions: 'Additive myopathy with statins.',
+                        drugs: [
+                            { name: 'Niacin (Vitamin B3)', features: 'Most effective agent for raising HDL.', choice: 'Combined dyslipidemia with low HDL.', indications: ['Mixed Dyslipidemia'], contraindications: ['Gout', 'Active Peptic Ulcer Disease'] }
+                        ]
                     }
                 ]
             },
@@ -261,6 +420,15 @@ const drugData = [
                         interaction_explanation: 'DIURETICS: MECHANISM - Digoxin toxicity is potentiated by hypokalemia because potassium competes with digoxin for binding to Na+/K+-ATPase. CONSEQUENCE - Low potassium increases digoxin binding and toxicity, leading to dangerous arrhythmias. AMIODARONE/QUINIDINE: MECHANISM - These drugs inhibit P-glycoprotein, reducing digoxin clearance. CONSEQUENCE - Increased digoxin levels requiring dose reduction.',
                         drugs: [
                             { name: 'Digoxin', features: 'Narrow therapeutic window, requires monitoring.', choice: 'Atrial fibrillation rate control, heart failure.', indications: ['Atrial Fibrillation', 'Heart Failure'], contraindications: ['Ventricular Arrhythmias', 'Hypertrophic Cardiomyopathy'] }
+                        ]
+                    },
+                    {
+                        name: 'Phosphodiesterase-3 Inhibitors',
+                        mechanism: 'Inhibit PDE3 to increase cAMP in cardiomyocytes and vascular smooth muscle, enhancing inotropy and vasodilation.',
+                        side_effects: ['Arrhythmias', 'Hypotension', 'Thrombocytopenia'],
+                        interactions: 'Additive hypotension with other vasodilators.',
+                        drugs: [
+                            { name: 'Milrinone', features: 'IV inotrope with vasodilatory properties.', choice: 'Acute decompensated heart failure with low output.', indications: ['Acute Heart Failure'], contraindications: ['Severe Valvular Disease'] }
                         ]
                     }
                 ]
@@ -429,6 +597,15 @@ const drugData = [
                             { name: 'Ipratropium', features: 'Short-acting muscarinic antagonist.', choice: 'COPD, especially with β2-agonist.', indications: ['COPD', 'Asthma'], contraindications: ['Soy/Peanut Allergy'] },
                             { name: 'Tiotropium', features: 'Once-daily long-acting anticholinergic.', choice: 'COPD maintenance therapy.', indications: ['COPD'], contraindications: ['Narrow-angle Glaucoma'] }
                         ]
+                    },
+                    {
+                        name: 'Methylxanthines',
+                        mechanism: 'Inhibit phosphodiesterase to increase cAMP and block adenosine receptors, causing bronchodilation.',
+                        side_effects: ['Narrow therapeutic index', 'Arrhythmias', 'Seizures'],
+                        interactions: 'CYP inhibitors (ciprofloxacin, cimetidine) increase toxicity; smoking induces metabolism.',
+                        drugs: [
+                            { name: 'Theophylline', features: 'Oral bronchodilator with CNS and cardiac stimulation.', choice: 'Severe asthma exacerbations unresponsive to standard therapy.', indications: ['Asthma', 'COPD'], contraindications: ['Cardiac Arrhythmias', 'Seizure Disorders'] }
+                        ]
                     }
                 ]
             },
@@ -454,6 +631,39 @@ const drugData = [
                         drugs: [
                             { name: 'Montelukast', features: 'Oral leukotriene receptor antagonist.', choice: 'Asthma with allergic rhinitis.', indications: ['Asthma', 'Allergic Rhinitis'], contraindications: ['Hypersensitivity'] },
                             { name: 'Zileuton', features: '5-lipoxygenase inhibitor.', choice: 'Aspirin-sensitive asthma.', indications: ['Asthma'], contraindications: ['Liver Disease'] }
+                        ]
+                    },
+                    {
+                        name: 'Mast Cell Stabilizers',
+                        mechanism: 'Prevent calcium-dependent mast cell degranulation.',
+                        side_effects: ['Throat irritation', 'Cough', 'Unpleasant taste'],
+                        interactions: 'Minimal systemic interactions.',
+                        drugs: [
+                            { name: 'Cromolyn Sodium', features: 'Inhaled prophylactic agent.', choice: 'Exercise- or allergen-induced asthma prevention.', indications: ['Asthma Prophylaxis'], contraindications: ['Acute Asthma Exacerbation'] }
+                        ]
+                    },
+                    {
+                        name: 'Targeted Biologics',
+                        mechanism: 'Monoclonal antibodies neutralize IgE or cytokines driving allergic inflammation.',
+                        side_effects: ['Injection site reactions', 'Anaphylaxis (rare)'],
+                        interactions: 'Live vaccines contraindicated while on therapy.',
+                        drugs: [
+                            { name: 'Omalizumab', features: 'Binds circulating IgE, downregulates Fc epsilon RI.', choice: 'Severe allergic asthma uncontrolled on ICS/LABA.', indications: ['Severe Allergic Asthma'], contraindications: ['Acute Asthma Deterioration'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Airway Clearance Agents',
+                pharma_classes: [
+                    {
+                        name: 'Mucolytics',
+                        mechanism: 'Reduce mucus viscosity to improve airway clearance.',
+                        side_effects: ['Bronchospasm', 'Chest tightness', 'Nausea'],
+                        interactions: 'May enhance effects of other inhaled therapies by improving deposition.',
+                        drugs: [
+                            { name: 'N-Acetylcysteine', features: 'Breaks disulfide bonds in mucus; antidote for acetaminophen toxicity.', choice: 'Cystic fibrosis mucus plugging, COPD exacerbations.', indications: ['Cystic Fibrosis', 'COPD', 'Acetaminophen Toxicity'], contraindications: ['Active GI Bleeding'] },
+                            { name: 'Dornase Alfa', features: 'Recombinant DNase I, reduces DNA viscosity in sputum.', choice: 'Daily maintenance in cystic fibrosis.', indications: ['Cystic Fibrosis'], contraindications: ['Hypersensitivity'] }
                         ]
                     }
                 ]
@@ -487,6 +697,43 @@ const drugData = [
                             { name: 'Ceftriaxone (3rd gen)', features: 'CNS penetration, broad spectrum.', choice: 'Meningitis, gonorrhea.', indications: ['Meningitis', 'Gonorrhea'], contraindications: ['Cephalosporin Allergy'] },
                             { name: 'Cefepime (4th gen)', features: 'Anti-pseudomonal activity.', choice: 'Hospital-acquired pneumonia.', indications: ['Hospital-Acquired Pneumonia'], contraindications: ['Cephalosporin Allergy'] }
                         ]
+                    },
+                    {
+                        name: 'Carbapenems',
+                        mechanism: 'Beta-lactams resistant to most beta-lactamases, broad-spectrum activity.',
+                        side_effects: ['Seizures (imipenem)', 'GI upset', 'Rash'],
+                        interactions: 'Valproate levels decreased, raising seizure risk.',
+                        drugs: [
+                            { name: 'Imipenem/Cilastatin', features: 'Cilastatin prevents renal dehydropeptidase degradation.', choice: 'Severe polymicrobial infections.', indications: ['Severe Nosocomial Infections'], contraindications: ['History of Seizures'] },
+                            { name: 'Meropenem', features: 'Lower seizure risk, stable to dehydropeptidase.', choice: 'Resistant gram-negative infections.', indications: ['Resistant Gram-negative Infections'], contraindications: ['Hypersensitivity'] }
+                        ]
+                    },
+                    {
+                        name: 'Monobactams',
+                        mechanism: 'Monocyclic beta-lactam active against gram-negative rods.',
+                        side_effects: ['Rash', 'Elevated liver enzymes'],
+                        interactions: 'Minimal cross-reactivity with other beta-lactams.',
+                        drugs: [
+                            { name: 'Aztreonam', features: 'Safe in penicillin allergy, lacks gram-positive/anaerobe activity.', choice: 'Gram-negative infections in beta-lactam allergy.', indications: ['Gram-negative Infections'], contraindications: ['Hypersensitivity'] }
+                        ]
+                    },
+                    {
+                        name: 'Glycopeptides',
+                        mechanism: 'Bind D-Ala-D-Ala termini to inhibit peptidoglycan cross-linking.',
+                        side_effects: ['Red man syndrome', 'Nephrotoxicity', 'Ototoxicity'],
+                        interactions: 'Other nephrotoxic drugs increase toxicity.',
+                        drugs: [
+                            { name: 'Vancomycin', features: 'IV for MRSA, oral for C. difficile.', choice: 'Serious gram-positive infections.', indications: ['MRSA Infections', 'C. difficile Colitis'], contraindications: ['Hypersensitivity'] }
+                        ]
+                    },
+                    {
+                        name: 'Lipopeptides',
+                        mechanism: 'Insert into gram-positive cell membranes causing depolarization and rapid cell death.',
+                        side_effects: ['Myopathy', 'Eosinophilic pneumonia'],
+                        interactions: 'Statins increase risk of myopathy.',
+                        drugs: [
+                            { name: 'Daptomycin', features: 'Bactericidal against MRSA and VRE, inactivated by lung surfactant.', choice: 'Right-sided endocarditis, complicated skin infections.', indications: ['MRSA Infections', 'VRE Infections'], contraindications: ['Pneumonia'] }
+                        ]
                     }
                 ]
             },
@@ -501,7 +748,8 @@ const drugData = [
                         drugs: [
                             { name: 'Gentamicin', features: 'Broad-spectrum, once-daily dosing.', choice: 'Gram-negative sepsis.', indications: ['Gram-negative Infections', 'Endocarditis'], contraindications: ['Pregnancy', 'Myasthenia Gravis'] },
                             { name: 'Tobramycin', features: 'Anti-pseudomonal activity.', choice: 'Pseudomonas infections.', indications: ['Pseudomonas Infections'], contraindications: ['Pregnancy', 'Renal Impairment'] },
-                            { name: 'Amikacin', features: 'Resistant to most aminoglycoside-modifying enzymes.', choice: 'MDR gram-negative infections.', indications: ['MDR Gram-negative Infections'], contraindications: ['Pregnancy', 'Hearing Loss'] }
+                            { name: 'Amikacin', features: 'Resistant to most aminoglycoside-modifying enzymes.', choice: 'MDR gram-negative infections.', indications: ['MDR Gram-negative Infections'], contraindications: ['Pregnancy', 'Hearing Loss'] },
+                            { name: 'Streptomycin', features: 'Oldest agent, significant ototoxicity.', choice: 'Second-line tuberculosis, plague.', indications: ['Tuberculosis', 'Yersinia pestis Infection'], contraindications: ['Pregnancy', 'Myasthenia Gravis'] }
                         ]
                     },
                     {
@@ -533,6 +781,24 @@ const drugData = [
                         interactions: 'Inhibits CYP enzymes.',
                         drugs: [
                             { name: 'Chloramphenicol', features: 'Broad spectrum, CNS penetration.', choice: 'Bacterial meningitis (when others contraindicated).', indications: ['Bacterial Meningitis'], contraindications: ['Pregnancy', 'G6PD Deficiency'] }
+                        ]
+                    },
+                    {
+                        name: 'Lincosamides',
+                        mechanism: 'Bind 50S ribosomal subunit to inhibit peptide transfer.',
+                        side_effects: ['C. difficile colitis', 'Diarrhea', 'Rash'],
+                        interactions: 'Antagonistic when combined with macrolides.',
+                        drugs: [
+                            { name: 'Clindamycin', features: 'Excellent anaerobic coverage above diaphragm.', choice: 'Aspiration pneumonia, oral infections, toxin suppression.', indications: ['Anaerobic Infections', 'Streptococcal Toxic Shock'], contraindications: ['History of C. difficile Colitis'] }
+                        ]
+                    },
+                    {
+                        name: 'Oxazolidinones',
+                        mechanism: 'Prevent formation of the initiation complex on the 50S ribosomal subunit.',
+                        side_effects: ['Thrombocytopenia', 'Peripheral neuropathy', 'Serotonin syndrome'],
+                        interactions: 'MAO inhibition potentiates serotonergic drugs.',
+                        drugs: [
+                            { name: 'Linezolid', features: 'Oral option for resistant gram-positive organisms.', choice: 'MRSA or VRE infections.', indications: ['MRSA Infections', 'VRE Infections'], contraindications: ['Uncontrolled Hypertension', 'Serotonergic Therapy without adjustment'] }
                         ]
                     }
                 ]
@@ -887,6 +1153,53 @@ const drugData = [
                         ]
                     }
                 ]
+            },
+            {
+                name: 'Inflammatory Bowel Disease',
+                pharma_classes: [
+                    {
+                        name: 'Aminosalicylates',
+                        mechanism: 'Deliver 5-aminosalicylic acid to inflamed colonic mucosa to inhibit prostaglandins and leukotrienes.',
+                        side_effects: ['Headache', 'Nausea', 'Interstitial nephritis (rare)'],
+                        interactions: 'Concurrent NSAIDs increase renal risk.',
+                        drugs: [
+                            { name: 'Mesalamine', features: 'Multiple formulations for targeted release.', choice: 'Mild to moderate ulcerative colitis maintenance.', indications: ['Ulcerative Colitis'], contraindications: ['Salicylate Allergy'] }
+                        ]
+                    },
+                    {
+                        name: 'Biologic Agents',
+                        mechanism: 'Monoclonal antibodies neutralize TNF-α to reduce intestinal inflammation.',
+                        side_effects: ['Infection risk', 'Infusion reactions', 'Reactivation of latent TB'],
+                        interactions: 'Live vaccines contraindicated.',
+                        drugs: [
+                            { name: 'Infliximab', features: 'Chimeric anti-TNF antibody.', choice: 'Moderate to severe Crohn disease or ulcerative colitis.', indications: ['Crohn Disease', 'Ulcerative Colitis'], contraindications: ['Active Infection', 'Latent TB without prophylaxis'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Portal and Hepatic Disorders',
+                pharma_classes: [
+                    {
+                        name: 'Somatostatin Analogs',
+                        mechanism: 'Decrease splanchnic blood flow and hormone secretion.',
+                        side_effects: ['Gallstones', 'Steatorrhea', 'Glucose dysregulation'],
+                        interactions: 'May reduce absorption of fat-soluble drugs.',
+                        drugs: [
+                            { name: 'Octreotide', features: 'Long-acting somatostatin analog.', choice: 'Variceal bleeding control, hormone-secreting tumors.', indications: ['Esophageal Varices', 'Carcinoid Syndrome', 'VIPoma'], contraindications: ['Hypersensitivity'] }
+                        ]
+                    },
+                    {
+                        name: 'Ammonia-Lowering Agents',
+                        mechanism: 'Reduce intestinal ammonia production and absorption.',
+                        side_effects: ['Bloating', 'Diarrhea', 'Electrolyte disturbances'],
+                        interactions: 'Additive diarrhea with other laxatives.',
+                        drugs: [
+                            { name: 'Lactulose', features: 'Non-absorbable disaccharide acidifying colon.', choice: 'First-line therapy for hepatic encephalopathy.', indications: ['Hepatic Encephalopathy'], contraindications: ['Galactosemia'] },
+                            { name: 'Rifaximin', features: 'Poorly absorbed oral antibiotic.', choice: 'Adjunct to lactulose to reduce ammonia-producing flora.', indications: ['Hepatic Encephalopathy'], contraindications: ['Severe Hepatic Impairment (caution)'] }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -1021,6 +1334,15 @@ const drugData = [
                         drugs: [
                             { name: 'Acetazolamide', features: 'Weak diuretic, crosses blood-brain barrier.', choice: 'Glaucoma, altitude sickness.', indications: ['Glaucoma', 'Altitude Sickness', 'Epilepsy'], contraindications: ['Sulfonamide Allergy', 'Severe Renal Disease'] }
                         ]
+                    },
+                    {
+                        name: 'Osmotic Diuretics',
+                        mechanism: 'Increase tubular fluid osmolarity, drawing free water out of tissues and into filtrate.',
+                        side_effects: ['Pulmonary edema', 'Dehydration', 'Hypernatremia'],
+                        interactions: 'Additive nephrotoxicity with other nephrotoxic agents.',
+                        drugs: [
+                            { name: 'Mannitol', features: 'IV sugar alcohol, does not cross BBB.', choice: 'Increased intracranial or intraocular pressure.', indications: ['Cerebral Edema', 'Acute Glaucoma', 'Drug Overdose'], contraindications: ['Anuria', 'Heart Failure', 'Pulmonary Edema'] }
+                        ]
                     }
                 ]
             },
@@ -1119,6 +1441,16 @@ const drugData = [
                         ]
                     },
                     {
+                        name: 'Parenteral Direct Thrombin Inhibitors',
+                        mechanism: 'Directly inhibit thrombin independent of antithrombin III.',
+                        side_effects: ['Bleeding', 'Hematoma', 'GI upset'],
+                        interactions: 'Additive bleeding with antiplatelets/anticoagulants.',
+                        drugs: [
+                            { name: 'Argatroban', features: 'IV, hepatic clearance.', choice: 'Anticoagulation in HIT.', indications: ['Heparin-Induced Thrombocytopenia'], contraindications: ['Severe Hepatic Impairment'] },
+                            { name: 'Bivalirudin', features: 'Short half-life, renal clearance.', choice: 'PCI in patients with HIT history.', indications: ['Percutaneous Coronary Intervention', 'HIT'], contraindications: ['Severe Renal Impairment'] }
+                        ]
+                    },
+                    {
                         name: 'Direct Oral Anticoagulants (DOACs)',
                         mechanism: 'Direct inhibition of thrombin (dabigatran) or factor Xa (rivaroxaban, apixaban).',
                         side_effects: ['Bleeding', 'GI upset', 'No easy reversal (except dabigatran)'],
@@ -1155,6 +1487,27 @@ const drugData = [
                             { name: 'Clopidogrel', features: 'Prodrug, requires CYP2C19 activation.', choice: 'Dual antiplatelet therapy with aspirin.', indications: ['ACS', 'PCI', 'Stroke Prevention'], contraindications: ['Active Bleeding', 'Severe Hepatic Impairment'] },
                             { name: 'Ticagrelor', features: 'Reversible inhibitor, more potent than clopidogrel.', choice: 'ACS, high thrombotic risk patients.', indications: ['ACS', 'High-Risk CAD'], contraindications: ['Active Bleeding', 'History of ICH'] }
                         ]
+                    },
+                    {
+                        name: 'GPIIb/IIIa Inhibitors',
+                        mechanism: 'Block platelet glycoprotein IIb/IIIa receptors, preventing fibrinogen binding and aggregation.',
+                        side_effects: ['Bleeding', 'Thrombocytopenia'],
+                        interactions: 'Additive bleeding with anticoagulants.',
+                        drugs: [
+                            { name: 'Abciximab', features: 'Monoclonal antibody, reversible with platelet transfusion.', choice: 'PCI with high thrombotic risk.', indications: ['Percutaneous Coronary Intervention'], contraindications: ['Active Bleeding', 'Recent Stroke'] },
+                            { name: 'Eptifibatide', features: 'Peptide inhibitor, renal clearance.', choice: 'NSTEMI/UA undergoing PCI.', indications: ['Acute Coronary Syndrome'], contraindications: ['Renal Failure', 'Active Bleeding'] },
+                            { name: 'Tirofiban', features: 'Non-peptide small molecule.', choice: 'Unstable angina with planned PCI.', indications: ['Acute Coronary Syndrome'], contraindications: ['Active Bleeding', 'History of Intracranial Hemorrhage'] }
+                        ]
+                    },
+                    {
+                        name: 'Phosphodiesterase Inhibitors',
+                        mechanism: 'Increase cAMP in platelets and cause vasodilation to reduce aggregation.',
+                        side_effects: ['Headache', 'Flushing', 'Hypotension'],
+                        interactions: 'Other vasodilators increase risk of symptomatic hypotension.',
+                        drugs: [
+                            { name: 'Cilostazol', features: 'Also causes vasodilation, improves claudication distance.', choice: 'Peripheral arterial disease with claudication.', indications: ['Peripheral Arterial Disease'], contraindications: ['Heart Failure'] },
+                            { name: 'Dipyridamole', features: 'Also adenosine reuptake inhibitor.', choice: 'Stroke prevention with aspirin, stress testing.', indications: ['Stroke Prevention', 'Pharmacologic Stress Testing'], contraindications: ['Hypotension', 'Unstable Angina'] }
+                        ]
                     }
                 ]
             },
@@ -1172,6 +1525,16 @@ const drugData = [
                         ]
                     },
                     {
+                        name: 'Antitumor Antibiotics',
+                        mechanism: 'Intercalate DNA or generate free radicals to inhibit replication.',
+                        side_effects: ['Cardiotoxicity (doxorubicin)', 'Pulmonary fibrosis (bleomycin)', 'Myelosuppression'],
+                        interactions: 'Dexrazoxane mitigates doxorubicin cardiotoxicity.',
+                        drugs: [
+                            { name: 'Doxorubicin', features: 'Anthracycline generating free radicals.', choice: 'Breast cancer, lymphomas.', indications: ['Breast Cancer', 'Lymphoma'], contraindications: ['Pre-existing Cardiac Dysfunction'] },
+                            { name: 'Bleomycin', features: 'Induces DNA strand breaks via free radicals.', choice: 'Testicular cancer, Hodgkin lymphoma.', indications: ['Testicular Cancer', 'Hodgkin Lymphoma'], contraindications: ['Pulmonary Fibrosis'] }
+                        ]
+                    },
+                    {
                         name: 'Antimetabolites',
                         mechanism: 'Mimic normal metabolites, interfere with DNA/RNA synthesis.',
                         side_effects: ['Myelosuppression', 'Mucositis', 'Hepatotoxicity'],
@@ -1179,6 +1542,37 @@ const drugData = [
                         drugs: [
                             { name: 'Methotrexate', features: 'Folate analog, requires leucovorin rescue.', choice: 'ALL, rheumatoid arthritis.', indications: ['Leukemia', 'Rheumatoid Arthritis', 'Psoriasis'], contraindications: ['Pregnancy', 'Severe Renal/Hepatic Impairment'] },
                             { name: '5-Fluorouracil (5-FU)', features: 'Pyrimidine analog, S-phase specific.', choice: 'Colorectal, breast cancer.', indications: ['Colorectal Cancer', 'Breast Cancer'], contraindications: ['DPD Deficiency', 'Pregnancy'] }
+                        ]
+                    },
+                    {
+                        name: 'Microtubule Inhibitors',
+                        mechanism: 'Disrupt microtubule dynamics to arrest cells in metaphase.',
+                        side_effects: ['Peripheral neuropathy', 'Myelosuppression', 'Alopecia'],
+                        interactions: 'Strong CYP3A4 inhibitors increase toxicity.',
+                        drugs: [
+                            { name: 'Vincristine', features: 'Prevents microtubule polymerization.', choice: 'Leukemias, lymphomas (part of CHOP).', indications: ['Leukemia', 'Lymphoma'], contraindications: ['Charcot-Marie-Tooth Disease'] },
+                            { name: 'Paclitaxel', features: 'Stabilizes microtubules, preventing depolymerization.', choice: 'Breast and ovarian cancers.', indications: ['Breast Cancer', 'Ovarian Cancer'], contraindications: ['Baseline Neutropenia'] }
+                        ]
+                    },
+                    {
+                        name: 'Topoisomerase Inhibitors',
+                        mechanism: 'Inhibit topoisomerase II or I to prevent DNA unwinding and replication.',
+                        side_effects: ['Myelosuppression', 'Alopecia', 'Diarrhea (irinotecan)'],
+                        interactions: 'CYP3A4 modulators alter irinotecan levels.',
+                        drugs: [
+                            { name: 'Etoposide', features: 'Topoisomerase II inhibitor.', choice: 'Testicular cancer, small cell lung cancer.', indications: ['Testicular Cancer', 'Small Cell Lung Cancer'], contraindications: ['Severe Myelosuppression'] },
+                            { name: 'Irinotecan', features: 'Topoisomerase I inhibitor, prodrug.', choice: 'Metastatic colorectal cancer (FOLFIRI).', indications: ['Colorectal Cancer'], contraindications: ['UGT1A1 Deficiency'] }
+                        ]
+                    },
+                    {
+                        name: 'Targeted Therapies',
+                        mechanism: 'Monoclonal antibodies or tyrosine kinase inhibitors directed at specific oncogenic drivers.',
+                        side_effects: ['Cardiotoxicity (trastuzumab)', 'Fluid retention (imatinib)', 'Bleeding (bevacizumab)'],
+                        interactions: 'Concomitant cardiotoxic or anticoagulant therapy increases adverse effects.',
+                        drugs: [
+                            { name: 'Imatinib', features: 'BCR-ABL tyrosine kinase inhibitor.', choice: 'Chronic myelogenous leukemia.', indications: ['Chronic Myelogenous Leukemia', 'GIST'], contraindications: ['Severe Hepatic Impairment'] },
+                            { name: 'Trastuzumab', features: 'HER2/neu monoclonal antibody.', choice: 'HER2-positive breast cancer.', indications: ['Breast Cancer'], contraindications: ['Pre-existing Cardiac Dysfunction'] },
+                            { name: 'Bevacizumab', features: 'VEGF inhibitor reducing angiogenesis.', choice: 'Colorectal, renal cell carcinoma.', indications: ['Colorectal Cancer', 'Renal Cell Carcinoma'], contraindications: ['Uncontrolled Hypertension', 'Recent Surgery'] }
                         ]
                     }
                 ]
@@ -1226,7 +1620,38 @@ const drugData = [
                         interaction_explanation: 'OTHER IMMUNOSUPPRESSANTS: MECHANISM - Additive immunosuppressive effects when combined with conventional DMARDs or corticosteroids. CONSEQUENCE - Significantly increased risk of opportunistic infections including PCP, TB reactivation, and fungal infections.',
                         drugs: [
                             { name: 'Adalimumab', features: 'TNF-α inhibitor, subcutaneous injection.', choice: 'RA, psoriatic arthritis, IBD.', indications: ['Rheumatoid Arthritis', 'Psoriatic Arthritis', 'Crohn Disease'], contraindications: ['Active Infection', 'Latent TB'] },
+                            { name: 'Infliximab', features: 'Chimeric monoclonal antibody against TNF-α.', choice: 'Crohn disease, ulcerative colitis, rheumatoid arthritis.', indications: ['Crohn Disease', 'Ulcerative Colitis', 'Rheumatoid Arthritis'], contraindications: ['Active Infection', 'Latent TB'] },
+                            { name: 'Etanercept', features: 'TNF receptor fusion protein.', choice: 'Rheumatoid arthritis refractory to methotrexate.', indications: ['Rheumatoid Arthritis', 'Psoriatic Arthritis'], contraindications: ['Active Infection', 'Latent TB'] },
                             { name: 'Rituximab', features: 'Anti-CD20, depletes B cells.', choice: 'RA refractory to TNF inhibitors.', indications: ['Rheumatoid Arthritis', 'Non-Hodgkin Lymphoma'], contraindications: ['Active Infection', 'Severe Heart Failure'] }
+                        ]
+                    },
+                    {
+                        name: 'Calcineurin Inhibitors',
+                        mechanism: 'Inhibit calcineurin to block IL-2 transcription and T-cell activation.',
+                        side_effects: ['Nephrotoxicity', 'Hypertension', 'Neurotoxicity', 'Gingival hyperplasia (cyclosporine)'],
+                        interactions: 'CYP3A4 inhibitors markedly increase levels.',
+                        drugs: [
+                            { name: 'Cyclosporine', features: 'Binds cyclophilin.', choice: 'Transplant rejection prophylaxis, severe psoriasis.', indications: ['Organ Transplantation', 'Psoriasis'], contraindications: ['Uncontrolled Hypertension', 'Renal Dysfunction'] },
+                            { name: 'Tacrolimus', features: 'Binds FKBP-12, more potent.', choice: 'Solid organ transplant prophylaxis.', indications: ['Organ Transplantation'], contraindications: ['Severe Renal Impairment'] }
+                        ]
+                    },
+                    {
+                        name: 'Antimetabolite Immunosuppressants',
+                        mechanism: 'Inhibit nucleotide synthesis to prevent lymphocyte proliferation.',
+                        side_effects: ['Myelosuppression', 'GI upset', 'Hepatotoxicity'],
+                        interactions: 'Allopurinol increases azathioprine toxicity; antacids reduce mycophenolate absorption.',
+                        drugs: [
+                            { name: 'Mycophenolate Mofetil', features: 'Inhibits IMP dehydrogenase in lymphocytes.', choice: 'Transplant rejection prophylaxis, lupus nephritis.', indications: ['Organ Transplantation', 'Lupus Nephritis'], contraindications: ['Pregnancy'] },
+                            { name: 'Azathioprine', features: 'Prodrug of 6-mercaptopurine.', choice: 'Steroid-sparing agent for autoimmune disease.', indications: ['Rheumatoid Arthritis', 'Inflammatory Bowel Disease'], contraindications: ['Thiopurine Methyltransferase Deficiency'] }
+                        ]
+                    },
+                    {
+                        name: 'mTOR Inhibitors',
+                        mechanism: 'Block mTOR signaling downstream of IL-2 to prevent T-cell proliferation.',
+                        side_effects: ['Hyperlipidemia', 'Bone marrow suppression', 'Mouth ulcers'],
+                        interactions: 'CYP3A4 and P-gp substrates.',
+                        drugs: [
+                            { name: 'Sirolimus (Rapamycin)', features: 'Used with calcineurin inhibitors to prevent chronic rejection.', choice: 'Renal transplant immunosuppression.', indications: ['Renal Transplantation'], contraindications: ['Severe Hepatic Impairment'] }
                         ]
                     }
                 ]
@@ -1328,6 +1753,24 @@ const drugData = [
                         drugs: [
                             { name: 'Calcium Carbonate', features: 'Requires acid for absorption.', choice: 'Osteoporosis prevention, antacid.', indications: ['Osteoporosis Prevention', 'Hypocalcemia'], contraindications: ['Hypercalcemia', 'Kidney Stones'] },
                             { name: 'Calcitriol', features: 'Active form of vitamin D.', choice: 'Chronic kidney disease, hypoparathyroidism.', indications: ['CKD', 'Hypoparathyroidism'], contraindications: ['Hypercalcemia', 'Vitamin D Toxicity'] }
+                        ]
+                    },
+                    {
+                        name: 'Anabolic Agents',
+                        mechanism: 'Stimulate osteoblasts to increase bone formation.',
+                        side_effects: ['Hypercalcemia', 'Leg cramps', 'Osteosarcoma risk (black box warning)'],
+                        interactions: 'Avoid combination with other hypercalcemia-inducing therapies.',
+                        drugs: [
+                            { name: 'Teriparatide', features: 'Recombinant PTH 1-34, daily SC dosing.', choice: 'Severe osteoporosis with high fracture risk or glucocorticoid-induced osteoporosis.', indications: ['Severe Osteoporosis', 'Glucocorticoid-Induced Osteoporosis'], contraindications: ['Paget Disease', 'Bone Malignancy History'] }
+                        ]
+                    },
+                    {
+                        name: 'RANKL Inhibitors',
+                        mechanism: 'Monoclonal antibody inhibits RANKL to block osteoclast activation.',
+                        side_effects: ['Hypocalcemia', 'Osteonecrosis of jaw', 'Infections'],
+                        interactions: 'Ensure adequate calcium/vitamin D to prevent hypocalcemia.',
+                        drugs: [
+                            { name: 'Denosumab', features: 'Subcutaneous every 6 months.', choice: 'Postmenopausal osteoporosis with high fracture risk.', indications: ['Osteoporosis'], contraindications: ['Hypocalcemia'] }
                         ]
                     }
                 ]
@@ -1695,7 +2138,6 @@ window.DrugApp = {};
 
 // Global search functions
 function searchByIndication(indication) {
-    console.log('searchByIndication called with:', indication);
     trackEvent('shortcut_search', {
         trigger: 'indication_tag',
         value: indication
@@ -1706,7 +2148,6 @@ function searchByIndication(indication) {
         setTimeout(() => {
             const searchInput = document.getElementById('drug-search-input');
             const indicationRadio = document.querySelector('input[name="search-type"][value="indication"]');
-            console.log('Found elements:', { searchInput, indicationRadio });
             if (indicationRadio) indicationRadio.checked = true;
             if (searchInput) searchInput.value = indication;
             if (window.DrugApp.performSearch) {
@@ -1717,7 +2158,6 @@ function searchByIndication(indication) {
 }
 
 function searchByContraindication(contraindication) {
-    console.log('searchByContraindication called with:', contraindication);
     trackEvent('shortcut_search', {
         trigger: 'contraindication_tag',
         value: contraindication
@@ -1737,7 +2177,6 @@ function searchByContraindication(contraindication) {
 }
 
 function searchBySideEffect(sideEffect) {
-    console.log('searchBySideEffect called with:', sideEffect);
     trackEvent('shortcut_search', {
         trigger: 'side_effect_tag',
         value: sideEffect
@@ -1757,7 +2196,6 @@ function searchBySideEffect(sideEffect) {
 }
 
 function searchByMechanism(mechanism) {
-    console.log('searchByMechanism called with:', mechanism);
     trackEvent('shortcut_search', {
         trigger: 'mechanism_tag',
         value: mechanism
@@ -1777,7 +2215,6 @@ function searchByMechanism(mechanism) {
 }
 
 function searchByClass(drugClass) {
-    console.log('searchByClass called with:', drugClass);
     trackEvent('shortcut_search', {
         trigger: 'class_tag',
         value: drugClass
@@ -1797,7 +2234,6 @@ function searchByClass(drugClass) {
 }
 
 function searchBySystem(system) {
-    console.log('searchBySystem called with:', system);
     trackEvent('shortcut_search', {
         trigger: 'system_tag',
         value: system
@@ -1854,6 +2290,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const comparisonList = [];
     let lastState = { func: showSystems, args: [] };
     let searchableData = [];
+    const columnWidthCache = {};
+    const infoButton = document.getElementById('info-button');
+    const infoModal = document.getElementById('info-modal');
+    const infoModalClose = document.getElementById('info-modal-close');
+    const layoutToggle = document.getElementById('layout-toggle');
+    const infoModalStart = document.getElementById('info-modal-start');
+    const WELCOME_STORAGE_KEY = 'step1DrugReview_seenWelcome';
+    let hasSeenWelcome = false;
+    try {
+        hasSeenWelcome = localStorage.getItem(WELCOME_STORAGE_KEY) === 'true';
+    } catch (error) {
+        hasSeenWelcome = false;
+    }
+    let layoutMode = 'reference';
+    let selectedSystem = null;
+    let selectedTherapeuticClass = null;
+    let selectedPharmaClass = null;
 
     const debounce = (fn, delay = 300) => {
         let timeoutId;
@@ -1889,6 +2342,88 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         trackEvent('search_input', payload);
     }, 700);
+
+    const openInfoModal = () => {
+        if (!infoModal) return;
+        infoModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        trackEvent('open_help_modal');
+        try {
+            localStorage.setItem(WELCOME_STORAGE_KEY, 'true');
+        } catch (error) {
+            // Ignore storage errors (private mode, etc.)
+        }
+    };
+
+    const closeInfoModal = () => {
+        if (!infoModal) return;
+        infoModal.classList.add('hidden');
+        document.body.style.overflow = '';
+        trackEvent('close_help_modal');
+    };
+
+    if (infoButton) {
+        infoButton.addEventListener('click', openInfoModal);
+    }
+
+    if (infoModalClose) {
+        infoModalClose.addEventListener('click', closeInfoModal);
+    }
+
+    if (infoModalStart) {
+        infoModalStart.addEventListener('click', () => {
+            trackEvent('start_from_help_modal');
+            closeInfoModal();
+        });
+    }
+
+    if (infoModal) {
+        infoModal.addEventListener('click', (event) => {
+            if (event.target === infoModal) {
+                closeInfoModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && infoModal && !infoModal.classList.contains('hidden')) {
+            closeInfoModal();
+        }
+    });
+
+    if (!hasSeenWelcome) {
+        setTimeout(() => {
+            openInfoModal();
+        }, 120);
+    }
+
+    function applyFadeIn(element, direction = 'down') {
+        if (!element) return;
+        const baseClass = direction === 'left' ? 'fade-enter-left' : 'fade-enter';
+        element.classList.remove('fade-enter', 'fade-enter-left', 'fade-enter-active');
+        element.classList.add(baseClass);
+        requestAnimationFrame(() => {
+            element.classList.add('fade-enter-active');
+        });
+    }
+
+    if (layoutToggle) {
+        const updateLayoutToggleText = () => {
+            layoutToggle.textContent = layoutMode === 'learning' ? 'Reference View' : 'Learning View';
+        };
+
+        updateLayoutToggleText();
+
+        layoutToggle.addEventListener('click', () => {
+            layoutMode = layoutMode === 'learning' ? 'reference' : 'learning';
+            updateLayoutToggleText();
+            trackEvent('toggle_layout', { layout: layoutMode });
+            if (layoutMode === 'reference') {
+                ensureCascadeSelections();
+            }
+            showSystems();
+        });
+    }
 
     function parseInteractionTags(interactionText) {
         const interactionLower = interactionText.toLowerCase();
@@ -1950,18 +2485,568 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateHeaderControls() {
         headerControls.innerHTML = '';
-        const searchButton = document.createElement('button');
-        searchButton.className = 'header-btn';
-        searchButton.innerText = 'Search';
-        searchButton.onclick = renderSearchView;
-        headerControls.appendChild(searchButton);
+        const isSearchView = mainContainer.id === 'search-view-container';
+        const isCompareView = mainContainer.classList.contains('compare-view-container');
+
+        if (isSearchView) {
+            const backButton = document.createElement('button');
+            backButton.className = 'header-btn';
+            backButton.innerText = 'Back to Navigation';
+            backButton.onclick = backToNavigation;
+            headerControls.appendChild(backButton);
+        } else {
+            const searchButton = document.createElement('button');
+            searchButton.className = 'header-btn';
+            searchButton.innerText = 'Search';
+            searchButton.onclick = renderSearchView;
+            headerControls.appendChild(searchButton);
+        }
+
         if (comparisonList.length > 0) {
             const compareButton = document.createElement('button');
             compareButton.className = 'compare-view-button';
-            compareButton.innerText = `Compare Items (${comparisonList.length})`;
-            compareButton.onclick = renderCompareView;
+            if (isCompareView) {
+                compareButton.innerText = 'Return to Navigation';
+                compareButton.onclick = backToNavigation;
+            } else {
+                compareButton.innerText = `Compare Items (${comparisonList.length})`;
+                compareButton.onclick = renderCompareView;
+            }
             headerControls.appendChild(compareButton);
         }
+    }
+
+    function ensureCascadeSelections() {
+        if (!drugData.length) {
+            selectedSystem = null;
+            selectedTherapeuticClass = null;
+            selectedPharmaClass = null;
+            return;
+        }
+
+        if (!selectedSystem || !drugData.includes(selectedSystem)) {
+            selectedSystem = drugData[0];
+        }
+
+        const therapeuticOptions = selectedSystem.therapeutic_classes || [];
+        if (!selectedTherapeuticClass || !therapeuticOptions.includes(selectedTherapeuticClass)) {
+            selectedTherapeuticClass = therapeuticOptions[0] || null;
+        }
+
+        const pharmaOptions = selectedTherapeuticClass ? (selectedTherapeuticClass.pharma_classes || []) : [];
+        if (!selectedPharmaClass || !pharmaOptions.includes(selectedPharmaClass)) {
+            selectedPharmaClass = pharmaOptions[0] || null;
+        }
+    }
+
+    function buildDrugCard({
+        drug,
+        pharmaClass,
+        system,
+        therapeuticClass,
+        includeCompare = false,
+        compared = false,
+        onCompareClick,
+        onCardClick,
+        showSystemTags = false,
+        showMechanism = false
+    }) {
+        const card = document.createElement('div');
+        card.className = 'drug-card';
+
+        const headerRow = document.createElement('div');
+        headerRow.className = 'drug-card-header-row';
+
+        const nameEl = document.createElement('div');
+        nameEl.className = 'drug-name';
+        nameEl.textContent = drug.name;
+        headerRow.appendChild(nameEl);
+
+        const actionsEl = document.createElement('div');
+        actionsEl.className = 'drug-card-actions';
+
+        let compareButton = null;
+        if (includeCompare) {
+            compareButton = document.createElement('button');
+            compareButton.className = 'compare-btn';
+            compareButton.innerText = compared ? 'Added' : 'Compare';
+            if (compared) {
+                compareButton.classList.add('added');
+            }
+            compareButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                if (typeof onCompareClick === 'function') {
+                    onCompareClick(compareButton);
+                }
+            });
+            actionsEl.appendChild(compareButton);
+        }
+
+        const expandButton = document.createElement('button');
+        expandButton.type = 'button';
+        expandButton.className = 'expand-btn';
+        expandButton.innerHTML = '🔍';
+        expandButton.setAttribute('aria-expanded', 'false');
+        expandButton.title = 'Expand details';
+        expandButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const willExpand = !card.classList.contains('expanded');
+
+            if (willExpand && card.parentElement) {
+                card.parentElement.querySelectorAll('.drug-card.expanded').forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('expanded');
+                        const otherButton = otherCard.querySelector('.expand-btn');
+                        if (otherButton) {
+                            otherButton.setAttribute('aria-expanded', 'false');
+                            otherButton.innerHTML = '🔍';
+                        }
+                    }
+                });
+            }
+
+            const expanded = card.classList.toggle('expanded');
+            expandButton.setAttribute('aria-expanded', expanded);
+            expandButton.innerHTML = expanded ? '✕' : '🔍';
+
+            if (expanded) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+        actionsEl.appendChild(expandButton);
+
+        headerRow.appendChild(actionsEl);
+        card.appendChild(headerRow);
+
+        if (showSystemTags && system) {
+            const section = document.createElement('div');
+            section.className = 'drug-section';
+            const title = document.createElement('div');
+            title.className = 'drug-section-title';
+            title.textContent = 'System & Class';
+            section.appendChild(title);
+
+            const container = document.createElement('div');
+            container.className = 'tag-container';
+
+            const systemTag = document.createElement('span');
+            systemTag.className = 'tag system';
+            systemTag.textContent = system.system;
+            systemTag.title = `Filter by ${system.system}`;
+            systemTag.addEventListener('click', (event) => {
+                event.stopPropagation();
+                if (window.filterByTag) {
+                    window.filterByTag('system', system.system);
+                }
+            });
+            container.appendChild(systemTag);
+
+            if (pharmaClass) {
+                const classTag = document.createElement('span');
+                classTag.className = 'tag class';
+                classTag.textContent = pharmaClass.name;
+                classTag.title = `Filter by ${pharmaClass.name}`;
+                classTag.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    if (window.filterByTag) {
+                        window.filterByTag('class', pharmaClass.name);
+                    }
+                });
+                container.appendChild(classTag);
+            }
+
+            section.appendChild(container);
+            card.appendChild(section);
+        }
+
+        if (showMechanism && pharmaClass && pharmaClass.mechanism) {
+            const mechanismSection = document.createElement('div');
+            mechanismSection.className = 'drug-section';
+            const mechanismTitle = document.createElement('div');
+            mechanismTitle.className = 'drug-section-title';
+            mechanismTitle.textContent = 'Mechanism';
+            mechanismSection.appendChild(mechanismTitle);
+
+            const mechanismContainer = document.createElement('div');
+            mechanismContainer.className = 'tag-container';
+            const mechanismTag = document.createElement('span');
+            mechanismTag.className = 'tag mechanism';
+            const mechanismText = pharmaClass.mechanism;
+            mechanismTag.textContent = mechanismText.length > 60 ? `${mechanismText.substring(0, 60)}…` : mechanismText;
+            mechanismTag.title = mechanismText;
+            mechanismTag.addEventListener('click', (event) => {
+                event.stopPropagation();
+                if (window.filterByTag) {
+                    window.filterByTag('mechanism', mechanismText);
+                }
+            });
+            mechanismContainer.appendChild(mechanismTag);
+            mechanismSection.appendChild(mechanismContainer);
+            card.appendChild(mechanismSection);
+        }
+
+        const featuresSection = document.createElement('div');
+        featuresSection.className = 'drug-section';
+        const featuresTitle = document.createElement('div');
+        featuresTitle.className = 'drug-section-title';
+        featuresTitle.textContent = 'Key Features';
+        featuresSection.appendChild(featuresTitle);
+        const featuresBody = document.createElement('p');
+        featuresBody.className = 'drug-card-feature';
+        featuresBody.textContent = drug.features || '—';
+        featuresSection.appendChild(featuresBody);
+        card.appendChild(featuresSection);
+
+        const indicationsSection = document.createElement('div');
+        indicationsSection.className = 'drug-section';
+        const indicationsTitle = document.createElement('div');
+        indicationsTitle.className = 'drug-section-title';
+        indicationsTitle.textContent = 'Indications';
+        indicationsSection.appendChild(indicationsTitle);
+        const indicationsContainer = document.createElement('div');
+        indicationsContainer.className = 'tag-container';
+        if (Array.isArray(drug.indications) && drug.indications.length) {
+            drug.indications.forEach(indication => {
+                const tag = document.createElement('span');
+                tag.classList.add('tag', 'indication', 'clickable-tag');
+                tag.dataset.indication = indication;
+                tag.title = `Click to find all drugs for ${indication}`;
+                tag.textContent = indication;
+                indicationsContainer.appendChild(tag);
+            });
+        } else {
+            const placeholder = document.createElement('span');
+            placeholder.className = 'tag indication';
+            placeholder.textContent = '—';
+            indicationsContainer.appendChild(placeholder);
+        }
+        indicationsSection.appendChild(indicationsContainer);
+        card.appendChild(indicationsSection);
+
+        const contraindicationsSection = document.createElement('div');
+        contraindicationsSection.className = 'drug-section';
+        const contraindicationsTitle = document.createElement('div');
+        contraindicationsTitle.className = 'drug-section-title';
+        contraindicationsTitle.textContent = 'Contraindications';
+        contraindicationsSection.appendChild(contraindicationsTitle);
+        const contraindicationsContainer = document.createElement('div');
+        contraindicationsContainer.className = 'tag-container';
+        if (Array.isArray(drug.contraindications) && drug.contraindications.length) {
+            drug.contraindications.forEach(contraindication => {
+                const tag = document.createElement('span');
+                tag.classList.add('tag', 'contraindication', 'clickable-tag');
+                tag.dataset.contraindication = contraindication;
+                tag.title = `Click to find all drugs to avoid with ${contraindication}`;
+                tag.textContent = contraindication;
+                contraindicationsContainer.appendChild(tag);
+            });
+        } else {
+            const placeholder = document.createElement('span');
+            placeholder.className = 'tag contraindication';
+            placeholder.textContent = '—';
+            contraindicationsContainer.appendChild(placeholder);
+        }
+        contraindicationsSection.appendChild(contraindicationsContainer);
+        card.appendChild(contraindicationsSection);
+
+        const extraContainer = document.createElement('div');
+        extraContainer.className = 'drug-card-extra';
+
+        if (drug.choice) {
+            const choiceSection = document.createElement('div');
+            choiceSection.className = 'drug-section';
+            const choiceTitle = document.createElement('div');
+            choiceTitle.className = 'drug-section-title';
+            choiceTitle.textContent = 'Clinical Choice';
+            choiceSection.appendChild(choiceTitle);
+            const choiceBody = document.createElement('p');
+            choiceBody.textContent = drug.choice;
+            choiceSection.appendChild(choiceBody);
+            extraContainer.appendChild(choiceSection);
+        }
+
+        if (!showMechanism && pharmaClass && pharmaClass.mechanism) {
+            const mechanismSection = document.createElement('div');
+            mechanismSection.className = 'drug-section';
+            const mechanismTitle = document.createElement('div');
+            mechanismTitle.className = 'drug-section-title';
+            mechanismTitle.textContent = 'Mechanism of Action';
+            mechanismSection.appendChild(mechanismTitle);
+            const mechanismContainer = document.createElement('div');
+            mechanismContainer.className = 'tag-container';
+            const mechanismTag = document.createElement('span');
+            mechanismTag.classList.add('tag', 'mechanism');
+            mechanismTag.textContent = pharmaClass.mechanism;
+            mechanismTag.title = pharmaClass.mechanism;
+            mechanismTag.addEventListener('click', (event) => {
+                event.stopPropagation();
+                if (window.filterByTag) {
+                    window.filterByTag('mechanism', pharmaClass.mechanism);
+                }
+            });
+            mechanismContainer.appendChild(mechanismTag);
+            mechanismSection.appendChild(mechanismContainer);
+            extraContainer.appendChild(mechanismSection);
+        }
+
+        const sideEffectsSection = document.createElement('div');
+        sideEffectsSection.className = 'drug-section';
+        const sideTitle = document.createElement('div');
+        sideTitle.className = 'drug-section-title';
+        sideTitle.textContent = 'Adverse Effects';
+        sideEffectsSection.appendChild(sideTitle);
+        const sideContainer = document.createElement('div');
+        sideContainer.className = 'tag-container';
+        const sideEffects = Array.isArray(pharmaClass && pharmaClass.side_effects) ? pharmaClass.side_effects : [];
+        if (sideEffects.length) {
+            sideEffects.forEach(effect => {
+                const tag = document.createElement('span');
+                tag.classList.add('tag', 'side-effect');
+                tag.textContent = effect;
+                sideContainer.appendChild(tag);
+            });
+        } else {
+            const placeholder = document.createElement('span');
+            placeholder.className = 'tag side-effect';
+            placeholder.textContent = 'No adverse effects listed';
+            sideContainer.appendChild(placeholder);
+        }
+        sideEffectsSection.appendChild(sideContainer);
+        extraContainer.appendChild(sideEffectsSection);
+
+        const interactionSection = document.createElement('div');
+        interactionSection.className = 'drug-section';
+        const interactionTitle = document.createElement('div');
+        interactionTitle.className = 'drug-section-title';
+        interactionTitle.textContent = 'Drug Interactions';
+        interactionSection.appendChild(interactionTitle);
+        const interactionContainer = document.createElement('div');
+        interactionContainer.className = 'tag-container';
+        if (pharmaClass && pharmaClass.interactions) {
+            interactionContainer.innerHTML = parseInteractionTags(pharmaClass.interactions);
+            interactionContainer.querySelectorAll('.tag.interaction').forEach(tag => {
+                const value = tag.textContent.trim();
+                tag.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    if (window.filterByTag) {
+                        window.filterByTag('interaction', value);
+                    }
+                });
+            });
+        } else {
+            const placeholder = document.createElement('span');
+            placeholder.className = 'tag interaction';
+            placeholder.textContent = 'No major interactions listed';
+            interactionContainer.appendChild(placeholder);
+        }
+        interactionSection.appendChild(interactionContainer);
+        if (pharmaClass && pharmaClass.interaction_explanation) {
+            const explanation = document.createElement('div');
+            explanation.className = 'interaction-explanation';
+            explanation.innerHTML = `<p><strong>Clinical Significance:</strong> ${pharmaClass.interaction_explanation}</p>`;
+            interactionSection.appendChild(explanation);
+        }
+        extraContainer.appendChild(interactionSection);
+
+        card.appendChild(extraContainer);
+
+        if (typeof onCardClick === 'function') {
+            card.addEventListener('click', (event) => {
+                if (event.target.closest('.compare-btn') || event.target.closest('.expand-btn') || event.target.closest('.clickable-tag')) {
+                    return;
+                }
+                onCardClick(event);
+            });
+        }
+
+        return card;
+    }
+
+    function renderCascadeDrugCards(pharmaClass, detailContainer) {
+        if (!pharmaClass) {
+            const emptyMessage = document.createElement('div');
+            emptyMessage.className = 'cascade-message';
+            emptyMessage.textContent = 'Select a pharmacological class to see its drugs.';
+            detailContainer.appendChild(emptyMessage);
+            return;
+        }
+
+        const header = document.createElement('div');
+        header.className = 'cascade-detail-header';
+        const title = document.createElement('h2');
+        title.textContent = pharmaClass.name;
+        header.appendChild(title);
+        if (pharmaClass.mechanism) {
+            const mechanism = document.createElement('p');
+            mechanism.textContent = pharmaClass.mechanism;
+            header.appendChild(mechanism);
+        }
+        detailContainer.appendChild(header);
+
+        if (!pharmaClass.drugs || pharmaClass.drugs.length === 0) {
+            const emptyMessage = document.createElement('div');
+            emptyMessage.className = 'cascade-message';
+            emptyMessage.textContent = 'No individual drugs listed for this class yet.';
+            detailContainer.appendChild(emptyMessage);
+            return;
+        }
+
+        const cardGrid = document.createElement('div');
+        cardGrid.className = 'drug-grid cascade-grid';
+
+        pharmaClass.drugs.forEach(drug => {
+            const card = buildDrugCard({
+                drug,
+                pharmaClass,
+                system: selectedSystem,
+                therapeuticClass: selectedTherapeuticClass,
+                includeCompare: true,
+                compared: comparisonList.some(item => item.drug.name === drug.name),
+                onCompareClick: (button) => handleCompareClick(drug, pharmaClass, button)
+            });
+            cardGrid.appendChild(card);
+            applyFadeIn(card);
+        });
+
+        detailContainer.appendChild(cardGrid);
+        applyFadeIn(cardGrid);
+    }
+
+    function renderCascadeView() {
+        ensureCascadeSelections();
+
+        const navContainer = document.createElement('div');
+        navContainer.className = 'cascade-nav';
+
+        if (!selectedSystem) {
+            const emptyMessage = document.createElement('div');
+            emptyMessage.className = 'cascade-message';
+            emptyMessage.textContent = 'No data available. Add systems to begin exploring.';
+            navContainer.appendChild(emptyMessage);
+        } else {
+            drugData.forEach(system => {
+                const systemItem = document.createElement('div');
+                systemItem.className = 'cascade-item system-item';
+                if (system === selectedSystem) {
+                    systemItem.classList.add('selected');
+                }
+
+                const systemButton = document.createElement('button');
+                systemButton.className = 'cascade-label system-label';
+                systemButton.textContent = system.system;
+                systemButton.onclick = () => {
+                    selectedSystem = system;
+                    selectedTherapeuticClass = null;
+                    selectedPharmaClass = null;
+                    trackEvent('cascade_select', { level: 'system', value: system.system });
+                    showSystems();
+                };
+                systemItem.appendChild(systemButton);
+
+                if (system === selectedSystem && system.therapeutic_classes && system.therapeutic_classes.length) {
+                    const therapeuticList = document.createElement('div');
+                    therapeuticList.className = 'cascade-children therapeutic-list';
+
+                    system.therapeutic_classes.forEach(therapeuticClass => {
+                        const therapeuticItem = document.createElement('div');
+                        therapeuticItem.className = 'cascade-item therapeutic-item';
+                        if (therapeuticClass === selectedTherapeuticClass) {
+                            therapeuticItem.classList.add('selected');
+                        }
+
+                        const therapeuticButton = document.createElement('button');
+                        therapeuticButton.className = 'cascade-label therapeutic-label';
+                        therapeuticButton.textContent = therapeuticClass.name;
+                        therapeuticButton.onclick = () => {
+                            selectedSystem = system;
+                            selectedTherapeuticClass = therapeuticClass;
+                            selectedPharmaClass = null;
+                            trackEvent('cascade_select', {
+                                level: 'therapeutic_class',
+                                value: therapeuticClass.name,
+                                system: system.system
+                            });
+                            showSystems();
+                        };
+                        therapeuticItem.appendChild(therapeuticButton);
+
+                        if (therapeuticClass === selectedTherapeuticClass && therapeuticClass.pharma_classes && therapeuticClass.pharma_classes.length) {
+                            const pharmaList = document.createElement('div');
+                            pharmaList.className = 'cascade-children pharma-list';
+
+                            therapeuticClass.pharma_classes.forEach(pharmaClass => {
+                                const pharmaItem = document.createElement('div');
+                                pharmaItem.className = 'cascade-item pharma-item';
+                                if (pharmaClass === selectedPharmaClass) {
+                                    pharmaItem.classList.add('selected');
+                                }
+
+                                const pharmaButton = document.createElement('button');
+                                pharmaButton.className = 'cascade-label pharma-label';
+                                pharmaButton.textContent = pharmaClass.name;
+                                pharmaButton.onclick = () => {
+                                    selectedSystem = system;
+                                    selectedTherapeuticClass = therapeuticClass;
+                                    selectedPharmaClass = pharmaClass;
+                                    trackEvent('cascade_select', {
+                                        level: 'pharma_class',
+                                        value: pharmaClass.name,
+                                        system: system.system,
+                                        therapeutic_class: therapeuticClass.name
+                                    });
+                                    showSystems();
+                                };
+                                pharmaItem.appendChild(pharmaButton);
+
+                                pharmaList.appendChild(pharmaItem);
+                            });
+
+                            therapeuticItem.appendChild(pharmaList);
+                        }
+
+                        therapeuticList.appendChild(therapeuticItem);
+                    });
+
+                    systemItem.appendChild(therapeuticList);
+                }
+
+                navContainer.appendChild(systemItem);
+            });
+        }
+
+        const detailContainer = document.createElement('div');
+        detailContainer.className = 'cascade-detail';
+
+        if (!selectedTherapeuticClass) {
+            const message = document.createElement('div');
+            message.className = 'cascade-message';
+            message.textContent = 'This body system has no therapeutic classes yet.';
+            detailContainer.appendChild(message);
+            mainContainer.appendChild(navContainer);
+            applyFadeIn(navContainer, 'left');
+            mainContainer.appendChild(detailContainer);
+            applyFadeIn(detailContainer);
+            return;
+        }
+
+        if (!selectedTherapeuticClass.pharma_classes || selectedTherapeuticClass.pharma_classes.length === 0) {
+            const message = document.createElement('div');
+            message.className = 'cascade-message';
+            message.textContent = 'No pharmacological classes listed for this therapeutic class yet.';
+            detailContainer.appendChild(message);
+            mainContainer.appendChild(navContainer);
+            applyFadeIn(navContainer, 'left');
+            mainContainer.appendChild(detailContainer);
+            applyFadeIn(detailContainer);
+            return;
+        }
+
+        renderCascadeDrugCards(selectedPharmaClass, detailContainer);
+
+        mainContainer.appendChild(navContainer);
+        applyFadeIn(navContainer, 'left');
+        mainContainer.appendChild(detailContainer);
+        applyFadeIn(detailContainer);
     }
 
     const backToNavigation = function() {
@@ -2002,6 +3087,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function createColumn(title, items, onItemClick, keyFunction = item => item, tagType = 'default') {
         const column = document.createElement('div');
         column.className = 'column';
+        const cacheKey = title;
+        const cachedWidth = columnWidthCache[cacheKey];
+        if (typeof cachedWidth === 'number') {
+            column.style.width = `${cachedWidth}px`;
+        }
 
         const header = document.createElement('div');
         header.className = 'column-header';
@@ -2026,15 +3116,74 @@ document.addEventListener('DOMContentLoaded', () => {
             itemsContainer.appendChild(itemElement);
         });
 
+        attachColumnResizer(column, cacheKey);
         return column;
+    }
+
+    function attachColumnResizer(column, cacheKey) {
+        const resizer = document.createElement('div');
+        resizer.className = 'column-resizer';
+        column.appendChild(resizer);
+
+        let startX = 0;
+        let startWidth = 0;
+        const minWidth = 240;
+        const maxWidth = 620;
+
+        const handlePointerMove = (event) => {
+            const delta = event.clientX - startX;
+            let newWidth = startWidth + delta;
+            if (newWidth < minWidth) newWidth = minWidth;
+            if (newWidth > maxWidth) newWidth = maxWidth;
+            column.style.width = `${newWidth}px`;
+        };
+
+        const handlePointerUp = () => {
+            document.removeEventListener('pointermove', handlePointerMove);
+            document.removeEventListener('pointerup', handlePointerUp);
+            document.removeEventListener('pointercancel', handlePointerUp);
+            column.classList.remove('resizing');
+            columnWidthCache[cacheKey] = Math.round(column.getBoundingClientRect().width);
+        };
+
+        resizer.addEventListener('pointerdown', (event) => {
+            event.preventDefault();
+            startX = event.clientX;
+            startWidth = column.getBoundingClientRect().width;
+            column.classList.add('resizing');
+            document.addEventListener('pointermove', handlePointerMove);
+            document.addEventListener('pointerup', handlePointerUp);
+            document.addEventListener('pointercancel', handlePointerUp);
+        });
     }
 
     function showSystems() {
         saveLastState(showSystems, []);
         mainContainer.innerHTML = '';
-        trackEvent('view_navigation', { level: 'system' });
+
+        trackEvent('view_navigation', { level: 'system', layout: layoutMode });
+
+        if (layoutMode === 'reference') {
+            ensureCascadeSelections();
+            mainContainer.className = 'cascade-container';
+            mainContainer.id = 'column-container';
+            renderCascadeView();
+            updateHeaderControls();
+            return;
+        }
+
+        mainContainer.className = '';
+        mainContainer.id = 'column-container';
+
+        if (!selectedSystem) {
+            selectedSystem = drugData[0] || null;
+            selectedTherapeuticClass = selectedSystem && selectedSystem.therapeutic_classes ? selectedSystem.therapeutic_classes[0] || null : null;
+            selectedPharmaClass = selectedTherapeuticClass && selectedTherapeuticClass.pharma_classes ? selectedTherapeuticClass.pharma_classes[0] || null : null;
+        }
+
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, system => system.system, 'system');
         mainContainer.appendChild(systemsColumn);
+        applyFadeIn(systemsColumn, 'left');
         updateHeaderControls();
     }
 
@@ -2045,7 +3194,19 @@ document.addEventListener('DOMContentLoaded', () => {
             level: 'therapeutic_class',
             system: system.system
         });
-        
+
+        if (layoutMode === 'reference') {
+            selectedSystem = system;
+            selectedTherapeuticClass = null;
+            selectedPharmaClass = null;
+            showSystems();
+            return;
+        }
+
+        selectedSystem = system;
+        selectedTherapeuticClass = null;
+        selectedPharmaClass = null;
+
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, s => s.system, 'system');
         systemsColumn.querySelectorAll('.column-item').forEach((item, index) => {
             if (drugData[index] === system) {
@@ -2053,11 +3214,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(systemsColumn);
+        applyFadeIn(systemsColumn, 'left');
 
         const therapeuticColumn = createColumn('Therapeutic Classes', system.therapeutic_classes, 
             therapeuticClass => showPharmaClasses(system, therapeuticClass), 
             therapeuticClass => therapeuticClass.name, 'subclass');
         mainContainer.appendChild(therapeuticColumn);
+        applyFadeIn(therapeuticColumn);
         updateHeaderControls();
     }
 
@@ -2069,7 +3232,19 @@ document.addEventListener('DOMContentLoaded', () => {
             system: system.system,
             therapeutic_class: therapeuticClass.name
         });
-        
+
+        if (layoutMode === 'reference') {
+            selectedSystem = system;
+            selectedTherapeuticClass = therapeuticClass;
+            selectedPharmaClass = null;
+            showSystems();
+            return;
+        }
+
+        selectedSystem = system;
+        selectedTherapeuticClass = therapeuticClass;
+        selectedPharmaClass = null;
+
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, s => s.system, 'system');
         systemsColumn.querySelectorAll('.column-item').forEach((item, index) => {
             if (drugData[index] === system) {
@@ -2077,6 +3252,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(systemsColumn);
+        applyFadeIn(systemsColumn, 'left');
 
         const therapeuticColumn = createColumn('Therapeutic Classes', system.therapeutic_classes, 
             tc => showPharmaClasses(system, tc), 
@@ -2087,11 +3263,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(therapeuticColumn);
+        applyFadeIn(therapeuticColumn);
 
         const pharmaColumn = createColumn('Pharmacological Classes', therapeuticClass.pharma_classes, 
             pharmaClass => showDrugs(system, therapeuticClass, pharmaClass), 
             pharmaClass => pharmaClass.name, 'class');
         mainContainer.appendChild(pharmaColumn);
+        applyFadeIn(pharmaColumn);
         updateHeaderControls();
     }
 
@@ -2104,7 +3282,19 @@ document.addEventListener('DOMContentLoaded', () => {
             therapeutic_class: therapeuticClass.name,
             class_name: pharmaClass.name
         });
-        
+
+        if (layoutMode === 'reference') {
+            selectedSystem = system;
+            selectedTherapeuticClass = therapeuticClass;
+            selectedPharmaClass = pharmaClass;
+            showSystems();
+            return;
+        }
+
+        selectedSystem = system;
+        selectedTherapeuticClass = therapeuticClass;
+        selectedPharmaClass = pharmaClass;
+
         const systemsColumn = createColumn('Body Systems', drugData, showTherapeuticClasses, s => s.system, 'system');
         systemsColumn.querySelectorAll('.column-item').forEach((item, index) => {
             if (drugData[index] === system) {
@@ -2112,6 +3302,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(systemsColumn);
+        applyFadeIn(systemsColumn, 'left');
 
         const therapeuticColumn = createColumn('Therapeutic Classes', system.therapeutic_classes, 
             tc => showPharmaClasses(system, tc), 
@@ -2122,6 +3313,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(therapeuticColumn);
+        applyFadeIn(therapeuticColumn);
 
         const pharmaColumn = createColumn('Pharmacological Classes', therapeuticClass.pharma_classes, 
             pc => showDrugs(system, therapeuticClass, pc), 
@@ -2132,6 +3324,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(pharmaColumn);
+        applyFadeIn(pharmaColumn);
 
         // Drugs column
         const drugsColumn = document.createElement('div');
@@ -2170,6 +3363,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         mainContainer.appendChild(drugsColumn);
+        applyFadeIn(drugsColumn);
         updateHeaderControls();
     }
 
@@ -2191,6 +3385,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(systemsColumn);
+        applyFadeIn(systemsColumn, 'left');
 
         const therapeuticColumn = createColumn('Therapeutic Classes', system.therapeutic_classes, 
             tc => showPharmaClasses(system, tc), 
@@ -2201,6 +3396,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(therapeuticColumn);
+        applyFadeIn(therapeuticColumn);
 
         const pharmaColumn = createColumn('Pharmacological Classes', therapeuticClass.pharma_classes, 
             pc => showDrugs(system, therapeuticClass, pc), 
@@ -2211,6 +3407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         mainContainer.appendChild(pharmaColumn);
+        applyFadeIn(pharmaColumn);
 
         // Drugs column
         const drugsColumn = document.createElement('div');
@@ -2304,6 +3501,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         mainContainer.appendChild(detailColumn);
+        applyFadeIn(detailColumn);
         updateHeaderControls();
     }
 
@@ -2311,16 +3509,9 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContainer.innerHTML = '';
         mainContainer.className = '';
         mainContainer.id = 'search-view-container';
+        updateHeaderControls();
 
         trackEvent('view_search', {});
-
-        const searchHeader = document.createElement('div');
-        searchHeader.className = 'search-header';
-        searchHeader.innerHTML = `
-            <h2>Drug Search</h2>
-            <button class="header-btn" onclick="window.DrugApp.backToNavigation()">Back to Navigation</button>
-        `;
-        mainContainer.appendChild(searchHeader);
 
         const searchControls = document.createElement('div');
         searchControls.className = 'search-controls';
@@ -2389,55 +3580,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show all drugs initially as cards
         searchableData.forEach(result => {
             const { system, therapeuticClass, pharmaClass, drug } = result.pointers;
-            
-            const drugCard = document.createElement('div');
-            drugCard.className = 'drug-card';
-            
-            drugCard.innerHTML = `
-                <div class="drug-name">${drug.name}</div>
-                
-                <div class="drug-section">
-                    <div class="drug-section-title">System & Class</div>
-                    <div class="tag-container">
-                        <span class="tag system" onclick="filterByTag('system', '${system.system}')">${system.system}</span>
-                        <span class="tag class" onclick="filterByTag('class', '${pharmaClass.name}')">${pharmaClass.name}</span>
-                    </div>
-                </div>
 
-                <div class="drug-section">
-                    <div class="drug-section-title">Indications</div>
-                    <div class="tag-container">
-                        ${drug.indications.map(indication => 
-                            `<span class="tag indication clickable-tag" data-indication="${indication}" style="cursor: pointer;" title="Click to find all drugs for ${indication}">${indication}</span>`
-                        ).join('')}
-                    </div>
-                </div>
+            const card = buildDrugCard({
+                drug,
+                pharmaClass,
+                system,
+                therapeuticClass,
+                showSystemTags: true,
+                showMechanism: true,
+                onCardClick: () => {
+                    mainContainer.className = '';
+                    mainContainer.id = 'column-container';
+                    showDrugDetail(system, therapeuticClass, pharmaClass, drug);
+                }
+            });
 
-                <div class="drug-section">
-                    <div class="drug-section-title">Contraindications</div>
-                    <div class="tag-container">
-                        ${drug.contraindications.map(contraindication => 
-                            `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;" title="Click to find all drugs to avoid with ${contraindication}">${contraindication}</span>`
-                        ).join('')}
-                    </div>
-                </div>
-
-                <div class="drug-section">
-                    <div class="drug-section-title">Key Features</div>
-                    <p style="font-size: 0.9em; color: #666;">${drug.features}</p>
-                </div>
-            `;
-            
-            drugCard.onclick = (e) => {
-                // Don't navigate if clicking on a tag
-                if (e.target.classList.contains('tag')) return;
-                
-                mainContainer.className = '';
-                mainContainer.id = 'column-container';
-                showDrugDetail(system, therapeuticClass, pharmaClass, drug);
-            };
-            
-            resultsContainer.appendChild(drugCard);
+            resultsContainer.appendChild(card);
+            applyFadeIn(card);
         });
 
         const searchInput = document.getElementById('drug-search-input');
@@ -2502,40 +3661,32 @@ document.addEventListener('DOMContentLoaded', () => {
         
         results.forEach(result => {
             const { system, therapeuticClass, pharmaClass, drug } = result.pointers;
-            
-            const drugCard = document.createElement('div');
-            drugCard.className = 'drug-card';
-            drugCard.style.borderLeft = '4px solid #e74c3c'; // Red border for contraindications
-            
-            drugCard.innerHTML = `
-                <div class="drug-name">${drug.name}</div>
-                <div class="drug-section">
-                    <div class="drug-section-title">Drug Class</div>
-                    <span class="tag class">${pharmaClass.name}</span>
-                </div>
-                <div class="drug-section">
-                    <div class="drug-section-title">System</div>
-                    <span class="tag system">${system.system}</span>
-                </div>
-                <div class="drug-section">
-                    <div class="drug-section-title">Why Contraindicated</div>
-                    <div class="tag-container">
-                        ${drug.contraindications.filter(c => c.toLowerCase().includes(query.toLowerCase())).map(contraindication => `<span class="tag contraindication">${contraindication}</span>`).join('')}
-                    </div>
-                </div>
-                <div class="drug-section">
-                    <div class="drug-section-title">All Contraindications</div>
-                    <div class="tag-container">
-                        ${drug.contraindications.map(contraindication => `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;">${contraindication}</span>`).join('')}
-                    </div>
-                </div>
-            `;
-            
-            drugCard.onclick = () => {
-                showDrugDetail(drug, pharmaClass, system, therapeuticClass);
-            };
-            
-            resultsContainer.appendChild(drugCard);
+
+            const card = buildDrugCard({
+                drug,
+                pharmaClass,
+                system,
+                therapeuticClass,
+                showSystemTags: true,
+                showMechanism: true,
+                onCardClick: () => {
+                    mainContainer.className = '';
+                    mainContainer.id = 'column-container';
+                    showDrugDetail(system, therapeuticClass, pharmaClass, drug);
+                }
+            });
+            card.style.borderLeft = '4px solid #e74c3c';
+
+            const queryLower = query.toLowerCase();
+            card.querySelectorAll('.tag.contraindication').forEach(tag => {
+                const value = tag.dataset.contraindication || tag.textContent;
+                if (value && value.toLowerCase().includes(queryLower)) {
+                    tag.classList.add('tag-highlight');
+                }
+            });
+
+            resultsContainer.appendChild(card);
+            applyFadeIn(card);
         });
     };
     window.DrugApp.performContraindicationSearch = performContraindicationSearch;
@@ -2606,80 +3757,23 @@ document.addEventListener('DOMContentLoaded', () => {
             
             results.forEach(result => {
                 const { system, therapeuticClass, pharmaClass, drug } = result.pointers;
-                
-                const drugCard = document.createElement('div');
-                drugCard.className = 'drug-card';
-                
-                drugCard.innerHTML = `
-                    <div class="drug-name">${drug.name}</div>
-                    
-                    <div class="drug-section">
-                        <div class="drug-section-title">System & Class</div>
-                        <div class="tag-container">
-                            <span class="tag system" onclick="filterByTag('system', '${system.system}')">${system.system}</span>
-                            <span class="tag class" onclick="filterByTag('class', '${pharmaClass.name}')">${pharmaClass.name}</span>
-                        </div>
-                    </div>
 
-                    <div class="drug-section">
-                        <div class="drug-section-title">Mechanism</div>
-                        <div class="tag-container">
-                            <span class="tag mechanism" onclick="filterByTag('mechanism', '${pharmaClass.mechanism.substring(0, 50)}...')" title="${pharmaClass.mechanism}">${pharmaClass.mechanism.length > 50 ? pharmaClass.mechanism.substring(0, 50) + '...' : pharmaClass.mechanism}</span>
-                        </div>
-                    </div>
+                const card = buildDrugCard({
+                    drug,
+                    pharmaClass,
+                    system,
+                    therapeuticClass,
+                    showSystemTags: true,
+                    showMechanism: true,
+                    onCardClick: () => {
+                        mainContainer.className = '';
+                        mainContainer.id = 'column-container';
+                        showDrugDetail(system, therapeuticClass, pharmaClass, drug);
+                    }
+                });
 
-                    <div class="drug-section">
-                        <div class="drug-section-title">Indications</div>
-                        <div class="tag-container">
-                            ${drug.indications.map(indication => 
-                                `<span class="tag indication clickable-tag" data-indication="${indication}" style="cursor: pointer;" title="Click to find all drugs for ${indication}">${indication}</span>`
-                            ).join('')}
-                        </div>
-                    </div>
-
-                    <div class="drug-section">
-                        <div class="drug-section-title">Contraindications</div>
-                        <div class="tag-container">
-                            ${drug.contraindications.map(contraindication => 
-                                `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;" title="Click to find all drugs to avoid with ${contraindication}">${contraindication}</span>`
-                            ).join('')}
-                        </div>
-                    </div>
-
-                    <div class="drug-section">
-                        <div class="drug-section-title">Side Effects</div>
-                        <div class="tag-container">
-                            ${pharmaClass.side_effects.map(effect => 
-                                `<span class="tag side-effect" onclick="filterByTag('side-effect', '${effect}')">${effect}</span>`
-                            ).join('')}
-                        </div>
-                    </div>
-
-                    <div class="drug-section">
-                        <div class="drug-section-title">Drug Interactions</div>
-                        <div class="tag-container">
-                            ${pharmaClass.interactions.split(/[,;.]/).filter(item => item.trim()).map(interaction => 
-                                `<span class="tag interaction" onclick="filterByTag('interaction', '${interaction.trim()}')">${interaction.trim()}</span>`
-                            ).join('')}
-                        </div>
-                    </div>
-
-                    <div class="drug-section">
-                        <div class="drug-section-title">Key Features</div>
-                        <p style="font-size: 0.9em; color: #666;">${drug.features}</p>
-                    </div>
-                `;
-                
-                drugCard.onclick = (e) => {
-                    // Don't navigate if clicking on a tag
-                    if (e.target.classList.contains('tag')) return;
-                    
-                    mainContainer.className = '';
-                    mainContainer.id = 'column-container';
-                    showDrugDetail(system, therapeuticClass, pharmaClass, drug);
-                };
-                
-                resultsContainer.appendChild(drugCard);
+                resultsContainer.appendChild(card);
+                applyFadeIn(card);
             });
         };
 
@@ -2751,80 +3845,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
         filteredResults.forEach(result => {
             const { system, therapeuticClass, pharmaClass, drug } = result.pointers;
-            
-            const drugCard = document.createElement('div');
-            drugCard.className = 'drug-card';
-            
-            drugCard.innerHTML = `
-                <div class="drug-name">${drug.name}</div>
-                
-                <div class="drug-section">
-                    <div class="drug-section-title">System & Class</div>
-                    <div class="tag-container">
-                        <span class="tag system" onclick="filterByTag('system', '${system.system}')">${system.system}</span>
-                        <span class="tag class" onclick="filterByTag('class', '${pharmaClass.name}')">${pharmaClass.name}</span>
-                    </div>
-                </div>
 
-                <div class="drug-section">
-                    <div class="drug-section-title">Mechanism</div>
-                    <div class="tag-container">
-                        <span class="tag mechanism" onclick="filterByTag('mechanism', '${pharmaClass.mechanism.substring(0, 50)}...')" title="${pharmaClass.mechanism}">${pharmaClass.mechanism.length > 50 ? pharmaClass.mechanism.substring(0, 50) + '...' : pharmaClass.mechanism}</span>
-                    </div>
-                </div>
+            const card = buildDrugCard({
+                drug,
+                pharmaClass,
+                system,
+                therapeuticClass,
+                showSystemTags: true,
+                showMechanism: true,
+                onCardClick: () => {
+                    mainContainer.className = '';
+                    mainContainer.id = 'column-container';
+                    showDrugDetail(system, therapeuticClass, pharmaClass, drug);
+                }
+            });
 
-                <div class="drug-section">
-                    <div class="drug-section-title">Indications</div>
-                    <div class="tag-container">
-                        ${drug.indications.map(indication => 
-                            `<span class="tag indication clickable-tag" data-indication="${indication}" style="cursor: pointer;" title="Click to find all drugs for ${indication}">${indication}</span>`
-                        ).join('')}
-                    </div>
-                </div>
-
-                <div class="drug-section">
-                    <div class="drug-section-title">Contraindications</div>
-                    <div class="tag-container">
-                        ${drug.contraindications.map(contraindication => 
-                            `<span class="tag contraindication clickable-tag" data-contraindication="${contraindication}" style="cursor: pointer;" title="Click to find all drugs to avoid with ${contraindication}">${contraindication}</span>`
-                        ).join('')}
-                    </div>
-                </div>
-
-                <div class="drug-section">
-                    <div class="drug-section-title">Side Effects</div>
-                    <div class="tag-container">
-                        ${pharmaClass.side_effects.map(effect => 
-                            `<span class="tag side-effect" onclick="filterByTag('side-effect', '${effect}')">${effect}</span>`
-                        ).join('')}
-                    </div>
-                </div>
-
-                <div class="drug-section">
-                    <div class="drug-section-title">Drug Interactions</div>
-                    <div class="tag-container">
-                        ${pharmaClass.interactions.split(/[,;.]/).filter(item => item.trim()).map(interaction => 
-                            `<span class="tag interaction" onclick="filterByTag('interaction', '${interaction.trim()}')">${interaction.trim()}</span>`
-                        ).join('')}
-                    </div>
-                </div>
-
-                <div class="drug-section">
-                    <div class="drug-section-title">Key Features</div>
-                    <p style="font-size: 0.9em; color: #666;">${drug.features}</p>
-                </div>
-            `;
-            
-            drugCard.onclick = (e) => {
-                // Don't navigate if clicking on a tag
-                if (e.target.classList.contains('tag')) return;
-                
-                mainContainer.className = '';
-                mainContainer.id = 'column-container';
-                showDrugDetail(system, therapeuticClass, pharmaClass, drug);
-            };
-            
-            resultsContainer.appendChild(drugCard);
+            resultsContainer.appendChild(card);
+            applyFadeIn(card);
         });
     };
     window.DrugApp.performSearch = performSearch;
@@ -2898,37 +3935,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Universal event listener for clickable tags with debug logging
     document.addEventListener('click', function(e) {
-        console.log('Click detected on:', e.target);
-        console.log('Classes:', e.target.classList);
-        
-        // Check if the tag is inside a column-item (main navigation view)
-        const isInColumnItem = e.target.closest('.column-item');
-        if (isInColumnItem) {
-            console.log('Tag is in column navigation - ignoring click');
+        // Ignore clicks inside the column navigation list
+        if (e.target.closest('.column-item')) {
             return;
         }
-        
-        // Check for clickable tags or any tag with appropriate classes
+
         if (e.target.classList.contains('clickable-tag') || e.target.classList.contains('tag')) {
-            console.log('Tag found!');
-            
             if (e.target.dataset.indication) {
-                console.log('Calling searchByIndication with:', e.target.dataset.indication);
                 searchByIndication(e.target.dataset.indication);
             } else if (e.target.dataset.contraindication) {
-                console.log('Calling searchByContraindication with:', e.target.dataset.contraindication);
                 searchByContraindication(e.target.dataset.contraindication);
             } else if (e.target.classList.contains('side-effect')) {
-                console.log('Calling searchBySideEffect with:', e.target.textContent);
                 searchBySideEffect(e.target.textContent);
             } else if (e.target.classList.contains('mechanism')) {
-                console.log('Calling searchByMechanism with:', e.target.textContent);
                 searchByMechanism(e.target.textContent);
             } else if (e.target.classList.contains('class') || e.target.classList.contains('subclass')) {
-                console.log('Calling searchByClass with:', e.target.textContent);
                 searchByClass(e.target.textContent);
             } else if (e.target.classList.contains('system')) {
-                console.log('Calling searchBySystem with:', e.target.textContent);
                 searchBySystem(e.target.textContent);
             }
         }
