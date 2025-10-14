@@ -64,7 +64,8 @@ const drugData = [
                         interactions: 'Aminoglycosides potentiate blockade.',
                         drugs: [
                             { name: 'Succinylcholine', features: 'Depolarizing blocker, fasciculations.', choice: 'Rapid sequence intubation.', indications: ['Neuromuscular Blockade'], contraindications: ['Malignant Hyperthermia', 'Hyperkalemia'] },
-                            { name: 'Rocuronium', features: 'Non-depolarizing, reversible.', choice: 'Surgical paralysis.', indications: ['Neuromuscular Blockade'], contraindications: ['Myasthenia Gravis'] }
+                            { name: 'Rocuronium', features: 'Non-depolarizing, reversible.', choice: 'Surgical paralysis.', indications: ['Neuromuscular Blockade'], contraindications: ['Myasthenia Gravis'] },
+                            { name: 'Mecamylamine', features: 'Oral ganglionic blocker that crosses the BBB.', choice: 'Autonomic dysreflexia or severe hypertension refractory to other therapy.', indications: ['Autonomic Dysreflexia', 'Severe Hypertension'], contraindications: ['Glaucoma', 'Severe Renal Impairment'] }
                         ]
                     }
                 ]
@@ -138,7 +139,8 @@ const drugData = [
                         interactions: 'MAOIs and sympathomimetics potentiate hypertensive crises.',
                         drugs: [
                             { name: 'Amphetamine', features: 'Promotes release of catecholamines.', choice: 'ADHD, narcolepsy.', indications: ['ADHD', 'Narcolepsy'], contraindications: ['Severe Hypertension', 'Cardiac Disease'] },
-                            { name: 'Ephedrine', features: 'Mixed direct/indirect sympathomimetic.', choice: 'Nasal decongestant, hypotension in anesthesia.', indications: ['Hypotension', 'Nasal Congestion'], contraindications: ['Tachyarrhythmias'] }
+                            { name: 'Ephedrine', features: 'Mixed direct/indirect sympathomimetic.', choice: 'Nasal decongestant, hypotension in anesthesia.', indications: ['Hypotension', 'Nasal Congestion'], contraindications: ['Tachyarrhythmias'] },
+                            { name: 'Tyramine', features: 'Dietary monoamine that displaces norepinephrine from storage vesicles.', choice: 'Illustrative agent for MAOI-associated hypertensive crises.', indications: ['MAOI Interaction Counseling'], contraindications: ['Concomitant MAOI Therapy'] }
                         ]
                     },
                     {
@@ -164,6 +166,7 @@ const drugData = [
                         drugs: [
                             { name: 'Propranolol', features: 'Non-selective, crosses BBB.', choice: 'Anxiety, migraine prophylaxis.', indications: ['Hypertension', 'Anxiety', 'Migraine'], contraindications: ['Asthma', 'COPD', 'Heart Block'] },
                             { name: 'Metoprolol', features: 'β1-selective (cardioselective).', choice: 'Hypertension with asthma/COPD.', indications: ['Hypertension', 'Heart Failure'], contraindications: ['Decompensated Heart Failure', 'Heart Block'] },
+                            { name: 'Bisoprolol', features: 'Highly β1-selective with long half-life.', choice: 'Chronic heart failure with reduced ejection fraction.', indications: ['Heart Failure', 'Hypertension'], contraindications: ['Severe Bradycardia', 'Heart Block'] },
                             { name: 'Atenolol', features: 'β1-selective, renally excreted.', choice: 'Hypertension, post-MI.', indications: ['Hypertension', 'Post-MI'], contraindications: ['Heart Block', 'Severe Bradycardia'] },
                             { name: 'Carvedilol', features: 'Combined α/β blocker.', choice: 'Heart failure with proven mortality benefit.', indications: ['Heart Failure', 'Hypertension'], contraindications: ['Decompensated Heart Failure'] },
                             { name: 'Esmolol', features: 'Ultra–short acting β1 blocker.', choice: 'Acute SVT, intraoperative control.', indications: ['Supraventricular Tachycardia', 'Thyroid Storm'], contraindications: ['Sinus Bradycardia', 'Heart Block'] },
@@ -229,7 +232,17 @@ const drugData = [
                         drugs: [
                             { name: 'Losartan', features: 'First ARB, active metabolite.', choice: 'ACE inhibitor alternative, cough intolerance.', indications: ['Hypertension', 'Diabetic Nephropathy'], contraindications: ['Pregnancy'] },
                             { name: 'Valsartan', features: 'Proven mortality benefit in HF.', choice: 'Heart failure with ACE inhibitor intolerance.', indications: ['Hypertension', 'Heart Failure'], contraindications: ['Pregnancy'] },
-                            { name: 'Irbesartan', features: 'Excellent renal protection.', choice: 'Diabetic nephropathy protection.', indications: ['Hypertension', 'Diabetic Nephropathy'], contraindications: ['Pregnancy'] }
+                            { name: 'Irbesartan', features: 'Excellent renal protection.', choice: 'Diabetic nephropathy protection.', indications: ['Hypertension', 'Diabetic Nephropathy'], contraindications: ['Pregnancy'] },
+                            { name: 'Olmesartan', features: 'Once-daily ARB with potent blood pressure reduction.', choice: 'Hypertension requiring steady 24-hour control.', indications: ['Hypertension'], contraindications: ['Pregnancy'] }
+                        ]
+                    },
+                    {
+                        name: 'Direct Renin Inhibitors',
+                        mechanism: 'Block renin activity to prevent angiotensin I formation and downstream RAAS activation.',
+                        side_effects: ['Hyperkalemia', 'Hypotension', 'Angioedema'],
+                        interactions: 'ACE inhibitors or ARBs increase risk of renal impairment and hyperkalemia.',
+                        drugs: [
+                            { name: 'Aliskiren', features: 'Oral renin inhibitor with long half-life.', choice: 'Add-on therapy for resistant hypertension.', indications: ['Hypertension'], contraindications: ['Pregnancy', 'Diabetes with ACE inhibitor or ARB use'] }
                         ]
                     },
                     {
@@ -312,7 +325,8 @@ const drugData = [
                         interaction_explanation: 'ACE INHIBITORS/ARBS: MECHANISM - Both reduce aldosterone and block potassium excretion. CONSEQUENCE - Dangerous hyperkalemia with risk of fatal arrhythmias.',
                         drugs: [
                             { name: 'Spironolactone', features: 'Aldosterone antagonist.', choice: 'Heart failure, prevents K+ loss.', indications: ['Heart Failure', 'Hypertension'], contraindications: ['Hyperkalemia', 'Anuria'] },
-                            { name: 'Eplerenone', features: 'Selective aldosterone antagonist.', choice: 'Post-MI heart failure.', indications: ['Post-MI Heart Failure', 'Hypertension'], contraindications: ['Hyperkalemia'] }
+                            { name: 'Eplerenone', features: 'Selective aldosterone antagonist.', choice: 'Post-MI heart failure.', indications: ['Post-MI Heart Failure', 'Hypertension'], contraindications: ['Hyperkalemia'] },
+                            { name: 'Triamterene', features: 'ENaC blocker often paired with thiazides.', choice: 'Combination therapy to prevent hypokalemia.', indications: ['Hypertension', 'Edema'], contraindications: ['Hyperkalemia', 'Severe Renal Impairment'] }
                         ]
                     }
                 ]
@@ -436,7 +450,7 @@ const drugData = [
         ]
     },
     {
-        system: 'Nervous System',
+        system: 'Neuropsychiatry',
         therapeutic_classes: [
             {
                 name: 'Antidepressants',
@@ -465,6 +479,15 @@ const drugData = [
                         ]
                     },
                     {
+                        name: 'Tricyclic Antidepressants (TCAs)',
+                        mechanism: 'Block serotonin and norepinephrine reuptake with additional anticholinergic and antihistamine effects.',
+                        side_effects: ['Anticholinergic effects', 'Orthostatic hypotension', 'Cardiac arrhythmias in overdose'],
+                        interactions: 'MAOIs (hypertensive crisis), CYP2D6 inhibitors (increased levels).',
+                        drugs: [
+                            { name: 'Amitriptyline', features: 'Highly anticholinergic, sedating TCA.', choice: 'Depression with neuropathic pain or migraine prophylaxis.', indications: ['Depression', 'Neuropathic Pain', 'Migraine Prophylaxis'], contraindications: ['Recent MI', 'MAOI use'] }
+                        ]
+                    },
+                    {
                         name: 'Atypical Antidepressants',
                         mechanism: 'Various mechanisms outside traditional classes.',
                         side_effects: ['Varies by drug'],
@@ -472,6 +495,32 @@ const drugData = [
                         drugs: [
                             { name: 'Bupropion', features: 'Dopamine/norepinephrine reuptake inhibitor.', choice: 'Depression with sexual dysfunction concern.', indications: ['Depression', 'Smoking Cessation'], contraindications: ['Seizure Disorder', 'Eating Disorders'] },
                             { name: 'Mirtazapine', features: 'α2-antagonist, sedating and orexigenic.', choice: 'Depression with insomnia and weight loss.', indications: ['Depression', 'Insomnia'], contraindications: ['Hypersensitivity'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Mood Stabilizers',
+                pharma_classes: [
+                    {
+                        name: 'Lithium',
+                        mechanism: 'Inhibits inositol monophosphatase, affects neurotransmitter signaling.',
+                        side_effects: ['Tremor', 'Polyuria', 'Thyroid dysfunction', 'Nephrotoxicity'],
+                        interactions: 'Thiazides, ACE inhibitors, NSAIDs increase lithium levels.',
+                        interaction_explanation: 'THIAZIDES: MECHANISM - Thiazides cause volume depletion, increasing proximal tubule lithium reabsorption. CONSEQUENCE - Lithium toxicity with tremor, confusion, seizures. NSAIDS: MECHANISM - Reduce renal prostaglandins needed for lithium excretion. CONSEQUENCE - Increased lithium levels and toxicity.',
+                        drugs: [
+                            { name: 'Lithium Carbonate', features: 'Narrow therapeutic index, requires monitoring.', choice: 'Bipolar disorder, acute mania.', indications: ['Bipolar Disorder', 'Acute Mania'], contraindications: ['Severe Renal Disease', 'Severe Heart Disease'] }
+                        ]
+                    },
+                    {
+                        name: 'Anticonvulsants as Mood Stabilizers',
+                        mechanism: 'Various mechanisms: sodium channel blockade, GABA enhancement.',
+                        side_effects: ['Sedation', 'Weight gain', 'Teratogenicity', 'Blood dyscrasias'],
+                        interactions: 'CYP450 inducers and inhibitors.',
+                        drugs: [
+                            { name: 'Valproic Acid', features: 'GABA enhancer, teratogenic.', choice: 'Bipolar disorder, epilepsy.', indications: ['Bipolar Disorder', 'Epilepsy', 'Migraine Prophylaxis'], contraindications: ['Pregnancy', 'Hepatic Disease'] },
+                            { name: 'Lamotrigine', features: 'Sodium channel blocker, good for depression.', choice: 'Bipolar depression, epilepsy.', indications: ['Bipolar Disorder', 'Epilepsy'], contraindications: ['Hypersensitivity'] },
+                            { name: 'Carbamazepine', features: 'Sodium channel blocker, CYP450 inducer.', choice: 'Bipolar disorder, trigeminal neuralgia.', indications: ['Bipolar Disorder', 'Trigeminal Neuralgia', 'Epilepsy'], contraindications: ['Bone Marrow Depression', 'MAOIs'] }
                         ]
                     }
                 ]
@@ -488,7 +537,12 @@ const drugData = [
                             { name: 'Lorazepam', features: 'Intermediate-acting, no active metabolites.', choice: 'Anxiety, status epilepticus.', indications: ['Anxiety', 'Status Epilepticus'], contraindications: ['Respiratory Depression', 'Sleep Apnea'] },
                             { name: 'Diazepam', features: 'Long-acting, active metabolites.', choice: 'Alcohol withdrawal, muscle spasms.', indications: ['Anxiety', 'Alcohol Withdrawal'], contraindications: ['Respiratory Depression', 'Sleep Apnea'] },
                             { name: 'Alprazolam', features: 'Short-acting, high potency.', choice: 'Panic disorder.', indications: ['Panic Disorder', 'Anxiety'], contraindications: ['Respiratory Depression'] },
-                            { name: 'Midazolam', features: 'Very short-acting, water-soluble.', choice: 'Procedural sedation.', indications: ['Procedural Sedation'], contraindications: ['Respiratory Depression'] }
+                            { name: 'Midazolam', features: 'Very short-acting, water-soluble.', choice: 'Procedural sedation.', indications: ['Procedural Sedation'], contraindications: ['Respiratory Depression'] },
+                            { name: 'Clonazepam', features: 'Long-acting, high-potency benzodiazepine.', choice: 'Chronic panic disorder or myoclonic seizure control.', indications: ['Panic Disorder', 'Myoclonic Seizures'], contraindications: ['Severe Hepatic Impairment', 'Sleep Apnea'] },
+                            { name: 'Temazepam', features: 'Intermediate-acting, conjugated for renal excretion.', choice: 'Sleep maintenance insomnia in patients needing predictable kinetics.', indications: ['Insomnia'], contraindications: ['Pregnancy', 'Untreated Sleep Apnea'] },
+                            { name: 'Oxazepam', features: 'Short-acting, no active metabolites (safe in liver disease).', choice: 'Alcohol withdrawal when hepatic metabolism is impaired.', indications: ['Alcohol Withdrawal', 'Anxiety'], contraindications: ['Severe Respiratory Insufficiency'] },
+                            { name: 'Triazolam', features: 'Ultra-short acting, marked anterograde amnesia risk.', choice: 'Short-term sleep initiation therapy.', indications: ['Insomnia'], contraindications: ['Pregnancy', 'Strong CYP3A4 Inhibitors'] },
+                            { name: 'Chlordiazepoxide', features: 'Long-acting with active metabolites, smooth withdrawal coverage.', choice: 'First-line for complicated alcohol withdrawal and delirium tremens prophylaxis.', indications: ['Alcohol Withdrawal', 'Anxiety'], contraindications: ['Severe Hepatic Impairment', 'Pregnancy'] }
                         ]
                     },
                     {
@@ -531,6 +585,55 @@ const drugData = [
                 ]
             },
             {
+                name: 'Parkinson Disease Medications',
+                pharma_classes: [
+                    {
+                        name: 'Dopamine Precursors',
+                        mechanism: 'Levodopa crosses blood-brain barrier, converted to dopamine.',
+                        side_effects: ['Dyskinesias', 'On-off phenomena', 'Nausea', 'Orthostatic hypotension'],
+                        interactions: 'MAOIs, high-protein meals reduce absorption.',
+                        interaction_explanation: 'MAOIS: MECHANISM - MAOIs prevent dopamine breakdown, while levodopa increases dopamine production. CONSEQUENCE - Risk of hypertensive crisis from excessive dopamine. Use MAO-B selective inhibitors only.',
+                        drugs: [
+                            { name: 'Levodopa/Carbidopa', features: 'Carbidopa prevents peripheral conversion.', choice: 'First-line Parkinson treatment.', indications: ['Parkinson Disease'], contraindications: ['MAOIs', 'Angle-Closure Glaucoma'] }
+                        ]
+                    },
+                    {
+                        name: 'Dopamine Agonists',
+                        mechanism: 'Direct stimulation of dopamine receptors.',
+                        side_effects: ['Impulse control disorders', 'Sleep attacks', 'Nausea'],
+                        interactions: 'Antipsychotics antagonize effects.',
+                        drugs: [
+                            { name: 'Pramipexole', features: 'Non-ergot agonist, good for early PD.', choice: 'Early Parkinson disease, restless leg syndrome.', indications: ['Parkinson Disease', 'Restless Leg Syndrome'], contraindications: ['Hypersensitivity'] },
+                            { name: 'Ropinirole', features: 'Non-ergot agonist, impulse control risk.', choice: 'Early PD, restless leg syndrome.', indications: ['Parkinson Disease', 'Restless Leg Syndrome'], contraindications: ['Hypersensitivity'] }
+                        ]
+                    },
+                    {
+                        name: 'MAO-B Inhibitors',
+                        mechanism: 'Inhibit MAO-B enzyme, increase dopamine availability.',
+                        side_effects: ['Insomnia', 'Nausea', 'Dizziness'],
+                        interactions: 'Meperidine, tramadol (serotonin syndrome).',
+                        drugs: [
+                            { name: 'Selegiline', features: 'Irreversible MAO-B inhibitor.', choice: 'Early PD, adjunct to levodopa.', indications: ['Parkinson Disease'], contraindications: ['Meperidine Use'] },
+                            { name: 'Rasagiline', features: 'Irreversible MAO-B inhibitor, neuroprotective.', choice: 'Early or advanced PD.', indications: ['Parkinson Disease'], contraindications: ['Severe Hepatic Impairment'] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Migraine Therapies',
+                pharma_classes: [
+                    {
+                        name: 'Triptans (5-HT1B/1D Agonists)',
+                        mechanism: 'Activate 5-HT1B/1D receptors to constrict cranial vessels and inhibit CGRP release.',
+                        side_effects: ['Chest tightness', 'Paresthesias', 'Serotonin syndrome (with SSRIs/SNRIs)'],
+                        interactions: 'Contraindicated with MAOIs or ergots within 24 hours; caution with serotonergic agents.',
+                        drugs: [
+                            { name: 'Sumatriptan', features: 'Prototype triptan with multiple formulations.', choice: 'Abortive therapy for moderate to severe migraine attacks.', indications: ['Acute Migraine', 'Cluster Headache'], contraindications: ['Coronary Artery Disease', 'Uncontrolled Hypertension'] }
+                        ]
+                    }
+                ]
+            },
+            {
                 name: 'Anesthetics',
                 pharma_classes: [
                     {
@@ -550,13 +653,24 @@ const drugData = [
                 pharma_classes: [
                     {
                         name: 'Sodium Channel Blockers',
-                        mechanism: 'Block voltage-gated sodium channels, preventing neuronal firing.',
-                        side_effects: ['Diplopia', 'Ataxia', 'Rash'],
-                        interactions: 'Many are enzyme inducers.',
+                        mechanism: 'Block voltage-gated sodium channels, prevent neuronal firing.',
+                        side_effects: ['Diplopia', 'Ataxia', 'Cognitive impairment', 'Rash'],
+                        interactions: 'CYP450 inducers/inhibitors affect levels.',
                         drugs: [
-                            { name: 'Phenytoin', features: 'Zero-order kinetics, many interactions.', choice: 'Status epilepticus.', indications: ['Epilepsy', 'Status Epilepticus'], contraindications: ['Heart Block'] },
-                            { name: 'Carbamazepine', features: 'Autoinduces metabolism.', choice: 'Trigeminal neuralgia.', indications: ['Epilepsy', 'Trigeminal Neuralgia'], contraindications: ['Bone Marrow Depression'] },
-                            { name: 'Lamotrigine', features: 'Broad spectrum, rash risk.', choice: 'Bipolar disorder.', indications: ['Epilepsy', 'Bipolar Disorder'], contraindications: ['Rash History'] }
+                            { name: 'Phenytoin', features: 'Narrow therapeutic index, zero-order kinetics.', choice: 'Tonic-clonic seizures, status epilepticus.', indications: ['Tonic-Clonic Seizures', 'Status Epilepticus'], contraindications: ['Heart Block', 'Porphyria'] },
+                            { name: 'Carbamazepine', features: 'Autoinduction, drug interactions.', choice: 'Partial seizures, trigeminal neuralgia.', indications: ['Partial Seizures', 'Trigeminal Neuralgia'], contraindications: ['Bone Marrow Depression'] },
+                            { name: 'Lamotrigine', features: 'Broad spectrum, good tolerability.', choice: 'Broad-spectrum epilepsy, bipolar disorder.', indications: ['Epilepsy', 'Bipolar Disorder'], contraindications: ['Hypersensitivity'] }
+                        ]
+                    },
+                    {
+                        name: 'GABA Enhancers',
+                        mechanism: 'Enhance GABA-mediated inhibition through various mechanisms.',
+                        side_effects: ['Sedation', 'Weight gain', 'Cognitive slowing'],
+                        interactions: 'CNS depressants (additive sedation).',
+                        drugs: [
+                            { name: 'Valproic Acid', features: 'Broad spectrum, multiple mechanisms.', choice: 'Absence seizures, myoclonic epilepsy.', indications: ['Absence Seizures', 'Myoclonic Epilepsy'], contraindications: ['Hepatic Disease', 'Pregnancy'] },
+                            { name: 'Phenobarbital', features: 'GABA-A receptor enhancer, enzyme inducer.', choice: 'Neonatal seizures, refractory epilepsy.', indications: ['Neonatal Seizures', 'Refractory Epilepsy'], contraindications: ['Porphyria', 'Severe Respiratory Depression'] },
+                            { name: 'Gabapentin', features: 'Calcium channel modulator, renally excreted.', choice: 'Partial seizures, neuropathic pain.', indications: ['Partial Seizures', 'Neuropathic Pain'], contraindications: ['Hypersensitivity'] }
                         ]
                     }
                 ]
@@ -694,6 +808,8 @@ const drugData = [
                         interactions: 'Aminoglycosides increase nephrotoxicity.',
                         drugs: [
                             { name: 'Cefazolin (1st gen)', features: 'Excellent gram-positive coverage.', choice: 'Surgical prophylaxis.', indications: ['Surgical Prophylaxis'], contraindications: ['Cephalosporin Allergy'] },
+                            { name: 'Cephalexin (1st gen)', features: 'Oral first-generation cephalosporin.', choice: 'Uncomplicated skin and soft tissue infections.', indications: ['Skin Infections', 'UTI'], contraindications: ['Cephalosporin Allergy'] },
+                            { name: 'Cefuroxime (2nd gen)', features: 'Enhanced gram-negative coverage vs 1st gen.', choice: 'Upper respiratory infections and otitis media.', indications: ['Sinusitis', 'Otitis Media'], contraindications: ['Cephalosporin Allergy'] },
                             { name: 'Ceftriaxone (3rd gen)', features: 'CNS penetration, broad spectrum.', choice: 'Meningitis, gonorrhea.', indications: ['Meningitis', 'Gonorrhea'], contraindications: ['Cephalosporin Allergy'] },
                             { name: 'Cefepime (4th gen)', features: 'Anti-pseudomonal activity.', choice: 'Hospital-acquired pneumonia.', indications: ['Hospital-Acquired Pneumonia'], contraindications: ['Cephalosporin Allergy'] }
                         ]
@@ -1322,7 +1438,8 @@ const drugData = [
                         drugs: [
                             { name: 'Spironolactone', features: 'Aldosterone receptor antagonist.', choice: 'Heart failure, primary aldosteronism.', indications: ['Heart Failure', 'Primary Aldosteronism', 'Hirsutism'], contraindications: ['Hyperkalemia', 'Anuria'] },
                             { name: 'Amiloride', features: 'ENaC channel blocker.', choice: 'Hypertension without hormonal effects.', indications: ['Hypertension', 'Edema'], contraindications: ['Hyperkalemia', 'Anuria'] },
-                            { name: 'Eplerenone', features: 'Selective aldosterone antagonist.', choice: 'Post-MI heart failure without gynecomastia.', indications: ['Post-MI Heart Failure', 'Hypertension'], contraindications: ['Hyperkalemia', 'Severe Renal Impairment'] }
+                            { name: 'Eplerenone', features: 'Selective aldosterone antagonist.', choice: 'Post-MI heart failure without gynecomastia.', indications: ['Post-MI Heart Failure', 'Hypertension'], contraindications: ['Hyperkalemia', 'Severe Renal Impairment'] },
+                            { name: 'Triamterene', features: 'Potassium-sparing diuretic that blocks ENaC.', choice: 'Prevent diuretic-induced hypokalemia when combined with HCTZ.', indications: ['Hypertension', 'Edema'], contraindications: ['Hyperkalemia', 'Severe Renal Impairment'] }
                         ]
                     },
                     {
@@ -1932,99 +2049,6 @@ const drugData = [
                         drugs: [
                             { name: 'Fluticasone', features: 'High potency, low systemic absorption.', choice: 'Allergic rhinitis, nasal polyps.', indications: ['Allergic Rhinitis', 'Nasal Polyps'], contraindications: ['Nasal Infections'] },
                             { name: 'Budesonide', features: 'High first-pass metabolism.', choice: 'Allergic rhinitis in children.', indications: ['Allergic Rhinitis'], contraindications: ['Nasal Infections'] }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        system: 'Psychiatry/Neurology (Expanded)',
-        therapeutic_classes: [
-            {
-                name: 'Mood Stabilizers',
-                pharma_classes: [
-                    {
-                        name: 'Lithium',
-                        mechanism: 'Inhibits inositol monophosphatase, affects neurotransmitter signaling.',
-                        side_effects: ['Tremor', 'Polyuria', 'Thyroid dysfunction', 'Nephrotoxicity'],
-                        interactions: 'Thiazides, ACE inhibitors, NSAIDs increase lithium levels.',
-                        interaction_explanation: 'THIAZIDES: MECHANISM - Thiazides cause volume depletion, increasing proximal tubule lithium reabsorption. CONSEQUENCE - Lithium toxicity with tremor, confusion, seizures. NSAIDS: MECHANISM - Reduce renal prostaglandins needed for lithium excretion. CONSEQUENCE - Increased lithium levels and toxicity.',
-                        drugs: [
-                            { name: 'Lithium Carbonate', features: 'Narrow therapeutic index, requires monitoring.', choice: 'Bipolar disorder, acute mania.', indications: ['Bipolar Disorder', 'Acute Mania'], contraindications: ['Severe Renal Disease', 'Severe Heart Disease'] }
-                        ]
-                    },
-                    {
-                        name: 'Anticonvulsants as Mood Stabilizers',
-                        mechanism: 'Various mechanisms: sodium channel blockade, GABA enhancement.',
-                        side_effects: ['Sedation', 'Weight gain', 'Teratogenicity', 'Blood dyscrasias'],
-                        interactions: 'CYP450 inducers and inhibitors.',
-                        drugs: [
-                            { name: 'Valproic Acid', features: 'GABA enhancer, teratogenic.', choice: 'Bipolar disorder, epilepsy.', indications: ['Bipolar Disorder', 'Epilepsy', 'Migraine Prophylaxis'], contraindications: ['Pregnancy', 'Hepatic Disease'] },
-                            { name: 'Lamotrigine', features: 'Sodium channel blocker, good for depression.', choice: 'Bipolar depression, epilepsy.', indications: ['Bipolar Disorder', 'Epilepsy'], contraindications: ['Hypersensitivity'] },
-                            { name: 'Carbamazepine', features: 'Sodium channel blocker, CYP450 inducer.', choice: 'Bipolar disorder, trigeminal neuralgia.', indications: ['Bipolar Disorder', 'Trigeminal Neuralgia', 'Epilepsy'], contraindications: ['Bone Marrow Depression', 'MAOIs'] }
-                        ]
-                    }
-                ]
-            },
-            {
-                name: 'Parkinson Disease Medications',
-                pharma_classes: [
-                    {
-                        name: 'Dopamine Precursors',
-                        mechanism: 'Levodopa crosses blood-brain barrier, converted to dopamine.',
-                        side_effects: ['Dyskinesias', 'On-off phenomena', 'Nausea', 'Orthostatic hypotension'],
-                        interactions: 'MAOIs, high-protein meals reduce absorption.',
-                        interaction_explanation: 'MAOIS: MECHANISM - MAOIs prevent dopamine breakdown, while levodopa increases dopamine production. CONSEQUENCE - Risk of hypertensive crisis from excessive dopamine. Use MAO-B selective inhibitors only.',
-                        drugs: [
-                            { name: 'Levodopa/Carbidopa', features: 'Carbidopa prevents peripheral conversion.', choice: 'First-line Parkinson treatment.', indications: ['Parkinson Disease'], contraindications: ['MAOIs', 'Angle-Closure Glaucoma'] }
-                        ]
-                    },
-                    {
-                        name: 'Dopamine Agonists',
-                        mechanism: 'Direct stimulation of dopamine receptors.',
-                        side_effects: ['Impulse control disorders', 'Sleep attacks', 'Nausea'],
-                        interactions: 'Antipsychotics antagonize effects.',
-                        drugs: [
-                            { name: 'Pramipexole', features: 'Non-ergot agonist, good for early PD.', choice: 'Early Parkinson disease, restless leg syndrome.', indications: ['Parkinson Disease', 'Restless Leg Syndrome'], contraindications: ['Hypersensitivity'] },
-                            { name: 'Ropinirole', features: 'Non-ergot agonist, impulse control risk.', choice: 'Early PD, restless leg syndrome.', indications: ['Parkinson Disease', 'Restless Leg Syndrome'], contraindications: ['Hypersensitivity'] }
-                        ]
-                    },
-                    {
-                        name: 'MAO-B Inhibitors',
-                        mechanism: 'Inhibit MAO-B enzyme, increase dopamine availability.',
-                        side_effects: ['Insomnia', 'Nausea', 'Dizziness'],
-                        interactions: 'Meperidine, tramadol (serotonin syndrome).',
-                        drugs: [
-                            { name: 'Selegiline', features: 'Irreversible MAO-B inhibitor.', choice: 'Early PD, adjunct to levodopa.', indications: ['Parkinson Disease'], contraindications: ['Meperidine Use'] },
-                            { name: 'Rasagiline', features: 'Irreversible MAO-B inhibitor, neuroprotective.', choice: 'Early or advanced PD.', indications: ['Parkinson Disease'], contraindications: ['Severe Hepatic Impairment'] }
-                        ]
-                    }
-                ]
-            },
-            {
-                name: 'Comprehensive Antiepileptics',
-                pharma_classes: [
-                    {
-                        name: 'Sodium Channel Blockers',
-                        mechanism: 'Block voltage-gated sodium channels, prevent neuronal firing.',
-                        side_effects: ['Diplopia', 'Ataxia', 'Cognitive impairment', 'Rash'],
-                        interactions: 'CYP450 inducers/inhibitors affect levels.',
-                        drugs: [
-                            { name: 'Phenytoin', features: 'Narrow therapeutic index, zero-order kinetics.', choice: 'Tonic-clonic seizures, status epilepticus.', indications: ['Tonic-Clonic Seizures', 'Status Epilepticus'], contraindications: ['Heart Block', 'Porphyria'] },
-                            { name: 'Carbamazepine', features: 'Autoinduction, drug interactions.', choice: 'Partial seizures, trigeminal neuralgia.', indications: ['Partial Seizures', 'Trigeminal Neuralgia'], contraindications: ['Bone Marrow Depression'] },
-                            { name: 'Lamotrigine', features: 'Broad spectrum, good tolerability.', choice: 'Broad-spectrum epilepsy, bipolar disorder.', indications: ['Epilepsy', 'Bipolar Disorder'], contraindications: ['Hypersensitivity'] }
-                        ]
-                    },
-                    {
-                        name: 'GABA Enhancers',
-                        mechanism: 'Enhance GABA-mediated inhibition through various mechanisms.',
-                        side_effects: ['Sedation', 'Weight gain', 'Cognitive slowing'],
-                        interactions: 'CNS depressants (additive sedation).',
-                        drugs: [
-                            { name: 'Valproic Acid', features: 'Broad spectrum, multiple mechanisms.', choice: 'Absence seizures, myoclonic epilepsy.', indications: ['Absence Seizures', 'Myoclonic Epilepsy'], contraindications: ['Hepatic Disease', 'Pregnancy'] },
-                            { name: 'Phenobarbital', features: 'GABA-A receptor enhancer, enzyme inducer.', choice: 'Neonatal seizures, refractory epilepsy.', indications: ['Neonatal Seizures', 'Refractory Epilepsy'], contraindications: ['Porphyria', 'Severe Respiratory Depression'] },
-                            { name: 'Gabapentin', features: 'Calcium channel modulator, renally excreted.', choice: 'Partial seizures, neuropathic pain.', indications: ['Partial Seizures', 'Neuropathic Pain'], contraindications: ['Hypersensitivity'] }
                         ]
                     }
                 ]
