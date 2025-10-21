@@ -1,5 +1,6 @@
 // V3 Graph-based Main Script with Cross-Linking
 import dataLoader from './data-loader.js';
+import medicationDataLoader from '../medications/data-loader.js';
 import ExplorerNavigation from '../shared/explorer-navigation.js';
 import inlineLinker from '../shared/cross-links/inline-linker.js';
 import tooltipManager from '../shared/cross-links/tooltip-manager.js';
@@ -21,16 +22,24 @@ async function init() {
     // Initialize explorer navigation
     const explorerNav = new ExplorerNavigation('conditions');
 
-    // Load data
+    // Load condition data
     const loaded = await dataLoader.load();
     if (!loaded) {
         showError('Failed to load data. Please refresh the page.');
         return;
     }
 
-    // Initialize cross-linking (needs medication data loader - will create stub for now)
-    // Note: Inline linker will be initialized when both data loaders are available
-    const medicationDataLoader = null; // TODO: Load medications data for cross-linking
+    // Load medication data for cross-linking
+    console.log('Loading medication data for cross-linking...');
+    const medsLoaded = await medicationDataLoader.load();
+    if (medsLoaded) {
+        console.log('✓ Medication data loaded for cross-linking');
+        console.log(`  - ${medicationDataLoader.drugs.length} drugs indexed`);
+    } else {
+        console.warn('⚠ Medication data failed to load - inline tooltips will not work');
+    }
+
+    // Initialize cross-linking with both data loaders
     inlineLinker.init(medicationDataLoader, dataLoader);
 
     // Initialize tooltip manager
