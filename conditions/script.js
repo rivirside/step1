@@ -51,12 +51,69 @@ async function init() {
     // Render initial view
     renderSystemTree();
 
+    // Check for URL parameters AFTER tree is rendered (deep linking from medications explorer)
+    // Use setTimeout to ensure tree DOM is fully built
+    setTimeout(() => {
+        checkUrlParameters();
+    }, 100);
+
     console.log('Initialization complete');
     console.log('Stats:', dataLoader.getStats());
     console.log('Cross-linking stats:', {
         relationships: relationshipResolver.getStats(),
         inlineLinker: inlineLinker.getStats()
     });
+}
+
+// Check URL parameters for deep linking
+function checkUrlParameters() {
+    const params = new URLSearchParams(window.location.search);
+    const diseaseId = params.get('disease');
+
+    if (diseaseId) {
+        console.log(`Deep linking to disease: ${diseaseId}`);
+        const disease = dataLoader.getDisease(diseaseId);
+
+        if (disease) {
+            // Select and display the disease
+            selectEntity(disease, 'disease');
+
+            // Expand the tree to show this disease
+            expandTreeToDisease(disease);
+        } else {
+            console.warn(`Disease not found: ${diseaseId}`);
+        }
+    }
+}
+
+// Expand tree to show a specific disease
+function expandTreeToDisease(disease) {
+    // Find and expand the system
+    const systemNode = document.querySelector(`[data-system-id="${disease.system}"]`);
+    if (systemNode && !systemNode.classList.contains('expanded')) {
+        systemNode.querySelector('.node-header').click();
+    }
+
+    // Wait for tree to expand, then find category
+    setTimeout(() => {
+        // Find the first category that contains this disease
+        const categoryId = disease.categories[0];
+        if (categoryId) {
+            const categoryNode = document.querySelector(`[data-category-id="${categoryId}"]`);
+            if (categoryNode && !categoryNode.classList.contains('expanded')) {
+                categoryNode.querySelector('.node-header').click();
+            }
+
+            // Finally, highlight the disease
+            setTimeout(() => {
+                const diseaseNode = document.querySelector(`[data-disease-id="${disease.id}"]`);
+                if (diseaseNode) {
+                    diseaseNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    diseaseNode.classList.add('highlighted');
+                }
+            }, 150);
+        }
+    }, 150);
 }
 
 // Setup event listeners

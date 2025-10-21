@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "baclofen",
         "name": "Baclofen",
@@ -17,32 +18,6 @@ const drugs = [
         ],
         "contraindications": [
             "Hypersensitivity"
-        ],
-        "sideEffects": [
-            "Sedation",
-            "Dizziness",
-            "Weakness",
-            "Hepatotoxicity"
-        ],
-        "interactions": "CNS depressants (additive sedation), alcohol.",
-        "interactionDetails": "CNS DEPRESSANTS: MECHANISM - Additive effects on GABA and other inhibitory neurotransmitter systems. CONSEQUENCE - Enhanced sedation, respiratory depression, and risk of falls, especially in elderly patients.",
-        "pageType": "drug"
-    },
-    {
-        "id": "tizanidine",
-        "name": "Tizanidine",
-        "pharmacologicClass": "central-acting-muscle-relaxants",
-        "therapeuticClass": "muscle-relaxants",
-        "system": "musculoskeletal-system",
-        "mechanism": "Act centrally in spinal cord and brain to reduce muscle spasticity.",
-        "features": "α2-adrenergic agonist.",
-        "clinicalChoice": "Muscle spasms, spasticity.",
-        "indications": [
-            "Muscle Spasms",
-            "Spasticity"
-        ],
-        "contraindications": [
-            "Hepatic Impairment"
         ],
         "sideEffects": [
             "Sedation",
@@ -78,31 +53,6 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive sedation), alcohol.",
         "interactionDetails": "CNS DEPRESSANTS: MECHANISM - Additive effects on GABA and other inhibitory neurotransmitter systems. CONSEQUENCE - Enhanced sedation, respiratory depression, and risk of falls, especially in elderly patients.",
-        "pageType": "drug"
-    },
-    {
-        "id": "succinylcholine",
-        "name": "Succinylcholine",
-        "pharmacologicClass": "neuromuscular-blocking-agents",
-        "therapeuticClass": "muscle-relaxants",
-        "system": "musculoskeletal-system",
-        "mechanism": "Block nicotinic receptors at neuromuscular junction.",
-        "features": "Depolarizing blocker, rapid onset/offset.",
-        "clinicalChoice": "Rapid sequence intubation.",
-        "indications": [
-            "Rapid Sequence Intubation"
-        ],
-        "contraindications": [
-            "Malignant Hyperthermia",
-            "Hyperkalemia"
-        ],
-        "sideEffects": [
-            "Paralysis",
-            "Respiratory depression",
-            "Malignant hyperthermia"
-        ],
-        "interactions": "Aminoglycosides potentiate blockade.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {
@@ -282,6 +232,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

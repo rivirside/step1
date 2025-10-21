@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "lithium-carbonate",
         "name": "Lithium Carbonate",
@@ -27,88 +28,6 @@ const drugs = [
         ],
         "interactions": "Thiazides, ACE inhibitors, NSAIDs increase lithium levels.",
         "interactionDetails": "THIAZIDES: MECHANISM - Thiazides cause volume depletion, increasing proximal tubule lithium reabsorption. CONSEQUENCE - Lithium toxicity with tremor, confusion, seizures. NSAIDS: MECHANISM - Reduce renal prostaglandins needed for lithium excretion. CONSEQUENCE - Increased lithium levels and toxicity.",
-        "pageType": "drug"
-    },
-    {
-        "id": "valproic-acid",
-        "name": "Valproic Acid",
-        "pharmacologicClass": "anticonvulsants-as-mood-stabilizers",
-        "therapeuticClass": "mood-stabilizers",
-        "system": "psychiatry-neurology-expanded",
-        "mechanism": "Various mechanisms: sodium channel blockade, GABA enhancement.",
-        "features": "GABA enhancer, teratogenic.",
-        "clinicalChoice": "Bipolar disorder, epilepsy.",
-        "indications": [
-            "Bipolar Disorder",
-            "Epilepsy",
-            "Migraine Prophylaxis"
-        ],
-        "contraindications": [
-            "Pregnancy",
-            "Hepatic Disease"
-        ],
-        "sideEffects": [
-            "Sedation",
-            "Weight gain",
-            "Teratogenicity",
-            "Blood dyscrasias"
-        ],
-        "interactions": "CYP450 inducers and inhibitors.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "lamotrigine",
-        "name": "Lamotrigine",
-        "pharmacologicClass": "anticonvulsants-as-mood-stabilizers",
-        "therapeuticClass": "mood-stabilizers",
-        "system": "psychiatry-neurology-expanded",
-        "mechanism": "Various mechanisms: sodium channel blockade, GABA enhancement.",
-        "features": "Sodium channel blocker, good for depression.",
-        "clinicalChoice": "Bipolar depression, epilepsy.",
-        "indications": [
-            "Bipolar Disorder",
-            "Epilepsy"
-        ],
-        "contraindications": [
-            "Hypersensitivity"
-        ],
-        "sideEffects": [
-            "Sedation",
-            "Weight gain",
-            "Teratogenicity",
-            "Blood dyscrasias"
-        ],
-        "interactions": "CYP450 inducers and inhibitors.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "carbamazepine",
-        "name": "Carbamazepine",
-        "pharmacologicClass": "anticonvulsants-as-mood-stabilizers",
-        "therapeuticClass": "mood-stabilizers",
-        "system": "psychiatry-neurology-expanded",
-        "mechanism": "Various mechanisms: sodium channel blockade, GABA enhancement.",
-        "features": "Sodium channel blocker, CYP450 inducer.",
-        "clinicalChoice": "Bipolar disorder, trigeminal neuralgia.",
-        "indications": [
-            "Bipolar Disorder",
-            "Trigeminal Neuralgia",
-            "Epilepsy"
-        ],
-        "contraindications": [
-            "Bone Marrow Depression",
-            "MAOIs"
-        ],
-        "sideEffects": [
-            "Sedation",
-            "Weight gain",
-            "Teratogenicity",
-            "Blood dyscrasias"
-        ],
-        "interactions": "CYP450 inducers and inhibitors.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {
@@ -236,111 +155,6 @@ const drugs = [
         "pageType": "drug"
     },
     {
-        "id": "phenytoin",
-        "name": "Phenytoin",
-        "pharmacologicClass": "sodium-channel-blockers",
-        "therapeuticClass": "comprehensive-antiepileptics",
-        "system": "psychiatry-neurology-expanded",
-        "mechanism": "Block voltage-gated sodium channels, prevent neuronal firing.",
-        "features": "Narrow therapeutic index, zero-order kinetics.",
-        "clinicalChoice": "Tonic-clonic seizures, status epilepticus.",
-        "indications": [
-            "Tonic-Clonic Seizures",
-            "Status Epilepticus"
-        ],
-        "contraindications": [
-            "Heart Block",
-            "Porphyria"
-        ],
-        "sideEffects": [
-            "Diplopia",
-            "Ataxia",
-            "Cognitive impairment",
-            "Rash"
-        ],
-        "interactions": "CYP450 inducers/inhibitors affect levels.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "carbamazepine",
-        "name": "Carbamazepine",
-        "pharmacologicClass": "sodium-channel-blockers",
-        "therapeuticClass": "comprehensive-antiepileptics",
-        "system": "psychiatry-neurology-expanded",
-        "mechanism": "Block voltage-gated sodium channels, prevent neuronal firing.",
-        "features": "Autoinduction, drug interactions.",
-        "clinicalChoice": "Partial seizures, trigeminal neuralgia.",
-        "indications": [
-            "Partial Seizures",
-            "Trigeminal Neuralgia"
-        ],
-        "contraindications": [
-            "Bone Marrow Depression"
-        ],
-        "sideEffects": [
-            "Diplopia",
-            "Ataxia",
-            "Cognitive impairment",
-            "Rash"
-        ],
-        "interactions": "CYP450 inducers/inhibitors affect levels.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "lamotrigine",
-        "name": "Lamotrigine",
-        "pharmacologicClass": "sodium-channel-blockers",
-        "therapeuticClass": "comprehensive-antiepileptics",
-        "system": "psychiatry-neurology-expanded",
-        "mechanism": "Block voltage-gated sodium channels, prevent neuronal firing.",
-        "features": "Broad spectrum, good tolerability.",
-        "clinicalChoice": "Broad-spectrum epilepsy, bipolar disorder.",
-        "indications": [
-            "Epilepsy",
-            "Bipolar Disorder"
-        ],
-        "contraindications": [
-            "Hypersensitivity"
-        ],
-        "sideEffects": [
-            "Diplopia",
-            "Ataxia",
-            "Cognitive impairment",
-            "Rash"
-        ],
-        "interactions": "CYP450 inducers/inhibitors affect levels.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "valproic-acid",
-        "name": "Valproic Acid",
-        "pharmacologicClass": "gaba-enhancers",
-        "therapeuticClass": "comprehensive-antiepileptics",
-        "system": "psychiatry-neurology-expanded",
-        "mechanism": "Enhance GABA-mediated inhibition through various mechanisms.",
-        "features": "Broad spectrum, multiple mechanisms.",
-        "clinicalChoice": "Absence seizures, myoclonic epilepsy.",
-        "indications": [
-            "Absence Seizures",
-            "Myoclonic Epilepsy"
-        ],
-        "contraindications": [
-            "Hepatic Disease",
-            "Pregnancy"
-        ],
-        "sideEffects": [
-            "Sedation",
-            "Weight gain",
-            "Cognitive slowing"
-        ],
-        "interactions": "CNS depressants (additive sedation).",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
         "id": "phenobarbital",
         "name": "Phenobarbital",
         "pharmacologicClass": "gaba-enhancers",
@@ -391,6 +205,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

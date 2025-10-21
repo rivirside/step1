@@ -1,0 +1,718 @@
+{
+  "total": 36,
+  "duplicates": [
+    {
+      "id": "carbamazepine",
+      "count": 3,
+      "pharmacologicClasses": [
+        "sodium-channel-blockers",
+        "anticonvulsants-as-mood-stabilizers"
+      ],
+      "systems": [
+        "nervous-system",
+        "psychiatry-neurology-expanded"
+      ],
+      "therapeuticClasses": [
+        "antiepileptics",
+        "mood-stabilizers",
+        "comprehensive-antiepileptics"
+      ],
+      "files": [
+        "nervous-system-drugs.js",
+        "psychiatry-neurology-expanded-drugs.js",
+        "psychiatry-neurology-expanded-drugs.js"
+      ]
+    },
+    {
+      "id": "lamotrigine",
+      "count": 3,
+      "pharmacologicClasses": [
+        "sodium-channel-blockers",
+        "anticonvulsants-as-mood-stabilizers"
+      ],
+      "systems": [
+        "nervous-system",
+        "psychiatry-neurology-expanded"
+      ],
+      "therapeuticClasses": [
+        "antiepileptics",
+        "mood-stabilizers",
+        "comprehensive-antiepileptics"
+      ],
+      "files": [
+        "nervous-system-drugs.js",
+        "psychiatry-neurology-expanded-drugs.js",
+        "psychiatry-neurology-expanded-drugs.js"
+      ]
+    },
+    {
+      "id": "doxycycline",
+      "count": 2,
+      "pharmacologicClasses": [
+        "tetracyclines",
+        "oral-antibiotics"
+      ],
+      "systems": [
+        "antimicrobials",
+        "dermatology"
+      ],
+      "therapeuticClasses": [
+        "protein-synthesis-inhibitors",
+        "acne-medications"
+      ],
+      "files": [
+        "antimicrobials-drugs.js",
+        "dermatology-drugs.js"
+      ]
+    },
+    {
+      "id": "minocycline",
+      "count": 2,
+      "pharmacologicClasses": [
+        "tetracyclines",
+        "oral-antibiotics"
+      ],
+      "systems": [
+        "antimicrobials",
+        "dermatology"
+      ],
+      "therapeuticClasses": [
+        "protein-synthesis-inhibitors",
+        "acne-medications"
+      ],
+      "files": [
+        "antimicrobials-drugs.js",
+        "dermatology-drugs.js"
+      ]
+    },
+    {
+      "id": "trimethoprim-sulfamethoxazole",
+      "count": 2,
+      "pharmacologicClasses": [
+        "trimethoprim",
+        "urinary-antiseptics"
+      ],
+      "systems": [
+        "antimicrobials",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "folate-synthesis-inhibitors",
+        "urinary-tract-infections"
+      ],
+      "files": [
+        "antimicrobials-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "hydroxychloroquine",
+      "count": 2,
+      "pharmacologicClasses": [
+        "quinoline-antimalarials",
+        "disease-modifying-antirheumatic-drugs-dmards"
+      ],
+      "systems": [
+        "antimicrobials",
+        "immunology-rheumatology"
+      ],
+      "therapeuticClasses": [
+        "antimalarials",
+        "immunosuppressants"
+      ],
+      "files": [
+        "antimicrobials-drugs.js",
+        "immunology-rheumatology-drugs.js"
+      ]
+    },
+    {
+      "id": "ipratropium",
+      "count": 2,
+      "pharmacologicClasses": [
+        "muscarinic-antagonists",
+        "anticholinergics"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "respiratory-system"
+      ],
+      "therapeuticClasses": [
+        "cholinergic-antagonists-parasympatholytics",
+        "bronchodilators"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "respiratory-system-drugs.js"
+      ]
+    },
+    {
+      "id": "tiotropium",
+      "count": 2,
+      "pharmacologicClasses": [
+        "muscarinic-antagonists",
+        "anticholinergics"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "respiratory-system"
+      ],
+      "therapeuticClasses": [
+        "cholinergic-antagonists-parasympatholytics",
+        "bronchodilators"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "respiratory-system-drugs.js"
+      ]
+    },
+    {
+      "id": "succinylcholine",
+      "count": 2,
+      "pharmacologicClasses": [
+        "nicotinic-antagonists",
+        "neuromuscular-blocking-agents"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "musculoskeletal-system"
+      ],
+      "therapeuticClasses": [
+        "cholinergic-antagonists-parasympatholytics",
+        "muscle-relaxants"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "musculoskeletal-system-drugs.js"
+      ]
+    },
+    {
+      "id": "albuterol",
+      "count": 2,
+      "pharmacologicClasses": [
+        "selective-β2-agonists",
+        "short-acting-beta-2-agonists-saba"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "respiratory-system"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-agonists-sympathomimetics",
+        "bronchodilators"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "respiratory-system-drugs.js"
+      ]
+    },
+    {
+      "id": "salmeterol",
+      "count": 2,
+      "pharmacologicClasses": [
+        "selective-β2-agonists",
+        "long-acting-beta-2-agonists-laba"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "respiratory-system"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-agonists-sympathomimetics",
+        "bronchodilators"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "respiratory-system-drugs.js"
+      ]
+    },
+    {
+      "id": "formoterol",
+      "count": 2,
+      "pharmacologicClasses": [
+        "selective-β2-agonists",
+        "long-acting-beta-2-agonists-laba"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "respiratory-system"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-agonists-sympathomimetics",
+        "bronchodilators"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "respiratory-system-drugs.js"
+      ]
+    },
+    {
+      "id": "terbutaline",
+      "count": 2,
+      "pharmacologicClasses": [
+        "selective-β2-agonists",
+        "tocolytics"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "reproductive-gynecology"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-agonists-sympathomimetics",
+        "labor-and-delivery"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "reproductive-gynecology-drugs.js"
+      ]
+    },
+    {
+      "id": "phenylephrine",
+      "count": 2,
+      "pharmacologicClasses": [
+        "α1-selective-agonists",
+        "nasal-decongestants"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "ophthalmology-ent"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-agonists-sympathomimetics",
+        "nasal-medications"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "ophthalmology-ent-drugs.js"
+      ]
+    },
+    {
+      "id": "timolol",
+      "count": 2,
+      "pharmacologicClasses": [
+        "beta-blockers"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "ophthalmology-ent"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-antagonists-sympatholytics",
+        "glaucoma-medications"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "ophthalmology-ent-drugs.js"
+      ]
+    },
+    {
+      "id": "doxazosin",
+      "count": 2,
+      "pharmacologicClasses": [
+        "alpha-blockers",
+        "alpha-1-blockers"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-antagonists-sympatholytics",
+        "benign-prostatic-hyperplasia-bph"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "terazosin",
+      "count": 2,
+      "pharmacologicClasses": [
+        "alpha-blockers",
+        "alpha-1-blockers"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-antagonists-sympatholytics",
+        "benign-prostatic-hyperplasia-bph"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "tamsulosin",
+      "count": 2,
+      "pharmacologicClasses": [
+        "alpha-blockers",
+        "alpha-1-blockers"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-antagonists-sympatholytics",
+        "benign-prostatic-hyperplasia-bph"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "tizanidine",
+      "count": 2,
+      "pharmacologicClasses": [
+        "central-α2-agonists",
+        "central-acting-muscle-relaxants"
+      ],
+      "systems": [
+        "autonomic-nervous-system",
+        "musculoskeletal-system"
+      ],
+      "therapeuticClasses": [
+        "adrenergic-antagonists-sympatholytics",
+        "muscle-relaxants"
+      ],
+      "files": [
+        "autonomic-nervous-system-drugs.js",
+        "musculoskeletal-system-drugs.js"
+      ]
+    },
+    {
+      "id": "nifedipine",
+      "count": 2,
+      "pharmacologicClasses": [
+        "calcium-channel-blockers",
+        "tocolytics"
+      ],
+      "systems": [
+        "cardiovascular-system",
+        "reproductive-gynecology"
+      ],
+      "therapeuticClasses": [
+        "antihypertensives",
+        "labor-and-delivery"
+      ],
+      "files": [
+        "cardiovascular-system-drugs.js",
+        "reproductive-gynecology-drugs.js"
+      ]
+    },
+    {
+      "id": "furosemide",
+      "count": 2,
+      "pharmacologicClasses": [
+        "loop-diuretics"
+      ],
+      "systems": [
+        "cardiovascular-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "diuretics-cardiovascular",
+        "diuretics"
+      ],
+      "files": [
+        "cardiovascular-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "bumetanide",
+      "count": 2,
+      "pharmacologicClasses": [
+        "loop-diuretics"
+      ],
+      "systems": [
+        "cardiovascular-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "diuretics-cardiovascular",
+        "diuretics"
+      ],
+      "files": [
+        "cardiovascular-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "hydrochlorothiazide-hctz",
+      "count": 2,
+      "pharmacologicClasses": [
+        "thiazide-diuretics"
+      ],
+      "systems": [
+        "cardiovascular-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "diuretics-cardiovascular",
+        "diuretics"
+      ],
+      "files": [
+        "cardiovascular-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "chlorthalidone",
+      "count": 2,
+      "pharmacologicClasses": [
+        "thiazide-diuretics"
+      ],
+      "systems": [
+        "cardiovascular-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "diuretics-cardiovascular",
+        "diuretics"
+      ],
+      "files": [
+        "cardiovascular-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "spironolactone",
+      "count": 2,
+      "pharmacologicClasses": [
+        "potassium-sparing-diuretics"
+      ],
+      "systems": [
+        "cardiovascular-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "diuretics-cardiovascular",
+        "diuretics"
+      ],
+      "files": [
+        "cardiovascular-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "eplerenone",
+      "count": 2,
+      "pharmacologicClasses": [
+        "potassium-sparing-diuretics"
+      ],
+      "systems": [
+        "cardiovascular-system",
+        "renal-genitourinary-system"
+      ],
+      "therapeuticClasses": [
+        "diuretics-cardiovascular",
+        "diuretics"
+      ],
+      "files": [
+        "cardiovascular-system-drugs.js",
+        "renal-genitourinary-system-drugs.js"
+      ]
+    },
+    {
+      "id": "hydrocortisone",
+      "count": 2,
+      "pharmacologicClasses": [
+        "low-to-high-potency-steroids",
+        "glucocorticoids"
+      ],
+      "systems": [
+        "dermatology",
+        "endocrine-system"
+      ],
+      "therapeuticClasses": [
+        "topical-corticosteroids",
+        "corticosteroids"
+      ],
+      "files": [
+        "dermatology-drugs.js",
+        "endocrine-system-drugs.js"
+      ]
+    },
+    {
+      "id": "prednisone",
+      "count": 2,
+      "pharmacologicClasses": [
+        "glucocorticoids",
+        "systemic-corticosteroids"
+      ],
+      "systems": [
+        "endocrine-system",
+        "immunology-rheumatology"
+      ],
+      "therapeuticClasses": [
+        "corticosteroids"
+      ],
+      "files": [
+        "endocrine-system-drugs.js",
+        "immunology-rheumatology-drugs.js"
+      ]
+    },
+    {
+      "id": "dexamethasone",
+      "count": 2,
+      "pharmacologicClasses": [
+        "glucocorticoids",
+        "systemic-corticosteroids"
+      ],
+      "systems": [
+        "endocrine-system",
+        "immunology-rheumatology"
+      ],
+      "therapeuticClasses": [
+        "corticosteroids"
+      ],
+      "files": [
+        "endocrine-system-drugs.js",
+        "immunology-rheumatology-drugs.js"
+      ]
+    },
+    {
+      "id": "infliximab",
+      "count": 2,
+      "pharmacologicClasses": [
+        "biologic-agents",
+        "biologic-dmards"
+      ],
+      "systems": [
+        "gastrointestinal-system",
+        "immunology-rheumatology"
+      ],
+      "therapeuticClasses": [
+        "inflammatory-bowel-disease",
+        "immunosuppressants"
+      ],
+      "files": [
+        "gastrointestinal-system-drugs.js",
+        "immunology-rheumatology-drugs.js"
+      ]
+    },
+    {
+      "id": "aspirin",
+      "count": 2,
+      "pharmacologicClasses": [
+        "cyclooxygenase-inhibitors",
+        "nsaids"
+      ],
+      "systems": [
+        "hematology-oncology",
+        "pain-management"
+      ],
+      "therapeuticClasses": [
+        "antiplatelet-agents",
+        "analgesics"
+      ],
+      "files": [
+        "hematology-oncology-drugs.js",
+        "pain-management-drugs.js"
+      ]
+    },
+    {
+      "id": "methotrexate",
+      "count": 2,
+      "pharmacologicClasses": [
+        "antimetabolites",
+        "disease-modifying-antirheumatic-drugs-dmards"
+      ],
+      "systems": [
+        "hematology-oncology",
+        "immunology-rheumatology"
+      ],
+      "therapeuticClasses": [
+        "chemotherapy-agents",
+        "immunosuppressants"
+      ],
+      "files": [
+        "hematology-oncology-drugs.js",
+        "immunology-rheumatology-drugs.js"
+      ]
+    },
+    {
+      "id": "phenytoin",
+      "count": 2,
+      "pharmacologicClasses": [
+        "sodium-channel-blockers"
+      ],
+      "systems": [
+        "nervous-system",
+        "psychiatry-neurology-expanded"
+      ],
+      "therapeuticClasses": [
+        "antiepileptics",
+        "comprehensive-antiepileptics"
+      ],
+      "files": [
+        "nervous-system-drugs.js",
+        "psychiatry-neurology-expanded-drugs.js"
+      ]
+    },
+    {
+      "id": "fluticasone",
+      "count": 2,
+      "pharmacologicClasses": [
+        "intranasal-corticosteroids",
+        "inhaled-corticosteroids"
+      ],
+      "systems": [
+        "ophthalmology-ent",
+        "respiratory-system"
+      ],
+      "therapeuticClasses": [
+        "nasal-medications",
+        "anti-inflammatory-agents"
+      ],
+      "files": [
+        "ophthalmology-ent-drugs.js",
+        "respiratory-system-drugs.js"
+      ]
+    },
+    {
+      "id": "budesonide",
+      "count": 2,
+      "pharmacologicClasses": [
+        "intranasal-corticosteroids",
+        "inhaled-corticosteroids"
+      ],
+      "systems": [
+        "ophthalmology-ent",
+        "respiratory-system"
+      ],
+      "therapeuticClasses": [
+        "nasal-medications",
+        "anti-inflammatory-agents"
+      ],
+      "files": [
+        "ophthalmology-ent-drugs.js",
+        "respiratory-system-drugs.js"
+      ]
+    },
+    {
+      "id": "valproic-acid",
+      "count": 2,
+      "pharmacologicClasses": [
+        "anticonvulsants-as-mood-stabilizers",
+        "gaba-enhancers"
+      ],
+      "systems": [
+        "psychiatry-neurology-expanded"
+      ],
+      "therapeuticClasses": [
+        "mood-stabilizers",
+        "comprehensive-antiepileptics"
+      ],
+      "files": [
+        "psychiatry-neurology-expanded-drugs.js",
+        "psychiatry-neurology-expanded-drugs.js"
+      ]
+    }
+  ]
+}

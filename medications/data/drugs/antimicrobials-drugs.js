@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "penicillin-g",
         "name": "Penicillin G",
@@ -448,15 +449,17 @@ const drugs = [
     {
         "id": "doxycycline",
         "name": "Doxycycline",
-        "pharmacologicClass": "tetracyclines",
+        "pharmacologicClass": "oral-antibiotics",
         "therapeuticClass": "protein-synthesis-inhibitors",
         "system": "antimicrobials",
         "mechanism": "Inhibit 30S ribosomal subunit, prevent tRNA binding.",
-        "features": "Lipophilic, good tissue penetration.",
+        "features": "Lipophilic, good tissue penetration. | Tetracycline, anti-inflammatory properties.",
         "clinicalChoice": "Lyme disease, rickettsial infections.",
         "indications": [
+            "Acne Vulgaris",
             "Lyme Disease",
-            "Rocky Mountain Spotted Fever"
+            "Rocky Mountain Spotted Fever",
+            "Rosacea"
         ],
         "contraindications": [
             "Pregnancy",
@@ -469,20 +472,25 @@ const drugs = [
         ],
         "interactions": "Divalent cations reduce absorption.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "oral-antibiotics",
+            "tetracyclines"
+        ]
     },
     {
         "id": "minocycline",
         "name": "Minocycline",
-        "pharmacologicClass": "tetracyclines",
+        "pharmacologicClass": "oral-antibiotics",
         "therapeuticClass": "protein-synthesis-inhibitors",
         "system": "antimicrobials",
         "mechanism": "Inhibit 30S ribosomal subunit, prevent tRNA binding.",
-        "features": "CNS penetration, anti-inflammatory.",
+        "features": "CNS penetration, anti-inflammatory. | Lipophilic tetracycline, CNS penetration.",
         "clinicalChoice": "CNS infections, acne.",
         "indications": [
             "Acne",
-            "Meningococcal Carrier State"
+            "Meningococcal Carrier State",
+            "Severe Acne"
         ],
         "contraindications": [
             "Pregnancy",
@@ -495,7 +503,11 @@ const drugs = [
         ],
         "interactions": "Divalent cations reduce absorption.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "oral-antibiotics",
+            "tetracyclines"
+        ]
     },
     {
         "id": "tetracycline",
@@ -736,11 +748,13 @@ const drugs = [
         "therapeuticClass": "folate-synthesis-inhibitors",
         "system": "antimicrobials",
         "mechanism": "Inhibits dihydrofolate reductase.",
-        "features": "Synergistic combination.",
+        "features": "Synergistic combination. | Synergistic folate antagonism.",
         "clinicalChoice": "PCP treatment, MRSA.",
         "indications": [
+            "MRSA Infections",
+            "PCP Pneumonia",
             "PCP Treatment",
-            "MRSA Infections"
+            "UTI"
         ],
         "contraindications": [
             "Sulfa Allergy",
@@ -753,7 +767,11 @@ const drugs = [
         ],
         "interactions": "ACE inhibitors increase hyperkalemia risk.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "trimethoprim",
+            "urinary-antiseptics"
+        ]
     },
     {
         "id": "amphotericin-b",
@@ -1082,16 +1100,16 @@ const drugs = [
     {
         "id": "hydroxychloroquine",
         "name": "Hydroxychloroquine",
-        "pharmacologicClass": "quinoline-antimalarials",
+        "pharmacologicClass": "disease-modifying-antirheumatic-drugs-dmards",
         "therapeuticClass": "antimalarials",
         "system": "antimicrobials",
         "mechanism": "Interfere with heme detoxification in Plasmodium parasites.",
-        "features": "Less toxic than chloroquine, immunomodulatory.",
+        "features": "Less toxic than chloroquine, immunomodulatory. | Antimalarial with anti-inflammatory effects.",
         "clinicalChoice": "Rheumatoid arthritis, SLE, malaria prophylaxis.",
         "indications": [
+            "Malaria",
             "Rheumatoid Arthritis",
-            "SLE",
-            "Malaria"
+            "SLE"
         ],
         "contraindications": [
             "Retinal Disease",
@@ -1104,7 +1122,11 @@ const drugs = [
         ],
         "interactions": "QT-prolonging drugs increase arrhythmia risk.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "disease-modifying-antirheumatic-drugs-dmards",
+            "quinoline-antimalarials"
+        ]
     },
     {
         "id": "rifampin",
@@ -1207,6 +1229,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

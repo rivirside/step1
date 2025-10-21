@@ -2,129 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
-    {
-        "id": "albuterol",
-        "name": "Albuterol",
-        "pharmacologicClass": "short-acting-beta-2-agonists-saba",
-        "therapeuticClass": "bronchodilators",
-        "system": "respiratory-system",
-        "mechanism": "Stimulate β2 receptors causing rapid bronchodilation.",
-        "features": "Rapid onset, 4-6 hour duration.",
-        "clinicalChoice": "Rescue therapy for acute bronchospasm.",
-        "indications": [
-            "Asthma",
-            "COPD",
-            "Exercise-Induced Bronchospasm"
-        ],
-        "contraindications": [
-            "Hypersensitivity"
-        ],
-        "sideEffects": [
-            "Tachycardia",
-            "Tremor",
-            "Hypokalemia"
-        ],
-        "interactions": "Beta-blockers antagonize effects.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "salmeterol",
-        "name": "Salmeterol",
-        "pharmacologicClass": "long-acting-beta-2-agonists-laba",
-        "therapeuticClass": "bronchodilators",
-        "system": "respiratory-system",
-        "mechanism": "Long-duration β2 stimulation for maintenance therapy.",
-        "features": "Twice-daily dosing.",
-        "clinicalChoice": "Asthma maintenance (always with ICS).",
-        "indications": [
-            "Asthma",
-            "COPD"
-        ],
-        "contraindications": [
-            "Asthma Monotherapy"
-        ],
-        "sideEffects": [
-            "Tachycardia",
-            "Tremor",
-            "Increased asthma mortality if used alone"
-        ],
-        "interactions": "Must be used with inhaled corticosteroids in asthma.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "formoterol",
-        "name": "Formoterol",
-        "pharmacologicClass": "long-acting-beta-2-agonists-laba",
-        "therapeuticClass": "bronchodilators",
-        "system": "respiratory-system",
-        "mechanism": "Long-duration β2 stimulation for maintenance therapy.",
-        "features": "Rapid onset for a LABA.",
-        "clinicalChoice": "COPD maintenance therapy.",
-        "indications": [
-            "Asthma",
-            "COPD"
-        ],
-        "contraindications": [
-            "Asthma Monotherapy"
-        ],
-        "sideEffects": [
-            "Tachycardia",
-            "Tremor",
-            "Increased asthma mortality if used alone"
-        ],
-        "interactions": "Must be used with inhaled corticosteroids in asthma.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "ipratropium",
-        "name": "Ipratropium",
-        "pharmacologicClass": "anticholinergics",
-        "therapeuticClass": "bronchodilators",
-        "system": "respiratory-system",
-        "mechanism": "Block muscarinic receptors preventing bronchoconstriction.",
-        "features": "Short-acting muscarinic antagonist.",
-        "clinicalChoice": "COPD, especially with β2-agonist.",
-        "indications": [
-            "COPD",
-            "Asthma"
-        ],
-        "contraindications": [
-            "Soy/Peanut Allergy"
-        ],
-        "sideEffects": [
-            "Dry mouth",
-            "Urinary retention"
-        ],
-        "interactions": "Other anticholinergics (additive effects).",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "tiotropium",
-        "name": "Tiotropium",
-        "pharmacologicClass": "anticholinergics",
-        "therapeuticClass": "bronchodilators",
-        "system": "respiratory-system",
-        "mechanism": "Block muscarinic receptors preventing bronchoconstriction.",
-        "features": "Once-daily long-acting anticholinergic.",
-        "clinicalChoice": "COPD maintenance therapy.",
-        "indications": [
-            "COPD"
-        ],
-        "contraindications": [
-            "Narrow-angle Glaucoma"
-        ],
-        "sideEffects": [
-            "Dry mouth",
-            "Urinary retention"
-        ],
-        "interactions": "Other anticholinergics (additive effects).",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
+
     {
         "id": "theophylline",
         "name": "Theophylline",
@@ -163,56 +41,6 @@ const drugs = [
         "indications": [
             "Asthma",
             "Allergic Rhinitis"
-        ],
-        "contraindications": [
-            "Fungal Infections"
-        ],
-        "sideEffects": [
-            "Oral thrush",
-            "Hoarseness",
-            "Growth suppression"
-        ],
-        "interactions": "Minimal systemic interactions.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "fluticasone",
-        "name": "Fluticasone",
-        "pharmacologicClass": "inhaled-corticosteroids",
-        "therapeuticClass": "anti-inflammatory-agents",
-        "system": "respiratory-system",
-        "mechanism": "Local anti-inflammatory effects in airways.",
-        "features": "High potency, low systemic absorption.",
-        "clinicalChoice": "Moderate to severe asthma.",
-        "indications": [
-            "Asthma",
-            "Allergic Rhinitis"
-        ],
-        "contraindications": [
-            "Fungal Infections"
-        ],
-        "sideEffects": [
-            "Oral thrush",
-            "Hoarseness",
-            "Growth suppression"
-        ],
-        "interactions": "Minimal systemic interactions.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "budesonide",
-        "name": "Budesonide",
-        "pharmacologicClass": "inhaled-corticosteroids",
-        "therapeuticClass": "anti-inflammatory-agents",
-        "system": "respiratory-system",
-        "mechanism": "Local anti-inflammatory effects in airways.",
-        "features": "High first-pass metabolism.",
-        "clinicalChoice": "Asthma in children.",
-        "indications": [
-            "Asthma",
-            "COPD"
         ],
         "contraindications": [
             "Fungal Infections"
@@ -370,6 +198,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "omeprazole",
         "name": "Omeprazole",
@@ -412,10 +413,11 @@ const drugs = [
         "therapeuticClass": "inflammatory-bowel-disease",
         "system": "gastrointestinal-system",
         "mechanism": "Monoclonal antibodies neutralize TNF-α to reduce intestinal inflammation.",
-        "features": "Chimeric anti-TNF antibody.",
+        "features": "Chimeric anti-TNF antibody. | Chimeric monoclonal antibody against TNF-α.",
         "clinicalChoice": "Moderate to severe Crohn disease or ulcerative colitis.",
         "indications": [
             "Crohn Disease",
+            "Rheumatoid Arthritis",
             "Ulcerative Colitis"
         ],
         "contraindications": [
@@ -429,7 +431,11 @@ const drugs = [
         ],
         "interactions": "Live vaccines contraindicated.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "biologic-agents",
+            "biologic-dmards"
+        ]
     },
     {
         "id": "octreotide",
@@ -505,6 +511,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

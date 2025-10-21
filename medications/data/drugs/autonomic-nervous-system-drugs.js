@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "bethanechol",
         "name": "Bethanechol",
@@ -340,15 +341,15 @@ const drugs = [
     {
         "id": "ipratropium",
         "name": "Ipratropium",
-        "pharmacologicClass": "muscarinic-antagonists",
+        "pharmacologicClass": "anticholinergics",
         "therapeuticClass": "cholinergic-antagonists-parasympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block muscarinic receptors, preventing acetylcholine effects.",
-        "features": "Quaternary ammonium, minimal systemic absorption.",
+        "features": "Quaternary ammonium, minimal systemic absorption. | Short-acting muscarinic antagonist.",
         "clinicalChoice": "COPD bronchodilation.",
         "indications": [
-            "COPD",
-            "Asthma"
+            "Asthma",
+            "COPD"
         ],
         "contraindications": [
             "Soy/Peanut Allergy"
@@ -361,16 +362,20 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "anticholinergics",
+            "muscarinic-antagonists"
+        ]
     },
     {
         "id": "tiotropium",
         "name": "Tiotropium",
-        "pharmacologicClass": "muscarinic-antagonists",
+        "pharmacologicClass": "anticholinergics",
         "therapeuticClass": "cholinergic-antagonists-parasympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block muscarinic receptors, preventing acetylcholine effects.",
-        "features": "Once-daily LAMA.",
+        "features": "Once-daily LAMA. | Once-daily long-acting anticholinergic.",
         "clinicalChoice": "COPD maintenance therapy.",
         "indications": [
             "COPD"
@@ -386,7 +391,11 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "anticholinergics",
+            "muscarinic-antagonists"
+        ]
     },
     {
         "id": "benztropine",
@@ -597,14 +606,15 @@ const drugs = [
     {
         "id": "succinylcholine",
         "name": "Succinylcholine",
-        "pharmacologicClass": "nicotinic-antagonists",
+        "pharmacologicClass": "neuromuscular-blocking-agents",
         "therapeuticClass": "cholinergic-antagonists-parasympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block nicotinic receptors at neuromuscular junction or ganglia.",
-        "features": "Depolarizing blocker, fasciculations.",
+        "features": "Depolarizing blocker, fasciculations. | Depolarizing blocker, rapid onset/offset.",
         "clinicalChoice": "Rapid sequence intubation.",
         "indications": [
-            "Neuromuscular Blockade"
+            "Neuromuscular Blockade",
+            "Rapid Sequence Intubation"
         ],
         "contraindications": [
             "Malignant Hyperthermia",
@@ -617,7 +627,11 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides potentiate blockade.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "neuromuscular-blocking-agents",
+            "nicotinic-antagonists"
+        ]
     },
     {
         "id": "rocuronium",
@@ -777,11 +791,12 @@ const drugs = [
         "therapeuticClass": "adrenergic-agonists-sympathomimetics",
         "system": "autonomic-nervous-system",
         "mechanism": "Selective stimulation of β2 receptors causing bronchodilation.",
-        "features": "Short-acting, rescue medication.",
+        "features": "Short-acting, rescue medication. | Rapid onset, 4-6 hour duration, short-acting rescue medication.",
         "clinicalChoice": "Acute bronchospasm.",
         "indications": [
             "Asthma",
-            "COPD"
+            "COPD",
+            "Exercise-Induced Bronchospasm"
         ],
         "contraindications": [
             "Hypersensitivity"
@@ -793,16 +808,20 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize effects.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "selective-β2-agonists",
+            "short-acting-beta-2-agonists-saba"
+        ]
     },
     {
         "id": "salmeterol",
         "name": "Salmeterol",
-        "pharmacologicClass": "selective-β2-agonists",
+        "pharmacologicClass": "long-acting-beta-2-agonists-laba",
         "therapeuticClass": "adrenergic-agonists-sympathomimetics",
         "system": "autonomic-nervous-system",
         "mechanism": "Selective stimulation of β2 receptors causing bronchodilation.",
-        "features": "Long-acting, maintenance therapy.",
+        "features": "Long-acting, maintenance therapy. | Twice-daily dosing.",
         "clinicalChoice": "Asthma controller (with ICS).",
         "indications": [
             "Asthma",
@@ -818,16 +837,20 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize effects.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "long-acting-beta-2-agonists-laba",
+            "selective-β2-agonists"
+        ]
     },
     {
         "id": "formoterol",
         "name": "Formoterol",
-        "pharmacologicClass": "selective-β2-agonists",
+        "pharmacologicClass": "long-acting-beta-2-agonists-laba",
         "therapeuticClass": "adrenergic-agonists-sympathomimetics",
         "system": "autonomic-nervous-system",
         "mechanism": "Selective stimulation of β2 receptors causing bronchodilation.",
-        "features": "Long-acting with rapid onset.",
+        "features": "Long-acting with rapid onset. | Rapid onset for a LABA.",
         "clinicalChoice": "COPD maintenance therapy.",
         "indications": [
             "Asthma",
@@ -843,7 +866,11 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize effects.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "long-acting-beta-2-agonists-laba",
+            "selective-β2-agonists"
+        ]
     },
     {
         "id": "terbutaline",
@@ -852,7 +879,7 @@ const drugs = [
         "therapeuticClass": "adrenergic-agonists-sympathomimetics",
         "system": "autonomic-nervous-system",
         "mechanism": "Selective stimulation of β2 receptors causing bronchodilation.",
-        "features": "β2 selective, systemic administration.",
+        "features": "β2 selective, systemic administration. | β2-agonist, off-label use for tocolysis.",
         "clinicalChoice": "Tocolysis and asthma exacerbations.",
         "indications": [
             "Asthma",
@@ -869,16 +896,20 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize effects.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "selective-β2-agonists",
+            "tocolytics"
+        ]
     },
     {
         "id": "phenylephrine",
         "name": "Phenylephrine",
-        "pharmacologicClass": "α1-selective-agonists",
+        "pharmacologicClass": "nasal-decongestants",
         "therapeuticClass": "adrenergic-agonists-sympathomimetics",
         "system": "autonomic-nervous-system",
         "mechanism": "Stimulate α1 receptors causing vasoconstriction and increased tone.",
-        "features": "Pure α1 agonist.",
+        "features": "Pure α1 agonist. | Shorter duration, less rebound.",
         "clinicalChoice": "Hypotension, nasal decongestant, mydriasis.",
         "indications": [
             "Hypotension",
@@ -894,7 +925,11 @@ const drugs = [
         ],
         "interactions": "MAOIs enhance effects, α-blockers antagonize.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "nasal-decongestants",
+            "α1-selective-agonists"
+        ]
     },
     {
         "id": "midodrine",
@@ -1080,11 +1115,15 @@ const drugs = [
     {
         "id": "carvedilol",
         "name": "Carvedilol",
+        "pharmacologicClasses": [
+            "beta-blockers",
+            "alpha-blockers"
+        ],
         "pharmacologicClass": "beta-blockers",
         "therapeuticClass": "adrenergic-antagonists-sympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block beta-adrenergic receptors, reducing heart rate and contractility.",
-        "features": "Combined α/β blocker.",
+        "features": "Combined α/β blocker (α1/β1/β2 antagonist).",
         "clinicalChoice": "Heart failure with proven mortality benefit.",
         "indications": [
             "Heart Failure",
@@ -1135,10 +1174,11 @@ const drugs = [
         "therapeuticClass": "adrenergic-antagonists-sympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block beta-adrenergic receptors, reducing heart rate and contractility.",
-        "features": "Non-selective, ophthalmic use.",
+        "features": "Non-selective, ophthalmic use. | Non-selective beta-blocker, twice daily.",
         "clinicalChoice": "Open-angle glaucoma topical therapy.",
         "indications": [
-            "Glaucoma"
+            "Glaucoma",
+            "Open-Angle Glaucoma"
         ],
         "contraindications": [
             "Asthma",
@@ -1151,7 +1191,10 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "beta-blockers"
+        ]
     },
     {
         "id": "nadolol",
@@ -1206,11 +1249,15 @@ const drugs = [
     {
         "id": "labetalol",
         "name": "Labetalol",
+        "pharmacologicClasses": [
+            "beta-blockers",
+            "alpha-blockers"
+        ],
         "pharmacologicClass": "beta-blockers",
         "therapeuticClass": "adrenergic-antagonists-sympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block beta-adrenergic receptors, reducing heart rate and contractility.",
-        "features": "α1 and β blockade, IV or PO.",
+        "features": "α1 and β blockade (mixed α1/β antagonist), IV or PO.",
         "clinicalChoice": "Hypertensive emergency, pregnancy.",
         "indications": [
             "Hypertensive Emergency",
@@ -1257,15 +1304,16 @@ const drugs = [
     {
         "id": "doxazosin",
         "name": "Doxazosin",
-        "pharmacologicClass": "alpha-blockers",
+        "pharmacologicClass": "alpha-1-blockers",
         "therapeuticClass": "adrenergic-antagonists-sympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block alpha-adrenergic receptors causing vasodilation.",
-        "features": "Long-acting α1-blocker.",
+        "features": "Long-acting α1-blocker. | Non-selective α1 blocker.",
         "clinicalChoice": "BPH with hypertension.",
         "indications": [
-            "Hypertension",
-            "BPH"
+            "BPH",
+            "Benign Prostatic Hyperplasia",
+            "Hypertension"
         ],
         "contraindications": [
             "Hypotension"
@@ -1276,19 +1324,25 @@ const drugs = [
         ],
         "interactions": "Other antihypertensives (additive effects).",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "alpha-1-blockers",
+            "alpha-blockers"
+        ]
     },
     {
         "id": "terazosin",
         "name": "Terazosin",
-        "pharmacologicClass": "alpha-blockers",
+        "pharmacologicClass": "alpha-1-blockers",
         "therapeuticClass": "adrenergic-antagonists-sympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block alpha-adrenergic receptors causing vasodilation.",
-        "features": "α1 blocker with smooth muscle relaxation.",
+        "features": "α1 blocker with smooth muscle relaxation. | Long-acting α1 blocker.",
         "clinicalChoice": "BPH symptom relief.",
         "indications": [
-            "BPH"
+            "BPH",
+            "Benign Prostatic Hyperplasia",
+            "Hypertension"
         ],
         "contraindications": [
             "Hypotension"
@@ -1299,19 +1353,24 @@ const drugs = [
         ],
         "interactions": "Other antihypertensives (additive effects).",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "alpha-1-blockers",
+            "alpha-blockers"
+        ]
     },
     {
         "id": "tamsulosin",
         "name": "Tamsulosin",
-        "pharmacologicClass": "alpha-blockers",
+        "pharmacologicClass": "alpha-1-blockers",
         "therapeuticClass": "adrenergic-antagonists-sympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Block alpha-adrenergic receptors causing vasodilation.",
-        "features": "Uroselective α1A antagonist.",
+        "features": "Uroselective α1A antagonist. | Selective for α1A receptors in prostate.",
         "clinicalChoice": "BPH with minimal blood pressure effect.",
         "indications": [
-            "BPH"
+            "BPH",
+            "Benign Prostatic Hyperplasia"
         ],
         "contraindications": [
             "Sulfa Allergy"
@@ -1322,7 +1381,11 @@ const drugs = [
         ],
         "interactions": "Other antihypertensives (additive effects).",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "alpha-1-blockers",
+            "alpha-blockers"
+        ]
     },
     {
         "id": "phenoxybenzamine",
@@ -1426,14 +1489,16 @@ const drugs = [
     {
         "id": "tizanidine",
         "name": "Tizanidine",
-        "pharmacologicClass": "central-α2-agonists",
+        "pharmacologicClass": "central-acting-muscle-relaxants",
         "therapeuticClass": "adrenergic-antagonists-sympatholytics",
         "system": "autonomic-nervous-system",
         "mechanism": "Stimulate central α2 receptors to reduce sympathetic outflow.",
-        "features": "Imidazoline derivative, muscle relaxant.",
+        "features": "Imidazoline derivative, muscle relaxant. | α2-adrenergic agonist.",
         "clinicalChoice": "Spasticity management.",
         "indications": [
-            "Muscle Spasticity"
+            "Muscle Spasms",
+            "Muscle Spasticity",
+            "Spasticity"
         ],
         "contraindications": [
             "Severe Hepatic Impairment"
@@ -1445,8 +1510,11 @@ const drugs = [
         ],
         "interactions": "CNS depressants enhance sedation.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "central-acting-muscle-relaxants",
+            "central-α2-agonists"
+        ]
     }
-];
 
-export default drugs;
+];export default drugs;

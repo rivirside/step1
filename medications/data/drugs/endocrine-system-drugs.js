@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "insulin-lispro",
         "name": "Insulin Lispro",
@@ -493,12 +494,14 @@ const drugs = [
         "therapeuticClass": "corticosteroids",
         "system": "endocrine-system",
         "mechanism": "Anti-inflammatory and immunosuppressive effects via genomic pathways.",
-        "features": "Oral prodrug, converted to prednisolone.",
+        "features": "Oral prodrug, converted to prednisolone. | Oral, intermediate-acting.",
         "clinicalChoice": "Inflammatory conditions, immunosuppression.",
         "indications": [
-            "Inflammatory Diseases",
+            "Allergic Reactions",
             "Asthma",
-            "Autoimmune Disorders"
+            "Autoimmune Disorders",
+            "Inflammatory Diseases",
+            "Rheumatoid Arthritis"
         ],
         "contraindications": [
             "Systemic Fungal Infections"
@@ -511,33 +514,11 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inducers/inhibitors affect levels.",
         "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "hydrocortisone",
-        "name": "Hydrocortisone",
-        "pharmacologicClass": "glucocorticoids",
-        "therapeuticClass": "corticosteroids",
-        "system": "endocrine-system",
-        "mechanism": "Anti-inflammatory and immunosuppressive effects via genomic pathways.",
-        "features": "Physiologic replacement dose.",
-        "clinicalChoice": "Adrenal insufficiency, acute inflammation.",
-        "indications": [
-            "Adrenal Insufficiency",
-            "Inflammatory Skin Conditions"
-        ],
-        "contraindications": [
-            "Viral Skin Infections"
-        ],
-        "sideEffects": [
-            "Hyperglycemia",
-            "Osteoporosis",
-            "Immunosuppression",
-            "Adrenal suppression"
-        ],
-        "interactions": "CYP3A4 inducers/inhibitors affect levels.",
-        "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "glucocorticoids",
+            "systemic-corticosteroids"
+        ]
     },
     {
         "id": "dexamethasone",
@@ -546,9 +527,10 @@ const drugs = [
         "therapeuticClass": "corticosteroids",
         "system": "endocrine-system",
         "mechanism": "Anti-inflammatory and immunosuppressive effects via genomic pathways.",
-        "features": "Long-acting, high potency.",
+        "features": "Long-acting, high potency. | Long-acting, potent, minimal mineralocorticoid activity.",
         "clinicalChoice": "Cerebral edema, severe inflammation.",
         "indications": [
+            "Adrenal Insufficiency Testing",
             "Cerebral Edema",
             "Severe Asthma"
         ],
@@ -563,7 +545,11 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inducers/inhibitors affect levels.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "glucocorticoids",
+            "systemic-corticosteroids"
+        ]
     },
     {
         "id": "fludrocortisone",
@@ -591,6 +577,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

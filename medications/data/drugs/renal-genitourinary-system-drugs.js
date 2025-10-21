@@ -2,61 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
-    {
-        "id": "furosemide",
-        "name": "Furosemide",
-        "pharmacologicClass": "loop-diuretics",
-        "therapeuticClass": "diuretics",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Inhibit NKCC2 transporter in thick ascending limb of loop of Henle.",
-        "features": "Most commonly used loop diuretic.",
-        "clinicalChoice": "Heart failure, pulmonary edema.",
-        "indications": [
-            "Heart Failure",
-            "Pulmonary Edema",
-            "Edema"
-        ],
-        "contraindications": [
-            "Anuria",
-            "Sulfonamide Allergy"
-        ],
-        "sideEffects": [
-            "Hypokalemia",
-            "Hyponatremia",
-            "Ototoxicity",
-            "Hyperuricemia"
-        ],
-        "interactions": "Aminoglycosides (increased ototoxicity), lithium (increased levels).",
-        "interactionDetails": "AMINOGLYCOSIDES: MECHANISM - Both loop diuretics and aminoglycosides have direct ototoxic effects on hair cells in the cochlea. Loop diuretics may increase aminoglycoside concentration in the inner ear. CONSEQUENCE - Synergistic ototoxicity leading to permanent hearing loss, especially high-frequency hearing. LITHIUM: MECHANISM - Loop diuretics cause volume depletion, leading to increased proximal tubule lithium reabsorption. CONSEQUENCE - Elevated lithium levels with risk of lithium toxicity including tremor, confusion, and nephrotoxicity.",
-        "pageType": "drug"
-    },
-    {
-        "id": "bumetanide",
-        "name": "Bumetanide",
-        "pharmacologicClass": "loop-diuretics",
-        "therapeuticClass": "diuretics",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Inhibit NKCC2 transporter in thick ascending limb of loop of Henle.",
-        "features": "40x more potent than furosemide.",
-        "clinicalChoice": "Patients with furosemide resistance.",
-        "indications": [
-            "Heart Failure",
-            "Edema"
-        ],
-        "contraindications": [
-            "Anuria",
-            "Sulfonamide Allergy"
-        ],
-        "sideEffects": [
-            "Hypokalemia",
-            "Hyponatremia",
-            "Ototoxicity",
-            "Hyperuricemia"
-        ],
-        "interactions": "Aminoglycosides (increased ototoxicity), lithium (increased levels).",
-        "interactionDetails": "AMINOGLYCOSIDES: MECHANISM - Both loop diuretics and aminoglycosides have direct ototoxic effects on hair cells in the cochlea. Loop diuretics may increase aminoglycoside concentration in the inner ear. CONSEQUENCE - Synergistic ototoxicity leading to permanent hearing loss, especially high-frequency hearing. LITHIUM: MECHANISM - Loop diuretics cause volume depletion, leading to increased proximal tubule lithium reabsorption. CONSEQUENCE - Elevated lithium levels with risk of lithium toxicity including tremor, confusion, and nephrotoxicity.",
-        "pageType": "drug"
-    },
+
     {
         "id": "torsemide",
         "name": "Torsemide",
@@ -82,59 +28,6 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides (increased ototoxicity), lithium (increased levels).",
         "interactionDetails": "AMINOGLYCOSIDES: MECHANISM - Both loop diuretics and aminoglycosides have direct ototoxic effects on hair cells in the cochlea. Loop diuretics may increase aminoglycoside concentration in the inner ear. CONSEQUENCE - Synergistic ototoxicity leading to permanent hearing loss, especially high-frequency hearing. LITHIUM: MECHANISM - Loop diuretics cause volume depletion, leading to increased proximal tubule lithium reabsorption. CONSEQUENCE - Elevated lithium levels with risk of lithium toxicity including tremor, confusion, and nephrotoxicity.",
-        "pageType": "drug"
-    },
-    {
-        "id": "hydrochlorothiazide-hctz",
-        "name": "Hydrochlorothiazide (HCTZ)",
-        "pharmacologicClass": "thiazide-diuretics",
-        "therapeuticClass": "diuretics",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Inhibit NCC transporter in distal convoluted tubule.",
-        "features": "Most common thiazide.",
-        "clinicalChoice": "First-line for hypertension.",
-        "indications": [
-            "Hypertension",
-            "Edema"
-        ],
-        "contraindications": [
-            "Anuria",
-            "Sulfonamide Allergy"
-        ],
-        "sideEffects": [
-            "Hypokalemia",
-            "Hyperuricemia",
-            "Hyperglycemia",
-            "Hyperlipidemia"
-        ],
-        "interactions": "Lithium (increased levels), NSAIDs (reduced efficacy).",
-        "interactionDetails": "LITHIUM: MECHANISM - Thiazides cause mild volume depletion, increasing proximal tubule sodium and lithium reabsorption. CONSEQUENCE - Increased lithium levels with risk of toxicity. NSAIDS: MECHANISM - Thiazides work partly through prostaglandin-mediated vasodilation. NSAIDs inhibit prostaglandin synthesis. CONSEQUENCE - Reduced antihypertensive efficacy and potential for acute kidney injury.",
-        "pageType": "drug"
-    },
-    {
-        "id": "chlorthalidone",
-        "name": "Chlorthalidone",
-        "pharmacologicClass": "thiazide-diuretics",
-        "therapeuticClass": "diuretics",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Inhibit NCC transporter in distal convoluted tubule.",
-        "features": "Longer half-life than HCTZ.",
-        "clinicalChoice": "Hypertension with better outcomes data.",
-        "indications": [
-            "Hypertension"
-        ],
-        "contraindications": [
-            "Anuria",
-            "Sulfonamide Allergy"
-        ],
-        "sideEffects": [
-            "Hypokalemia",
-            "Hyperuricemia",
-            "Hyperglycemia",
-            "Hyperlipidemia"
-        ],
-        "interactions": "Lithium (increased levels), NSAIDs (reduced efficacy).",
-        "interactionDetails": "LITHIUM: MECHANISM - Thiazides cause mild volume depletion, increasing proximal tubule sodium and lithium reabsorption. CONSEQUENCE - Increased lithium levels with risk of toxicity. NSAIDS: MECHANISM - Thiazides work partly through prostaglandin-mediated vasodilation. NSAIDs inhibit prostaglandin synthesis. CONSEQUENCE - Reduced antihypertensive efficacy and potential for acute kidney injury.",
         "pageType": "drug"
     },
     {
@@ -164,33 +57,6 @@ const drugs = [
         "pageType": "drug"
     },
     {
-        "id": "spironolactone",
-        "name": "Spironolactone",
-        "pharmacologicClass": "potassium-sparing-diuretics",
-        "therapeuticClass": "diuretics",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Either block aldosterone receptors (spironolactone) or ENaC channels (amiloride).",
-        "features": "Aldosterone receptor antagonist.",
-        "clinicalChoice": "Heart failure, primary aldosteronism.",
-        "indications": [
-            "Heart Failure",
-            "Primary Aldosteronism",
-            "Hirsutism"
-        ],
-        "contraindications": [
-            "Hyperkalemia",
-            "Anuria"
-        ],
-        "sideEffects": [
-            "Hyperkalemia",
-            "Gynecomastia (spironolactone)",
-            "Menstrual irregularities"
-        ],
-        "interactions": "ACE inhibitors, ARBs (hyperkalemia risk).",
-        "interactionDetails": "ACE INHIBITORS/ARBS: MECHANISM - ACE inhibitors and ARBs reduce aldosterone production, leading to potassium retention. Potassium-sparing diuretics independently block potassium excretion. CONSEQUENCE - Additive hyperkalemia with risk of fatal cardiac arrhythmias, especially in patients with kidney disease or diabetes.",
-        "pageType": "drug"
-    },
-    {
         "id": "amiloride",
         "name": "Amiloride",
         "pharmacologicClass": "potassium-sparing-diuretics",
@@ -206,32 +72,6 @@ const drugs = [
         "contraindications": [
             "Hyperkalemia",
             "Anuria"
-        ],
-        "sideEffects": [
-            "Hyperkalemia",
-            "Gynecomastia (spironolactone)",
-            "Menstrual irregularities"
-        ],
-        "interactions": "ACE inhibitors, ARBs (hyperkalemia risk).",
-        "interactionDetails": "ACE INHIBITORS/ARBS: MECHANISM - ACE inhibitors and ARBs reduce aldosterone production, leading to potassium retention. Potassium-sparing diuretics independently block potassium excretion. CONSEQUENCE - Additive hyperkalemia with risk of fatal cardiac arrhythmias, especially in patients with kidney disease or diabetes.",
-        "pageType": "drug"
-    },
-    {
-        "id": "eplerenone",
-        "name": "Eplerenone",
-        "pharmacologicClass": "potassium-sparing-diuretics",
-        "therapeuticClass": "diuretics",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Either block aldosterone receptors (spironolactone) or ENaC channels (amiloride).",
-        "features": "Selective aldosterone antagonist.",
-        "clinicalChoice": "Post-MI heart failure without gynecomastia.",
-        "indications": [
-            "Post-MI Heart Failure",
-            "Hypertension"
-        ],
-        "contraindications": [
-            "Hyperkalemia",
-            "Severe Renal Impairment"
         ],
         "sideEffects": [
             "Hyperkalemia",
@@ -295,80 +135,6 @@ const drugs = [
         ],
         "interactions": "Additive nephrotoxicity with other nephrotoxic agents.",
         "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "tamsulosin",
-        "name": "Tamsulosin",
-        "pharmacologicClass": "alpha-1-blockers",
-        "therapeuticClass": "benign-prostatic-hyperplasia-bph",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Block α1-adrenergic receptors in prostate smooth muscle, reducing urethral resistance.",
-        "features": "Selective for α1A receptors in prostate.",
-        "clinicalChoice": "BPH with minimal cardiovascular effects.",
-        "indications": [
-            "Benign Prostatic Hyperplasia"
-        ],
-        "contraindications": [
-            "Severe Hepatic Impairment"
-        ],
-        "sideEffects": [
-            "Orthostatic hypotension",
-            "Dizziness",
-            "Retrograde ejaculation"
-        ],
-        "interactions": "Antihypertensives (additive hypotension), PDE5 inhibitors.",
-        "interactionDetails": "ANTIHYPERTENSIVES: MECHANISM - Alpha-1 blockers cause vasodilation and reduced peripheral resistance. Combined with other antihypertensives, this can cause excessive hypotension. CONSEQUENCE - Symptomatic hypotension, falls, and syncope, especially with first dose or dose increases.",
-        "pageType": "drug"
-    },
-    {
-        "id": "doxazosin",
-        "name": "Doxazosin",
-        "pharmacologicClass": "alpha-1-blockers",
-        "therapeuticClass": "benign-prostatic-hyperplasia-bph",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Block α1-adrenergic receptors in prostate smooth muscle, reducing urethral resistance.",
-        "features": "Non-selective α1 blocker.",
-        "clinicalChoice": "BPH with hypertension.",
-        "indications": [
-            "Benign Prostatic Hyperplasia",
-            "Hypertension"
-        ],
-        "contraindications": [
-            "Hypersensitivity"
-        ],
-        "sideEffects": [
-            "Orthostatic hypotension",
-            "Dizziness",
-            "Retrograde ejaculation"
-        ],
-        "interactions": "Antihypertensives (additive hypotension), PDE5 inhibitors.",
-        "interactionDetails": "ANTIHYPERTENSIVES: MECHANISM - Alpha-1 blockers cause vasodilation and reduced peripheral resistance. Combined with other antihypertensives, this can cause excessive hypotension. CONSEQUENCE - Symptomatic hypotension, falls, and syncope, especially with first dose or dose increases.",
-        "pageType": "drug"
-    },
-    {
-        "id": "terazosin",
-        "name": "Terazosin",
-        "pharmacologicClass": "alpha-1-blockers",
-        "therapeuticClass": "benign-prostatic-hyperplasia-bph",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Block α1-adrenergic receptors in prostate smooth muscle, reducing urethral resistance.",
-        "features": "Long-acting α1 blocker.",
-        "clinicalChoice": "BPH with hypertension.",
-        "indications": [
-            "Benign Prostatic Hyperplasia",
-            "Hypertension"
-        ],
-        "contraindications": [
-            "Hypersensitivity"
-        ],
-        "sideEffects": [
-            "Orthostatic hypotension",
-            "Dizziness",
-            "Retrograde ejaculation"
-        ],
-        "interactions": "Antihypertensives (additive hypotension), PDE5 inhibitors.",
-        "interactionDetails": "ANTIHYPERTENSIVES: MECHANISM - Alpha-1 blockers cause vasodilation and reduced peripheral resistance. Combined with other antihypertensives, this can cause excessive hypotension. CONSEQUENCE - Symptomatic hypotension, falls, and syncope, especially with first dose or dose increases.",
         "pageType": "drug"
     },
     {
@@ -449,32 +215,6 @@ const drugs = [
         "pageType": "drug"
     },
     {
-        "id": "trimethoprim-sulfamethoxazole",
-        "name": "Trimethoprim-Sulfamethoxazole",
-        "pharmacologicClass": "urinary-antiseptics",
-        "therapeuticClass": "urinary-tract-infections",
-        "system": "renal-genitourinary-system",
-        "mechanism": "Concentrated in urine to achieve bactericidal levels in urinary tract.",
-        "features": "Synergistic folate antagonism.",
-        "clinicalChoice": "UTI, PCP prophylaxis.",
-        "indications": [
-            "UTI",
-            "PCP Pneumonia"
-        ],
-        "contraindications": [
-            "Sulfonamide Allergy",
-            "Severe Renal Impairment"
-        ],
-        "sideEffects": [
-            "GI upset",
-            "Pulmonary toxicity (nitrofurantoin)",
-            "Hemolysis in G6PD deficiency"
-        ],
-        "interactions": "Antacids (reduced absorption).",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
         "id": "desmopressin-ddavp",
         "name": "Desmopressin (DDAVP)",
         "pharmacologicClass": "adh-agonists",
@@ -527,6 +267,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

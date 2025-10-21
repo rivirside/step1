@@ -534,13 +534,20 @@ function renderDrugDetail(drug, pharmaClass) {
     const detailPanel = document.getElementById('detailPanel');
     if (!detailPanel) return;
 
+    // Get ALL pharmacologic classes for this drug (multi-class support)
+    const allPharmaClasses = drug.pharmacologicClasses
+        .map(classId => dataLoader.getClassById(classId))
+        .filter(cls => cls); // Filter out null/undefined
+
     detailPanel.innerHTML = `
         <div class="entity-detail disease-detail drug-detail">
             <div class="entity-header">
                 <span class="entity-type-badge">Drug</span>
                 <h2>${drug.name}</h2>
                 <div class="disease-metadata">
-                    <span class="badge">${pharmaClass.name}</span>
+                    ${allPharmaClasses.map(cls =>
+                        `<span class="badge pharma-class-badge" data-class-id="${cls.id}" title="Click to view class detail">${cls.name}</span>`
+                    ).join('')}
                 </div>
             </div>
 
@@ -603,6 +610,19 @@ function renderDrugDetail(drug, pharmaClass) {
             ${renderRelatedConditions(drug.id)}
         </div>
     `;
+
+    // Add click handlers for pharmacologic class badges
+    detailPanel.querySelectorAll('.pharma-class-badge').forEach(badge => {
+        badge.addEventListener('click', () => {
+            const classId = badge.dataset.classId;
+            const pharmaClass = dataLoader.getClassById(classId);
+            if (pharmaClass) {
+                selectEntity(pharmaClass, 'pharma-class');
+            }
+        });
+        // Make badges look clickable
+        badge.style.cursor = 'pointer';
+    });
 }
 
 // Render related conditions section

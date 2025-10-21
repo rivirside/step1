@@ -1,0 +1,350 @@
+{
+  "total_drugs_to_migrate": 39,
+  "drugs": {
+    "carbamazepine": {
+      "id": "carbamazepine",
+      "pharmacologicClasses": [
+        "sodium-channel-blockers",
+        "anticonvulsants-as-mood-stabilizers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "lamotrigine": {
+      "id": "lamotrigine",
+      "pharmacologicClasses": [
+        "sodium-channel-blockers",
+        "anticonvulsants-as-mood-stabilizers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "doxycycline": {
+      "id": "doxycycline",
+      "pharmacologicClasses": [
+        "oral-antibiotics",
+        "tetracyclines"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "minocycline": {
+      "id": "minocycline",
+      "pharmacologicClasses": [
+        "oral-antibiotics",
+        "tetracyclines"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "trimethoprim-sulfamethoxazole": {
+      "id": "trimethoprim-sulfamethoxazole",
+      "pharmacologicClasses": [
+        "trimethoprim",
+        "urinary-antiseptics"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "hydroxychloroquine": {
+      "id": "hydroxychloroquine",
+      "pharmacologicClasses": [
+        "disease-modifying-antirheumatic-drugs-dmards",
+        "quinoline-antimalarials"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "ipratropium": {
+      "id": "ipratropium",
+      "pharmacologicClasses": [
+        "anticholinergics",
+        "muscarinic-antagonists"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "tiotropium": {
+      "id": "tiotropium",
+      "pharmacologicClasses": [
+        "anticholinergics",
+        "muscarinic-antagonists"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "succinylcholine": {
+      "id": "succinylcholine",
+      "pharmacologicClasses": [
+        "neuromuscular-blocking-agents",
+        "nicotinic-antagonists"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "albuterol": {
+      "id": "albuterol",
+      "pharmacologicClasses": [
+        "short-acting-beta-2-agonists-saba",
+        "selective-\u03b22-agonists"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "salmeterol": {
+      "id": "salmeterol",
+      "pharmacologicClasses": [
+        "long-acting-beta-2-agonists-laba",
+        "selective-\u03b22-agonists"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "formoterol": {
+      "id": "formoterol",
+      "pharmacologicClasses": [
+        "long-acting-beta-2-agonists-laba",
+        "selective-\u03b22-agonists"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "terbutaline": {
+      "id": "terbutaline",
+      "pharmacologicClasses": [
+        "tocolytics",
+        "selective-\u03b22-agonists"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "phenylephrine": {
+      "id": "phenylephrine",
+      "pharmacologicClasses": [
+        "\u03b11-selective-agonists",
+        "nasal-decongestants"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "timolol": {
+      "id": "timolol",
+      "pharmacologicClasses": [
+        "beta-blockers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "doxazosin": {
+      "id": "doxazosin",
+      "pharmacologicClasses": [
+        "alpha-blockers",
+        "alpha-1-blockers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "terazosin": {
+      "id": "terazosin",
+      "pharmacologicClasses": [
+        "alpha-blockers",
+        "alpha-1-blockers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "tamsulosin": {
+      "id": "tamsulosin",
+      "pharmacologicClasses": [
+        "alpha-blockers",
+        "alpha-1-blockers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "tizanidine": {
+      "id": "tizanidine",
+      "pharmacologicClasses": [
+        "central-\u03b12-agonists",
+        "central-acting-muscle-relaxants"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "nifedipine": {
+      "id": "nifedipine",
+      "pharmacologicClasses": [
+        "tocolytics",
+        "calcium-channel-blockers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "furosemide": {
+      "id": "furosemide",
+      "pharmacologicClasses": [
+        "loop-diuretics"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "bumetanide": {
+      "id": "bumetanide",
+      "pharmacologicClasses": [
+        "loop-diuretics"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "hydrochlorothiazide-hctz": {
+      "id": "hydrochlorothiazide-hctz",
+      "pharmacologicClasses": [
+        "thiazide-diuretics"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "chlorthalidone": {
+      "id": "chlorthalidone",
+      "pharmacologicClasses": [
+        "thiazide-diuretics"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "spironolactone": {
+      "id": "spironolactone",
+      "pharmacologicClasses": [
+        "potassium-sparing-diuretics"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "eplerenone": {
+      "id": "eplerenone",
+      "pharmacologicClasses": [
+        "potassium-sparing-diuretics"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "hydrocortisone": {
+      "id": "hydrocortisone",
+      "pharmacologicClasses": [
+        "glucocorticoids",
+        "low-to-high-potency-steroids"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "prednisone": {
+      "id": "prednisone",
+      "pharmacologicClasses": [
+        "systemic-corticosteroids",
+        "glucocorticoids"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "dexamethasone": {
+      "id": "dexamethasone",
+      "pharmacologicClasses": [
+        "systemic-corticosteroids",
+        "glucocorticoids"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "infliximab": {
+      "id": "infliximab",
+      "pharmacologicClasses": [
+        "biologic-agents",
+        "biologic-dmards"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "aspirin": {
+      "id": "aspirin",
+      "pharmacologicClasses": [
+        "nsaids",
+        "cyclooxygenase-inhibitors"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "methotrexate": {
+      "id": "methotrexate",
+      "pharmacologicClasses": [
+        "disease-modifying-antirheumatic-drugs-dmards",
+        "antimetabolites"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "phenytoin": {
+      "id": "phenytoin",
+      "pharmacologicClasses": [
+        "sodium-channel-blockers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "fluticasone": {
+      "id": "fluticasone",
+      "pharmacologicClasses": [
+        "intranasal-corticosteroids",
+        "inhaled-corticosteroids"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "budesonide": {
+      "id": "budesonide",
+      "pharmacologicClasses": [
+        "intranasal-corticosteroids",
+        "inhaled-corticosteroids"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "valproic-acid": {
+      "id": "valproic-acid",
+      "pharmacologicClasses": [
+        "anticonvulsants-as-mood-stabilizers",
+        "gaba-enhancers"
+      ],
+      "is_duplicate": true,
+      "is_manual_addition": false
+    },
+    "carvedilol": {
+      "id": "carvedilol",
+      "pharmacologicClasses": [
+        "beta-blockers",
+        "alpha-blockers"
+      ],
+      "is_duplicate": false,
+      "is_manual_addition": true
+    },
+    "labetalol": {
+      "id": "labetalol",
+      "pharmacologicClasses": [
+        "beta-blockers",
+        "alpha-blockers"
+      ],
+      "is_duplicate": false,
+      "is_manual_addition": true
+    },
+    "amiodarone": {
+      "id": "amiodarone",
+      "pharmacologicClasses": [
+        "class-iii-potassium-channel-blockers",
+        "class-i-sodium-channel-blockers",
+        "class-ii-beta-blockers",
+        "class-iv-calcium-channel-blockers"
+      ],
+      "is_duplicate": false,
+      "is_manual_addition": true
+    }
+  }
+}

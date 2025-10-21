@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Class Drug Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #2563eb;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-section h2 {
+            margin-top: 0;
+            color: #1f2937;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            margin: 4px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .error {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        pre {
+            background: #f9fafb;
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .drug-count {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Multi-Class Drug System Test</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Data Loader Normalization</h2>
+        <div id="test1-result">Running test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Aspirin Multi-Class Data</h2>
+        <div id="test2-result">Running test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Carvedilol Multi-Class Data</h2>
+        <div id="test3-result">Running test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Labetalol Multi-Class Data</h2>
+        <div id="test4-result">Running test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 5: Class Indexing</h2>
+        <div id="test5-result">Running test...</div>
+    </div>
+
+    <script type="module">
+        import dataLoader from './data-loader.js';
+
+        async function runTests() {
+            console.log('Loading medication data...');
+            const loaded = await dataLoader.load();
+
+            if (!loaded) {
+                document.body.innerHTML = '<h1 class="error">Failed to load data!</h1>';
+                return;
+            }
+
+            // Test 1: Data Loader Normalization
+            const test1 = document.getElementById('test1-result');
+            const stats = dataLoader.getStats();
+            test1.innerHTML = `
+                <p class="success">✓ Data loaded successfully</p>
+                <div class="drug-count">
+                    <strong>${stats.drugs}</strong> drugs loaded<br>
+                    <strong>${stats.pharmacologicClasses}</strong> pharmacologic classes
+                </div>
+            `;
+
+            // Test 2: Aspirin
+            const test2 = document.getElementById('test2-result');
+            const aspirin = dataLoader.getDrugById('aspirin');
+            if (aspirin) {
+                const hasArray = Array.isArray(aspirin.pharmacologicClasses);
+                const classes = aspirin.pharmacologicClasses;
+                const hasBoth = classes.includes('cyclooxygenase-inhibitors') && classes.includes('nsaids');
+
+                test2.innerHTML = `
+                    <p class="${hasArray && hasBoth ? 'success' : 'error'}">
+                        ${hasArray && hasBoth ? '✓' : '✗'} Multi-class array: ${hasArray ? 'YES' : 'NO'}
+                    </p>
+                    <p><strong>Classes:</strong></p>
+                    <div>
+                        ${classes.map(c => `<span class="badge">${c}</span>`).join('')}
+                    </div>
+                    <p><strong>Indications:</strong> ${aspirin.indications.join(', ')}</p>
+                    <pre>${JSON.stringify(aspirin, null, 2).substring(0, 500)}...</pre>
+                `;
+            } else {
+                test2.innerHTML = '<p class="error">✗ Aspirin not found!</p>';
+            }
+
+            // Test 3: Carvedilol
+            const test3 = document.getElementById('test3-result');
+            const carvedilol = dataLoader.getDrugById('carvedilol');
+            if (carvedilol) {
+                const hasArray = Array.isArray(carvedilol.pharmacologicClasses);
+                const classes = carvedilol.pharmacologicClasses;
+                const hasBoth = classes.includes('beta-blockers') && classes.includes('alpha-blockers');
+
+                test3.innerHTML = `
+                    <p class="${hasArray && hasBoth ? 'success' : 'error'}">
+                        ${hasArray && hasBoth ? '✓' : '✗'} Multi-class array: ${hasArray ? 'YES' : 'NO'}
+                    </p>
+                    <p><strong>Classes:</strong></p>
+                    <div>
+                        ${classes.map(c => `<span class="badge">${c}</span>`).join('')}
+                    </div>
+                    <p><strong>Features:</strong> ${carvedilol.features}</p>
+                `;
+            } else {
+                test3.innerHTML = '<p class="error">✗ Carvedilol not found!</p>';
+            }
+
+            // Test 4: Labetalol
+            const test4 = document.getElementById('test4-result');
+            const labetalol = dataLoader.getDrugById('labetalol');
+            if (labetalol) {
+                const hasArray = Array.isArray(labetalol.pharmacologicClasses);
+                const classes = labetalol.pharmacologicClasses;
+                const hasBoth = classes.includes('beta-blockers') && classes.includes('alpha-blockers');
+
+                test4.innerHTML = `
+                    <p class="${hasArray && hasBoth ? 'success' : 'error'}">
+                        ${hasArray && hasBoth ? '✓' : '✗'} Multi-class array: ${hasArray ? 'YES' : 'NO'}
+                    </p>
+                    <p><strong>Classes:</strong></p>
+                    <div>
+                        ${classes.map(c => `<span class="badge">${c}</span>`).join('')}
+                    </div>
+                    <p><strong>Features:</strong> ${labetalol.features}</p>
+                `;
+            } else {
+                test4.innerHTML = '<p class="error">✗ Labetalol not found!</p>';
+            }
+
+            // Test 5: Class Indexing
+            const test5 = document.getElementById('test5-result');
+            const betaBlockers = dataLoader.getDrugsByPharmacologicClass('beta-blockers');
+            const alphaBlockers = dataLoader.getDrugsByPharmacologicClass('alpha-blockers');
+            const nsaids = dataLoader.getDrugsByPharmacologicClass('nsaids');
+            const coxInhibitors = dataLoader.getDrugsByPharmacologicClass('cyclooxygenase-inhibitors');
+
+            const carvedilolInBeta = betaBlockers.some(d => d.id === 'carvedilol');
+            const carvedilolInAlpha = alphaBlockers.some(d => d.id === 'carvedilol');
+            const labetalolInBeta = betaBlockers.some(d => d.id === 'labetalol');
+            const labetalolInAlpha = alphaBlockers.some(d => d.id === 'labetalol');
+            const aspirinInNSAIDs = nsaids.some(d => d.id === 'aspirin');
+            const aspirinInCOX = coxInhibitors.some(d => d.id === 'aspirin');
+
+            test5.innerHTML = `
+                <p class="${carvedilolInBeta && carvedilolInAlpha ? 'success' : 'error'}">
+                    ${carvedilolInBeta && carvedilolInAlpha ? '✓' : '✗'} Carvedilol in both beta-blockers and alpha-blockers
+                </p>
+                <p class="${labetalolInBeta && labetalolInAlpha ? 'success' : 'error'}">
+                    ${labetalolInBeta && labetalolInAlpha ? '✓' : '✗'} Labetalol in both beta-blockers and alpha-blockers
+                </p>
+                <p class="${aspirinInNSAIDs && aspirinInCOX ? 'success' : 'error'}">
+                    ${aspirinInNSAIDs && aspirinInCOX ? '✓' : '✗'} Aspirin in both NSAIDs and COX inhibitors
+                </p>
+                <div class="drug-count">
+                    <strong>Beta-blockers:</strong> ${betaBlockers.length} drugs<br>
+                    <strong>Alpha-blockers:</strong> ${alphaBlockers.length} drugs<br>
+                    <strong>NSAIDs:</strong> ${nsaids.length} drugs<br>
+                    <strong>COX Inhibitors:</strong> ${coxInhibitors.length} drugs
+                </div>
+            `;
+
+            console.log('All tests complete!');
+        }
+
+        runTests();
+    </script>
+</body>
+</html>

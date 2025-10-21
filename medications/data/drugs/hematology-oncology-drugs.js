@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "warfarin",
         "name": "Warfarin",
@@ -212,16 +213,23 @@ const drugs = [
     {
         "id": "aspirin",
         "name": "Aspirin",
+        "pharmacologicClasses": [
+            "cyclooxygenase-inhibitors",
+            "nsaids"
+        ],
         "pharmacologicClass": "cyclooxygenase-inhibitors",
         "therapeuticClass": "antiplatelet-agents",
         "system": "hematology-oncology",
         "mechanism": "Irreversibly inhibit COX-1, preventing thromboxane A2 synthesis and platelet aggregation.",
-        "features": "Irreversible COX inhibition, low-dose cardioprotective.",
-        "clinicalChoice": "Primary/secondary CVD prevention.",
+        "features": "Irreversible COX inhibition, low-dose cardioprotective, antiplatelet.",
+        "clinicalChoice": "Primary/secondary CVD prevention, antipyretic, analgesic.",
         "indications": [
             "ACS",
             "Stroke Prevention",
-            "MI Prevention"
+            "MI Prevention",
+            "Cardiovascular Protection",
+            "Fever",
+            "Pain"
         ],
         "contraindications": [
             "Active GI Bleeding",
@@ -230,10 +238,11 @@ const drugs = [
         "sideEffects": [
             "GI bleeding",
             "Peptic ulcers",
-            "Reye syndrome (children)"
+            "Reye syndrome (children)",
+            "Platelet dysfunction"
         ],
-        "interactions": "Warfarin (increased bleeding), methotrexate (increased toxicity).",
-        "interactionDetails": "WARFARIN: MECHANISM - Aspirin affects platelet function while warfarin affects coagulation cascade. CONSEQUENCE - Additive bleeding risk affecting both primary and secondary hemostasis.",
+        "interactions": "Warfarin (increased bleeding), methotrexate (increased toxicity), ACE inhibitors, lithium.",
+        "interactionDetails": "WARFARIN: MECHANISM - Aspirin affects platelet function while warfarin affects coagulation cascade. NSAIDs also displace warfarin from protein binding sites. CONSEQUENCE - Additive bleeding risk affecting both primary and secondary hemostasis. ACE INHIBITORS: MECHANISM - NSAIDs block cyclooxygenase, reducing prostaglandin E2 and prostacyclin production. CONSEQUENCE - Reduced antihypertensive efficacy and increased risk of acute kidney injury. LITHIUM: MECHANISM - NSAIDs reduce renal blood flow and GFR, decreasing lithium clearance. CONSEQUENCE - Lithium toxicity.",
         "pageType": "drug"
     },
     {
@@ -518,12 +527,14 @@ const drugs = [
         "therapeuticClass": "chemotherapy-agents",
         "system": "hematology-oncology",
         "mechanism": "Mimic normal metabolites, interfere with DNA/RNA synthesis.",
-        "features": "Folate analog, requires leucovorin rescue.",
+        "features": "Folate analog, requires leucovorin rescue. | Folate analog, requires folate supplementation.",
         "clinicalChoice": "ALL, rheumatoid arthritis.",
         "indications": [
+            "Crohn Disease",
             "Leukemia",
-            "Rheumatoid Arthritis",
-            "Psoriasis"
+            "Psoriasis",
+            "Psoriatic Arthritis",
+            "Rheumatoid Arthritis"
         ],
         "contraindications": [
             "Pregnancy",
@@ -536,7 +547,11 @@ const drugs = [
         ],
         "interactions": "Folate supplements reduce methotrexate efficacy.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "antimetabolites",
+            "disease-modifying-antirheumatic-drugs-dmards"
+        ]
     },
     {
         "id": "5-fluorouracil-5-fu",
@@ -789,6 +804,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

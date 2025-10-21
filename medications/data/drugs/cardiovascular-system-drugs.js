@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "lisinopril",
         "name": "Lisinopril",
@@ -318,11 +319,12 @@ const drugs = [
         "therapeuticClass": "antihypertensives",
         "system": "cardiovascular-system",
         "mechanism": "Block L-type calcium channels, causing vasodilation or reduced cardiac contractility.",
-        "features": "Short-acting, can cause reflex tachycardia.",
+        "features": "Short-acting, can cause reflex tachycardia. | Calcium channel blocker, oral administration.",
         "clinicalChoice": "Prinzmetal angina.",
         "indications": [
+            "Angina",
             "Hypertension",
-            "Angina"
+            "Preterm Labor"
         ],
         "contraindications": [
             "Acute MI"
@@ -334,7 +336,11 @@ const drugs = [
         ],
         "interactions": "Beta-blockers (increased risk of heart block).",
         "interactionDetails": "BETA-BLOCKERS: MECHANISM - Non-dihydropyridine CCBs (verapamil, diltiazem) have negative chronotropic and dromotropic effects on the AV node. Beta-blockers also slow AV node conduction and reduce heart rate. CONSEQUENCE - Combined use significantly increases risk of symptomatic bradycardia, AV block (first-, second-, or third-degree), and potential asystole, especially in elderly patients or those with pre-existing conduction abnormalities.",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "calcium-channel-blockers",
+            "tocolytics"
+        ]
     },
     {
         "id": "verapamil",
@@ -473,12 +479,13 @@ const drugs = [
         "therapeuticClass": "diuretics-cardiovascular",
         "system": "cardiovascular-system",
         "mechanism": "Inhibit NKCC2 transporter in thick ascending limb, causing rapid fluid loss.",
-        "features": "Most commonly used, IV/PO.",
+        "features": "Most commonly used, IV/PO. | Most commonly used loop diuretic.",
         "clinicalChoice": "Acute heart failure, pulmonary edema.",
         "indications": [
+            "Edema",
             "Heart Failure",
-            "Pulmonary Edema",
-            "Hypertension"
+            "Hypertension",
+            "Pulmonary Edema"
         ],
         "contraindications": [
             "Anuria",
@@ -491,7 +498,10 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides (ototoxicity), lithium (increased levels).",
         "interactionDetails": "AMINOGLYCOSIDES: MECHANISM - Both loop diuretics and aminoglycosides have direct ototoxic effects on hair cells in the cochlea. CONSEQUENCE - Synergistic permanent hearing loss. LITHIUM: MECHANISM - Volume depletion increases lithium reabsorption. CONSEQUENCE - Lithium toxicity with tremor and confusion.",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "loop-diuretics"
+        ]
     },
     {
         "id": "bumetanide",
@@ -503,6 +513,7 @@ const drugs = [
         "features": "40x more potent than furosemide.",
         "clinicalChoice": "Furosemide resistance.",
         "indications": [
+            "Edema",
             "Heart Failure",
             "Hypertension"
         ],
@@ -517,7 +528,10 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides (ototoxicity), lithium (increased levels).",
         "interactionDetails": "AMINOGLYCOSIDES: MECHANISM - Both loop diuretics and aminoglycosides have direct ototoxic effects on hair cells in the cochlea. CONSEQUENCE - Synergistic permanent hearing loss. LITHIUM: MECHANISM - Volume depletion increases lithium reabsorption. CONSEQUENCE - Lithium toxicity with tremor and confusion.",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "loop-diuretics"
+        ]
     },
     {
         "id": "hydrochlorothiazide-hctz",
@@ -529,6 +543,7 @@ const drugs = [
         "features": "Most common thiazide.",
         "clinicalChoice": "First-line hypertension.",
         "indications": [
+            "Edema",
             "Hypertension",
             "Mild Heart Failure"
         ],
@@ -543,7 +558,10 @@ const drugs = [
         ],
         "interactions": "Lithium (increased levels), NSAIDs (reduced efficacy).",
         "interactionDetails": "LITHIUM: MECHANISM - Thiazides cause volume depletion, increasing lithium reabsorption. CONSEQUENCE - Lithium toxicity. NSAIDS: MECHANISM - Thiazides work partly through prostaglandin-mediated vasodilation, NSAIDs block this. CONSEQUENCE - Reduced antihypertensive effect.",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "thiazide-diuretics"
+        ]
     },
     {
         "id": "chlorthalidone",
@@ -552,7 +570,7 @@ const drugs = [
         "therapeuticClass": "diuretics-cardiovascular",
         "system": "cardiovascular-system",
         "mechanism": "Inhibit NCC transporter in distal convoluted tubule, first-line for HTN.",
-        "features": "Longer half-life, better outcomes.",
+        "features": "Longer half-life, better outcomes. | Longer half-life than HCTZ.",
         "clinicalChoice": "Preferred thiazide for HTN.",
         "indications": [
             "Hypertension"
@@ -568,7 +586,10 @@ const drugs = [
         ],
         "interactions": "Lithium (increased levels), NSAIDs (reduced efficacy).",
         "interactionDetails": "LITHIUM: MECHANISM - Thiazides cause volume depletion, increasing lithium reabsorption. CONSEQUENCE - Lithium toxicity. NSAIDS: MECHANISM - Thiazides work partly through prostaglandin-mediated vasodilation, NSAIDs block this. CONSEQUENCE - Reduced antihypertensive effect.",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "thiazide-diuretics"
+        ]
     },
     {
         "id": "spironolactone",
@@ -577,11 +598,13 @@ const drugs = [
         "therapeuticClass": "diuretics-cardiovascular",
         "system": "cardiovascular-system",
         "mechanism": "Block aldosterone receptors or ENaC channels, prevent K+ loss.",
-        "features": "Aldosterone antagonist.",
+        "features": "Aldosterone antagonist. | Aldosterone receptor antagonist.",
         "clinicalChoice": "Heart failure, prevents K+ loss.",
         "indications": [
             "Heart Failure",
-            "Hypertension"
+            "Hirsutism",
+            "Hypertension",
+            "Primary Aldosteronism"
         ],
         "contraindications": [
             "Hyperkalemia",
@@ -593,7 +616,10 @@ const drugs = [
         ],
         "interactions": "ACE inhibitors, ARBs (hyperkalemia).",
         "interactionDetails": "ACE INHIBITORS/ARBS: MECHANISM - Both reduce aldosterone and block potassium excretion. CONSEQUENCE - Dangerous hyperkalemia with risk of fatal arrhythmias.",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "potassium-sparing-diuretics"
+        ]
     },
     {
         "id": "eplerenone",
@@ -605,8 +631,8 @@ const drugs = [
         "features": "Selective aldosterone antagonist.",
         "clinicalChoice": "Post-MI heart failure.",
         "indications": [
-            "Post-MI Heart Failure",
-            "Hypertension"
+            "Hypertension",
+            "Post-MI Heart Failure"
         ],
         "contraindications": [
             "Hyperkalemia"
@@ -617,7 +643,10 @@ const drugs = [
         ],
         "interactions": "ACE inhibitors, ARBs (hyperkalemia).",
         "interactionDetails": "ACE INHIBITORS/ARBS: MECHANISM - Both reduce aldosterone and block potassium excretion. CONSEQUENCE - Dangerous hyperkalemia with risk of fatal arrhythmias.",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "potassium-sparing-diuretics"
+        ]
     },
     {
         "id": "quinidine-ia",
@@ -1121,6 +1150,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

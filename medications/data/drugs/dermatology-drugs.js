@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "tretinoin",
         "name": "Tretinoin",
@@ -49,57 +50,6 @@ const drugs = [
             "Teratogenic"
         ],
         "interactions": "Other topical irritants increase skin irritation.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "doxycycline",
-        "name": "Doxycycline",
-        "pharmacologicClass": "oral-antibiotics",
-        "therapeuticClass": "acne-medications",
-        "system": "dermatology",
-        "mechanism": "Reduce Propionibacterium acnes, anti-inflammatory effects.",
-        "features": "Tetracycline, anti-inflammatory properties.",
-        "clinicalChoice": "Moderate to severe acne.",
-        "indications": [
-            "Acne Vulgaris",
-            "Rosacea"
-        ],
-        "contraindications": [
-            "Pregnancy",
-            "Children <8 years"
-        ],
-        "sideEffects": [
-            "GI upset",
-            "Photosensitivity",
-            "Antibiotic resistance"
-        ],
-        "interactions": "Antacids reduce absorption, oral contraceptives.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "minocycline",
-        "name": "Minocycline",
-        "pharmacologicClass": "oral-antibiotics",
-        "therapeuticClass": "acne-medications",
-        "system": "dermatology",
-        "mechanism": "Reduce Propionibacterium acnes, anti-inflammatory effects.",
-        "features": "Lipophilic tetracycline, CNS penetration.",
-        "clinicalChoice": "Severe acne, when doxycycline fails.",
-        "indications": [
-            "Severe Acne"
-        ],
-        "contraindications": [
-            "Pregnancy",
-            "Children <8 years"
-        ],
-        "sideEffects": [
-            "GI upset",
-            "Photosensitivity",
-            "Antibiotic resistance"
-        ],
-        "interactions": "Antacids reduce absorption, oral contraceptives.",
         "interactionDetails": "",
         "pageType": "drug"
     },
@@ -204,15 +154,17 @@ const drugs = [
     {
         "id": "hydrocortisone",
         "name": "Hydrocortisone",
-        "pharmacologicClass": "low-to-high-potency-steroids",
+        "pharmacologicClass": "glucocorticoids",
         "therapeuticClass": "topical-corticosteroids",
         "system": "dermatology",
         "mechanism": "Anti-inflammatory, immunosuppressive, vasoconstrictive effects.",
-        "features": "Low potency, safe for face and children.",
+        "features": "Low potency, safe for face and children. | Physiologic replacement dose.",
         "clinicalChoice": "Mild eczema, contact dermatitis.",
         "indications": [
+            "Adrenal Insufficiency",
+            "Contact Dermatitis",
             "Eczema",
-            "Contact Dermatitis"
+            "Inflammatory Skin Conditions"
         ],
         "contraindications": [
             "Viral Skin Infections"
@@ -225,7 +177,11 @@ const drugs = [
         ],
         "interactions": "Occlusive dressings increase absorption.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "glucocorticoids",
+            "low-to-high-potency-steroids"
+        ]
     },
     {
         "id": "triamcinolone",
@@ -280,6 +236,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

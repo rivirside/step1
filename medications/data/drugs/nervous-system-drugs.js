@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "fluoxetine",
         "name": "Fluoxetine",
@@ -600,11 +601,12 @@ const drugs = [
         "therapeuticClass": "antiepileptics",
         "system": "nervous-system",
         "mechanism": "Block voltage-gated sodium channels, preventing neuronal firing.",
-        "features": "Zero-order kinetics, many interactions.",
+        "features": "Zero-order kinetics, many interactions. | Narrow therapeutic index, zero-order kinetics.",
         "clinicalChoice": "Status epilepticus.",
         "indications": [
             "Epilepsy",
-            "Status Epilepticus"
+            "Status Epilepticus",
+            "Tonic-Clonic Seizures"
         ],
         "contraindications": [
             "Heart Block"
@@ -616,19 +618,24 @@ const drugs = [
         ],
         "interactions": "Many are enzyme inducers.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "sodium-channel-blockers"
+        ]
     },
     {
         "id": "carbamazepine",
         "name": "Carbamazepine",
-        "pharmacologicClass": "sodium-channel-blockers",
+        "pharmacologicClass": "anticonvulsants-as-mood-stabilizers",
         "therapeuticClass": "antiepileptics",
         "system": "nervous-system",
         "mechanism": "Block voltage-gated sodium channels, preventing neuronal firing.",
-        "features": "Autoinduces metabolism.",
+        "features": "Autoinduces metabolism. | Sodium channel blocker, CYP450 inducer. | Autoinduction, drug interactions.",
         "clinicalChoice": "Trigeminal neuralgia.",
         "indications": [
+            "Bipolar Disorder",
             "Epilepsy",
+            "Partial Seizures",
             "Trigeminal Neuralgia"
         ],
         "contraindications": [
@@ -641,20 +648,24 @@ const drugs = [
         ],
         "interactions": "Many are enzyme inducers.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "anticonvulsants-as-mood-stabilizers",
+            "sodium-channel-blockers"
+        ]
     },
     {
         "id": "lamotrigine",
         "name": "Lamotrigine",
-        "pharmacologicClass": "sodium-channel-blockers",
+        "pharmacologicClass": "anticonvulsants-as-mood-stabilizers",
         "therapeuticClass": "antiepileptics",
         "system": "nervous-system",
         "mechanism": "Block voltage-gated sodium channels, preventing neuronal firing.",
-        "features": "Broad spectrum, rash risk.",
+        "features": "Broad spectrum, rash risk. | Sodium channel blocker, good for depression. | Broad spectrum, good tolerability.",
         "clinicalChoice": "Bipolar disorder.",
         "indications": [
-            "Epilepsy",
-            "Bipolar Disorder"
+            "Bipolar Disorder",
+            "Epilepsy"
         ],
         "contraindications": [
             "Rash History"
@@ -666,8 +677,11 @@ const drugs = [
         ],
         "interactions": "Many are enzyme inducers.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "anticonvulsants-as-mood-stabilizers",
+            "sodium-channel-blockers"
+        ]
     }
-];
 
-export default drugs;
+];export default drugs;

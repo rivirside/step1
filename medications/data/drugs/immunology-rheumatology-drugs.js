@@ -2,33 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
-    {
-        "id": "methotrexate",
-        "name": "Methotrexate",
-        "pharmacologicClass": "disease-modifying-antirheumatic-drugs-dmards",
-        "therapeuticClass": "immunosuppressants",
-        "system": "immunology-rheumatology",
-        "mechanism": "Various mechanisms to suppress immune system and slow disease progression.",
-        "features": "Folate analog, requires folate supplementation.",
-        "clinicalChoice": "First-line DMARD for RA.",
-        "indications": [
-            "Rheumatoid Arthritis",
-            "Psoriatic Arthritis",
-            "Crohn Disease"
-        ],
-        "contraindications": [
-            "Pregnancy",
-            "Severe Renal/Hepatic Impairment"
-        ],
-        "sideEffects": [
-            "Immunosuppression",
-            "Hepatotoxicity",
-            "Myelosuppression"
-        ],
-        "interactions": "Live vaccines contraindicated, increased infection risk.",
-        "interactionDetails": "LIVE VACCINES: MECHANISM - DMARDs suppress immune system function, reducing ability to mount adequate immune response. CONSEQUENCE - Risk of disseminated infection from live vaccines, potentially fatal. Use killed vaccines only.",
-        "pageType": "drug"
-    },
+
     {
         "id": "sulfasalazine",
         "name": "Sulfasalazine",
@@ -56,33 +30,6 @@ const drugs = [
         "pageType": "drug"
     },
     {
-        "id": "hydroxychloroquine",
-        "name": "Hydroxychloroquine",
-        "pharmacologicClass": "disease-modifying-antirheumatic-drugs-dmards",
-        "therapeuticClass": "immunosuppressants",
-        "system": "immunology-rheumatology",
-        "mechanism": "Various mechanisms to suppress immune system and slow disease progression.",
-        "features": "Antimalarial with anti-inflammatory effects.",
-        "clinicalChoice": "Mild RA, SLE, malaria prophylaxis.",
-        "indications": [
-            "Rheumatoid Arthritis",
-            "SLE",
-            "Malaria"
-        ],
-        "contraindications": [
-            "Retinal Disease",
-            "G6PD Deficiency"
-        ],
-        "sideEffects": [
-            "Immunosuppression",
-            "Hepatotoxicity",
-            "Myelosuppression"
-        ],
-        "interactions": "Live vaccines contraindicated, increased infection risk.",
-        "interactionDetails": "LIVE VACCINES: MECHANISM - DMARDs suppress immune system function, reducing ability to mount adequate immune response. CONSEQUENCE - Risk of disseminated infection from live vaccines, potentially fatal. Use killed vaccines only.",
-        "pageType": "drug"
-    },
-    {
         "id": "adalimumab",
         "name": "Adalimumab",
         "pharmacologicClass": "biologic-dmards",
@@ -95,33 +42,6 @@ const drugs = [
             "Rheumatoid Arthritis",
             "Psoriatic Arthritis",
             "Crohn Disease"
-        ],
-        "contraindications": [
-            "Active Infection",
-            "Latent TB"
-        ],
-        "sideEffects": [
-            "Increased infection risk",
-            "Injection site reactions",
-            "Reactivation of TB"
-        ],
-        "interactions": "Live vaccines, other immunosuppressants.",
-        "interactionDetails": "OTHER IMMUNOSUPPRESSANTS: MECHANISM - Additive immunosuppressive effects when combined with conventional DMARDs or corticosteroids. CONSEQUENCE - Significantly increased risk of opportunistic infections including PCP, TB reactivation, and fungal infections.",
-        "pageType": "drug"
-    },
-    {
-        "id": "infliximab",
-        "name": "Infliximab",
-        "pharmacologicClass": "biologic-dmards",
-        "therapeuticClass": "immunosuppressants",
-        "system": "immunology-rheumatology",
-        "mechanism": "Target specific inflammatory mediators (TNF-α, IL-1, IL-6).",
-        "features": "Chimeric monoclonal antibody against TNF-α.",
-        "clinicalChoice": "Crohn disease, ulcerative colitis, rheumatoid arthritis.",
-        "indications": [
-            "Crohn Disease",
-            "Ulcerative Colitis",
-            "Rheumatoid Arthritis"
         ],
         "contraindications": [
             "Active Infection",
@@ -315,33 +235,6 @@ const drugs = [
         "pageType": "drug"
     },
     {
-        "id": "prednisone",
-        "name": "Prednisone",
-        "pharmacologicClass": "systemic-corticosteroids",
-        "therapeuticClass": "corticosteroids",
-        "system": "immunology-rheumatology",
-        "mechanism": "Bind glucocorticoid receptors, suppress inflammatory gene transcription.",
-        "features": "Oral, intermediate-acting.",
-        "clinicalChoice": "Inflammatory conditions, immunosuppression.",
-        "indications": [
-            "Rheumatoid Arthritis",
-            "Asthma",
-            "Allergic Reactions"
-        ],
-        "contraindications": [
-            "Systemic Fungal Infections"
-        ],
-        "sideEffects": [
-            "Osteoporosis",
-            "Diabetes",
-            "Infection risk",
-            "Adrenal suppression"
-        ],
-        "interactions": "CYP3A4 inducers reduce efficacy, live vaccines.",
-        "interactionDetails": "CYP3A4 INDUCERS: MECHANISM - Rifampin, phenytoin increase cortisol metabolism, reducing therapeutic levels. CONSEQUENCE - Loss of anti-inflammatory efficacy, potential disease flare. May need dose adjustment.",
-        "pageType": "drug"
-    },
-    {
         "id": "methylprednisolone",
         "name": "Methylprednisolone",
         "pharmacologicClass": "systemic-corticosteroids",
@@ -353,32 +246,6 @@ const drugs = [
         "indications": [
             "Severe Asthma",
             "Acute MS Relapse"
-        ],
-        "contraindications": [
-            "Systemic Fungal Infections"
-        ],
-        "sideEffects": [
-            "Osteoporosis",
-            "Diabetes",
-            "Infection risk",
-            "Adrenal suppression"
-        ],
-        "interactions": "CYP3A4 inducers reduce efficacy, live vaccines.",
-        "interactionDetails": "CYP3A4 INDUCERS: MECHANISM - Rifampin, phenytoin increase cortisol metabolism, reducing therapeutic levels. CONSEQUENCE - Loss of anti-inflammatory efficacy, potential disease flare. May need dose adjustment.",
-        "pageType": "drug"
-    },
-    {
-        "id": "dexamethasone",
-        "name": "Dexamethasone",
-        "pharmacologicClass": "systemic-corticosteroids",
-        "therapeuticClass": "corticosteroids",
-        "system": "immunology-rheumatology",
-        "mechanism": "Bind glucocorticoid receptors, suppress inflammatory gene transcription.",
-        "features": "Long-acting, potent, minimal mineralocorticoid activity.",
-        "clinicalChoice": "Cerebral edema, high-altitude sickness.",
-        "indications": [
-            "Cerebral Edema",
-            "Adrenal Insufficiency Testing"
         ],
         "contraindications": [
             "Systemic Fungal Infections"
@@ -496,6 +363,5 @@ const drugs = [
         "interactionDetails": "",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "ethinyl-estradiol-norethindrone",
         "name": "Ethinyl Estradiol/Norethindrone",
@@ -315,55 +316,6 @@ const drugs = [
         "pageType": "drug"
     },
     {
-        "id": "terbutaline",
-        "name": "Terbutaline",
-        "pharmacologicClass": "tocolytics",
-        "therapeuticClass": "labor-and-delivery",
-        "system": "reproductive-gynecology",
-        "mechanism": "Suppress uterine contractions to delay preterm labor.",
-        "features": "β2-agonist, off-label use for tocolysis.",
-        "clinicalChoice": "Acute tocolysis, short-term use only.",
-        "indications": [
-            "Preterm Labor"
-        ],
-        "contraindications": [
-            "Maternal Heart Disease",
-            "Severe Preeclampsia"
-        ],
-        "sideEffects": [
-            "Pulmonary edema",
-            "Tachycardia",
-            "Hyperglycemia"
-        ],
-        "interactions": "Beta-agonists with corticosteroids increase pulmonary edema risk.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "nifedipine",
-        "name": "Nifedipine",
-        "pharmacologicClass": "tocolytics",
-        "therapeuticClass": "labor-and-delivery",
-        "system": "reproductive-gynecology",
-        "mechanism": "Suppress uterine contractions to delay preterm labor.",
-        "features": "Calcium channel blocker, oral administration.",
-        "clinicalChoice": "Tocolysis maintenance therapy.",
-        "indications": [
-            "Preterm Labor"
-        ],
-        "contraindications": [
-            "Maternal Hypotension"
-        ],
-        "sideEffects": [
-            "Pulmonary edema",
-            "Tachycardia",
-            "Hyperglycemia"
-        ],
-        "interactions": "Beta-agonists with corticosteroids increase pulmonary edema risk.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
         "id": "sildenafil",
         "name": "Sildenafil",
         "pharmacologicClass": "pde5-inhibitors",
@@ -443,6 +395,5 @@ const drugs = [
         "interactionDetails": "NITRATES: MECHANISM - Nitrates increase cGMP levels through nitric oxide release. PDE5 inhibitors prevent cGMP breakdown by inhibiting phosphodiesterase-5. CONSEQUENCE - Synergistic vasodilation leads to severe, potentially life-threatening hypotension that may not respond to fluids and requires vasopressors.",
         "pageType": "drug"
     }
-];
 
-export default drugs;
+];export default drugs;

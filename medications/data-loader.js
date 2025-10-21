@@ -75,6 +75,20 @@ class MedicationDataLoader {
 
         // Index classes
         this.classes.forEach(cls => {
+            // Normalize therapeutic classes to arrays (same pattern as drugs!)
+            // Pharmacologic classes can belong to multiple therapeutic classes
+            if (cls.pageType === 'pharmacologic-class') {
+                if (!cls.therapeuticClasses) {
+                    // Old format: single therapeuticClass string → convert to array
+                    cls.therapeuticClasses = cls.therapeuticClass ? [cls.therapeuticClass] : [];
+                } else if (!Array.isArray(cls.therapeuticClasses)) {
+                    cls.therapeuticClasses = [cls.therapeuticClasses];
+                }
+
+                // Set therapeuticClass to first for backward compatibility
+                cls.therapeuticClass = cls.therapeuticClasses[0] || null;
+            }
+
             this.classesById.set(cls.id, cls);
 
             // Group classes by system
@@ -86,6 +100,20 @@ class MedicationDataLoader {
 
         // Index drugs
         this.drugs.forEach(drug => {
+            // ALWAYS normalize to pharmacologicClasses array (even if single class)
+            // This is simpler - all drugs work the same way!
+            if (!drug.pharmacologicClasses) {
+                // Old format: single pharmacologicClass string → convert to array
+                drug.pharmacologicClasses = drug.pharmacologicClass ? [drug.pharmacologicClass] : [];
+            } else if (!Array.isArray(drug.pharmacologicClasses)) {
+                // Ensure it's an array
+                drug.pharmacologicClasses = [drug.pharmacologicClasses];
+            }
+
+            // Set pharmacologicClass to first class for backward compatibility
+            // (Even single-class drugs now use the array internally)
+            drug.pharmacologicClass = drug.pharmacologicClasses[0] || null;
+
             this.drugsById.set(drug.id, drug);
 
             // Group by system
@@ -100,11 +128,14 @@ class MedicationDataLoader {
             }
             this.drugsByTherapeuticClass.get(drug.therapeuticClass).push(drug);
 
-            // Group by pharmacologic class
-            if (!this.drugsByPharmacologicClass.has(drug.pharmacologicClass)) {
-                this.drugsByPharmacologicClass.set(drug.pharmacologicClass, []);
-            }
-            this.drugsByPharmacologicClass.get(drug.pharmacologicClass).push(drug);
+            // Group by pharmacologic classes (NOW SUPPORTS MULTIPLE!)
+            // Add drug to index for EACH of its pharmacologic classes
+            drug.pharmacologicClasses.forEach(pharmaClass => {
+                if (!this.drugsByPharmacologicClass.has(pharmaClass)) {
+                    this.drugsByPharmacologicClass.set(pharmaClass, []);
+                }
+                this.drugsByPharmacologicClass.get(pharmaClass).push(drug);
+            });
 
             // Index by indications
             if (drug.indications) {
@@ -183,10 +214,12 @@ class MedicationDataLoader {
     }
 
     // Get pharmacologic classes for a therapeutic class
+    // NOW SUPPORTS MULTI-THERAPEUTIC-CLASS!
     getPharmacologicClassesByTherapeuticClass(therapeuticClassId) {
         return this.classes.filter(cls =>
             cls.pageType === 'pharmacologic-class' &&
-            cls.therapeuticClass === therapeuticClassId
+            cls.therapeuticClasses &&  // Has therapeutic classes array
+            cls.therapeuticClasses.includes(therapeuticClassId)  // Includes this one
         );
     }
 

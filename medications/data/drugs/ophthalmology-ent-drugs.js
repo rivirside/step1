@@ -2,6 +2,7 @@
 // Auto-generated from modularize-data.js
 
 const drugs = [
+
     {
         "id": "latanoprost",
         "name": "Latanoprost",
@@ -51,32 +52,6 @@ const drugs = [
         ],
         "interactions": "Minimal systemic interactions.",
         "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
-        "id": "timolol",
-        "name": "Timolol",
-        "pharmacologicClass": "beta-blockers",
-        "therapeuticClass": "glaucoma-medications",
-        "system": "ophthalmology-ent",
-        "mechanism": "Reduce aqueous humor production by blocking β-receptors.",
-        "features": "Non-selective beta-blocker, twice daily.",
-        "clinicalChoice": "Glaucoma when prostaglandins contraindicated.",
-        "indications": [
-            "Open-Angle Glaucoma"
-        ],
-        "contraindications": [
-            "Asthma",
-            "COPD",
-            "Heart Block"
-        ],
-        "sideEffects": [
-            "Bradycardia",
-            "Bronchospasm",
-            "Fatigue"
-        ],
-        "interactions": "Systemic beta-blockers (additive effects), calcium channel blockers.",
-        "interactionDetails": "SYSTEMIC BETA-BLOCKERS: MECHANISM - Additive β-adrenergic blockade from topical and systemic routes. CONSEQUENCE - Enhanced bradycardia, heart block, and bronchospasm, especially dangerous in COPD/asthma patients.",
         "pageType": "drug"
     },
     {
@@ -225,34 +200,9 @@ const drugs = [
         "pageType": "drug"
     },
     {
-        "id": "phenylephrine",
-        "name": "Phenylephrine",
-        "pharmacologicClass": "nasal-decongestants",
-        "therapeuticClass": "nasal-medications",
-        "system": "ophthalmology-ent",
-        "mechanism": "α1-adrenergic agonists causing vasoconstriction.",
-        "features": "Shorter duration, less rebound.",
-        "clinicalChoice": "Brief nasal decongestion.",
-        "indications": [
-            "Nasal Congestion"
-        ],
-        "contraindications": [
-            "Severe Hypertension",
-            "MAOIs"
-        ],
-        "sideEffects": [
-            "Rebound congestion",
-            "Hypertension",
-            "Tachycardia"
-        ],
-        "interactions": "MAOIs, tricyclic antidepressants.",
-        "interactionDetails": "",
-        "pageType": "drug"
-    },
-    {
         "id": "fluticasone",
         "name": "Fluticasone",
-        "pharmacologicClass": "intranasal-corticosteroids",
+        "pharmacologicClass": "inhaled-corticosteroids",
         "therapeuticClass": "nasal-medications",
         "system": "ophthalmology-ent",
         "mechanism": "Local anti-inflammatory effects in nasal passages.",
@@ -260,6 +210,7 @@ const drugs = [
         "clinicalChoice": "Allergic rhinitis, nasal polyps.",
         "indications": [
             "Allergic Rhinitis",
+            "Asthma",
             "Nasal Polyps"
         ],
         "contraindications": [
@@ -272,19 +223,25 @@ const drugs = [
         ],
         "interactions": "Minimal systemic absorption.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "inhaled-corticosteroids",
+            "intranasal-corticosteroids"
+        ]
     },
     {
         "id": "budesonide",
         "name": "Budesonide",
-        "pharmacologicClass": "intranasal-corticosteroids",
+        "pharmacologicClass": "inhaled-corticosteroids",
         "therapeuticClass": "nasal-medications",
         "system": "ophthalmology-ent",
         "mechanism": "Local anti-inflammatory effects in nasal passages.",
         "features": "High first-pass metabolism.",
         "clinicalChoice": "Allergic rhinitis in children.",
         "indications": [
-            "Allergic Rhinitis"
+            "Allergic Rhinitis",
+            "Asthma",
+            "COPD"
         ],
         "contraindications": [
             "Nasal Infections"
@@ -296,8 +253,11 @@ const drugs = [
         ],
         "interactions": "Minimal systemic absorption.",
         "interactionDetails": "",
-        "pageType": "drug"
+        "pageType": "drug",
+        "pharmacologicClasses": [
+            "inhaled-corticosteroids",
+            "intranasal-corticosteroids"
+        ]
     }
-];
 
-export default drugs;
+];export default drugs;
