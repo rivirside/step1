@@ -85,7 +85,9 @@ const hematologyOncologyCategories = [
             "hemophilia-a",
             "hemophilia-b",
             "von-willebrand-disease",
-            "vitamin-k-deficiency"
+            "vitamin-k-deficiency",
+            "ttp",
+            "dic"
         ],
         pageType: "category",
         detail: {
