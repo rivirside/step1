@@ -68,6 +68,7 @@ const psychiatryCategories = [
         system: "psychiatry",
         type: "pathophysiologic",
         diseaseIds: [
+            "obsessive-compulsive-disorder",
             "body-dysmorphic-disorder",
             "hoarding-disorder",
             "trichotillomania",
