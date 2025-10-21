@@ -324,16 +324,455 @@ export const relationships = [
         context: 'Most effective antipsychotic for treatment-resistant schizophrenia. Requires monitoring (agranulocytosis risk).',
         priority: 'second-line',
         direction: 'bidirectional'
-    }
+    },
 
-    // TODO: Add more relationships as content expands
-    // Prioritize high-yield conditions:
-    // - Diabetes Type 2 → Metformin, Insulin
-    // - Atrial Fibrillation → Warfarin, Apixaban, Metoprolol
-    // - DVT/PE → Heparin, Warfarin, Apixaban
-    // - Pneumonia → Azithromycin, Ceftriaxone
-    // - UTI → Nitrofurantoin, TMP-SMX
-    // - Seizures → Levetiracetam, Phenytoin, Valproic acid
+    // ============================================
+    // DIABETES MELLITUS TYPE 2
+    // ============================================
+    {
+        source: { type: 'condition', id: 'diabetes-mellitus-type-2', name: 'Diabetes Mellitus Type 2' },
+        target: { type: 'drug', id: 'metformin', name: 'Metformin' },
+        relationshipType: 'chronic-management',
+        context: 'First-line for T2DM. Decreases hepatic gluconeogenesis. Weight neutral. Reduces macrovascular complications.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'diabetes-mellitus-type-2', name: 'Diabetes Mellitus Type 2' },
+        target: { type: 'drug', id: 'insulin', name: 'Insulin' },
+        relationshipType: 'chronic-management',
+        context: 'For uncontrolled T2DM despite oral agents, or in T1DM. Multiple formulations (rapid, short, intermediate, long-acting).',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'diabetes-mellitus-type-2', name: 'Diabetes Mellitus Type 2' },
+        target: { type: 'drug', id: 'glipizide', name: 'Glipizide' },
+        relationshipType: 'chronic-management',
+        context: 'Sulfonylurea. Stimulates insulin secretion. Risk of hypoglycemia and weight gain.',
+        priority: 'second-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // ATRIAL FIBRILLATION
+    // ============================================
+    {
+        source: { type: 'condition', id: 'atrial-fibrillation', name: 'Atrial Fibrillation' },
+        target: { type: 'drug', id: 'warfarin', name: 'Warfarin' },
+        relationshipType: 'chronic-management',
+        context: 'Vitamin K antagonist for stroke prevention. Requires INR monitoring (target 2-3). Multiple drug/food interactions.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'atrial-fibrillation', name: 'Atrial Fibrillation' },
+        target: { type: 'drug', id: 'apixaban', name: 'Apixaban' },
+        relationshipType: 'chronic-management',
+        context: 'Direct oral anticoagulant (DOAC). Factor Xa inhibitor. No monitoring needed. Preferred over warfarin in most patients.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'atrial-fibrillation', name: 'Atrial Fibrillation' },
+        target: { type: 'drug', id: 'metoprolol', name: 'Metoprolol' },
+        relationshipType: 'chronic-management',
+        context: 'Beta-blocker for rate control. First-line for ventricular rate management.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'atrial-fibrillation', name: 'Atrial Fibrillation' },
+        target: { type: 'drug', id: 'diltiazem', name: 'Diltiazem' },
+        relationshipType: 'chronic-management',
+        context: 'Non-dihydropyridine CCB for rate control. Alternative to beta-blockers.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'atrial-fibrillation', name: 'Atrial Fibrillation' },
+        target: { type: 'drug', id: 'amiodarone', name: 'Amiodarone' },
+        relationshipType: 'chronic-management',
+        context: 'Class III antiarrhythmic for rhythm control. Multiple toxicities (pulmonary, thyroid, hepatic).',
+        priority: 'second-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // DVT/PE (VENOUS THROMBOEMBOLISM)
+    // ============================================
+    {
+        source: { type: 'condition', id: 'deep-vein-thrombosis', name: 'Deep Vein Thrombosis' },
+        target: { type: 'drug', id: 'heparin', name: 'Heparin' },
+        relationshipType: 'acute-treatment',
+        context: 'Unfractionated heparin for acute DVT/PE. Immediate anticoagulation while bridging to warfarin. Monitor PTT.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'deep-vein-thrombosis', name: 'Deep Vein Thrombosis' },
+        target: { type: 'drug', id: 'warfarin', name: 'Warfarin' },
+        relationshipType: 'chronic-management',
+        context: 'Long-term anticoagulation for VTE. Minimum 3 months, may be indefinite if unprovoked.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'deep-vein-thrombosis', name: 'Deep Vein Thrombosis' },
+        target: { type: 'drug', id: 'apixaban', name: 'Apixaban' },
+        relationshipType: 'chronic-management',
+        context: 'DOAC alternative to warfarin. Can be used for acute treatment and long-term therapy.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'deep-vein-thrombosis', name: 'Deep Vein Thrombosis' },
+        target: { type: 'drug', id: 'rivaroxaban', name: 'Rivaroxaban' },
+        relationshipType: 'chronic-management',
+        context: 'Factor Xa inhibitor. Can be used as monotherapy for VTE (no need for heparin bridge).',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'pulmonary-embolism', name: 'Pulmonary Embolism' },
+        target: { type: 'drug', id: 'heparin', name: 'Heparin' },
+        relationshipType: 'acute-treatment',
+        context: 'Immediate anticoagulation for acute PE. Consider thrombolytics if massive PE with hemodynamic instability.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'pulmonary-embolism', name: 'Pulmonary Embolism' },
+        target: { type: 'drug', id: 'warfarin', name: 'Warfarin' },
+        relationshipType: 'chronic-management',
+        context: 'Long-term anticoagulation post-PE. Duration depends on risk factors and provocation.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // COMMUNITY-ACQUIRED PNEUMONIA
+    // ============================================
+    {
+        source: { type: 'condition', id: 'pneumonia-community-acquired', name: 'Community-Acquired Pneumonia' },
+        target: { type: 'drug', id: 'azithromycin', name: 'Azithromycin' },
+        relationshipType: 'acute-treatment',
+        context: 'Macrolide for outpatient CAP. Covers atypicals (Mycoplasma, Chlamydia, Legionella).',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'pneumonia-community-acquired', name: 'Community-Acquired Pneumonia' },
+        target: { type: 'drug', id: 'ceftriaxone', name: 'Ceftriaxone' },
+        relationshipType: 'acute-treatment',
+        context: 'Third-generation cephalosporin for inpatient CAP. Covers S. pneumoniae. Often combined with azithromycin.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'pneumonia-community-acquired', name: 'Community-Acquired Pneumonia' },
+        target: { type: 'drug', id: 'levofloxacin', name: 'Levofloxacin' },
+        relationshipType: 'acute-treatment',
+        context: 'Respiratory fluoroquinolone. Monotherapy option for CAP (covers typical and atypical).',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // URINARY TRACT INFECTION
+    // ============================================
+    {
+        source: { type: 'condition', id: 'urinary-tract-infection', name: 'Urinary Tract Infection' },
+        target: { type: 'drug', id: 'nitrofurantoin', name: 'Nitrofurantoin' },
+        relationshipType: 'acute-treatment',
+        context: 'First-line for uncomplicated cystitis in women. 5-7 day course. Avoid in pyelonephritis (poor tissue penetration).',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'urinary-tract-infection', name: 'Urinary Tract Infection' },
+        target: { type: 'drug', id: 'trimethoprim-sulfamethoxazole', name: 'Trimethoprim-Sulfamethoxazole' },
+        relationshipType: 'acute-treatment',
+        context: 'TMP-SMX for uncomplicated UTI. Check local resistance patterns. Avoid if resistance >20%.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'urinary-tract-infection', name: 'Urinary Tract Infection' },
+        target: { type: 'drug', id: 'ciprofloxacin', name: 'Ciprofloxacin' },
+        relationshipType: 'acute-treatment',
+        context: 'Fluoroquinolone for complicated UTI or pyelonephritis. Not first-line for simple cystitis.',
+        priority: 'second-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // SEIZURE DISORDERS / EPILEPSY
+    // ============================================
+    {
+        source: { type: 'condition', id: 'seizures-generalized', name: 'Generalized Seizures' },
+        target: { type: 'drug', id: 'levetiracetam', name: 'Levetiracetam' },
+        relationshipType: 'chronic-management',
+        context: 'Broad-spectrum AED. First-line for many seizure types. Favorable side effect profile, minimal drug interactions.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'seizures-generalized', name: 'Generalized Seizures' },
+        target: { type: 'drug', id: 'valproic-acid', name: 'Valproic Acid' },
+        relationshipType: 'chronic-management',
+        context: 'Broad-spectrum AED. Effective for generalized seizures. Teratogenic - avoid in women of childbearing age.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'seizures-focal', name: 'Focal Seizures' },
+        target: { type: 'drug', id: 'levetiracetam', name: 'Levetiracetam' },
+        relationshipType: 'chronic-management',
+        context: 'First-line for focal seizures. Well-tolerated, no hepatic metabolism.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'seizures-focal', name: 'Focal Seizures' },
+        target: { type: 'drug', id: 'phenytoin', name: 'Phenytoin' },
+        relationshipType: 'chronic-management',
+        context: 'Older AED for focal seizures. Zero-order kinetics. Many drug interactions. Monitor levels.',
+        priority: 'second-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'seizures-focal', name: 'Focal Seizures' },
+        target: { type: 'drug', id: 'carbamazepine', name: 'Carbamazepine' },
+        relationshipType: 'chronic-management',
+        context: 'Effective for focal seizures and trigeminal neuralgia. Risk of aplastic anemia, SIADH.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'status-epilepticus', name: 'Status Epilepticus' },
+        target: { type: 'drug', id: 'lorazepam', name: 'Lorazepam' },
+        relationshipType: 'acute-treatment',
+        context: 'Benzodiazepine for acute seizure termination. IV push, rapidly effective. First-line for status epilepticus.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // RHEUMATOID ARTHRITIS
+    // ============================================
+    {
+        source: { type: 'condition', id: 'rheumatoid-arthritis', name: 'Rheumatoid Arthritis' },
+        target: { type: 'drug', id: 'methotrexate', name: 'Methotrexate' },
+        relationshipType: 'chronic-management',
+        context: 'First-line DMARD for RA. Give with folic acid to reduce toxicity. Monitor LFTs, CBC.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'rheumatoid-arthritis', name: 'Rheumatoid Arthritis' },
+        target: { type: 'drug', id: 'prednisone', name: 'Prednisone' },
+        relationshipType: 'acute-treatment',
+        context: 'Glucocorticoid for RA flares. Bridge therapy while waiting for DMARDs to work. Minimize chronic use.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // HYPOTHYROIDISM
+    // ============================================
+    {
+        source: { type: 'condition', id: 'hypothyroidism', name: 'Hypothyroidism' },
+        target: { type: 'drug', id: 'levothyroxine', name: 'Levothyroxine' },
+        relationshipType: 'chronic-management',
+        context: 'Synthetic T4 for thyroid hormone replacement. Take on empty stomach. Monitor TSH to adjust dose.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // HYPERTHYROIDISM / GRAVES DISEASE
+    // ============================================
+    {
+        source: { type: 'condition', id: 'hyperthyroidism', name: 'Hyperthyroidism' },
+        target: { type: 'drug', id: 'methimazole', name: 'Methimazole' },
+        relationshipType: 'chronic-management',
+        context: 'Thionamide antithyroid drug. Inhibits thyroid peroxidase. First-line for Graves disease.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'hyperthyroidism', name: 'Hyperthyroidism' },
+        target: { type: 'drug', id: 'propylthiouracil', name: 'Propylthiouracil' },
+        relationshipType: 'chronic-management',
+        context: 'Thionamide. Preferred in pregnancy (1st trimester) and thyroid storm. Risk of hepatotoxicity.',
+        priority: 'second-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'hyperthyroidism', name: 'Hyperthyroidism' },
+        target: { type: 'drug', id: 'propranolol', name: 'Propranolol' },
+        relationshipType: 'acute-treatment',
+        context: 'Beta-blocker for symptomatic relief (tremor, palpitations, anxiety). Does not treat underlying hyperthyroidism.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // ANEMIA (IRON DEFICIENCY)
+    // ============================================
+    {
+        source: { type: 'condition', id: 'anemia-iron-deficiency', name: 'Iron Deficiency Anemia' },
+        target: { type: 'drug', id: 'ferrous-sulfate', name: 'Ferrous Sulfate' },
+        relationshipType: 'chronic-management',
+        context: 'Oral iron supplementation. First-line for iron deficiency anemia. Take with vitamin C for absorption.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // ANEMIA (B12 DEFICIENCY)
+    // ============================================
+    {
+        source: { type: 'condition', id: 'anemia-b12-deficiency', name: 'Vitamin B12 Deficiency Anemia' },
+        target: { type: 'drug', id: 'cyanocobalamin', name: 'Cyanocobalamin' },
+        relationshipType: 'chronic-management',
+        context: 'Vitamin B12 supplementation. IM or high-dose oral. Treats pernicious anemia and B12 deficiency.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // GOUT
+    // ============================================
+    {
+        source: { type: 'condition', id: 'gout-acute', name: 'Acute Gout' },
+        target: { type: 'drug', id: 'indomethacin', name: 'Indomethacin' },
+        relationshipType: 'acute-treatment',
+        context: 'NSAID for acute gout flare. High doses for rapid symptom relief. Avoid in renal disease.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'gout-acute', name: 'Acute Gout' },
+        target: { type: 'drug', id: 'colchicine', name: 'Colchicine' },
+        relationshipType: 'acute-treatment',
+        context: 'Inhibits neutrophil migration. Effective if started early (<24h). GI side effects common.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'gout-chronic', name: 'Chronic Gout' },
+        target: { type: 'drug', id: 'allopurinol', name: 'Allopurinol' },
+        relationshipType: 'chronic-management',
+        context: 'Xanthine oxidase inhibitor. Reduces uric acid production. First-line for gout prophylaxis.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // PARKINSON DISEASE
+    // ============================================
+    {
+        source: { type: 'condition', id: 'parkinson-disease', name: 'Parkinson Disease' },
+        target: { type: 'drug', id: 'levodopa-carbidopa', name: 'Levodopa-Carbidopa' },
+        relationshipType: 'chronic-management',
+        context: 'Gold standard for Parkinson disease. Carbidopa prevents peripheral conversion. Most effective, but motor complications develop.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // MIGRAINE
+    // ============================================
+    {
+        source: { type: 'condition', id: 'migraine-acute', name: 'Acute Migraine' },
+        target: { type: 'drug', id: 'sumatriptan', name: 'Sumatriptan' },
+        relationshipType: 'acute-treatment',
+        context: 'Triptan 5-HT1B/1D agonist. First-line for moderate-severe migraine. Contraindicated in coronary artery disease.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'migraine-prophylaxis', name: 'Migraine Prophylaxis' },
+        target: { type: 'drug', id: 'propranolol', name: 'Propranolol' },
+        relationshipType: 'prophylaxis',
+        context: 'Beta-blocker for migraine prevention. Reduces frequency of attacks. First-line prophylaxis.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'migraine-prophylaxis', name: 'Migraine Prophylaxis' },
+        target: { type: 'drug', id: 'topiramate', name: 'Topiramate' },
+        relationshipType: 'prophylaxis',
+        context: 'Anticonvulsant for migraine prevention. Weight loss side effect. Cognitive impairment risk.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // OSTEOPOROSIS
+    // ============================================
+    {
+        source: { type: 'condition', id: 'osteoporosis', name: 'Osteoporosis' },
+        target: { type: 'drug', id: 'alendronate', name: 'Alendronate' },
+        relationshipType: 'chronic-management',
+        context: 'Bisphosphonate. First-line for osteoporosis. Take on empty stomach, stay upright 30min. Risk of jaw osteonecrosis.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // PEPTIC ULCER DISEASE
+    // ============================================
+    {
+        source: { type: 'condition', id: 'peptic-ulcer-disease', name: 'Peptic Ulcer Disease' },
+        target: { type: 'drug', id: 'omeprazole', name: 'Omeprazole' },
+        relationshipType: 'chronic-management',
+        context: 'PPI for ulcer healing. If H. pylori positive, combine with antibiotics (triple/quadruple therapy).',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // ANXIETY DISORDERS
+    // ============================================
+    {
+        source: { type: 'condition', id: 'generalized-anxiety-disorder', name: 'Generalized Anxiety Disorder' },
+        target: { type: 'drug', id: 'sertraline', name: 'Sertraline' },
+        relationshipType: 'chronic-management',
+        context: 'SSRI. First-line for GAD. Takes 4-6 weeks for full effect.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'panic-disorder', name: 'Panic Disorder' },
+        target: { type: 'drug', id: 'sertraline', name: 'Sertraline' },
+        relationshipType: 'chronic-management',
+        context: 'SSRI. First-line for panic disorder. Avoid benzodiazepines for chronic use.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+
+    // ============================================
+    // BIPOLAR DISORDER
+    // ============================================
+    {
+        source: { type: 'condition', id: 'bipolar-disorder', name: 'Bipolar Disorder' },
+        target: { type: 'drug', id: 'lithium', name: 'Lithium' },
+        relationshipType: 'chronic-management',
+        context: 'Mood stabilizer. Gold standard for bipolar disorder. Narrow therapeutic index. Monitor levels, renal, thyroid function.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    },
+    {
+        source: { type: 'condition', id: 'bipolar-disorder', name: 'Bipolar Disorder' },
+        target: { type: 'drug', id: 'valproic-acid', name: 'Valproic Acid' },
+        relationshipType: 'chronic-management',
+        context: 'Mood stabilizer. Alternative to lithium. Monitor LFTs. Teratogenic.',
+        priority: 'first-line',
+        direction: 'bidirectional'
+    }
 ];
 
 /**
