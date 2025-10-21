@@ -75,8 +75,11 @@ function checkUrlParameters() {
         const drug = dataLoader.getDrugById(drugId);
 
         if (drug) {
+            // Get the pharmacologic class for this drug
+            const pharmaClass = dataLoader.getClassById(drug.pharmacologicClass);
+
             // Select and display the drug
-            selectEntity(drug, 'drug');
+            selectEntity({ drug, pharmaClass }, 'drug');
 
             // Expand the tree to show this drug
             expandTreeToDrug(drug);
