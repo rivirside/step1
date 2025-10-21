@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hematology/Oncology Data Loader Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .stats {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .category {
+            margin: 10px 0;
+            padding: 10px;
+            background: #e8f4f8;
+            border-left: 4px solid #2196F3;
+        }
+        .disease-list {
+            margin-left: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hematology/Oncology Data Loader Test</h1>
+    <div id="status">Loading data...</div>
+    <div id="results"></div>
+
+    <script type="module">
+        import dataLoader from './data-loader.js';
+
+        async function testDataLoader() {
+            const statusDiv = document.getElementById('status');
+            const resultsDiv = document.getElementById('results');
+
+            try {
+                // Load data
+                const success = await dataLoader.load();
+
+                if (success) {
+                    statusDiv.innerHTML = '<span class="success">✓ Data loaded successfully!</span>';
+
+                    // Get stats
+                    const stats = dataLoader.getStats();
+
+                    // Get hematology/oncology specific data
+                    const hemeOncSystem = dataLoader.getSystem('hematology-oncology');
+                    const hemeOncDiseases = dataLoader.getDiseasesForSystem('hematology-oncology');
+                    const hemeOncCategories = dataLoader.getCategoriesForSystem('hematology-oncology');
+
+                    let html = '<div class="stats">';
+                    html += '<h2>Overall Statistics</h2>';
+                    html += `<p>Total Systems: ${stats.totalSystems}</p>`;
+                    html += `<p>Total Categories: ${stats.totalCategories}</p>`;
+                    html += `<p>Total Diseases: ${stats.totalDiseases}</p>`;
+                    html += `<p>Total Tags: ${stats.totalTags}</p>`;
+                    html += `<p>Total Symptoms: ${stats.totalSymptoms}</p>`;
+                    html += '</div>';
+
+                    html += '<div class="stats">';
+                    html += '<h2>Hematology/Oncology System</h2>';
+                    html += `<p><strong>System Name:</strong> ${hemeOncSystem.name}</p>`;
+                    html += `<p><strong>Total Diseases:</strong> ${hemeOncDiseases.length}</p>`;
+                    html += `<p><strong>Total Categories:</strong> ${hemeOncCategories.length}</p>`;
+                    html += '</div>';
+
+                    html += '<h2>Categories and Diseases</h2>';
+
+                    // Display each category with its diseases
+                    hemeOncCategories.forEach(category => {
+                        const categoryDiseases = dataLoader.getDiseasesForCategory(category.id);
+                        html += '<div class="category">';
+                        html += `<h3>${category.name} (${categoryDiseases.length} diseases)</h3>`;
+                        html += '<div class="disease-list"><ul>';
+                        categoryDiseases.forEach(disease => {
+                            html += `<li>${disease.name} (${disease.id})</li>`;
+                        });
+                        html += '</ul></div>';
+                        html += '</div>';
+                    });
+
+                    resultsDiv.innerHTML = html;
+                } else {
+                    statusDiv.innerHTML = '<span class="error">✗ Failed to load data</span>';
+                }
+            } catch (error) {
+                statusDiv.innerHTML = '<span class="error">✗ Error: ' + error.message + '</span>';
+                console.error('Error loading data:', error);
+            }
+        }
+
+        testDataLoader();
+    </script>
+</body>
+</html>

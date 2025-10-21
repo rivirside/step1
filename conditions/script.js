@@ -598,7 +598,7 @@ function renderDiseaseDetail(disease) {
                 <section class="detail-section">
                     <h3>Differential Diagnosis</h3>
                     <ul>
-                        ${detail.differentialDiagnosis.map(dx => `<li>${dx}</li>`).join('')}
+                        ${detail.differentialDiagnosis.map(dx => `<li>${inlineLinker.linkConditionsInText(dx, { exclude: [disease.id] })}</li>`).join('')}
                     </ul>
                 </section>
             ` : ''}

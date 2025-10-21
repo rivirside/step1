@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Renal System Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .category { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .disease { margin-left: 20px; padding: 10px; background: #f5f5f5; margin-top: 5px; }
+        h1 { color: #333; }
+        h2 { color: #666; margin-top: 30px; }
+        h3 { color: #888; }
+        pre { background: #f0f0f0; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Renal System Data Test</h1>
+    <div id="status"></div>
+    <div id="results"></div>
+
+    <script type="module">
+        import dataLoader from './data-loader.js';
+
+        async function testRenalData() {
+            const statusDiv = document.getElementById('status');
+            const resultsDiv = document.getElementById('results');
+
+            try {
+                // Load data
+                statusDiv.innerHTML = '<p>Loading data...</p>';
+                await dataLoader.load();
+
+                // Get renal system
+                const renalSystem = dataLoader.getSystem('renal');
+
+                if (!renalSystem) {
+                    statusDiv.innerHTML = '<p class="error">❌ ERROR: Renal system not found!</p>';
+                    return;
+                }
+
+                statusDiv.innerHTML = '<p class="success">✅ Data loaded successfully!</p>';
+
+                // Display system info
+                let html = '<h2>Renal System</h2>';
+                html += `<p><strong>Name:</strong> ${renalSystem.name}</p>`;
+                html += `<p><strong>Categories:</strong> ${renalSystem.categoryIds.length}</p>`;
+                html += `<p><strong>Category IDs:</strong> ${renalSystem.categoryIds.join(', ')}</p>`;
+
+                // Get all renal diseases
+                const renalDiseases = dataLoader.getDiseasesForSystem('renal');
+                html += `<p><strong>Total Diseases:</strong> ${renalDiseases.length}</p>`;
+
+                // Display diseases by category
+                html += '<h2>Diseases by Category</h2>';
+
+                renalSystem.categoryIds.forEach(categoryId => {
+                    const category = dataLoader.getCategory(categoryId);
+                    const diseases = dataLoader.getDiseasesForCategory(categoryId);
+
+                    html += '<div class="category">';
+                    html += `<h3>${category.name} (${diseases.length} diseases)</h3>`;
+
+                    if (diseases.length === 0) {
+                        html += '<p style="color: orange;">⚠️ No diseases found for this category</p>';
+                    } else {
+                        diseases.forEach(disease => {
+                            html += '<div class="disease">';
+                            html += `<strong>${disease.name}</strong><br>`;
+                            html += `<small>ID: ${disease.id} | Severity: ${disease.severity} | Acuity: ${disease.acuity}</small><br>`;
+                            html += `<small>Tags: ${disease.tags.join(', ')}</small>`;
+                            html += '</div>';
+                        });
+                    }
+
+                    html += '</div>';
+                });
+
+                // Display stats
+                const stats = dataLoader.getStats();
+                html += '<h2>Overall Stats</h2>';
+                html += `<p><strong>Total Systems:</strong> ${stats.totalSystems}</p>`;
+                html += `<p><strong>Total Categories:</strong> ${stats.totalCategories}</p>`;
+                html += `<p><strong>Total Diseases:</strong> ${stats.totalDiseases}</p>`;
+
+                // Test a specific disease
+                html += '<h2>Sample Disease Detail</h2>';
+                const sampleDisease = dataLoader.getDisease('prerenal-aki');
+                if (sampleDisease) {
+                    html += '<pre>' + JSON.stringify(sampleDisease, null, 2) + '</pre>';
+                } else {
+                    html += '<p class="error">Sample disease not found</p>';
+                }
+
+                resultsDiv.innerHTML = html;
+
+            } catch (error) {
+                statusDiv.innerHTML = `<p class="error">❌ ERROR: ${error.message}</p>`;
+                console.error('Error loading data:', error);
+            }
+        }
+
+        // Run test
+        testRenalData();
+    </script>
+</body>
+</html>

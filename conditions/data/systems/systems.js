@@ -174,8 +174,41 @@ const systems = [
                 "Pancytopenia DDx: bone marrow failure (aplastic anemia, MDS), marrow infiltration (leukemia, myelofibrosis), peripheral destruction (hypersplenism, autoimmune)"
             ]
         }
+    },
+    {
+        id: "renal",
+        name: "Renal",
+        categoryIds: [
+            "acute-kidney-injury",
+            "chronic-kidney-disease",
+            "glomerular-diseases",
+            "tubulointerstitial-diseases",
+            "electrolyte-disorders",
+            "acid-base-disorders",
+            "nephrolithiasis"
+        ],
+        pageType: "system",
+        detail: {
+            overview: "The renal system consists of the kidneys, ureters, bladder, and urethra. The kidneys regulate fluid/electrolyte balance, acid-base homeostasis, waste excretion (urea, creatinine), blood pressure (RAAS), and produce hormones (EPO, calcitriol, renin). Diseases include acute kidney injury (prerenal, intrarenal, postrenal), chronic kidney disease (progressive loss of GFR), glomerular diseases (nephrotic vs nephritic syndromes), tubulointerstitial diseases (interstitial nephritis, renal tubular acidosis), electrolyte disorders, acid-base disorders, and nephrolithiasis.",
+            keyAnatomy: [
+                "Nephron: glomerulus (filtration) → proximal tubule (reabsorption) → loop of Henle (concentration) → distal tubule (fine-tuning) → collecting duct (ADH action)",
+                "Glomerulus: podocytes, GBM, mesangium. Filtration barrier prevents protein loss.",
+                "Juxtaglomerular apparatus: macula densa + JG cells → renin secretion → RAAS activation",
+                "RAAS: renin → angiotensin I → ACE → angiotensin II → vasoconstriction + aldosterone → Na/water retention",
+                "Acid-base regulation: proximal tubule (HCO3 reabsorption), distal tubule/collecting duct (H+ secretion)"
+            ],
+            commonThemes: [
+                "AKI approach: prerenal (FENa <1%, BUN/Cr >20, responds to fluids) vs intrarenal (FENa >2%, muddy brown casts in ATN, WBC casts in AIN, RBC casts in GN) vs postrenal (hydronephrosis on ultrasound)",
+                "CKD stages by GFR: Stage 1 (>90), 2 (60-89), 3 (30-59), 4 (15-29), 5/ESRD (<15). Complications: anemia (↓ EPO), CKD-MBD (↑ PTH, ↑ phosphate, ↓ calcium), metabolic acidosis, hyperkalemia.",
+                "Nephrotic syndrome: proteinuria >3.5 g/day, hypoalbuminemia, edema, hyperlipidemia. Causes: minimal change (children), FSGS, membranous, diabetic nephropathy. Complications: infections, thrombosis.",
+                "Nephritic syndrome: hematuria (RBC casts), proteinuria <3.5 g/day, hypertension, edema, ↑ Cr. Causes: post-infectious GN (↓ C3), IgA nephropathy, RPGN, lupus.",
+                "Electrolytes: hyponatremia (assess volume status: hypovolemic, euvolemic SIADH, hypervolemic CHF/cirrhosis), hyperkalemia (EKG changes, treat with Ca gluconate + insulin/dextrose + kayexalate)",
+                "Acid-base: anion gap = Na - (Cl + HCO3). ↑ AG metabolic acidosis = MUDPILES (methanol, uremia, DKA, propylene glycol, iron/INH, lactic acidosis, ethylene glycol, salicylates). Normal AG = diarrhea, RTA.",
+                "Urinalysis critical: RBC casts (glomerulonephritis), WBC casts (pyelonephritis, AIN), muddy brown casts (ATN), waxy casts (CKD), dysmorphic RBCs (glomerular origin)"
+            ]
+        }
     }
-    // Future: neurological, renal, endocrine, etc.
+    // Future: neurological, endocrine, rheumatology, etc.
 ];
 
 export default systems;
