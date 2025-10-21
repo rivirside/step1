@@ -78,13 +78,8 @@ function checkUrlParameters() {
         const drug = dataLoader.getDrugById(drugId);
 
         if (drug) {
-            // Get the pharmacologic class for this drug
-            const pharmaClass = dataLoader.getClassById(drug.pharmacologicClass);
-
-            // Select and display the drug
-            selectEntity({ drug, pharmaClass }, 'drug');
-
-            // Expand the tree to show this drug
+            // Expand the tree FIRST, then select the entity
+            // This ensures the tree nodes exist before we try to highlight them
             expandTreeToDrug(drug);
         } else {
             console.warn(`Drug not found: ${drugId}`);
@@ -114,12 +109,18 @@ function expandTreeToDrug(drug) {
                 pharmacologicNode.click();
             }
 
-            // Finally, highlight the drug
+            // Finally, select and display the drug
             setTimeout(() => {
+                // Get the pharmacologic class for this drug
+                const pharmaClass = dataLoader.getClassById(drug.pharmacologicClass);
+
+                // Call selectEntity to display the drug detail and highlight the node
+                selectEntity({ drug, pharmaClass }, 'drug');
+
+                // Scroll to the drug node
                 const drugNode = document.querySelector(`[data-drug-id="${drug.id}"]`);
                 if (drugNode) {
                     drugNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    drugNode.classList.add('highlighted');
                 }
             }, 150);
         }, 150);

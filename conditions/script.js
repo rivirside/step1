@@ -75,10 +75,8 @@ function checkUrlParameters() {
         const disease = dataLoader.getDisease(diseaseId);
 
         if (disease) {
-            // Select and display the disease
-            selectEntity(disease, 'disease');
-
-            // Expand the tree to show this disease
+            // Expand the tree FIRST, then select the entity
+            // This ensures the tree nodes exist before we try to highlight them
             expandTreeToDisease(disease);
         } else {
             console.warn(`Disease not found: ${diseaseId}`);
@@ -104,12 +102,15 @@ function expandTreeToDisease(disease) {
                 categoryNode.querySelector('.node-header').click();
             }
 
-            // Finally, highlight the disease
+            // Finally, select and display the disease
             setTimeout(() => {
+                // Call selectEntity to display the disease detail and highlight the node
+                selectEntity(disease, 'disease');
+
+                // Scroll to the disease node
                 const diseaseNode = document.querySelector(`[data-disease-id="${disease.id}"]`);
                 if (diseaseNode) {
                     diseaseNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    diseaseNode.classList.add('highlighted');
                 }
             }, 150);
         }
