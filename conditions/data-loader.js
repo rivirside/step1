@@ -319,10 +319,15 @@ class DataLoader {
             totalDiseases: this.diseases.length,
             totalTags: this.diseasesByTag.size,
             totalSymptoms: this.diseasesBySymptom.size,
-            diseasesPerCategory: Array.from(this.diseasesByCategory.entries()).map(([catId, diseases]) => ({
-                category: this.getCategory(catId).name,
-                count: diseases.length
-            }))
+            diseasesPerCategory: Array.from(this.diseasesByCategory.entries())
+                .map(([catId, diseases]) => {
+                    const category = this.getCategory(catId);
+                    return {
+                        category: category ? category.name : catId,
+                        count: diseases.length
+                    };
+                })
+                .filter(item => item.category) // Filter out any null entries
         };
     }
 }
