@@ -1,8 +1,12 @@
-// Medications Explorer V3 - Simplified Tree-Based UI
+// Medications Explorer V3 - Simplified Tree-Based UI with Cross-Linking
 // Matches the Conditions Explorer pattern for consistency
 
 import dataLoader from './data-loader.js';
+import conditionDataLoader from '../conditions/data-loader.js';
 import ExplorerNavigation from '../shared/explorer-navigation.js';
+import inlineLinker from '../shared/cross-links/inline-linker.js';
+import tooltipManager from '../shared/cross-links/tooltip-manager.js';
+import relationshipResolver from '../shared/cross-links/relationship-resolver.js';
 
 // Application state
 const state = {
@@ -18,12 +22,28 @@ async function init() {
     // Initialize explorer navigation
     const explorerNav = new ExplorerNavigation('medications');
 
-    // Load data
+    // Load medication data
     const loaded = await dataLoader.load();
     if (!loaded) {
         showError('Failed to load medication data. Please refresh the page.');
         return;
     }
+
+    // Load condition data for cross-linking
+    console.log('Loading condition data for cross-linking...');
+    const conditionsLoaded = await conditionDataLoader.load();
+    if (conditionsLoaded) {
+        console.log('✓ Condition data loaded for cross-linking');
+        console.log(`  - ${conditionDataLoader.diseases.length} conditions indexed`);
+    } else {
+        console.warn('⚠ Condition data failed to load - inline tooltips will not work');
+    }
+
+    // Initialize cross-linking with both data loaders
+    inlineLinker.init(dataLoader, conditionDataLoader);
+
+    // Initialize tooltip manager
+    tooltipManager.init();
 
     // Setup event listeners
     setupEventListeners();
@@ -39,6 +59,10 @@ async function init() {
 
     console.log('Initialization complete');
     console.log('Stats:', dataLoader.getStats());
+    console.log('Cross-linking stats:', {
+        relationships: relationshipResolver.getStats(),
+        inlineLinker: inlineLinker.getStats()
+    });
 }
 
 // Check URL parameters for deep linking
@@ -539,7 +563,7 @@ function renderDrugDetail(drug, pharmaClass) {
                 <section class="detail-section">
                     <h3>Indications</h3>
                     <div class="tag-container">
-                        ${drug.indications.map(indication => `<span class="tag indication">${indication}</span>`).join('')}
+                        ${drug.indications.map(indication => `<span class="tag indication">${inlineLinker.linkConditionsInText(indication)}</span>`).join('')}
                     </div>
                 </section>
             ` : ''}
@@ -548,7 +572,7 @@ function renderDrugDetail(drug, pharmaClass) {
                 <section class="detail-section important">
                     <h3>Contraindications</h3>
                     <div class="tag-container">
-                        ${drug.contraindications.map(contraindication => `<span class="tag contraindication">${contraindication}</span>`).join('')}
+                        ${drug.contraindications.map(contraindication => `<span class="tag contraindication">${inlineLinker.linkConditionsInText(contraindication)}</span>`).join('')}
                     </div>
                 </section>
             ` : ''}
@@ -569,8 +593,97 @@ function renderDrugDetail(drug, pharmaClass) {
                     ${pharmaClass.interactionDetails ? `<p><strong>Details:</strong> ${pharmaClass.interactionDetails}</p>` : ''}
                 </section>
             ` : ''}
+
+            ${renderRelatedConditions(drug.id)}
         </div>
     `;
+}
+
+// Render related conditions section
+function renderRelatedConditions(drugId) {
+    const conditionsByType = relationshipResolver.getConditionsGroupedByType(drugId);
+
+    // Check if there are any related conditions
+    const hasAny = Object.values(conditionsByType).some(conditions => conditions && conditions.length > 0);
+    if (!hasAny) {
+        return ''; // No related conditions
+    }
+
+    const basePath = getBasePath();
+
+    let html = '<section class="detail-section related-conditions">';
+    html += '<h3>🏥 Related Conditions</h3>';
+
+    // Acute Treatment
+    if (conditionsByType.acuteTreatment && conditionsByType.acuteTreatment.length > 0) {
+        html += '<div class="condition-group">';
+        html += '<h4>🚨 Acute Indications</h4>';
+        html += '<div class="condition-links">';
+        conditionsByType.acuteTreatment.forEach(cond => {
+            const priorityClass = cond.priority || 'alternative';
+            html += `
+                <a href="${basePath}conditions/index.html?disease=${cond.conditionId}"
+                   target="_blank"
+                   class="condition-link ${priorityClass}"
+                   title="${cond.context}">
+                    <span class="cond-name">${cond.conditionName}</span>
+                    <span class="priority-badge">${cond.priority}</span>
+                </a>
+            `;
+        });
+        html += '</div></div>';
+    }
+
+    // Chronic Management
+    if (conditionsByType.chronicManagement && conditionsByType.chronicManagement.length > 0) {
+        html += '<div class="condition-group">';
+        html += '<h4>🏥 Chronic Indications</h4>';
+        html += '<div class="condition-links">';
+        conditionsByType.chronicManagement.forEach(cond => {
+            const priorityClass = cond.priority || 'alternative';
+            html += `
+                <a href="${basePath}conditions/index.html?disease=${cond.conditionId}"
+                   target="_blank"
+                   class="condition-link ${priorityClass}"
+                   title="${cond.context}">
+                    <span class="cond-name">${cond.conditionName}</span>
+                    <span class="priority-badge">${cond.priority}</span>
+                </a>
+            `;
+        });
+        html += '</div></div>';
+    }
+
+    // Contraindicated
+    if (conditionsByType.contraindicated && conditionsByType.contraindicated.length > 0) {
+        html += '<div class="condition-group contraindicated">';
+        html += '<h4>⚠️ Contraindications</h4>';
+        html += '<div class="condition-links">';
+        conditionsByType.contraindicated.forEach(cond => {
+            html += `
+                <a href="${basePath}conditions/index.html?disease=${cond.conditionId}"
+                   target="_blank"
+                   class="condition-link contraindicated"
+                   title="${cond.context}">
+                    <span class="cond-name">${cond.conditionName}</span>
+                    <span class="priority-badge">avoid</span>
+                </a>
+            `;
+        });
+        html += '</div></div>';
+    }
+
+    html += '</section>';
+    return html;
+}
+
+// Get base path for navigation
+function getBasePath() {
+    const hostname = window.location.hostname;
+    if (hostname.includes('github.io')) {
+        return '/step1/';
+    }
+    return '../';
 }
 
 // Render search results
