@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Data Loading</title>
+</head>
+<body>
+    <h1>Testing Data Loading</h1>
+    <div id="output"></div>
+    <script type="module">
+        const output = document.getElementById('output');
+
+        try {
+            // Import with cache busting
+            const timestamp = Date.now();
+            const giModule = await import(`./data/diseases/gi-diseases.js?v=${timestamp}`);
+            const giCategories = await import(`./data/categories/gi-categories.js?v=${timestamp}`);
+
+            const diseases = giModule.default;
+            const categories = giCategories.default;
+
+            output.innerHTML += `<p style="color:green">✓ Loaded ${diseases.length} GI diseases</p>`;
+            output.innerHTML += `<p style="color:green">✓ Loaded ${categories.length} GI categories</p>`;
+
+            // Test category-disease mapping
+            output.innerHTML += `<h2>Category Disease Counts:</h2>`;
+            categories.forEach(cat => {
+                const diseasesInCat = diseases.filter(d => d.categories && d.categories.includes(cat.id));
+                output.innerHTML += `<p>${cat.name} (${cat.id}): ${diseasesInCat.length} diseases</p>`;
+                if (diseasesInCat.length > 0) {
+                    output.innerHTML += `<ul>`;
+                    diseasesInCat.forEach(d => {
+                        output.innerHTML += `<li>${d.name} (${d.id})</li>`;
+                    });
+                    output.innerHTML += `</ul>`;
+                }
+            });
+
+        } catch (e) {
+            output.innerHTML += `<p style="color:red">ERROR: ${e.message}</p>`;
+            output.innerHTML += `<pre>${e.stack}</pre>`;
+        }
+    </script>
+</body>
+</html>

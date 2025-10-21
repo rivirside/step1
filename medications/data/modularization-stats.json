@@ -1,0 +1,106 @@
+{
+  "timestamp": "2025-10-20T23:53:41.833Z",
+  "systems": [
+    {
+      "name": "Autonomic Nervous System",
+      "id": "autonomic-nervous-system",
+      "therapeuticClasses": 4,
+      "drugs": 57
+    },
+    {
+      "name": "Cardiovascular System",
+      "id": "cardiovascular-system",
+      "therapeuticClasses": 5,
+      "drugs": 44
+    },
+    {
+      "name": "Nervous System",
+      "id": "nervous-system",
+      "therapeuticClasses": 5,
+      "drugs": 26
+    },
+    {
+      "name": "Respiratory System",
+      "id": "respiratory-system",
+      "therapeuticClasses": 3,
+      "drugs": 15
+    },
+    {
+      "name": "Antimicrobials",
+      "id": "antimicrobials",
+      "therapeuticClasses": 8,
+      "drugs": 48
+    },
+    {
+      "name": "Endocrine System",
+      "id": "endocrine-system",
+      "therapeuticClasses": 3,
+      "drugs": 23
+    },
+    {
+      "name": "Gastrointestinal System",
+      "id": "gastrointestinal-system",
+      "therapeuticClasses": 4,
+      "drugs": 20
+    },
+    {
+      "name": "Pain Management",
+      "id": "pain-management",
+      "therapeuticClasses": 2,
+      "drugs": 16
+    },
+    {
+      "name": "Renal/Genitourinary System",
+      "id": "renal-genitourinary-system",
+      "therapeuticClasses": 4,
+      "drugs": 20
+    },
+    {
+      "name": "Hematology/Oncology",
+      "id": "hematology-oncology",
+      "therapeuticClasses": 4,
+      "drugs": 31
+    },
+    {
+      "name": "Immunology/Rheumatology",
+      "id": "immunology-rheumatology",
+      "therapeuticClasses": 3,
+      "drugs": 19
+    },
+    {
+      "name": "Musculoskeletal System",
+      "id": "musculoskeletal-system",
+      "therapeuticClasses": 2,
+      "drugs": 11
+    },
+    {
+      "name": "Dermatology",
+      "id": "dermatology",
+      "therapeuticClasses": 3,
+      "drugs": 11
+    },
+    {
+      "name": "Ophthalmology/ENT",
+      "id": "ophthalmology-ent",
+      "therapeuticClasses": 3,
+      "drugs": 12
+    },
+    {
+      "name": "Psychiatry/Neurology (Expanded)",
+      "id": "psychiatry-neurology-expanded",
+      "therapeuticClasses": 3,
+      "drugs": 15
+    },
+    {
+      "name": "Reproductive/Gynecology",
+      "id": "reproductive-gynecology",
+      "therapeuticClasses": 4,
+      "drugs": 17
+    }
+  ],
+  "totals": {
+    "systems": 16,
+    "classes": 227,
+    "drugs": 385
+  }
+}

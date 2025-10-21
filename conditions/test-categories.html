@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Category Disease Counts</title>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        .category { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+        .category h3 { margin: 0 0 10px 0; }
+        .disease { padding: 5px 0 5px 20px; }
+        .empty { color: red; font-weight: bold; }
+        .ok { color: green; }
+    </style>
+</head>
+<body>
+    <h1>GI Category Disease Mapping Test</h1>
+    <p><strong>Cache-busting timestamp:</strong> <span id="timestamp"></span></p>
+    <div id="output"></div>
+    <script type="module">
+        const timestamp = Date.now();
+        document.getElementById('timestamp').textContent = timestamp;
+        const output = document.getElementById('output');
+
+        try {
+            // Force fresh load with cache busting
+            const giDiseases = await import(`./data/diseases/gi-diseases.js?v=${timestamp}`);
+            const giCategories = await import(`./data/categories/gi-categories.js?v=${timestamp}`);
+
+            const diseases = giDiseases.default;
+            const categories = giCategories.default;
+
+            output.innerHTML += `<p class="ok">✓ Loaded ${diseases.length} GI diseases</p>`;
+            output.innerHTML += `<p class="ok">✓ Loaded ${categories.length} GI categories</p><hr>`;
+
+            // Test specific problematic categories
+            const problemCategories = [
+                'inflammatory-bowel-disease',
+                'peptic-ulcer-disease-disorders',
+                'malabsorption-syndromes'
+            ];
+
+            problemCategories.forEach(catId => {
+                const cat = categories.find(c => c.id === catId);
+                if (!cat) {
+                    output.innerHTML += `<div class="category empty">Category ${catId} NOT FOUND!</div>`;
+                    return;
+                }
+
+                output.innerHTML += `<div class="category">`;
+                output.innerHTML += `<h3>${cat.name} (${cat.id})</h3>`;
+                output.innerHTML += `<p><strong>Disease IDs in category:</strong> ${JSON.stringify(cat.diseaseIds)}</p>`;
+
+                const diseasesInCat = diseases.filter(d => d.categories && d.categories.includes(cat.id));
+
+                if (diseasesInCat.length === 0) {
+                    output.innerHTML += `<p class="empty">❌ NO DISEASES FOUND (${diseasesInCat.length})</p>`;
+
+                    // Debug: check if diseases with those IDs exist
+                    output.innerHTML += `<p><strong>Debug - checking if referenced disease IDs exist:</strong></p>`;
+                    cat.diseaseIds.forEach(diseaseId => {
+                        const disease = diseases.find(d => d.id === diseaseId);
+                        if (disease) {
+                            output.innerHTML += `<div class="disease">✓ Disease "${diseaseId}" exists</div>`;
+                            output.innerHTML += `<div class="disease" style="padding-left: 40px;">Categories: ${JSON.stringify(disease.categories)}</div>`;
+                        } else {
+                            output.innerHTML += `<div class="disease empty">✗ Disease "${diseaseId}" NOT FOUND</div>`;
+                        }
+                    });
+                } else {
+                    output.innerHTML += `<p class="ok">✓ Found ${diseasesInCat.length} diseases:</p>`;
+                    diseasesInCat.forEach(d => {
+                        output.innerHTML += `<div class="disease">• ${d.name} (${d.id})</div>`;
+                    });
+                }
+                output.innerHTML += `</div>`;
+            });
+
+        } catch (e) {
+            output.innerHTML += `<p style="color:red">ERROR: ${e.message}</p>`;
+            output.innerHTML += `<pre>${e.stack}</pre>`;
+        }
+    </script>
+</body>
+</html>

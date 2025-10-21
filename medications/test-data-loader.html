@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Medication DataLoader</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2563eb;
+        }
+        h2 {
+            color: #1e40af;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .error {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background: #f3f4f6;
+            font-weight: 600;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .badge-system { background: #dbeafe; color: #1e40af; }
+        .badge-class { background: #fef3c7; color: #92400e; }
+        .badge-drug { background: #d1fae5; color: #065f46; }
+    </style>
+</head>
+<body>
+    <h1>Medication DataLoader Test</h1>
+
+    <div id="loading" class="test-section">
+        <h2>Loading...</h2>
+        <p>Initializing DataLoader...</p>
+    </div>
+
+    <div id="results" style="display: none;">
+        <!-- Results will be inserted here -->
+    </div>
+
+    <script type="module">
+        import dataLoader from './data-loader.js';
+
+        async function runTests() {
+            const resultsDiv = document.getElementById('results');
+            const loadingDiv = document.getElementById('loading');
+
+            try {
+                // Test 1: Load data
+                console.log('Test 1: Loading data...');
+                const loaded = await dataLoader.load();
+
+                if (!loaded) {
+                    throw new Error('Failed to load data');
+                }
+
+                // Test 2: Get stats
+                console.log('Test 2: Getting stats...');
+                const stats = dataLoader.getStats();
+
+                // Test 3: Test getters
+                console.log('Test 3: Testing getters...');
+                const systems = dataLoader.getSystems();
+                const firstSystem = dataLoader.getSystemById('cardiovascular-system');
+                const lisinopril = dataLoader.getDrugById('lisinopril');
+                const cvDrugs = dataLoader.getDrugsBySystem('cardiovascular-system');
+
+                // Test 4: Test search
+                console.log('Test 4: Testing search...');
+                const searchResults = dataLoader.search('lisinopril');
+                const hypertensionDrugs = dataLoader.searchDrugsByIndication('hypertension');
+
+                // Build results HTML
+                let html = `
+                    <div class="test-section">
+                        <h2 class="success">✓ All Tests Passed!</h2>
+                    </div>
+
+                    <div class="test-section">
+                        <h2>Statistics</h2>
+                        <table>
+                            <tr><th>Metric</th><th>Count</th></tr>
+                            <tr><td>Systems</td><td>${stats.systems}</td></tr>
+                            <tr><td>Therapeutic Classes</td><td>${stats.therapeuticClasses}</td></tr>
+                            <tr><td>Pharmacologic Classes</td><td>${stats.pharmacologicClasses}</td></tr>
+                            <tr><td>Total Classes</td><td>${stats.totalClasses}</td></tr>
+                            <tr><td>Drugs</td><td>${stats.drugs}</td></tr>
+                            <tr><td>Unique Indications</td><td>${stats.indications}</td></tr>
+                            <tr><td>Unique Contraindications</td><td>${stats.contraindications}</td></tr>
+                            <tr><td>Unique Side Effects</td><td>${stats.sideEffects}</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="test-section">
+                        <h2>Systems Overview</h2>
+                        <table>
+                            <tr>
+                                <th>System</th>
+                                <th>Therapeutic Classes</th>
+                                <th>Drugs</th>
+                            </tr>
+                            ${systems.map(sys => `
+                                <tr>
+                                    <td><span class="badge badge-system">${sys.name}</span></td>
+                                    <td>${sys.therapeuticClassIds.length}</td>
+                                    <td>${dataLoader.getDrugsBySystem(sys.id).length}</td>
+                                </tr>
+                            `).join('')}
+                        </table>
+                    </div>
+
+                    <div class="test-section">
+                        <h2>Sample Drug: Lisinopril</h2>
+                        ${lisinopril ? `
+                            <table>
+                                <tr><th>Property</th><th>Value</th></tr>
+                                <tr><td>Name</td><td>${lisinopril.name}</td></tr>
+                                <tr><td>System</td><td>${lisinopril.system}</td></tr>
+                                <tr><td>Therapeutic Class</td><td>${lisinopril.therapeuticClass}</td></tr>
+                                <tr><td>Pharmacologic Class</td><td>${lisinopril.pharmacologicClass}</td></tr>
+                                <tr><td>Mechanism</td><td>${lisinopril.mechanism}</td></tr>
+                                <tr><td>Clinical Choice</td><td>${lisinopril.clinicalChoice}</td></tr>
+                                <tr><td>Indications</td><td>${lisinopril.indications.join(', ')}</td></tr>
+                                <tr><td>Contraindications</td><td>${lisinopril.contraindications.join(', ')}</td></tr>
+                                <tr><td>Side Effects</td><td>${lisinopril.sideEffects.join(', ')}</td></tr>
+                            </table>
+                        ` : '<p class="error">Lisinopril not found</p>'}
+                    </div>
+
+                    <div class="test-section">
+                        <h2>Search Test: "lisinopril"</h2>
+                        <p>Found ${searchResults.length} results</p>
+                        <table>
+                            <tr><th>Type</th><th>Name</th><th>Score</th></tr>
+                            ${searchResults.slice(0, 10).map(result => `
+                                <tr>
+                                    <td><span class="badge badge-${result.type}">${result.type}</span></td>
+                                    <td>${result.item.name}</td>
+                                    <td>${result.score}</td>
+                                </tr>
+                            `).join('')}
+                        </table>
+                    </div>
+
+                    <div class="test-section">
+                        <h2>Indication Search: "Hypertension"</h2>
+                        <p>Found ${hypertensionDrugs.length} drugs for hypertension</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            ${hypertensionDrugs.slice(0, 20).map(drug =>
+                                `<span class="badge badge-drug">${drug.name}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+
+                    <div class="test-section">
+                        <h2>Cardiovascular System Drugs</h2>
+                        <p>Found ${cvDrugs.length} drugs in cardiovascular system</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            ${cvDrugs.map(drug =>
+                                `<span class="badge badge-drug">${drug.name}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
+
+                resultsDiv.innerHTML = html;
+                resultsDiv.style.display = 'block';
+                loadingDiv.style.display = 'none';
+
+                console.log('✓ All tests completed successfully!');
+                console.log('Stats:', stats);
+
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="test-section">
+                        <h2 class="error">✗ Tests Failed</h2>
+                        <p class="error">${error.message}</p>
+                        <pre>${error.stack}</pre>
+                    </div>
+                `;
+                resultsDiv.style.display = 'block';
+                loadingDiv.style.display = 'none';
+                console.error('Tests failed:', error);
+            }
+        }
+
+        // Run tests on page load
+        runTests();
+    </script>
+</body>
+</html>

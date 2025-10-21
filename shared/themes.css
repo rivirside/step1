@@ -1,0 +1,386 @@
+/**
+ * STEP 1 EXPLORERS - COLOR THEMES
+ *
+ * Color-coded themes for each explorer to provide visual consistency
+ * while making cross-references intuitive through color association.
+ *
+ * Theme Philosophy:
+ * - Conditions = Blue/Teal (medical, diagnostic, clinical)
+ * - Medications = Purple/Violet (pharmaceutical, therapeutic)
+ * - Bugs = Green/Lime (microbiology, infectious disease)
+ *
+ * Last Updated: October 20, 2025
+ * Phase: 3 - Shared Design System
+ */
+
+/* ========================================================================
+   CONDITIONS THEME - Blue/Teal
+   Professional, clinical, diagnostic feel
+   ======================================================================== */
+
+[data-theme="conditions"] {
+    /* Primary Colors */
+    --theme-primary: #2563eb;           /* Blue */
+    --theme-primary-dark: #1e40af;
+    --theme-primary-light: #60a5fa;
+    --theme-primary-hover: #3b82f6;
+
+    /* Accent Colors */
+    --theme-accent: #0891b2;            /* Teal/Cyan */
+    --theme-accent-light: #22d3ee;
+    --theme-accent-dark: #0e7490;
+
+    /* Background Tints */
+    --theme-bg-subtle: #eff6ff;         /* Very light blue */
+    --theme-bg-muted: #dbeafe;          /* Light blue */
+
+    /* Border Colors */
+    --theme-border: #93c5fd;
+    --theme-border-light: #bfdbfe;
+
+    /* Text Colors */
+    --theme-text-emphasis: #1e3a8a;     /* Dark blue */
+
+    /* Interactive States */
+    --theme-link: #2563eb;
+    --theme-link-hover: #1d4ed8;
+    --theme-focus-ring: rgba(37, 99, 235, 0.3);
+
+    /* Tag/Badge Colors */
+    --theme-tag-bg: #dbeafe;
+    --theme-tag-text: #1e40af;
+    --theme-tag-border: #93c5fd;
+
+    /* Card Accents */
+    --theme-card-border-accent: #2563eb;
+    --theme-card-hover-shadow: rgba(37, 99, 235, 0.15);
+
+    /* Button Colors */
+    --theme-button-primary-bg: #2563eb;
+    --theme-button-primary-hover: #1d4ed8;
+    --theme-button-secondary-bg: #0891b2;
+    --theme-button-secondary-hover: #0e7490;
+}
+
+/* ========================================================================
+   MEDICATIONS THEME - Purple/Violet
+   Pharmaceutical, therapeutic, treatment focus
+   ======================================================================== */
+
+[data-theme="medications"] {
+    /* Primary Colors */
+    --theme-primary: #7c3aed;           /* Purple */
+    --theme-primary-dark: #6d28d9;
+    --theme-primary-light: #a78bfa;
+    --theme-primary-hover: #8b5cf6;
+
+    /* Accent Colors */
+    --theme-accent: #a855f7;            /* Violet */
+    --theme-accent-light: #c084fc;
+    --theme-accent-dark: #9333ea;
+
+    /* Background Tints */
+    --theme-bg-subtle: #faf5ff;         /* Very light purple */
+    --theme-bg-muted: #f3e8ff;          /* Light purple */
+
+    /* Border Colors */
+    --theme-border: #c4b5fd;
+    --theme-border-light: #ddd6fe;
+
+    /* Text Colors */
+    --theme-text-emphasis: #5b21b6;     /* Dark purple */
+
+    /* Interactive States */
+    --theme-link: #7c3aed;
+    --theme-link-hover: #6d28d9;
+    --theme-focus-ring: rgba(124, 58, 237, 0.3);
+
+    /* Tag/Badge Colors */
+    --theme-tag-bg: #f3e8ff;
+    --theme-tag-text: #6d28d9;
+    --theme-tag-border: #c4b5fd;
+
+    /* Card Accents */
+    --theme-card-border-accent: #7c3aed;
+    --theme-card-hover-shadow: rgba(124, 58, 237, 0.15);
+
+    /* Button Colors */
+    --theme-button-primary-bg: #7c3aed;
+    --theme-button-primary-hover: #6d28d9;
+    --theme-button-secondary-bg: #a855f7;
+    --theme-button-secondary-hover: #9333ea;
+}
+
+/* ========================================================================
+   BUGS THEME - Green/Lime
+   Microbiology, infectious disease, pathogen focus
+   ======================================================================== */
+
+[data-theme="bugs"] {
+    /* Primary Colors */
+    --theme-primary: #16a34a;           /* Green */
+    --theme-primary-dark: #15803d;
+    --theme-primary-light: #4ade80;
+    --theme-primary-hover: #22c55e;
+
+    /* Accent Colors */
+    --theme-accent: #65a30d;            /* Lime */
+    --theme-accent-light: #a3e635;
+    --theme-accent-dark: #4d7c0f;
+
+    /* Background Tints */
+    --theme-bg-subtle: #f0fdf4;         /* Very light green */
+    --theme-bg-muted: #dcfce7;          /* Light green */
+
+    /* Border Colors */
+    --theme-border: #86efac;
+    --theme-border-light: #bbf7d0;
+
+    /* Text Colors */
+    --theme-text-emphasis: #14532d;     /* Dark green */
+
+    /* Interactive States */
+    --theme-link: #16a34a;
+    --theme-link-hover: #15803d;
+    --theme-focus-ring: rgba(22, 163, 74, 0.3);
+
+    /* Tag/Badge Colors */
+    --theme-tag-bg: #dcfce7;
+    --theme-tag-text: #15803d;
+    --theme-tag-border: #86efac;
+
+    /* Card Accents */
+    --theme-card-border-accent: #16a34a;
+    --theme-card-hover-shadow: rgba(22, 163, 74, 0.15);
+
+    /* Button Colors */
+    --theme-button-primary-bg: #16a34a;
+    --theme-button-primary-hover: #15803d;
+    --theme-button-secondary-bg: #65a30d;
+    --theme-button-secondary-hover: #4d7c0f;
+}
+
+/* ========================================================================
+   CROSS-REFERENCE LINK COLORS
+   Links are colored based on their DESTINATION explorer
+   ======================================================================== */
+
+/* Links to Conditions (blue) */
+.link-to-conditions,
+a[href*="/conditions/"],
+.cross-ref-conditions {
+    color: #2563eb !important;
+    border-color: #2563eb;
+}
+
+.link-to-conditions:hover,
+a[href*="/conditions/"]:hover {
+    color: #1d4ed8 !important;
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+/* Links to Medications (purple) */
+.link-to-medications,
+a[href*="/medications/"],
+.cross-ref-medications {
+    color: #7c3aed !important;
+    border-color: #7c3aed;
+}
+
+.link-to-medications:hover,
+a[href*="/medications/"]:hover {
+    color: #6d28d9 !important;
+    background-color: rgba(124, 58, 237, 0.1);
+}
+
+/* Links to Bugs (green) */
+.link-to-bugs,
+a[href*="/bugs/"],
+.cross-ref-bugs {
+    color: #16a34a !important;
+    border-color: #16a34a;
+}
+
+.link-to-bugs:hover,
+a[href*="/bugs/"]:hover {
+    color: #15803d !important;
+    background-color: rgba(22, 163, 74, 0.1);
+}
+
+/* ========================================================================
+   THEME-AWARE COMPONENTS
+   Components that adapt to the current theme
+   ======================================================================== */
+
+/* Primary Buttons */
+[data-theme] .btn-primary {
+    background-color: var(--theme-button-primary-bg);
+    color: white;
+    border: none;
+}
+
+[data-theme] .btn-primary:hover {
+    background-color: var(--theme-button-primary-hover);
+}
+
+/* Links */
+[data-theme] a:not([class*="link-to-"]) {
+    color: var(--theme-link);
+}
+
+[data-theme] a:not([class*="link-to-"]):hover {
+    color: var(--theme-link-hover);
+}
+
+/* Active Explorer Toggle Button */
+[data-theme="conditions"] .toggle-btn[data-explorer="conditions"].active {
+    background-color: #2563eb;
+    color: white;
+}
+
+[data-theme="medications"] .toggle-btn[data-explorer="medications"].active {
+    background-color: #7c3aed;
+    color: white;
+}
+
+[data-theme="bugs"] .toggle-btn[data-explorer="bugs"].active {
+    background-color: #16a34a;
+    color: white;
+}
+
+/* Cards with theme accent */
+[data-theme] .card {
+    border-left: 4px solid var(--theme-card-border-accent);
+}
+
+[data-theme] .card:hover {
+    box-shadow: 0 4px 20px var(--theme-card-hover-shadow);
+}
+
+/* Tags with theme colors */
+[data-theme] .tag.theme-tag {
+    background-color: var(--theme-tag-bg);
+    color: var(--theme-tag-text);
+    border: 1px solid var(--theme-tag-border);
+}
+
+/* Focus rings */
+[data-theme] *:focus-visible {
+    outline-color: var(--theme-primary);
+    box-shadow: 0 0 0 3px var(--theme-focus-ring);
+}
+
+/* Selection color */
+[data-theme] ::selection {
+    background-color: var(--theme-primary);
+    color: white;
+}
+
+/* ========================================================================
+   TOOLTIP/PREVIEW STYLING
+   Color-coded previews for cross-references
+   ======================================================================== */
+
+/* Condition previews */
+.preview-tooltip.conditions-preview {
+    border-left: 4px solid #2563eb;
+    background: linear-gradient(to right, rgba(37, 99, 235, 0.05), white);
+}
+
+.preview-tooltip.conditions-preview .preview-title {
+    color: #1e40af;
+}
+
+/* Medication previews */
+.preview-tooltip.medications-preview {
+    border-left: 4px solid #7c3aed;
+    background: linear-gradient(to right, rgba(124, 58, 237, 0.05), white);
+}
+
+.preview-tooltip.medications-preview .preview-title {
+    color: #6d28d9;
+}
+
+/* Bug previews */
+.preview-tooltip.bugs-preview {
+    border-left: 4px solid #16a34a;
+    background: linear-gradient(to right, rgba(22, 163, 74, 0.05), white);
+}
+
+.preview-tooltip.bugs-preview .preview-title {
+    color: #15803d;
+}
+
+/* ========================================================================
+   BREADCRUMB THEMING
+   Breadcrumbs show color-coded navigation path
+   ======================================================================== */
+
+.breadcrumb-nav .breadcrumb-item.conditions {
+    color: #2563eb;
+}
+
+.breadcrumb-nav .breadcrumb-item.medications {
+    color: #7c3aed;
+}
+
+.breadcrumb-nav .breadcrumb-item.bugs {
+    color: #16a34a;
+}
+
+/* ========================================================================
+   CONTEXT BANNER THEMING
+   "Navigated from..." banners are color-coded
+   ======================================================================== */
+
+.context-banner.from-conditions {
+    background-color: rgba(37, 99, 235, 0.1);
+    border-bottom-color: #2563eb;
+}
+
+.context-banner.from-medications {
+    background-color: rgba(124, 58, 237, 0.1);
+    border-bottom-color: #7c3aed;
+}
+
+.context-banner.from-bugs {
+    background-color: rgba(22, 163, 74, 0.1);
+    border-bottom-color: #16a34a;
+}
+
+/* ========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================================================== */
+
+@media (max-width: 768px) {
+    /* Ensure theme colors remain visible on mobile */
+    [data-theme] .card {
+        border-left-width: 3px;
+    }
+}
+
+/* ========================================================================
+   ACCESSIBILITY
+   Ensure sufficient contrast in all themes
+   ======================================================================== */
+
+[data-theme] {
+    /* All themes guarantee WCAG AA contrast ratio (4.5:1 minimum) */
+    --theme-text-on-primary: #ffffff;
+    --theme-text-on-bg: #1f2937;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    [data-theme="conditions"] {
+        --theme-primary: #1e40af;
+    }
+
+    [data-theme="medications"] {
+        --theme-primary: #6d28d9;
+    }
+
+    [data-theme="bugs"] {
+        --theme-primary: #15803d;
+    }
+}

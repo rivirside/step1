@@ -1,0 +1,49 @@
+This file contains a summary of the remaining 31 diseases that need to be added to cv-diseases.js.
+All source content has been read from v2-tree-based data files.
+
+REMAINING DISEASES (31):
+
+=== ARRHYTHMIAS (10) - syncope-palpitations category ===
+1. atrial-fibrillation
+2. atrial-flutter
+3. ventricular-tachycardia
+4. svt (supraventricular tachycardia)
+5. ventricular-fibrillation
+6. first-degree-av-block
+7. second-degree-av-block-mobitz-i
+8. second-degree-av-block-mobitz-ii
+9. third-degree-av-block
+10. sick-sinus-syndrome
+
+=== VALVULAR (6) - valvular-disease category ===
+11. aortic-stenosis
+12. aortic-regurgitation
+13. mitral-stenosis
+14. mitral-regurgitation
+15. mitral-valve-prolapse
+16. tricuspid-regurgitation
+
+=== HYPERTENSION (3) - hypertension category ===
+17. essential-hypertension
+18. hypertensive-emergency
+19. secondary-hypertension
+
+=== CARDIOMYOPATHIES (4) - cardiomyopathies category ===
+20. dilated-cardiomyopathy
+21. hypertrophic-cardiomyopathy
+22. restrictive-cardiomyopathy
+23. takotsubo-cardiomyopathy
+
+=== PERICARDIAL (2) - pericardial-disease category ===
+24. pericardial-effusion
+25. cardiac-tamponade
+
+=== VASCULAR (3) - vascular-disease category ===
+26. abdominal-aortic-aneurysm
+27. peripheral-arterial-disease
+28. deep-vein-thrombosis
+
+NOTE: aortic-dissection already added (in both chest-pain and vascular-disease categories)
+NOTE: pericarditis already added (in both chest-pain and pericardial-disease categories)
+
+All v2 content has been read and is available for transformation to v3 format.

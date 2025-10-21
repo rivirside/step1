@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h1>Testing...</h1>
+    <script type="module">
+        try {
+            const cvModule = await import('./data/diseases/cv-diseases.js');
+            console.log('SUCCESS: Loaded', cvModule.default.length, 'diseases');
+            document.body.innerHTML += '<p style="color:green">SUCCESS: Loaded ' + cvModule.default.length + ' diseases</p>';
+        } catch (e) {
+            console.error('ERROR:', e);
+            document.body.innerHTML += '<p style="color:red">ERROR: ' + e.message + '</p><pre>' + e.stack + '</pre>';
+        }
+    </script>
+</body>
+</html>

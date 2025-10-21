@@ -1,0 +1,705 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.search-container {
+    max-width: 500px;
+}
+
+#searchBox {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#searchBox:focus {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 400px;
+    background: white;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.tree-container {
+    user-select: none;
+}
+
+.detail-panel {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background: #fafafa;
+}
+
+.placeholder {
+    text-align: center;
+    margin-top: 4rem;
+    color: #7f8c8d;
+}
+
+.placeholder h2 {
+    margin-bottom: 1rem;
+    color: #34495e;
+}
+
+/* Tree Styles */
+.tree-node {
+    margin: 0.25rem 0;
+}
+
+.tree-label {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.tree-label:hover {
+    background: #ecf0f1;
+}
+
+.tree-label.active {
+    background: #3498db;
+    color: white;
+}
+
+.tree-label.has-children::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+    transition: transform 0.2s;
+}
+
+.tree-label.expanded::before {
+    transform: rotate(90deg);
+}
+
+.tree-label.leaf::before {
+    content: '•';
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Level-based styling */
+.tree-node.level-0 > .tree-label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    background: #ecf0f1;
+}
+
+.tree-node.level-1 > .tree-label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #34495e;
+}
+
+.tree-node.level-2 > .tree-label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #7f8c8d;
+}
+
+.tree-node.level-3 > .tree-label {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #95a5a6;
+}
+
+.tree-children {
+    margin-left: 1.2rem;
+    border-left: 2px solid #ecf0f1;
+    padding-left: 0.5rem;
+    display: none;
+    overflow: hidden;
+}
+
+.tree-children.expanded {
+    display: block;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 2000px;
+    }
+}
+
+/* Detail Panel Styles */
+.condition-detail {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.condition-detail h2 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.breadcrumb {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb span {
+    margin: 0 0.25rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h3 {
+    color: #34495e;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.section p {
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+}
+
+.section ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+.key-feature {
+    background: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.distinction {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.clinical-pearl {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Scrollbar styling */
+.sidebar::-webkit-scrollbar,
+.detail-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.detail-panel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.detail-panel::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.detail-panel::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+}
+
+/* V3 Graph-based Styles */
+
+/* Tree node styles */
+.tree-node {
+    margin: 0.5rem 0;
+}
+
+.node-header {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.node-header:hover {
+    background: #ecf0f1;
+}
+
+.tree-node.selected > .node-header {
+    background: #3498db;
+    color: white;
+}
+
+.tree-node.expanded > .node-header {
+    background: #e8f4f8;
+}
+
+.expand-icon {
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    transition: transform 0.2s;
+}
+
+.node-title {
+    flex: 1;
+}
+
+.count-badge {
+    background: #95a5a6;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.tree-node.selected .count-badge {
+    background: rgba(255,255,255,0.3);
+}
+
+/* System node */
+.system-node > .node-header {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    background: #ecf0f1;
+}
+
+.system-node > .node-header:hover {
+    background: #d5dbdb;
+}
+
+/* Category node */
+.category-node {
+    margin-left: 1rem;
+}
+
+.category-node > .node-header {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #34495e;
+}
+
+.categories-container {
+    border-left: 2px solid #bdc3c7;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+}
+
+/* Disease node */
+.disease-node {
+    margin-left: 1rem;
+}
+
+.disease-node > .node-header {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.diseases-container {
+    border-left: 2px solid #d5dbdb;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+}
+
+/* Severity indicators */
+.severity-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    display: inline-block;
+}
+
+.severity-indicator.severity-high,
+.severity-high .severity-indicator {
+    background: #e74c3c;
+}
+
+.severity-indicator.severity-medium,
+.severity-medium .severity-indicator {
+    background: #f39c12;
+}
+
+.severity-indicator.severity-low,
+.severity-low .severity-indicator {
+    background: #27ae60;
+}
+
+/* Entity detail styles */
+.entity-detail {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.entity-header {
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 1rem;
+}
+
+.entity-header h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.entity-type-badge {
+    display: inline-block;
+    background: #95a5a6;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.entity-type-badge.severity-high {
+    background: #e74c3c;
+}
+
+.entity-type-badge.severity-medium {
+    background: #f39c12;
+}
+
+.entity-type-badge.severity-low {
+    background: #27ae60;
+}
+
+.disease-metadata {
+    margin-top: 0.5rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.badge.severity-high {
+    background: #fadbd8;
+    color: #c0392b;
+}
+
+.badge.severity-medium {
+    background: #fdebd0;
+    color: #d68910;
+}
+
+.badge.severity-low {
+    background: #d5f4e6;
+    color: #196f3d;
+}
+
+.badge.acuity-acute {
+    background: #fdebd0;
+    color: #d68910;
+}
+
+.badge.acuity-chronic {
+    background: #e8daef;
+    color: #7d3c98;
+}
+
+.detail-section {
+    margin-bottom: 2rem;
+}
+
+.detail-section h3 {
+    color: #34495e;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+.detail-section h4 {
+    color: #555;
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.detail-section p {
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.detail-section ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.detail-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+.detail-section.important {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.detail-section.highlight {
+    background: #d1ecf1;
+    border-left: 4px solid #17a2b8;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.detail-section.pearls {
+    background: #f8f9fa;
+    border-left: 4px solid #6c757d;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Category and disease cards */
+.category-list,
+.disease-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.category-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.category-card:hover {
+    border-color: #3498db;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
+}
+
+.category-card h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.disease-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-left-width: 4px;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.disease-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.disease-card.severity-high {
+    border-left-color: #e74c3c;
+}
+
+.disease-card.severity-medium {
+    border-left-color: #f39c12;
+}
+
+.disease-card.severity-low {
+    border-left-color: #27ae60;
+}
+
+.disease-card-content {
+    flex: 1;
+}
+
+.disease-card h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.disease-tags {
+    margin: 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #ecf0f1;
+    color: #555;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+}
+
+/* Search results */
+.search-results {
+    padding: 1rem 0;
+}
+
+.search-results h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.search-result {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.search-result:hover {
+    background: #f8f9fa;
+    border-color: #3498db;
+}
+
+.search-result h4 {
+    margin: 0 0 0.25rem 0;
+    color: #2c3e50;
+}
+
+.result-type {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+}
+
+/* Error message */
+.error-message {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.error-message h2 {
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-height: 40vh;
+    }
+
+    .category-list,
+    .disease-list {
+        grid-template-columns: 1fr;
+    }
+
+    .entity-detail {
+        padding: 1rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+}

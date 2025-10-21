@@ -3,68 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 1 Drug Review</title>
+    <title>Step 1 Medical Explorers</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KF6YN63LWH"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-KF6YN63LWH', {
-            transport_type: 'beacon',
-            page_path: window.location.pathname
-        });
-        window.Step1Analytics = {
-            gtag,
-            measurementId: 'G-KF6YN63LWH'
-        };
-    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .explorers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .explorer-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explorer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-color);
+        }
+
+        .explorer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .explorer-card.conditions {
+            --accent-color: #2563eb;
+        }
+
+        .explorer-card.medications {
+            --accent-color: #7c3aed;
+        }
+
+        .explorer-card.bugs {
+            --accent-color: #16a34a;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .explorer-card.bugs:hover {
+            transform: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .explorer-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .explorer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .explorer-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .explorer-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat {
+            flex: 1;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #fbbf24;
+            color: #78350f;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 0.5rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            transition: border-color 0.2s;
+        }
+
+        .footer a:hover {
+            border-bottom-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .explorers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <h1>Step 1 Drug Review</h1>
-            <p>An interactive mental map for pharmacology.</p>
+    <div class="container">
+        <div class="hero">
+            <h1>Step 1 Medical Explorers</h1>
+            <p>Interactive navigation for medical students preparing for USMLE Step 1</p>
         </div>
-        <div class="header-right">
-            <div class="header-static">
-                <button id="layout-toggle" class="toggle-button" type="button">Learning View</button>
-                <button id="info-button" class="icon-button" type="button" aria-label="About this project">?</button>
-                <a class="support-button" href="https://ko-fi.com/rivir" target="_blank" rel="noopener noreferrer">Support</a>
+
+        <div class="explorers">
+            <!-- Conditions Explorer -->
+            <a href="./conditions/index.html" class="explorer-card conditions">
+                <div class="explorer-icon">🏥</div>
+                <h2 class="explorer-title">Conditions</h2>
+                <p class="explorer-description">
+                    Navigate diseases by body system. Explore pathophysiology, clinical presentations, diagnostics, and management strategies.
+                </p>
+                <div class="explorer-stats">
+                    <div class="stat">
+                        <div class="stat-number">16</div>
+                        <div class="stat-label">Systems</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Conditions</div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Medications Explorer -->
+            <a href="./medications/index-v2.html" class="explorer-card medications">
+                <div class="explorer-icon">💊</div>
+                <h2 class="explorer-title">Medications</h2>
+                <p class="explorer-description">
+                    Browse drugs by system and class. Learn mechanisms, indications, contraindications, and clinical decision-making.
+                </p>
+                <div class="explorer-stats">
+                    <div class="stat">
+                        <div class="stat-number">16</div>
+                        <div class="stat-label">Systems</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">385</div>
+                        <div class="stat-label">Drugs</div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Bugs Explorer (Coming Soon) -->
+            <div class="explorer-card bugs">
+                <div class="explorer-icon">🦠</div>
+                <h2 class="explorer-title">Bugs <span class="badge">Coming Soon</span></h2>
+                <p class="explorer-description">
+                    Explore pathogens and antimicrobials. Understand microbiology, pathogenesis, and treatment strategies.
+                </p>
+                <div class="explorer-stats">
+                    <div class="stat">
+                        <div class="stat-number">—</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">—</div>
+                        <div class="stat-label">Organisms</div>
+                    </div>
+                </div>
             </div>
-            <div id="header-controls"></div>
         </div>
-    </header>
-    <main id="column-container">
-        <!-- Columns will be dynamically generated here -->
-    </main>
-    <div id="info-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="info-modal-title">
-        <div class="modal-content">
-            <button class="modal-close" id="info-modal-close" aria-label="Close help dialog">&times;</button>
-            <h2 id="info-modal-title">Welcome to Step 1 Drug Review</h2>
-            <p>This interactive map is built to walk you through pharmacology the way you actually learn it—start broad, drill into mechanisms, and keep the clinical pearls close by.</p>
-            <p>You land in <strong>Reference View</strong> first: the outline on the left lets you hop across systems while the right side keeps drug cards in view. When you want to drill in, tap the toggle in the header to switch to <strong>Learning View</strong> for the classic three-column progression.</p>
-            <h3>How to get around</h3>
-            <ul>
-                <li>Use the magnifying-glass button on any card to open extra details (clinical choice, adverse effects, interactions); tap again to collapse.</li>
-                <li>Hit <strong>Compare</strong> on the cards you care about to build a side-by-side workspace. Inside compare view, the same button flips to “Return to Navigation.”</li>
-                <li>Jump to the full search dashboard from the header. Every tag—systems, classes, indications, contraindications, side effects, mechanisms, interactions—doubles as a shortcut into filtered results.</li>
-                <li>Use <strong>Learning View</strong> as a spaced-recall drill: re-create each system → therapeutic class → pharmacologic class → drug flow from memory, then flip back to Reference View to check yourself.</li>
-                <li>Need this walkthrough later? Tap the “?” button in the header to reopen it.</li>
-            </ul>
-            <p>If this project helps you, you can keep it going (and buy me a coffee) by tapping the <a href="https://ko-fi.com/rivir" target="_blank" rel="noopener noreferrer">Ko-fi Support button</a>.</p>
-            <h3>Roadmap</h3>
-            <ul>
-                <li>🧭 <strong>Bugs Navigator</strong>: explore pathogens and antimicrobials side-by-side, just like the drug navigator.</li>
-                <li>🧪 Mechanism-first views with pathway overlays.</li>
-                <li>📊 Smarter comparison tools, including adverse-effect clustering.</li>
-            </ul>
-            <button class="header-btn" id="info-modal-start" type="button">Let's get it started!</button>
-            <p>Have feedback, requests, or bug reports? Drop a note through Ko-fi or reach out via the repo once it goes public.</p>
+
+        <div class="footer">
+            <p>Built with ❤️ for medical students | <a href="https://ko-fi.com/rivir" target="_blank" rel="noopener noreferrer">Support this project</a></p>
         </div>
     </div>
-    <script src="script.js?v=38"></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test 2 - Fetch Raw</title>
+</head>
+<body>
+    <h1>Testing Raw Fetch...</h1>
+    <div id="output"></div>
+    <script>
+        fetch('./data/diseases/cv-diseases.js')
+            .then(r => r.text())
+            .then(text => {
+                const lines = text.split('\n');
+                document.getElementById('output').innerHTML = `
+                    <p>Total lines: ${lines.length}</p>
+                    <p>Line 1415: <code>${lines[1414]}</code></p>
+                    <p>Line 1416: <code>${lines[1415]}</code></p>
+                    <p>Line 1417: <code>${lines[1416]}</code></p>
+                    <p>Char codes at line 1416: ${Array.from(lines[1415]).map((c,i) => c.charCodeAt(0) + '(' + c + ')').join(' ')}</p>
+                `;
+            });
+    </script>
+</body>
+</html>

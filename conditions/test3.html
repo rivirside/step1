@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test 3 - Detailed Error</title>
+</head>
+<body>
+    <h1>Testing with detailed error...</h1>
+    <div id="output"></div>
+    <script type="module">
+        const output = document.getElementById('output');
+
+        try {
+            output.innerHTML += '<p>Attempting import...</p>';
+
+            // Force no-cache
+            const timestamp = Date.now();
+            const cvModule = await import(`./data/diseases/cv-diseases.js?v=${timestamp}`);
+
+            output.innerHTML += `<p style="color:green">SUCCESS: Loaded ${cvModule.default.length} diseases</p>`;
+            output.innerHTML += `<p>First disease: ${cvModule.default[0].name}</p>`;
+            output.innerHTML += `<p>Last disease: ${cvModule.default[cvModule.default.length-1].name}</p>`;
+
+        } catch (e) {
+            output.innerHTML += `<p style="color:red">ERROR: ${e.message}</p>`;
+            output.innerHTML += `<p>Name: ${e.name}</p>`;
+            output.innerHTML += `<p>Stack: <pre>${e.stack}</pre></p>`;
+
+            // Try to get more details
+            if (e.fileName) output.innerHTML += `<p>File: ${e.fileName}</p>`;
+            if (e.lineNumber) output.innerHTML += `<p>Line: ${e.lineNumber}</p>`;
+            if (e.columnNumber) output.innerHTML += `<p>Column: ${e.columnNumber}</p>`;
+        }
+    </script>
+</body>
+</html>
