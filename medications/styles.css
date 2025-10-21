@@ -1343,3 +1343,130 @@ header {
         background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(147, 51, 234, 0.3));
     }
 }
+
+/* ========================================
+   RELATED CONDITIONS SECTION (Cross-linking)
+   ======================================== */
+
+.related-conditions {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(59, 130, 246, 0.05));
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+}
+
+.related-conditions h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #1e40af;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.condition-type-group {
+    margin-bottom: 2rem;
+}
+
+.condition-type-group:last-child {
+    margin-bottom: 0;
+}
+
+.condition-type-group h4 {
+    margin: 0 0 1rem 0;
+    color: #374151;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.condition-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1f2937;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.condition-link:hover {
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    transform: translateY(-2px);
+}
+
+.condition-link-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.condition-link-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.condition-link-context {
+    font-size: 0.85rem;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.condition-priority-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.condition-priority-badge.first-line {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.condition-priority-badge.second-line {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.condition-priority-badge.alternative {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.condition-priority-badge.avoid {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .conditions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-conditions {
+        padding: 1rem;
+    }
+
+    .related-conditions h3 {
+        font-size: 1.25rem;
+    }
+}
