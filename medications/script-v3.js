@@ -66,6 +66,15 @@ async function init() {
         relationships: relationshipResolver.getStats(),
         inlineLinker: inlineLinker.getStats()
     });
+
+    // Hide loading overlay with fade out
+    const loadingOverlay = document.getElementById('loading-overlay');
+    if (loadingOverlay) {
+        loadingOverlay.classList.add('fade-out');
+        setTimeout(() => {
+            loadingOverlay.style.display = 'none';
+        }, 300);
+    }
 }
 
 // Check URL parameters for deep linking
