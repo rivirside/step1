@@ -1,0 +1,312 @@
+/**
+ * INLINE LINKS STYLING
+ *
+ * Styles for inline cross-reference links and hover tooltips
+ * Used across both Conditions and Medications explorers
+ */
+
+/* ============================================
+   INLINE LINK BASE STYLES
+   ============================================ */
+
+.inline-link {
+    color: var(--accent-color);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.inline-link:hover {
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+}
+
+/* Different colors for different link types */
+.inline-link.drug-link {
+    color: #7c3aed; /* Purple for medications */
+    text-decoration-color: #7c3aed;
+}
+
+.inline-link.drug-link:hover {
+    color: #6d28d9;
+    text-decoration-color: #6d28d9;
+}
+
+.inline-link.condition-link {
+    color: #2563eb; /* Blue for conditions */
+    text-decoration-color: #2563eb;
+}
+
+.inline-link.condition-link:hover {
+    color: #1d4ed8;
+    text-decoration-color: #1d4ed8;
+}
+
+/* ============================================
+   TOOLTIP CONTAINER
+   ============================================ */
+
+.inline-tooltip {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2937;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    min-width: 300px;
+    max-width: 400px;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.inline-link:hover .inline-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+/* Tooltip arrow */
+.inline-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: #1f2937;
+}
+
+/* ============================================
+   TOOLTIP CONTENT STYLES
+   ============================================ */
+
+.inline-tooltip h5 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.inline-tooltip .class-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(124, 58, 237, 0.3);
+    color: #c4b5fd;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.inline-tooltip .severity-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.inline-tooltip .acuity-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(251, 146, 60, 0.3);
+    color: #fdba74;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.25rem;
+    font-weight: 500;
+}
+
+.inline-tooltip .mechanism {
+    font-size: 0.875rem;
+    color: #93c5fd;
+    font-style: italic;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.inline-tooltip .definition {
+    font-size: 0.875rem;
+    color: #e5e7eb;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.inline-tooltip .presentation {
+    font-size: 0.875rem;
+    color: #e5e7eb;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.inline-tooltip .indications,
+.inline-tooltip .side-effects {
+    margin: 0.75rem 0;
+}
+
+.inline-tooltip .indications h6,
+.inline-tooltip .side-effects h6 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #9ca3af;
+    margin: 0 0 0.25rem 0;
+    font-weight: 600;
+}
+
+.inline-tooltip ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.inline-tooltip ul li {
+    color: #e5e7eb;
+    margin: 0.125rem 0;
+}
+
+.inline-tooltip .clinical-choice {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inline-tooltip .clinical-choice strong {
+    color: #f9fafb;
+}
+
+.inline-tooltip .view-full {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--accent-color, #7c3aed);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.inline-tooltip .view-full:hover {
+    background: var(--accent-dark, #6d28d9);
+}
+
+/* ============================================
+   TOOLTIP POSITIONING ADJUSTMENTS
+   ============================================ */
+
+/* When tooltip would go off right edge */
+.inline-tooltip.tooltip-left {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+}
+
+.inline-tooltip.tooltip-left::after {
+    left: auto;
+    right: 1rem;
+    transform: translateX(0);
+}
+
+.inline-tooltip.tooltip-left:hover {
+    transform: translateX(0) translateY(-4px);
+}
+
+/* When tooltip would go off left edge */
+.inline-tooltip.tooltip-right {
+    left: 0;
+    right: auto;
+    transform: translateX(0);
+}
+
+.inline-tooltip.tooltip-right::after {
+    left: 1rem;
+    right: auto;
+    transform: translateX(0);
+}
+
+.inline-tooltip.tooltip-right:hover {
+    transform: translateX(0) translateY(-4px);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .inline-tooltip {
+        min-width: 280px;
+        max-width: calc(100vw - 2rem);
+        font-size: 0.875rem;
+    }
+
+    .inline-tooltip h5 {
+        font-size: 0.9375rem;
+    }
+
+    .inline-tooltip .view-full {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.inline-link:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.inline-link:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .inline-link,
+    .inline-tooltip {
+        transition: none;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .inline-link {
+        color: inherit;
+        text-decoration: underline;
+        font-weight: inherit;
+    }
+
+    .inline-tooltip {
+        display: none !important;
+    }
+}
