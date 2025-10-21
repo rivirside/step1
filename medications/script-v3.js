@@ -51,11 +51,14 @@ async function init() {
     // Render initial view
     renderSystemTree();
 
-    // Check for URL parameters (deep linking from conditions explorer)
-    checkUrlParameters();
-
     // Info modal handling
     setupInfoModal();
+
+    // Check for URL parameters AFTER tree is rendered (deep linking from conditions explorer)
+    // Use setTimeout to ensure tree DOM is fully built
+    setTimeout(() => {
+        checkUrlParameters();
+    }, 100);
 
     console.log('Initialization complete');
     console.log('Stats:', dataLoader.getStats());
@@ -118,9 +121,9 @@ function expandTreeToDrug(drug) {
                     drugNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     drugNode.classList.add('highlighted');
                 }
-            }, 100);
-        }, 100);
-    }, 100);
+            }, 150);
+        }, 150);
+    }, 150);
 }
 
 // Setup event listeners
@@ -271,7 +274,7 @@ function createTherapeuticClassNode(therapeuticClass) {
 function createPharmaClassNode(pharmaClass) {
     const node = document.createElement('div');
     node.className = 'tree-node category-node pharma-class-node';
-    node.dataset.pharmaId = pharmaClass.id;
+    node.dataset.pharmacologicId = pharmaClass.id;
 
     const header = document.createElement('div');
     header.className = 'node-header';
@@ -363,7 +366,7 @@ function selectEntity(entity, type) {
 
     const selector = type === 'system' ? `[data-system-id="${entity.id}"]` :
                      type === 'therapeutic-class' ? `[data-therapeutic-id="${entity.id}"]` :
-                     type === 'pharma-class' ? `[data-pharma-id="${entity.id}"]` :
+                     type === 'pharma-class' ? `[data-pharmacologic-id="${entity.id}"]` :
                      `[data-drug-id="${entity.drug.id}"]`;
 
     const selectedNode = document.querySelector(selector);
