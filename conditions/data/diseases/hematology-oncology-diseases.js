@@ -621,6 +621,257 @@ const hematologyOncologyDiseases = [
                 "IgG myeloma most common (60%), then IgA (20%), light chains only (20%), IgD and IgE rare"
             ]
         }
+    },
+    // ===== MORE ANEMIA CONDITIONS =====
+    {
+        id: "thalassemia",
+        name: "Thalassemia",
+        system: "hematology-oncology",
+        categories: ["anemia"],
+        symptoms: ["fatigue", "pallor", "splenomegaly"],
+        tags: ["microcytic", "anemia", "genetic", "hemoglobin"],
+        severity: "medium",
+        acuity: "chronic",
+        pageType: "disease",
+        detail: {
+            definition: "Inherited disorder of impaired globin chain synthesis causing microcytic anemia. β-thalassemia (↓ β-globin) is most common, α-thalassemia (↓ α-globin) less severe.",
+            pathophysiology: "Deficient globin chain synthesis → imbalanced α/β chains → unpaired chains precipitate → ineffective erythropoiesis + hemolysis. β-thalassemia major (homozygous): no β-globin → severe anemia. β-thalassemia minor (heterozygous): mild anemia. α-thalassemia: gene deletions (4 genes, 2 on each chromosome 16).",
+            epidemiology: "Most common in Mediterranean, Middle Eastern, African, Southeast Asian populations. β-thalassemia major presents in first year of life. Thalassemia trait is protective against malaria.",
+            riskFactors: [
+                "Ethnicity: Mediterranean (β-thalassemia), Southeast Asian (α-thalassemia)",
+                "Family history",
+                "Consanguinity"
+            ],
+            presentation: "β-thalassemia major: severe anemia in infancy, failure to thrive, hepatosplenomegaly, bone deformities (chipmunk facies, crew cut skull). β-thalassemia minor: mild microcytic anemia, often asymptomatic. α-thalassemia trait: usually asymptomatic.",
+            physicalExam: [
+                "Pallor, jaundice (hemolysis)",
+                "Splenomegaly, hepatomegaly",
+                "Bone deformities: frontal bossing, maxillary overgrowth (chipmunk facies)",
+                "Growth retardation",
+                "Iron overload (in transfusion-dependent): hepatic cirrhosis, cardiomyopathy, diabetes"
+            ],
+            diagnosticCriteria: "Microcytic anemia with normal/high RBC count, target cells on smear, hemoglobin electrophoresis showing ↑ HbA2 (β-thalassemia minor) or ↑ HbF (β-thalassemia major).",
+            labs: [
+                "CBC: microcytic anemia (MCV <70), normal/high RBC count (key difference from iron deficiency), ↑ reticulocytes",
+                "Peripheral smear: target cells, basophilic stippling, nucleated RBCs",
+                "Hemoglobin electrophoresis:",
+                "  - β-thalassemia minor: ↑ HbA2 (>3.5%), normal HbF",
+                "  - β-thalassemia major: ↑ HbF (>90%), absent/low HbA",
+                "  - α-thalassemia: normal (diagnosis by gene testing)",
+                "Iron studies: normal or high ferritin (NOT iron deficient)",
+                "Hemolysis markers: ↑ indirect bilirubin, ↑ LDH, ↓ haptoglobin"
+            ],
+            imaging: [
+                "X-ray skull: \"hair-on-end\" or \"crew cut\" appearance (marrow expansion)",
+                "MRI/T2* for cardiac and hepatic iron overload assessment"
+            ],
+            differentialDiagnosis: [
+                "Iron deficiency: ↓ ferritin, ↑ TIBC, ↓ RBC count (thalassemia has normal/high RBC count)",
+                "Anemia of chronic disease: ↑ ferritin, ↓ TIBC",
+                "Sideroblastic anemia: ringed sideroblasts, ↑ iron",
+                "Lead poisoning: basophilic stippling, ↑ lead level"
+            ],
+            management: {
+                acute: [
+                    "β-thalassemia major: chronic transfusions to maintain Hb >9-10 g/dL",
+                    "Iron chelation therapy (deferasirox, deferoxamine, deferiprone) to prevent iron overload from transfusions",
+                    "Folic acid supplementation: 1 mg daily",
+                    "Splenectomy if hypersplenism causing increased transfusion requirements"
+                ],
+                chronic: [
+                    "β-thalassemia minor: no treatment needed (asymptomatic), avoid iron supplementation",
+                    "Hematopoietic stem cell transplant: only curative option for β-thalassemia major",
+                    "Gene therapy (newer): for β-thalassemia major",
+                    "Luspatercept: ↑ RBC production, ↓ transfusion burden",
+                    "Vaccinations: pneumococcal, H. influenzae, meningococcal (if splenectomy)",
+                    "Monitor for complications: cardiac iron overload (MRI T2*), endocrine dysfunction, bone disease"
+                ]
+            },
+            complications: [
+                "Iron overload (from chronic transfusions): cardiac (heart failure, arrhythmias), hepatic (cirrhosis), endocrine (diabetes, hypogonadism, hypothyroidism)",
+                "Bone deformities and osteoporosis",
+                "Splenomegaly, hypersplenism",
+                "Gallstones (pigmented stones)",
+                "Infections (if splenectomy): encapsulated organisms",
+                "Extramedullary hematopoiesis: spinal cord compression"
+            ],
+            prognosis: "β-thalassemia major: lifelong transfusions required. Median survival >50 years with modern treatment (chelation therapy). β-thalassemia minor: normal lifespan, asymptomatic. Stem cell transplant can be curative.",
+            clinicalPearls: [
+                "Microcytic anemia with NORMAL/HIGH RBC count suggests thalassemia (vs iron deficiency with low RBC count)",
+                "Hemoglobin electrophoresis: ↑ HbA2 >3.5% = β-thalassemia minor. ↑ HbF = β-thalassemia major.",
+                "α-thalassemia: normal hemoglobin electrophoresis, requires gene testing for diagnosis",
+                "Do NOT give iron to thalassemia patients (already iron overloaded from transfusions)",
+                "Mentzer index: MCV/RBC. <13 = thalassemia, >13 = iron deficiency (not 100% sensitive/specific)",
+                "Target cells on smear are classic",
+                "Transfusion-dependent patients need iron chelation to prevent cardiac/hepatic iron overload",
+                "Chipmunk facies and crew cut skull from marrow expansion (extramedullary hematopoiesis)"
+            ]
+        }
+    },
+    {
+        id: "aplastic-anemia",
+        name: "Aplastic Anemia",
+        system: "hematology-oncology",
+        categories: ["anemia"],
+        symptoms: ["fatigue", "bleeding", "infections", "pallor"],
+        tags: ["pancytopenia", "bone-marrow-failure", "anemia"],
+        severity: "high",
+        acuity: "acute",
+        pageType: "disease",
+        detail: {
+            definition: "Life-threatening bone marrow failure syndrome characterized by pancytopenia (anemia, thrombocytopenia, neutropenia) and hypocellular bone marrow WITHOUT fibrosis or malignancy.",
+            pathophysiology: "Immune-mediated destruction of hematopoietic stem cells by cytotoxic T cells → bone marrow hypoplasia → pancytopenia. Acquired (most common) or inherited (Fanconi anemia).",
+            epidemiology: "Rare: 2-3 cases per million per year. Bimodal age distribution (peaks at 20s and 60s). More common in Asia. 70% idiopathic, 30% secondary causes.",
+            riskFactors: [
+                "Medications: chloramphenicol, NSAIDs, carbamazepine, gold, sulfonamides",
+                "Toxins: benzene, insecticides, solvents",
+                "Viral infections: EBV, CMV, HIV, hepatitis (especially non-A, non-B, non-C hepatitis)",
+                "Radiation exposure",
+                "Autoimmune diseases: SLE, eosinophilic fasciitis",
+                "Pregnancy",
+                "Inherited: Fanconi anemia, dyskeratosis congenita"
+            ],
+            presentation: "Fatigue, weakness (anemia). Easy bruising, petechiae, bleeding (thrombocytopenia). Recurrent infections (neutropenia). NO hepatosplenomegaly or lymphadenopathy (unlike leukemia).",
+            physicalExam: [
+                "Pallor (anemia)",
+                "Petechiae, purpura, mucosal bleeding (thrombocytopenia)",
+                "NO hepatosplenomegaly, NO lymphadenopathy (key - helps exclude leukemia)",
+                "Signs of infection if neutropenic"
+            ],
+            diagnosticCriteria: "Pancytopenia with hypocellular bone marrow (<25% cellularity) without fibrosis, malignancy, or myelodysplasia.",
+            labs: [
+                "CBC: pancytopenia (anemia, thrombocytopenia <50k, neutropenia <1500)",
+                "Reticulocyte count: low (inappropriately low for degree of anemia)",
+                "Peripheral smear: normocytic anemia, NO blasts, NO dysplasia",
+                "Bone marrow biopsy: hypocellular (<25% cellularity), fatty replacement, NO fibrosis, NO malignant cells",
+                "Flow cytometry: rule out PNH (CD55/CD59 deficiency)",
+                "Chromosomal breakage test: for Fanconi anemia (if young patient)",
+                "Viral serologies: EBV, CMV, hepatitis, HIV",
+                "Vitamin B12, folate: to rule out other causes of pancytopenia"
+            ],
+            imaging: [
+                "Not needed for diagnosis"
+            ],
+            differentialDiagnosis: [
+                "Myelodysplastic syndrome: pancytopenia, but hypercellular marrow with dysplasia",
+                "Acute leukemia: pancytopenia with blasts on smear/marrow, hypercellular marrow",
+                "Paroxysmal nocturnal hemoglobinuria (PNH): hemolytic anemia, thrombosis, pancytopenia (check flow cytometry)",
+                "Hypersplenism: pancytopenia with splenomegaly (not in aplastic anemia)",
+                "B12/folate deficiency: macrocytic anemia, hypersegmented neutrophils, megaloblastic marrow"
+            ],
+            management: {
+                acute: [
+                    "Supportive care: transfuse RBCs if Hb <7, platelets if <10k or bleeding, neutropenic precautions",
+                    "Growth factors: EPO, G-CSF if needed (but does NOT treat underlying disease)",
+                    "Antibiotics for neutropenic fever",
+                    "AVOID platelet transfusions if planning stem cell transplant (alloimmunization)"
+                ],
+                chronic: [
+                    "Age <40 with matched sibling donor: allogeneic hematopoietic stem cell transplant (CURATIVE)",
+                    "Age >40 or no matched donor: immunosuppressive therapy",
+                    "  - Horse anti-thymocyte globulin (ATG) + cyclosporine (60-70% response rate)",
+                    "  - Eltrombopag: thrombopoietin agonist, may restore hematopoiesis",
+                    "Refractory cases: consider matched unrelated donor transplant",
+                    "Monitor for relapse and evolution to MDS/AML (10-15% risk)"
+                ]
+            },
+            complications: [
+                "Bleeding (intracranial hemorrhage - most common cause of death)",
+                "Infections (fungal, bacterial - second most common cause of death)",
+                "Transfusion complications: iron overload, alloimmunization, infections",
+                "Evolution to MDS or AML (10-15% risk)",
+                "PNH (paroxysmal nocturnal hemoglobinuria) can occur in same patient",
+                "Graft-versus-host disease (if transplant)"
+            ],
+            prognosis: "Without treatment, severe aplastic anemia is fatal. With stem cell transplant: 80-90% long-term survival. With immunosuppression: 60-70% response rate, but 30-40% relapse risk. Risk of evolution to MDS/AML.",
+            clinicalPearls: [
+                "Pancytopenia WITHOUT hepatosplenomegaly or lymphadenopathy → think aplastic anemia (vs leukemia which has organomegaly)",
+                "Bone marrow biopsy shows HYPOCELLULAR marrow (vs leukemia/MDS which are hypercellular)",
+                "Reticulocyte count is inappropriately LOW (bone marrow not responding to anemia)",
+                "Severe aplastic anemia: ANC <500, platelets <20k, reticulocytes <1%",
+                "Young patients (<40) with matched sibling donor → stem cell transplant (curative)",
+                "Older patients or no donor → ATG + cyclosporine",
+                "Check flow cytometry to rule out PNH (CD55/CD59 deficiency) - can coexist",
+                "Do NOT give platelet transfusions unnecessarily if planning transplant (causes alloimmunization)",
+                "Fanconi anemia (inherited): young age, short stature, thumb/radius abnormalities, café-au-lait spots, chromosomal breakage test positive"
+            ]
+        }
+    },
+    {
+        id: "sideroblastic-anemia",
+        name: "Sideroblastic Anemia",
+        system: "hematology-oncology",
+        categories: ["anemia"],
+        symptoms: ["fatigue", "weakness"],
+        tags: ["microcytic", "anemia", "iron-overload", "ringed-sideroblasts"],
+        severity: "medium",
+        acuity: "chronic",
+        pageType: "disease",
+        detail: {
+            definition: "Anemia caused by impaired heme synthesis despite adequate iron, resulting in iron accumulation in mitochondria (ringed sideroblasts) and microcytic anemia with iron overload.",
+            pathophysiology: "Defective δ-ALA synthase (rate-limiting enzyme in heme synthesis) → impaired heme synthesis despite adequate iron → iron accumulates in mitochondria forming ring around nucleus (ringed sideroblasts) → ineffective erythropoiesis → microcytic anemia + iron overload.",
+            epidemiology: "Rare. Hereditary form (X-linked) presents in young males. Acquired form more common, associated with myelodysplasia, alcohol, drugs.",
+            riskFactors: [
+                "Hereditary: X-linked mutation in ALAS2 gene",
+                "Acquired: myelodysplastic syndrome (refractory anemia with ringed sideroblasts - RARS)",
+                "Medications: isoniazid, chloramphenicol, linezolid",
+                "Alcohol",
+                "Lead poisoning",
+                "Copper deficiency (zinc toxicity)"
+            ],
+            presentation: "Fatigue, weakness, pallor (anemia). Iron overload symptoms if chronic: hepatomegaly, cardiac dysfunction, diabetes, bronze skin.",
+            physicalExam: [
+                "Pallor",
+                "Hepatomegaly (iron overload)",
+                "Bronze skin (hemochromatosis-like)"
+            ],
+            diagnosticCriteria: "Microcytic anemia with ↑ iron/ferritin and ringed sideroblasts on bone marrow stain (Prussian blue).",
+            labs: [
+                "CBC: microcytic anemia (MCV <80), normal/low reticulocytes",
+                "Iron studies: ↑ serum iron, ↑ ferritin (>500), ↑ transferrin saturation (>50%)",
+                "Peripheral smear: dimorphic RBC population (microcytic + normal), basophilic stippling, pappenheimer bodies",
+                "Bone marrow: ringed sideroblasts (iron-laden mitochondria encircling nucleus) on Prussian blue stain",
+                "Genetic testing: ALAS2 mutation (if hereditary suspected)"
+            ],
+            imaging: [
+                "MRI liver/heart: assess iron overload if chronic"
+            ],
+            differentialDiagnosis: [
+                "Iron deficiency: ↓ iron, ↓ ferritin (opposite of sideroblastic)",
+                "Thalassemia: normal/high iron, target cells, ↑ HbA2",
+                "Anemia of chronic disease: ↑ ferritin but ↓ iron, ↓ TIBC",
+                "Lead poisoning: basophilic stippling, ↑ lead level, ringed sideroblasts also present"
+            ],
+            management: {
+                acute: [
+                    "Pyridoxine (vitamin B6): trial in hereditary form (some respond)",
+                    "Remove offending agent if medication-induced (isoniazid, alcohol)",
+                    "Transfusions if symptomatic anemia"
+                ],
+                chronic: [
+                    "Hereditary: pyridoxine 50-200 mg daily (30-50% respond)",
+                    "Acquired (MDS-associated): supportive care, may progress to AML, consider stem cell transplant if eligible",
+                    "Iron chelation therapy (deferasirox) if transfusion-dependent to prevent iron overload",
+                    "Treat underlying cause: stop alcohol, treat copper deficiency (if present)"
+                ]
+            },
+            complications: [
+                "Iron overload: cardiac (heart failure, arrhythmias), hepatic (cirrhosis), endocrine (diabetes)",
+                "Transformation to AML (if MDS-associated)",
+                "Transfusion dependence"
+            ],
+            prognosis: "Hereditary form: good response to pyridoxine in 30-50%. Acquired form (MDS-associated): variable, risk of progression to AML. Medication-induced: reversible if drug stopped.",
+            clinicalPearls: [
+                "Microcytic anemia with HIGH iron/ferritin (opposite of iron deficiency)",
+                "Ringed sideroblasts on bone marrow Prussian blue stain = diagnostic",
+                "Hereditary: X-linked, young males, may respond to pyridoxine (vitamin B6)",
+                "Acquired: associated with MDS (RARS subtype), alcohol, isoniazid",
+                "Basophilic stippling and pappenheimer bodies on smear (iron granules in RBCs)",
+                "Dimorphic RBC population: some microcytic, some normal (dual population)",
+                "Lead poisoning can also cause ringed sideroblasts - check lead level",
+                "Iron overload from ineffective erythropoiesis + transfusions → need chelation therapy"
+            ]
+        }
     }
 ];
 
