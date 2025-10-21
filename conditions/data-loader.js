@@ -33,6 +33,8 @@ class DataLoader {
             const giDiseasesModule = await import('./data/diseases/gi-diseases.js');
             const psychiatryCategoriesModule = await import('./data/categories/psychiatry-categories.js');
             const psychiatryDiseasesModule = await import('./data/diseases/psychiatry-diseases.js');
+            const hematologyOncologyCategoriesModule = await import('./data/categories/hematology-oncology-categories.js');
+            const hematologyOncologyDiseasesModule = await import('./data/diseases/hematology-oncology-diseases.js');
 
             this.systems = systemsModule.default || systemsModule.systems;
 
@@ -41,14 +43,16 @@ class DataLoader {
             const respiratoryCategories = respiratoryCategoriesModule.default || respiratoryCategoriesModule.respiratoryCategories;
             const giCategories = giCategoriesModule.default || giCategoriesModule.gastrointestinalCategories;
             const psychiatryCategories = psychiatryCategoriesModule.default || psychiatryCategoriesModule.psychiatryCategories;
-            this.categories = [...cvCategories, ...respiratoryCategories, ...giCategories, ...psychiatryCategories];
+            const hematologyOncologyCategories = hematologyOncologyCategoriesModule.default || hematologyOncologyCategoriesModule.hematologyOncologyCategories;
+            this.categories = [...cvCategories, ...respiratoryCategories, ...giCategories, ...psychiatryCategories, ...hematologyOncologyCategories];
 
             // Combine all diseases
             const cvDiseases = cvDiseasesModule.default || cvDiseasesModule.cvDiseases;
             const respiratoryDiseases = respiratoryDiseasesModule.default || respiratoryDiseasesModule.respiratoryDiseases;
             const giDiseases = giDiseasesModule.default || giDiseasesModule.gastrointestinalDiseases;
             const psychiatryDiseases = psychiatryDiseasesModule.default || psychiatryDiseasesModule.psychiatryDiseases;
-            this.diseases = [...cvDiseases, ...respiratoryDiseases, ...giDiseases, ...psychiatryDiseases];
+            const hematologyOncologyDiseases = hematologyOncologyDiseasesModule.default || hematologyOncologyDiseasesModule.hematologyOncologyDiseases;
+            this.diseases = [...cvDiseases, ...respiratoryDiseases, ...giDiseases, ...psychiatryDiseases, ...hematologyOncologyDiseases];
 
             // Build indexes
             this.buildIndexes();

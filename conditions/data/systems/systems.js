@@ -139,6 +139,41 @@ const systems = [
                 "Psychotherapy: CBT most evidence-based for depression, anxiety. Exposure therapy for phobias, PTSD. DBT for borderline PD."
             ]
         }
+    },
+    {
+        id: "hematology-oncology",
+        name: "Hematology/Oncology",
+        categoryIds: [
+            "anemia",
+            "hemolytic-anemia",
+            "bleeding-disorders",
+            "thrombotic-disorders",
+            "leukemia",
+            "lymphoma",
+            "myeloproliferative-disorders",
+            "plasma-cell-disorders",
+            "transfusion-medicine"
+        ],
+        pageType: "system",
+        detail: {
+            overview: "Hematology/Oncology encompasses disorders of blood cells, coagulation, and hematologic malignancies. Major categories include anemias (microcytic, normocytic, macrocytic), hemolytic anemias, bleeding disorders (platelet vs coagulation factor defects), thrombotic disorders, leukemias (acute vs chronic, myeloid vs lymphoid), lymphomas (Hodgkin vs non-Hodgkin), myeloproliferative neoplasms, and plasma cell disorders.",
+            keyAnatomy: [
+                "Hematopoiesis: bone marrow → pluripotent stem cells → myeloid/lymphoid lineages",
+                "RBCs: oxygen delivery (hemoglobin), lifespan 120 days",
+                "WBCs: neutrophils (bacterial defense), lymphocytes (adaptive immunity), monocytes/macrophages (phagocytosis)",
+                "Platelets: primary hemostasis (platelet plug formation)",
+                "Coagulation cascade: intrinsic (PTT), extrinsic (PT), common pathway (fibrin clot)"
+            ],
+            commonThemes: [
+                "Anemia approach: MCV → microcytic (iron, thalassemia, sideroblastic), normocytic (blood loss, hemolysis, chronic disease), macrocytic (B12/folate, myelodysplasia)",
+                "Hemolytic anemia: ↑ LDH, ↑ indirect bilirubin, ↑ reticulocytes, ↓ haptoglobin. Intravascular (hemoglobinuria) vs extravascular (splenomegaly).",
+                "Bleeding: platelet disorder (mucocutaneous bleeding, petechiae, normal PT/PTT) vs coagulation disorder (deep tissue bleeding, hemarthrosis, ↑ PT/PTT)",
+                "Thrombosis: Virchow's triad (stasis, hypercoagulability, endothelial injury). Arterial (platelet-mediated) vs venous (fibrin-mediated).",
+                "Leukemia: acute (blasts >20%, rapid onset) vs chronic (mature cells, indolent). Myeloid (Auer rods, myeloperoxidase+) vs lymphoid (TdT+).",
+                "Lymphoma: painless lymphadenopathy. Hodgkin (Reed-Sternberg cells, bimodal age) vs NHL (diverse subtypes, older age).",
+                "Pancytopenia DDx: bone marrow failure (aplastic anemia, MDS), marrow infiltration (leukemia, myelofibrosis), peripheral destruction (hypersplenism, autoimmune)"
+            ]
+        }
     }
     // Future: neurological, renal, endocrine, etc.
 ];
