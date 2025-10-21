@@ -17,15 +17,22 @@ const state = {
 
 // Initialize application
 async function init() {
-    console.log('Initializing Step 1 Differential Diagnosis Tool v3...');
+    try {
+        console.log('Initializing Step 1 Differential Diagnosis Tool v3...');
 
-    // Initialize explorer navigation
-    const explorerNav = new ExplorerNavigation('conditions');
+        // Initialize explorer navigation
+        const explorerNav = new ExplorerNavigation('conditions');
 
     // Load condition data
     const loaded = await dataLoader.load();
     if (!loaded) {
         showError('Failed to load data. Please refresh the page.');
+        // Hide loading overlay even on error
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('fade-out');
+            setTimeout(() => loadingOverlay.style.display = 'none', 300);
+        }
         return;
     }
 
@@ -64,13 +71,23 @@ async function init() {
         inlineLinker: inlineLinker.getStats()
     });
 
-    // Hide loading overlay with fade out
-    const loadingOverlay = document.getElementById('loading-overlay');
-    if (loadingOverlay) {
-        loadingOverlay.classList.add('fade-out');
-        setTimeout(() => {
-            loadingOverlay.style.display = 'none';
-        }, 300);
+        // Hide loading overlay with fade out
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('fade-out');
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none';
+            }, 300);
+        }
+    } catch (error) {
+        console.error('Initialization error:', error);
+        showError(`Failed to initialize: ${error.message}`);
+        // Always hide loading overlay, even on error
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('fade-out');
+            setTimeout(() => loadingOverlay.style.display = 'none', 300);
+        }
     }
 }
 

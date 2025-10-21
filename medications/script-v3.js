@@ -17,17 +17,24 @@ const state = {
 
 // Initialize application
 async function init() {
-    console.log('Initializing Medications Explorer V3...');
+    try {
+        console.log('Initializing Medications Explorer V3...');
 
-    // Initialize explorer navigation
-    const explorerNav = new ExplorerNavigation('medications');
+        // Initialize explorer navigation
+        const explorerNav = new ExplorerNavigation('medications');
 
-    // Load medication data
-    const loaded = await dataLoader.load();
-    if (!loaded) {
-        showError('Failed to load medication data. Please refresh the page.');
-        return;
-    }
+        // Load medication data
+        const loaded = await dataLoader.load();
+        if (!loaded) {
+            showError('Failed to load medication data. Please refresh the page.');
+            // Hide loading overlay even on error
+            const loadingOverlay = document.getElementById('loading-overlay');
+            if (loadingOverlay) {
+                loadingOverlay.classList.add('fade-out');
+                setTimeout(() => loadingOverlay.style.display = 'none', 300);
+            }
+            return;
+        }
 
     // Load condition data for cross-linking
     console.log('Loading condition data for cross-linking...');
@@ -67,13 +74,23 @@ async function init() {
         inlineLinker: inlineLinker.getStats()
     });
 
-    // Hide loading overlay with fade out
-    const loadingOverlay = document.getElementById('loading-overlay');
-    if (loadingOverlay) {
-        loadingOverlay.classList.add('fade-out');
-        setTimeout(() => {
-            loadingOverlay.style.display = 'none';
-        }, 300);
+        // Hide loading overlay with fade out
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('fade-out');
+            setTimeout(() => {
+                loadingOverlay.style.display = 'none';
+            }, 300);
+        }
+    } catch (error) {
+        console.error('Initialization error:', error);
+        showError(`Failed to initialize: ${error.message}`);
+        // Always hide loading overlay, even on error
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('fade-out');
+            setTimeout(() => loadingOverlay.style.display = 'none', 300);
+        }
     }
 }
 
