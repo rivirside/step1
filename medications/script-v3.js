@@ -31,11 +31,69 @@ async function init() {
     // Render initial view
     renderSystemTree();
 
+    // Check for URL parameters (deep linking from conditions explorer)
+    checkUrlParameters();
+
     // Info modal handling
     setupInfoModal();
 
     console.log('Initialization complete');
     console.log('Stats:', dataLoader.getStats());
+}
+
+// Check URL parameters for deep linking
+function checkUrlParameters() {
+    const params = new URLSearchParams(window.location.search);
+    const drugId = params.get('drug');
+
+    if (drugId) {
+        console.log(`Deep linking to drug: ${drugId}`);
+        const drug = dataLoader.getDrugById(drugId);
+
+        if (drug) {
+            // Select and display the drug
+            selectEntity(drug, 'drug');
+
+            // Expand the tree to show this drug
+            expandTreeToDrug(drug);
+        } else {
+            console.warn(`Drug not found: ${drugId}`);
+        }
+    }
+}
+
+// Expand tree to show a specific drug
+function expandTreeToDrug(drug) {
+    // Find and expand the system
+    const systemNode = document.querySelector(`[data-system-id="${drug.system}"]`);
+    if (systemNode && !systemNode.classList.contains('expanded')) {
+        systemNode.click();
+    }
+
+    // Wait for tree to expand, then find therapeutic class
+    setTimeout(() => {
+        const therapeuticNode = document.querySelector(`[data-therapeutic-id="${drug.therapeuticClass}"]`);
+        if (therapeuticNode && !therapeuticNode.classList.contains('expanded')) {
+            therapeuticNode.click();
+        }
+
+        // Wait again, then find pharmacologic class
+        setTimeout(() => {
+            const pharmacologicNode = document.querySelector(`[data-pharmacologic-id="${drug.pharmacologicClass}"]`);
+            if (pharmacologicNode && !pharmacologicNode.classList.contains('expanded')) {
+                pharmacologicNode.click();
+            }
+
+            // Finally, highlight the drug
+            setTimeout(() => {
+                const drugNode = document.querySelector(`[data-drug-id="${drug.id}"]`);
+                if (drugNode) {
+                    drugNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    drugNode.classList.add('highlighted');
+                }
+            }, 100);
+        }, 100);
+    }, 100);
 }
 
 // Setup event listeners
