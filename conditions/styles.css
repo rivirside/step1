@@ -703,3 +703,97 @@ header h1 {
         padding: 1rem;
     }
 }
+
+/* Related Medications Section */
+.related-medications {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(147, 51, 234, 0.05));
+    border-left: 4px solid #7c3aed;
+}
+
+.medication-group {
+    margin: 1rem 0;
+}
+
+.medication-group h4 {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin: 0.75rem 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.medication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.medication-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #1f2937;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.medication-link:hover {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(124, 58, 237, 0.2);
+}
+
+.medication-link.first-line {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.05);
+}
+
+.medication-link.first-line:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+.medication-link.contraindicated {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.medication-link.contraindicated:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: white;
+}
+
+.medication-link .med-name {
+    font-weight: 500;
+}
+
+.medication-link .priority-badge {
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    border-radius: 3px;
+    background: #f3f4f6;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.medication-link.first-line .priority-badge {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+}
+
+.medication-link.contraindicated .priority-badge {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.medication-link:hover .priority-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}

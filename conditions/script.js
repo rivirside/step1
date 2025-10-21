@@ -1,6 +1,9 @@
-// V3 Graph-based Main Script
+// V3 Graph-based Main Script with Cross-Linking
 import dataLoader from './data-loader.js';
 import ExplorerNavigation from '../shared/explorer-navigation.js';
+import inlineLinker from '../shared/cross-links/inline-linker.js';
+import tooltipManager from '../shared/cross-links/tooltip-manager.js';
+import relationshipResolver from '../shared/cross-links/relationship-resolver.js';
 
 // Application state
 const state = {
@@ -25,6 +28,14 @@ async function init() {
         return;
     }
 
+    // Initialize cross-linking (needs medication data loader - will create stub for now)
+    // Note: Inline linker will be initialized when both data loaders are available
+    const medicationDataLoader = null; // TODO: Load medications data for cross-linking
+    inlineLinker.init(medicationDataLoader, dataLoader);
+
+    // Initialize tooltip manager
+    tooltipManager.init();
+
     // Setup event listeners
     setupEventListeners();
 
@@ -33,6 +44,10 @@ async function init() {
 
     console.log('Initialization complete');
     console.log('Stats:', dataLoader.getStats());
+    console.log('Cross-linking stats:', {
+        relationships: relationshipResolver.getStats(),
+        inlineLinker: inlineLinker.getStats()
+    });
 }
 
 // Setup event listeners
@@ -501,13 +516,13 @@ function renderDiseaseDetail(disease) {
                     ${detail.management.acute ? `
                         <h4>Acute Management</h4>
                         <ul>
-                            ${detail.management.acute.map(item => `<li>${item}</li>`).join('')}
+                            ${detail.management.acute.map(item => `<li>${inlineLinker.linkMedicationsInText(item)}</li>`).join('')}
                         </ul>
                     ` : ''}
                     ${detail.management.chronic ? `
                         <h4>Chronic Management</h4>
                         <ul>
-                            ${detail.management.chronic.map(item => `<li>${item}</li>`).join('')}
+                            ${detail.management.chronic.map(item => `<li>${inlineLinker.linkMedicationsInText(item)}</li>`).join('')}
                         </ul>
                     ` : ''}
                 </section>
@@ -538,6 +553,8 @@ function renderDiseaseDetail(disease) {
                 </section>
             ` : ''}
 
+            ${renderRelatedMedications(disease.id)}
+
             <section class="detail-section">
                 <h3>Metadata</h3>
                 <p><strong>Categories:</strong> ${disease.categories.map(catId => {
@@ -548,6 +565,93 @@ function renderDiseaseDetail(disease) {
             </section>
         </div>
     `;
+}
+
+// Render related medications section
+function renderRelatedMedications(diseaseId) {
+    const medsByType = relationshipResolver.getMedicationsGroupedByType(diseaseId);
+
+    // Check if there are any related medications
+    const hasAny = Object.values(medsByType).some(meds => meds && meds.length > 0);
+    if (!hasAny) {
+        return ''; // No related medications
+    }
+
+    const basePath = getBasePath();
+
+    let html = '<section class="detail-section related-medications">';
+    html += '<h3>💊 Related Medications</h3>';
+
+    // Acute Treatment
+    if (medsByType.acuteTreatment && medsByType.acuteTreatment.length > 0) {
+        html += '<div class="medication-group">';
+        html += '<h4>🚨 Acute Treatment</h4>';
+        html += '<div class="medication-links">';
+        medsByType.acuteTreatment.forEach(med => {
+            const priorityClass = med.priority || 'alternative';
+            html += `
+                <a href="${basePath}medications/index-v2.html?drug=${med.drugId}"
+                   target="_blank"
+                   class="medication-link ${priorityClass}"
+                   title="${med.context}">
+                    <span class="med-name">${med.drugName}</span>
+                    <span class="priority-badge">${med.priority}</span>
+                </a>
+            `;
+        });
+        html += '</div></div>';
+    }
+
+    // Chronic Management
+    if (medsByType.chronicManagement && medsByType.chronicManagement.length > 0) {
+        html += '<div class="medication-group">';
+        html += '<h4>🏥 Chronic Management</h4>';
+        html += '<div class="medication-links">';
+        medsByType.chronicManagement.forEach(med => {
+            const priorityClass = med.priority || 'alternative';
+            html += `
+                <a href="${basePath}medications/index-v2.html?drug=${med.drugId}"
+                   target="_blank"
+                   class="medication-link ${priorityClass}"
+                   title="${med.context}">
+                    <span class="med-name">${med.drugName}</span>
+                    <span class="priority-badge">${med.priority}</span>
+                </a>
+            `;
+        });
+        html += '</div></div>';
+    }
+
+    // Contraindicated
+    if (medsByType.contraindicated && medsByType.contraindicated.length > 0) {
+        html += '<div class="medication-group contraindicated">';
+        html += '<h4>⚠️ Contraindicated</h4>';
+        html += '<div class="medication-links">';
+        medsByType.contraindicated.forEach(med => {
+            html += `
+                <a href="${basePath}medications/index-v2.html?drug=${med.drugId}"
+                   target="_blank"
+                   class="medication-link contraindicated"
+                   title="${med.context}">
+                    <span class="med-name">${med.drugName}</span>
+                    <span class="priority-badge">avoid</span>
+                </a>
+            `;
+        });
+        html += '</div></div>';
+    }
+
+    html += '</section>';
+    return html;
+}
+
+// Get base path for navigation
+function getBasePath() {
+    const hostname = window.location.hostname;
+    if (hostname.includes('github.io')) {
+        return '/step1/';
+    }
+    return '../';
 }
 
 // Render search results
