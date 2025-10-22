@@ -37,6 +37,32 @@ class DataLoader {
             const hematologyOncologyDiseasesModule = await import('./data/diseases/hematology-oncology-diseases.js');
             const renalCategoriesModule = await import('./data/categories/renal-categories.js');
             const renalDiseasesModule = await import('./data/diseases/renal-diseases.js');
+            const endocrineCategoriesModule = await import('./data/categories/endocrine-categories.js');
+            const endocrineDiseasesModule = await import('./data/diseases/endocrine-diseases.js');
+            const neurologyCategoriesModule = await import('./data/categories/neurology-categories.js');
+            const neurologyDiseasesModule = await import('./data/diseases/neurology-diseases.js');
+            const rheumatologyCategoriesModule = await import('./data/categories/rheumatology-categories.js');
+            const rheumatologyDiseasesModule = await import('./data/diseases/rheumatology-diseases.js');
+            const infectiousDiseaseCategoriesModule = await import('./data/categories/infectious-disease-categories.js');
+            const infectiousDiseaseDiseasesModule = await import('./data/diseases/infectious-disease-diseases.js');
+            const musculoskeletalCategoriesModule = await import('./data/categories/musculoskeletal-categories.js');
+            const musculoskeletalDiseasesModule = await import('./data/diseases/musculoskeletal-diseases.js');
+            const dermatologyCategoriesModule = await import('./data/categories/dermatology-categories.js');
+            const dermatologyDiseasesModule = await import('./data/diseases/dermatology-diseases.js');
+            const genitourinaryCategoriesModule = await import('./data/categories/genitourinary-categories.js');
+            const genitourinaryDiseasesModule = await import('./data/diseases/genitourinary-diseases.js');
+            const reproductiveObgynCategoriesModule = await import('./data/categories/reproductive-obgyn-categories.js');
+            const reproductiveObgynDiseasesModule = await import('./data/diseases/reproductive-obgyn-diseases.js');
+            const ophthalmologyCategoriesModule = await import('./data/categories/ophthalmology-categories.js');
+            const ophthalmologyDiseasesModule = await import('./data/diseases/ophthalmology-diseases.js');
+            const entCategoriesModule = await import('./data/categories/ent-categories.js');
+            const entDiseasesModule = await import('./data/diseases/ent-diseases.js');
+            const immunologyCategoriesModule = await import('./data/categories/immunology-categories.js');
+            const immunologyDiseasesModule = await import('./data/diseases/immunology-diseases.js');
+            const pediatricsCategoriesModule = await import('./data/categories/pediatrics-categories.js');
+            const pediatricsDiseasesModule = await import('./data/diseases/pediatrics-diseases.js');
+            const toxicologyCategoriesModule = await import('./data/categories/toxicology-categories.js');
+            const toxicologyDiseasesModule = await import('./data/diseases/toxicology-diseases.js');
 
             this.systems = systemsModule.default || systemsModule.systems;
 
@@ -47,7 +73,20 @@ class DataLoader {
             const psychiatryCategories = psychiatryCategoriesModule.default || psychiatryCategoriesModule.psychiatryCategories;
             const hematologyOncologyCategories = hematologyOncologyCategoriesModule.default || hematologyOncologyCategoriesModule.hematologyOncologyCategories;
             const renalCategories = renalCategoriesModule.default || renalCategoriesModule.renalCategories;
-            this.categories = [...cvCategories, ...respiratoryCategories, ...giCategories, ...psychiatryCategories, ...hematologyOncologyCategories, ...renalCategories];
+            const endocrineCategories = endocrineCategoriesModule.default || endocrineCategoriesModule.endocrineCategories;
+            const neurologyCategories = neurologyCategoriesModule.default || neurologyCategoriesModule.neurologyCategories;
+            const rheumatologyCategories = rheumatologyCategoriesModule.default || rheumatologyCategoriesModule.rheumatologyCategories;
+            const infectiousDiseaseCategories = infectiousDiseaseCategoriesModule.default || infectiousDiseaseCategoriesModule.infectiousDiseaseCategories;
+            const musculoskeletalCategories = musculoskeletalCategoriesModule.default || musculoskeletalCategoriesModule.musculoskeletalCategories;
+            const dermatologyCategories = dermatologyCategoriesModule.default || dermatologyCategoriesModule.dermatologyCategories;
+            const genitourinaryCategories = genitourinaryCategoriesModule.default || genitourinaryCategoriesModule.genitourinaryCategories;
+            const reproductiveObgynCategories = reproductiveObgynCategoriesModule.default || reproductiveObgynCategoriesModule.reproductiveObgynCategories;
+            const ophthalmologyCategories = ophthalmologyCategoriesModule.default || ophthalmologyCategoriesModule.ophthalmologyCategories;
+            const entCategories = entCategoriesModule.default || entCategoriesModule.entCategories;
+            const immunologyCategories = immunologyCategoriesModule.default || immunologyCategoriesModule.immunologyCategories;
+            const pediatricsCategories = pediatricsCategoriesModule.default || pediatricsCategoriesModule.pediatricsCategories;
+            const toxicologyCategories = toxicologyCategoriesModule.default || toxicologyCategoriesModule.toxicologyCategories;
+            this.categories = [...cvCategories, ...respiratoryCategories, ...giCategories, ...psychiatryCategories, ...hematologyOncologyCategories, ...renalCategories, ...endocrineCategories, ...neurologyCategories, ...rheumatologyCategories, ...infectiousDiseaseCategories, ...musculoskeletalCategories, ...dermatologyCategories, ...genitourinaryCategories, ...reproductiveObgynCategories, ...ophthalmologyCategories, ...entCategories, ...immunologyCategories, ...pediatricsCategories, ...toxicologyCategories];
 
             // Combine all diseases
             const cvDiseases = cvDiseasesModule.default || cvDiseasesModule.cvDiseases;
@@ -56,7 +95,20 @@ class DataLoader {
             const psychiatryDiseases = psychiatryDiseasesModule.default || psychiatryDiseasesModule.psychiatryDiseases;
             const hematologyOncologyDiseases = hematologyOncologyDiseasesModule.default || hematologyOncologyDiseasesModule.hematologyOncologyDiseases;
             const renalDiseases = renalDiseasesModule.default || renalDiseasesModule.renalDiseases;
-            this.diseases = [...cvDiseases, ...respiratoryDiseases, ...giDiseases, ...psychiatryDiseases, ...hematologyOncologyDiseases, ...renalDiseases];
+            const endocrineDiseases = endocrineDiseasesModule.default || endocrineDiseasesModule.endocrineDiseases;
+            const neurologyDiseases = neurologyDiseasesModule.default || neurologyDiseasesModule.neurologyDiseases;
+            const rheumatologyDiseases = rheumatologyDiseasesModule.default || rheumatologyDiseasesModule.rheumatologyDiseases;
+            const infectiousDiseases = infectiousDiseaseDiseasesModule.default || infectiousDiseaseDiseasesModule.infectiousDiseases;
+            const musculoskeletalDiseases = musculoskeletalDiseasesModule.default || musculoskeletalDiseasesModule.musculoskeletalDiseases;
+            const dermatologyDiseases = dermatologyDiseasesModule.default || dermatologyDiseasesModule.dermatologyDiseases;
+            const genitourinaryDiseases = genitourinaryDiseasesModule.default || genitourinaryDiseasesModule.genitourinaryDiseases;
+            const reproductiveObgynDiseases = reproductiveObgynDiseasesModule.default || reproductiveObgynDiseasesModule.reproductiveObgynDiseases;
+            const ophthalmologyDiseases = ophthalmologyDiseasesModule.default || ophthalmologyDiseasesModule.ophthalmologyDiseases;
+            const entDiseases = entDiseasesModule.default || entDiseasesModule.entDiseases;
+            const immunologyDiseases = immunologyDiseasesModule.default || immunologyDiseasesModule.immunologyDiseases;
+            const pediatricsDiseases = pediatricsDiseasesModule.default || pediatricsDiseasesModule.pediatricsDiseases;
+            const toxicologyDiseases = toxicologyDiseasesModule.default || toxicologyDiseasesModule.toxicologyDiseases;
+            this.diseases = [...cvDiseases, ...respiratoryDiseases, ...giDiseases, ...psychiatryDiseases, ...hematologyOncologyDiseases, ...renalDiseases, ...endocrineDiseases, ...neurologyDiseases, ...rheumatologyDiseases, ...infectiousDiseases, ...musculoskeletalDiseases, ...dermatologyDiseases, ...genitourinaryDiseases, ...reproductiveObgynDiseases, ...ophthalmologyDiseases, ...entDiseases, ...immunologyDiseases, ...pediatricsDiseases, ...toxicologyDiseases];
 
             // Build indexes
             this.buildIndexes();

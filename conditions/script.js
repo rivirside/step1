@@ -196,15 +196,8 @@ function createSystemNode(system) {
     header.innerHTML = `
         <span class="expand-icon">▶</span>
         <span class="node-title">${system.name}</span>
+        <span class="info-icon" title="View system details">→</span>
     `;
-
-    const categories = dataLoader.getCategoriesForSystem(system.id);
-    const diseaseCount = categories.reduce((sum, cat) => sum + cat.diseaseCount, 0);
-
-    const badge = document.createElement('span');
-    badge.className = 'count-badge';
-    badge.textContent = diseaseCount;
-    header.appendChild(badge);
 
     node.appendChild(header);
 
@@ -213,6 +206,8 @@ function createSystemNode(system) {
     categoriesContainer.className = 'categories-container';
     categoriesContainer.style.display = 'none';
 
+    // Get categories for this system
+    const categories = dataLoader.getCategoriesForSystem(system.id);
     categories.forEach(category => {
         const categoryNode = createCategoryNode(category);
         categoriesContainer.appendChild(categoryNode);
@@ -220,15 +215,18 @@ function createSystemNode(system) {
 
     node.appendChild(categoriesContainer);
 
-    // Toggle expand/collapse
+    // Toggle expand/collapse when clicking anywhere on header (except info icon)
     header.addEventListener('click', (e) => {
-        e.stopPropagation();
+        // Don't toggle if clicking the info icon
+        if (e.target.classList.contains('info-icon')) {
+            return;
+        }
         toggleSystemNode(node);
     });
 
-    // Click to show system detail
-    node.addEventListener('click', (e) => {
-        if (e.target === header || e.target.parentElement === header) return;
+    // Show system detail when clicking info icon
+    const infoIcon = header.querySelector('.info-icon');
+    infoIcon.addEventListener('click', (e) => {
         e.stopPropagation();
         selectEntity(system, 'system');
     });
@@ -247,12 +245,72 @@ function createCategoryNode(category) {
     header.innerHTML = `
         <span class="expand-icon">▶</span>
         <span class="node-title">${category.name}</span>
+        <span class="info-icon" title="View category details">→</span>
     `;
 
-    const badge = document.createElement('span');
-    badge.className = 'count-badge';
-    badge.textContent = category.diseaseCount;
-    header.appendChild(badge);
+    node.appendChild(header);
+
+    // Check if category has subcategories
+    if (category.subcategories && category.subcategories.length > 0) {
+        // Create subcategories container
+        const subcategoriesContainer = document.createElement('div');
+        subcategoriesContainer.className = 'subcategories-container';
+        subcategoriesContainer.style.display = 'none';
+
+        category.subcategories.forEach(subcategory => {
+            const subcategoryNode = createSubcategoryNode(subcategory, category.id);
+            subcategoriesContainer.appendChild(subcategoryNode);
+        });
+
+        node.appendChild(subcategoriesContainer);
+    } else {
+        // No subcategories - create diseases container directly
+        const diseasesContainer = document.createElement('div');
+        diseasesContainer.className = 'diseases-container';
+        diseasesContainer.style.display = 'none';
+
+        const diseases = dataLoader.getDiseasesForCategory(category.id);
+        diseases.forEach(disease => {
+            const diseaseNode = createDiseaseNode(disease);
+            diseasesContainer.appendChild(diseaseNode);
+        });
+
+        node.appendChild(diseasesContainer);
+    }
+
+    // Toggle expand/collapse when clicking anywhere on header (except info icon)
+    header.addEventListener('click', (e) => {
+        // Don't toggle if clicking the info icon
+        if (e.target.classList.contains('info-icon')) {
+            return;
+        }
+        toggleCategoryNode(node);
+    });
+
+    // Show category detail when clicking info icon
+    const infoIcon = header.querySelector('.info-icon');
+    infoIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectEntity(category, 'category');
+    });
+
+    return node;
+}
+
+// Create subcategory node
+function createSubcategoryNode(subcategory, categoryId) {
+    const node = document.createElement('div');
+    node.className = 'tree-node subcategory-node';
+    node.dataset.subcategoryId = subcategory.id;
+    node.dataset.categoryId = categoryId;
+
+    const header = document.createElement('div');
+    header.className = 'node-header';
+    header.innerHTML = `
+        <span class="expand-icon">▶</span>
+        <span class="node-title">${subcategory.name}</span>
+        <span class="info-icon" title="View subcategory details">→</span>
+    `;
 
     node.appendChild(header);
 
@@ -261,18 +319,34 @@ function createCategoryNode(category) {
     diseasesContainer.className = 'diseases-container';
     diseasesContainer.style.display = 'none';
 
-    const diseases = dataLoader.getDiseasesForCategory(category.id);
-    diseases.forEach(disease => {
-        const diseaseNode = createDiseaseNode(disease);
-        diseasesContainer.appendChild(diseaseNode);
+    // Get diseases for this subcategory
+    subcategory.diseaseIds.forEach(diseaseId => {
+        const disease = dataLoader.getDisease(diseaseId);
+        if (disease) {
+            const diseaseNode = createDiseaseNode(disease);
+            diseasesContainer.appendChild(diseaseNode);
+        }
     });
 
     node.appendChild(diseasesContainer);
 
-    // Toggle expand/collapse
+    // Toggle expand/collapse when clicking anywhere on header (except info icon)
     header.addEventListener('click', (e) => {
+        // Don't toggle if clicking the info icon
+        if (e.target.classList.contains('info-icon')) {
+            return;
+        }
+        toggleSubcategoryNode(node);
+    });
+
+    // Show subcategory detail when clicking info icon
+    const infoIcon = header.querySelector('.info-icon');
+    infoIcon.addEventListener('click', (e) => {
         e.stopPropagation();
-        toggleCategoryNode(node);
+
+        // Get the parent category to pass full context
+        const category = dataLoader.getCategory(categoryId);
+        selectEntity({...subcategory, categoryId, categoryName: category.name}, 'subcategory');
     });
 
     return node;
@@ -320,6 +394,26 @@ function toggleSystemNode(node) {
 
 // Toggle category node
 function toggleCategoryNode(node) {
+    // Check if this category has subcategories or diseases
+    const subcategoriesContainer = node.querySelector('.subcategories-container');
+    const diseasesContainer = node.querySelector('.diseases-container');
+    const expandIcon = node.querySelector('.expand-icon');
+
+    const containerToToggle = subcategoriesContainer || diseasesContainer;
+
+    if (containerToToggle && containerToToggle.style.display === 'none') {
+        containerToToggle.style.display = 'block';
+        expandIcon.textContent = '▼';
+        node.classList.add('expanded');
+    } else if (containerToToggle) {
+        containerToToggle.style.display = 'none';
+        expandIcon.textContent = '▶';
+        node.classList.remove('expanded');
+    }
+}
+
+// Toggle subcategory node
+function toggleSubcategoryNode(node) {
     const diseasesContainer = node.querySelector('.diseases-container');
     const expandIcon = node.querySelector('.expand-icon');
 
@@ -346,6 +440,7 @@ function selectEntity(entity, type) {
 
     const selector = type === 'system' ? `[data-system-id="${entity.id}"]` :
                      type === 'category' ? `[data-category-id="${entity.id}"]` :
+                     type === 'subcategory' ? `[data-subcategory-id="${entity.id}"]` :
                      `[data-disease-id="${entity.id}"]`;
 
     const selectedNode = document.querySelector(selector);
@@ -358,6 +453,8 @@ function selectEntity(entity, type) {
         renderSystemDetail(entity);
     } else if (type === 'category') {
         renderCategoryDetail(entity);
+    } else if (type === 'subcategory') {
+        renderSubcategoryDetail(entity);
     } else if (type === 'disease') {
         renderDiseaseDetail(entity);
     }
@@ -432,6 +529,7 @@ function renderCategoryDetail(category) {
     if (!detailPanel) return;
 
     const diseases = dataLoader.getDiseasesForCategory(category.id);
+    const subcategories = category.subcategories || [];
 
     detailPanel.innerHTML = `
         <div class="entity-detail category-detail">
@@ -440,44 +538,76 @@ function renderCategoryDetail(category) {
                 <h2>${category.name}</h2>
             </div>
 
-            ${category.detail ? `
-                ${category.detail.approach ? `
-                    <section class="detail-section">
-                        <h3>Approach</h3>
-                        <p>${category.detail.approach}</p>
-                    </section>
-                ` : ''}
+            ${category.detail && category.detail.overview ? `
+                <section class="detail-section conversational">
+                    <h3>🎯 The Big Picture</h3>
+                    <p class="lead-paragraph">${category.detail.overview}</p>
+                </section>
+            ` : ''}
 
-                ${category.detail.redFlags ? `
-                    <section class="detail-section important">
-                        <h3>🚩 Red Flags</h3>
-                        <ul>
-                            ${category.detail.redFlags.map(flag => `<li>${flag}</li>`).join('')}
-                        </ul>
-                    </section>
-                ` : ''}
+            ${category.detail && category.detail.classification ? `
+                <section class="detail-section">
+                    <h3>📚 How to Think About It</h3>
+                    <p class="intro-text">Here's a practical way to organize these conditions in your mind:</p>
+                    <ul class="styled-list">
+                        ${category.detail.classification.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
 
-                ${category.detail.initialWorkup ? `
-                    <section class="detail-section">
-                        <h3>Initial Workup</h3>
-                        <ul>
-                            ${category.detail.initialWorkup.map(item => `<li>${item}</li>`).join('')}
-                        </ul>
-                    </section>
-                ` : ''}
+            ${category.detail && category.detail.generalPrinciples ? `
+                <section class="detail-section highlight">
+                    <h3>💡 Key Principles to Remember</h3>
+                    <p class="intro-text">These are the high-yield concepts you'll use over and over:</p>
+                    <ul class="styled-list">
+                        ${category.detail.generalPrinciples.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
 
-                ${category.detail.differentialCategories ? `
-                    <section class="detail-section">
-                        <h3>Differential Categories</h3>
-                        <ul>
-                            ${category.detail.differentialCategories.map(cat => `<li>${cat}</li>`).join('')}
-                        </ul>
-                    </section>
-                ` : ''}
+            ${subcategories.length > 0 ? `
+                <section class="detail-section">
+                    <h3>🗂️ Subcategories (${subcategories.length})</h3>
+                    <p class="intro-text">We've organized this category into focused subcategories to make studying easier:</p>
+                    <div class="subcategory-grid">
+                        ${subcategories.map(sub => `
+                            <div class="subcategory-card" data-subcategory-id="${sub.id}" data-category-id="${category.id}">
+                                <h4>${sub.name}</h4>
+                                <p class="description">${sub.description || ''}</p>
+                                <span class="disease-count">${sub.diseaseIds ? sub.diseaseIds.length : 0} diseases</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            ` : ''}
+
+            ${category.detail && (category.detail.approach || category.detail.redFlags || category.detail.initialWorkup) ? `
+                <section class="detail-section pearls">
+                    <h3>🎯 Clinical Approach</h3>
+                    ${category.detail.approach ? `<p class="intro-text">${category.detail.approach}</p>` : ''}
+
+                    ${category.detail.redFlags ? `
+                        <div class="red-flags-box">
+                            <h4>🚩 Red Flags - Don't Miss These!</h4>
+                            <ul>
+                                ${category.detail.redFlags.map(flag => `<li>${flag}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+
+                    ${category.detail.initialWorkup ? `
+                        <div class="workup-box">
+                            <h4>Initial Workup</h4>
+                            <ul>
+                                ${category.detail.initialWorkup.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </section>
             ` : ''}
 
             <section class="detail-section">
-                <h3>Diseases in this Category (${diseases.length})</h3>
+                <h3>📋 All Diseases in this Category (${diseases.length})</h3>
                 <div class="disease-list">
                     ${diseases.map(disease => `
                         <div class="disease-card severity-${disease.severity}" data-disease-id="${disease.id}">
@@ -503,6 +633,388 @@ function renderCategoryDetail(category) {
             selectEntity(disease, 'disease');
         });
     });
+
+    // Add click handlers for subcategory cards
+    detailPanel.querySelectorAll('.subcategory-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const subcategoryId = card.dataset.subcategoryId;
+            const categoryId = card.dataset.categoryId;
+            const subcategory = category.subcategories.find(s => s.id === subcategoryId);
+            const parentCategory = dataLoader.getCategory(categoryId);
+            if (subcategory) {
+                selectEntity({...subcategory, categoryId, categoryName: parentCategory.name}, 'subcategory');
+            }
+        });
+    });
+}
+
+// Helper function to parse and render comparison matrix as HTML table
+function renderComparisonTable(comparisonMatrix) {
+    const { title, description, content } = comparisonMatrix;
+
+    // Parse the content to extract disease information
+    const diseases = [];
+    const lines = content.split('\n').filter(line => line.trim());
+
+    let currentDisease = null;
+    let currentField = null;
+
+    lines.forEach(line => {
+        const trimmed = line.trim();
+
+        // Check if this is a disease header (all caps followed by colon or parentheses)
+        if (trimmed.match(/^[A-Z\s\(\)]+:/)) {
+            if (currentDisease) {
+                diseases.push(currentDisease);
+            }
+            const diseaseName = trimmed.replace(/:$/, '');
+            currentDisease = { name: diseaseName, fields: [] };
+        }
+        // Check if this is a field (starts with - )
+        else if (trimmed.startsWith('- ') && currentDisease) {
+            const fieldMatch = trimmed.match(/^-\s+([^:]+):\s*(.+)$/);
+            if (fieldMatch) {
+                const [, fieldName, fieldValue] = fieldMatch;
+                currentDisease.fields.push({ name: fieldName.trim(), value: fieldValue.trim() });
+            }
+        }
+    });
+
+    if (currentDisease) {
+        diseases.push(currentDisease);
+    }
+
+    // Extract unique field names
+    const allFieldNames = [...new Set(diseases.flatMap(d => d.fields.map(f => f.name)))];
+
+    // Build HTML table
+    let html = `
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        ${diseases.map(d => `<th>${d.name}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+    `;
+
+    allFieldNames.forEach(fieldName => {
+        html += '<tr>';
+        html += `<td class="field-name">${fieldName}</td>`;
+        diseases.forEach(disease => {
+            const field = disease.fields.find(f => f.name === fieldName);
+            html += `<td>${field ? field.value : '—'}</td>`;
+        });
+        html += '</tr>';
+    });
+
+    html += `
+                </tbody>
+            </table>
+        </div>
+    `;
+
+    return html;
+}
+
+// Render subcategory detail
+function renderSubcategoryDetail(subcategory) {
+    const detailPanel = document.getElementById('detailPanel');
+    if (!detailPanel) return;
+
+    // Get diseases for this subcategory
+    const diseases = subcategory.diseaseIds.map(id => dataLoader.getDisease(id)).filter(d => d);
+
+    // Helper function to render flexible content
+    const renderFlexibleContent = (detail) => {
+        if (!detail) return '';
+
+        let html = '';
+
+        // Overview
+        if (detail.overview) {
+            html += `
+                <section class="detail-section">
+                    <h3>Overview</h3>
+                    <p>${detail.overview}</p>
+                </section>
+            `;
+        }
+
+        // Diagnostic Algorithm (formatted as preformatted text or Mermaid diagram)
+        if (detail.diagnosticAlgorithm) {
+            if (typeof detail.diagnosticAlgorithm === 'object' && detail.diagnosticAlgorithm.type === 'mermaid') {
+                // Render Mermaid flowchart with controls
+                const diagramId = 'diagram-' + Math.random().toString(36).substr(2, 9);
+                html += `
+                    <section class="detail-section highlight flowchart-section">
+                        <div class="flowchart-header">
+                            <h3>📋 Diagnostic Approach</h3>
+                            <div class="flowchart-controls">
+                                <button class="flowchart-btn" onclick="toggleFlowchart('${diagramId}')" title="Toggle flowchart">
+                                    <span class="toggle-icon">−</span>
+                                </button>
+                                <button class="flowchart-btn" onclick="zoomFlowchart('${diagramId}', 1.2)" title="Zoom in">+</button>
+                                <button class="flowchart-btn" onclick="zoomFlowchart('${diagramId}', 0.8)" title="Zoom out">−</button>
+                                <button class="flowchart-btn" onclick="resetFlowchart('${diagramId}')" title="Reset zoom">↻</button>
+                            </div>
+                        </div>
+                        <div class="mermaid-container" id="${diagramId}" data-zoom="1">
+                            <div class="mermaid-wrapper">
+                                <pre class="mermaid">${detail.diagnosticAlgorithm.content}</pre>
+                            </div>
+                        </div>
+                    </section>
+                `;
+            } else {
+                // Render plain text algorithm
+                const algorithmText = typeof detail.diagnosticAlgorithm === 'string'
+                    ? detail.diagnosticAlgorithm
+                    : detail.diagnosticAlgorithm.content || '';
+                html += `
+                    <section class="detail-section highlight">
+                        <h3>📋 Diagnostic Approach</h3>
+                        <pre class="algorithm">${algorithmText}</pre>
+                    </section>
+                `;
+            }
+        }
+
+        // Clinical Approach (free-form)
+        if (detail.clinicalApproach) {
+            html += `
+                <section class="detail-section">
+                    <h3>Clinical Approach</h3>
+                    <pre class="clinical-approach">${detail.clinicalApproach}</pre>
+                </section>
+            `;
+        }
+
+        // Comparison Matrix (2x2 or other) - render as HTML table
+        if (detail.comparisonMatrix) {
+            html += `
+                <section class="detail-section important">
+                    <h3>🔍 ${detail.comparisonMatrix.title || 'Comparison'}</h3>
+                    ${detail.comparisonMatrix.description ? `<p><strong>${detail.comparisonMatrix.description}</strong></p>` : ''}
+                    ${renderComparisonTable(detail.comparisonMatrix)}
+                </section>
+            `;
+        }
+
+        // Key Features (bullets)
+        if (detail.keyFeatures && detail.keyFeatures.length > 0) {
+            html += `
+                <section class="detail-section">
+                    <h3>Key Features</h3>
+                    <ul>
+                        ${detail.keyFeatures.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </section>
+            `;
+        }
+
+        // Disease Distinctions
+        if (detail.diseaseDistinctions) {
+            html += `
+                <section class="detail-section pearls">
+                    <h3>💎 How to Differentiate</h3>
+                    <pre class="disease-distinctions">${detail.diseaseDistinctions}</pre>
+                </section>
+            `;
+        }
+
+        // Clinical Pearls
+        if (detail.clinicalPearls && detail.clinicalPearls.length > 0) {
+            html += `
+                <section class="detail-section pearls">
+                    <h3>💎 Clinical Pearls</h3>
+                    <ul>
+                        ${detail.clinicalPearls.map(pearl => `<li>${pearl}</li>`).join('')}
+                    </ul>
+                </section>
+            `;
+        }
+
+        return html;
+    };
+
+    // Check if we have enough content to warrant tabs
+    const hasMultipleSections = subcategory.subcategoryDetail && (
+        (subcategory.subcategoryDetail.diagnosticAlgorithm ? 1 : 0) +
+        (subcategory.subcategoryDetail.comparisonMatrix ? 1 : 0) +
+        (subcategory.subcategoryDetail.keyFeatures ? 1 : 0) +
+        (subcategory.subcategoryDetail.clinicalPearls ? 1 : 0) > 2
+    );
+
+    detailPanel.innerHTML = `
+        <div class="entity-detail subcategory-detail">
+            <div class="entity-header">
+                <span class="entity-type-badge">Subcategory</span>
+                <h2>${subcategory.name}</h2>
+                <p class="breadcrumb">${subcategory.categoryName || ''}</p>
+            </div>
+
+            ${subcategory.description ? `
+                <section class="detail-section">
+                    <p><strong>${subcategory.description}</strong></p>
+                </section>
+            ` : ''}
+
+            ${hasMultipleSections ? `
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        ${subcategory.subcategoryDetail.diagnosticAlgorithm ? '<button class="tab-btn" data-tab="diagnosis">Diagnosis</button>' : ''}
+                        ${subcategory.subcategoryDetail.comparisonMatrix ? '<button class="tab-btn" data-tab="comparison">Comparison</button>' : ''}
+                        ${subcategory.subcategoryDetail.clinicalPearls || subcategory.subcategoryDetail.keyFeatures ? '<button class="tab-btn" data-tab="pearls">Key Points</button>' : ''}
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tab-pane active" data-tab-pane="overview">
+                            ${subcategory.subcategoryDetail.overview ? `
+                                <section class="detail-section">
+                                    <h3>Overview</h3>
+                                    <p>${subcategory.subcategoryDetail.overview}</p>
+                                </section>
+                            ` : ''}
+                            ${subcategory.subcategoryDetail.diseaseDistinctions ? `
+                                <section class="detail-section pearls">
+                                    <h3>💎 How to Differentiate</h3>
+                                    <pre class="disease-distinctions">${subcategory.subcategoryDetail.diseaseDistinctions}</pre>
+                                </section>
+                            ` : ''}
+                        </div>
+                        ${subcategory.subcategoryDetail.diagnosticAlgorithm ? `
+                            <div class="tab-pane" data-tab-pane="diagnosis">
+                                ${subcategory.subcategoryDetail.diagnosticAlgorithm ? (
+                                    typeof subcategory.subcategoryDetail.diagnosticAlgorithm === 'object' && subcategory.subcategoryDetail.diagnosticAlgorithm.type === 'mermaid' ?
+                                        `<section class="detail-section highlight flowchart-section">
+                                            <div class="flowchart-header">
+                                                <h3>📋 Diagnostic Approach</h3>
+                                                <div class="flowchart-controls">
+                                                    <button class="flowchart-btn" onclick="toggleFlowchart('diagram-diagnosis')" title="Toggle flowchart">
+                                                        <span class="toggle-icon">−</span>
+                                                    </button>
+                                                    <button class="flowchart-btn" onclick="zoomFlowchart('diagram-diagnosis', 1.2)" title="Zoom in">+</button>
+                                                    <button class="flowchart-btn" onclick="zoomFlowchart('diagram-diagnosis', 0.8)" title="Zoom out">−</button>
+                                                    <button class="flowchart-btn" onclick="resetFlowchart('diagram-diagnosis')" title="Reset zoom">↻</button>
+                                                </div>
+                                            </div>
+                                            <div class="mermaid-container" id="diagram-diagnosis" data-zoom="1">
+                                                <div class="mermaid-wrapper">
+                                                    <pre class="mermaid">${subcategory.subcategoryDetail.diagnosticAlgorithm.content}</pre>
+                                                </div>
+                                            </div>
+                                        </section>`
+                                    : `<section class="detail-section highlight">
+                                            <h3>📋 Diagnostic Approach</h3>
+                                            <pre class="algorithm">${typeof subcategory.subcategoryDetail.diagnosticAlgorithm === 'string' ? subcategory.subcategoryDetail.diagnosticAlgorithm : subcategory.subcategoryDetail.diagnosticAlgorithm.content}</pre>
+                                        </section>`
+                                ) : ''}
+                            </div>
+                        ` : ''}
+                        ${subcategory.subcategoryDetail.comparisonMatrix ? `
+                            <div class="tab-pane" data-tab-pane="comparison">
+                                <section class="detail-section important">
+                                    <h3>🔍 ${subcategory.subcategoryDetail.comparisonMatrix.title || 'Comparison'}</h3>
+                                    ${subcategory.subcategoryDetail.comparisonMatrix.description ? `<p><strong>${subcategory.subcategoryDetail.comparisonMatrix.description}</strong></p>` : ''}
+                                    ${renderComparisonTable(subcategory.subcategoryDetail.comparisonMatrix)}
+                                </section>
+                            </div>
+                        ` : ''}
+                        ${subcategory.subcategoryDetail.clinicalPearls || subcategory.subcategoryDetail.keyFeatures ? `
+                            <div class="tab-pane" data-tab-pane="pearls">
+                                ${subcategory.subcategoryDetail.keyFeatures ? `
+                                    <section class="detail-section">
+                                        <h3>Key Features</h3>
+                                        <ul>
+                                            ${subcategory.subcategoryDetail.keyFeatures.map(feature => `<li>${feature}</li>`).join('')}
+                                        </ul>
+                                    </section>
+                                ` : ''}
+                                ${subcategory.subcategoryDetail.clinicalPearls ? `
+                                    <section class="detail-section pearls">
+                                        <h3>💎 Clinical Pearls</h3>
+                                        <ul>
+                                            ${subcategory.subcategoryDetail.clinicalPearls.map(pearl => `<li>${pearl}</li>`).join('')}
+                                        </ul>
+                                    </section>
+                                ` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            ` : renderFlexibleContent(subcategory.subcategoryDetail)}
+
+            <section class="detail-section">
+                <h3>Diseases in this Subcategory (${diseases.length})</h3>
+                <div class="disease-list">
+                    ${diseases.map(disease => `
+                        <div class="disease-card severity-${disease.severity}" data-disease-id="${disease.id}">
+                            <span class="severity-indicator severity-${disease.severity}"></span>
+                            <div class="disease-card-content">
+                                <h4>${disease.name}</h4>
+                                <p class="disease-tags">
+                                    ${disease.tags.slice(0, 3).map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                </p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <div class="quiz-placeholder">
+                    <button class="quiz-button" disabled>
+                        📝 Practice Questions (Coming Soon)
+                    </button>
+                </div>
+            </section>
+        </div>
+    `;
+
+    // Add click handlers for disease cards
+    detailPanel.querySelectorAll('.disease-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const diseaseId = card.dataset.diseaseId;
+            const disease = dataLoader.getDisease(diseaseId);
+            selectEntity(disease, 'disease');
+        });
+    });
+
+    // Setup tab switching
+    detailPanel.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const tabName = e.target.dataset.tab;
+
+            // Remove active class from all tabs and panes
+            detailPanel.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            detailPanel.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+            // Add active class to clicked tab and corresponding pane
+            e.target.classList.add('active');
+            const pane = detailPanel.querySelector(`[data-tab-pane="${tabName}"]`);
+            if (pane) {
+                pane.classList.add('active');
+
+                // Render Mermaid diagrams in the newly visible pane
+                if (window.mermaid && pane.querySelector('.mermaid')) {
+                    window.mermaid.run({
+                        querySelector: '.mermaid',
+                        nodes: pane.querySelectorAll('.mermaid')
+                    });
+                }
+            }
+        });
+    });
+
+    // Render Mermaid diagrams if present
+    if (window.mermaid) {
+        window.mermaid.run({
+            querySelector: '.mermaid'
+        });
+    }
 }
 
 // Render disease detail
@@ -830,6 +1342,38 @@ function showError(message) {
         `;
     }
 }
+
+// Flowchart control functions
+window.toggleFlowchart = function(diagramId) {
+    const container = document.getElementById(diagramId);
+    const toggleIcon = event.target.closest('button').querySelector('.toggle-icon');
+
+    if (container.style.display === 'none') {
+        container.style.display = 'flex';
+        toggleIcon.textContent = '−';
+    } else {
+        container.style.display = 'none';
+        toggleIcon.textContent = '+';
+    }
+};
+
+window.zoomFlowchart = function(diagramId, factor) {
+    const container = document.getElementById(diagramId);
+    const currentZoom = parseFloat(container.dataset.zoom || 1);
+    const newZoom = Math.max(0.5, Math.min(3, currentZoom * factor));
+
+    container.dataset.zoom = newZoom;
+    const wrapper = container.querySelector('.mermaid-wrapper');
+    wrapper.style.transform = `scale(${newZoom})`;
+    wrapper.style.transformOrigin = 'top center';
+};
+
+window.resetFlowchart = function(diagramId) {
+    const container = document.getElementById(diagramId);
+    container.dataset.zoom = 1;
+    const wrapper = container.querySelector('.mermaid-wrapper');
+    wrapper.style.transform = 'scale(1)';
+};
 
 // Start application when DOM is ready
 if (document.readyState === 'loading') {

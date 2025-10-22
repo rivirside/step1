@@ -57,6 +57,139 @@ const gastrointestinalCategories = [
             "hemorrhoids",
             "angiodysplasia"
         ],
+        subcategories: [
+            {
+                id: "upper-gi-bleed",
+                name: "Upper GI Bleed (UGIB)",
+                diseaseIds: [
+                    "peptic-ulcer-disease",
+                    "gastritis",
+                    "esophageal-varices",
+                    "mallory-weiss-tear"
+                ],
+                description: "Bleeding proximal to ligament of Treitz. Hematemesis, coffee-ground emesis, melena.",
+                subcategoryDetail: {
+                    diagnosticAlgorithm: `Step 1: Presentation & Hemodynamics
+  - Hematemesis (bright red) → active UGIB
+  - Coffee-ground emesis → slower UGIB (gastric acid exposure)
+  - Melena (black tarry stool) → UGIB (blood digested in GI tract)
+  - Check vitals: HR >100, SBP <90 → unstable → aggressive resuscitation
+
+Step 2: Resuscitation (if unstable)
+  - 2 large-bore IVs
+  - Crystalloid resuscitation
+  - Type & cross for transfusion
+  - Keep Hgb >7 (restrictive strategy)
+
+Step 3: Risk Stratification
+  - Glasgow-Blatchford score (predicts need for intervention)
+  - NG tube (optional): bloody/coffee-ground confirms UGIB
+
+Step 4: EGD within 24h (urgent if unstable)
+  - Identify source: ulcer, varices, Mallory-Weiss, gastritis
+  - Therapeutic: cauterization, injection, clipping, banding`,
+                    keyFeatures: [
+                        "Hematemesis = UGIB (proximal to ligament of Treitz)",
+                        "Melena = typically UGIB (blood digested → black/tarry)",
+                        "NG tube: positive confirms UGIB, negative doesn't rule out (duodenal source)",
+                        "EGD is diagnostic AND therapeutic (cautery, clips, injection, banding)"
+                    ],
+                    diseaseDistinctions: `PUD (50% of UGIB):
+  - Epigastric pain
+  - H. pylori or NSAID history
+  - EGD: ulcer in stomach or duodenum
+  - Tx: PPI, treat H. pylori
+
+Varices (10-20%, highest mortality):
+  - Cirrhosis/portal hypertension
+  - Massive hematemesis
+  - EGD: dilated submucosal veins
+  - Tx: octreotide + endoscopic banding, antibiotics (SBP prophylaxis)
+
+Mallory-Weiss tear (5-15%):
+  - Preceded by forceful vomiting/retching
+  - Hematemesis after retching
+  - EGD: linear mucosal tear at GE junction
+  - Usually self-limited
+
+Gastritis:
+  - NSAIDs, alcohol, stress
+  - Diffuse mucosal inflammation
+  - Usually less severe bleeding`,
+                    clinicalPearls: [
+                        "Massive hematochezia can be UGIB (10-15%) if bleeding is brisk enough",
+                        "Variceal bleeding: give octreotide + antibiotics + urgent EGD for banding",
+                        "PUD bleeding: high-dose PPI (IV bolus + infusion) improves outcomes",
+                        "If unstable: resuscitate FIRST, then scope within hours (not minutes)"
+                    ]
+                }
+            },
+            {
+                id: "lower-gi-bleed",
+                name: "Lower GI Bleed (LGIB)",
+                diseaseIds: [
+                    "diverticulosis",
+                    "colorectal-cancer",
+                    "hemorrhoids",
+                    "angiodysplasia"
+                ],
+                description: "Bleeding distal to ligament of Treitz. Hematochezia (bright red blood per rectum), maroon stools.",
+                subcategoryDetail: {
+                    diagnosticAlgorithm: `Step 1: Confirm LGIB
+  - Hematochezia (bright red blood) = LGIB
+  - Maroon stools = LGIB or brisk UGIB
+  - Rule out UGIB: if massive/unstable → consider NG tube or EGD first
+
+Step 2: Hemodynamic assessment
+  - Stable → elective colonoscopy after prep
+  - Unstable → consider urgent intervention
+
+Step 3: If stable
+  - Colonoscopy (after bowel prep) - diagnostic AND therapeutic
+  - Identifies source in 75-95% of cases
+
+Step 4: If unstable or colonoscopy non-diagnostic
+  - Tagged RBC scan (if bleeding >0.1 mL/min)
+  - CT angiography (if bleeding >0.3 mL/min)
+  - Angiography with embolization (if refractory)`,
+                    keyFeatures: [
+                        "Hematochezia = bright red blood per rectum (usually LGIB)",
+                        "Most LGIB is self-limited (stops spontaneously in 80%)",
+                        "Colonoscopy after prep (stable patients) - diagnostic + therapeutic",
+                        "Diverticulosis is most common cause of LGIB in adults >40"
+                    ],
+                    diseaseDistinctions: `Diverticulosis (most common, 40%):
+  - Painless hematochezia
+  - Older adults
+  - Usually self-limited
+  - Colonoscopy shows diverticula
+
+Angiodysplasia (20%):
+  - Older adults, aortic stenosis
+  - Cecum/right colon (most common)
+  - Colonoscopy: vascular malformations
+  - Tx: cauterization
+
+Hemorrhoids:
+  - Bright red blood on toilet paper
+  - Associated with straining
+  - Usually minor bleeding
+  - Anoscopy diagnostic
+
+Colorectal cancer:
+  - Chronic occult bleeding → anemia
+  - Weight loss, change in bowel habits
+  - Colonoscopy with biopsy
+  - Age >50 or alarm features`,
+                    clinicalPearls: [
+                        "80% of LGIB stops spontaneously → observation often sufficient",
+                        "If massive hematochezia + unstable → rule out UGIB first (10-15% of cases)",
+                        "Diverticular bleeding: painless (vs diverticulitis which is painful)",
+                        "Angiodysplasia associated with aortic stenosis (Heyde syndrome)"
+                    ]
+                }
+            }
+        ],
         pageType: "category",
         detail: {
             approach: "Upper GI bleed (proximal to ligament of Treitz): hematemesis, coffee-ground emesis, melena. Lower GI bleed (distal to ligament of Treitz): hematochezia, maroon stools. Distinguish acute vs chronic, severity, and source.",
@@ -170,9 +303,82 @@ const gastrointestinalCategories = [
             "pancreatic-cancer",
             "hepatocellular-carcinoma"
         ],
+        subcategories: [
+            {
+                id: "hepatocellular-jaundice",
+                name: "Hepatocellular Jaundice",
+                diseaseIds: [
+                    "viral-hepatitis-a",
+                    "viral-hepatitis-b",
+                    "viral-hepatitis-c",
+                    "alcoholic-hepatitis",
+                    "cirrhosis",
+                    "hepatocellular-carcinoma"
+                ],
+                description: "Direct bilirubin ↑ + AST/ALT >> ALP (>5× ULN). Hepatocyte injury prevents bilirubin excretion.",
+                subcategoryDetail: {
+                    diagnosticAlgorithm: `Step 1: LFT pattern shows AST/ALT >> ALP (ratio >5)
+  → Hepatocellular injury confirmed
+
+Step 2: AST:ALT ratio
+  - AST:ALT >2 → Alcoholic hepatitis (AST rarely >300)
+  - AST:ALT ≈1 → Viral hepatitis (can be >1000)
+
+Step 3: Viral serologies
+  - HBsAg, anti-HBc IgM → Acute Hep B
+  - Anti-HAV IgM → Acute Hep A
+  - HCV RNA → Acute/chronic Hep C
+
+Step 4: If negative → check drug-induced, autoimmune (ANA, ASMA), Wilson (ceruloplasmin)`,
+                    keyFeatures: [
+                        "AST/ALT elevation is MASSIVE (often >500, can be >1000 in viral)",
+                        "ALP elevation is mild (<3× ULN)",
+                        "Direct bilirubin ↑ → dark urine (tea-colored)",
+                        "AST:ALT ratio >2 suggests alcoholic hepatitis"
+                    ]
+                }
+            },
+            {
+                id: "cholestatic-jaundice",
+                name: "Cholestatic/Obstructive Jaundice",
+                diseaseIds: [
+                    "primary-biliary-cholangitis",
+                    "primary-sclerosing-cholangitis",
+                    "choledocholithiasis",
+                    "acute-cholangitis",
+                    "pancreatic-cancer"
+                ],
+                description: "Direct bilirubin ↑ + ALP >> AST/ALT (>3× ULN). Bile flow obstruction.",
+                subcategoryDetail: {
+                    diagnosticAlgorithm: `Step 1: LFT pattern shows ALP >> AST/ALT (ratio >3)
+  → Cholestasis confirmed
+
+Step 2: Ultrasound to check for dilated bile ducts
+  - Dilated ducts → Extrahepatic obstruction
+  - Normal ducts → Intrahepatic cholestasis
+
+Step 3: If dilated ducts (extrahepatic obstruction)
+  → MRCP or ERCP to identify: stone, stricture, cancer
+
+Step 4: If normal ducts (intrahepatic cholestasis)
+  → PBC (AMA antibodies), PSC (p-ANCA), drug-induced`,
+                    keyFeatures: [
+                        "ALP and GGT markedly elevated",
+                        "AST/ALT elevation is mild",
+                        "Pruritus common (bile salt accumulation)",
+                        "Dilated ducts on ultrasound → obstruction (stone, tumor, stricture)"
+                    ],
+                    clinicalPearls: [
+                        "Charcot's triad (fever + RUQ pain + jaundice) = cholangitis emergency",
+                        "Painless jaundice = pancreatic cancer until proven otherwise",
+                        "PBC: middle-aged women, AMA+, xanthomas. PSC: IBD association, beading on MRCP"
+                    ]
+                }
+            }
+        ],
         pageType: "category",
         detail: {
-            approach: "Jaundice = bilirubin >3 mg/dL (scleral icterus earliest sign). Classify as prehepatic (hemolysis), hepatic (hepatocellular), or posthepatic (cholestatic/obstructive). Fractionated bilirubin, LFTs, and imaging guide diagnosis.",
+            approach: "Jaundice = bilirubin >3 mg/dL (scleral icterus earliest sign). Step 1: Fractionated bilirubin (direct vs indirect). Step 2: If direct ↑ → check LFT pattern (AST/ALT vs ALP). Step 3: Hepatocellular (AST/ALT >> ALP) vs Cholestatic (ALP >> AST/ALT).",
             redFlags: [
                 "Charcot's triad (fever, RUQ pain, jaundice) = ascending cholangitis (emergency)",
                 "Reynolds' pentad (Charcot's + hypotension + confusion) = suppurative cholangitis (sepsis)",
@@ -251,6 +457,239 @@ const gastrointestinalCategories = [
             "choledocholithiasis",
             "acute-cholangitis",
             "hepatocellular-carcinoma"
+        ],
+        subcategories: [
+            {
+                id: "viral-hepatitis",
+                name: "Viral Hepatitis",
+                diseaseIds: [
+                    "viral-hepatitis-a",
+                    "viral-hepatitis-b",
+                    "viral-hepatitis-c"
+                ],
+                description: "Inflammation of liver caused by hepatotropic viruses. AST/ALT can be >1000. Transmission varies by virus.",
+                subcategoryDetail: {
+                    comparisonMatrix: {
+                        title: "Viral Hepatitis Comparison",
+                        description: "Which hepatitis virus?",
+                        content: `HEPATITIS A:
+  - Transmission: Fecal-oral (contaminated food/water)
+  - Incubation: 2-6 weeks
+  - Chronic infection: NO (always acute, self-limited)
+  - Diagnosis: Anti-HAV IgM (acute), Anti-HAV IgG (past/immune)
+  - Prevention: Vaccine available (travel to endemic areas)
+  - Treatment: Supportive only
+  - Prognosis: Excellent, no chronic disease
+
+HEPATITIS B:
+  - Transmission: Blood/body fluids, vertical (mother to child)
+  - Incubation: 1-6 months
+  - Chronic infection: YES (5-10% adults, 90% neonates)
+  - Diagnosis: HBsAg (active), Anti-HBc IgM (acute), Anti-HBs (immune/vaccinated)
+  - Prevention: Vaccine (part of childhood series), HBIG for exposure
+  - Treatment: Chronic → antivirals (entecavir, tenofovir)
+  - Prognosis: Chronic → cirrhosis → HCC risk
+
+HEPATITIS C:
+  - Transmission: Blood (IVDU, transfusions pre-1992, needlestick)
+  - Incubation: 2-26 weeks
+  - Chronic infection: YES (85% become chronic!)
+  - Diagnosis: Anti-HCV antibody → confirm with HCV RNA (PCR)
+  - Prevention: NO vaccine available
+  - Treatment: Direct-acting antivirals (DAAs) - cure >95%
+  - Prognosis: Chronic → cirrhosis → HCC. Treatment can cure!`
+                    },
+                    keyFeatures: [
+                        "Hep A: Fecal-oral, NO chronic disease, vaccine available",
+                        "Hep B: Blood/vertical, 5-10% chronic (90% in neonates), vaccine available",
+                        "Hep C: Blood (IVDU), 85% chronic, NO vaccine, but curable with DAAs",
+                        "All can cause acute hepatitis with massive transaminase elevation (>1000)"
+                    ],
+                    clinicalPearls: [
+                        "HBV serologies: HBsAg (current infection), Anti-HBs (immune), Anti-HBc IgM (acute), Anti-HBc IgG (past exposure)",
+                        "HCV: Screen all baby boomers (1945-1965) and people with risk factors (IVDU, transfusion pre-1992)",
+                        "Chronic HBV/HCV → screen for HCC with ultrasound + AFP every 6 months",
+                        "Acute hepatitis treatment: Supportive. Chronic HBV/HCV → antivirals to prevent cirrhosis/HCC"
+                    ]
+                }
+            },
+            {
+                id: "metabolic-alcoholic-liver",
+                name: "Metabolic & Alcoholic Liver Disease",
+                diseaseIds: [
+                    "alcoholic-hepatitis",
+                    "nafld"
+                ],
+                description: "Liver injury from alcohol or metabolic syndrome. AST:ALT ratio and risk factors distinguish.",
+                subcategoryDetail: {
+                    diagnosticAlgorithm: `Step 1: AST:ALT ratio
+  - AST:ALT >2 → Alcoholic liver disease
+  - AST:ALT ≈1 → NAFLD/NASH
+
+Step 2: Additional clues
+  Alcoholic hepatitis:
+    - AST rarely >300 (vs viral can be >1000)
+    - ALT rarely >100
+    - ↑ GGT
+    - Heavy alcohol use (>3 drinks/day women, >4 men)
+
+  NAFLD/NASH:
+    - Metabolic syndrome (obesity, diabetes, hyperlipidemia)
+    - AST/ALT <1 typically
+    - May have normal LFTs despite fatty liver
+
+Step 3: Imaging
+  - Ultrasound: increased echogenicity (fatty liver)
+  - Elastography: assess fibrosis
+
+Step 4: Biopsy (if diagnosis unclear)
+  Alcoholic: Mallory-Denk bodies, neutrophilic infiltrate
+  NASH: steatosis + inflammation + fibrosis`,
+                    keyFeatures: [
+                        "AST:ALT >2 is hallmark of alcoholic liver disease",
+                        "AST rarely >300 in alcoholic hepatitis (vs >1000 in viral)",
+                        "NAFLD: most common cause of chronic liver disease in US (obesity epidemic)",
+                        "Both can progress to cirrhosis → HCC"
+                    ],
+                    diseaseDistinctions: `Alcoholic Hepatitis:
+  - Heavy alcohol use required
+  - AST:ALT >2, AST <300
+  - ↑ GGT, ↑ MCV
+  - Mallory-Denk bodies on biopsy
+  - Treatment: abstinence, corticosteroids (severe)
+
+NAFLD/NASH:
+  - Metabolic syndrome (obesity, DM, hyperlipidemia)
+  - AST/ALT <1
+  - Spectrum: fatty liver → NASH → fibrosis → cirrhosis
+  - Treatment: weight loss, manage metabolic syndrome`,
+                    clinicalPearls: [
+                        "Alcoholic hepatitis: Discriminant function (DF) score predicts mortality. DF >32 → steroids",
+                        "NAFLD progression: Simple steatosis (benign) vs NASH (inflammation + fibrosis risk)",
+                        "NASH is 2nd most common cause of liver transplant in US (after HCV)",
+                        "Both: abstinence/weight loss can reverse early disease before cirrhosis develops"
+                    ]
+                }
+            },
+            {
+                id: "cholestatic-biliary-disease",
+                name: "Cholestatic & Biliary Disease",
+                diseaseIds: [
+                    "primary-biliary-cholangitis",
+                    "primary-sclerosing-cholangitis",
+                    "acute-cholecystitis",
+                    "choledocholithiasis",
+                    "acute-cholangitis"
+                ],
+                description: "ALP >> AST/ALT. Intrahepatic (PBC, PSC) vs extrahepatic (stones, strictures) obstruction.",
+                subcategoryDetail: {
+                    diagnosticAlgorithm: `Step 1: Confirm cholestatic pattern
+  - ALP >> AST/ALT (ratio >3)
+  - ↑ GGT confirms hepatic source
+  - ↑ Direct bilirubin
+
+Step 2: Ultrasound - check for dilated bile ducts
+  - Dilated ducts → EXTRAHEPATIC obstruction
+    → Choledocholithiasis, stricture, pancreatic cancer
+  - Normal ducts → INTRAHEPATIC cholestasis
+    → PBC, PSC, drug-induced
+
+Step 3: If dilated ducts (extrahepatic)
+  - MRCP or ERCP to identify: stone, stricture, cancer
+  - Charcot's triad (fever + RUQ pain + jaundice) = cholangitis (emergency)
+
+Step 4: If normal ducts (intrahepatic)
+  - PBC: Anti-mitochondrial antibodies (AMA)
+  - PSC: p-ANCA, MRCP shows beading
+  - Drug-induced: medication review`,
+                    keyFeatures: [
+                        "Dilated ducts on ultrasound = extrahepatic obstruction (stone, tumor, stricture)",
+                        "Normal ducts = intrahepatic cholestasis (PBC, PSC, drugs)",
+                        "Pruritus is prominent (bile salt accumulation in skin)",
+                        "Charcot's triad = cholangitis emergency (antibiotics + biliary drainage)"
+                    ],
+                    diseaseDistinctions: `PBC (Primary Biliary Cholangitis):
+  - Middle-aged women
+  - AMA antibodies (>95% specific)
+  - Intrahepatic bile duct destruction
+  - Pruritus, xanthomas, fat-soluble vitamin deficiency
+  - Tx: Ursodeoxycholic acid (UDCA)
+
+PSC (Primary Sclerosing Cholangitis):
+  - Young men
+  - IBD association (70% have UC)
+  - Intra + extrahepatic bile duct strictures
+  - MRCP: beading of bile ducts
+  - ↑ Risk cholangiocarcinoma
+  - Tx: supportive (no effective treatment)
+
+Choledocholithiasis:
+  - Stone in common bile duct
+  - RUQ pain, jaundice
+  - Ultrasound: dilated CBD
+  - ERCP for stone extraction
+
+Acute Cholangitis:
+  - Infection of obstructed biliary tree
+  - Charcot's triad (fever, RUQ pain, jaundice)
+  - Reynolds' pentad (+ AMS, hypotension) = sepsis
+  - Emergency: antibiotics + biliary drainage (ERCP)`,
+                    clinicalPearls: [
+                        "PBC: AMA+ is pathognomonic. Treat with UDCA to slow progression",
+                        "PSC: 'onion skin' fibrosis on biopsy. Screen for cholangiocarcinoma (CA 19-9)",
+                        "Cholangitis = biliary sepsis. Mortality high without urgent drainage",
+                        "ERCP is therapeutic (stone extraction, stenting). MRCP is diagnostic only"
+                    ]
+                }
+            },
+            {
+                id: "cirrhosis-hcc",
+                name: "Cirrhosis & Hepatocellular Carcinoma",
+                diseaseIds: [
+                    "cirrhosis",
+                    "hepatocellular-carcinoma"
+                ],
+                description: "End-stage liver disease with fibrosis and portal hypertension. HCC develops in cirrhotic livers.",
+                subcategoryDetail: {
+                    overview: "Cirrhosis = end result of chronic liver injury. Complications: portal hypertension (varices, ascites), hepatic encephalopathy, coagulopathy, HCC risk.",
+                    keyFeatures: [
+                        "Cirrhosis: irreversible fibrosis + regenerative nodules",
+                        "Portal hypertension: varices, ascites, splenomegaly, caput medusae",
+                        "Hepatic encephalopathy: asterixis, confusion (↑ ammonia)",
+                        "HCC: cirrhosis is #1 risk factor. Screen with ultrasound + AFP q6mo"
+                    ],
+                    clinicalApproach: `CIRRHOSIS Complications (remember with "HAVOC"):
+H - Hepatic encephalopathy
+  - Asterixis, confusion
+  - ↑ Ammonia
+  - Tx: lactulose, rifaximin
+
+A - Ascites
+  - Portal HTN + hypoalbuminemia
+  - SAAG >1.1 = portal HTN
+  - Tx: Na restriction, diuretics (spironolactone + furosemide)
+  - SBP prophylaxis if prior episode
+
+V - Varices
+  - Esophageal/gastric from portal HTN
+  - Screen with EGD
+  - Primary prophylaxis: non-selective BB (propranolol)
+  - Acute bleed: octreotide + banding + antibiotics
+
+O - Other: Coagulopathy (↓ clotting factors), hepatorenal syndrome
+
+C - Cancer (HCC)
+  - Screen every 6 months: ultrasound + AFP
+  - Diagnosis: triphasic CT/MRI (arterial enhancement, venous washout)
+  - Treatment: ablation, resection, transplant (early), sorafenib (advanced)`,
+                    clinicalPearls: [
+                        "Child-Pugh score: predicts mortality (bilirubin, albumin, INR, ascites, encephalopathy)",
+                        "MELD score: used for liver transplant allocation",
+                        "SBP (spontaneous bacterial peritonitis): ascites + fever/abdominal pain. Diagnose with paracentesis (PMN >250)",
+                        "HCC surveillance: ultrasound + AFP every 6 months in all cirrhotics"
+                    ]
+                }
+            }
         ],
         pageType: "category",
         detail: {

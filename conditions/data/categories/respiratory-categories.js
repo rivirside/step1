@@ -239,6 +239,189 @@ const respiratoryCategories = [
             "atypical-pneumonia-chlamydia",
             "lung-abscess"
         ],
+        subcategories: [
+            {
+                id: "typical-bacterial-pneumonia",
+                name: "Typical Bacterial Pneumonia",
+                diseaseIds: [
+                    "pneumonia-cap",
+                    "pneumonia-hap",
+                    "pneumonia-aspiration"
+                ],
+                description: "Sudden onset, high fever, productive cough, lobar consolidation. S. pneumoniae most common in CAP.",
+                subcategoryDetail: {
+                    comparisonMatrix: {
+                        title: "Typical Pneumonia Types",
+                        description: "Which typical pneumonia?",
+                        content: `COMMUNITY-ACQUIRED PNEUMONIA (CAP):
+  - Setting: Outpatient or <48h hospitalization
+  - Most common organism: S. pneumoniae (Streptococcus pneumoniae)
+  - Other organisms: H. influenzae (COPD), Moraxella (COPD), S. aureus (post-influenza)
+  - Presentation: Sudden onset, high fever, rusty sputum, pleuritic chest pain
+  - CXR: Lobar consolidation
+  - Treatment: Outpatient → macrolide or doxycycline. Inpatient → β-lactam + macrolide
+
+HOSPITAL-ACQUIRED PNEUMONIA (HAP):
+  - Setting: >48h after admission (VAP if intubated >48h)
+  - Organisms: MRSA, Pseudomonas, Gram-negatives (E. coli, Klebsiella, Acinetobacter)
+  - Presentation: Fever, purulent sputum, new infiltrate on CXR
+  - Higher mortality than CAP
+  - Treatment: Broad-spectrum (cover MRSA + Pseudomonas): vancomycin + piperacillin-tazobactam or cefepime
+
+ASPIRATION PNEUMONIA:
+  - Setting: Altered mental status, dysphagia, alcoholism, GERD
+  - Organisms: Anaerobes (Bacteroides, Peptostreptococcus) + aerobic Gram-negatives
+  - Location: Right lower lobe (gravity-dependent)
+  - Presentation: Foul-smelling sputum, poor dentition
+  - CXR: RLL infiltrate (or posterior segments of upper lobes if supine)
+  - Treatment: Clindamycin or ampicillin-sulbactam (cover anaerobes)`
+                    },
+                    keyFeatures: [
+                        "Lobar consolidation on CXR (vs interstitial in atypical)",
+                        "Sudden onset (<24-48h) with high fever, rigors",
+                        "Productive cough with purulent sputum",
+                        "Positive sputum Gram stain and culture"
+                    ],
+                    clinicalPearls: [
+                        "CAP: S. pneumoniae is #1. Rusty sputum is classic",
+                        "HAP/VAP: MRSA and Pseudomonas coverage essential. De-escalate based on cultures",
+                        "Aspiration: Think of 3 A's - Altered mental status, Alcoholism, Anesthesia",
+                        "CURB-65 score predicts CAP mortality (Confusion, Urea, RR, BP, age ≥65)"
+                    ]
+                }
+            },
+            {
+                id: "atypical-pneumonia",
+                name: "Atypical Pneumonia",
+                diseaseIds: [
+                    "atypical-pneumonia-mycoplasma",
+                    "atypical-pneumonia-legionella",
+                    "atypical-pneumonia-chlamydia"
+                ],
+                description: "Gradual onset, low-grade fever, dry cough, interstitial pattern. Intracellular organisms.",
+                subcategoryDetail: {
+                    comparisonMatrix: {
+                        title: "Atypical Pneumonia Organisms",
+                        description: "Which atypical organism?",
+                        content: `MYCOPLASMA PNEUMONIAE:
+  - Demographics: Young adults (college dorms, military barracks)
+  - Presentation: Gradual onset, headache, dry cough (non-productive)
+  - Pathognomonic finding: Bullous myringitis (ear pain with blisters on TM)
+  - Lab finding: Cold agglutinins (IgM antibodies against RBCs)
+  - Extrapulmonary: Hemolytic anemia, erythema multiforme, neurologic (Guillain-Barré)
+  - CXR: Interstitial infiltrates (CXR looks worse than patient feels)
+  - Treatment: Macrolides (azithromycin) or doxycycline
+
+LEGIONELLA PNEUMOPHILA:
+  - Source: Water exposure (AC units, hot tubs, cruise ships, cooling towers)
+  - Presentation: High fever, GI symptoms (diarrhea!), pneumonia
+  - Lab findings: Hyponatremia, ↑ LFTs, hematuria
+  - Diagnosis: Urine antigen test (best test - quick and specific)
+  - CXR: Multilobar infiltrates
+  - Treatment: Macrolides (azithromycin) or fluoroquinolones (levofloxacin)
+  - Severe cases can cause respiratory failure
+
+CHLAMYDIA PNEUMONIAE:
+  - Demographics: School-age children, young adults
+  - Presentation: Hoarseness, pharyngitis BEFORE pneumonia develops
+  - Cough: Prolonged, persistent (weeks)
+  - CXR: Interstitial infiltrates
+  - Treatment: Macrolides (azithromycin) or doxycycline
+  - Generally milder than other atypicals`
+                    },
+                    keyFeatures: [
+                        "Interstitial (NOT lobar) infiltrates on CXR",
+                        "Organisms DON'T grow on standard culture (intracellular)",
+                        "DON'T respond to β-lactams (no cell wall or intracellular)",
+                        "Gradual onset over days (NOT sudden like typical)"
+                    ],
+                    diseaseDistinctions: `Key Distinguishing Features:
+
+MYCOPLASMA → Bullous myringitis + Cold agglutinins + Young adults
+LEGIONELLA → Water + Diarrhea + Hyponatremia + Urine antigen
+CHLAMYDIA → Hoarseness first + Prolonged cough`,
+                    clinicalPearls: [
+                        "Mycoplasma: 'Walking pneumonia' - patient feels better than CXR looks",
+                        "Legionella: Think of water sports, hotels, air conditioning. Check Na+ and urine antigen",
+                        "All atypicals respond to macrolides or doxycycline (NOT β-lactams)",
+                        "CAP treatment covers atypicals: β-lactam + macrolide or fluoroquinolone alone"
+                    ]
+                }
+            },
+            {
+                id: "tb-lung-abscess",
+                name: "Tuberculosis & Lung Abscess",
+                diseaseIds: [
+                    "tuberculosis",
+                    "lung-abscess"
+                ],
+                description: "Chronic infections with cavitation. TB: upper lobes, granulomas. Abscess: aspiration, anaerobes.",
+                subcategoryDetail: {
+                    diagnosticAlgorithm: `TUBERCULOSIS:
+
+Step 1: Clinical suspicion
+  - Risk factors: Homeless, prison, immunocompromised (HIV), immigrants from endemic areas
+  - Symptoms: Chronic cough (>3 weeks), night sweats, weight loss, hemoptysis
+
+Step 2: Screening
+  - PPD (tuberculin skin test) or IGRA (QuantiFERON)
+  - Positive = latent TB or active TB (need further workup)
+
+Step 3: Confirm active TB
+  - CXR: Upper lobe cavitation (reactivation), hilar adenopathy (primary)
+  - Sputum AFB smear and culture (3 samples)
+  - Nucleic acid amplification test (NAAT) - rapid diagnosis
+
+Step 4: Treatment
+  - Active TB: RIPE for 2 months (Rifampin, Isoniazid, Pyrazinamide, Ethambutol)
+    → Then RIF + INH for 4 more months (total 6 months)
+  - Latent TB: Isoniazid for 9 months OR rifampin for 4 months
+
+LUNG ABSCESS:
+
+Step 1: Risk factors
+  - Aspiration (alcoholism, seizures, stroke)
+  - Poor dentition
+  - Immunocompromised
+
+Step 2: Presentation
+  - Fever, productive cough with FOUL-SMELLING sputum
+  - Chronic course (weeks)
+
+Step 3: Imaging
+  - CXR/CT: Cavity with air-fluid level
+
+Step 4: Treatment
+  - Antibiotics: Clindamycin (covers anaerobes) for 4-6 weeks
+  - Drainage if refractory`,
+                    keyFeatures: [
+                        "TB: Upper lobe cavitation, granulomas, AFB positive",
+                        "Lung abscess: Air-fluid level, foul sputum, aspiration history",
+                        "Both cause chronic cough and cavitation (but different locations)",
+                        "TB screening: PPD or IGRA (positive = latent or active, need CXR)"
+                    ],
+                    diseaseDistinctions: `TUBERCULOSIS:
+  - Upper lobe cavitation
+  - Granulomas with caseating necrosis
+  - AFB smear/culture positive
+  - 6-month treatment (RIPE → RI)
+  - Report to public health
+
+LUNG ABSCESS:
+  - Aspiration → posterior segments or RLL
+  - Air-fluid level on CXR
+  - Anaerobic bacteria (Bacteroides, Peptostreptococcus)
+  - Foul-smelling sputum (pathognomonic)
+  - Clindamycin for 4-6 weeks`,
+                    clinicalPearls: [
+                        "TB: Check HIV status in all patients. TB + HIV = treat both simultaneously",
+                        "Rifampin turns body fluids orange - warn patients about orange tears/urine",
+                        "INH: Give pyridoxine (B6) to prevent peripheral neuropathy",
+                        "Lung abscess: If refractory to antibiotics → percutaneous drainage or surgery"
+                    ]
+                }
+            }
+        ],
         pageType: "category",
         detail: {
             overview: "Infections of the lung parenchyma, airways, or pleura. Distinguished by organism (bacterial, viral, fungal, mycobacterial), location (CAP vs HAP), and patient factors (immunocompetent vs immunocompromised).",

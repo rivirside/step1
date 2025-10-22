@@ -14,6 +14,36 @@ const hematologyOncologyCategories = [
             "folate-deficiency",
             "aplastic-anemia"
         ],
+        subcategories: [
+            {
+                id: "microcytic-anemia",
+                name: "Microcytic Anemia (MCV <80)",
+                diseaseIds: [
+                    "iron-deficiency-anemia",
+                    "thalassemia",
+                    "anemia-of-chronic-disease",
+                    "sideroblastic-anemia"
+                ],
+                description: "MCV <80. Mnemonic: TAILS (Thalassemia, Anemia of chronic disease, Iron deficiency, Lead poisoning, Sideroblastic). Iron deficiency: ↓ ferritin, ↑ TIBC. Thalassemia: normal/↑ ferritin, target cells. Chronic disease: ↑ ferritin, ↓ TIBC."
+            },
+            {
+                id: "macrocytic-anemia",
+                name: "Macrocytic Anemia (MCV >100)",
+                diseaseIds: [
+                    "b12-deficiency",
+                    "folate-deficiency"
+                ],
+                description: "MCV >100. Megaloblastic (B12/folate: hypersegmented neutrophils) vs non-megaloblastic (alcohol, liver disease, hypothyroidism, myelodysplasia). B12 deficiency → neurologic symptoms (subacute combined degeneration). Folate deficiency → no neuro symptoms."
+            },
+            {
+                id: "normocytic-anemia",
+                name: "Normocytic Anemia (MCV 80-100)",
+                diseaseIds: [
+                    "aplastic-anemia"
+                ],
+                description: "MCV 80-100. Check reticulocyte count: Low (↓ production: aplastic anemia, CKD, anemia of chronic disease) vs High (↑ destruction: hemolysis, acute bleeding). Aplastic anemia → pancytopenia with hypocellular bone marrow."
+            }
+        ],
         pageType: "category",
         detail: {
             approach: "Approach to anemia: check MCV first. Microcytic (MCV <80): iron deficiency, thalassemia, chronic disease, sideroblastic. Normocytic (80-100): blood loss, hemolysis, chronic disease, aplastic anemia. Macrocytic (>100): B12/folate deficiency, alcohol, myelodysplasia, medications.",
@@ -52,6 +82,30 @@ const hematologyOncologyCategories = [
             "ttp",
             "hus",
             "dic"
+        ],
+        subcategories: [
+            {
+                id: "intrinsic-hemolytic-anemia",
+                name: "Intrinsic Hemolytic Anemia",
+                diseaseIds: [
+                    "hereditary-spherocytosis",
+                    "g6pd-deficiency",
+                    "sickle-cell-disease",
+                    "paroxysmal-nocturnal-hemoglobinuria"
+                ],
+                description: "Intrinsic RBC defects (hereditary). Membrane: hereditary spherocytosis (spectrin defect, osmotic fragility test). Enzyme: G6PD deficiency (oxidative stress, Heinz bodies). Hemoglobin: sickle cell (HbS, sickling on smear). PNH: complement-mediated (Ham test, CD55/CD59 deficiency)."
+            },
+            {
+                id: "extrinsic-hemolytic-anemia",
+                name: "Extrinsic Hemolytic Anemia",
+                diseaseIds: [
+                    "autoimmune-hemolytic-anemia",
+                    "ttp",
+                    "hus",
+                    "dic"
+                ],
+                description: "External factors destroy normal RBCs. Immune: autoimmune (warm IgG, cold IgM, Coombs+). Microangiopathic: TTP/HUS/DIC (schistocytes, ↓ platelets, ↑ LDH). TTP pentad: MAHA, thrombocytopenia, AKI, fever, neuro changes. HUS: triad (MAHA, thrombocytopenia, AKI) in children post-diarrhea."
+            }
         ],
         pageType: "category",
         detail: {

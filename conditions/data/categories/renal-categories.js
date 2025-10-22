@@ -125,6 +125,28 @@ const renalCategories = [
             "post-infectious-glomerulonephritis",
             "rapidly-progressive-glomerulonephritis"
         ],
+        subcategories: [
+            {
+                id: "nephrotic-syndrome",
+                name: "Nephrotic Syndrome",
+                diseaseIds: [
+                    "minimal-change-disease",
+                    "focal-segmental-glomerulosclerosis",
+                    "membranous-nephropathy"
+                ],
+                description: "Podocyte injury → >3.5 g/day proteinuria, hypoalbuminemia (<3 g/dL), edema, hyperlipidemia. Loss of charge barrier → albumin leak. Complications: infections (loss of immunoglobulins), thrombosis (loss of antithrombin III, protein C/S), AKI."
+            },
+            {
+                id: "nephritic-syndrome",
+                name: "Nephritic Syndrome",
+                diseaseIds: [
+                    "iga-nephropathy",
+                    "post-infectious-glomerulonephritis",
+                    "rapidly-progressive-glomerulonephritis"
+                ],
+                description: "Glomerular inflammation → hematuria, RBC casts, HTN, oliguria, mild proteinuria (<3.5 g/day). Disrupted GBM → RBC leak. Acute: post-infectious GN. Chronic: IgA nephropathy. Rapidly progressive: RPGN with crescents."
+            }
+        ],
         pageType: "category",
         detail: {
             approach: "Glomerulopathies: nephrotic (podocyte injury: >3.5 g/day proteinuria, hypoalbuminemia, edema, hyperlipidemia) vs nephritic (glomerular inflammation: hematuria, RBC casts, HTN, mild proteinuria, oliguria). Nephrotic: minimal change (children, podocin), FSGS (adults, ESRD risk), membranous (thickened GBM, PLA2R antibodies). Nephritic: post-infectious (↓ C3), IgA (episodic hematuria), RPGN (crescents, rapid ↓ GFR).",

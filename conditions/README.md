@@ -1,8 +1,12 @@
 # Step 1 Differential Diagnosis Tool - V3 Graph-Based
 
+**Project Status**: 46.1% Complete (228/495 diseases) | [📋 Full Roadmap](./ROADMAP.md) | [📊 Detailed Analysis](./ROADMAP-SUMMARY.md)
+
 ## Overview
 
 V3 is a complete rewrite using a graph-based architecture that allows diseases to appear in multiple categories without duplication. This solves the key limitation of v2's strict tree structure.
+
+**Current Focus**: Completing 495 comprehensive disease entries across 19 medical systems for USMLE Step 1 preparation.
 
 ## Key Features
 
@@ -13,15 +17,17 @@ V3 is a complete rewrite using a graph-based architecture that allows diseases t
 - **Three-tier hierarchy**: Systems → Categories → Diseases
 
 ### Data
-- **74 Total Diseases**: 44 Cardiovascular + 30 Respiratory
-- **2 Complete Organ Systems**: Cardiovascular and Respiratory
-- **Comprehensive Step 1 content**: 13 sections per disease
-  - Definition, Pathophysiology, Epidemiology
-  - Risk Factors, Presentation, Physical Exam
-  - Diagnostic Criteria, Labs, Imaging
-  - Differential Diagnosis, Management (Acute/Chronic)
-  - Complications, Prognosis, Clinical Pearls
-- **Cross-category references**: Diseases like Aortic Dissection appear in both "Chest Pain" and "Vascular Disease"
+- **495 Total Diseases** across 19 medical systems
+- **5 Complete Systems** (100%): Cardiovascular (42), Hematology-Oncology (47), Psychiatry (44), Renal (38), Respiratory (30)
+- **1 Near-Complete System** (75%): Gastrointestinal (27/36)
+- **13 Systems In Development**: 267 diseases in placeholder stage
+- **Comprehensive Step 1 content** (Level 3): 14 sections per complete disease
+  - Core: Definition, Pathophysiology, Epidemiology, Risk Factors
+  - Clinical: Presentation, Physical Exam, Diagnostic Criteria
+  - Diagnostics: Labs, Imaging, Differential Diagnosis
+  - Treatment: Management (Acute/Chronic), Complications, Prognosis
+  - Learning: Clinical Pearls (5-10 high-yield USMLE points)
+- **Cross-category references**: Diseases appear in multiple categories without duplication (graph-based architecture)
 
 ### UI Features
 - **Interactive tree navigation**: Expandable/collapsible nodes
@@ -118,26 +124,77 @@ v3-graph-based/
 - ✅ Flexible filtering and searching
 - ✅ Extensible for future features (tags, symptoms, etc.)
 
-## Future Enhancements
+## Project Roadmap
 
-### Planned Features
+### Current Status (October 2025)
+**Overall Progress**: 46.1% complete (228/495 diseases at Level 3 - Comprehensive)
+
+- ✅ **5 Systems Complete (100%)**: Cardiovascular (42), Hematology-Oncology (47), Psychiatry (44), Renal (38), Respiratory (30)
+- 🟡 **1 System In Progress (75%)**: Gastrointestinal (27/36 complete, 9 remaining)
+- 🔴 **13 Systems Need Work (0-25%)**: 267 diseases require expansion to comprehensive level
+
+### Completion Standards
+
+**Level 3 - Comprehensive (Target for all diseases):**
+- 14 required fields per disease:
+  - Core: definition, pathophysiology, epidemiology, riskFactors
+  - Clinical: presentation, physicalExam, diagnosticCriteria
+  - Diagnostics: labs, imaging, differentialDiagnosis
+  - Treatment: management (acute + chronic), complications, prognosis
+  - Learning: clinicalPearls (5-10 high-yield USMLE points)
+
+### Work Phases
+
+**Phase 1: Finish In-Progress** (Week 1)
+- Complete 9 remaining GI diseases
+- Target: 100% GI system completion
+
+**Phase 2: High-Yield Systems** (Weeks 2-10) - ⭐ USMLE Priority
+- Neurology: 33 diseases
+- Infectious Disease: 24 diseases
+- Endocrine: 22 diseases
+- Rheumatology: 24 diseases
+
+**Phase 3: Medium-Yield Systems** (Weeks 11-19)
+- Musculoskeletal: 22 diseases
+- ENT: 28 diseases
+- Dermatology: 24 diseases
+- Reproductive/OBGYN: 15 diseases
+
+**Phase 4: Lower-Priority Systems** (Weeks 20-25)
+- Genitourinary: 19 diseases
+- Ophthalmology: 12 diseases
+- Toxicology: 11 diseases
+- Immunology: 9 diseases
+- Pediatrics: 15 diseases
+
+**Phase 5: Format Standardization** (Integrated)
+- Convert 5 systems from single-line to multi-line format
+- Ensure consistency across all files
+
+**Phase 6: Category Pages** (Weeks 26-40)
+- Create 150-200 comprehensive category landing pages
+- Add clinical approach frameworks
+- Add key differentiators for each category
+
+### Detailed Documentation
+
+For comprehensive project planning and execution details:
+- **Master Roadmap**: See [`ROADMAP.md`](./ROADMAP.md) - Phase-by-phase breakdown with checkboxes
+- **Analysis & Summary**: See [`ROADMAP-SUMMARY.md`](./ROADMAP-SUMMARY.md) - Methodology, findings, timeline estimates
+
+### Estimated Timeline
+- **Total remaining work**: ~293 hours
+- **At 4-6 hours/week**: 40-50 weeks (~11 months)
+- **At focused sprint**: 14-20 weeks (~4 months)
+
+### Future Enhancements (Post-Completion)
 - [ ] Multiple view modes (tree, grid, list, tag cloud)
 - [ ] Advanced filtering (by severity, acuity, tags, symptoms)
 - [ ] Bookmark/favorite diseases
 - [ ] Comparison view (compare 2+ diseases side-by-side)
 - [ ] Print-friendly formatting
 - [ ] Export to PDF/Anki
-
-### Future Systems
-- [x] ~~Respiratory~~ (COMPLETED - 30 diseases)
-- [ ] Gastrointestinal
-- [ ] Neurological
-- [ ] Renal
-- [ ] Endocrine
-- [ ] Hematology/Oncology
-- [ ] Infectious Disease
-- [ ] Musculoskeletal
-- [ ] Dermatology
 
 ## Development
 
@@ -182,13 +239,39 @@ v3-graph-based/
 
 ## Stats
 
-- **Total Systems**: 2 (Cardiovascular, Respiratory)
-- **Total Categories**: 18 (8 CV + 10 Respiratory)
-- **Total Diseases**: 74 (44 CV + 30 Respiratory)
-- **Total Tags**: ~100+
-- **Total Symptoms**: ~60+
-- **Lines of Code**: ~8,500+
-- **Disease Content**: ~3,700+ lines
+### Current Project Scope (October 2025)
+- **Total Systems**: 19 medical specialties
+- **Total Categories**: ~150-200 (estimated)
+- **Total Diseases**: 495 diseases
+  - ✅ Complete (Level 3): 228 diseases (46.1%)
+  - 🔴 Placeholder (Level 1): 267 diseases (53.9%)
+- **Total Tags**: ~500+
+- **Total Symptoms**: ~200+
+- **Lines of Code**: ~50,000+ (estimated)
+- **Disease Content**: ~25,000+ lines
+
+### System Distribution
+| System | Diseases | Completion |
+|--------|----------|------------|
+| Cardiovascular | 42 | 100% ✅ |
+| Hematology-Oncology | 47 | 100% ✅ |
+| Psychiatry | 44 | 100% ✅ |
+| Renal | 38 | 100% ✅ |
+| Respiratory | 30 | 100% ✅ |
+| Gastrointestinal | 36 | 75% 🟡 |
+| Neurology | 33 | 0% 🔴 |
+| ENT | 28 | 0% 🔴 |
+| Dermatology | 24 | 0% 🔴 |
+| Infectious Disease | 24 | 0% 🔴 |
+| Rheumatology | 24 | 0% 🔴 |
+| Musculoskeletal | 22 | 0% 🔴 |
+| Endocrine | 22 | 0% 🔴 |
+| Genitourinary | 19 | 0% 🔴 |
+| Reproductive/OBGYN | 15 | 0% 🔴 |
+| Pediatrics | 15 | 0% 🔴 |
+| Ophthalmology | 12 | 0% 🔴 |
+| Toxicology | 11 | 0% 🔴 |
+| Immunology | 9 | 0% 🔴 |
 
 ## Credits
 
