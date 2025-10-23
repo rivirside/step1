@@ -114,6 +114,31 @@ class MedicationDataLoader {
             // (Even single-class drugs now use the array internally)
             drug.pharmacologicClass = drug.pharmacologicClasses[0] || null;
 
+            // Normalize sideEffects to array format
+            // Handle both flat array format and object format with common/serious
+            if (drug.sideEffects && !Array.isArray(drug.sideEffects)) {
+                const normalized = [];
+                if (drug.sideEffects.common) {
+                    normalized.push(...drug.sideEffects.common);
+                }
+                if (drug.sideEffects.serious) {
+                    normalized.push(...drug.sideEffects.serious);
+                }
+                // Store original for reference, but use flat array for indexing
+                drug.sideEffectsDetailed = drug.sideEffects;
+                drug.sideEffects = normalized;
+            }
+
+            // Normalize indications to array format (in case of object structure)
+            if (drug.indications && !Array.isArray(drug.indications)) {
+                drug.indications = Object.values(drug.indications).flat();
+            }
+
+            // Normalize contraindications to array format (in case of object structure)
+            if (drug.contraindications && !Array.isArray(drug.contraindications)) {
+                drug.contraindications = Object.values(drug.contraindications).flat();
+            }
+
             this.drugsById.set(drug.id, drug);
 
             // Group by system
