@@ -85,23 +85,96 @@ const drugs = [
         "pharmacologicClass": "insulin",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Replaces endogenous insulin, promotes glucose uptake and storage.",
+        "mechanism": "Long-acting basal insulin analog with modified amino acid sequence that forms microprecipitates in subcutaneous tissue, allowing slow, steady release. Binds to insulin receptors → activates tyrosine kinase → promotes glucose uptake in skeletal muscle and adipose tissue, inhibits hepatic gluconeogenesis, and suppresses lipolysis.",
         "features": "Long-acting (24 hr duration).",
         "clinicalChoice": "Once-daily basal insulin.",
+        "pharmacokinetics": {
+            "onset": "2-4 hours (slow onset)",
+            "peak": "No pronounced peak - relatively flat concentration profile (peakless)",
+            "duration": "20-24 hours (allows once-daily dosing)",
+            "halfLife": "~12-14 hours",
+            "metabolism": "Metabolized to two active metabolites (M1 and M2) in subcutaneous tissue",
+            "excretion": "Renal elimination of metabolites. Dose reduction may be needed in renal impairment."
+        },
         "indications": [
             "Type 1 Diabetes",
             "Type 2 Diabetes"
         ],
+        "clinicalChoice": "Preferred long-acting basal insulin for once-daily dosing. Choose glargine over NPH because: (1) Flat profile reduces nocturnal hypoglycemia risk, (2) Once-daily dosing improves adherence, (3) More predictable glucose control. Typically given at bedtime or same time daily.",
+        "dosing": {
+            "typical": "Initial: 10 units once daily or 0.1-0.2 units/kg/day. Titrate by 2-4 units every 3 days based on fasting glucose. Goal fasting glucose 80-130 mg/dL.",
+            "renal": "Dose reduction may be needed (decreased insulin clearance). Monitor closely for hypoglycemia.",
+            "hepatic": "Dose reduction may be needed (decreased gluconeogenesis). Monitor closely for hypoglycemia.",
+            "elderly": "Start conservatively (lower doses) due to increased hypoglycemia risk."
+        },
         "contraindications": [
             "Hypoglycemia"
         ],
-        "sideEffects": [
-            "Hypoglycemia",
-            "Weight gain",
-            "Injection site reactions"
+        "sideEffects": {
+            "common": [
+                "Hypoglycemia (most common, especially if dosed too high)",
+                "Weight gain (2-4 kg average)",
+                "Injection site reactions (erythema, pruritus, lipodystrophy)"
+            ],
+            "serious": [
+                "Severe hypoglycemia (confusion, seizures, loss of consciousness)",
+                "Hypokalemia (insulin shifts K+ into cells)",
+                "Anaphylaxis (rare)"
+            ],
+            "rare": [
+                "Lipohypertrophy (from repeated injections at same site)",
+                "Immunologic insulin resistance (very rare with analogs)"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Beta-blockers: mask hypoglycemia symptoms (except diaphoresis), may prolong hypoglycemia",
+                "Thiazolidinediones (pioglitazone): increased risk of fluid retention and heart failure when combined",
+                "Corticosteroids: antagonize insulin effects, increase insulin requirements",
+                "Fluoroquinolones: may cause dysglycemia (hypo or hyperglycemia)"
+            ],
+            "drugDisease": [
+                "Renal impairment: decreased insulin clearance, increased hypoglycemia risk",
+                "Hepatic impairment: decreased gluconeogenesis, increased hypoglycemia risk",
+                "Hypothyroidism: decreased insulin requirements",
+                "Hyperthyroidism: increased insulin requirements"
+            ],
+            "drugFood": [
+                "Alcohol: inhibits gluconeogenesis, increases hypoglycemia risk"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose: fingerstick before meals and bedtime (goal pre-meal 80-130 mg/dL)",
+                "HbA1c every 3 months (goal <7% for most, <6.5% if low hypoglycemia risk)",
+                "Potassium (insulin shifts K+ intracellularly)",
+                "Renal function (creatinine) annually or if dose changes needed"
+            ],
+            "vitals": [
+                "Weight (monitor for weight gain)"
+            ],
+            "symptoms": [
+                "Hypoglycemia symptoms: tremor, palpitations, diaphoresis, confusion, hunger",
+                "Injection site reactions"
+            ],
+            "frequency": "Daily glucose monitoring initially, then as stable. HbA1c every 3 months."
+        },
+        "pregnancy": {
+            "category": "Category B (no human risk demonstrated). Generally considered safe.",
+            "considerations": "Insulin is treatment of choice for diabetes in pregnancy (does not cross placenta). Insulin requirements increase in 2nd and 3rd trimesters. Tight glucose control essential to prevent fetal complications."
+        },
+        "clinicalPearls": [
+            "Cannot be mixed with other insulins (acidic pH causes precipitation). Give as separate injection.",
+            "Must give subcutaneously - NEVER give IV (will precipitate)",
+            "Peakless profile = lower nocturnal hypoglycemia risk vs NPH",
+            "If patient has nocturnal hypoglycemia with AM hyperglycemia, think Somogyi effect (decrease glargine dose)",
+            "If patient has isolated AM hyperglycemia without nocturnal hypo, think dawn phenomenon (increase glargine dose or give at bedtime)",
+            "Brand names: Lantus, Basaglar, Toujeo (concentrated U-300)",
+            "Step 1 buzzword: 'long-acting basal insulin' or 'once-daily insulin'",
+            "Common vignette: Type 2 DM patient on metformin with HbA1c 9% despite adherence → add basal insulin (glargine)",
+            "Wrong answer distractor: 'Start NPH' - glargine preferred due to better profile"
         ],
-        "interactions": "Beta-blockers mask hypoglycemia symptoms.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {
