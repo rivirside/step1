@@ -460,8 +460,292 @@ Each category page should have:
 
 ---
 
-**Document Version**: 1.0
+---
+
+## 🧬 PHASE 7: PHYSIOLOGY & ANATOMY EXPLORERS (Future Expansion)
+
+### Objective:
+Expand the platform beyond clinical diseases to include foundational basic science content, creating separate explorers for **Physiology** and **Anatomy**.
+
+### Architecture: Separate Explorers (Option A)
+
+```
+Step 1 Medical Explorers/
+├── Conditions Explorer (diseases/pathology only)
+│   └── System → Categories → Diseases
+├── Medications Explorer (pharmacology)
+│   └── Drug classes → Individual drugs
+├── Bugs Explorer (microbiology)
+│   └── Organism types → Individual pathogens
+├── Physiology Explorer (normal function) ← NEW
+│   └── System → Physiology topics
+│       └── Endocrine → Insulin Secretion Regulation
+│       └── Cardiovascular → Cardiac Action Potential
+│       └── Renal → Acid-Base Regulation
+└── Anatomy Explorer (structure) ← FUTURE
+    └── System → Anatomical regions/structures
+        └── Endocrine → Pancreatic Anatomy & Histology
+        └── Cardiovascular → Heart Anatomy
+```
+
+**Rationale:**
+- ✅ Each explorer has **one clear purpose** (disease vs normal function vs structure)
+- ✅ Maps to **medical education** structure (basic sciences vs clinical)
+- ✅ Matches **USMLE Step 1** content organization
+- ✅ **Scalable** - can add Biochemistry, Biostatistics explorers later
+- ✅ Students can study physiology **independently** or **via cross-links** from diseases
+- ✅ No naming confusion - "Conditions" stays focused on diseases only
+
+---
+
+### Physiology Explorer
+
+#### Scope:
+Normal physiologic function organized by organ system.
+
+#### Content Structure:
+Each physiology topic includes:
+- **Overview** - Summary of normal physiology
+- **Molecular/Cellular Mechanisms** - Detailed mechanistic explanations
+- **Receptor Tables** - GPCR signaling, ion channels, etc.
+- **Regulatory Pathways** - Feedback loops, homeostasis
+- **Clinical Correlations** - How this relates to diseases and pharmacology
+- **Related Diseases** - Cross-links to Conditions Explorer
+- **Related Medications** - Cross-links to Medications Explorer
+
+#### Example: Insulin Secretion Regulation
+
+```javascript
+{
+    id: "insulin-secretion-regulation",
+    name: "Insulin Secretion Regulation",
+    system: "endocrine",
+    categories: ["physiology", "beta-cell-physiology"],
+    tags: ["physiology", "basic-science", "GPCR", "insulin"],
+    pageType: "physiology",
+    detail: {
+        overview: "Pancreatic beta cells secrete insulin in response to glucose and various hormonal signals mediated by G-protein coupled receptors (GPCRs)...",
+
+        receptorTable: `
+## GPCR Regulation of Insulin Secretion
+
+| Receptor | G alpha subunit | Effect on insulin secretion |
+|----------|-----------------|----------------------------|
+| Muscarinic M3 | Gq | ⬆️ Increased |
+| Glucagon | Gs/Gq | ⬆️ Increased |
+| Beta-2 adrenergic | Gs | ⬆️ Increased |
+| GLP-1 | Gs | ⬆️ Increased |
+| Alpha-2 adrenergic | Gi | ⬇️ Decreased |
+| Somatostatin 2 | Gi | ⬇️ Decreased |
+
+### Key Mechanisms:
+- **Gs pathway**: Activates adenylyl cyclase → ↑ cAMP → ↑ PKA → enhanced insulin secretion
+- **Gq pathway**: Activates phospholipase C → ↑ IP3/DAG → ↑ Ca²⁺ → enhanced insulin secretion
+- **Gi pathway**: Inhibits adenylyl cyclase → ↓ cAMP → ↓ PKA → suppressed insulin secretion
+        `,
+
+        glucoseStimuatedInsulinSecretion: "GLUCOSE METABOLISM → ATP production → closes K-ATP channels → depolarization → opens voltage-gated Ca²⁺ channels → Ca²⁺ influx → insulin granule exocytosis...",
+
+        amplifyingPathways: "GLP-1 (Gs) and muscarinic M3 (Gq) receptors AMPLIFY glucose-stimulated insulin secretion. They do NOT trigger insulin release alone (glucose-dependent), making GLP-1 agonists safe (low hypoglycemia risk)...",
+
+        inhibitoryPathways: "Alpha-2 adrenergic and somatostatin receptors (both Gi) SUPPRESS insulin secretion. Activated during stress (epinephrine), fasting (somatostatin), or by medications (alpha-2 agonists like clonidine)...",
+
+        clinicalCorrelations: [
+            "**GLP-1 agonists** (semaglutide, liraglutide, dulaglutide): Activate Gs pathway → glucose-dependent insulin secretion → T2DM treatment with LOW hypoglycemia risk",
+            "**Alpha-2 agonists** (clonidine, dexmedetomidine): Activate Gi pathway → SUPPRESS insulin → can cause HYPERGLYCEMIA (important side effect)",
+            "**Beta-blockers**: Block beta-2 receptors → impair counterregulatory response to hypoglycemia → MASK hypoglycemia symptoms (tachycardia, tremor)",
+            "**Somatostatin analogs** (octreotide): Activate Gi pathway → suppress insulin → useful for INSULINOMA treatment (paradoxical - suppress tumor insulin secretion)",
+            "**Atropine** (muscarinic antagonist): Blocks M3 receptors → can reduce insulin secretion → rarely causes hyperglycemia",
+            "**Sulfonylureas** (glyburide, glipizide): Close K-ATP channels directly → insulin release INDEPENDENT of glucose → HIGH hypoglycemia risk (vs GLP-1)"
+        ],
+
+        relatedDiseases: [
+            "type-1-diabetes-mellitus (autoimmune beta cell destruction → NO insulin secretion)",
+            "type-2-diabetes-mellitus (impaired beta cell function + insulin resistance)",
+            "insulinoma (autonomous insulin secretion → hypoglycemia)",
+            "maturity-onset-diabetes-of-the-young (MODY - K-ATP channel mutations)"
+        ],
+
+        relatedMedications: [
+            "glp1-agonists (semaglutide, liraglutide, dulaglutide)",
+            "sulfonylureas (glyburide, glipizide, glimepiride)",
+            "beta-blockers (metoprolol, propranolol, atenolol)",
+            "alpha-2-agonists (clonidine, dexmedetomidine)",
+            "somatostatin-analogs (octreotide, lanreotide)",
+            "atropine"
+        ],
+
+        usmleHighYield: [
+            "GLP-1 = Gs → cAMP ↑ → GLUCOSE-DEPENDENT insulin release (safe, low hypoglycemia)",
+            "Alpha-2 agonists = Gi → cAMP ↓ → SUPPRESS insulin → HYPERGLYCEMIA side effect",
+            "Beta-blockers → mask hypoglycemia symptoms (tachycardia, tremor) but NOT diaphoresis (cholinergic)",
+            "Sulfonylureas bypass glucose → NON-glucose-dependent → HIGH hypoglycemia risk vs GLP-1",
+            "Somatostatin = Gi → suppress insulin → treat insulinoma or acromegaly (suppress GH)",
+            "Muscarinic M3 = Gq → amplify glucose-stimulated insulin secretion"
+        ]
+    }
+}
+```
+
+#### Estimated Physiology Topics by System:
+- **Cardiovascular**: 15-20 topics (cardiac action potential, Frank-Starling, baroreceptor reflex, etc.)
+- **Respiratory**: 10-12 topics (ventilation-perfusion matching, oxygen-hemoglobin curve, etc.)
+- **Renal**: 15-18 topics (GFR regulation, acid-base, electrolyte handling, etc.)
+- **Gastrointestinal**: 12-15 topics (gastric acid secretion, bile metabolism, etc.)
+- **Endocrine**: 20-25 topics (HPT axis, HPA axis, insulin regulation, etc.)
+- **Neurology**: 15-20 topics (action potentials, neurotransmitters, etc.)
+- **Hematology**: 10-12 topics (coagulation cascade, hemoglobin synthesis, etc.)
+- **Immunology**: 12-15 topics (complement, cytokines, MHC, etc.)
+
+**Total Estimated Topics**: ~120-150 physiology topics
+**Estimated Time**: 150-200 hours (45-60 min per topic)
+**Target**: Phase 7 (after all conditions complete)
+
+---
+
+### Anatomy Explorer
+
+#### Scope:
+Gross anatomy, histology, and embryology organized by organ system.
+
+#### Content Structure:
+Each anatomy topic includes:
+- **Gross Anatomy** - Macroscopic structure
+- **Histology** - Microscopic structure and cell types
+- **Embryology** - Developmental origin
+- **Anatomical Relationships** - Spatial relationships with other structures
+- **Clinical Correlations** - Anatomical basis of disease
+- **Related Diseases** - Cross-links to conditions affected by this anatomy
+- **Imaging Pearls** - How this appears on X-ray, CT, MRI
+
+#### Example Structure:
+
+```javascript
+{
+    id: "pancreatic-anatomy-histology",
+    name: "Pancreatic Anatomy & Histology",
+    system: "endocrine",
+    categories: ["anatomy", "endocrine-anatomy"],
+    tags: ["anatomy", "histology", "pancreas"],
+    pageType: "anatomy",
+    detail: {
+        grossAnatomy: "Retroperitoneal organ in upper abdomen. Head (C-loop of duodenum), neck, body, tail (extends to splenic hilum). Dual function: EXOCRINE (acinar cells 98%) and ENDOCRINE (islets of Langerhans 2%)...",
+
+        histology: `
+## Islets of Langerhans (Endocrine)
+- **Beta cells (70%)**: Insulin secretion. Located centrally in islet.
+- **Alpha cells (20%)**: Glucagon secretion. Peripheral in islet.
+- **Delta cells (5-10%)**: Somatostatin secretion. Scattered.
+- **PP cells (<5%)**: Pancreatic polypeptide. Scattered.
+        `,
+
+        embryology: "Develops from foregut endoderm week 4-5. Dorsal and ventral pancreatic buds fuse. Ventral bud rotates → forms uncinate process + inferior head. Dorsal bud → body, tail, superior head...",
+
+        clinicalCorrelations: [
+            "**Type 1 DM**: Autoimmune destruction of beta cells → insulitis (lymphocytic infiltration of islets)",
+            "**Type 2 DM**: Beta cell dysfunction + amyloid deposition (amylin aggregates)",
+            "**Pancreatic cancer**: Head tumors (70%) → obstructive jaundice (compresses common bile duct)",
+            "**Annular pancreas**: Embryologic malformation → duodenal obstruction in neonates"
+        ],
+
+        relatedDiseases: [
+            "type-1-diabetes-mellitus",
+            "type-2-diabetes-mellitus",
+            "acute-pancreatitis",
+            "chronic-pancreatitis",
+            "pancreatic-adenocarcinoma"
+        ]
+    }
+}
+```
+
+#### Estimated Anatomy Topics by System:
+- **Cardiovascular**: 20-25 topics
+- **Respiratory**: 10-12 topics
+- **Gastrointestinal**: 25-30 topics
+- **Neurology**: 30-40 topics (most anatomy-heavy)
+- **Musculoskeletal**: 40-50 topics
+- **Reproductive**: 15-20 topics
+
+**Total Estimated Topics**: ~180-220 anatomy topics
+**Estimated Time**: 200-250 hours
+**Target**: Phase 8 (after Physiology Explorer complete)
+
+---
+
+### Implementation Timeline:
+
+#### Interim Storage (During Conditions Expansion):
+- Create `/conditions/data/physiology/` directory
+- Store physiology entries with `pageType: "physiology"` tag
+- These will appear in Conditions Explorer but be filterable/distinguishable
+- Easy migration when Physiology Explorer built
+
+#### Phase 7 Development (After Conditions Complete):
+1. **Weeks 1-4**: Build Physiology Explorer infrastructure (navigation, UI, search)
+2. **Weeks 5-20**: Populate physiology content (15-20 topics per system)
+3. **Weeks 21-24**: Build cross-linking between Conditions ↔ Physiology ↔ Medications
+4. **Weeks 25-26**: QA and testing
+
+#### Phase 8 Development (After Physiology Complete):
+1. **Weeks 1-4**: Build Anatomy Explorer infrastructure
+2. **Weeks 5-24**: Populate anatomy content (20-25 topics per system)
+3. **Weeks 25-28**: Cross-link Anatomy ↔ Conditions ↔ Physiology
+4. **Weeks 29-30**: QA and testing
+
+**Total Additional Time**: ~50-60 weeks (1 year)
+
+---
+
+### Cross-Linking Strategy:
+
+Each **disease** entry will have:
+```javascript
+relatedPhysiology: ["insulin-secretion-regulation", "glucose-metabolism"],
+relatedAnatomy: ["pancreatic-anatomy-histology"]
+```
+
+Each **medication** entry will have:
+```javascript
+relatedPhysiology: ["insulin-secretion-regulation"],
+mechanismOfAction: "GLP-1 receptor agonist (Gs-coupled GPCR) → ↑ cAMP → glucose-dependent insulin secretion..."
+```
+
+Each **physiology** entry will have:
+```javascript
+relatedDiseases: ["type-1-diabetes-mellitus", "type-2-diabetes-mellitus"],
+relatedMedications: ["glp1-agonists", "sulfonylureas"],
+relatedAnatomy: ["pancreatic-anatomy-histology"]
+```
+
+This creates a **knowledge graph** allowing students to:
+- Study disease → understand underlying physiology → see anatomical basis
+- Study medication → understand physiologic target → see related diseases
+- Study physiology → see clinical applications → understand pathophysiology
+
+---
+
+### Priority Rationale:
+
+**Why AFTER Conditions Explorer completion:**
+- Conditions = highest USMLE yield (60-70% of Step 1 questions)
+- Physiology/Anatomy = foundation but tested via disease application
+- Better to have comprehensive disease content FIRST, then add physiology context
+- Prevents scope creep during core content development
+- Allows proper architecture planning once Conditions structure mature
+
+**Why separate explorers (not combined):**
+- Clean separation of concerns
+- Different study patterns (basic science review vs clinical application)
+- Easier to navigate and search
+- Scalable for future additions (Biochemistry, Biostatistics, Behavioral Science)
+- Matches traditional medical curriculum structure (pre-clinical vs clinical)
+
+---
+
+**Document Version**: 1.1
 **Created**: October 21, 2025
+**Updated**: October 23, 2025
 **Next Review**: Weekly
 
 ---
@@ -472,5 +756,6 @@ Each category page should have:
 - High-yield systems (Neurology, Infectious Disease, Endocrine, Rheumatology) prioritized for USMLE Step 1 relevance
 - Format standardization integrated into respective phase work to avoid duplicate effort
 - Category pages deferred until Phase 2 completion to ensure disease content quality first
+- Physiology and Anatomy explorers deferred until ALL conditions complete (Phases 7-8)
 - Timeline is flexible and can be adjusted based on progress velocity
 

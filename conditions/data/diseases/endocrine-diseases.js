@@ -12,7 +12,125 @@ const endocrineDiseases = [
         acuity: "chronic",
         pageType: "disease",
         detail: {
-            definition: "Thyroid hormone deficiency (↓ T4/T3) causing decreased metabolism. Most commonly from Hashimoto thyroiditis (US) or iodine deficiency (worldwide). Primary hypothyroidism: thyroid gland problem (↑ TSH, ↓ T4). Secondary: pituitary problem (↓ TSH, ↓ T4)."
+            definition: "Thyroid hormone deficiency (↓ T4/T3) causing decreased metabolism. Most commonly from Hashimoto thyroiditis (US) or iodine deficiency (worldwide). Primary hypothyroidism: thyroid gland problem (↑ TSH, ↓ T4). Secondary: pituitary problem (↓ TSH, ↓ T4).",
+            pathophysiology: "Thyroid hormones (T4 and T3) regulate metabolic rate of nearly all cells. Synthesized in thyroid follicular cells: iodide uptake → organification → MIT/DIT coupling → T4 (thyroxine, 90% of secretion) and T3 (triiodothyronine, more potent). HPT axis: hypothalamus releases TRH → pituitary releases TSH → thyroid releases T4/T3. T4 is converted peripherally to active T3 by deiodinases. PRIMARY HYPOTHYROIDISM (95% of cases): thyroid gland failure → ↓ T4/T3 → ↑ TSH (negative feedback lost). Causes: (1) Hashimoto thyroiditis (most common in US): autoimmune destruction of thyroid by anti-TPO and anti-thyroglobulin antibodies, lymphocytic infiltration, follicular atrophy. (2) Iodine deficiency (most common worldwide): insufficient substrate for hormone synthesis → goiter from TSH stimulation. (3) Iatrogenic: radioactive iodine ablation, thyroidectomy, neck radiation, medications (lithium, amiodarone). SECONDARY HYPOTHYROIDISM (5%): pituitary TSH deficiency → ↓ T4/T3 + ↓ TSH. Causes: pituitary adenoma, surgery, Sheehan syndrome, hypopituitarism. TERTIARY (rare): hypothalamic TRH deficiency. Effects of deficiency: ↓ BMR → weight gain, cold intolerance, fatigue. ↓ sympathetic activity → bradycardia, constipation. ↓ cardiac contractility → diastolic dysfunction, pericardial effusion. Myxedema: accumulation of glycosaminoglycans in interstitium → non-pitting edema.",
+            epidemiology: "Prevalence 5% in US (10 million). SUBCLINICAL hypothyroidism (↑ TSH, normal T4): 5-10% of population. WOMEN >> MEN (8:1 female predominance). Age: prevalence increases with age, 10-20% of women >60 years. Hashimoto most common in women 30-50. Iodine deficiency affects 2 billion worldwide (endemic goiter regions). Congenital hypothyroidism: 1 in 3000-4000 newborns (screened at birth).",
+            riskFactors: [
+                "Female sex (8:1 female predominance)",
+                "Age >60 years (prevalence 10-20% in elderly women)",
+                "Family history of autoimmune thyroid disease",
+                "Personal history of autoimmune disease (type 1 diabetes, celiac, vitiligo, pernicious anemia)",
+                "Hashimoto thyroiditis: anti-TPO antibodies (90%), anti-thyroglobulin",
+                "Iatrogenic: radioactive iodine treatment for hyperthyroidism, thyroidectomy, external neck radiation",
+                "Medications: lithium (inhibits T4 release), amiodarone (iodine content + thyroid dysfunction), interferon-alpha, tyrosine kinase inhibitors",
+                "Iodine deficiency (worldwide) or excess (Wolff-Chaikoff effect)",
+                "Down syndrome, Turner syndrome (increased risk autoimmune thyroid disease)",
+                "Postpartum thyroiditis: transient hypothyroidism after hyperthyroid phase (5-10% of women)",
+                "Pregnancy (increased thyroid hormone requirements)"
+            ],
+            presentation: "ONSET: insidious, gradual over months-years. May be asymptomatic in mild/subclinical cases. METABOLIC: fatigue (most common), lethargy, weakness, cold intolerance (prefer warm environments), weight gain (5-10 lbs, modest despite normal appetite). CARDIOVASCULAR: bradycardia, reduced exercise tolerance, dyspnea on exertion. GASTROINTESTINAL: constipation, decreased appetite. NEUROLOGIC: slowed mentation, poor concentration, memory impairment, depression, psychomotor slowing. Carpal tunnel syndrome (myxedematous infiltration of median nerve). DERMATOLOGIC: dry, coarse skin. Brittle hair, hair loss (especially lateral eyebrows). Puffiness of face (periorbital edema). REPRODUCTIVE: menorrhagia (prolonged, heavy periods from anovulation), infertility, decreased libido. Men: erectile dysfunction. MYXEDEMA (severe): non-pitting edema of hands, feet, periorbital. Macroglossia. Myxedema coma (rare, life-threatening): hypothermia, bradycardia, hypoventilation, altered mental status, hyponatremia. Precipitated by infection, cold exposure, medications (sedatives).",
+            physicalExam: [
+                "Vital signs: bradycardia (HR 50-60 bpm), hypothermia (in severe cases), diastolic hypertension (↑ SVR)",
+                "General: flat affect, slow speech, psychomotor retardation, delayed relaxation phase of deep tendon reflexes (CLASSIC finding - 'hung-up' reflexes)",
+                "Skin: cool, dry, rough, pale (anemia). Carotenemia (yellowish skin, spares sclera vs jaundice). Non-pitting edema (myxedema) of face, hands, feet.",
+                "Hair: coarse, brittle hair. Loss of lateral one-third of eyebrows (madarosis). Diffuse alopecia.",
+                "Face: periorbital puffiness, facial edema, expressionless facies",
+                "Neck: thyroid exam - may be goitrous (Hashimoto, iodine deficiency) or atrophic (end-stage Hashimoto, post-ablation). Non-tender diffuse goiter in Hashimoto.",
+                "Cardiovascular: bradycardia, distant heart sounds (pericardial effusion), diastolic HTN, cool extremities",
+                "Abdomen: hypoactive bowel sounds (constipation)",
+                "Neurologic: delayed relaxation phase of DTRs (especially Achilles reflex - hallmark). Carpal tunnel signs (Tinel, Phalen). Ataxia, proximal muscle weakness.",
+                "Tongue: macroglossia (enlarged tongue) in severe myxedema",
+                "Mental status: slowed mentation, depressed mood, poor memory"
+            ],
+            diagnosticCriteria: "LABORATORY DIAGNOSIS based on TSH and free T4 levels. PRIMARY HYPOTHYROIDISM (95%): ↑ TSH (>4.5-5 mIU/L) + ↓ free T4 (<0.8 ng/dL). Overt: ↑ TSH + ↓ T4, symptomatic. Subclinical: ↑ TSH (5-10) + normal T4, often asymptomatic. SECONDARY HYPOTHYROIDISM (5%): ↓ TSH (or inappropriately normal TSH) + ↓ free T4. Suggests pituitary or hypothalamic disease. CLINICAL DIAGNOSIS: symptoms + labs. Severity correlates with degree of TSH elevation. TSH >10 usually requires treatment. TSH 5-10 (subclinical): treat if symptomatic, pregnant, or anti-TPO positive (higher risk of progression).",
+            labs: [
+                "TSH (FIRST-LINE SCREENING TEST): ↑ in primary hypothyroidism (usually >10 in overt, 5-10 in subclinical). Most sensitive early marker. ↓ or normal in secondary hypothyroidism.",
+                "Free T4 (thyroxine): ↓ in overt hypothyroidism (<0.8 ng/dL). Normal in subclinical hypothyroidism. More specific than total T4 (unaffected by TBG).",
+                "Free T3: usually not needed for diagnosis (can be normal in hypothyroidism due to increased T4→T3 conversion). Only order if suspect T3 toxicosis.",
+                "Anti-TPO antibodies (anti-thyroid peroxidase): positive in 90% of Hashimoto thyroiditis. Indicates autoimmune etiology. Predicts progression of subclinical to overt.",
+                "Anti-thyroglobulin antibodies: positive in 50-70% of Hashimoto (less sensitive than anti-TPO)",
+                "CBC: normocytic anemia (decreased EPO) or macrocytic anemia (associated pernicious anemia - B12 deficiency in autoimmune)",
+                "Lipid panel: ↑ LDL, ↑ total cholesterol, ↑ triglycerides (↓ LDL receptor expression)",
+                "BMP: hyponatremia (↓ free water clearance, ↑ ADH)",
+                "CK (creatine kinase): may be elevated (myopathy)",
+                "If secondary hypothyroidism suspected: check other pituitary hormones (cortisol, LH/FSH, prolactin, GH), MRI pituitary"
+            ],
+            imaging: [
+                "Thyroid ultrasound: NOT routinely needed for diagnosis of hypothyroidism. Indications: palpable nodule, goiter, suspected malignancy. Findings in Hashimoto: heterogeneous, hypoechoic gland, decreased vascularity, pseudonodules.",
+                "Radioactive iodine uptake (RAIU): NOT used for hypothyroidism diagnosis (used for hyperthyroidism). Would show low uptake in primary hypothyroidism.",
+                "ECG: sinus bradycardia, low voltage QRS (pericardial effusion), prolonged QT, flattened T waves",
+                "Chest X-ray: enlarged cardiac silhouette (pericardial effusion), pleural effusion (in severe myxedema)",
+                "MRI pituitary: if secondary hypothyroidism (↓ TSH + ↓ T4) → evaluate for pituitary adenoma, empty sella, Sheehan syndrome"
+            ],
+            differentialDiagnosis: [
+                "Subclinical hypothyroidism: ↑ TSH, normal T4. Asymptomatic or mild symptoms. Monitor or treat if TSH >10, pregnant, symptomatic.",
+                "Secondary hypothyroidism: ↓ TSH + ↓ T4 (pituitary/hypothalamic failure). Check other pituitary hormones, MRI pituitary.",
+                "Euthyroid sick syndrome (non-thyroidal illness): ↓ T3, normal or ↓ T4, normal or ↓ TSH. Critical illness, starvation. Resolves with recovery. Do NOT treat.",
+                "Depression: overlapping symptoms (fatigue, weight gain, psychomotor slowing). Check TSH to rule out hypothyroidism.",
+                "Chronic fatigue syndrome: fatigue, normal thyroid function tests",
+                "Anemia: fatigue, pallor. Check CBC and TSH (hypothyroidism can cause anemia).",
+                "Congestive heart failure: edema, dyspnea. CHF is pitting edema (vs non-pitting in myxedema). Hypothyroidism can cause diastolic dysfunction.",
+                "Nephrotic syndrome: edema, hypoalbuminemia. Pitting edema vs non-pitting myxedema. Check urinalysis (proteinuria).",
+                "Medication side effects: lithium, amiodarone can cause hypothyroidism. Check med list."
+            ],
+            management: {
+                acute: [
+                    "MYXEDEMA COMA (rare, life-threatening emergency, 30-50% mortality):",
+                    "Presentation: severe hypothyroidism + altered mental status/coma, hypothermia (<95°F), bradycardia, hypoventilation (↑ CO2), hypotension, hyponatremia. Precipitated by infection, cold, trauma, medications (sedatives, anesthesia).",
+                    "ICU admission required",
+                    "IV levothyroxine loading dose: 200-400 mcg IV bolus (higher dose due to emergency, poor absorption), then 50-100 mcg IV daily until oral tolerated",
+                    "IV liothyronine (T3): 5-20 mcg IV bolus, then 2.5-10 mcg IV q8h (faster onset than T4). Controversial but often given in myxedema coma.",
+                    "Hydrocortisone 100 mg IV q8h: ALWAYS give stress-dose steroids BEFORE thyroid hormone (risk of precipitating adrenal crisis if coexistent adrenal insufficiency). Rule out secondary hypothyroidism.",
+                    "Supportive care: passive rewarming (avoid active rewarming - vasodilation → cardiovascular collapse), mechanical ventilation if hypoventilation/respiratory failure, IV fluids (cautious - risk of fluid overload, hyponatremia), correct hyponatremia slowly, treat precipitating cause (infection - broad-spectrum antibiotics, sepsis workup)"
+                ],
+                chronic: [
+                    "LEVOTHYROXINE (synthetic T4) - FIRST-LINE, standard of care:",
+                    "Dosing: start 1.6 mcg/kg/day (typical 100-125 mcg daily in adults). Lower starting dose in elderly or cardiac disease: 25-50 mcg daily (risk of precipitating angina, arrhythmia).",
+                    "Timing: take on empty stomach, 30-60 minutes BEFORE breakfast (food decreases absorption). Consistent timing daily.",
+                    "Monitoring: check TSH in 6-8 weeks after starting or dose change (T4 half-life ~7 days, steady state in 4-6 weeks). Goal TSH 0.5-2.5 mIU/L. Adjust dose by 12.5-25 mcg increments.",
+                    "Maintenance: once stable, check TSH every 6-12 months. Lifelong treatment usually required.",
+                    "Drug interactions: separate from calcium, iron, PPI by 4 hours (decrease absorption). Estrogen, pregnancy increase TBG → need higher dose.",
+                    "Pregnancy: increase dose by 30-50% (increased T4 degradation, ↑ TBG). Goal TSH <2.5 in 1st trimester, <3 later. Check TSH as soon as pregnancy confirmed, every 4 weeks in 1st half, then at 28-32 weeks.",
+                    "Subclinical hypothyroidism (TSH 5-10, normal T4): treat if TSH >10, symptoms, pregnancy, infertility, anti-TPO positive, goiter, or cardiovascular risk factors. Otherwise monitor TSH every 6-12 months.",
+                    "Avoid liothyronine (T3) monotherapy: shorter half-life, requires multiple daily doses, no proven benefit over T4. Some patients on T4 continue to have symptoms despite normal TSH - can trial T4/T3 combination (controversial).",
+                    "Address underlying cause: if medication-induced (lithium, amiodarone), consider switching if possible. Iodine deficiency: dietary supplementation."
+                ]
+            },
+            complications: [
+                "Myxedema coma: life-threatening, 30-50% mortality. Hypothermia, AMS, hypoventilation, cardiovascular collapse.",
+                "Cardiovascular: diastolic dysfunction, heart failure (↓ contractility), pericardial effusion, atherosclerosis (↑ LDL), coronary artery disease",
+                "Dyslipidemia: ↑ LDL cholesterol, ↑ triglycerides → increased cardiovascular risk. Improves with treatment.",
+                "Infertility: anovulation, menstrual irregularities. Treat hypothyroidism to restore fertility.",
+                "Pregnancy complications (if untreated): miscarriage, preterm birth, preeclampsia, low birth weight, impaired fetal neurodevelopment (maternal T4 critical for fetal brain development in 1st trimester).",
+                "Goiter: chronic TSH stimulation → thyroid enlargement, compressive symptoms (dysphagia, dyspnea). May require surgery if large.",
+                "Obstructive sleep apnea: macroglossia, obesity contribute",
+                "Myopathy: muscle weakness, cramps, ↑ CK. Rhabdomyolysis (rare).",
+                "Neurologic: carpal tunnel syndrome (myxedematous infiltration), cerebellar ataxia, peripheral neuropathy",
+                "Psychiatric: depression, cognitive impairment, psychosis ('myxedema madness' - rare)",
+                "Anemia: normocytic or macrocytic (associated pernicious anemia in autoimmune)",
+                "Over-treatment (iatrogenic hyperthyroidism): atrial fibrillation, osteoporosis, anxiety. Keep TSH in normal range."
+            ],
+            prognosis: "EXCELLENT with treatment. Levothyroxine replacement normalizes TSH and reverses symptoms in 4-8 weeks. Most symptoms resolve completely (fatigue, weight gain, cold intolerance, bradycardia, constipation, mental slowing). Some symptoms persist in minority despite normal TSH (controversial - may benefit from T4/T3 combination). LIFELONG treatment required in most cases (Hashimoto, post-ablation, congenital). Subclinical hypothyroidism: 2-5% per year progress to overt (higher if anti-TPO positive). Untreated severe hypothyroidism: increased cardiovascular morbidity (heart failure, CAD from dyslipidemia), myxedema coma risk. Pregnancy outcomes normal with adequate treatment (goal TSH <2.5). Myxedema coma: 30-50% mortality even with treatment.",
+            clinicalPearls: [
+                "Hypothyroidism = most common thyroid disorder. Hashimoto = most common cause in US (iodine-sufficient areas).",
+                "TSH is FIRST-LINE screening test (most sensitive). ↑ TSH + ↓ T4 = primary hypothyroidism (95% of cases).",
+                "PRIMARY hypothyroidism: ↑ TSH, ↓ T4 (thyroid gland problem). SECONDARY: ↓ TSH, ↓ T4 (pituitary problem).",
+                "Classic triad: fatigue, cold intolerance, weight gain. But presentation is highly variable and insidious.",
+                "Delayed relaxation phase of deep tendon reflexes = HALLMARK physical exam finding ('hung-up' reflexes, especially Achilles).",
+                "Myxedema = non-pitting edema (vs CHF/nephrotic = pitting). Glycosaminoglycan accumulation in interstitium.",
+                "Anti-TPO antibodies in 90% of Hashimoto thyroiditis. Predicts progression of subclinical to overt.",
+                "Subclinical hypothyroidism: ↑ TSH (5-10), normal T4. Treat if TSH >10, pregnant, symptomatic, or anti-TPO+.",
+                "Levothyroxine dosing: 1.6 mcg/kg/day (typical 100-125 mcg). Take on empty stomach 30-60 min before breakfast.",
+                "Elderly or cardiac disease: start LOW dose (25-50 mcg) to avoid precipitating angina/arrhythmia. Titrate slowly.",
+                "Check TSH in 6-8 weeks after dose change (T4 half-life 7 days → steady state 4-6 weeks). Goal TSH 0.5-2.5.",
+                "Pregnancy: increase levothyroxine by 30-50% as soon as pregnancy confirmed. Goal TSH <2.5 in 1st trimester.",
+                "Drug interactions: separate levothyroxine from calcium, iron, PPI by 4 hours (decrease absorption).",
+                "Myxedema coma: ALWAYS give IV hydrocortisone BEFORE thyroid replacement (risk of adrenal crisis if secondary hypothyroidism or coexistent AI).",
+                "Hypothyroidism causes ↑ LDL cholesterol (cardiovascular risk). Improves with treatment.",
+                "Congenital hypothyroidism: screened in all newborns (cretinism if untreated → severe intellectual disability). Early treatment prevents complications.",
+                "Euthyroid sick syndrome: ↓ T3, normal/↓ T4, normal/↓ TSH in critical illness. Do NOT treat (resolves with recovery).",
+                "Lateral eyebrow thinning (madarosis) is classic but not sensitive/specific."
+            ]
         }
     },
     {
@@ -26,7 +144,150 @@ const endocrineDiseases = [
         acuity: "chronic",
         pageType: "disease",
         detail: {
-            definition: "Thyroid hormone excess (↑ T4/T3) causing increased metabolism. Most commonly from Graves disease (autoimmune TSI antibodies). ↓ TSH, ↑ T4/T3. Radioactive iodine uptake differentiates causes."
+            definition: "Thyroid hormone excess (↑ T4/T3) causing increased metabolism. Most commonly from Graves disease (autoimmune TSI antibodies). ↓ TSH, ↑ T4/T3. Radioactive iodine uptake differentiates causes.",
+            pathophysiology: "Excess thyroid hormones (T4/T3) → ↑ metabolic rate, ↑ sympathetic activity, ↑ cardiac output. GRAVES DISEASE (60-80% of hyperthyroidism): autoimmune condition with TSI (thyroid-stimulating immunoglobulins) antibodies that bind and activate TSH receptor → unregulated thyroid hormone synthesis and release. Diffuse thyroid hyperplasia. TSI also stimulates orbital fibroblasts (ophthalmopathy) and dermal fibroblasts (pretibial myxedema). TOXIC MULTINODULAR GOITER (Plummer disease, 15-20%): autonomous thyroid nodules produce excess hormone independent of TSH. Usually older patients, longstanding goiter. TOXIC ADENOMA (5%): single autonomous nodule producing excess hormone. THYROIDITIS (5-10%): transient hyperthyroidism from thyroid destruction releasing preformed hormone. Types: subacute (de Quervain, painful), silent (painless, postpartum), drug-induced (amiodarone, lithium). Self-limited (2-6 months). OTHER: iodine excess (Jod-Basedow phenomenon), TSH-secreting pituitary adenoma (rare), struma ovarii (ectopic thyroid in ovarian teratoma), hCG-mediated (hydatidiform mole, hyperemesis gravidarum - hCG has TSH-like activity). Effects of excess: ↑ BMR → heat intolerance, weight loss. ↑ β-adrenergic sensitivity → tachycardia, tremor, anxiety. ↑ bone turnover → osteoporosis. ↑ GI motility → diarrhea.",
+            epidemiology: "Prevalence 1.2% in US (hyperthyroidism of any cause). WOMEN >> MEN (5-10:1 female predominance). Graves disease: peak age 20-50 years, most common cause of hyperthyroidism in young adults. Toxic multinodular goiter: peak age >60 years, more common in iodine-deficient regions. Toxic adenoma: middle-aged adults. Subclinical hyperthyroidism (↓ TSH, normal T4/T3): 1-2% of population, more common in elderly.",
+            riskFactors: [
+                "Female sex (5-10:1 female predominance)",
+                "Age: Graves 20-50 years, toxic multinodular goiter >60 years",
+                "Family history of autoimmune thyroid disease (Graves)",
+                "Personal history of autoimmune disease (type 1 diabetes, vitiligo, pernicious anemia, Addison disease)",
+                "Smoking (doubles risk of Graves disease and ophthalmopathy)",
+                "Iodine excess: contrast dye, amiodarone, supplements (triggers hyperthyroidism in multinodular goiter - Jod-Basedow)",
+                "Medications: amiodarone (iodine content + direct thyroid effects), lithium, interferon-alpha",
+                "Pregnancy/postpartum period (postpartum thyroiditis 5-10% of women)",
+                "Recent viral infection (subacute thyroiditis)",
+                "Stress, trauma (can precipitate thyroid storm in undiagnosed/untreated hyperthyroidism)"
+            ],
+            presentation: "ONSET: gradual in Graves/toxic nodular (weeks-months), acute in thyroiditis (days-weeks). METABOLIC: weight loss (10-20 lbs) despite increased appetite, heat intolerance, sweating. CARDIOVASCULAR: palpitations, tachycardia (HR 90-120), exercise intolerance, dyspnea, atrial fibrillation (10-25%, especially elderly). NEUROPSYCHIATRIC: anxiety, emotional lability, irritability, insomnia, tremor (fine, rapid), hyperreflexia, proximal muscle weakness. GASTROINTESTINAL: increased bowel movements (frequent, not diarrhea), increased appetite. DERMATOLOGIC: warm, moist skin, fine hair, onycholysis (nail separation). REPRODUCTIVE: oligomenorrhea or amenorrhea (women), decreased libido, gynecomastia (men - ↑ SHBG → ↑ estrogen). GRAVES-SPECIFIC (not in other causes): ophthalmopathy (25-50% - exophthalmos, lid lag, diplopia, periorbital edema), pretibial myxedema (1-5% - non-pitting edema of shins), diffuse non-tender goiter. ELDERLY ('apathetic hyperthyroidism'): minimal symptoms, atrial fibrillation, heart failure, weight loss (not anxiety/tremor). THYROID STORM (rare, life-threatening): severe hyperthyroidism + fever >102°F, tachycardia >140, altered mental status (agitation → coma), GI symptoms (nausea, vomiting, diarrhea). Mortality 10-20%. Precipitated by infection, surgery, trauma, radioiodine treatment.",
+            physicalExam: [
+                "Vital signs: tachycardia (HR 90-140, resting), elevated systolic BP with widened pulse pressure, tachypnea, fever (thyroid storm)",
+                "General: restless, anxious, hyperactive. Warm, moist skin. Flushed appearance.",
+                "Eyes (GRAVES-SPECIFIC): exophthalmos (proptosis - eyeball protrusion), lid lag (upper eyelid lags behind eyeball on downward gaze), lid retraction (sclera visible above iris), stare, chemosis (conjunctival edema), periorbital edema, ophthalmoplegia (restricted eye movements). NOT seen in toxic nodular/adenoma.",
+                "Neck: thyroid exam - DIFFUSE, smooth, non-tender goiter (Graves). Thyroid bruit (↑ vascularity, Graves). Single nodule (toxic adenoma). Multinodular goiter (toxic MNG). Tender thyroid (subacute thyroiditis).",
+                "Cardiovascular: tachycardia, bounding pulses, widened pulse pressure, irregularly irregular rhythm (atrial fibrillation), systolic flow murmur (↑ cardiac output), heart failure signs if severe (JVD, rales, S3)",
+                "Hands: fine tremor (outstretched hands, tongue), warm, moist palms. Onycholysis (Plummer nails - nail separation from bed). Palmar erythema.",
+                "Skin: warm, smooth, moist, velvety. Hyperpigmentation (Graves). Pretibial myxedema (GRAVES-SPECIFIC - non-pitting edema, orange-peel texture on shins, 1-5%).",
+                "Neurologic: hyperreflexia (brisk DTRs), proximal muscle weakness (difficulty standing from chair, climbing stairs), tremor",
+                "Hair: fine, thin hair. Diffuse alopecia.",
+                "Mental status: anxious, restless, emotional lability, pressured speech. Altered mental status in thyroid storm."
+            ],
+            diagnosticCriteria: "LABORATORY DIAGNOSIS: ↓ TSH (<0.1 mIU/L, suppressed) + ↑ free T4 and/or ↑ free T3. TSH is MOST SENSITIVE screening test (suppressed first). OVERT HYPERTHYROIDISM: ↓ TSH + ↑ T4 and/or ↑ T3. SUBCLINICAL HYPERTHYROIDISM: ↓ TSH + normal T4/T3 (early, mild, or T3 toxicosis). T3 TOXICOSIS (5-10%): ↓ TSH + normal T4 + ↑ T3 (must check T3 if T4 normal but TSH suppressed). Radioactive iodine uptake (RAIU) differentiates causes: HIGH uptake (Graves, toxic nodular/adenoma) vs LOW uptake (thyroiditis, exogenous thyroid hormone, iodine excess). Thyroid ultrasound + uptake scan localizes hot nodules.",
+            labs: [
+                "TSH: ↓ or undetectable (<0.1 mIU/L) in hyperthyroidism. MOST SENSITIVE screening test. Suppressed due to negative feedback.",
+                "Free T4 (thyroxine): ↑ in overt hyperthyroidism (>1.8 ng/dL). Normal in subclinical or T3 toxicosis.",
+                "Free T3 (triiodothyronine): ↑ in hyperthyroidism. MUST check if TSH suppressed but T4 normal (T3 toxicosis). T3 often more elevated than T4 in Graves.",
+                "Radioactive iodine uptake (RAIU) - DIFFERENTIATES CAUSES:",
+                "  - HIGH uptake (>25-30% at 24h): Graves disease (DIFFUSE uptake), toxic multinodular goiter (patchy/irregular), toxic adenoma (single hot nodule, suppressed rest of gland)",
+                "  - LOW uptake (<5%): thyroiditis (subacute, silent, postpartum - gland injured, can't trap iodine), exogenous thyroid hormone (factitious), iodine excess (amiodarone, contrast), struma ovarii",
+                "TSI (thyroid-stimulating immunoglobulin) or TRAb (TSH receptor antibody): positive in Graves disease (90-95%). Confirms autoimmune etiology. Useful if RAIU contraindicated (pregnancy, breastfeeding).",
+                "Anti-TPO, anti-thyroglobulin: may be positive in Graves (less specific than TSI)",
+                "ESR: markedly elevated (>50 mm/hr) in subacute thyroiditis (painful thyroid). Normal in Graves.",
+                "CBC: mild leukocytosis, lymphocytosis",
+                "BMP: hypercalcemia (↑ bone turnover), hyperglycemia (↑ gluconeogenesis)",
+                "Liver function: mild transaminase elevation, ↑ alk phos (↑ bone turnover)",
+                "ECG: sinus tachycardia, atrial fibrillation (10-25%, especially elderly), short PR interval"
+            ],
+            imaging: [
+                "Radioactive iodine uptake scan (I-123 or I-131): GOLD STANDARD to determine cause. High uptake (Graves, toxic nodular/adenoma) vs low (thyroiditis, exogenous). Uptake at 4-6h and 24h. Normal 10-30%. CONTRAINDICATED in pregnancy/breastfeeding (use TSI instead).",
+                "Thyroid ultrasound: evaluates thyroid size, nodules, vascularity. Graves: diffuse enlargement, ↑ vascularity (\"thyroid inferno\" on Doppler). Toxic adenoma: single nodule. Multinodular goiter: multiple nodules. Thyroiditis: hypoechoic, heterogeneous.",
+                "Thyroid scintigraphy (I-123 or Tc-99m pertechnetate): shows pattern of uptake. Graves: diffuse uptake. Toxic adenoma: single hot nodule with suppression of surrounding gland. Toxic MNG: multiple hot nodules.",
+                "Neck ultrasound: if palpable nodules, evaluate for malignancy (hypoechoic, irregular, microcalcifications). FNA biopsy if suspicious.",
+                "ECG: sinus tachycardia most common. Atrial fibrillation (irregularly irregular, no P waves). Short PR interval. LVH if longstanding.",
+                "CXR: cardiomegaly if heart failure, thymic enlargement in Graves (rare)"
+            ],
+            differentialDiagnosis: [
+                "Graves disease: diffuse goiter, HIGH RAIU (diffuse), ophthalmopathy (exophthalmos, lid lag - SPECIFIC), pretibial myxedema, TSI positive. Most common cause in young adults.",
+                "Toxic multinodular goiter: multinodular thyroid, HIGH RAIU (patchy), NO ophthalmopathy, older patients (>60), longstanding goiter. Second most common.",
+                "Toxic adenoma: single palpable nodule, HIGH RAIU (single hot nodule, suppressed rest), NO ophthalmopathy",
+                "Subacute thyroiditis (de Quervain): painful, tender thyroid, LOW RAIU, very high ESR (>50), recent viral URI, self-limited (hypothyroid → hyperthyroid → euthyroid over 2-6 months)",
+                "Silent thyroiditis (painless, postpartum): non-tender thyroid, LOW RAIU, normal ESR, postpartum (5-10% women), self-limited",
+                "Exogenous thyroid hormone (factitious thyrotoxicosis): LOW RAIU, ↓ thyroglobulin (not from thyroid), intentional or iatrogenic overdose",
+                "Amiodarone-induced thyrotoxicosis: Type 1 (iodine-induced, HIGH RAIU, pre-existing nodular disease) vs Type 2 (destructive thyroiditis, LOW RAIU)",
+                "TSH-secreting pituitary adenoma (rare): ↑ TSH + ↑ T4/T3 (NOT suppressed TSH). MRI shows pituitary mass. Treat tumor.",
+                "Anxiety disorder: tachycardia, tremor, weight loss. Normal TSH/T4/T3.",
+                "Pheochromocytoma: episodic HTN, tachycardia, sweating. Normal thyroid tests. ↑ metanephrines."
+            ],
+            management: {
+                acute: [
+                    "THYROID STORM (life-threatening emergency, 10-20% mortality):",
+                    "Diagnostic criteria (Burch-Wartofsky score): fever >102°F + tachycardia >140 + CNS dysfunction (agitation, delirium, coma) + GI symptoms. Precipitated by infection, surgery, trauma, RAI, medication non-compliance.",
+                    "ICU admission required. Treat empirically if suspected (do NOT wait for labs).",
+                    "BLOCK SYNTHESIS (first): Propylthiouracil (PTU) 500-1000 mg PO loading, then 250 mg PO q4h. PTU preferred over methimazole in storm (also blocks T4→T3 conversion). If unable to take PO: methimazole 20-25 mg PR q4-6h.",
+                    "BLOCK RELEASE (1 hour AFTER antithyroid drug): Iodine solution (Lugol's or SSKI) 5 drops PO q6h. MUST give antithyroid drug first (otherwise iodine provides substrate for more hormone synthesis). Blocks hormone release. OR Lithium 300 mg PO q6h if iodine allergy.",
+                    "BLOCK T4→T3 CONVERSION: Propranolol 60-80 mg PO q4h (or 1-2 mg IV q10-15min). Blocks peripheral conversion. Also treats tachycardia, tremor. If β-blocker contraindicated: diltiazem.",
+                    "BLOCK ENTEROHEPATIC CIRCULATION: Cholestyramine 4g PO q6h. Binds thyroid hormone in gut.",
+                    "STRESS-DOSE STEROIDS: Hydrocortisone 100 mg IV q8h or dexamethasone 2 mg IV q6h. Blocks T4→T3 conversion + treats potential adrenal insufficiency.",
+                    "SUPPORTIVE CARE: IV fluids (dehydration from fever, GI losses), cooling blankets (avoid aspirin - displaces T4 from TBG), acetaminophen for fever, treat underlying precipitant (antibiotics for infection).",
+                    "Definitive therapy AFTER stabilization: radioactive iodine or thyroidectomy (urgent if refractory)"
+                ],
+                chronic: [
+                    "TREATMENT DEPENDS ON CAUSE AND PATIENT FACTORS:",
+                    "ANTITHYROID DRUGS (thionamides) - FIRST-LINE for Graves:",
+                    "  - Methimazole 10-40 mg PO daily (PREFERRED - once daily, less hepatotoxic). Start 10-20 mg daily, titrate based on T4/TSH q4-6 weeks. Goal: euthyroid in 4-8 weeks. Continue 12-18 months, then taper/stop (30-50% remission in Graves). Does NOT work for toxic nodular (no remission - needs definitive therapy).",
+                    "  - Propylthiouracil (PTU) 50-150 mg PO TID. Use ONLY in: 1st trimester pregnancy (methimazole teratogenic), thyroid storm (blocks T4→T3), methimazole allergy. More hepatotoxic than methimazole.",
+                    "  - Side effects: rash (5%), agranulocytosis (0.5% - fever, sore throat → STOP drug, check CBC), hepatotoxicity (PTU > methimazole - monitor LFTs), arthralgia, vasculitis (PTU)",
+                    "  - Monitoring: check CBC, LFTs at baseline and if symptoms. Check free T4, TSH q4-6 weeks during titration, then q3 months. Patient education: stop drug if fever, sore throat (agranulocytosis).",
+                    "RADIOACTIVE IODINE (I-131) - DEFINITIVE CURE, most common in US:",
+                    "  - Indications: Graves disease (especially if failed medical therapy, patient preference, contraindication to surgery), toxic nodular goiter, toxic adenoma (nodular disease does NOT remit with meds).",
+                    "  - Mechanism: I-131 ablates thyroid tissue. Single oral dose. Cure rate 80-90% after 1 dose.",
+                    "  - CONTRAINDICATIONS: pregnancy (teratogenic), breastfeeding, ophthalmopathy (can worsen - give steroids if moderate-severe eye disease).",
+                    "  - Side effects: hypothyroidism (90% within 1 year - intended). Transient thyroiditis (2 weeks post-treatment). Worsening ophthalmopathy (give prednisone prophylaxis). Sialadenitis (rare).",
+                    "  - Post-treatment: avoid pregnancy 6 months. Monitor TSH q4-6 weeks. Start levothyroxine when hypothyroid.",
+                    "THYROIDECTOMY (surgery) - DEFINITIVE CURE:",
+                    "  - Indications: large goiter with compressive symptoms, suspicious nodule (possible cancer), pregnancy (2nd trimester if needed), ophthalmopathy (contraindication to RAI), patient preference",
+                    "  - Procedure: total or subtotal thyroidectomy. Cure rate >95%.",
+                    "  - Complications: hypothyroidism (intended if total), hypoparathyroidism (damage parathyroids - 1-2%, transient or permanent), recurrent laryngeal nerve injury (hoarseness - 1-2%)",
+                    "  - Pre-op preparation: achieve euthyroid state with antithyroid drugs (prevent thyroid storm). Iodine solution (Lugol's) 7-10 days before surgery to decrease vascularity.",
+                    "BETA-BLOCKERS (SYMPTOMATIC RELIEF - ALL PATIENTS):",
+                    "  - Propranolol 20-40 mg PO q6h (also blocks T4→T3 conversion) or atenolol 25-100 mg daily or metoprolol 25-50 mg BID",
+                    "  - Treats tachycardia, tremor, anxiety, palpitations. Start immediately while waiting for definitive therapy. Does NOT treat underlying hyperthyroidism.",
+                    "TREATMENT BY CAUSE:",
+                    "  - Graves: trial antithyroid drug 12-18 months (30-50% remission). If relapse → RAI or surgery.",
+                    "  - Toxic multinodular goiter / toxic adenoma: RAI or surgery (do NOT remit with meds, need definitive therapy)",
+                    "  - Thyroiditis (subacute, silent, postpartum): SELF-LIMITED (2-6 months). Beta-blockers for symptoms. NSAIDs or steroids if painful (subacute). Monitor TSH (may become hypothyroid → levothyroxine if persistent).",
+                    "  - Amiodarone-induced: Type 1 (iodine-induced) → antithyroid drug + perchlorate. Type 2 (destructive) → steroids. Consider stopping amiodarone if possible.",
+                    "SPECIAL POPULATIONS:",
+                    "  - Pregnancy: PTU in 1st trimester (methimazole teratogenic), switch to methimazole in 2nd-3rd trimester. Avoid RAI. Surgery in 2nd trimester if needed.",
+                    "  - Atrial fibrillation: anticoagulation if CHA2DS2-VASc ≥2 (hyperthyroidism is risk factor for stroke). Treat hyperthyroidism → most convert to sinus rhythm.",
+                    "  - Subclinical hyperthyroidism (↓ TSH, normal T4/T3): treat if TSH <0.1, age >65, osteoporosis, cardiac disease, or symptoms. Otherwise monitor TSH q6 months."
+                ]
+            },
+            complications: [
+                "Thyroid storm: life-threatening, 10-20% mortality. Fever, tachycardia >140, altered mental status, GI symptoms. Precipitated by infection, surgery, trauma.",
+                "Atrial fibrillation: 10-25% of hyperthyroid patients, especially elderly. Risk of stroke → anticoagulate. Usually resolves with treatment of hyperthyroidism.",
+                "Heart failure: high-output cardiac failure from chronic tachycardia, ↑ cardiac output. Treat hyperthyroidism + β-blockers + diuretics.",
+                "Thyrotoxic periodic paralysis: sudden muscle weakness/paralysis (lower extremities) + hypokalemia. Asian males. Precipitated by high-carb meals, exercise. Treat: K+ replacement + β-blockers + treat hyperthyroidism.",
+                "Osteoporosis: ↑ bone turnover → bone loss. Increased fracture risk, especially postmenopausal women. Improves with treatment.",
+                "Ophthalmopathy (Graves-specific): 25-50% of Graves patients. Exophthalmos, diplopia, corneal ulceration, optic neuropathy (vision loss). Smoking worsens. RAI can worsen (give prednisone prophylaxis). Severe cases: high-dose steroids, orbital decompression surgery.",
+                "Pretibial myxedema (Graves-specific): 1-5%. Non-pitting edema of shins. Cosmetic issue, not dangerous.",
+                "Thyrotoxic cardiomyopathy: chronic hyperthyroidism → dilated cardiomyopathy. Usually reversible with treatment.",
+                "Weight loss, muscle wasting (thyrotoxic myopathy): proximal muscle weakness",
+                "Neuropsychiatric: anxiety, insomnia, psychosis (rare)",
+                "Hypercalcemia: ↑ bone resorption → ↑ serum Ca2+",
+                "Complications of treatment: hypothyroidism (RAI, surgery - lifelong levothyroxine), agranulocytosis (antithyroid drugs), hypoparathyroidism, recurrent laryngeal nerve injury (surgery)"
+            ],
+            prognosis: "EXCELLENT with treatment. Symptoms resolve in 4-8 weeks with antithyroid drugs (euthyroid in 6-8 weeks). Graves disease: 30-50% achieve remission after 12-18 months of antithyroid drugs. Higher remission if: smaller goiter, milder hyperthyroidism, lower TSI titers. 50-70% relapse after stopping meds → need definitive therapy (RAI or surgery). Toxic multinodular goiter / toxic adenoma: do NOT remit with meds, require definitive therapy (RAI or surgery) for cure. Thyroiditis: self-limited (2-6 months), excellent prognosis. 30% develop permanent hypothyroidism. Radioactive iodine: 80-90% cured after 1 dose. 90% develop hypothyroidism within 1 year (intended). Thyroidectomy: >95% cure rate. Complications rare (<5%). Untreated hyperthyroidism: increased cardiovascular morbidity (atrial fibrillation, heart failure), osteoporosis, weight loss. Thyroid storm: 10-20% mortality even with treatment.",
+            clinicalPearls: [
+                "Hyperthyroidism = ↓ TSH + ↑ T4/T3. TSH is MOST SENSITIVE screening test.",
+                "Graves disease = most common cause (60-80%), especially in young adults. Toxic multinodular goiter = 2nd most common, elderly.",
+                "Classic symptoms: weight loss despite ↑ appetite, heat intolerance, palpitations, tremor, anxiety, diarrhea",
+                "Graves-SPECIFIC findings (not in other causes): ophthalmopathy (exophthalmos, lid lag), pretibial myxedema, diffuse goiter, thyroid bruit",
+                "Radioactive iodine uptake (RAIU) differentiates causes: HIGH (Graves, toxic nodular) vs LOW (thyroiditis, exogenous thyroid hormone)",
+                "T3 toxicosis (5-10%): ↓ TSH + normal T4 + ↑ T3. MUST check T3 if TSH suppressed but T4 normal.",
+                "Beta-blockers (propranolol, atenolol) for IMMEDIATE symptom relief (tachycardia, tremor, anxiety). Start in all patients.",
+                "Graves treatment: trial antithyroid drugs 12-18 months → 30-50% remission. If relapse → RAI or surgery (definitive).",
+                "Methimazole PREFERRED over PTU (once daily, less hepatotoxic). PTU only for: 1st trimester pregnancy, thyroid storm, methimazole allergy.",
+                "Radioactive iodine (I-131) = most common definitive treatment in US. 80-90% cured. 90% develop hypothyroidism (intended). CONTRAINDICATED in pregnancy.",
+                "Toxic multinodular goiter / toxic adenoma: do NOT remit with meds. Require RAI or surgery for cure.",
+                "Thyroid storm: LIFE-THREATENING (10-20% mortality). Fever >102°F + tachycardia >140 + altered mental status. Treat empirically (don't wait for labs).",
+                "Thyroid storm treatment: PTU → iodine (1hr later) → propranolol → steroids → supportive care. ALWAYS give PTU BEFORE iodine (otherwise iodine provides substrate).",
+                "Atrial fibrillation in 10-25% (especially elderly). Anticoagulate. Usually converts to sinus with treatment of hyperthyroidism.",
+                "Antithyroid drug side effect: agranulocytosis (0.5%). Educate patient: STOP drug if fever/sore throat → check CBC immediately.",
+                "Pregnancy: PTU in 1st trimester (methimazole teratogenic), switch to methimazole 2nd-3rd trimester. Avoid RAI (teratogenic).",
+                "Subclinical hyperthyroidism (↓ TSH, normal T4/T3): treat if TSH <0.1, age >65, osteoporosis, cardiac disease. Otherwise monitor.",
+                "Thyroiditis (subacute, silent, postpartum): SELF-LIMITED (2-6 months). LOW RAIU. Beta-blockers for symptoms. 30% develop permanent hypothyroidism."
+            ]
         }
     },
     {
@@ -40,7 +301,140 @@ const endocrineDiseases = [
         acuity: "chronic",
         pageType: "disease",
         detail: {
-            definition: "Most common cause of hyperthyroidism. Autoimmune: TSI antibodies stimulate TSH receptor. Diffuse goiter, HIGH RAIU (diffuse), ophthalmopathy (exophthalmos, lid lag - SPECIFIC to Graves), pretibial myxedema."
+            definition: "Most common cause of hyperthyroidism (60-80%). Autoimmune disorder: TSI (thyroid-stimulating immunoglobulin) antibodies bind and activate TSH receptor → unregulated thyroid hormone production. Classic triad: hyperthyroidism + ophthalmopathy + pretibial myxedema. Diffuse goiter, HIGH RAIU (diffuse pattern). Women 20-50 years. Treatment: antithyroid drugs, radioactive iodine, or thyroidectomy.",
+            pathophysiology: "AUTOIMMUNE MECHANISM: TSI (thyroid-stimulating immunoglobulins) are IgG antibodies that bind to and ACTIVATE the TSH receptor on thyroid follicular cells → unregulated synthesis and secretion of thyroid hormones (T4/T3) independent of TSH. TSH is suppressed by negative feedback but thyroid continues producing hormone. TSI also stimulates thyroid growth → diffuse goiter. EXTRATHYROIDAL MANIFESTATIONS: TSI cross-reacts with TSH receptors on orbital fibroblasts → fibroblast proliferation, glycosaminoglycan accumulation, inflammation, edema → ophthalmopathy (exophthalmos, extraocular muscle dysfunction). TSI on dermal fibroblasts → pretibial myxedema (non-pitting shin edema). GENETIC: HLA-DR3, CTLA-4 gene polymorphisms increase risk. TRIGGERS: stress, infection, pregnancy, iodine excess, smoking. Often associated with other autoimmune diseases (type 1 diabetes, vitiligo, pernicious anemia, Addison disease).",
+            epidemiology: "Most common cause of hyperthyroidism (60-80% of cases). Prevalence 0.5% in US. WOMEN >> MEN (5-10:1 female predominance). Peak age 20-50 years (young to middle-aged adults). Family history in 50% (genetic predisposition). More common in Caucasians and Asians. Smokers have 2× risk and more severe ophthalmopathy. Postpartum period is common trigger (immune rebound after pregnancy immunosuppression).",
+            riskFactors: [
+                "Female sex (5-10:1 vs males)",
+                "Age 20-50 years (peak incidence)",
+                "Family history of Graves or autoimmune thyroid disease (50% have positive family history)",
+                "Personal history of autoimmune disease: type 1 diabetes, vitiligo, pernicious anemia, Addison disease, celiac disease",
+                "Smoking (doubles risk of Graves + 8× risk of ophthalmopathy, worsens eye disease)",
+                "HLA-DR3, CTLA-4 gene polymorphisms",
+                "Pregnancy/postpartum period (immune rebound after pregnancy - 5% develop postpartum thyroiditis/Graves)",
+                "Iodine excess: contrast dye, supplements, amiodarone (triggers hyperthyroidism in susceptible)",
+                "Stress, infection (precipitating factors)",
+                "Recent viral infection",
+                "Medications: interferon-alpha, immune checkpoint inhibitors (anti-PD-1, anti-CTLA-4)"
+            ],
+            presentation: "HYPERTHYROIDISM SYMPTOMS (same as other causes): weight loss (10-20 lbs) despite ↑ appetite, heat intolerance, sweating, palpitations, tachycardia, anxiety, tremor, insomnia, frequent bowel movements, oligomenorrhea/amenorrhea (women), decreased libido. GRAVES-SPECIFIC FEATURES (differentiate from other hyperthyroidism): OPHTHALMOPATHY (25-50%, SPECIFIC to Graves, NOT seen in toxic nodular): exophthalmos (proptosis - eyeball protrusion), lid retraction (sclera visible above iris - 'stare'), lid lag (upper lid lags behind eye on downward gaze), periorbital edema, chemosis (conjunctival injection/edema), diplopia (extraocular muscle dysfunction - medial/inferior rectus most affected), photophobia, eye pain, excessive tearing. Severe: corneal ulceration, optic neuropathy (vision loss - emergency). PRETIBIAL MYXEDEMA (1-5%, SPECIFIC to Graves): non-pitting edema of shins/dorsum of feet, orange-peel texture, erythematous, raised plaques. Also called thyroid dermopathy. DIFFUSE GOITER (80%): symmetric, smooth, non-tender thyroid enlargement. Thyroid bruit may be heard (↑ vascularity). ONSET: gradual over weeks-months. Can present with thyroid storm (rare, life-threatening - fever, tachycardia >140, AMS).",
+            physicalExam: [
+                "Vital signs: tachycardia (HR 90-140 at rest), widened pulse pressure (↑ systolic, ↓ diastolic), warm skin, tachypnea",
+                "Eyes (GRAVES-SPECIFIC, 25-50%): exophthalmos (proptosis - eyeballs protrude >20mm on Hertel exophthalmometry), lid retraction (sclera visible above cornea - 'Dalrymple sign'), lid lag (upper eyelid lags on downward gaze - 'von Graefe sign'), periorbital edema, chemosis (conjunctival injection/edema), proptosis, limited upward/lateral gaze (inferior/medial rectus fibrosis), diplopia. Measure with Hertel exophthalmometer (>20mm = proptosis).",
+                "Neck: DIFFUSE, smooth, symmetric, non-tender goiter (80%). Thyroid bruit on auscultation (↑ blood flow). No nodules (vs toxic multinodular goiter).",
+                "Skin: warm, moist, velvety, smooth. Pretibial myxedema (1-5%, GRAVES-SPECIFIC): non-pitting edema of shins/feet, orange-peel texture, erythematous, waxy, raised plaques. Hyperpigmentation. Onycholysis (Plummer nails).",
+                "Hands: fine tremor (outstretched hands, tongue), warm, moist palms. Palmar erythema.",
+                "Cardiovascular: tachycardia, bounding pulses, widened pulse pressure, systolic flow murmur (↑ cardiac output), atrial fibrillation (irregularly irregular) in 10-25%",
+                "Neurologic: hyperreflexia, proximal muscle weakness, fine tremor, brisk deep tendon reflexes",
+                "Mental status: anxious, restless, emotional lability, insomnia",
+                "General: restless, hyperactive, weight loss despite good appetite"
+            ],
+            diagnosticCriteria: "CLINICAL + LABORATORY DIAGNOSIS: (1) Hyperthyroidism: ↓ TSH (<0.1 mIU/L) + ↑ free T4/T3. (2) Graves-specific features: ophthalmopathy (exophthalmos, lid lag), pretibial myxedema, diffuse goiter. (3) TSI antibodies positive (90-95%) OR high RAIU with diffuse uptake pattern. RAIU: HIGH uptake (>30% at 24h) with DIFFUSE pattern throughout gland (vs patchy in toxic multinodular goiter, focal in toxic adenoma). TSI antibodies confirm autoimmune etiology (useful if RAIU contraindicated - pregnancy, breastfeeding). Diagnosis can be made on clinical grounds if classic triad present (hyperthyroidism + ophthalmopathy + diffuse goiter).",
+            labs: [
+                "TSH: ↓ or undetectable (<0.1 mIU/L). Suppressed by negative feedback from excess T4/T3.",
+                "Free T4: ↑ (>1.8 ng/dL) in overt Graves. May be normal in subclinical or T3 toxicosis.",
+                "Free T3: ↑ in Graves. Often MORE elevated than T4 (T3:T4 ratio >20 suggests Graves). Check if TSH suppressed but T4 normal (T3 toxicosis).",
+                "TSI (thyroid-stimulating immunoglobulin) or TRAb (TSH receptor antibody): POSITIVE in 90-95% of Graves disease. Confirms autoimmune etiology. Levels correlate with disease activity. First-line test if RAIU contraindicated (pregnancy, breastfeeding, iodine allergy). Can predict neonatal Graves if very high in pregnancy (crosses placenta).",
+                "Anti-TPO, anti-thyroglobulin: may be positive (50-70%) but LESS SPECIFIC than TSI. More common in Hashimoto but can coexist.",
+                "Radioactive iodine uptake (RAIU, if TSI not done): HIGH uptake (>30% at 24h, normal 10-30%). DIFFUSE pattern on scan (entire gland lights up uniformly vs patchy in toxic MNG).",
+                "CBC: mild leukopenia, lymphocytosis",
+                "BMP: hypercalcemia (↑ bone turnover), hyperglycemia",
+                "Liver function: mild transaminase elevation, ↑ alk phos",
+                "ECG: sinus tachycardia, short PR interval, atrial fibrillation (10-25%)"
+            ],
+            imaging: [
+                "Radioactive iodine uptake (RAIU) scan (I-123 or Tc-99m pertechnetate): HIGH uptake (>30% at 24h) with DIFFUSE pattern throughout gland. Differentiates Graves from other causes of hyperthyroidism. CONTRAINDICATED in pregnancy/breastfeeding (use TSI instead).",
+                "Thyroid ultrasound: diffuse thyroid enlargement, INCREASED vascularity ('thyroid inferno' on Doppler - characteristic), hypoechoic, homogeneous. Rules out nodules. Not needed if TSI positive and clinical diagnosis clear.",
+                "Orbital CT or MRI (if severe ophthalmopathy): enlarged extraocular muscles (inferior and medial rectus most common - 'Coca-Cola can sign'), increased orbital fat, optic nerve compression. Helps assess severity and plan treatment (orbital decompression if severe).",
+                "ECG: sinus tachycardia, atrial fibrillation, short PR interval",
+                "CXR: cardiomegaly if heart failure (rare)"
+            ],
+            differentialDiagnosis: [
+                "Toxic multinodular goiter: multinodular thyroid (palpable nodules), HIGH RAIU with PATCHY/irregular pattern, NO ophthalmopathy, older age (>60), longstanding goiter",
+                "Toxic adenoma: single palpable thyroid nodule, HIGH RAIU with focal hot nodule + suppressed surrounding gland, NO ophthalmopathy",
+                "Subacute thyroiditis (de Quervain): PAINFUL tender thyroid, LOW RAIU, very high ESR (>50), recent viral URI, self-limited",
+                "Silent/postpartum thyroiditis: non-tender thyroid, LOW RAIU, normal ESR, postpartum timing, transient",
+                "Hashitoxicosis: initial hyperthyroid phase of Hashimoto (transient release of hormone from thyroid destruction), LOW RAIU, anti-TPO positive, progresses to hypothyroidism",
+                "Exogenous thyroid hormone (factitious): LOW RAIU, ↓ thyroglobulin (not from thyroid), intentional or iatrogenic overdose",
+                "TSH-secreting pituitary adenoma (rare): ↑ TSH + ↑ T4/T3 (NOT suppressed), MRI shows pituitary mass"
+            ],
+            management: {
+                acute: [
+                    "Most Graves patients do NOT require acute management (treated as outpatients with chronic therapy).",
+                    "THYROID STORM (rare, life-threatening, 10-20% mortality):",
+                    "  - Presentation: fever >102°F, tachycardia >140, altered mental status (agitation→coma), GI symptoms. Precipitated by infection, surgery, trauma, RAI, medication non-compliance.",
+                    "  - ICU admission. Treat empirically (don't wait for labs).",
+                    "  - PTU 500-1000mg PO load → 250mg q4h (blocks synthesis + T4→T3 conversion)",
+                    "  - Iodine (Lugol's 5 drops q6h) 1 HOUR AFTER PTU (blocks hormone release)",
+                    "  - Propranolol 60-80mg PO q4h or 1-2mg IV (blocks T4→T3 conversion + treats symptoms)",
+                    "  - Hydrocortisone 100mg IV q8h (blocks T4→T3 conversion + treats potential adrenal insufficiency)",
+                    "  - Supportive: IV fluids, cooling blankets, acetaminophen (NOT aspirin), treat precipitant (antibiotics for infection)"
+                ],
+                chronic: [
+                    "THREE TREATMENT OPTIONS for Graves disease:",
+                    "1. ANTITHYROID DRUGS (thionamides) - FIRST-LINE, especially in young patients, mild disease, small goiter:",
+                    "  - Methimazole 10-40mg PO daily (PREFERRED - once daily, less hepatotoxic than PTU). Start 10-20mg daily, titrate q4-6 weeks based on free T4/TSH. Goal: euthyroid in 4-8 weeks. Continue 12-18 months total, then taper/stop. 30-50% achieve REMISSION (stay euthyroid off meds). Higher remission if: small goiter, mild hyperthyroidism, low TSI titers.",
+                    "  - Propylthiouracil (PTU) 50-150mg PO TID: Use ONLY if (1) 1st trimester pregnancy (methimazole teratogenic), (2) thyroid storm, (3) methimazole allergy. More hepatotoxic.",
+                    "  - Monitor: CBC, LFTs at baseline. Check free T4, TSH q4-6 weeks during titration, then q3 months. Patient education: STOP drug if fever/sore throat (agranulocytosis) → check CBC immediately.",
+                    "  - Side effects: rash (5%), agranulocytosis (0.5% - STOP drug), hepatotoxicity (PTU>methimazole), arthralgia, vasculitis (PTU)",
+                    "  - If RELAPSE after stopping (50-70%): restart antithyroid drug or proceed to definitive therapy (RAI or surgery)",
+                    "2. RADIOACTIVE IODINE (I-131) - DEFINITIVE CURE, most common treatment in US:",
+                    "  - Indications: failed/relapsed after antithyroid drugs, patient preference, contraindication to surgery, moderate-large goiter, elderly",
+                    "  - Mechanism: oral I-131 → ablates thyroid tissue. Single dose. 80-90% cured.",
+                    "  - CONTRAINDICATIONS: pregnancy (teratogenic), breastfeeding, MODERATE-SEVERE OPHTHALMOPATHY (can worsen eye disease - give prednisone 0.3-0.5mg/kg/day starting 2-3 days before RAI, continue 1 month, taper over 3 months if eye disease present).",
+                    "  - Side effects: hypothyroidism (90% within 1 year - EXPECTED, lifelong levothyroxine). Transient thyroiditis (2 weeks post - sore neck, transient worsening hyperthyroidism). Worsening ophthalmopathy (5-15% - prevented with steroids). Sialadenitis (rare).",
+                    "  - Post-RAI: avoid pregnancy 6 months. Monitor TSH q4-6 weeks. Start levothyroxine when hypothyroid (TSH >10 or symptomatic).",
+                    "  - Smoking cessation MANDATORY before RAI (smoking worsens ophthalmopathy post-RAI)",
+                    "3. THYROIDECTOMY (surgery) - DEFINITIVE CURE:",
+                    "  - Indications: large goiter with compressive symptoms (dysphagia, dyspnea), suspicious thyroid nodule (possible cancer), pregnancy (2nd trimester if antithyroid drugs fail/not tolerated), severe ophthalmopathy (contraindication to RAI), patient preference (wants immediate cure)",
+                    "  - Procedure: total or near-total thyroidectomy. Cure >95%.",
+                    "  - Pre-op preparation: (1) Achieve euthyroid state with antithyroid drugs (prevent thyroid storm during surgery). (2) Lugol's iodine solution 5-10 drops TID for 7-10 days pre-op (decreases thyroid vascularity, reduces surgical bleeding).",
+                    "  - Complications: hypothyroidism (intended), hypoparathyroidism (1-2%, transient or permanent - check Ca2+ post-op), recurrent laryngeal nerve injury (hoarseness 1-2%), bleeding, infection",
+                    "ADJUNCTIVE THERAPY (ALL PATIENTS):",
+                    "  - Beta-blockers for IMMEDIATE symptom relief: propranolol 20-40mg PO q6h (also blocks T4→T3) or atenolol 25-100mg daily or metoprolol 25-50mg BID. Treats tachycardia, tremor, anxiety, palpitations. Start immediately while waiting for definitive therapy.",
+                    "OPHTHALMOPATHY MANAGEMENT:",
+                    "  - Mild: artificial tears, sunglasses, eye lubricants, elevate head of bed (reduce periorbital edema). Smoking cessation (most important).",
+                    "  - Moderate-severe: high-dose IV methylprednisolone (1g weekly × 6-12 weeks) or oral prednisone 0.5-1mg/kg/day tapered over 3-6 months. Consider orbital radiation.",
+                    "  - Sight-threatening (optic neuropathy, corneal ulceration): URGENT orbital decompression surgery + high-dose steroids.",
+                    "  - Achieve euthyroid state (hyper or hypothyroidism worsen eye disease). Monitor TSH closely.",
+                    "  - Avoid RAI if moderate-severe eye disease (give prednisone prophylaxis if RAI necessary).",
+                    "PRETIBIAL MYXEDEMA: topical steroids (high-potency), compression stockings. Usually cosmetic, not dangerous.",
+                    "MONITORING: TSI titers correlate with disease activity and predict relapse. Check q6 months during antithyroid drug therapy."
+                ]
+            },
+            complications: [
+                "Thyroid storm: 10-20% mortality. Fever, tachycardia >140, AMS. Precipitated by infection, surgery, RAI.",
+                "Ophthalmopathy (25-50%): exophthalmos, diplopia, optic neuropathy (vision loss - emergency), corneal ulceration. Smoking dramatically worsens. RAI can worsen (give steroid prophylaxis). Severe cases need orbital decompression.",
+                "Pretibial myxedema (1-5%): non-pitting shin edema, cosmetic issue",
+                "Atrial fibrillation (10-25%, especially elderly): stroke risk → anticoagulate if CHA2DS2-VASc ≥2. Usually converts to sinus with treatment.",
+                "Heart failure: high-output failure from chronic tachycardia. Treat hyperthyroidism + β-blockers + diuretics.",
+                "Thyrotoxic periodic paralysis: sudden muscle weakness + hypokalemia. Asian males. Treat with K+ replacement + β-blockers.",
+                "Osteoporosis: ↑ bone turnover → bone loss, fracture risk",
+                "Neonatal Graves (if mother has Graves during pregnancy): TSI crosses placenta → fetal/neonatal hyperthyroidism. Check maternal TSI in 3rd trimester. Neonate: tachycardia, irritability, poor feeding, goiter. Transient (TSI cleared in 3-12 weeks). Treat: methimazole, propranolol.",
+                "Postpartum relapse: 50% relapse in first year postpartum (immune rebound)",
+                "Treatment complications: hypothyroidism (RAI, surgery - lifelong levothyroxine), agranulocytosis (antithyroid drugs - 0.5%), hypoparathyroidism (surgery), recurrent laryngeal nerve injury (surgery)"
+            ],
+            prognosis: "EXCELLENT with treatment. Symptoms resolve in 4-8 weeks with antithyroid drugs (euthyroid in 6-8 weeks). REMISSION RATES with antithyroid drugs: 30-50% after 12-18 months of treatment. Higher remission if: small goiter, mild hyperthyroidism, low TSI titers, Asian ethnicity. RELAPSE: 50-70% relapse after stopping antithyroid drugs (usually within 1 year). If relapse → definitive therapy (RAI or surgery). RADIOACTIVE IODINE: 80-90% cured after 1 dose. 10-20% need 2nd dose. 90% develop hypothyroidism within 1 year (intended). THYROIDECTOMY: >95% cure rate. Complications <5%. OPHTHALMOPATHY: usually stabilizes within 1-2 years. Severity peaks in first 6 months, then improves. Smoking cessation most important. Severe cases (5-10%) need steroids or orbital decompression. UNTREATED: progressive weight loss, atrial fibrillation, heart failure, osteoporosis, thyroid storm risk.",
+            clinicalPearls: [
+                "Graves = most common cause of hyperthyroidism (60-80%), especially in young adults (20-50 years)",
+                "Classic TRIAD: hyperthyroidism + ophthalmopathy + pretibial myxedema. Ophthalmopathy is SPECIFIC to Graves (NOT seen in toxic nodular/adenoma).",
+                "TSI antibodies: positive in 90-95%, confirm autoimmune etiology. First-line if RAIU contraindicated (pregnancy).",
+                "RAIU: HIGH uptake (>30%) with DIFFUSE pattern (entire gland lights up uniformly)",
+                "Ophthalmopathy in 25-50%: exophthalmos, lid lag, lid retraction ('stare'), diplopia. Can occur before, during, or after hyperthyroidism. SMOKING worsens 8×.",
+                "Pretibial myxedema (1-5%): non-pitting shin edema, orange-peel texture. SPECIFIC to Graves (not in other hyperthyroidism).",
+                "Treatment: trial antithyroid drugs 12-18 months → 30-50% remission. If relapse (50-70%) → RAI or surgery.",
+                "Methimazole PREFERRED over PTU (once daily, less hepatotoxic). PTU only for 1st trimester pregnancy, thyroid storm, methimazole allergy.",
+                "Radioactive iodine (I-131): most common definitive treatment in US. 80-90% cured. 90% develop hypothyroidism (expected). CONTRAINDICATED if moderate-severe ophthalmopathy (can worsen - give steroids prophylaxis if necessary).",
+                "Smoking cessation MANDATORY before RAI (prevents worsening ophthalmopathy). Most important intervention for eye disease.",
+                "Beta-blockers (propranolol, atenolol) for immediate symptom relief. Start in ALL patients (treats tachycardia, tremor, anxiety).",
+                "Thyroid storm: LIFE-THREATENING. Fever >102°F + HR >140 + AMS. Treat: PTU → iodine (1hr later) → propranolol → steroids.",
+                "Pregnancy: PTU in 1st trimester (methimazole teratogenic), switch to methimazole 2nd-3rd trimester. Check maternal TSI 3rd trimester (predicts neonatal Graves).",
+                "Ophthalmopathy management: smoking cessation (#1), artificial tears, steroids if moderate-severe, URGENT orbital decompression if optic neuropathy.",
+                "Antithyroid drug side effect: agranulocytosis (0.5%). Educate: STOP if fever/sore throat → check CBC immediately.",
+                "Pre-op thyroidectomy: achieve euthyroid with antithyroid drugs + Lugol's iodine 7-10 days pre-op (↓ vascularity, prevent thyroid storm).",
+                "TSI levels correlate with disease activity, predict relapse and neonatal Graves risk",
+                "Atrial fibrillation in 10-25%. Anticoagulate if CHA2DS2-VASc ≥2. Usually converts to sinus with treatment of Graves."
+            ]
         }
     },
     {
@@ -54,7 +448,150 @@ const endocrineDiseases = [
         acuity: "chronic",
         pageType: "disease",
         detail: {
-            definition: "Most common cause of hypothyroidism in US. Autoimmune destruction of thyroid. Anti-TPO antibodies (90%), anti-thyroglobulin antibodies. Goiter may be present. Women > men (10:1). Gradual onset."
+            definition: "Most common cause of hypothyroidism in iodine-sufficient regions (US, developed countries). Autoimmune destruction of thyroid follicular cells by anti-TPO (90%) and anti-thyroglobulin (50-70%) antibodies → progressive thyroid failure. Lymphocytic infiltration with germinal centers. Goiter may be present (early) or atrophic (late). Women >> men (10:1). Gradual onset over months-years. Treatment: levothyroxine replacement.",
+            pathophysiology: "AUTOIMMUNE THYROIDITIS: CD8+ T-cell mediated destruction of thyroid follicular cells + B-cell production of autoantibodies. Anti-TPO antibodies (thyroid peroxidase - enzyme for thyroid hormone synthesis) in 90-95%. Anti-thyroglobulin antibodies in 50-70%. Lymphocytic infiltration with germinal center formation (chronic inflammation). Apoptosis of follicular cells → progressive thyroid failure. PHASES: (1) EARLY (Hashitoxicosis): thyroid destruction releases preformed hormone → transient hyperthyroidism (weeks-months), low RAIU. (2) EUTHYROID: compensated destruction, ↑ TSH but normal T4 (subclinical hypothyroidism). (3) LATE: overt hypothyroidism, ↑ TSH + ↓ T4. GOITER PROGRESSION: initially enlarged from TSH stimulation + lymphocytic infiltration (Hashimoto goiter). Late stages: atrophic thyroid from complete destruction. GENETIC: HLA-DR3, DR4, DR5 associations. CTLA-4 polymorphisms. Family history common. ASSOCIATED AUTOIMMUNE DISEASES: type 1 diabetes, pernicious anemia, vitiligo, celiac, Addison disease, primary biliary cholangitis. Increased risk of thyroid lymphoma (MALT lymphoma from chronic inflammation).",
+            epidemiology: "Most common cause of hypothyroidism in US and iodine-sufficient areas (worldwide, iodine deficiency still #1). Prevalence 1-2% overt hypothyroidism, 5-10% subclinical. WOMEN >> MEN (10:1 female predominance). Peak age 30-50 years (middle-aged women). Family history in 50% (genetic component). More common in Caucasians, Asians. Subclinical hypothyroidism (↑ TSH, normal T4) affects 5-10% of population, especially women >60 years. 2-5% per year progress to overt hypothyroidism (higher if anti-TPO positive).",
+            riskFactors: [
+                "Female sex (10:1 vs males)",
+                "Age 30-50 years (peak), increases with age (10-20% women >60 have subclinical hypothyroidism)",
+                "Family history of autoimmune thyroid disease (50% have positive family history)",
+                "Personal history of other autoimmune diseases: type 1 diabetes, pernicious anemia, vitiligo, celiac disease, Addison disease, rheumatoid arthritis",
+                "HLA-DR3, DR4, DR5 haplotypes. CTLA-4 gene polymorphisms",
+                "Postpartum thyroiditis: 5-10% of women develop transient thyroiditis postpartum, 30% progress to permanent Hashimoto",
+                "Down syndrome, Turner syndrome (increased autoimmune thyroid disease risk)",
+                "Excess iodine intake: high dietary iodine can precipitate hypothyroidism in susceptible (Wolff-Chaikoff effect)",
+                "Medications: lithium, interferon-alpha, amiodarone, immune checkpoint inhibitors (anti-PD-1, anti-CTLA-4)",
+                "Radiation exposure: neck radiation, radioactive iodine treatment",
+                "Pregnancy (postpartum immune rebound)"
+            ],
+            presentation: "ONSET: insidious, gradual over months-years. Often asymptomatic in early stages (subclinical hypothyroidism). HYPOTHYROIDISM SYMPTOMS: fatigue (most common), cold intolerance, weight gain (5-10 lbs), constipation, dry skin, hair loss (especially lateral eyebrows), menorrhagia (heavy periods), depression, slowed mentation, memory impairment, muscle weakness, bradycardia. GOITER (50%): diffuse, firm, non-tender thyroid enlargement. May have sensation of fullness in neck. Rarely causes compressive symptoms (dysphagia, dyspnea). PROGRESSION: early disease may have goiter + euthyroid. Over time → goiter shrinks (atrophic thyroiditis) as gland destroyed. Some patients have HASHITOXICOSIS: transient hyperthyroid phase (thyroid destruction releases hormone) → then progress to hypothyroidism. Symptoms: weight loss, palpitations, anxiety (lasts weeks-months). ASSOCIATED AUTOIMMUNE DISEASES: patients may have type 1 diabetes, vitiligo, pernicious anemia, celiac. THYROID LYMPHOMA (rare): rapid thyroid enlargement, compressive symptoms, hard mass (concern for malignancy).",
+            physicalExam: [
+                "Vital signs: bradycardia (HR 50-60 bpm), diastolic hypertension, hypothermia (severe cases)",
+                "General: flat affect, slow speech, psychomotor slowing, delayed relaxation of deep tendon reflexes ('hung-up' reflexes)",
+                "Thyroid: DIFFUSE, firm, NON-TENDER goiter (50% in early disease). Pebbled or bosselated surface. Rubbery consistency. May be small/atrophic in late-stage (end-stage Hashimoto). Asymmetric enlargement or hard nodule suggests lymphoma or coexisting thyroid cancer.",
+                "Skin: cool, dry, rough, pale. Carotenemia (yellowish skin, spares sclera). Non-pitting edema (myxedema) of face, hands, feet.",
+                "Hair: coarse, brittle hair. Loss of lateral one-third eyebrows (madarosis). Diffuse alopecia.",
+                "Face: periorbital puffiness, expressionless facies",
+                "Cardiovascular: bradycardia, distant heart sounds (pericardial effusion), diastolic HTN",
+                "Neurologic: delayed relaxation phase of deep tendon reflexes (especially Achilles - hallmark), proximal muscle weakness, carpal tunnel signs (Tinel, Phalen)",
+                "Mental status: slowed mentation, depressed mood, poor concentration",
+                "Associated findings: vitiligo (depigmented patches), acanthosis nigricans (if coexistent type 1 diabetes)"
+            ],
+            diagnosticCriteria: "DIAGNOSIS: (1) Primary hypothyroidism: ↑ TSH + ↓ free T4 (overt) OR ↑ TSH + normal T4 (subclinical). (2) Positive anti-TPO antibodies (90-95% of Hashimoto). Anti-TPO confirms autoimmune etiology. OVERT HYPOTHYROIDISM: TSH >10 mIU/L + free T4 <0.8 ng/dL. SUBCLINICAL HYPOTHYROIDISM: TSH 5-10 + normal T4. Anti-TPO positive predicts progression to overt (2-5%/year). Thyroid biopsy NOT needed (diagnosis based on labs + antibodies). Biopsy would show lymphocytic infiltration with germinal centers, Hürthle cell metaplasia, fibrosis.",
+            labs: [
+                "TSH: ↑ in Hashimoto hypothyroidism (>5 mIU/L in subclinical, >10 in overt). Most sensitive screening test.",
+                "Free T4: ↓ in overt hypothyroidism (<0.8 ng/dL). Normal in subclinical hypothyroidism.",
+                "Anti-TPO antibodies (anti-thyroid peroxidase): POSITIVE in 90-95% of Hashimoto. Confirms autoimmune etiology. Titers correlate with severity of lymphocytic infiltration. Predicts progression of subclinical to overt hypothyroidism.",
+                "Anti-thyroglobulin antibodies: positive in 50-70% of Hashimoto (less sensitive than anti-TPO). Can interfere with thyroglobulin assays (used for thyroid cancer monitoring).",
+                "Free T3: not needed for diagnosis (may be normal in hypothyroidism due to compensatory ↑ T4→T3 conversion)",
+                "CBC: normocytic or macrocytic anemia (associated pernicious anemia in 10% - B12 deficiency from autoimmune gastritis)",
+                "Lipid panel: ↑ LDL, ↑ total cholesterol, ↑ triglycerides",
+                "BMP: hyponatremia (↓ free water clearance)",
+                "CK: may be elevated (myopathy)",
+                "If pernicious anemia suspected: anti-intrinsic factor antibodies, methylmalonic acid, homocysteine, serum B12"
+            ],
+            imaging: [
+                "Thyroid ultrasound: NOT routinely needed for Hashimoto diagnosis (diagnosis based on labs + antibodies). Indications: palpable nodule (rule out malignancy), asymmetric enlargement, rapid growth (concern for lymphoma). Findings: diffuse heterogeneous hypoechoic gland, coarse echotexture, decreased vascularity, pseudonodules (areas of spared tissue). May show true nodules (Hashimoto patients have increased risk of thyroid nodules and papillary thyroid cancer - 2-3× higher).",
+                "Radioactive iodine uptake (RAIU): NOT used for Hashimoto diagnosis. Would show low uptake in hypothyroidism. May be used to differentiate Hashitoxicosis (low RAIU) from Graves (high RAIU) if transient hyperthyroid phase.",
+                "Fine needle aspiration (FNA) biopsy: if palpable nodule or concerning ultrasound features (hypoechoic, irregular, microcalcifications, increased vascularity). Cytology: lymphocytic thyroiditis, Hürthle cells, germinal centers. FNA rarely needed for Hashimoto diagnosis.",
+                "ECG: sinus bradycardia, low voltage QRS (pericardial effusion), prolonged QT",
+                "If rapid thyroid enlargement or hard mass: CT/MRI neck to evaluate for thyroid lymphoma"
+            ],
+            differentialDiagnosis: [
+                "Iodine deficiency hypothyroidism: most common cause worldwide. Low dietary iodine. Goiter (TSH stimulation). Anti-TPO negative. Geographic areas (mountainous, inland). Urinary iodine <100 mcg/L. Treat with iodine supplementation.",
+                "Iatrogenic hypothyroidism: radioactive iodine treatment (for Graves), thyroidectomy, neck radiation. History of prior thyroid treatment. Anti-TPO may be negative.",
+                "Subacute thyroiditis (de Quervain): PAINFUL tender thyroid (vs non-tender Hashimoto). Triphasic: hyperthyroid → hypothyroid → euthyroid. Low RAIU, very high ESR (>50). Recent viral URI. Self-limited (2-6 months).",
+                "Postpartum thyroiditis: transient thyroiditis within 1 year postpartum. Triphasic like subacute but PAINLESS. Anti-TPO often positive. 30% progress to permanent hypothyroidism (Hashimoto).",
+                "Drug-induced hypothyroidism: lithium (inhibits T4 release), amiodarone (iodine content + direct effects), interferon-alpha. Anti-TPO may be negative. Hypothyroidism may resolve if drug stopped.",
+                "Riedel thyroiditis (rare): fibrosing thyroiditis, rock-hard thyroid (\"wooden\"), infiltrates surrounding structures. Compressive symptoms. Biopsy shows fibrosis (not lymphocytes). Associated with IgG4-related disease.",
+                "Primary thyroid lymphoma: rapid thyroid enlargement, hard mass, compressive symptoms. More common in Hashimoto patients (chronic inflammation → MALT lymphoma). Biopsy diagnostic.",
+                "Thyroid nodule/cancer coexisting with Hashimoto: palpable nodule, asymmetric enlargement. Ultrasound + FNA if concerning features. Hashimoto patients have 2-3× higher risk of papillary thyroid cancer."
+            ],
+            management: {
+                acute: [
+                    "Hashimoto is a chronic disease - acute management rarely needed.",
+                    "MYXEDEMA COMA (rare, <1% of Hashimoto patients, but life-threatening if occurs):",
+                    "  - Presentation: severe hypothyroidism + AMS/coma, hypothermia (<95°F), bradycardia, hypoventilation, hypotension. Precipitated by infection, cold, trauma, sedatives.",
+                    "  - ICU admission",
+                    "  - IV levothyroxine 200-400 mcg loading dose → 50-100 mcg IV daily",
+                    "  - IV liothyronine (T3) 5-20 mcg bolus → 2.5-10 mcg q8h (faster onset)",
+                    "  - Hydrocortisone 100 mg IV q8h (ALWAYS give before thyroid hormone - risk of adrenal crisis)",
+                    "  - Supportive: passive rewarming, mechanical ventilation if needed, IV fluids (cautious), treat precipitant (infection)",
+                    "HASHITOXICOSIS (transient hyperthyroid phase - rare):",
+                    "  - Beta-blockers for symptom control: propranolol 20-40 mg q6h",
+                    "  - Do NOT give antithyroid drugs (not producing excess hormone, just releasing stored hormone)",
+                    "  - Self-limited (weeks-months). Monitor TSH - will progress to hypothyroidism."
+                ],
+                chronic: [
+                    "LEVOTHYROXINE (synthetic T4) - STANDARD OF CARE for Hashimoto hypothyroidism:",
+                    "INDICATIONS FOR TREATMENT:",
+                    "  - Overt hypothyroidism (TSH >10, ↓ T4): ALWAYS treat",
+                    "  - Subclinical hypothyroidism (TSH 5-10, normal T4): treat if (1) symptomatic, (2) pregnant or planning pregnancy, (3) anti-TPO positive (higher risk progression), (4) goiter, (5) cardiovascular risk factors, (6) infertility. Otherwise monitor TSH q6-12 months.",
+                    "DOSING:",
+                    "  - Full replacement: 1.6 mcg/kg/day (typical 100-125 mcg daily in healthy adults)",
+                    "  - Elderly or cardiac disease: start LOW (25-50 mcg daily) and titrate slowly q6-8 weeks (risk of precipitating angina, arrhythmia)",
+                    "  - Young, healthy: can start full replacement dose",
+                    "ADMINISTRATION:",
+                    "  - Take on empty stomach 30-60 minutes BEFORE breakfast (food decreases absorption by 20-40%)",
+                    "  - Consistent timing daily",
+                    "  - Separate from calcium, iron, PPI by 4 hours (interfere with absorption)",
+                    "MONITORING:",
+                    "  - Check TSH in 6-8 weeks after starting or dose change (T4 half-life 7 days → steady state in 4-6 weeks)",
+                    "  - Goal TSH 0.5-2.5 mIU/L (some guidelines 0.4-4.0, but tighter control often preferred)",
+                    "  - Adjust dose by 12.5-25 mcg increments based on TSH",
+                    "  - Once stable: check TSH every 6-12 months lifelong",
+                    "PREGNANCY:",
+                    "  - Increase levothyroxine by 30-50% as soon as pregnancy confirmed (↑ thyroid hormone requirements)",
+                    "  - Goal TSH <2.5 mIU/L in 1st trimester, <3.0 in 2nd-3rd trimester",
+                    "  - Check TSH every 4 weeks in first half of pregnancy, then at 28-32 weeks",
+                    "  - Untreated hypothyroidism in pregnancy → miscarriage, preterm birth, preeclampsia, impaired fetal neurodevelopment",
+                    "  - Postpartum: decrease to pre-pregnancy dose",
+                    "SUBCLINICAL HYPOTHYROIDISM MANAGEMENT:",
+                    "  - TSH 5-10, normal T4. If anti-TPO positive: 2-5%/year progress to overt",
+                    "  - Treat if: TSH >10, symptomatic, pregnant, anti-TPO+, goiter, infertility, cardiovascular disease",
+                    "  - If not treating: monitor TSH q6-12 months",
+                    "SPECIAL CONSIDERATIONS:",
+                    "  - Hashitoxicosis (transient hyperthyroidism): do NOT start levothyroxine. Beta-blockers for symptoms. Monitor - will become hypothyroid.",
+                    "  - Goiter: levothyroxine may shrink goiter by suppressing TSH. Large compressive goiter may need surgery.",
+                    "  - Nodules: monitor with ultrasound. FNA if concerning features. Hashimoto patients have increased thyroid cancer risk.",
+                    "LIFELONG TREATMENT: Hashimoto is permanent. Thyroid destruction irreversible. Levothyroxine required for life in nearly all cases."
+                ]
+            },
+            complications: [
+                "Progression to overt hypothyroidism: 2-5% per year with subclinical hypothyroidism (higher if anti-TPO positive). Eventually all Hashimoto patients develop overt hypothyroidism without treatment.",
+                "Myxedema coma: rare (<1%), life-threatening. Hypothermia, AMS/coma, hypoventilation. 30-50% mortality.",
+                "Cardiovascular: diastolic dysfunction, pericardial effusion, dyslipidemia (↑ LDL → atherosclerosis, CAD), heart failure",
+                "Pregnancy complications (if untreated): miscarriage, preterm birth, preeclampsia, low birth weight, impaired fetal neurodevelopment (maternal T4 critical for fetal brain 1st trimester)",
+                "Infertility: anovulation, menstrual irregularities. Treat hypothyroidism to restore fertility.",
+                "Goiter: chronic TSH stimulation → thyroid enlargement. Rarely causes compressive symptoms (dysphagia, dyspnea). May require surgery if large.",
+                "Thyroid nodules: Hashimoto patients have increased risk of thyroid nodules (30-50%). Monitor with ultrasound, FNA if concerning.",
+                "Thyroid cancer: 2-3× increased risk of papillary thyroid cancer in Hashimoto patients. Proposed mechanisms: chronic inflammation, TSH stimulation. Monitor nodules carefully.",
+                "Primary thyroid lymphoma (MALT lymphoma): rare but 50-100× higher risk in Hashimoto vs general population. Chronic lymphocytic infiltration → malignant transformation. Presents as rapid thyroid enlargement, hard mass, compressive symptoms. Median age 60-70 years. FNA or biopsy diagnostic.",
+                "Associated autoimmune diseases: type 1 diabetes, pernicious anemia (10% - B12 deficiency), vitiligo, celiac disease, Addison disease, rheumatoid arthritis, primary biliary cholangitis",
+                "Pernicious anemia: 10% of Hashimoto patients. Autoimmune gastritis → intrinsic factor deficiency → B12 deficiency. Macrocytic anemia, neurologic symptoms (paresthesias, ataxia). Check anti-intrinsic factor antibodies, B12 level.",
+                "Over-treatment (iatrogenic hyperthyroidism): atrial fibrillation, osteoporosis, anxiety. Keep TSH in target range."
+            ],
+            prognosis: "EXCELLENT with levothyroxine treatment. Symptoms resolve in 4-8 weeks with adequate replacement (TSH normalizes in 6-8 weeks). Quality of life returns to normal. LIFELONG TREATMENT required - thyroid destruction is permanent and irreversible. Some patients (minority) report persistent symptoms despite normal TSH (controversial - may benefit from T4/T3 combination, but no clear evidence). SUBCLINICAL HYPOTHYROIDISM PROGRESSION: 2-5% per year progress to overt hypothyroidism. Higher risk if anti-TPO positive (5%/year), higher TSH, older age. GOITER: may shrink with levothyroxine (TSH suppression). Some goiters persist or enlarge despite treatment. THYROID CANCER RISK: 2-3× higher in Hashimoto. Monitor nodules with ultrasound. Papillary thyroid cancer prognosis excellent (>95% 10-year survival with treatment). LYMPHOMA RISK: rare but 50-100× higher. MALT lymphoma prognosis variable (localized disease: 80-90% 5-year survival, advanced: 50%). PREGNANCY OUTCOMES: normal with adequate levothyroxine treatment (goal TSH <2.5 in 1st trimester). UNTREATED: progressive hypothyroidism → cardiovascular morbidity, myxedema coma risk.",
+            clinicalPearls: [
+                "Hashimoto = most common cause of hypothyroidism in US/iodine-sufficient areas (worldwide, iodine deficiency still #1)",
+                "Anti-TPO antibodies positive in 90-95% (diagnostic for autoimmune etiology). Anti-thyroglobulin positive in 50-70% (less sensitive).",
+                "Classic presentation: gradual hypothyroidism + diffuse non-tender goiter + anti-TPO positive. Women 30-50 years.",
+                "Goiter progression: early - enlarged (TSH stimulation + inflammation). Late - atrophic (gland destroyed).",
+                "Hashitoxicosis (rare): transient hyperthyroid phase from thyroid destruction releasing stored hormone. Low RAIU (vs Graves = high RAIU). Self-limited → progresses to hypothyroidism. Do NOT treat with antithyroid drugs.",
+                "Subclinical hypothyroidism (TSH 5-10, normal T4): 2-5%/year progress to overt. Treat if TSH >10, pregnant, symptomatic, anti-TPO+.",
+                "Levothyroxine dosing: 1.6 mcg/kg/day (100-125 mcg typical). Elderly/cardiac: start low 25-50 mcg, titrate slowly.",
+                "Check TSH 6-8 weeks after dose change (T4 half-life 7 days → steady state 4-6 weeks). Goal TSH 0.5-2.5.",
+                "Pregnancy: increase levothyroxine 30-50% immediately. Goal TSH <2.5 in 1st trimester (maternal T4 critical for fetal brain).",
+                "Drug interactions: separate levothyroxine from calcium, iron, PPI by 4 hours (decrease absorption by 20-40%).",
+                "Associated autoimmune: type 1 DM, pernicious anemia (10%), vitiligo, celiac, Addison. Screen if clinical suspicion.",
+                "Pernicious anemia in 10%: macrocytic anemia, B12 deficiency. Check anti-intrinsic factor, B12 level. Treat with B12 injections.",
+                "Increased thyroid cancer risk: 2-3× higher (papillary thyroid cancer). If nodule: ultrasound + FNA if concerning (hypoechoic, irregular, microcalcifications).",
+                "Thyroid lymphoma risk: rare but 50-100× higher (MALT lymphoma). Suspect if rapid thyroid enlargement, hard mass, compressive symptoms. FNA/biopsy.",
+                "Hashimoto is PERMANENT. Lifelong levothyroxine required. Thyroid destruction irreversible.",
+                "Do NOT confuse with Graves: Hashimoto → hypothyroidism, anti-TPO+, goiter. Graves → hyperthyroidism, TSI+, ophthalmopathy.",
+                "Postpartum thyroiditis: 5-10% of women. Triphasic (hyper→hypo→euthyroid). 30% progress to permanent Hashimoto.",
+                "Some patients have both Hashimoto AND Graves antibodies (TSI + anti-TPO). Can transition between hyper and hypothyroidism over time."
+            ]
         }
     },
 
@@ -70,7 +607,157 @@ const endocrineDiseases = [
         acuity: "chronic",
         pageType: "disease",
         detail: {
-            definition: "Autoimmune destruction of pancreatic β cells → absolute insulin deficiency. Children/young adults. Normal or thin. Acute onset (days-weeks). Ketosis-prone (DKA). Low C-peptide. Anti-GAD, anti-islet antibodies. HLA-DR3/DR4. INSULIN required for survival."
+            definition: "Autoimmune destruction of pancreatic β cells → absolute insulin deficiency. Characterized by acute onset (days-weeks) of hyperglycemia with classic symptoms: polyuria, polydipsia, polyphagia, weight loss. Ketosis-prone (DKA risk). Peak age <20 years but can occur at any age (LADA in adults). Requires INSULIN for survival. Positive autoantibodies (anti-GAD, anti-insulin, anti-islet). HLA-DR3/DR4 association. C-peptide low/absent.",
+            pathophysiology: "AUTOIMMUNE DESTRUCTION: T cell-mediated destruction of pancreatic β cells in islets of Langerhans → progressive loss of insulin production. Antibodies target β cell antigens: GAD65 (glutamic acid decarboxylase), IA-2 (insulinoma-associated antigen 2), insulin, ZnT8 (zinc transporter 8). Insulitis (lymphocytic infiltration of islets) precedes clinical diabetes by months-years. PHASES: (1) Genetic predisposition (HLA-DR3/DR4 - 50% risk if both parents have T1DM). (2) Triggering event (viral infection - coxsackie B, enteroviruses; environmental factors). (3) Autoimmunity (antibodies appear, progressive β cell loss - may be asymptomatic for years). (4) Clinical diabetes (symptoms when 80-90% of β cells destroyed). ABSOLUTE INSULIN DEFICIENCY: no insulin → glucose cannot enter cells → hyperglycemia. Lack of insulin → unregulated lipolysis → free fatty acids → ketone production (acetoacetate, β-hydroxybutyrate) → DKA. Glucagon unopposed → hepatic gluconeogenesis/glycogenolysis → worsens hyperglycemia. METABOLIC EFFECTS: ↓ glucose uptake → cells starve → weight loss despite polyphagia. Hyperglycemia → osmotic diuresis → polyuria, polydipsia, dehydration. Ketones → anion gap metabolic acidosis.",
+            epidemiology: "Prevalence 0.5% in US (1.6 million, 5-10% of all diabetes). Incidence 15-30 per 100,000 per year. PEAK AGE: bimodal - 5-7 years and puberty (10-14 years). But can occur at ANY age (LADA - latent autoimmune diabetes in adults, age 30-50). Slight male predominance. More common in Caucasians (especially Scandinavian countries - highest incidence). Less common in Asians, Hispanics, African Americans. GENETIC: 5% risk if parent has T1DM. 50% risk if both parents. Concordance in identical twins 30-50% (not 100% → environmental trigger important). HLA-DR3 and/or DR4 in 95%.",
+            riskFactors: [
+                "Family history: 5% risk if one parent has T1DM, 50% if both parents. Sibling with T1DM: 5-10% risk",
+                "HLA-DR3 and/or DR4 haplotypes (95% of T1DM patients). DR3/DR4 heterozygote highest risk",
+                "Autoantibodies: presence of multiple antibodies (anti-GAD, anti-IA2, anti-insulin, anti-ZnT8) predicts progression to clinical diabetes",
+                "Northern European descent (Scandinavian countries have highest incidence)",
+                "Other autoimmune diseases: autoimmune thyroid disease (Hashimoto, Graves), celiac disease, vitiligo, Addison disease, pernicious anemia",
+                "Viral infections (proposed triggers): coxsackie B virus, enteroviruses, rubella (congenital)",
+                "Environmental factors: cow's milk exposure in infancy (controversial), vitamin D deficiency, lack of breastfeeding (controversial)",
+                "Age: peak 5-7 years and puberty, but can occur at any age"
+            ],
+            presentation: "ACUTE ONSET (days to weeks): CLASSIC TRIAD: polyuria (osmotic diuresis from hyperglycemia), polydipsia (thirst from dehydration), polyphagia (cellular starvation despite hyperglycemia). WEIGHT LOSS (10-30 lbs): cells cannot use glucose (lack of insulin) → catabolism of fat/muscle for energy. FATIGUE, weakness. BLURRED VISION (osmotic changes in lens from hyperglycemia). RECURRENT INFECTIONS: candidal vaginitis (women), balanitis (men), skin infections. May present with DKA (25-40% at diagnosis): Kussmaul breathing, fruity breath, nausea/vomiting, abdominal pain, altered mental status. HONEYMOON PHASE (50%): transient remission after initial treatment (some β cells recover function). Lasts months. Then relapse. LADA (Latent Autoimmune Diabetes in Adults): slower onset in adults 30-50 years. Initially misdiagnosed as type 2 (not obese, modest hyperglycemia). Progress to insulin requirement within 6-12 months. Positive anti-GAD antibodies.",
+            physicalExam: [
+                "General: thin or normal weight (vs obese in type 2). Weight loss. Dehydration if severe hyperglycemia or DKA",
+                "Vital signs: tachycardia (dehydration), hypotension (if severe dehydration/DKA), Kussmaul breathing (deep, rapid - compensatory for acidosis in DKA)",
+                "Skin: dry mucous membranes (dehydration). Candidal rash (groin, inframammary areas). Poor wound healing. Acanthosis nigricans ABSENT (vs type 2 - acanthosis = insulin resistance)",
+                "Breath: fruity odor (acetone) if DKA",
+                "Abdomen: may have diffuse tenderness (DKA can mimic acute abdomen)",
+                "Neurologic: altered mental status if severe hyperglycemia or DKA (lethargy → coma)",
+                "Eyes: fundoscopy usually normal at diagnosis (retinopathy develops after years of poor control)",
+                "Associated autoimmune: vitiligo (depigmented patches), thyroid goiter (Hashimoto or Graves)"
+            ],
+            diagnosticCriteria: "DIABETES DIAGNOSIS (any ONE of following on 2 separate occasions, OR in symptomatic patient with random glucose >200): (1) Fasting plasma glucose (FPG) ≥126 mg/dL (fasting = 8 hours no caloric intake). (2) 2-hour plasma glucose ≥200 mg/dL during oral glucose tolerance test (OGTT, 75g glucose load). (3) HbA1c ≥6.5%. (4) Random plasma glucose ≥200 mg/dL with classic symptoms (polyuria, polydipsia, weight loss). TYPE 1 SPECIFIC FEATURES: Acute onset, age <20 (but can be older - LADA), thin/normal weight, ketosis-prone, positive autoantibodies (anti-GAD, anti-IA2, anti-insulin, anti-ZnT8), low/absent C-peptide. DISTINGUISH FROM TYPE 2: Type 1 = young, thin, acute, ketosis-prone, antibodies+, C-peptide low. Type 2 = older, obese, gradual, not ketosis-prone, antibodies-, C-peptide normal/high.",
+            labs: [
+                "Fasting plasma glucose (FPG): ≥126 mg/dL diagnostic for diabetes (on 2 occasions). Normal <100 mg/dL. Prediabetes 100-125 mg/dL.",
+                "Random plasma glucose: ≥200 mg/dL with symptoms = diabetes",
+                "HbA1c (glycated hemoglobin): ≥6.5% diagnostic. Reflects average glucose over past 2-3 months. Goal in diabetes: <7% (individualized). Normal <5.7%. Prediabetes 5.7-6.4%.",
+                "C-peptide: LOW or ABSENT in type 1 (<0.6 ng/mL). Confirms insulin deficiency (C-peptide = cleavage product of proinsulin, reflects endogenous insulin production). Normal/high in type 2. Helps differentiate type 1 vs type 2.",
+                "AUTOANTIBODIES (confirm autoimmune etiology, distinguish from type 2):",
+                "  - Anti-GAD (glutamic acid decarboxylase): positive in 70-80% of type 1. Most sensitive single antibody.",
+                "  - Anti-IA2 (insulinoma-associated antigen 2): positive in 60-70%",
+                "  - Anti-insulin antibodies (IAA): positive in 50-70%, especially in children",
+                "  - Anti-ZnT8 (zinc transporter 8): positive in 60-80%",
+                "  - Presence of ≥2 antibodies → 90% risk of developing T1DM within 5 years",
+                "Urinalysis: glucosuria (glucose >180 mg/dL, renal threshold). Ketonuria if DKA.",
+                "BMP: hyperglycemia. If DKA: anion gap metabolic acidosis, hyperkalemia (pseudohyperkalemia - actual total body K+ low from osmotic diuresis), BUN/Cr elevated (prerenal from dehydration)",
+                "Lipid panel: hypertriglyceridemia if poorly controlled. HDL may be low.",
+                "TSH, anti-TPO: screen for autoimmune thyroid disease (Hashimoto common in T1DM)",
+                "Tissue transglutaminase IgA (tTG-IgA): screen for celiac disease (6-8% prevalence in T1DM)"
+            ],
+            imaging: [
+                "Imaging NOT routinely needed for type 1 diabetes diagnosis (clinical + lab diagnosis).",
+                "Screening for complications (after years of diabetes):",
+                "  - Dilated fundoscopy: screen for diabetic retinopathy annually starting 5 years after diagnosis (age ≥10). Look for microaneurysms, hemorrhages, exudates, neovascularization.",
+                "  - Urine albumin-to-creatinine ratio (UACR): screen for diabetic nephropathy annually. Microalbuminuria 30-300 mg/g, macroalbuminuria >300 mg/g.",
+                "  - Foot exam: inspect for ulcers, deformities, neuropathy (monofilament test)"
+            ],
+            differentialDiagnosis: [
+                "Type 2 diabetes mellitus: older (>40), obese (BMI >30), gradual onset (months-years), NOT ketosis-prone (HHS more common), negative autoantibodies, normal/high C-peptide, acanthosis nigricans, family history",
+                "LADA (Latent Autoimmune Diabetes in Adults): type 1 with slower onset in adults 30-50 years. Initially appears like type 2 (not obese, modest hyperglycemia) but positive anti-GAD, low C-peptide, progress to insulin requirement within 6-12 months. GAD antibodies distinguish from type 2.",
+                "Monogenic diabetes (MODY - Maturity-Onset Diabetes of the Young): single gene mutation, autosomal dominant, age <25, NOT obese, negative antibodies, normal C-peptide, mild hyperglycemia, strong family history (3 generations). Genetic testing confirms.",
+                "Secondary diabetes: pancreatic disease (chronic pancreatitis, hemochromatosis, cystic fibrosis, pancreatectomy), medications (steroids, thiazides, antipsychotics), endocrine (Cushing syndrome, acromegaly, pheochromocytoma). History/physical suggests underlying cause.",
+                "Diabetes insipidus: polyuria + polydipsia but NO hyperglycemia, NO glucosuria. Dilute urine (osmolality <300). ADH deficiency (central DI) or resistance (nephrogenic DI).",
+                "Psychogenic polydipsia: excessive water intake → polyuria. Normal glucose. Dilute urine. Psychiatric history.",
+                "Hyperthyroidism: weight loss, increased appetite, but NO polyuria/polydipsia, normal glucose"
+            ],
+            management: {
+                acute: [
+                    "NEWLY DIAGNOSED TYPE 1 DIABETES:",
+                    "  - If DKA at presentation (25-40%): treat DKA first (see DKA management). ICU admission. IV fluids, insulin infusion, K+ replacement.",
+                    "  - If NO DKA: can start as outpatient with diabetes education, insulin initiation, close follow-up.",
+                    "DIABETIC KETOACIDOSIS (DKA) - see separate DKA entry for full management"
+                ],
+                chronic: [
+                    "INSULIN THERAPY - ABSOLUTE REQUIREMENT for survival:",
+                    "BASAL-BOLUS REGIMEN (most physiologic, intensive):",
+                    "  - Basal insulin: long-acting (glargine, detemir, degludec) given once or twice daily. Provides steady background insulin (mimics pancreatic basal secretion). Typical starting dose: 0.1-0.2 units/kg/day or 10 units daily. Adjust based on fasting glucose.",
+                    "  - Bolus insulin: rapid-acting (lispro, aspart, glulisine) given before meals (15 min before eating). Covers post-meal glucose rise. Dose based on carb counting (carb-to-insulin ratio, e.g., 1 unit per 10-15g carbs) + correction factor for hyperglycemia.",
+                    "  - Total daily insulin: typically 0.5-1 units/kg/day. 50% basal, 50% bolus (divided among meals).",
+                    "ALTERNATIVE REGIMENS:",
+                    "  - Split-mixed (NPH + regular): NPH (intermediate-acting) + regular insulin BID (before breakfast and dinner). Less physiologic than basal-bolus. Risk of hypoglycemia (NPH peaks).",
+                    "  - Insulin pump (continuous subcutaneous insulin infusion, CSII): programmable basal rates + boluses. Most flexible. Fewer hypoglycemic episodes. Requires training.",
+                    "MONITORING:",
+                    "  - Self-monitoring blood glucose (SMBG): check fasting, before meals, bedtime, occasionally 2h post-meal. Goal fasting 80-130 mg/dL, post-meal <180 mg/dL.",
+                    "  - Continuous glucose monitor (CGM): real-time glucose readings, trend arrows, alerts for hypo/hyperglycemia. Improves glycemic control, reduces hypoglycemia. Recommended for all T1DM patients.",
+                    "  - HbA1c: check every 3 months. Goal <7% (individualized - <6.5% if no hypoglycemia, <8% if elderly/complications). HbA1c 1% reduction → 20-30% decrease in microvascular complications.",
+                    "GLYCEMIC TARGETS (individualized):",
+                    "  - HbA1c <7% (ADA recommendation). <6.5% if can achieve without hypoglycemia. <8% if elderly, complications, hypoglycemia unawareness.",
+                    "  - Fasting/pre-meal: 80-130 mg/dL",
+                    "  - Post-meal (2h): <180 mg/dL",
+                    "  - Time in range (CGM): >70% of readings 70-180 mg/dL",
+                    "ADJUNCTIVE THERAPY:",
+                    "  - Pramlintide (amylin analog): injected with meals. Delays gastric emptying, ↓ glucagon, ↓ appetite. Can ↓ post-meal glucose excursions. Not commonly used (requires separate injection).",
+                    "  - Metformin: off-label in T1DM if overweight/insulin resistance. May ↓ insulin requirements.",
+                    "  - SGLT2 inhibitors: off-label, ↓ glucose + weight + BP. Risk of euglycemic DKA (monitor ketones).",
+                    "SCREENING FOR COMPLICATIONS (microvascular + macrovascular):",
+                    "  - Retinopathy: dilated fundoscopy annually starting 5 years after diagnosis (age ≥10). Refer to ophthalmology if abnormal.",
+                    "  - Nephropathy: annual urine albumin-to-creatinine ratio (UACR), serum creatinine, eGFR. If microalbuminuria → ACE inhibitor or ARB (nephroprotective).",
+                    "  - Neuropathy: annual foot exam (monofilament test, vibration, ankle reflexes). Screen for symptoms (numbness, tingling, pain). Pregabalin or duloxetine if painful neuropathy.",
+                    "  - Cardiovascular disease: annual lipid panel, BP check. Statin if age >40 or CVD risk factors. ASA 75-162 mg daily if age >50 or CVD risk factors. BP goal <130/80.",
+                    "  - Autonomic neuropathy: gastroparesis, orthostatic hypotension, erectile dysfunction, bladder dysfunction",
+                    "SCREENING FOR ASSOCIATED AUTOIMMUNE DISEASES:",
+                    "  - Thyroid: annual TSH. If abnormal → anti-TPO, free T4. Hashimoto or Graves in 15-30%.",
+                    "  - Celiac: screen at diagnosis with tissue transglutaminase IgA (tTG-IgA). Repeat if GI symptoms. 6-8% prevalence.",
+                    "  - Addison disease: if symptoms (hyperpigmentation, hypotension, hyponatremia) → cortisol, ACTH",
+                    "HYPOGLYCEMIA MANAGEMENT:",
+                    "  - Mild (conscious, able to treat): 15g fast-acting carbs (4oz juice, 3-4 glucose tablets, 1 tbsp honey). Recheck glucose in 15 min. Repeat if still <70 mg/dL.",
+                    "  - Severe (unconscious, seizure): glucagon 1mg IM/SC (family/caregiver trained). Call 911. If IV access: dextrose 25g IV (D50W 50mL).",
+                    "  - Prevention: patient education, CGM with alerts, adjust insulin doses, avoid skipping meals",
+                    "DIABETES EDUCATION:",
+                    "  - Carbohydrate counting, insulin dose adjustment",
+                    "  - Sick day management (↑ insulin needs during illness, check ketones)",
+                    "  - Exercise (↓ glucose, may need to ↓ insulin or eat extra carbs)",
+                    "  - Hypoglycemia recognition and treatment",
+                    "  - LIFESTYLE:",
+                    "  - Diet: consistent carbohydrate intake. Healthy eating (whole grains, vegetables, lean protein). Limit simple sugars.",
+                    "  - Exercise: 150 min/week moderate aerobic + resistance training 2×/week. Check glucose before exercise. Carry fast-acting carbs."
+                ]
+            },
+            complications: [
+                "ACUTE:",
+                "  - Diabetic ketoacidosis (DKA): most common acute complication (5-10%/year). Mortality 1-5%. Precipitated by infection, insulin omission, new diagnosis.",
+                "  - Hypoglycemia: most common complication of insulin therapy. Severe hypoglycemia (requires assistance) in 10-30%/year. Recurrent hypoglycemia → hypoglycemia unawareness (↓ counter-regulatory hormones). Seizure, coma, death if untreated.",
+                "MICROVASCULAR (hyperglycemia-related, related to duration and control):",
+                "  - Diabetic retinopathy: leading cause of blindness in adults <65. Prevalence 80% after 15 years T1DM. Nonproliferative (microaneurysms, hemorrhages, exudates) → proliferative (neovascularization, vitreous hemorrhage, retinal detachment). Macular edema. Photocoagulation if severe. Prevention: tight glycemic control (HbA1c <7%).",
+                "  - Diabetic nephropathy: leading cause of ESRD. 30-40% of T1DM develop nephropathy. Stages: microalbuminuria (30-300 mg/g) → macroalbuminuria (>300 mg/g) → declining GFR → ESRD. ACE inhibitors/ARBs slow progression. Prevention: tight glycemic control + BP control (<130/80).",
+                "  - Diabetic neuropathy: 50% after 10-15 years. Distal symmetric polyneuropathy (glove-stocking numbness, tingling, pain). Autonomic neuropathy (gastroparesis, orthostatic hypotension, erectile dysfunction, bladder dysfunction). Charcot joint. Foot ulcers → amputation risk.",
+                "MACROVASCULAR (atherosclerosis - CVD risk equivalent to prior MI):",
+                "  - Coronary artery disease: 2-4× increased risk. MI often silent (autonomic neuropathy). Leading cause of death in T1DM.",
+                "  - Stroke: 2-4× increased risk",
+                "  - Peripheral artery disease: claudication, ulcers, amputation (15× risk)",
+                "OTHER:",
+                "  - Infections: impaired immune function. Candidal infections, UTIs, skin infections, periodontal disease",
+                "  - Gastroparesis: delayed gastric emptying from autonomic neuropathy. Nausea, vomiting, erratic glucose control. Treat: metoclopramide, erythromycin",
+                "  - Cataracts: premature cataract formation",
+                "  - Lipodystrophy at injection sites: rotate injection sites",
+                "  - Psychosocial: depression (3× higher prevalence), eating disorders, diabetes distress, burnout"
+            ],
+            prognosis: "With modern insulin therapy and tight glycemic control: life expectancy approaching normal. Life expectancy reduced by 10-15 years compared to general population (but improving with better treatments). MORTALITY: CVD is leading cause of death (50%). DKA mortality 1-5% (mostly cerebral edema in children). COMPLICATIONS: risk directly related to glycemic control and duration of diabetes. DCCT (Diabetes Control and Complications Trial): intensive insulin therapy (HbA1c 7% vs 9%) → 60% reduction in retinopathy, 50% reduction in nephropathy, 60% reduction in neuropathy. Tight control delays onset and slows progression of complications. MACROVASCULAR DISEASE: T1DM is CVD risk equivalent. Aggressive risk factor modification (BP, lipids, smoking cessation, ASA) essential. HONEYMOON PHASE: 50% have transient remission after diagnosis (months). Then relapse. LADA: slower progression initially but eventual insulin requirement. PROGNOSIS IMPROVING: CGM, insulin pumps, better education → improved outcomes, fewer hypoglycemic episodes, better quality of life.",
+            clinicalPearls: [
+                "Type 1 DM = autoimmune β cell destruction → absolute insulin deficiency. INSULIN REQUIRED for survival.",
+                "Classic presentation: acute onset (days-weeks) of polyuria, polydipsia, polyphagia, weight loss in thin child/young adult. 25-40% present with DKA.",
+                "Diagnostic triad: hyperglycemia + positive autoantibodies (anti-GAD, anti-IA2, anti-insulin, anti-ZnT8) + low/absent C-peptide",
+                "HLA-DR3/DR4 in 95%. Family history: 5% risk if one parent, 50% if both parents. Identical twin concordance 30-50% (environmental trigger important).",
+                "DISTINGUISH FROM TYPE 2: T1 = young, thin, acute, ketosis-prone, antibodies+, C-peptide low. T2 = older, obese, gradual, antibodies-, C-peptide normal/high, acanthosis nigricans.",
+                "LADA (Latent Autoimmune Diabetes in Adults): type 1 in adults 30-50. Initially misdiagnosed as type 2 (not obese). Positive anti-GAD. Progress to insulin requirement in 6-12 months.",
+                "Basal-bolus insulin regimen = gold standard. Basal (glargine/detemir/degludec) once-twice daily + bolus (lispro/aspart/glulisine) before meals.",
+                "Total daily insulin: typically 0.5-1 units/kg/day. 50% basal, 50% bolus (divided among meals).",
+                "HbA1c goal <7% (individualized). HbA1c 1% reduction → 20-30% decrease in microvascular complications. Check HbA1c every 3 months.",
+                "CGM (continuous glucose monitor) recommended for ALL T1DM patients. Improves control, reduces hypoglycemia, measures time in range (goal >70% in 70-180 mg/dL).",
+                "Hypoglycemia = most common complication of insulin therapy. Severe hypoglycemia in 10-30%/year. Treat: 15g fast-acting carbs (15-15 rule). Glucagon 1mg IM if severe.",
+                "Honeymoon phase (50%): transient remission after initial treatment. Lasts months. Then relapse (don't stop insulin!).",
+                "SCREEN for complications annually: retinopathy (fundoscopy 5 years after diagnosis), nephropathy (UACR, Cr, eGFR), neuropathy (foot exam, monofilament), lipids, BP",
+                "Microvascular complications (retinopathy, nephropathy, neuropathy) related to hyperglycemia duration + control. Tight control (HbA1c <7%) prevents/delays complications.",
+                "CVD = leading cause of death (50%). T1DM = CVD risk equivalent. Aggressive risk factor management: statin if age >40, ASA if age >50, BP <130/80.",
+                "SCREEN for associated autoimmune: thyroid (TSH annually - 15-30% have Hashimoto/Graves), celiac (tTG-IgA at diagnosis - 6-8% prevalence)",
+                "DKA precipitants: infection (#1), insulin omission, new diagnosis. Check ketones if sick or glucose >250. Sick day rules: NEVER stop insulin (may need more).",
+                "C-peptide distinguishes T1 from T2. C-peptide = endogenous insulin production. Low in T1 (<0.6), normal/high in T2."
+            ]
         }
     },
     {
@@ -84,7 +771,166 @@ const endocrineDiseases = [
         acuity: "chronic",
         pageType: "disease",
         detail: {
-            definition: "Insulin resistance + relative insulin deficiency. Adults >40 (increasing in youth). Obese (80-90%). Gradual onset (months-years). NOT ketosis-prone (HHS more common). Normal/high C-peptide initially. Negative antibodies. Treatment: lifestyle + metformin → insulin if needed."
+            definition: "Most common type of diabetes (90-95%). Insulin resistance + progressive β cell dysfunction → relative insulin deficiency. Gradual onset (months-years), often asymptomatic initially. Adults >40 years (increasing in youth). Obesity (80-90%). NOT ketosis-prone (HHS more common than DKA). Normal/high C-peptide initially. Negative autoantibodies. Acanthosis nigricans. Associated with metabolic syndrome. Treatment: lifestyle modification + metformin → add agents → insulin if needed.",
+            pathophysiology: "TWO DEFECTS: (1) INSULIN RESISTANCE: peripheral tissues (muscle, adipose, liver) resistant to insulin action → glucose cannot enter cells → hyperglycemia. Mechanisms: ↓ insulin receptor expression, ↓ post-receptor signaling (IRS-1, PI3K defects), ↑ free fatty acids (lipotoxicity), ↑ inflammatory cytokines (TNF-α, IL-6 from adipose tissue), ectopic fat deposition. (2) PROGRESSIVE β CELL DYSFUNCTION: initially β cells compensate by producing more insulin (hyperinsulinemia) → eventually β cells fail from chronic stress (glucotoxicity, lipotoxicity, amyloid deposition) → relative insulin deficiency. NATURAL HISTORY: Years of insulin resistance + compensatory hyperinsulinemia (normoglycemia) → prediabetes (impaired fasting glucose 100-125 or impaired glucose tolerance) → overt diabetes (β cell function <50%). By time of diagnosis, 50% of β cell function lost. METABOLIC EFFECTS: Insulin resistance → hepatic glucose overproduction (↑ gluconeogenesis despite hyperglycemia). Hyperglycemia → osmotic diuresis → polyuria, polydipsia. Some insulin present → prevents lipolysis/ketosis (unlike T1DM - NOT ketosis-prone). Chronic hyperglycemia → microvascular complications (retinopathy, nephropathy, neuropathy). Insulin resistance → dyslipidemia (↑ triglycerides, ↓ HDL, small dense LDL), HTN → macrovascular disease (CVD, stroke, PAD).",
+            epidemiology: "Most common type of diabetes: 90-95% of all diabetes cases. Prevalence 10-12% of US adults (34 million), 1/3 have prediabetes. Incidence rising (obesity epidemic). Age: peak >40 years but increasing in children/adolescents (pediatric obesity epidemic). More common in: African Americans, Hispanics, Native Americans, Asian Americans, Pacific Islanders (2-4× higher risk). Strong family history: 40% risk if one parent, 70% if both parents. Male = female. Associated with metabolic syndrome (50% have metabolic syndrome).",
+            riskFactors: [
+                "Obesity: BMI >30 (80-90% of T2DM obese). Central/visceral adiposity most important (waist circumference >40 inches men, >35 inches women). Fat tissue releases inflammatory cytokines → insulin resistance.",
+                "Age >40 years (but increasing in youth due to obesity epidemic)",
+                "Family history: 40% risk if one parent, 70% if both parents. Polygenic inheritance.",
+                "Race/ethnicity: African American, Hispanic, Native American, Asian American, Pacific Islander (2-4× higher risk)",
+                "Physical inactivity: sedentary lifestyle worsens insulin resistance",
+                "Prediabetes: IFG (100-125 mg/dL) or IGT (2h glucose 140-199 on OGTT) or HbA1c 5.7-6.4%. 5-10%/year progress to diabetes.",
+                "Gestational diabetes mellitus (GDM): 50% develop T2DM within 10 years",
+                "Polycystic ovary syndrome (PCOS): severe insulin resistance, hyperandrogenism, anovulation. 50-70% develop T2DM.",
+                "Metabolic syndrome (≥3 of 5 criteria): central obesity (waist >40M/>35F), HTN (≥130/85), hypertriglyceridemia (≥150), low HDL (<40M/<50F), IFG (≥100)",
+                "History of CVD, HTN, dyslipidemia",
+                "Acanthosis nigricans: hyperpigmented, velvety plaques in skin folds (neck, axilla, groin) - marker of insulin resistance",
+                "Medications: steroids, thiazides, atypical antipsychotics (olanzapine, clozapine), protease inhibitors",
+                "Low birth weight or intrauterine growth restriction (fetal programming)"
+            ],
+            presentation: "GRADUAL ONSET (months-years): often asymptomatic initially. 50% undiagnosed. May be discovered on routine screening (fasting glucose, HbA1c). CLASSIC SYMPTOMS (if hyperglycemia severe): polyuria (osmotic diuresis), polydipsia (dehydration), polyphagia (cellular starvation despite hyperglycemia). LESS COMMON than T1DM (some insulin present → less severe hyperglycemia initially). WEIGHT: usually obese (BMI >30) but can be normal weight (especially Asians - lower BMI threshold for insulin resistance). NO weight loss typically (vs T1DM - weight loss). FATIGUE, blurred vision. RECURRENT INFECTIONS: candidal vaginitis, balanitis, skin infections, slow wound healing. COMPLICATIONS AT DIAGNOSIS (30-50%): may present with complications from years of undiagnosed hyperglycemia - retinopathy, neuropathy (numbness, tingling), nephropathy, CVD. ACANTHOSIS NIGRICANS (30%): hyperpigmented velvety plaques in neck, axilla, groin - marker of insulin resistance. Rarely presents with HHS (hyperosmolar hyperglycemic state) - severe dehydration, AMS, glucose >600.",
+            physicalExam: [
+                "General: obese (BMI >30 in 80-90%). Central/truncal obesity (increased waist circumference >40 inches men, >35 inches women). Normal weight in some (especially Asians).",
+                "Vital signs: hypertension (≥130/85 in metabolic syndrome). Normal unless HHS (hypotension from severe dehydration).",
+                "Skin: ACANTHOSIS NIGRICANS (30%) - hyperpigmented, velvety, thickened plaques in neck, axilla, groin, inframammary folds. Pathognomonic for insulin resistance. Skin tags (acrochordons) in axilla/neck. Candidal rash (groin, inframammary). Poor wound healing.",
+                "Neck: measure waist circumference (central obesity marker). Acanthosis nigricans on posterior neck.",
+                "Eyes: fundoscopy may show diabetic retinopathy at diagnosis (30% have retinopathy - years of undiagnosed hyperglycemia). Microaneurysms, hemorrhages, exudates.",
+                "Cardiovascular: hypertension. Peripheral pulses may be diminished (PAD).",
+                "Neurologic: may have neuropathy at diagnosis. Decreased sensation to monofilament (feet), decreased vibration sense, absent ankle reflexes.",
+                "Feet: inspect for ulcers, calluses, deformities, fungal infections. Loss of protective sensation (neuropathy).",
+                "Associated findings: PCOS in women (hirsutism, acne, obesity), hepatomegaly (NAFLD common)"
+            ],
+            diagnosticCriteria: "DIABETES DIAGNOSIS (any ONE of following on 2 separate occasions in asymptomatic, OR single test if symptomatic): (1) Fasting plasma glucose (FPG) ≥126 mg/dL (fasting = 8 hours no caloric intake). (2) 2-hour plasma glucose ≥200 mg/dL during OGTT (75g glucose load). (3) HbA1c ≥6.5%. (4) Random plasma glucose ≥200 mg/dL with classic symptoms. PREDIABETES: FPG 100-125 mg/dL (impaired fasting glucose) OR 2h OGTT 140-199 mg/dL (impaired glucose tolerance) OR HbA1c 5.7-6.4%. TYPE 2 SPECIFIC FEATURES: Gradual onset, age >40 (but increasing in youth), obese (80-90%), NOT ketosis-prone, negative autoantibodies, normal/high C-peptide, acanthosis nigricans, metabolic syndrome. SCREENING RECOMMENDATIONS (ADA): All adults age ≥35. Earlier if BMI >25 + risk factor (family history, race, HTN, dyslipidemia, PCOS, GDM, sedentary). Repeat every 3 years if normal, annually if prediabetes.",
+            labs: [
+                "Fasting plasma glucose (FPG): ≥126 mg/dL diagnostic (on 2 occasions). Normal <100. Prediabetes 100-125.",
+                "HbA1c: ≥6.5% diagnostic. Reflects average glucose over 2-3 months. Goal <7% (individualized). Normal <5.7%. Prediabetes 5.7-6.4%.",
+                "Oral glucose tolerance test (OGTT): 2h glucose ≥200 mg/dL diagnostic. Less commonly used than FPG or HbA1c (more cumbersome). Useful for gestational diabetes screening, prediabetes.",
+                "C-peptide: NORMAL or HIGH initially (hyperinsulinemia from insulin resistance). Declines over time as β cells fail. Helps differentiate T2 (normal/high) from T1 (low/absent) if unclear.",
+                "Autoantibodies (anti-GAD, anti-IA2, anti-insulin): NEGATIVE in T2DM. If positive → consider LADA (type 1 in adults).",
+                "Lipid panel: dyslipidemia common. ↑ triglycerides (>150), ↓ HDL (<40M/<50F), small dense LDL. Goal LDL <100 (<70 if CVD).",
+                "BMP: hyperglycemia. Creatinine/eGFR (assess kidney function). Electrolytes usually normal unless HHS.",
+                "Liver function: ALT/AST may be elevated (NAFLD common in T2DM - 70% have NAFLD).",
+                "TSH: screen for hypothyroidism (can worsen insulin resistance)",
+                "Urinalysis: glucosuria (glucose >180 mg/dL). Proteinuria if diabetic nephropathy.",
+                "Urine albumin-to-creatinine ratio (UACR): screen for diabetic nephropathy at diagnosis, then annually. Microalbuminuria 30-300 mg/g, macroalbuminuria >300 mg/g."
+            ],
+            imaging: [
+                "Imaging NOT routinely needed for diagnosis (clinical + lab diagnosis).",
+                "SCREENING FOR COMPLICATIONS (at diagnosis and annually):",
+                "  - Dilated fundoscopy: screen for diabetic retinopathy at diagnosis (30% already have retinopathy), then annually. Microaneurysms, hemorrhages, exudates, neovascularization, macular edema.",
+                "  - Monofilament test: screen for diabetic neuropathy (loss of protective sensation in feet). 10g monofilament applied to plantar surface. Inability to feel → high risk for foot ulcers.",
+                "  - ECG: screen for silent MI (autonomic neuropathy). If symptoms or abnormal ECG → stress test or coronary angiography.",
+                "  - Ankle-brachial index (ABI): screen for peripheral artery disease if symptoms (claudication, foot ulcers). ABI <0.9 = PAD."
+            ],
+            differentialDiagnosis: [
+                "Type 1 diabetes mellitus: younger (<20), thin/normal weight, acute onset (days-weeks), ketosis-prone (DKA), positive autoantibodies (anti-GAD), low/absent C-peptide, NO acanthosis nigricans",
+                "LADA (Latent Autoimmune Diabetes in Adults): type 1 in adults 30-50. Appears like T2 initially (gradual onset, not obese) but positive anti-GAD, low C-peptide, progress to insulin requirement within 6-12 months",
+                "Prediabetes: FPG 100-125 or HbA1c 5.7-6.4 or IGT (2h OGTT 140-199). 5-10%/year progress to diabetes. Lifestyle intervention can prevent/delay diabetes.",
+                "Metabolic syndrome: cluster of insulin resistance, central obesity, HTN, dyslipidemia, IFG. Precursor to T2DM and CVD. Treat with lifestyle.",
+                "PCOS (polycystic ovary syndrome): severe insulin resistance in women. Hyperandrogenism (hirsutism, acne), anovulation, obesity, acanthosis nigricans. 50-70% develop T2DM. Metformin improves insulin sensitivity.",
+                "Cushing syndrome: cortisol excess → insulin resistance, hyperglycemia, central obesity, purple striae, moon facies, buffalo hump. Screen with 24h urine cortisol or dexamethasone suppression.",
+                "Acromegaly: GH excess → insulin resistance, hyperglycemia, enlarged hands/feet, coarse features. ↑ IGF-1.",
+                "Hemochromatosis: iron overload → pancreatic damage → diabetes. Bronze diabetes (hyperpigmentation). ↑ ferritin, ↑ transferrin saturation.",
+                "Steroid-induced hyperglycemia: exogenous steroids → insulin resistance. Usually resolves when steroids stopped.",
+                "Gestational diabetes (GDM): glucose intolerance during pregnancy. Screen with OGTT at 24-28 weeks. 50% develop T2DM within 10 years."
+            ],
+            management: {
+                acute: [
+                    "Most T2DM managed as OUTPATIENT with chronic therapy.",
+                    "HYPEROSMOLAR HYPERGLYCEMIC STATE (HHS) - rare acute complication (see HHS entry for full management):",
+                    "  - Glucose >600, pH >7.3 (NO ketoacidosis), osmolality >320, AMS/coma, severe dehydration",
+                    "  - ICU admission. Aggressive IV fluids (NS 1-2L/hr initially), insulin infusion, K+ replacement, treat precipitant (infection)",
+                    "NEWLY DIAGNOSED T2DM: initiate lifestyle modification + metformin at diagnosis"
+                ],
+                chronic: [
+                    "TREATMENT GOALS: HbA1c <7% (individualized - <6.5% if early disease/no comorbidities, <8% if elderly/complications), FPG 80-130 mg/dL, post-meal <180 mg/dL",
+                    "STEP 1: LIFESTYLE MODIFICATION (FOUNDATION for all patients):",
+                    "  - Weight loss: 7-10% body weight if overweight/obese (improves insulin sensitivity, may reverse prediabetes/early diabetes)",
+                    "  - Diet: medical nutrition therapy. Carbohydrate control (consistent intake, choose complex carbs), ↑ fiber, ↓ saturated fat, portion control. Mediterranean or DASH diet.",
+                    "  - Exercise: 150 min/week moderate aerobic (walking, cycling) + resistance training 2×/week. Improves insulin sensitivity.",
+                    "  - Smoking cessation (smoking worsens insulin resistance and CVD risk)",
+                    "STEP 2: METFORMIN (FIRST-LINE pharmacotherapy, start at diagnosis unless contraindicated):",
+                    "  - Mechanism: ↓ hepatic glucose production (↓ gluconeogenesis), ↑ insulin sensitivity",
+                    "  - Dose: start 500mg daily or BID with meals → titrate to 1000mg BID (max 2550mg/day). Extended-release formulation available (better GI tolerability).",
+                    "  - Benefits: ↓ HbA1c 1-2%, weight neutral or modest weight loss, ↓ CVD events, inexpensive, no hypoglycemia (monotherapy)",
+                    "  - Side effects: GI upset (nausea, diarrhea - 30%, improves with time). Lactic acidosis (rare, <1 per 100,000 - risk if renal failure). Vitamin B12 deficiency (long-term use - check B12 periodically).",
+                    "  - Contraindications: eGFR <30 (lactic acidosis risk - discontinue if eGFR <30, use caution if 30-45), severe liver disease, heart failure, contrast dye (hold 48h before and after)",
+                    "STEP 3: ADD SECOND AGENT if HbA1c not at goal after 3 months on metformin (or metformin + lifestyle). Choice based on patient factors:",
+                    "AGENT SELECTION (individualized based on comorbidities, cost, patient preference):",
+                    "  - ASCVD or high CVD risk: add GLP-1 agonist (preferred) or SGLT2 inhibitor (cardioprotective)",
+                    "  - Heart failure or CKD: add SGLT2 inhibitor (preferred - proven mortality benefit in HF, CKD)",
+                    "  - Minimize hypoglycemia: GLP-1 agonist, SGLT2 inhibitor, DPP-4 inhibitor, TZD (avoid sulfonylureas, insulin)",
+                    "  - Weight loss desired: GLP-1 agonist (most effective - 5-10 kg loss), SGLT2 inhibitor (2-4 kg)",
+                    "  - Cost important: sulfonylurea, TZD (inexpensive)",
+                    "MEDICATION CLASSES:",
+                    "  - GLP-1 receptor agonists (semaglutide, liraglutide, dulaglutide): injectable (weekly or daily). ↓ HbA1c 1-1.5%, weight loss 5-10kg, ↓ CVD events (semaglutide, liraglutide proven), ↓ albuminuria. Side effects: nausea (30% - improves), pancreatitis (rare), medullary thyroid cancer risk (animal studies - avoid if personal/family history MEN2 or medullary thyroid CA). Oral semaglutide available.",
+                    "  - SGLT2 inhibitors (empagliflozin, canagliflozin, dapagliflozin): ↓ glucose reabsorption in kidney → glucosuria. ↓ HbA1c 0.5-1%, weight loss 2-4kg, ↓ BP, proven mortality benefit in HF and CKD, ↓ albuminuria progression. Side effects: genital mycotic infections (10% - candidiasis), UTI, volume depletion, euglycemic DKA (rare - hold if NPO/sick), Fournier gangrene (rare), bone fractures (canagliflozin).",
+                    "  - DPP-4 inhibitors (sitagliptin, saxagliptin, linagliptin): oral, well-tolerated. ↓ HbA1c 0.5-0.8%, weight neutral, no hypoglycemia. Less effective than GLP-1 or SGLT2. Side effects: pancreatitis (rare), saxagliptin may ↑ HF hospitalization.",
+                    "  - Sulfonylureas (glipizide, glyburide, glimepiride): ↑ insulin secretion. ↓ HbA1c 1-1.5%, weight gain 2-5kg, hypoglycemia risk (especially glyburide - avoid in elderly), inexpensive. Declining use (hypoglycemia, weight gain, less CV benefit than newer agents).",
+                    "  - Thiazolidinediones/TZDs (pioglitazone): ↑ insulin sensitivity. ↓ HbA1c 1-1.5%, weight gain (fluid retention), edema, bone fractures (especially women), CHF exacerbation (contraindicated in NYHA III-IV HF). Bladder cancer risk (pioglitazone - controversial). Inexpensive. Declining use.",
+                    "  - Insulin: if HbA1c >10%, symptomatic hyperglycemia, or inadequate control on oral agents. Start basal insulin (glargine, detemir, degludec) 10 units daily or 0.1-0.2 units/kg → titrate based on fasting glucose. Add prandial insulin (lispro, aspart, glulisine) if basal insufficient. Weight gain, hypoglycemia risk.",
+                    "COMBINATION THERAPY: if HbA1c >9% or >1.5% above goal → start with 2 agents (metformin + second agent). Triple therapy if needed.",
+                    "INSULIN THERAPY: reserve for (1) severe hyperglycemia (HbA1c >10%, glucose >300), (2) failure of oral agents, (3) pregnancy, (4) hospitalization/surgery. Many T2DM eventually require insulin (progressive β cell failure).",
+                    "SCREENING FOR COMPLICATIONS (critical to prevent/detect early):",
+                    "  - Retinopathy: dilated fundoscopy at diagnosis, then annually. Refer ophthalmology if abnormal. Photocoagulation/anti-VEGF if severe.",
+                    "  - Nephropathy: UACR + serum Cr/eGFR at diagnosis, then annually. If microalbuminuria → ACE inhibitor or ARB (nephroprotective, ↓ albuminuria progression to ESRD).",
+                    "  - Neuropathy: comprehensive foot exam (monofilament, vibration, ankle reflexes) annually. Patient education: daily foot inspection, proper footwear, podiatry referral. Pregabalin or duloxetine if painful neuropathy.",
+                    "  - CVD: annual lipid panel, BP check, ECG. Statin for primary prevention if age >40 (LDL goal <100, <70 if CVD). ASA 75-162mg daily if age >50 or CVD risk factors. BP goal <130/80 (ACE/ARB first-line).",
+                    "  - Autonomic neuropathy: gastroparesis, orthostatic hypotension, erectile dysfunction",
+                    "CARDIOVASCULAR RISK REDUCTION (T2DM = CVD risk equivalent):",
+                    "  - Statin: initiate if age >40 or CVD risk factors. High-intensity statin (atorvastatin 40-80mg, rosuvastatin 20-40mg) if CVD. LDL goal <100 (<70 if CVD).",
+                    "  - ACE inhibitor or ARB: for BP control (goal <130/80) + nephropathy prevention. First-line for HTN in diabetes.",
+                    "  - ASA 75-162mg daily: if age >50 or CVD risk factors (primary prevention). All patients with CVD (secondary prevention).",
+                    "  - BP control: goal <130/80. Lifestyle + ACE/ARB first-line.",
+                    "PATIENT EDUCATION: self-monitoring blood glucose (SMBG - less frequent than T1DM, check fasting + occasional post-meal), diet, exercise, medication adherence, foot care, sick day management, hypoglycemia recognition (if on sulfonylureas or insulin)"
+                ]
+            },
+            complications: [
+                "ACUTE:",
+                "  - Hyperosmolar hyperglycemic state (HHS): glucose >600, severe dehydration, AMS/coma, NO ketoacidosis. Mortality 10-20% (higher than DKA). Precipitated by infection, stroke, MI, medications (steroids, diuretics).",
+                "  - Hypoglycemia: if on sulfonylureas or insulin. Less common than T1DM. Severe hypoglycemia can cause seizure, coma, death.",
+                "  - DKA: rare in T2DM (some insulin present prevents ketosis). Can occur with severe stress (infection, MI) or SGLT2 inhibitors (euglycemic DKA).",
+                "MICROVASCULAR (hyperglycemia duration + control):",
+                "  - Diabetic retinopathy: leading cause of blindness <65 years. 30% have retinopathy at diagnosis (years of undiagnosed hyperglycemia). Nonproliferative → proliferative (neovascularization). Macular edema. Photocoagulation, anti-VEGF.",
+                "  - Diabetic nephropathy: leading cause of ESRD. 20-40% develop nephropathy. Microalbuminuria → macroalbuminuria → declining eGFR → ESRD. ACE/ARB slow progression.",
+                "  - Diabetic neuropathy: 50% have neuropathy. Distal symmetric polyneuropathy (glove-stocking loss, pain, paresthesias). Autonomic neuropathy (gastroparesis, orthostatic hypotension, erectile dysfunction, bladder dysfunction). Charcot joint. Foot ulcers → 15% require amputation.",
+                "MACROVASCULAR (atherosclerosis - T2DM = CVD risk equivalent):",
+                "  - Coronary artery disease: 2-4× increased risk. MI often silent (autonomic neuropathy). Leading cause of death (50%).",
+                "  - Stroke: 2-4× increased risk (ischemic and hemorrhagic)",
+                "  - Peripheral artery disease: 15× increased risk. Claudication, foot ulcers, amputation (diabetes = leading cause of non-traumatic amputation).",
+                "OTHER:",
+                "  - Infections: impaired immune function. Candidiasis, UTI, skin/soft tissue infections, periodontal disease, osteomyelitis",
+                "  - NAFLD/NASH: 70% have fatty liver. Can progress to cirrhosis.",
+                "  - Gastroparesis: delayed gastric emptying. Nausea, vomiting, erratic glucose control.",
+                "  - Erectile dysfunction: 50% of men (neuropathy + vascular disease)",
+                "  - Cataracts, glaucoma",
+                "  - Diabetic foot ulcers: neuropathy + PAD → ulcers. 15% require amputation. Prevent: foot exam, proper footwear, podiatry.",
+                "  - Cognitive decline, dementia (2× risk)",
+                "  - Depression (2× higher prevalence)",
+                "  - Cancer: modest increased risk (liver, pancreas, endometrial, colon, breast)"
+            ],
+            prognosis: "LIFE EXPECTANCY: reduced by 5-10 years vs general population (mostly CVD). Improving with modern treatments. PROGRESSION: T2DM is progressive disease. β cell function declines ~5%/year → most eventually require insulin. COMPLICATIONS: risk related to glycemic control duration. Good control (HbA1c <7%) delays/prevents microvascular complications. UKPDS trial: intensive control → 25% ↓ microvascular complications. MACROVASCULAR DISEASE: T2DM = CVD risk equivalent. CVD is leading cause of death (50%). Aggressive risk factor modification essential (BP, lipids, smoking, ASA). PREDIABETES: 5-10%/year progress to diabetes. Lifestyle intervention (weight loss, exercise) can prevent/delay diabetes by 58%. REMISSION: possible with significant weight loss (>15kg), especially early in disease course (<6 years duration). Bariatric surgery can induce remission in 30-60%. But T2DM is chronic, progressive disease in most. MORTALITY: improving with newer agents (GLP-1, SGLT2) that reduce CVD events. Statin + ACE/ARB + ASA + glycemic control = comprehensive approach.",
+            clinicalPearls: [
+                "Type 2 DM = most common diabetes (90-95%). Insulin resistance + progressive β cell failure → relative insulin deficiency.",
+                "Classic risk factors: obesity (80-90%), age >40, family history, sedentary lifestyle, race (African American, Hispanic, Native American, Asian)",
+                "DISTINGUISH FROM TYPE 1: T2 = older, obese, gradual onset, NOT ketosis-prone, negative antibodies, normal/high C-peptide, acanthosis nigricans",
+                "ACANTHOSIS NIGRICANS (30%): hyperpigmented velvety plaques (neck, axilla, groin) - pathognomonic for insulin resistance",
+                "Often asymptomatic initially. 50% undiagnosed. 30% have complications at diagnosis (years of undiagnosed hyperglycemia).",
+                "SCREENING: all adults age ≥35. Earlier if BMI >25 + risk factor. FPG ≥126 or HbA1c ≥6.5% diagnostic (on 2 occasions).",
+                "PREDIABETES: FPG 100-125 or HbA1c 5.7-6.4%. 5-10%/year progress to diabetes. Lifestyle intervention can prevent/delay (58% reduction).",
+                "C-peptide: normal/high initially (hyperinsulinemia from insulin resistance), declines as β cells fail. Helps distinguish T2 (normal/high) from T1 (low).",
+                "FIRST-LINE treatment: lifestyle (weight loss 7-10%, exercise 150min/wk) + metformin at diagnosis. Metformin ↓ HbA1c 1-2%, no hypoglycemia, inexpensive.",
+                "If HbA1c not at goal after 3 months → add second agent. Choice based on comorbidities: ASCVD/CVD risk → GLP-1 or SGLT2. HF/CKD → SGLT2 (proven mortality benefit).",
+                "GLP-1 agonists (semaglutide, liraglutide): ↓ HbA1c 1-1.5%, weight loss 5-10kg, ↓ CVD events. Injectable (weekly). Side effects: nausea.",
+                "SGLT2 inhibitors (empagliflozin, canagliflozin): ↓ HbA1c 0.5-1%, weight loss 2-4kg, proven mortality benefit in HF/CKD. Side effects: genital mycotic infections, euglycemic DKA (rare).",
+                "HbA1c goal <7% (individualized). Check HbA1c every 3 months. HbA1c 1% reduction → 20-30% ↓ microvascular complications.",
+                "T2DM = CVD risk equivalent. Aggressive CVD risk reduction: statin (age >40), ACE/ARB (BP <130/80), ASA (age >50). CVD = leading cause of death (50%).",
+                "SCREEN for complications at diagnosis: retinopathy (fundoscopy annually), nephropathy (UACR + Cr/eGFR annually), neuropathy (foot exam annually), CVD (lipids, BP, ECG).",
+                "Diabetic nephropathy: ACE/ARB if microalbuminuria (nephroprotective, ↓ progression to ESRD). Monitor UACR annually.",
+                "HHS (not DKA): T2DM complication. Glucose >600, severe dehydration, AMS, NO ketoacidosis. Mortality 10-20%.",
+                "Weight loss 7-10% can reverse prediabetes/early diabetes. Bariatric surgery can induce remission (30-60%)."
+            ]
         }
     },
     {
@@ -98,7 +944,174 @@ const endocrineDiseases = [
         acuity: "acute",
         pageType: "disease",
         detail: {
-            definition: "Type 1 diabetes complication. Absolute insulin deficiency → lipolysis → ketones → metabolic acidosis. Glucose >250, pH <7.3, positive ketones, elevated anion gap. Kussmaul breathing, fruity breath. Treatment: IV fluids + insulin + K+ replacement."
+            definition: "Life-threatening acute complication of diabetes (mostly type 1). TRIAD: hyperglycemia (>250 mg/dL), metabolic acidosis (pH <7.3, bicarbonate <18), ketonemia/ketonuria (positive β-hydroxybutyrate or acetoacetate). Results from absolute or relative insulin deficiency → uncontrolled lipolysis → ketone production → anion gap metabolic acidosis. Classic presentation: Kussmaul breathing (deep, rapid), fruity breath (acetone), nausea/vomiting, abdominal pain, dehydration, altered mental status. Mortality 1-5% (mostly cerebral edema in children). Treatment: IV fluids + insulin infusion + K+ replacement. Precipitants: infection (#1), insulin omission, new diagnosis.",
+            pathophysiology: "INSULIN DEFICIENCY (absolute in T1DM or relative in stressed T2DM) → metabolic derangements: (1) HYPERGLYCEMIA: ↓ glucose uptake by cells + ↑ hepatic gluconeogenesis (unopposed glucagon) → glucose >250-600 mg/dL → osmotic diuresis → dehydration (3-6L fluid deficit), electrolyte losses (Na+, K+, PO4). (2) KETOGENESIS: lack of insulin → unregulated lipolysis → free fatty acids released from adipose tissue → transported to liver → β-oxidation → ketone bodies (acetoacetate, β-hydroxybutyrate, acetone). Ketones accumulate → ANION GAP METABOLIC ACIDOSIS. (3) ACIDOSIS: ketones are acids (β-hydroxybutyrate dissociates → H+ + β-hydroxybutyrate-) → ↓ pH, ↓ HCO3-. Compensatory Kussmaul breathing (deep, rapid) to blow off CO2. (4) ELECTROLYTE SHIFTS: acidosis → K+ shifts out of cells → SERUM K+ NORMAL OR HIGH despite TOTAL BODY K+ DEPLETION (lost in urine from osmotic diuresis). When insulin given + acidosis corrected → K+ shifts back into cells → HYPOKALEMIA (can be life-threatening). (5) DEHYDRATION: osmotic diuresis from hyperglycemia → severe volume depletion → prerenal azotemia, hypotension, shock. PRECIPITANTS: infection (40% - UTI, pneumonia), insulin omission (20% - especially teens with T1DM), new diabetes diagnosis (25%), MI, stroke, pancreatitis, medications (steroids, SGLT2 inhibitors).",
+            epidemiology: "Incidence 4-8 per 1000 diabetic patients per year. More common in TYPE 1 DM (ketosis-prone due to absolute insulin deficiency). 25-40% of T1DM present with DKA at diagnosis. 5-10% of T1DM have DKA episode per year. Less common in TYPE 2 DM (some insulin present prevents ketosis) but can occur with severe stress (infection, MI, stroke) or SGLT2 inhibitors (euglycemic DKA - glucose may be <250). Age: can occur at any age. More common in children/young adults with T1DM. MORTALITY: 1-5% overall. Higher in elderly (10%), children <5 years (cerebral edema is leading cause of death in pediatric DKA - 0.5-1% mortality). African American, Hispanic, lower socioeconomic status have higher rates (insulin access issues).",
+            riskFactors: [
+                "Type 1 diabetes mellitus (absolute insulin deficiency - ketosis-prone). 5-10% of T1DM have DKA per year.",
+                "Infection (40% of DKA): UTI, pneumonia, gastroenteritis, sepsis, skin/soft tissue infections. Most common precipitant.",
+                "Insulin omission or inadequate dosing (20%): non-compliance, especially adolescents with T1DM. Insulin pump malfunction/disconnection.",
+                "New diabetes diagnosis (25%): DKA as first presentation of previously undiagnosed T1DM",
+                "Severe physiologic stress: MI, stroke, pancreatitis, trauma, surgery",
+                "Medications: steroids (↑ glucose, ↑ insulin resistance), SGLT2 inhibitors (euglycemic DKA - can occur with normal glucose), thiazides, atypical antipsychotics",
+                "Pregnancy: diabetic women have increased DKA risk (lower threshold for ketosis)",
+                "Alcohol or drug abuse",
+                "Young age (adolescents/young adults with T1DM - poor compliance)",
+                "Lower socioeconomic status (insulin access/affordability issues)",
+                "Prior episode of DKA (recurrence risk)"
+            ],
+            presentation: "ONSET: hours to days (faster than HHS). CLASSIC TRIAD: hyperglycemia + acidosis + ketones. GASTROINTESTINAL: nausea, vomiting (75%), abdominal pain (50% - can mimic acute abdomen, especially in children). Anorexia. RESPIRATORY: KUSSMAUL BREATHING (deep, rapid, labored respirations) - compensatory hyperventilation to blow off CO2 and correct acidosis. FRUITY BREATH (acetone odor - sweet, fruity smell). NEUROLOGIC: altered mental status ranging from lethargy to confusion to coma (10%). Severity correlates with degree of acidosis and osmolality. DEHYDRATION: severe - dry mucous membranes, poor skin turgor, tachycardia, hypotension, oliguria. Average 5-10% body weight fluid loss (3-6L deficit in adults). DIABETIC SYMPTOMS: polyuria, polydipsia, polyphagia (days-weeks preceding DKA if new diagnosis). Weight loss, weakness. PRECIPITANT SYMPTOMS: fever (if infection), chest pain (if MI), focal neurologic deficits (if stroke).",
+            physicalExam: [
+                "Vital signs: TACHYCARDIA (dehydration), tachypnea (Kussmaul breathing - RR >20, deep), HYPOTENSION (if severe dehydration/shock), fever (if infection - but absence doesn't rule out infection)",
+                "General: appears ill, dehydrated, lethargic. Level of consciousness ranges from alert to comatose (10% comatose).",
+                "RESPIRATORY: KUSSMAUL BREATHING - deep, rapid, labored respirations (compensatory hyperventilation). RR >20-40 breaths/min.",
+                "BREATH: fruity odor (acetone/acetoacetate) - sweet, fruity smell. Not always present.",
+                "HEENT: dry mucous membranes (dehydration), sunken eyes, poor skin turgor",
+                "Cardiovascular: tachycardia, weak pulses, hypotension (if severe), cool extremities (poor perfusion)",
+                "Abdomen: may have diffuse tenderness, rebound tenderness, guarding (can mimic acute abdomen - 'pseudoperitonitis' from metabolic acidosis). Resolves with DKA treatment. Hepatomegaly (fatty liver).",
+                "Neurologic: altered mental status (lethargy, confusion, stupor, coma). Glasgow Coma Scale <15 in 10%. Severity correlates with osmolality and acidosis.",
+                "Skin: poor turgor (dehydration), warm and dry",
+                "Signs of precipitant: fever, lung crackles (pneumonia), costovertebral angle tenderness (pyelonephritis), surgical abdomen (pancreatitis)"
+            ],
+            diagnosticCriteria: "DKA DIAGNOSTIC TRIAD (all 3 must be present): (1) HYPERGLYCEMIA: glucose >250 mg/dL (>13.9 mmol/L). Exception: euglycemic DKA (glucose <250 with SGLT2 inhibitors - still have ketoacidosis). (2) METABOLIC ACIDOSIS: arterial pH <7.3 AND/OR serum bicarbonate <18 mEq/L. (3) KETONEMIA/KETONURIA: positive serum or urine ketones (β-hydroxybutyrate >3 mmol/L or moderate/large urine ketones). SEVERITY CLASSIFICATION: MILD: pH 7.25-7.30, HCO3 15-18, alert. MODERATE: pH 7.0-7.24, HCO3 10-14, alert/drowsy. SEVERE: pH <7.0, HCO3 <10, stupor/coma. ANION GAP: elevated (>12, typically 20-30). Anion gap = Na - (Cl + HCO3). Ketoacids cause anion gap metabolic acidosis.",
+            labs: [
+                "GLUCOSE: >250 mg/dL (typically 300-600). Can be <250 in euglycemic DKA (SGLT2 inhibitors, pregnancy, starvation).",
+                "ARTERIAL BLOOD GAS (ABG): pH <7.3, ↓ HCO3 <18 mEq/L, ↓ pCO2 (respiratory compensation - Kussmaul breathing blows off CO2). Anion gap metabolic acidosis.",
+                "SERUM KETONES (β-hydroxybutyrate): >3 mmol/L diagnostic for DKA. β-hydroxybutyrate is PREFERRED over nitroprusside test (nitroprusside measures acetoacetate, NOT β-hydroxybutyrate which is predominant ketone). β-hydroxybutyrate is gold standard.",
+                "URINE KETONES: positive (moderate to large). Nitroprusside reaction detects acetoacetate. Less accurate than serum β-hydroxybutyrate.",
+                "BMP: ↑ BUN/Cr (prerenal azotemia from dehydration). K+ NORMAL OR HIGH initially (pseudohyperkalemia from acidosis - K+ shifts out of cells) despite TOTAL BODY K+ DEPLETION. Hypokalemia develops with treatment (insulin + fluids → K+ shifts into cells). Na+ may be low (pseudohyponatremia from hyperglycemia - for every 100 mg/dL glucose >100, Na+ decreases 1.6 mEq/L). Corrected Na = measured Na + 1.6 × (glucose - 100)/100.",
+                "ANION GAP: ↑ (>12, typically 20-30). Anion gap = Na - (Cl + HCO3). Ketoacids (β-hydroxybutyrate, acetoacetate) are unmeasured anions.",
+                "OSMOLALITY: calculated osmolality = 2×Na + glucose/18 + BUN/2.8. Typically 300-320 (elevated). AMS correlates with osmolality >320.",
+                "CBC: ↑ WBC (stress response - leukocytosis even without infection). Left shift suggests infection.",
+                "Phosphate: usually normal initially, ↓ with treatment (shifts into cells with insulin). Replace if severe hypophosphatemia (<1 mg/dL).",
+                "Magnesium: may be low (renal losses)",
+                "Amylase/lipase: may be elevated (salivary amylase, not pancreatitis - unless pancreatitis is precipitant)",
+                "WORKUP FOR PRECIPITANT: blood cultures, urine culture, chest X-ray, ECG, cardiac enzymes if concern for infection/MI/sepsis"
+            ],
+            imaging: [
+                "Imaging NOT needed for DKA diagnosis (clinical + lab diagnosis).",
+                "IMAGING TO IDENTIFY PRECIPITANT:",
+                "  - Chest X-ray: if concern for pneumonia (fever, cough, hypoxia). Pneumonia is common precipitant.",
+                "  - Urinalysis + urine culture: UTI/pyelonephritis common precipitant (40% have infection)",
+                "  - CT abdomen: if severe abdominal pain persists after initial treatment (r/o pancreatitis, appendicitis, bowel ischemia). DKA can cause 'pseudoperitonitis' that resolves with treatment.",
+                "  - CT head: if altered mental status disproportionate to acidosis/osmolality, focal neurologic deficits, or concern for cerebral edema (pediatric DKA). Cerebral edema findings: loss of gray-white differentiation, sulcal effacement, tonsillar herniation.",
+                "  - ECG: if chest pain or older patient (r/o MI as precipitant). Look for peaked T waves (hyperkalemia initially) or U waves (hypokalemia with treatment)."
+            ],
+            differentialDiagnosis: [
+                "Hyperosmolar hyperglycemic state (HHS): glucose >600 (higher than DKA), pH >7.3 (NO acidosis), osmolality >320 (higher), NO ketones. Type 2 DM. Slower onset (days). More severe dehydration. More common in elderly. Mortality higher (10-20%).",
+                "Starvation ketosis: mild ketones, mild acidosis (pH >7.3), glucose LOW or normal (<200). History of prolonged fasting/starvation. Treat with dextrose.",
+                "Alcoholic ketoacidosis: anion gap metabolic acidosis, ketones, but glucose NORMAL or LOW. History of alcohol binge + poor oral intake. β-hydroxybutyrate >> acetoacetate (nitroprusside may be negative). Treat with dextrose + thiamine.",
+                "Lactic acidosis: anion gap metabolic acidosis, NO ketones. ↑ lactate (>4 mmol/L). Causes: sepsis, shock, metformin (in renal failure), bowel ischemia. Treat underlying cause.",
+                "Uremic acidosis: anion gap metabolic acidosis in CKD/ESRD. NO ketones. Very high BUN/Cr (uremia). Treat with dialysis.",
+                "Toxic ingestions: salicylate (aspirin) overdose - anion gap acidosis + respiratory alkalosis (mixed disorder). Methanol, ethylene glycol - anion gap acidosis + osmolar gap. History/toxicology screen.",
+                "Sepsis: may have acidosis (lactic acidosis) + hyperglycemia (stress). NO ketones. Fever, hypotension, source of infection.",
+                "Acute abdomen (appendicitis, cholecystitis, pancreatitis): abdominal pain + vomiting. DKA can mimic acute abdomen ('pseudoperitonitis'). If abdominal pain persists after DKA treatment → imaging to r/o surgical abdomen.",
+                "Euglycemic DKA: ketoacidosis with glucose <250. Caused by SGLT2 inhibitors (glucose excreted in urine), pregnancy, starvation. Still meets DKA criteria (acidosis + ketones)."
+            ],
+            management: {
+                acute: [
+                    "DKA is a MEDICAL EMERGENCY. ICU or step-down unit admission. Mortality 1-5%.",
+                    "FOUR PILLARS OF DKA TREATMENT: (1) IV FLUIDS, (2) INSULIN, (3) POTASSIUM REPLACEMENT, (4) TREAT PRECIPITANT",
+                    "INITIAL ASSESSMENT:",
+                    "  - ABCs (airway, breathing, circulation). Intubate if comatose/unable to protect airway.",
+                    "  - Labs: ABG, BMP, glucose, ketones (β-hydroxybutyrate preferred), CBC, cultures (blood, urine), imaging as needed",
+                    "  - Identify precipitant: infection (#1 - cultures, imaging), insulin omission (history), MI (ECG, troponin)",
+                    "1. IV FLUIDS (FIRST PRIORITY - before insulin):",
+                    "  - AGGRESSIVE volume resuscitation. Fluid deficit 3-6L (5-10% body weight).",
+                    "  - INITIAL: 0.9% normal saline (NS) 1-2L IV bolus over first 1-2 hours (15-20 mL/kg/hr). Restores intravascular volume, ↓ glucose (dilution), improves insulin sensitivity.",
+                    "  - SUBSEQUENT: NS at 250-500 mL/hr. Once glucose <250 mg/dL → switch to D5NS (dextrose 5% in 0.45% saline) to prevent hypoglycemia while continuing insulin (need insulin to clear ketones even after glucose normalizes).",
+                    "  - Goal: urine output 0.5-1 mL/kg/hr, correct fluid deficit over 24-48 hours",
+                    "2. INSULIN (start AFTER initial fluid bolus):",
+                    "  - IV REGULAR INSULIN INFUSION (continuous). Do NOT give bolus initially (risk of cerebral edema, especially in children).",
+                    "  - Start rate: 0.1 units/kg/hr (or fixed rate 0.14 units/kg/hr, ~10 units/hr for 70kg adult)",
+                    "  - Goal: ↓ glucose 50-75 mg/dL per hour. If glucose not ↓ by 50 mg/dL in first hour → double insulin rate.",
+                    "  - When glucose <250 mg/dL → DECREASE insulin to 0.05 units/kg/hr AND add dextrose to IV fluids (D5NS). Goal: maintain glucose 150-200 mg/dL until ketoacidosis resolves.",
+                    "  - Continue insulin infusion until DKA RESOLVED (see criteria below). Do NOT stop insulin based on glucose alone.",
+                    "3. POTASSIUM REPLACEMENT (CRITICAL - most common cause of death):",
+                    "  - K+ is NORMAL OR HIGH initially (acidosis shifts K+ out of cells) but TOTAL BODY K+ is DEPLETED (lost in urine).",
+                    "  - With treatment (insulin + fluids + correcting acidosis) → K+ shifts back into cells → SEVERE HYPOKALEMIA (can cause life-threatening arrhythmias).",
+                    "  - BEFORE starting insulin: check serum K+. If K+ <3.3 mEq/L → hold insulin, give K+ until >3.3 (risk of fatal arrhythmia if give insulin with low K+).",
+                    "  - Once K+ >3.3 → start insulin AND add K+ to IV fluids:",
+                    "    - If K+ 3.3-5.2 → add 20-30 mEq K+ per liter of IV fluid (goal: maintain K+ 4-5 mEq/L)",
+                    "    - If K+ >5.2 → hold K+ replacement initially, recheck frequently (will drop with treatment)",
+                    "  - Monitor K+ every 1-2 hours initially. Replace aggressively. Goal K+ 4-5 mEq/L.",
+                    "4. TREAT PRECIPITANT:",
+                    "  - Infection (#1 precipitant - 40%): broad-spectrum antibiotics if sepsis/severe infection (don't wait for culture results). Narrow based on cultures.",
+                    "  - Insulin omission: reinforce importance of compliance, diabetes education",
+                    "  - MI: cardiology consult, antiplatelet therapy, reperfusion if STEMI",
+                    "5. MONITORING:",
+                    "  - Glucose: hourly (fingerstick or lab)",
+                    "  - Electrolytes (K+, Na+, Cl-, HCO3-): every 2-4 hours",
+                    "  - ABG/VBG: every 2-4 hours until resolved (to monitor pH, HCO3-, anion gap)",
+                    "  - Vitals: continuous. Urine output (Foley catheter).",
+                    "6. ADDITIONAL MEASURES:",
+                    "  - Bicarbonate: CONTROVERSIAL. NOT routinely recommended. Consider ONLY if pH <6.9 (severe acidosis with hemodynamic instability) → give NaHCO3 100 mEq in 400mL sterile water over 2h. Risk: worsens hypokalemia, paradoxical CNS acidosis, cerebral edema.",
+                    "  - Phosphate: typically not replaced unless severe (<1 mg/dL) → risk of hypophosphatemia with insulin (causes respiratory failure, rhabdomyolysis if severe). Replace with K-phos 20-30 mEq/L.",
+                    "7. RESOLUTION CRITERIA (ALL must be met to stop insulin infusion):",
+                    "  - Glucose <200 mg/dL",
+                    "  - pH >7.3",
+                    "  - Bicarbonate >18 mEq/L",
+                    "  - Anion gap <12 (normalized)",
+                    "  - Patient able to eat",
+                    "8. TRANSITION TO SUBCUTANEOUS INSULIN:",
+                    "  - Once DKA resolved → transition to subcutaneous (SC) insulin regimen (basal-bolus)",
+                    "  - Give FIRST SC insulin dose 1-2 hours BEFORE stopping IV insulin (to ensure overlap - prevent rebound ketoacidosis). Rapid-acting insulin (lispro/aspart) 1-2h before, or long-acting (glargine) 2-4h before stopping drip.",
+                    "  - If new diagnosis → initiate basal-bolus regimen (typical starting dose 0.5-1 units/kg/day, 50% basal, 50% bolus)",
+                    "CEREBRAL EDEMA (pediatric DKA - 0.5-1% mortality, leading cause of death in children with DKA):",
+                    "  - Risk factors: younger age (<5 years), new diabetes diagnosis, severe acidosis, rapid ↓ glucose or ↑ Na+ with treatment, hypocapnia (severe Kussmaul breathing)",
+                    "  - Symptoms: headache, altered mental status, bradycardia, HTN, pupillary changes, papilledema, seizures",
+                    "  - Treatment: mannitol 0.5-1 g/kg IV or 3% hypertonic saline 2.5-5 mL/kg IV. Intubate if needed. CT head. Neurosurgery consult if severe.",
+                    "  - Prevention: avoid excessive IV fluids (use conservative fluid replacement), avoid insulin bolus, avoid rapid ↓ in glucose"
+                ],
+                chronic: [
+                    "PREVENTION OF RECURRENT DKA:",
+                    "  - Diabetes education: sick day management (NEVER skip insulin even if not eating, check ketones if glucose >250 or sick, call provider), insulin dose adjustment, carb counting",
+                    "  - Ensure insulin access/affordability (social work, patient assistance programs)",
+                    "  - Continuous glucose monitor (CGM): alerts for hyperglycemia, prevents DKA",
+                    "  - Insulin pump: better glycemic control, but risk of DKA if malfunction/disconnection (check blood glucose frequently, have backup insulin pens)",
+                    "  - Address psychosocial issues: depression, eating disorders, family dynamics (common in adolescents)",
+                    "  - Avoid SGLT2 inhibitors in T1DM (risk of euglycemic DKA) unless close monitoring with ketone checks",
+                    "SICK DAY RULES FOR DIABETICS:",
+                    "  - NEVER stop insulin (may need MORE insulin during illness/stress)",
+                    "  - Check glucose every 2-4 hours",
+                    "  - Check urine or blood ketones if glucose >250 mg/dL or feeling ill",
+                    "  - If ketones positive: drink fluids, take extra rapid-acting insulin, call provider if ketones persist or worsening",
+                    "  - Seek emergency care if: persistent vomiting, moderate/large ketones, glucose >300 despite insulin, confusion/AMS"
+                ]
+            },
+            complications: [
+                "CEREBRAL EDEMA: 0.5-1% of pediatric DKA (rare in adults). Leading cause of death in children with DKA. Mechanism unclear (osmotic shifts, inflammation). Presents 4-12 hours after treatment starts. Headache, AMS, bradycardia, seizures, respiratory arrest. Treat: mannitol or hypertonic saline, intubation. Mortality 20-40%.",
+                "Hypokalemia: most common life-threatening complication. K+ shifts into cells with insulin + acidosis correction → arrhythmias (ventricular tachycardia, cardiac arrest). Prevent with aggressive K+ replacement (20-30 mEq/L IV fluids).",
+                "Hypoglycemia: if insulin continued without dextrose after glucose <250. Monitor glucose hourly. Switch to D5NS when glucose <250.",
+                "Hypophosphatemia: insulin drives PO4 into cells. Severe hypophosphatemia (<1 mg/dL) → respiratory failure, rhabdomyolysis, hemolysis. Replace if severe.",
+                "Hypomagnesemia: renal losses. Arrhythmias, muscle weakness.",
+                "Non-anion gap (hyperchloremic) acidosis: occurs during DKA recovery. Saline infusion → Cl- load → hyperchloremia. Benign, self-limited.",
+                "Mucormycosis (rhinocerebral): rare opportunistic fungal infection in DKA (especially if prolonged acidosis). Black necrotic eschar in nose/palate, facial pain, proptosis, ophthalmoplegia. High mortality. Treat: amphotericin B + surgical debridement.",
+                "Thromboembolism: DKA is hypercoagulable state. DVT, PE, stroke, MI (especially in adults). Consider VTE prophylaxis.",
+                "Acute respiratory distress syndrome (ARDS): rare. Respiratory failure.",
+                "Rhabdomyolysis: severe hypophosphatemia or prolonged acidosis. ↑ CK, myoglobinuria, AKI.",
+                "Death: mortality 1-5%. Higher in elderly (10%), extremes of pH (<6.9 or severe metabolic derangement). Cerebral edema in children. Sepsis, MI, arrhythmias."
+            ],
+            prognosis: "MORTALITY: 1-5% overall. Higher in elderly (10%), severe acidosis (pH <6.9), sepsis, MI as precipitant. Pediatric mortality <1% (cerebral edema is leading cause). RECOVERY: most patients recover fully with appropriate treatment in 12-24 hours. DKA typically resolves within 24-48 hours. RECURRENCE: 20-30% have recurrent DKA episodes (non-compliance, infection, insulin access issues). Recurrence higher in adolescents (poor compliance), lower socioeconomic status (insulin access). LONG-TERM: with good diabetes control and sick day education, recurrence can be minimized. Patients with recurrent DKA have worse long-term outcomes (more complications, higher mortality). PREVENTION: diabetes education, insulin access, CGM, sick day management can prevent most DKA episodes.",
+            clinicalPearls: [
+                "DKA = TRIAD: hyperglycemia (>250), acidosis (pH <7.3, HCO3 <18), ketones (β-hydroxybutyrate >3 mmol/L). Anion gap metabolic acidosis.",
+                "Classic presentation: Kussmaul breathing (deep, rapid), fruity breath (acetone), nausea/vomiting, abdominal pain, dehydration, AMS",
+                "Precipitants: infection (40% - #1), insulin omission (20%), new diagnosis (25%). Always search for precipitant.",
+                "β-hydroxybutyrate is GOLD STANDARD for ketone measurement (NOT nitroprusside urine test which misses β-hydroxybutyrate)",
+                "K+ is NORMAL or HIGH initially (pseudohyperkalemia from acidosis) but TOTAL BODY K+ is DEPLETED. Hypokalemia develops with treatment → life-threatening arrhythmias.",
+                "BEFORE starting insulin: check K+. If K+ <3.3 → hold insulin, give K+ first (risk of fatal arrhythmia).",
+                "FOUR PILLARS: (1) IV fluids (NS 1-2L bolus first), (2) Insulin (0.1 units/kg/hr), (3) K+ replacement (20-30 mEq/L), (4) Treat precipitant",
+                "When glucose <250 → switch to D5NS + decrease insulin to 0.05 units/kg/hr. Continue insulin until DKA resolved (don't stop based on glucose alone - need to clear ketones).",
+                "DKA RESOLUTION criteria (ALL must be met): glucose <200, pH >7.3, HCO3 >18, anion gap <12",
+                "OVERLAP SC and IV insulin when transitioning: give first SC dose 1-2 hours BEFORE stopping drip (prevent rebound ketoacidosis)",
+                "Monitor glucose hourly, K+ every 2h, ABG every 2-4h until resolved",
+                "Cerebral edema: pediatric DKA complication (0.5-1%), leading cause of death in children. Presents 4-12h after treatment. Headache, AMS, bradycardia. Treat: mannitol or hypertonic saline.",
+                "Bicarbonate NOT routinely recommended (controversial). Only if pH <6.9 with hemodynamic instability. Risks: hypokalemia, cerebral edema.",
+                "Euglycemic DKA: glucose <250 with ketoacidosis. Caused by SGLT2 inhibitors (empagliflozin, canagliflozin), pregnancy, starvation. Still treat as DKA.",
+                "DKA can mimic acute abdomen ('pseudoperitonitis'). Abdominal pain resolves with DKA treatment. If persists → imaging for surgical abdomen.",
+                "SICK DAY RULES: NEVER skip insulin (may need more during illness). Check ketones if glucose >250 or sick. Seek care if persistent vomiting, moderate/large ketones, glucose >300.",
+                "HHS vs DKA: HHS = glucose >600, NO acidosis (pH >7.3), NO ketones, T2DM, elderly, slower onset. DKA = glucose >250, acidosis (pH <7.3), ketones, T1DM."
+            ]
         }
     },
     {
@@ -112,7 +1125,204 @@ const endocrineDiseases = [
         acuity: "acute",
         pageType: "disease",
         detail: {
-            definition: "Type 2 diabetes complication. Glucose >600, pH >7.3, negative ketones, very high osmolality >320. AMS/coma from hyperosmolality. NO ketoacidosis. Treatment: aggressive IV fluids + insulin. Mortality 10-20% (higher than DKA)."
+            definition: "Life-threatening acute complication of Type 2 diabetes characterized by EXTREME HYPERGLYCEMIA (>600 mg/dL, often >1000), SEVERE HYPEROSMOLALITY (>320 mOsm/kg, often >340), PROFOUND DEHYDRATION (8-12L fluid deficit), and ALTERED MENTAL STATUS - WITHOUT significant ketoacidosis. Slower onset than DKA (days-weeks vs hours-days). More common in elderly (>65 years). Mortality 10-20% (2-4× higher than DKA). Precipitated by infection, inadequate insulin, dehydration, or acute illness. Treatment: aggressive IV fluid resuscitation (THE priority) → cautious insulin therapy → electrolyte replacement → treat precipitant. DISTINGUISH from DKA: HHS = NO ketoacidosis (pH >7.3, negative ketones), HIGHER glucose (>600 vs >250), HIGHER osmolality (>320 vs <320), MORE dehydration, SLOWER onset, Type 2 DM (vs Type 1).",
+
+            pathophysiology: "INSULIN DEFICIENCY (RELATIVE, not absolute - this is key difference from DKA): \n\nType 2 DM → still produces SOME insulin (enough to suppress ketogenesis but NOT enough to control glucose) → NO significant ketoacidosis (vs DKA - complete insulin absence → ketogenesis). \n\nHYPERGLYCEMIA CASCADE: \n1. Precipitant (infection, MI, stroke, medication non-adherence) → worsening hyperglycemia \n2. OSMOTIC DIURESIS: glucose >180 exceeds renal threshold → glucosuria → water follows glucose → polyuria (up to 10L/day loss) \n3. SEVERE DEHYDRATION: profound fluid loss (8-12L total deficit, average 10L - TWICE that of DKA) → decreased renal perfusion → decreased glucose excretion → VICIOUS CYCLE of worsening hyperglycemia (glucose often >1000 mg/dL) \n4. HYPEROSMOLALITY: glucose >600 + dehydration → serum osmolality >320 mOsm/kg (often >340-350) → water shifts from ICF to ECF → cellular dehydration, especially neurons \n5. NEUROLOGIC DYSFUNCTION: neuronal dehydration + hyperosmolality → altered mental status, confusion, lethargy, seizures, coma (more severe than DKA due to higher osmolality) \n\nELECTROLYTE EFFECTS: \n- Total body potassium DEFICIT (4-6 mEq/kg despite normal/high serum K+ initially - shift from ICF) \n- Total body sodium deficit despite hypernatremia (from water loss exceeding sodium loss) \n- Total body phosphate deficit \n\nWHY NO KETOACIDOSIS? Residual insulin (even small amounts) SUPPRESSES lipolysis and ketogenesis. Insulin deficiency is RELATIVE (not absolute like T1DM). Some patients may have MILD ketonemia but NOT significant ketoacidosis (pH >7.3). \n\nSLOWER ONSET than DKA: develops over days-weeks (vs hours-days for DKA). Patients often have impaired thirst mechanism (elderly, dementia, bedridden) → cannot compensate for fluid losses → progressive dehydration. \n\nHIGHER MORTALITY: 10-20% (vs 1-5% DKA) due to: older age, more comorbidities, more severe dehydration, thrombotic complications (stroke, MI, PE from hyperviscosity), precipitating illness severity.",
+
+            epidemiology: "Incidence: <1% of diabetes-related hospitalizations (less common than DKA but higher mortality). Age: typically >65 years (elderly - average age 60-70). More common in African Americans and Hispanics. Sex: slight female predominance. Type 2 diabetes (90-95% have known T2DM, 5-10% presenting feature). Nursing home residents at high risk (impaired thirst, limited access to water, cognitive impairment). Mortality: 10-20% (higher than DKA - reflects older age, comorbidities, severity of precipitant). Geographic: more common in warm climates (dehydration risk).",
+
+            riskFactors: [
+                "STRONGEST RISK FACTORS: Type 2 diabetes (especially poorly controlled, HbA1c >9%), elderly age (>65 years - impaired thirst mechanism, limited mobility), nursing home residence (limited access to water, cognitive impairment, inadequate monitoring)",
+                "PRECIPITANTS (trigger in >50% of cases): INFECTION most common (30-60% - pneumonia, UTI, sepsis), acute MI or stroke (cardiovascular event limits water intake), inadequate insulin or medication non-adherence (relative insulin deficiency worsens)",
+                "Medications that worsen hyperglycemia: STEROIDS (glucocorticoids → insulin resistance), THIAZIDE or LOOP diuretics (worsen dehydration + impair insulin secretion), atypical antipsychotics (olanzapine, clozapine → insulin resistance), immune checkpoint inhibitors, SGLT2 inhibitors (increased urinary glucose loss)",
+                "Impaired access to water: bedridden patients, dementia, stroke with dysphagia, intubated patients, post-operative state, homeless",
+                "Acute illness: pancreatitis, burns, heat stroke, dialysis, total parenteral nutrition (TPN - high dextrose)",
+                "Comorbidities: chronic kidney disease (impaired glucose clearance), heart failure, dementia, previous HHS episode (recurrence risk 50-70%)"
+            ],
+
+            presentation: "ONSET: DAYS to WEEKS (slower than DKA which is hours-days). INSIDIOUS progression. Often history of poor oral intake and progressive lethargy over 1-2 weeks. \n\nNEUROLOGIC (most prominent feature - reflects hyperosmolality): \n- ALTERED MENTAL STATUS (50-100%): ranges from confusion, disorientation, lethargy → obtundation → COMA (10-20%, more common than DKA). Severity correlates with osmolality (osmolality >340 → stupor/coma likely). \n- FOCAL NEUROLOGIC DEFICITS (10-15%): hemiparesis, aphasia, hemianopia - can MIMIC stroke (hyperosmolality effect, NOT true stroke - reversible with treatment). \n- SEIZURES (10-25%): focal or generalized - from hyperosmolality, more common than in DKA. \n\nDEHYDRATION (SEVERE - most prominent physical finding): \n- Profound volume depletion (average 10L deficit, 20-25% body water loss) \n- Dry mucous membranes (severely dry), poor skin turgor (skin tenting), sunken eyes \n- Oliguria or anuria (severe prerenal AKI common) \n- Hypotension (orthostatic → frank shock if severe) \n- Tachycardia (compensatory for hypovolemia) \n\nDIABETIC SYMPTOMS (days-weeks preceding): \n- POLYURIA (early - osmotic diuresis, then oliguria as kidneys fail from hypovolemia) \n- Polydipsia (if patient can access water - often inadequate due to impaired thirst, limited access) \n- Weakness, fatigue (progressive) \n- Weight loss (from fluid loss + catabolism) \n\nRESPIRATORY: \n- NORMAL breathing (NO Kussmaul respirations - NO acidosis to compensate for, KEY difference from DKA) \n- NORMAL breath (NO fruity/acetone odor - NO ketones) \n\nGASTROINTESTINAL (less common than DKA): \n- Nausea, vomiting (possible but LESS prominent than DKA - 10-20% vs 75% in DKA) \n- Abdominal pain (rare vs 50% in DKA) \n\nPRECIPITANT SYMPTOMS: fever (if infection), chest pain (if MI), dyspnea (if pneumonia), dysuria (if UTI), focal deficits (if stroke).",
+
+            physicalExam: [
+                "VITAL SIGNS: HYPOTENSION (orthostatic → supine if severe shock), TACHYCARDIA (110-130 bpm from hypovolemia), temperature VARIABLE (hypothermia if septic shock, fever if infection - elderly may be afebrile despite infection), respiratory rate NORMAL (12-20, NO Kussmaul - NO acidosis to compensate). Weight loss from baseline.",
+                "NEUROLOGIC: Glasgow Coma Scale often <15. ALTERED MENTAL STATUS (confusion, disorientation, lethargy, obtundation, coma). FOCAL deficits possible (hemiparesis, aphasia - reversible). Seizure activity. Decreased reflexes. Pupils may be sluggish.",
+                "DEHYDRATION signs (SEVERE): profoundly DRY mucous membranes (parched lips, dry tongue), POOR skin turgor (skin tenting on forehead or sternum - takes >3 seconds to recoil), SUNKEN eyes, DRY axillae. Jugular venous pressure (JVP) flat/undetectable.",
+                "CARDIOVASCULAR: Tachycardia. Hypotension (systolic <90 mmHg if severe). Weak, thready pulse. Prolonged capillary refill (>3 seconds). Cool extremities if shock. No JVD (volume depleted).",
+                "RESPIRATORY: Normal respiratory pattern (NO Kussmaul). Lung exam may show crackles if precipitant is pneumonia. NO fruity breath odor (NO ketones).",
+                "ABDOMINAL: Soft, non-tender typically (vs DKA which often has diffuse tenderness). Bowel sounds may be decreased (ileus from electrolyte abnormalities).",
+                "EXTREMITIES: Poor perfusion if shock. Look for infection source (cellulitis, foot ulcers in diabetics). No edema (volume depleted).",
+                "Other: Assess for precipitant - pneumonia (crackles), UTI (suprapubic tenderness), MI, stroke, wounds/ulcers"
+            ],
+
+            diagnosticCriteria: "HHS DIAGNOSTIC CRITERIA (all must be met): \n\n1. HYPERGLYCEMIA: plasma glucose >600 mg/dL (often >800-1000 mg/dL) \n2. HYPEROSMOLALITY: serum osmolality >320 mOsm/kg (often >340-350) \n   - Calculate: 2×[Na] + glucose/18 + BUN/2.8 \n   - Corrected Na = measured Na + 0.016×(glucose - 100) for true osmolality \n3. ARTERIAL pH >7.30 (NO significant acidosis - KEY distinction from DKA) \n4. Serum bicarbonate >15 mEq/L (mild decrease possible but NOT <15) \n5. NEGATIVE or SMALL ketonuria, NEGATIVE or SMALL ketonemia (β-hydroxybutyrate <3 mmol/L) - trace ketones acceptable but NOT large \n6. Effective osmolality >320 mOsm/kg (omit BUN: 2×[Na] + glucose/18) \n\nSEVERITY CLASSIFICATION: \nMILD HHS: osmolality 320-340, alert mental status \nMODERATE HHS: osmolality 340-360, lethargic/obtunded \nSEVERE HHS: osmolality >360, stupor/coma \n\nDISTINGUISH from DKA (may have overlap in 10-30% cases - 'mixed picture'): \n\nHHS:\n- Glucose >600 (often >1000) \n- pH >7.3 \n- HCO3 >15 \n- Negative/small ketones \n- Osmolality >320 \n- Type 2 DM \n- Slower onset (days-weeks) \n- Elderly (>65) \n- MORE dehydration (10L deficit) \n- MORE AMS/neuro sx \n- NORMAL respirations \n\nDKA:\n- Glucose >250 (usually 400-600) \n- pH <7.3 \n- HCO3 <15 \n- LARGE ketones \n- Osmolality <320 \n- Type 1 DM \n- Faster onset (hours-days) \n- Younger (<40) \n- LESS dehydration (3-6L deficit) \n- LESS AMS (unless severe) \n- Kussmaul respirations",
+
+            labs: [
+                "GLUCOSE: >600 mg/dL (diagnostic threshold), often 800-1200 mg/dL (much HIGHER than DKA). May be >2000 in extreme cases.",
+                "SERUM OSMOLALITY: >320 mOsm/kg (diagnostic threshold), often 340-380 mOsm/kg. Calculate: 2×[Na] + glucose/18 + BUN/2.8. Effective osmolality (omit BUN): 2×[Na] + glucose/18 should be >320. Osmolality >340 correlates with stupor/coma.",
+                "ARTERIAL BLOOD GAS (ABG): pH >7.30 (NO significant acidosis - KEY). Usually 7.30-7.45 (normal to mildly acidotic). If pH <7.30 → suspect mixed HHS + DKA or lactic acidosis from shock.",
+                "SERUM BICARBONATE (HCO3): >15 mEq/L (mild decrease from dehydration but NOT severe like DKA). Usually 15-25 mEq/L. If <15 → suspect mixed picture or lactic acidosis.",
+                "KETONES: NEGATIVE or SMALL. Serum β-hydroxybutyrate <3 mmol/L (usually <1). Urine ketones negative to small/trace (NOT moderate/large like DKA). KEY distinction from DKA.",
+                "ANION GAP: Usually NORMAL (8-12) or mildly elevated (<20). If anion gap >20 → suspect lactic acidosis (from shock), mixed HHS+DKA, or uremia. Calculate: Na - (Cl + HCO3).",
+                "SODIUM: Variable - LOW initially (pseudohyponatremia from hyperglycemia), then HIGH as corrected (HYPERNATREMIA common 145-165 mEq/L after correction). CORRECT Na for hyperglycemia: add 1.6 mEq/L for every 100 mg/dL glucose >100. Example: glucose 1000, Na 135 → corrected Na = 135 + 1.6×9 = 149 (hypernatremic).",
+                "POTASSIUM: Initially NORMAL or HIGH (4.5-6.5 mEq/L from shift out of cells) despite TOTAL BODY DEFICIT (4-6 mEq/kg deficit). Will DROP with insulin therapy and fluid resuscitation. MUST supplement K+ early.",
+                "BUN/CREATININE: Markedly elevated (BUN often 60-100, Cr 2-4) from prerenal AKI (severe dehydration). BUN:Cr ratio >20:1 (prerenal). Usually reversible with fluids but may progress to ATN if prolonged shock.",
+                "PHOSPHATE: Initially normal/high, then drops with insulin therapy. Total body deficit 1 mmol/kg. Severe hypophosphatemia (<1.0) can occur with treatment → muscle weakness, respiratory failure, hemolysis.",
+                "MAGNESIUM: Often low (total body deficit from osmotic diuresis). Check and replace if <1.5 mg/dL.",
+                "CBC: Leukocytosis (15,000-25,000 WBC) common even without infection (stress response, dehydration). If >25,000 or bandemia → infection likely. Hematocrit ELEVATED (50-60%) from hemoconcentration.",
+                "LACTATE: Check to rule out lactic acidosis from shock/sepsis. Elevated lactate (>4) worsens prognosis.",
+                "CRP, procalcitonin: If infection suspected (precipitant workup)."
+            ],
+
+            imaging: [
+                "CHEST X-RAY: Essential to evaluate for pneumonia (common precipitant). Also baseline before ICU admission.",
+                "HEAD CT (non-contrast): Indicated if focal neurologic deficits, coma, or seizures to RULE OUT stroke, intracranial hemorrhage, mass. Remember: HHS can MIMIC stroke with reversible focal deficits from hyperosmolality. If CT negative and deficits resolve with treatment → hyperosmolar effect, NOT stroke.",
+                "CT ABDOMEN/PELVIS: If abdominal pain or suspected intra-abdominal infection/acute abdomen (though less common than DKA).",
+                "ECG: Evaluate for MI (precipitant), ischemia. Check for peaked T waves if hyperkalemic. May show arrhythmias from electrolyte derangements.",
+                "Renal ultrasound: If AKI persists despite resuscitation (to rule out obstructive uropathy).",
+                "MRI brain: If focal deficits persist despite osmolality correction (true stroke vs hyperosmolar effect).",
+                "Venous doppler ultrasound: If DVT/PE suspected (HHS increases thrombosis risk from hyperviscosity, dehydration, immobility)."
+            ],
+
+            differentialDiagnosis: [
+                "Diabetic ketoacidosis (DKA): glucose >250, pH <7.3, LARGE ketones, anion gap >20, Type 1 DM. OVERLAP in 10-30% (mixed HHS+DKA). Key: HHS has NO significant acidosis, HIGHER glucose, HIGHER osmolality, Type 2 DM.",
+                "Stroke (CVA): focal neurologic deficits, altered mental status. BUT: HHS can MIMIC stroke with reversible deficits. Distinguish: check glucose, osmolality (elevated in HHS), head CT (negative in HHS unless concurrent stroke). HHS deficits resolve with osmolality correction.",
+                "Sepsis/septic shock: altered mental status, hypotension, leukocytosis, fever/hypothermia. Can COEXIST with HHS (infection is common precipitant). Check lactate, procalcitonin, blood cultures. Treat both simultaneously.",
+                "Hypoglycemia: altered mental status in diabetic. Distinguish: check glucose (LOW <70 vs HIGH >600 in HHS). Rapid test at bedside.",
+                "Uremia (acute or chronic kidney disease): altered mental status, elevated BUN/Cr, metabolic acidosis. Distinguish: HHS has profound hyperglycemia + hyperosmolality, NO ketones. Uremia may have uremic frost, pericardial rub, asterixis.",
+                "Hepatic encephalopathy: altered mental status, asterixis, elevated ammonia. Distinguish: liver disease history, normal glucose (unless hepatic glycogen depleted), elevated ammonia, hepatic stigmata.",
+                "Alcohol intoxication/withdrawal: altered mental status. History of alcohol use. BAC level. HHS has hyperglycemia + hyperosmolality.",
+                "Medication overdose: sedatives, opioids, antipsychotics. History, toxicology screen. HHS has metabolic derangements.",
+                "Hyponatremia/hypernatremia: altered mental status from severe electrolyte disturbance. Check CORRECTED sodium in HHS (pseudohyponatremia from hyperglycemia).",
+                "Meningitis/encephalitis: fever, headache, AMS, neck stiffness. LP if suspected (after CT if focal deficits). Can coexist as HHS precipitant.",
+                "Non-convulsive status epilepticus: altered mental status, seizure history. EEG shows seizure activity. HHS can cause seizures but also resolves with treatment."
+            ],
+
+            management: {
+                acute: [
+                    "SETTING: ICU admission for severe HHS (osmolality >340, AMS, hypotension, comorbidities). Step-down unit for mild HHS if alert and stable.",
+
+                    "MONITORING: Continuous cardiac monitoring (arrhythmia risk from electrolytes). Hourly vital signs, neurologic checks, urine output (Foley catheter). Fingerstick glucose every 1-2 hours. BMP every 2-4 hours (monitor K+, Na, osmolality). Calculate osmolality serially. Assess mental status (GCS) every 1-2 hours.",
+
+                    "**FIVE PILLARS OF HHS TREATMENT** (order is critical):",
+
+                    "**1. IV FLUID RESUSCITATION** (HIGHEST PRIORITY - more important than insulin in HHS):",
+                    "GOAL: Restore intravascular volume, improve renal perfusion, decrease osmolality. Average deficit 10L (100-200 mL/kg). AGGRESSIVE fluids crucial.",
+
+                    "INITIAL RESUSCITATION (first 1-2 hours): \n- 0.9% NORMAL SALINE (isotonic) at 15-20 mL/kg/hour (1-1.5L/hour for average adult) IF corrected Na NORMAL or LOW. Elderly/heart failure: slower rate 250-500 mL/hour to avoid pulmonary edema. \n- Goal: restore perfusion, stabilize BP, improve urine output >0.5 mL/kg/hour.",
+
+                    "SUBSEQUENT FLUIDS (after initial 1-2L): \n- If corrected Na HIGH (>150): switch to 0.45% HALF-NORMAL saline at 250-500 mL/hour. \n- If corrected Na NORMAL (135-150): continue 0.9% normal saline at 250-500 mL/hour. \n- If corrected Na LOW (<135): continue 0.9% normal saline.",
+
+                    "When GLUCOSE <300 mg/dL: \n- Switch to D5-0.45% saline (dextrose-containing fluid) at 150-250 mL/hour to prevent hypoglycemia while continuing to correct hyperosmolality. \n- GOAL GLUCOSE: 250-300 mg/dL (NOT <200 like DKA - osmolality correction is slower in HHS).",
+
+                    "FLUID GOALS: \n- Replace 50% of fluid deficit in first 12-24 hours (gradual correction to avoid cerebral edema, though less risk than DKA). \n- Osmolality should decrease by 3-8 mOsm/kg/hour (GRADUAL). \n- Total rehydration over 24-48 hours.",
+
+                    "**2. INSULIN THERAPY** (DELAYED and CAUTIOUS - start AFTER initial fluid resuscitation):",
+                    "TIMING: DO NOT start insulin immediately. Give 1-2L IV fluids FIRST to restore perfusion and stabilize patient. Insulin without adequate fluids → vascular collapse (worsens hypotension by shifting fluid intracellularly).",
+
+                    "BEFORE insulin, CHECK POTASSIUM: \n- If K+ <3.3 mEq/L → HOLD insulin, give K+ replacement until K+ >3.3 (insulin drives K+ into cells → life-threatening hypokalemia → arrhythmia). \n- If K+ 3.3-5.5 → safe to start insulin, give K+ supplementation with fluids. \n- If K+ >5.5 → start insulin, withhold K+ replacement initially.",
+
+                    "INSULIN REGIMEN (IV continuous infusion): \n- OPTIONAL BOLUS: 0.1 units/kg IV bolus (can SKIP bolus in HHS - not needed like DKA). Many protocols skip bolus in HHS. \n- CONTINUOUS INFUSION: 0.1 units/kg/hour IV (same as DKA but patients often MORE insulin sensitive). \n- Example: 70kg patient → 7 units/hour.",
+
+                    "INSULIN ADJUSTMENTS: \n- If glucose NOT decreasing 50-70 mg/dL/hour → increase insulin by 1 unit/hour every hour. \n- If glucose decreasing TOO fast (>100 mg/dL/hour) → decrease insulin. \n- GOAL: decrease glucose 50-70 mg/dL/hour (NOT faster - risk cerebral edema).",
+
+                    "When GLUCOSE <300 mg/dL: \n- DECREASE insulin to 0.05-0.1 units/kg/hour (3-7 units/hour for 70kg). \n- Add D5 to fluids (D5-0.45% saline). \n- MAINTAIN glucose 250-300 mg/dL until osmolality <315 and patient alert (unlike DKA where goal is 150-200).",
+
+                    "**3. POTASSIUM REPLACEMENT** (essential - all HHS patients have K+ deficit):",
+                    "ALL patients have TOTAL BODY K+ DEFICIT (4-6 mEq/kg, 300-600 mEq total) even if serum K+ normal/high initially. Insulin and fluids will SHIFT K+ into cells → life-threatening hypokalemia.",
+
+                    "K+ REPLACEMENT PROTOCOL: \n- If K+ <3.3 → HOLD insulin, give 20-40 mEq/hour K+ until K+ >3.3 (high-risk cardiac monitoring). \n- If K+ 3.3-4.0 → give 40 mEq K+ per liter IV fluid (aggressive replacement). \n- If K+ 4.0-5.5 → give 20-30 mEq K+ per liter IV fluid. \n- If K+ >5.5 → withhold K+, check every 2 hours (will drop with insulin/fluids).",
+
+                    "CHECK K+ every 2-4 hours. Adjust replacement based on levels. Most require 100-200 mEq K+ in first 24 hours.",
+
+                    "**4. IDENTIFY AND TREAT PRECIPITANT** (critical for preventing recurrence):",
+                    "Common precipitants: \n- INFECTION (30-60%): pneumonia (CXR, antibiotics), UTI (UA, urine culture, antibiotics), sepsis (blood cultures, broad-spectrum abx). \n- MI/ACS: ECG, troponin, cardiology consult, antiplatelet therapy. \n- STROKE: head CT/MRI, neurology consult (but remember HHS can mimic stroke). \n- Medication non-adherence: reinforce importance, diabetes education. \n- NEW diagnosis T2DM: long-term diabetes management plan.",
+
+                    "**5. PHOSPHATE AND MAGNESIUM REPLACEMENT** (if deficient):",
+                    "PHOSPHATE: drops with insulin therapy. Check levels. If <1.0 mg/dL → give potassium phosphate 20-30 mmol over 6 hours (risk rhabdomyolysis, respiratory failure, hemolysis if severe). Monitor Ca (phosphate lowers Ca).",
+
+                    "MAGNESIUM: check level. If <1.5 mg/dL → give 2-4g MgSO4 IV over 4-6 hours.",
+
+                    "ADJUNCTS:",
+                    "DVT PROPHYLAXIS: subcutaneous heparin 5000 units q8-12h OR enoxaparin 40mg daily (HHS = HIGH thrombosis risk from dehydration, hyperviscosity, immobility, elderly).",
+
+                    "FOLEY CATHETER: place to monitor urine output accurately (goal >0.5 mL/kg/hour, ideally 1-2 mL/kg/hour with fluids).",
+
+                    "NASOGASTRIC TUBE: if persistent vomiting or altered mental status (aspiration risk).",
+
+                    "AVOID: \n- Bicarbonate (NOT indicated - pH >7.3, NO significant acidosis in HHS). \n- Hypotonic fluids too early (risk cerebral edema). \n- Insulin before adequate fluid resuscitation (vascular collapse).",
+
+                    "HHS RESOLUTION CRITERIA (all must be met to stop IV insulin): \n1. Glucose <250 mg/dL (controlled) \n2. Serum osmolality <315 mOsm/kg (normalized) \n3. Patient ALERT and able to eat (mental status normalized) \n4. Volume status restored (urine output adequate, BP stable, no tachycardia)",
+
+                    "TRANSITION TO SUBCUTANEOUS INSULIN: \n- When resolution criteria met AND patient able to eat → give FIRST dose subcutaneous insulin (basal-bolus or basal + correction), continue IV insulin for 1-2 hours OVERLAP (prevent rebound hyperglycemia), then stop IV insulin. \n- If no prior insulin: start basal-bolus regimen 0.5-0.8 units/kg/day total (lower than T1DM). Basal (glargine/detemir) 50%, rapid-acting (lispro/aspart) 50% divided pre-meals. \n- If on home insulin: restart home regimen (may need higher dose - reassess as outpatient).",
+
+                    "DISPOSITION: \n- ICU until osmolality <320, mental status improved, hemodynamically stable. Then transfer to floor. \n- Hospital stay typically 3-7 days (longer than DKA due to severity, comorbidities, precipitant treatment)."
+                ],
+                chronic: [
+                    "DIABETES MANAGEMENT: HHS indicates SEVERE uncontrolled T2DM. Most will require INSULIN long-term (many previously on oral agents alone).",
+
+                    "INSULIN THERAPY: Start basal-bolus insulin regimen 0.5-0.8 units/kg/day total. Basal insulin (glargine, detemir, degludec) once daily + rapid-acting insulin (lispro, aspart, glulisine) before meals. Titrate to goal glucose 80-130 fasting, <180 postprandial.",
+
+                    "ORAL AGENTS: May add/continue metformin (if no contraindication - check kidney function post-HHS), GLP-1 agonist (cardiovascular benefit), SGLT2 inhibitor (if eGFR adequate - CAUTION: can precipitate DKA/HHS in insulin deficiency). Many will need insulin + oral agents.",
+
+                    "GLYCEMIC GOALS: HbA1c <7% for most (individualize based on age, comorbidities). Check HbA1c every 3 months until stable, then every 6 months.",
+
+                    "DIABETES EDUCATION: Essential for HHS survivors. Diabetes self-management education and support (DSMES). Teach: glucose monitoring (check fasting + pre-meal), insulin administration, hypoglycemia recognition/treatment, sick day management (KEY - prevent recurrence).",
+
+                    "SICK DAY MANAGEMENT (CRITICAL - prevent recurrence): \n- NEVER stop insulin (even if not eating - this precipitates HHS). \n- Check glucose every 2-4 hours if ill. \n- Stay hydrated (drink 8oz water every hour if possible). \n- Call provider if glucose >300×2, persistent vomiting, unable to tolerate liquids, signs of dehydration. \n- Have low threshold to go to ED if similar symptoms as HHS presentation.",
+
+                    "COMPLICATION SCREENING (same as all diabetes): \n- Annual: dilated eye exam (retinopathy), urine albumin-to-creatinine ratio (nephropathy), monofilament foot exam (neuropathy). \n- At each visit: foot inspection, BP check. \n- Lipid panel annually, statin therapy (ASCVD risk reduction). \n- Aspirin 81-162mg daily if ASCVD or high risk.",
+
+                    "CARDIOVASCULAR RISK REDUCTION: HHS patients often have CVD. \n- Statin therapy (high-intensity - atorvastatin 40-80mg or rosuvastatin 20-40mg). \n- BP control <130/80 (ACE-I or ARB preferred for nephropathy protection). \n- GLP-1 agonist (semaglutide, dulaglutide) or SGLT2 inhibitor (empagliflozin, dapagliflozin) for proven cardiovascular benefit in T2DM.",
+
+                    "AVOID PRECIPITANTS: \n- Minimize steroids (if needed for other conditions, increase insulin significantly). \n- Caution with thiazide/loop diuretics (dehydration risk - ensure adequate hydration). \n- Avoid antipsychotics that worsen hyperglycemia if possible (olanzapine, clozapine). \n- Medication adherence counseling.",
+
+                    "ENSURE WATER ACCESS: For nursing home residents, bedridden patients - ensure adequate hydration, regular drinks offered, address barriers to self-hydration. Family education.",
+
+                    "TREAT UNDERLYING CONDITIONS: Address comorbidities that precipitated HHS - infection treatment completion, post-MI care, post-stroke rehabilitation, depression/dementia management.",
+
+                    "FOLLOW-UP: \n- Endocrinology referral (all HHS patients - complex diabetes requiring specialist management). \n- PCP follow-up within 1-2 weeks post-discharge (medication reconciliation, glucose monitoring). \n- Endocrine follow-up within 2-4 weeks (insulin titration, long-term management).",
+
+                    "SOCIAL SUPPORT: Home health nursing (insulin teaching, glucose monitoring), social work (ensure housing, medication access), visiting nurse (for elderly, ensure safety, medication adherence).",
+
+                    "RECURRENCE PREVENTION: 50-70% recurrence risk if precipitants not addressed. Education on early warning signs (polyuria, weakness, confusion), sick day rules, importance of hydration, medication adherence."
+                ]
+            },
+
+            complications: [
+                "MORTALITY: 10-20% (2-4× higher than DKA). Risk factors for death: age >65, severe comorbidities (heart failure, CKD, CAD), osmolality >350, hypotension/shock, severe precipitant (sepsis, MI), delayed treatment.",
+                "THROMBOTIC EVENTS (10-25%): STROKE (arterial thrombosis), MI, mesenteric ischemia, DVT/PE. Mechanism: severe dehydration → hyperviscosity + hypercoagulability + immobility. Prophylactic heparin reduces risk.",
+                "ACUTE KIDNEY INJURY (50-75%): Prerenal AKI from severe hypovolemia. Usually reversible with fluids. Risk progression to ATN if prolonged shock. May require temporary dialysis if severe (rare). Long-term CKD risk if recurrent episodes.",
+                "CEREBRAL EDEMA (RARE in adults, <1%, more common in children): Rapid correction of osmolality (>10 mOsm/kg/hour) → water shifts into brain → edema. Prevent: gradual osmolality correction (3-8 mOsm/kg/hour). Symptoms: headache, altered mental status worsening despite treatment, papilledema, Cushing triad (bradycardia, hypertension, irregular respirations). Treatment: hypertonic saline 3% 250mL bolus, mannitol 1g/kg, intubation, neurosurgery consult.",
+                "HYPOKALEMIA (80-90% during treatment): Insulin + fluids shift K+ into cells. Can cause life-threatening arrhythmias (ventricular tachycardia, torsades de pointes, cardiac arrest). Prevent: aggressive K+ replacement, monitor q2-4h. Treatment: IV KCl, hold insulin if K+ <3.3.",
+                "HYPOGLYCEMIA (10-20%): From insulin therapy, especially if overly aggressive. More common if poor oral intake. Prevent: glucose monitoring q1-2h, decrease insulin when glucose <300, add D5 to fluids. Treatment: D50W IV.",
+                "HYPOPHOSPHATEMIA (<1.0 mg/dL in 50%): During treatment (insulin shifts phosphate into cells). Severe (<1.0) → rhabdomyolysis, respiratory muscle weakness, hemolysis, cardiac dysfunction. Replace if <1.0.",
+                "RHABDOMYOLYSIS (rare): From prolonged immobility, severe hypophosphatemia, seizures. Elevated CK, myoglobin. Can worsen AKI. Treatment: aggressive hydration.",
+                "ARRHYTHMIAS: From electrolyte disturbances (hypokalemia, hypomagnesemia, hypocalcemia). Monitor cardiac rhythm continuously in ICU.",
+                "PULMONARY EDEMA (5-10%): From aggressive IV fluid resuscitation, especially in elderly with heart failure. Prevent: cautious fluid rate in HF (250-500 mL/hour), monitor lung exam. Treatment: diuretics, oxygen.",
+                "SEIZURES (10-25% at presentation): From hyperosmolality. Usually resolve with osmolality correction. If persistent → workup for other causes (stroke, meningitis, metabolic).",
+                "ASPIRATION PNEUMONIA: In patients with altered mental status, vomiting. Prevent: NPO until alert, NG tube if needed. Treatment: antibiotics.",
+                "RECURRENCE: 50-70% if precipitants not addressed. Prevent: diabetes education, sick day rules, medication adherence, treat underlying conditions."
+            ],
+
+            prognosis: "MORTALITY: 10-20% (much higher than DKA 1-5%). Higher in: age >65 (mortality 20-30%), severe comorbidities, osmolality >350 mOsm/kg, sepsis/severe infection, hypotension/shock, nursing home residents. Mortality usually from precipitant (sepsis, MI, stroke) rather than HHS itself. \n\nRECOVERY: Most survivors recover fully if treated promptly. Neurologic deficits (focal deficits, seizures) typically RESOLVE completely as osmolality corrects (confirm NOT true stroke). Hospital stay typically 3-7 days (longer than DKA). ICU stay 1-3 days. \n\nRECURRENCE RISK: 50-70% within 1 year if precipitants not addressed and diabetes poorly controlled. Prevention: intensive diabetes management, education on sick day rules, medication adherence, ensure hydration access (especially nursing home, elderly). \n\nLONG-TERM: HHS indicates SEVERE uncontrolled T2DM. Most require lifelong insulin therapy (often previously on oral agents alone - HHS is 'wake-up call'). Increased risk of micro- and macrovascular complications (retinopathy, nephropathy, neuropathy, CVD, stroke). Aggressive diabetes management and cardiovascular risk reduction essential. \n\nFUNCTIONAL OUTCOMES: Elderly patients may have prolonged recovery, deconditioning, need for rehabilitation or skilled nursing facility. Recurrent HHS episodes increase dementia risk (repeated hyperosmolar insults). \n\nPREVENTION KEY: With proper diabetes education, medication adherence, sick day management, and early recognition of warning signs, recurrence can be prevented. Endocrinology follow-up essential for all HHS survivors.",
+
+            clinicalPearls: [
+                "HHS mnemonic: HIGH (High glucose >600, High osmolality >320), NO (NO ketoacidosis pH >7.3, NO Kussmaul breathing), T2 (Type 2 DM, not T1), SLOW (Slower onset days-weeks), OLD (Older age >65), MORE (MORE dehydration 10L, MORE AMS, MORE mortality 10-20%).",
+                "KEY DISTINCTION: HHS vs DKA = NO ketoacidosis (enough insulin to suppress ketogenesis but NOT enough to control glucose). HIGHER glucose (>600 vs >250). HIGHER osmolality (>320 vs <320). Type 2 DM (vs Type 1). Elderly (vs young). SLOWER onset.",
+                "MIXED PICTURE (10-30% of cases): Patients can have BOTH HHS and DKA features (euglycemic DKA on SGLT2 inhibitor, T1DM with extreme hyperglycemia, T2DM with starvation ketosis). If pH <7.3 + ketones + glucose >600 + osmolality >320 → treat as BOTH (aggressive fluids + insulin).",
+                "FLUIDS FIRST, INSULIN SECOND: Unlike DKA where insulin can start immediately, HHS requires 1-2L IV fluids FIRST before insulin (prevent vascular collapse). Fluids alone will lower glucose 25-50 mg/dL/hour initially.",
+                "OSMOLALITY CALCULATION: 2×[Na] + glucose/18 + BUN/2.8. Remember to use CORRECTED Na: add 1.6 mEq/L for every 100 mg/dL glucose >100. Effective osmolality (most important): 2×[Na] + glucose/18 (omit BUN - doesn't cross BBB).",
+                "SLOWER CORRECTION IN HHS: DKA resolves in 12-24 hours. HHS takes 24-48 hours (slower osmolality correction to prevent cerebral edema). Don't rush - patience is key.",
+                "GLUCOSE GOAL IN HHS: Maintain 250-300 mg/dL (NOT 150-200 like DKA) until osmolality <315 and patient alert. Preventing rebound hyperosmolality more important than tight glucose control acutely.",
+                "HHS CAN MIMIC STROKE: Hyperosmolality causes reversible focal neurologic deficits (hemiparesis, aphasia). ALWAYS check glucose, osmolality in elderly with 'stroke' symptoms. Head CT negative, deficits resolve with HHS treatment → NOT true stroke. But stroke can also be HHS precipitant - careful assessment needed.",
+                "POTASSIUM IS PRIORITY: ALL HHS patients have massive total body K+ deficit (300-600 mEq) even if serum K+ normal/high. Aggressive replacement essential. Check before insulin, monitor q2-4h. Most common preventable complication = hypokalemia arrhythmia.",
+                "THROMBOSIS RISK: HHS = HIGH thrombotic risk (dehydration, hyperviscosity, elderly, immobility). ALWAYS give DVT prophylaxis (subcutaneous heparin or enoxaparin). Screen for stroke, MI, DVT/PE.",
+                "INFECTION IS #1 PRECIPITANT: 30-60% of HHS cases. Always search for infection source - CXR (pneumonia), UA/culture (UTI), blood cultures (sepsis), wound cultures (cellulitis). Broad-spectrum antibiotics if sepsis suspected (don't wait for culture results).",
+                "SICK DAY RULES PREVENT RECURRENCE: Teach patients NEVER stop insulin when ill (this is how HHS happens). Check glucose q2-4h if sick. Drink fluids aggressively. Call provider early if glucose >300×2 or unable to drink. Prevention education is LIFE-SAVING.",
+                "NURSING HOME RESIDENTS AT HIGH RISK: Cognitive impairment, impaired thirst, limited water access, inadequate monitoring. Ensure adequate hydration protocols, regular glucose monitoring, staff education. Family involvement crucial.",
+                "MORTALITY CORRELATES WITH OSMOLALITY: Osmolality <320 → mortality 5%. Osmolality 320-340 → 10%. Osmolality >340 → 20-30%. Every 10 mOsm/kg increase → mortality increases. Prompt recognition and treatment saves lives.",
+                "ENDOCRINE FOLLOW-UP MANDATORY: ALL HHS patients need endocrinology referral. This is severe, life-threatening diabetes complication indicating need for specialist management. Most will need insulin therapy lifelong (wake-up call for inadequate diabetes control).",
+                "RECURRENCE = FAILURE OF PREVENTION: 50-70% recurrence if precipitants not addressed. Every HHS survivor needs: diabetes education, sick day management plan, medication adherence support, treatment of underlying conditions, ensure water access. Recurrent HHS → increased mortality, cognitive decline, poor quality of life."
+            ]
         }
     },
 
