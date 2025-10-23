@@ -503,20 +503,98 @@ NEWER AGENTS (not detailed here):
         "name": "SGLT2 Inhibitors",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Block sodium-glucose cotransporter-2 in kidneys, increase glucose excretion.",
+        "mechanism": "Sodium-glucose cotransporter-2 (SGLT2) inhibitors block SGLT2 in the proximal renal tubule, preventing reabsorption of filtered glucose. Results in glucosuria (glucose excretion in urine), lowering blood glucose independent of insulin.",
         "sideEffects": [
-            "UTIs",
-            "Genital mycotic infections",
-            "DKA risk",
-            "Dehydration"
+            "Urinary tract infections (UTIs) - 10%",
+            "Genital mycotic infections (yeast infections) - 15%",
+            "Euglycemic DKA (rare but serious)",
+            "Dehydration, orthostatic hypotension",
+            "Increased urination (polyuria)"
         ],
-        "interactions": "Diuretics increase dehydration risk.",
+        "interactions": "Diuretics increase dehydration risk. Insulin/sulfonylureas increase hypoglycemia risk.",
         "interactionDetails": "",
         "drugIds": [
             "empagliflozin",
             "canagliflozin"
         ],
-        "pageType": "pharmacologic-class"
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "SGLT2 inhibitors are the newest class of diabetes medications (first approved 2013) that work by blocking glucose reabsorption in the kidneys, causing glucosuria and calorie loss. Beyond glucose control, they provide MAJOR cardiovascular and renal benefits (reduce heart failure hospitalizations, slow CKD progression, reduce cardiovascular death). They are insulin-independent and cause weight loss and blood pressure reduction. Increasingly considered as add-on to metformin or even first-line in patients with heart failure or chronic kidney disease.",
+            "clinicalApproach": [
+                "Second-line add-on to metformin, OR first-line if patient has heart failure or CKD (compelling indications)",
+                "PREFERRED in patients with: (1) Heart failure (reduce HF hospitalizations by 30-35%), (2) CKD (slow progression), (3) ASCVD (reduce CV death)",
+                "Benefits beyond glucose control: weight loss (2-3 kg), BP reduction (3-5 mmHg), diuretic effect, renal protection",
+                "Require eGFR >30 for glucose-lowering efficacy (though cardio-renal benefits persist at lower eGFR)",
+                "Patient counseling essential: genital hygiene (prevent yeast infections), stay hydrated, recognize DKA symptoms",
+                "Do NOT stop before surgery or illness (euglycemic DKA risk - hold during acute illness)",
+                "Cost may be barrier (expensive, but cost-effective given CV/renal benefits)"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Oral absorption, generally well absorbed. Can take with or without food.",
+                "distribution": "High protein binding (>90%). Wide distribution.",
+                "metabolism": "Hepatic metabolism via glucuronidation and/or CYP450 (varies by agent). Generally produce inactive metabolites.",
+                "excretion": "Renal (50-60%) and fecal (40-50%). Efficacy decreases with declining renal function (need eGFR >30 for glucose effect)."
+            },
+            "comparison": {
+                "title": "Comparison of SGLT2 Inhibitors",
+                "description": "Key differences in cardiovascular outcomes and safety profiles",
+                "content": `
+EMPAGLIFLOZIN (Jardiance):
+- Dosing: 10-25 mg once daily
+- eGFR requirement: Can initiate if eGFR ≥20 (CV/renal benefit), glucose effect needs eGFR ≥30
+- CV data: STRONGEST - EMPA-REG trial showed 38% reduction in CV death, 35% reduction in HF hospitalization
+- Use case: PREFERRED in patients with heart failure or established ASCVD (best CV mortality data)
+- FDA approval: T2DM, reduce CV death in ASCVD, reduce HF hospitalization, slow CKD progression
+- Safety: No amputation signal (unlike canagliflozin)
+
+CANAGLIFLOZIN (Invokana):
+- Dosing: 100-300 mg once daily (take before first meal)
+- eGFR requirement: ≥30 (strict, don't use if <30)
+- CV data: CANVAS trial showed CV benefit but also INCREASED amputation risk (toe/foot amputations 2x)
+- Use case: Generally avoid - empagliflozin or dapagliflozin preferred due to amputation concern
+- BLACK BOX: Increased risk of lower limb amputations (especially toes)
+- Safety concerns: Bone fractures (increased risk), amputations (2x risk)
+
+NEWER AGENTS (not detailed here):
+- Dapagliflozin (Farxiga): CV and renal benefits, HF indication, good safety profile
+- Ertugliflozin: Newer, less data, generally avoid
+`
+            },
+            "monitoring": [
+                "Blood glucose and HbA1c every 3 months (expect 0.5-1% reduction)",
+                "eGFR/serum creatinine: baseline and periodically (efficacy decreases with declining renal function, but don't stop if eGFR drops)",
+                "Blood pressure (expect 3-5 mmHg reduction - monitor for hypotension if on antihypertensives)",
+                "Weight (expect 2-3 kg weight loss from calorie loss via glucosuria)",
+                "Urinalysis if UTI symptoms (dysuria, frequency, urgency)",
+                "Foot exams (if on canagliflozin - amputation risk)",
+                "Ketones if DKA symptoms (nausea, vomiting, abdominal pain - can occur with NORMAL glucose)"
+            ],
+            "contraindications": [
+                "Type 1 Diabetes (risk of euglycemic DKA, though being studied off-label)",
+                "Diabetic ketoacidosis",
+                "Severe renal impairment (eGFR <30 for glucose benefit, though CV/renal benefits may persist)",
+                "Dialysis or ESRD (no glucose benefit, limited data)",
+                "Recurrent UTIs or genital infections (relative contraindication)",
+                "Volume depletion or hypotension (relative)"
+            ],
+            "clinicalPearls": [
+                "GAME-CHANGER in diabetes care: reduce CV death (38%), HF hospitalization (35%), slow CKD progression",
+                "EMPA-REG (2015): First diabetes drug to show CV MORTALITY benefit since metformin (38% reduction in CV death)",
+                "Mechanism: insulin-INDEPENDENT → block SGLT2 in proximal tubule → prevent glucose reabsorption → excrete ~60-80g glucose/day in urine",
+                "Weight loss via calorie loss (glucose in urine = ~240-320 kcal/day lost)",
+                "Euglycemic DKA: RARE (0.1%) but HIGH-YIELD. Can have DKA with NORMAL blood glucose. Hold SGLT2i during illness, surgery, prolonged fasting.",
+                "Genital mycotic infections (yeast): 10-15%, especially women. Glucose in urine → yeast overgrowth. Treat with topical antifungals.",
+                "UTIs: 5-10% (glucose in urine promotes bacterial growth). Not a major concern unless recurrent.",
+                "Diuretic effect: lose 1-2 kg fluid initially → BP reduction, may improve edema. Risk of hypotension if on diuretics.",
+                "NO hypoglycemia as monotherapy (insulin-independent) - but risk when combined with insulin/sulfonylureas",
+                "Require functioning kidneys: Need eGFR >30 for glucose-lowering (but KEEP if eGFR drops - renal/CV benefits persist)",
+                "Step 1 buzzword: 'reduce heart failure hospitalization' or 'euglycemic DKA'",
+                "Classic vignette: T2DM patient with HFrEF (EF 35%), on metformin, HbA1c 8% → add SGLT2 inhibitor (empagliflozin for HF benefit)",
+                "Fournier's gangrene: RARE (<0.01%) but serious necrotizing fasciitis of perineum - FDA warning 2018",
+                "Mnemonic: 'SGLT2 = Sugar Goes, Lost Through urine' or 'SGLT2 = Sweet Goes Low Through kidneys'",
+                "Suffix: '-gliflozin' identifies all SGLT2 inhibitors"
+            ]
+        }
     },
     {
         "id": "amylin-analogs",

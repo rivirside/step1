@@ -1216,25 +1216,113 @@ const drugs = [
         "pharmacologicClass": "sglt2-inhibitors",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Block sodium-glucose cotransporter-2 in kidneys, increase glucose excretion.",
-        "features": "Cardiovascular and renal benefits.",
-        "clinicalChoice": "T2DM with heart failure or CKD.",
+        "mechanism": "Selective SGLT2 inhibitor → blocks sodium-glucose cotransporter-2 in proximal renal tubule → prevents reabsorption of filtered glucose → glucosuria (glucose excretion in urine) → lowers blood glucose independent of insulin. Also causes osmotic diuresis and natriuresis, reducing blood pressure and cardiac preload.",
+        "features": "STRONGEST cardiovascular mortality data (EMPA-REG: 38% reduction in CV death). Also approved for heart failure in non-diabetics.",
+        "pharmacokinetics": {
+            "onset": "Glucose excretion begins within hours; steady state in 4-5 days",
+            "peak": "Plasma concentration peaks at 1.5 hours",
+            "duration": "24 hours (once-daily dosing)",
+            "halfLife": "12.4 hours",
+            "metabolism": "Hepatic via glucuronidation (UGT1A3, UGT1A8, UGT1A9). Minimal CYP metabolism.",
+            "excretion": "Primarily renal (54% unchanged) and fecal (41%). Efficacy decreases with declining renal function."
+        },
         "indications": [
-            "Type 2 Diabetes",
-            "Heart Failure"
+            "Type 2 Diabetes (as monotherapy or combination therapy)",
+            "Reduce risk of cardiovascular death in T2DM with established cardiovascular disease",
+            "Reduce risk of CV death and hospitalization for heart failure in adults with heart failure (HFrEF)",
+            "Slow progression of chronic kidney disease in adults with CKD at risk of progression"
         ],
+        "clinicalChoice": "PREFERRED SGLT2 inhibitor for most patients due to strongest cardiovascular mortality data (38% reduction in CV death). Choose empagliflozin when: (1) patient has heart failure (HFrEF or HFpEF - reduces hospitalizations by 35%), (2) established ASCVD (reduces CV death), (3) CKD (slows progression), (4) need weight loss and BP reduction. Also approved for HF even WITHOUT diabetes.",
+        "dosing": {
+            "typical": "Start 10 mg once daily in the morning, with or without food. Can increase to 25 mg once daily if additional glycemic control needed and eGFR allows.",
+            "renal": "Can initiate if eGFR ≥20. For glucose benefit, need eGFR ≥30. If eGFR 20-30, use 10 mg (limited glucose effect but CV/renal benefits persist). Don't initiate if eGFR <20. If eGFR drops below 20 on therapy, may continue for CV/renal benefits (per cardiologist).",
+            "hepatic": "No dose adjustment needed",
+            "elderly": "No dose adjustment needed, but monitor renal function (age-related decline)"
+        },
         "contraindications": [
-            "Type 1 Diabetes",
-            "Severe Renal Impairment"
+            "Dialysis or ESRD (no data)",
+            "Severe hypersensitivity to empagliflozin"
         ],
-        "sideEffects": [
-            "UTIs",
-            "Genital mycotic infections",
-            "DKA risk",
-            "Dehydration"
+        "sideEffects": {
+            "common": [
+                "Genital mycotic infections (yeast infections - 10-15%, especially women)",
+                "Urinary tract infections (5-10%)",
+                "Increased urination (polyuria)",
+                "Thirst",
+                "Nasopharyngitis"
+            ],
+            "serious": [
+                "Euglycemic diabetic ketoacidosis (DKA) - RARE (0.1%) but serious. Can occur with NORMAL blood glucose.",
+                "Volume depletion / orthostatic hypotension (especially in elderly, on diuretics, or volume depleted)",
+                "Acute kidney injury (rare, usually with volume depletion)",
+                "Hypoglycemia (when combined with insulin or sulfonylureas)",
+                "Fournier's gangrene (necrotizing fasciitis of perineum - very rare <0.01%)"
+            ],
+            "rare": [
+                "Urosepsis, pyelonephritis (from complicated UTIs)",
+                "Hypersensitivity reactions (rare)"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Insulin or insulin secretagogues (sulfonylureas): increased hypoglycemia risk (reduce insulin/SU dose by 20-50%)",
+                "Diuretics: increased risk of volume depletion and hypotension (monitor, may need to reduce diuretic dose)",
+                "UGT inducers (rifampin): may reduce empagliflozin levels (not clinically significant)"
+            ],
+            "drugDisease": [
+                "Volume depletion: increased risk of hypotension, AKI (ensure adequate hydration)",
+                "Chronic kidney disease: efficacy for glucose lowering decreases with eGFR <30 (but CV/renal benefits persist, don't stop)",
+                "Recurrent UTIs or genital infections: use with caution (relative contraindication)"
+            ],
+            "drugFood": [
+                "Can take with or without food"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose and HbA1c every 3 months (expect 0.5-1% reduction)",
+                "eGFR/serum creatinine: baseline and periodically (may see initial small drop in eGFR - expected, usually stabilizes)",
+                "Electrolytes (potassium, magnesium) - may increase slightly",
+                "Ketones if DKA symptoms present (nausea, vomiting, abdominal pain - even if glucose normal)",
+                "Urinalysis if UTI symptoms"
+            ],
+            "vitals": [
+                "Blood pressure (expect 3-5 mmHg reduction - monitor for hypotension)",
+                "Weight (expect 2-3 kg weight loss)",
+                "Orthostatic vital signs (especially in elderly or on diuretics)"
+            ],
+            "symptoms": [
+                "Volume depletion symptoms (dizziness, lightheadedness, orthostatic hypotension)",
+                "Genital irritation, discharge (yeast infection)",
+                "Dysuria, frequency, urgency (UTI symptoms)",
+                "DKA symptoms: nausea, vomiting, abdominal pain, fatigue (HOLD during acute illness)"
+            ],
+            "frequency": "BP and weight at each visit. eGFR every 3-6 months or with dose changes."
+        },
+        "pregnancy": {
+            "category": "Category C (limited data)",
+            "considerations": "Not recommended in pregnancy. Insulin is preferred for diabetes in pregnancy. Discontinue when pregnancy detected. Unknown if excreted in breast milk - avoid in breastfeeding."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'reduces CV death by 38%' or 'first drug to show CV mortality benefit since metformin'",
+            "Brand name: Jardiance (highly tested brand name)",
+            "EMPA-REG OUTCOME trial (2015): GAME-CHANGER - first diabetes drug to show CV MORTALITY reduction (38% CV death, 35% HF hospitalization, 39% renal events)",
+            "EMPEROR-Reduced & EMPEROR-Preserved: Benefits in HFrEF and HFpEF (even without diabetes!)",
+            "FDA approved for heart failure (HFrEF) REGARDLESS of diabetes status - paradigm shift",
+            "Mechanism: Block SGLT2 in proximal tubule → excrete 60-80g glucose/day in urine → lose 240-320 calories/day",
+            "Weight loss: 2-3 kg via calorie loss (glucose in urine) + diuresis (1-2 kg fluid initially)",
+            "NO hypoglycemia as monotherapy (insulin-independent) - but risk when combined with insulin/SU",
+            "Euglycemic DKA: RARE (0.1%) but HIGH-YIELD. Can have DKA with NORMAL glucose (<200). Hold during illness, surgery, fasting.",
+            "Genital yeast infections: 10-15% (glucose in urine promotes yeast). Usually mild, treat with topical antifungals. Counsel on hygiene.",
+            "Require eGFR >30 for glucose effect, but can use down to eGFR ≥20 for CV/renal benefits (updated 2022)",
+            "Diuretic effect: Lose 1-2 kg fluid initially → BP reduction (3-5 mmHg) → may worsen hypotension if on diuretics",
+            "Don't stop if eGFR drops on therapy - CV and renal benefits persist at lower eGFR",
+            "Classic vignette: T2DM + HFrEF (EF 30%), on metformin, HbA1c 8.5% → add empagliflozin (reduce HF hospitalization)",
+            "Common wrong answer: 'Stop if eGFR <30' - NO! Continue for CV/renal benefits (just don't expect glucose lowering)",
+            "Hold during illness: Risk of euglycemic DKA during ketotic states (fasting, illness, surgery)",
+            "Combination: Often combined with metformin (Synjardy) for convenience"
         ],
-        "interactions": "Diuretics increase dehydration risk.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {
@@ -1243,24 +1331,126 @@ const drugs = [
         "pharmacologicClass": "sglt2-inhibitors",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Block sodium-glucose cotransporter-2 in kidneys, increase glucose excretion.",
-        "features": "May reduce CV events.",
-        "clinicalChoice": "T2DM with established CVD.",
+        "mechanism": "SGLT2 inhibitor (also some SGLT1 inhibition at higher doses) → blocks sodium-glucose cotransporter-2 in proximal renal tubule → prevents glucose reabsorption → glucosuria → lowers blood glucose independent of insulin. At high doses, also inhibits intestinal SGLT1 → delays glucose absorption.",
+        "features": "First SGLT2 inhibitor approved (2013). BLACK BOX WARNING for lower limb amputations. Generally AVOID - prefer empagliflozin or dapagliflozin.",
+        "pharmacokinetics": {
+            "onset": "Glucose excretion begins within hours",
+            "peak": "Plasma concentration peaks at 1-2 hours",
+            "duration": "24 hours (once-daily dosing)",
+            "halfLife": "10.6-13.1 hours (dose-dependent)",
+            "metabolism": "Hepatic via UGT1A9 and UGT2B4 glucuronidation. Minor CYP3A4 metabolism (~7%).",
+            "excretion": "Fecal (52%) and renal (33%). Requires eGFR ≥30 for efficacy (stricter than empagliflozin)."
+        },
         "indications": [
-            "Type 2 Diabetes"
+            "Type 2 Diabetes (as monotherapy or combination therapy)",
+            "Reduce risk of MACE in T2DM with established cardiovascular disease",
+            "Reduce risk of end-stage kidney disease, CV death, hospitalization for HF, and CKD progression in diabetic nephropathy with albuminuria"
         ],
+        "clinicalChoice": "Generally AVOID canagliflozin due to BLACK BOX amputation risk (2x risk of toe/foot amputations). Empagliflozin or dapagliflozin preferred. Historical use: First SGLT2i approved (2013), has CV and renal benefits (CANVAS, CREDENCE trials), but safety concerns limit use. Only consider if other SGLT2i unavailable AND no amputation/fracture risk factors.",
+        "dosing": {
+            "typical": "Start 100 mg once daily, taken before first meal of the day. Can increase to 300 mg once daily if additional glycemic control needed and eGFR ≥60.",
+            "renal": "eGFR ≥60: Up to 300 mg daily. eGFR 30-59: Max 100 mg daily (limited glucose benefit). eGFR <30: Do NOT use (contraindicated, no efficacy).",
+            "hepatic": "No dose adjustment needed",
+            "elderly": "No dose adjustment, but increased risk of volume depletion and falls (use caution)"
+        },
         "contraindications": [
-            "Severe Renal Impairment",
-            "Lower Limb Amputation History"
+            "Severe renal impairment (eGFR <30)",
+            "Dialysis or ESRD",
+            "Patients on dialysis",
+            "History of lower limb amputation (relative contraindication - BLACK BOX warning)",
+            "Peripheral vascular disease, diabetic foot ulcers, neuropathy (relative contraindication due to amputation risk)"
         ],
-        "sideEffects": [
-            "UTIs",
-            "Genital mycotic infections",
-            "DKA risk",
-            "Dehydration"
+        "sideEffects": {
+            "common": [
+                "Genital mycotic infections (yeast - 10-15%, especially women)",
+                "Urinary tract infections (5-10%)",
+                "Increased urination (polyuria)",
+                "Thirst",
+                "Nausea (more than empagliflozin due to SGLT1 inhibition)"
+            ],
+            "serious": [
+                "Lower limb amputations (BLACK BOX - 2x increased risk, primarily toes and midfoot)",
+                "Bone fractures (increased risk, especially in first year)",
+                "Euglycemic diabetic ketoacidosis (DKA - RARE 0.1%, can occur with normal glucose)",
+                "Volume depletion / orthostatic hypotension",
+                "Acute kidney injury (from volume depletion)",
+                "Hypoglycemia (when combined with insulin/sulfonylureas)",
+                "Hyperkalemia (especially in renal impairment)"
+            ],
+            "rare": [
+                "Fournier's gangrene (necrotizing fasciitis of perineum - very rare)",
+                "Urosepsis, pyelonephritis"
+            ]
+        },
+        "blackBoxWarnings": [
+            "Lower Limb Amputations: Canagliflozin associated with approximately 2-fold increased risk of lower limb amputations, primarily affecting the toe and midfoot. Risk factors: prior amputation, peripheral vascular disease, neuropathy, diabetic foot ulcers. Assess patients for these risk factors before initiating. Monitor for infections, ulcers, pain in legs/feet. Discontinue if these occur. Counsel patients on routine preventive foot care."
         ],
-        "interactions": "Diuretics increase dehydration risk.",
-        "interactionDetails": "",
+        "interactions": {
+            "drugDrug": [
+                "Insulin or insulin secretagogues: increased hypoglycemia risk (reduce dose by 20-50%)",
+                "Diuretics: increased risk of volume depletion and hypotension",
+                "UGT inducers (rifampin, phenytoin, ritonavir): decrease canagliflozin levels by 51% (may need dose increase)",
+                "Digoxin: canagliflozin increases digoxin AUC by 20% (monitor digoxin levels)"
+            ],
+            "drugDisease": [
+                "Peripheral vascular disease: AVOID (increased amputation risk)",
+                "Prior amputation: AVOID (BLACK BOX - high risk of recurrence)",
+                "Diabetic foot ulcers: AVOID (amputation risk)",
+                "Neuropathy: use with caution (may not feel foot injuries → amputation)",
+                "Severe renal impairment (eGFR <30): CONTRAINDICATED (no efficacy)",
+                "Hyperkalemia risk: use caution (may increase potassium)"
+            ],
+            "drugFood": [
+                "Take before first meal of the day for optimal absorption"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose and HbA1c every 3 months (expect 0.5-1% reduction)",
+                "eGFR/serum creatinine: baseline and periodically (don't use if <30)",
+                "Potassium: monitor in patients at risk for hyperkalemia (renal impairment, on ACE-I/ARB)",
+                "Ketones if DKA symptoms (can occur with normal glucose)",
+                "Urinalysis if UTI symptoms"
+            ],
+            "vitals": [
+                "Blood pressure (expect 3-5 mmHg reduction)",
+                "Weight (expect 2-3 kg weight loss)",
+                "Orthostatic vital signs (volume depletion risk)"
+            ],
+            "symptoms": [
+                "FOOT EXAMS at each visit: Inspect for ulcers, infections, pain (CRITICAL due to amputation risk)",
+                "Peripheral pulses, neuropathy screening (amputation risk factors)",
+                "Volume depletion symptoms (dizziness, orthostasis)",
+                "Genital irritation, discharge (yeast infection)",
+                "Dysuria, frequency (UTI symptoms)",
+                "DKA symptoms (nausea, vomiting, abdominal pain - even with normal glucose)"
+            ],
+            "frequency": "Foot exams EVERY visit. eGFR every 3-6 months. Potassium if on ACE-I/ARB."
+        },
+        "pregnancy": {
+            "category": "Category C (limited data)",
+            "considerations": "Not recommended in pregnancy. Insulin is preferred. Discontinue when pregnancy detected. Unknown if excreted in breast milk - avoid breastfeeding."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'BLACK BOX amputation risk' or 'increased toe/foot amputations'",
+            "Brand name: Invokana",
+            "BLACK BOX WARNING (2017): 2x increased risk of lower limb amputations (primarily toes and midfoot)",
+            "First SGLT2 inhibitor approved (2013) - historical significance",
+            "CANVAS trial (2017): Showed CV benefit (reduce MACE) BUT also revealed amputation signal → BLACK BOX warning",
+            "CREDENCE trial (2019): Renal benefits in diabetic nephropathy, but amputation risk persists",
+            "Generally AVOID due to amputation and fracture risks - empagliflozin or dapagliflozin preferred",
+            "Bone fractures: Increased risk (especially within first year of therapy) - mechanism unclear",
+            "SGLT1 inhibition: At 300 mg dose, also inhibits intestinal SGLT1 → delays glucose absorption → more GI side effects (diarrhea)",
+            "Amputation risk factors: Prior amputation, peripheral vascular disease, neuropathy, diabetic foot ulcers",
+            "If amputation risk factors present: ABSOLUTE CONTRAINDICATION (choose different SGLT2i or different class)",
+            "Foot care counseling CRITICAL: Daily foot inspection, proper footwear, immediate attention to cuts/ulcers",
+            "Euglycemic DKA: Same risk as other SGLT2i (0.1%) - can have DKA with NORMAL glucose. Hold during illness.",
+            "Classic vignette: Patient on canagliflozin develops foot pain → found to have foot ulcer → STOP canagliflozin (amputation risk)",
+            "Common exam question: Which SGLT2i has BLACK BOX for amputations? Canagliflozin.",
+            "Requires eGFR ≥30 (stricter than empagliflozin which can use down to eGFR ≥20)",
+            "Take before first meal of the day (unlike empagliflozin which can be any time)",
+            "Hyperkalemia: Can increase potassium (especially with ACE-I/ARB) - monitor K+"
+        ],
         "pageType": "drug"
     },
     {
