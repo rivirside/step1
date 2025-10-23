@@ -276,7 +276,52 @@ GLIMEPIRIDE (Amaryl):
         "drugIds": [
             "pioglitazone"
         ],
-        "pageType": "pharmacologic-class"
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "TZDs (also called glitazones) are PPAR-γ (peroxisome proliferator-activated receptor gamma) agonists that increase insulin sensitivity in muscle and adipose tissue. Third-line therapy for Type 2 DM. Rosiglitazone was removed from market due to cardiovascular concerns; pioglitazone remains available. Major limitations: weight gain, fluid retention, heart failure risk, and bone fractures.",
+            "clinicalApproach": [
+                "Third-line therapy (after metformin + sulfonylurea or other combinations)",
+                "Work by increasing insulin SENSITIVITY (not secretion) - 'insulin sensitizers'",
+                "Takes 6-12 weeks for full glucose-lowering effect (slow onset)",
+                "Do NOT cause hypoglycemia when used alone",
+                "Reserved for patients with significant insulin resistance who can't tolerate other agents",
+                "CONTRAINDICATED in heart failure (NYHA Class III-IV) - causes fluid retention",
+                "Avoid in patients with osteoporosis or fracture risk (especially postmenopausal women)",
+                "Less commonly used now due to side effect profile - safer alternatives available"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Well absorbed orally. Can take with or without food.",
+                "distribution": "Highly protein-bound (>99%). Extensive tissue distribution.",
+                "metabolism": "Hepatic metabolism via CYP2C8 (pioglitazone) and CYP2C9. Active metabolites contribute to effect.",
+                "excretion": "Primarily fecal (pioglitazone). Long half-life allows once-daily dosing."
+            },
+            "monitoring": [
+                "Blood glucose and HbA1c (may take 8-12 weeks to see full effect)",
+                "LFTs at baseline and periodically (risk of hepatotoxicity, though rare)",
+                "Weight (expect 3-5 kg weight gain)",
+                "Signs/symptoms of heart failure (edema, dyspnea, weight gain)",
+                "Bone health in at-risk patients (postmenopausal women)",
+                "Macular edema (rare but check vision if complaints)"
+            ],
+            "contraindications": [
+                "Heart failure (NYHA Class III-IV) - ABSOLUTE contraindication",
+                "Active liver disease or elevated LFTs (>2.5x ULN)",
+                "History of bladder cancer (pioglitazone specific)",
+                "Pregnancy/breastfeeding"
+            ],
+            "clinicalPearls": [
+                "Suffix: -glitazone (pioGLITAZONE, rosiGLITAZONE [removed])",
+                "Mechanism mnemonic: 'PPAR-γ agonist = Promotes fat Production And Redistribution'",
+                "Step 1 buzzword: 'contraindicated in heart failure' or 'fluid retention and edema'",
+                "Rosiglitazone (Avandia) removed from US market in 2010 due to MI/cardiovascular risk",
+                "Weight gain is ADIPOSE tissue (subcutaneous), not muscle - redistributes fat from visceral to subcutaneous",
+                "Fluid retention mechanism: increased renal sodium reabsorption in collecting duct",
+                "Heart failure: TZDs cause fluid retention → precipitate/worsen HF (BLACK BOX WARNING)",
+                "Bone fractures: increased fracture risk in women (distal limbs) - uncertain mechanism, possibly osteoblast inhibition",
+                "Classic vignette: Type 2 DM on metformin + sulfonylurea, still HbA1c 8.5%, consider TZD vs other options",
+                "Common wrong answer: 'Give TZD to patient with CHF' - CONTRAINDICATED!"
+            ]
+        }
     },
     {
         "id": "dpp-4-inhibitors",
