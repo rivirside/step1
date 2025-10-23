@@ -183,25 +183,106 @@ const drugs = [
         "pharmacologicClass": "biguanides",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Decrease hepatic glucose production, increase insulin sensitivity.",
+        "mechanism": "Activates AMP-activated protein kinase (AMPK) → suppresses hepatic gluconeogenesis (primary effect), decreases intestinal glucose absorption, and increases peripheral glucose uptake and insulin sensitivity. Does NOT stimulate insulin secretion, so no hypoglycemia risk as monotherapy.",
         "features": "First-line therapy, weight neutral.",
         "clinicalChoice": "Initial T2DM treatment, PCOS.",
+        "pharmacokinetics": {
+            "onset": "Hours to days for full glucose-lowering effect",
+            "peak": "Plasma concentration peaks at 2-3 hours (immediate-release) or 4-8 hours (extended-release)",
+            "duration": "12-24 hours depending on formulation",
+            "halfLife": "4-8.7 hours",
+            "metabolism": "NOT metabolized - excreted unchanged (unique among oral diabetes drugs)",
+            "excretion": "100% renal excretion via glomerular filtration and tubular secretion. Accumulates in renal impairment."
+        },
         "indications": [
-            "Type 2 Diabetes",
-            "PCOS"
+            "Type 2 Diabetes (first-line)",
+            "PCOS (off-label)",
+            "Prediabetes prevention (off-label)",
+            "Antipsychotic-induced weight gain (off-label)"
         ],
+        "clinicalChoice": "THE first-line drug for Type 2 DM unless contraindicated. Choose metformin because: (1) Reduces HbA1c by 1-2%, (2) Weight-neutral or modest weight loss, (3) No hypoglycemia as monotherapy, (4) Only diabetes drug proven to reduce CV mortality, (5) Inexpensive. For PCOS: improves insulin resistance, may restore ovulation.",
+        "dosing": {
+            "typical": "Start 500 mg once or twice daily with meals. Titrate by 500 mg weekly to maximum 2000-2550 mg/day divided BID-TID. Extended-release: 500-2000 mg once daily with evening meal.",
+            "renal": "eGFR 30-45: max 1000 mg/day. eGFR <30: contraindicated (lactic acidosis risk). Check eGFR before starting and annually.",
+            "hepatic": "Use caution in severe hepatic disease (decreased lactate clearance → lactic acidosis risk)",
+            "elderly": "Start low dose. Monitor renal function closely (age-related decline in eGFR)."
+        },
         "contraindications": [
-            "Renal Impairment",
-            "Heart Failure",
-            "Alcohol Abuse"
+            "eGFR <30 mL/min/1.73m²",
+            "Acute or chronic metabolic acidosis (including DKA)",
+            "Hypoxic states (shock, sepsis, acute MI)",
+            "Acute heart failure or decompensated HF requiring IV therapy",
+            "Severe hepatic disease"
         ],
-        "sideEffects": [
-            "GI upset",
-            "Lactic acidosis (rare)",
-            "B12 deficiency"
+        "sideEffects": {
+            "common": [
+                "GI upset: diarrhea, nausea, abdominal discomfort (30% - usually resolves in 2-4 weeks)",
+                "Metallic taste",
+                "Decreased appetite"
+            ],
+            "serious": [
+                "Lactic acidosis (RARE: <1/100,000 patient-years, but mortality 50%)",
+                "Vitamin B12 deficiency (10-30% with long-term use → macrocytic anemia, neuropathy)"
+            ],
+            "rare": [
+                "Hypoglycemia (only when combined with insulin or sulfonylureas)"
+            ]
+        },
+        "blackBoxWarnings": [
+            "Lactic acidosis: Rare but serious metabolic complication. Risk factors: renal impairment, hypoxia, sepsis, tissue hypoperfusion, alcohol abuse, IV contrast. Symptoms: hyperventilation, myalgias, malaise, abdominal pain. If suspected: stop metformin, check lactate."
         ],
-        "interactions": "Contrast agents increase lactic acidosis risk.",
-        "interactionDetails": "",
+        "interactions": {
+            "drugDrug": [
+                "Iodinated contrast media: Hold metformin at time of or before contrast. Resume 48 hours after procedure if renal function stable (prevents contrast-induced nephropathy → lactic acidosis)",
+                "Cationic drugs (cimetidine, amiloride): compete for renal tubular secretion → increased metformin levels",
+                "Carbonic anhydrase inhibitors (topiramate, acetazolamide): increase risk of lactic acidosis",
+                "Alcohol: increases lactic acidosis risk (avoid excessive alcohol)"
+            ],
+            "drugDisease": [
+                "Renal impairment: accumulation → lactic acidosis",
+                "Hepatic disease: decreased lactate clearance → lactic acidosis",
+                "Heart failure: tissue hypoperfusion → lactic acidosis"
+            ],
+            "drugFood": [
+                "Take with food to minimize GI side effects",
+                "Vitamin B12: long-term metformin impairs B12 absorption"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose: fasting and HbA1c every 3 months (goal HbA1c <7%)",
+                "eGFR/serum creatinine: baseline and at least annually (more frequent if eGFR <60)",
+                "Vitamin B12 levels: baseline and annually with long-term use",
+                "CBC if B12 deficiency suspected (macrocytic anemia)"
+            ],
+            "vitals": [
+                "Weight (monitor for beneficial weight loss)"
+            ],
+            "symptoms": [
+                "GI symptoms (usually transient)",
+                "Symptoms of lactic acidosis (hyperventilation, myalgias, malaise)",
+                "Symptoms of B12 deficiency (paresthesias, glossitis, cognitive changes)"
+            ],
+            "frequency": "eGFR annually minimum, more often if borderline. B12 annually."
+        },
+        "pregnancy": {
+            "category": "Category B. Generally considered safe.",
+            "considerations": "Insulin is preferred for pregnancy (tighter glucose control). However, metformin increasingly used for gestational DM and PCOS in pregnancy. Does not cause congenital malformations. Crosses placenta."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'first-line for Type 2 DM' or 'no hypoglycemia as monotherapy'",
+            "Mnemonic: 'Metformin Makes Me need to Monitor My kidneys'",
+            "ONLY diabetes drug proven to reduce cardiovascular mortality (UKPDS trial - 30% reduction)",
+            "Does NOT cause weight gain (unlike insulin, sulfonylureas, TZDs) - may cause 2-3 kg weight loss",
+            "NOT metabolized by liver → safe in hepatic dysfunction (unless severe)",
+            "Lactic acidosis: RARE but classic Step 1 testable complication. Risk factors = renal disease, contrast dye, hypoxia",
+            "Hold metformin for 48 hours before/after contrast studies (prevents contrast-induced AKI → lactic acidosis)",
+            "GI side effects: start low, go slow, take with food. Extended-release formulation better tolerated.",
+            "B12 deficiency: metformin impairs ileal B12 absorption → check annually, supplement if low",
+            "Classic vignette: 55yo obese man, BMI 32, HbA1c 8.5%, fasting glucose 160 despite diet/exercise → start metformin",
+            "Common wrong answer: 'Start sulfonylurea' or 'Start insulin' - metformin is ALWAYS first unless contraindicated",
+            "For PCOS: metformin improves insulin resistance → may restore ovulation, improve hirsutism"
+        ],
         "pageType": "drug"
     },
     {

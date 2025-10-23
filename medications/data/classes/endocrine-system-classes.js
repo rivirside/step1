@@ -118,7 +118,51 @@ ULTRA-LONG (Degludec):
         "drugIds": [
             "metformin"
         ],
-        "pageType": "pharmacologic-class"
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "Metformin is the only biguanide available in the US and is the first-line medication for Type 2 DM. It works primarily by suppressing hepatic gluconeogenesis without stimulating insulin secretion, making it 'euglycemic' rather than hypoglycemic. Weight-neutral or promotes modest weight loss, making it ideal for obese diabetic patients.",
+            "clinicalApproach": [
+                "FIRST-LINE therapy for Type 2 DM (unless contraindicated)",
+                "Does NOT cause hypoglycemia when used alone (insulin-independent mechanism)",
+                "Weight-neutral or causes modest weight loss (2-3 kg) - major advantage over sulfonylureas/insulin",
+                "Can be combined with any other diabetes medication",
+                "Also used off-label for PCOS, prediabetes, antipsychotic-induced weight gain",
+                "Start with low dose and titrate slowly to minimize GI side effects",
+                "Hold before contrast studies and resume 48 hours after if renal function stable"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Oral bioavailability 50-60%. Absorbed in small intestine. Food decreases rate but not extent. Extended-release formulation available for once-daily dosing.",
+                "distribution": "Does not bind to plasma proteins. Distributes to erythrocytes and tissues. Does not cross BBB significantly.",
+                "metabolism": "NOT metabolized - excreted unchanged. This is unique and important.",
+                "excretion": "100% renal excretion (unchanged drug). Adjust dose if eGFR <45, discontinue if eGFR <30. Half-life 4-8 hours."
+            },
+            "monitoring": [
+                "Blood glucose (fasting and HbA1c every 3 months)",
+                "Renal function (eGFR) - at baseline and annually (more frequently if impaired)",
+                "Vitamin B12 levels - annually (long-term use causes malabsorption)",
+                "GI symptoms (nausea, diarrhea - usually transient)",
+                "No need for routine lactate monitoring unless high-risk patient"
+            ],
+            "contraindications": [
+                "eGFR <30 mL/min/1.73m² (absolute contraindication - lactic acidosis risk)",
+                "Acute or chronic metabolic acidosis (including DKA)",
+                "Hypoxic states: shock, sepsis, acute MI, heart failure requiring pharmacologic support",
+                "Severe hepatic disease (decreased lactate clearance)",
+                "Immediately before/during iodinated contrast procedures (hold 48 hours, check renal function before restarting)"
+            ],
+            "clinicalPearls": [
+                "Step 1 buzzword: 'first-line for Type 2 DM' or 'weight loss in diabetic patient'",
+                "Mechanism mnemonic: 'Metformin Makes hepatic glucose production Minimal'",
+                "ONLY diabetes drug that reduces cardiovascular mortality (UKPDS trial)",
+                "Does NOT cause hypoglycemia as monotherapy - safe for patients with variable meal schedule",
+                "Lactic acidosis is RARE (<1 in 100,000) but serious - risk factors: renal dysfunction, hypoxia, sepsis, contrast dye",
+                "GI side effects (diarrhea, nausea) occur in 30% - usually resolve in 2-4 weeks. Take with food and start low dose.",
+                "B12 deficiency develops in 10-30% with long-term use - check annually",
+                "NOT metabolized by liver - safe in hepatic dysfunction (unlike sulfonylureas)",
+                "Classic vignette: Obese Type 2 DM patient, HbA1c 8.5% on lifestyle modification → start metformin",
+                "Common wrong answer: 'Start insulin' - metformin is always first unless contraindicated"
+            ]
+        }
     },
     {
         "id": "sulfonylureas",
@@ -138,7 +182,82 @@ ULTRA-LONG (Degludec):
             "glyburide",
             "glimepiride"
         ],
-        "pageType": "pharmacologic-class"
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "Sulfonylureas are 'insulin secretagogues' - they stimulate pancreatic beta cells to release insulin regardless of glucose level. Second-line therapy for Type 2 DM (after metformin) or first-line if metformin contraindicated. Divided into 1st generation (rarely used) and 2nd generation (glipizide, glyburide, glimepiride). Major limitation: hypoglycemia risk and weight gain.",
+            "clinicalApproach": [
+                "Second-line therapy for Type 2 DM (add to metformin if HbA1c not at goal)",
+                "Can be used as monotherapy if metformin contraindicated (rare)",
+                "Require functioning pancreatic beta cells - NOT effective in Type 1 DM",
+                "CAUSE hypoglycemia (unlike metformin) - educate patients on symptoms and treatment",
+                "Cause weight gain (2-5 kg average) - less desirable in obese diabetics",
+                "Work best when taken 30 minutes before meals (stimulate mealtime insulin)",
+                "2nd generation (glipizide, glyburide, glimepiride) preferred over 1st gen (chlorpropamide, tolbutamide)",
+                "Between 2nd gen drugs: glipizide and glimepiride preferred over glyburide (lower hypoglycemia risk)"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Well absorbed orally. Take 30 minutes before meals for optimal effect.",
+                "distribution": "Highly protein-bound (90-99%). Displaced by other highly protein-bound drugs.",
+                "metabolism": "Hepatic metabolism via CYP2C9 (glipizide, glyburide) or CYP2C9 (glimepiride). Active metabolites for some (glyburide).",
+                "excretion": "Renal excretion of metabolites. Glyburide has active metabolites excreted renally - avoid in renal impairment. Glipizide safer in renal disease."
+            },
+            "comparison": {
+                "title": "Comparison of 2nd Generation Sulfonylureas",
+                "description": "Choose based on renal function, hypoglycemia risk, and dosing convenience",
+                "content": `
+GLIPIZIDE (Glucotrol):
+- Half-life: 2-4 hours (shortest)
+- Dosing: 1-2 times daily, before meals
+- Metabolism: Hepatic → inactive metabolites
+- Renal adjustment: Safest in renal impairment (no active metabolites)
+- Hypoglycemia risk: Lower than glyburide
+- Use: Preferred in elderly and renally impaired
+
+GLYBURIDE (Micronase, DiaBeta):
+- Half-life: 4-10 hours (longest)
+- Dosing: 1-2 times daily, with meals
+- Metabolism: Hepatic → ACTIVE metabolites
+- Renal adjustment: AVOID in renal impairment (active metabolites accumulate)
+- Hypoglycemia risk: HIGHEST of sulfonylureas
+- Use: Avoid in elderly, avoid in CKD
+
+GLIMEPIRIDE (Amaryl):
+- Half-life: 5-9 hours
+- Dosing: Once daily, with breakfast
+- Metabolism: Hepatic → mostly inactive metabolites
+- Renal adjustment: Use caution, dose reduction may be needed
+- Hypoglycemia risk: Lower than glyburide, similar to glipizide
+- Use: Convenient once-daily dosing
+`
+            },
+            "monitoring": [
+                "Blood glucose: frequent fingersticks, especially when starting or adjusting dose",
+                "HbA1c every 3 months",
+                "Signs/symptoms of hypoglycemia (teach patient recognition and treatment)",
+                "Weight (expect weight gain 2-5 kg)",
+                "Renal function if using glyburide (avoid in CKD)"
+            ],
+            "contraindications": [
+                "Type 1 Diabetes (no beta cells to stimulate)",
+                "Diabetic ketoacidosis",
+                "Severe hepatic disease (decreased metabolism)",
+                "Sulfa allergy (cross-reactivity possible but rare)",
+                "Pregnancy (teratogenic, use insulin instead)"
+            ],
+            "clinicalPearls": [
+                "Mechanism mnemonic: 'SURe makes insulin' (SUR = sulfonylurea receptor on beta cells)",
+                "Suffix: -ide (glipizIDE, glyburIDE, glimepiRIDE)",
+                "Step 1 buzzword: 'hypoglycemia' or 'weight gain in diabetic'",
+                "Bind to SUR1 (sulfonylurea receptor) on ATP-sensitive K+ channels → closes K+ channel → depolarization → Ca²⁺ influx → insulin release",
+                "Major side effect: Hypoglycemia (10-20% of patients) - risk factors: elderly, renal impairment, skipped meals, alcohol",
+                "SIADH: rare but classic board-tested side effect (especially chlorpropamide, less with 2nd gen)",
+                "Disulfiram-like reaction with alcohol (especially chlorpropamide)",
+                "Beta cell burnout: chronic use may exhaust beta cells (secondary failure in 5-10% per year)",
+                "Glipizide vs Glyburide: 'GlipiZIDE is Zafe' (safer in renal disease, lower hypoglycemia)",
+                "Classic vignette: Type 2 DM on metformin, HbA1c still 8.5% → add sulfonylurea",
+                "Common wrong answer: 'Switch to sulfonylurea' - usually ADD to metformin, not switch"
+            ]
+        }
     },
     {
         "id": "thiazolidinediones",
