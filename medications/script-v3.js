@@ -498,6 +498,7 @@ function renderPharmaClassDetail(pharmaClass) {
     if (!detailPanel) return;
 
     const drugs = dataLoader.getDrugsByPharmacologicClass(pharmaClass.id);
+    const detail = pharmaClass.detail || {};
 
     detailPanel.innerHTML = `
         <div class="entity-detail category-detail">
@@ -506,32 +507,93 @@ function renderPharmaClassDetail(pharmaClass) {
                 <h2>${pharmaClass.name}</h2>
             </div>
 
+            ${detail.overview ? `
+                <section class="detail-section">
+                    <h3>📖 Overview</h3>
+                    <p>${detail.overview}</p>
+                </section>
+            ` : ''}
+
             ${pharmaClass.mechanism ? `
                 <section class="detail-section">
-                    <h3>Mechanism of Action</h3>
+                    <h3>🔬 Mechanism of Action</h3>
                     <p>${pharmaClass.mechanism}</p>
+                </section>
+            ` : ''}
+
+            ${detail.clinicalApproach && detail.clinicalApproach.length ? `
+                <section class="detail-section highlight">
+                    <h3>🎯 Clinical Approach</h3>
+                    <ul>
+                        ${detail.clinicalApproach.map(point => `<li>${point}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
+
+            ${detail.pharmacokinetics ? `
+                <section class="detail-section">
+                    <h3>⚗️ Pharmacokinetics</h3>
+                    ${detail.pharmacokinetics.absorption ? `<p><strong>Absorption:</strong> ${detail.pharmacokinetics.absorption}</p>` : ''}
+                    ${detail.pharmacokinetics.distribution ? `<p><strong>Distribution:</strong> ${detail.pharmacokinetics.distribution}</p>` : ''}
+                    ${detail.pharmacokinetics.metabolism ? `<p><strong>Metabolism:</strong> ${detail.pharmacokinetics.metabolism}</p>` : ''}
+                    ${detail.pharmacokinetics.excretion ? `<p><strong>Excretion:</strong> ${detail.pharmacokinetics.excretion}</p>` : ''}
+                </section>
+            ` : ''}
+
+            ${detail.comparison ? `
+                <section class="detail-section important">
+                    <h3>📊 ${detail.comparison.title || 'Comparison'}</h3>
+                    ${detail.comparison.description ? `<p>${detail.comparison.description}</p>` : ''}
+                    <pre class="comparison-content">${detail.comparison.content}</pre>
                 </section>
             ` : ''}
 
             ${pharmaClass.sideEffects && pharmaClass.sideEffects.length ? `
                 <section class="detail-section">
-                    <h3>Class-Wide Side Effects</h3>
+                    <h3>⚠️ Class-Wide Side Effects</h3>
                     <div class="tag-container">
                         ${pharmaClass.sideEffects.map(effect => `<span class="tag side-effect">${effect}</span>`).join('')}
                     </div>
                 </section>
             ` : ''}
 
+            ${detail.contraindications && detail.contraindications.length ? `
+                <section class="detail-section important">
+                    <h3>🚫 Contraindications</h3>
+                    <ul>
+                        ${detail.contraindications.map(ci => `<li>${ci}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
+
             ${pharmaClass.interactions ? `
                 <section class="detail-section">
-                    <h3>Drug Interactions</h3>
+                    <h3>💊 Drug Interactions</h3>
                     <p>${pharmaClass.interactions}</p>
                     ${pharmaClass.interactionDetails ? `<p><strong>Details:</strong> ${pharmaClass.interactionDetails}</p>` : ''}
                 </section>
             ` : ''}
 
+            ${detail.monitoring && detail.monitoring.length ? `
+                <section class="detail-section">
+                    <h3>🔍 Monitoring</h3>
+                    <ul>
+                        ${detail.monitoring.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
+
+            ${detail.clinicalPearls && detail.clinicalPearls.length ? `
+                <section class="detail-section pearls">
+                    <h3>💎 Clinical Pearls</h3>
+                    <ul class="pearls-list">
+                        ${detail.clinicalPearls.map(pearl => `<li>${pearl}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
+
             <section class="detail-section">
-                <h3>Drugs in this Class (${drugs.length})</h3>
+                <h3>💊 Drugs in this Class (${drugs.length})</h3>
                 <div class="disease-list">
                     ${drugs.map(drug => `
                         <div class="disease-card drug-card-mini" data-drug-id="${drug.id}">
@@ -566,6 +628,11 @@ function renderDrugDetail(drug, pharmaClass) {
         .map(classId => dataLoader.getClassById(classId))
         .filter(cls => cls); // Filter out null/undefined
 
+    // Use drug-specific or fall back to class-level data
+    const mechanism = drug.mechanism || pharmaClass.mechanism || '';
+    const sideEffects = drug.sideEffects || pharmaClass.sideEffects || [];
+    const interactions = drug.interactions || pharmaClass.interactions || '';
+
     detailPanel.innerHTML = `
         <div class="entity-detail disease-detail drug-detail">
             <div class="entity-header">
@@ -578,59 +645,179 @@ function renderDrugDetail(drug, pharmaClass) {
                 </div>
             </div>
 
-            ${pharmaClass.mechanism ? `
+            ${mechanism ? `
                 <section class="detail-section">
-                    <h3>Mechanism of Action</h3>
-                    <p>${pharmaClass.mechanism}</p>
+                    <h3>🔬 Mechanism of Action</h3>
+                    <p>${mechanism}</p>
+                </section>
+            ` : ''}
+
+            ${drug.pharmacokinetics ? `
+                <section class="detail-section">
+                    <h3>⚗️ Pharmacokinetics</h3>
+                    <div class="pk-grid">
+                        ${drug.pharmacokinetics.onset ? `<p><strong>Onset:</strong> ${drug.pharmacokinetics.onset}</p>` : ''}
+                        ${drug.pharmacokinetics.peak ? `<p><strong>Peak:</strong> ${drug.pharmacokinetics.peak}</p>` : ''}
+                        ${drug.pharmacokinetics.duration ? `<p><strong>Duration:</strong> ${drug.pharmacokinetics.duration}</p>` : ''}
+                        ${drug.pharmacokinetics.halfLife ? `<p><strong>Half-life:</strong> ${drug.pharmacokinetics.halfLife}</p>` : ''}
+                        ${drug.pharmacokinetics.metabolism ? `<p><strong>Metabolism:</strong> ${drug.pharmacokinetics.metabolism}</p>` : ''}
+                        ${drug.pharmacokinetics.excretion ? `<p><strong>Excretion:</strong> ${drug.pharmacokinetics.excretion}</p>` : ''}
+                    </div>
                 </section>
             ` : ''}
 
             ${drug.features ? `
                 <section class="detail-section">
-                    <h3>Key Features</h3>
+                    <h3>✨ Key Features</h3>
                     <p>${drug.features}</p>
-                </section>
-            ` : ''}
-
-            ${drug.choice ? `
-                <section class="detail-section highlight">
-                    <h3>Clinical Choice</h3>
-                    <p>${drug.choice}</p>
                 </section>
             ` : ''}
 
             ${drug.indications && drug.indications.length ? `
                 <section class="detail-section">
-                    <h3>Indications</h3>
+                    <h3>✅ Indications</h3>
                     <div class="tag-container">
                         ${drug.indications.map(indication => `<span class="tag indication">${inlineLinker.linkConditionsInText(indication)}</span>`).join('')}
                     </div>
                 </section>
             ` : ''}
 
+            ${drug.clinicalChoice ? `
+                <section class="detail-section highlight">
+                    <h3>🎯 Clinical Choice</h3>
+                    <p>${drug.clinicalChoice}</p>
+                </section>
+            ` : ''}
+
+            ${drug.dosing ? `
+                <section class="detail-section">
+                    <h3>💉 Dosing</h3>
+                    ${drug.dosing.typical ? `<p><strong>Typical:</strong> ${drug.dosing.typical}</p>` : ''}
+                    ${drug.dosing.renal ? `<p><strong>Renal impairment:</strong> ${drug.dosing.renal}</p>` : ''}
+                    ${drug.dosing.hepatic ? `<p><strong>Hepatic impairment:</strong> ${drug.dosing.hepatic}</p>` : ''}
+                    ${drug.dosing.elderly ? `<p><strong>Elderly:</strong> ${drug.dosing.elderly}</p>` : ''}
+                    ${drug.dosing.pediatric ? `<p><strong>Pediatric:</strong> ${drug.dosing.pediatric}</p>` : ''}
+                </section>
+            ` : ''}
+
+            ${drug.blackBoxWarnings && drug.blackBoxWarnings.length ? `
+                <section class="detail-section danger">
+                    <h3>⚠️ BLACK BOX WARNINGS</h3>
+                    <ul class="black-box-list">
+                        ${drug.blackBoxWarnings.map(warning => `<li>${warning}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
+
             ${drug.contraindications && drug.contraindications.length ? `
                 <section class="detail-section important">
-                    <h3>Contraindications</h3>
+                    <h3>🚫 Contraindications</h3>
                     <div class="tag-container">
                         ${drug.contraindications.map(contraindication => `<span class="tag contraindication">${inlineLinker.linkConditionsInText(contraindication)}</span>`).join('')}
                     </div>
                 </section>
             ` : ''}
 
-            ${pharmaClass.sideEffects && pharmaClass.sideEffects.length ? `
+            ${(drug.sideEffects && (drug.sideEffects.common || drug.sideEffects.serious || drug.sideEffects.rare)) || (sideEffects && sideEffects.length) ? `
                 <section class="detail-section">
-                    <h3>Adverse Effects</h3>
-                    <div class="tag-container">
-                        ${pharmaClass.sideEffects.map(effect => `<span class="tag side-effect">${effect}</span>`).join('')}
-                    </div>
+                    <h3>⚠️ Adverse Effects</h3>
+                    ${drug.sideEffects && (drug.sideEffects.common || drug.sideEffects.serious || drug.sideEffects.rare) ? `
+                        ${drug.sideEffects.common && drug.sideEffects.common.length ? `
+                            <div class="side-effects-category">
+                                <h4>Common</h4>
+                                <ul>${drug.sideEffects.common.map(e => `<li>${e}</li>`).join('')}</ul>
+                            </div>
+                        ` : ''}
+                        ${drug.sideEffects.serious && drug.sideEffects.serious.length ? `
+                            <div class="side-effects-category serious">
+                                <h4>Serious</h4>
+                                <ul>${drug.sideEffects.serious.map(e => `<li>${e}</li>`).join('')}</ul>
+                            </div>
+                        ` : ''}
+                        ${drug.sideEffects.rare && drug.sideEffects.rare.length ? `
+                            <div class="side-effects-category">
+                                <h4>Rare but Important</h4>
+                                <ul>${drug.sideEffects.rare.map(e => `<li>${e}</li>`).join('')}</ul>
+                            </div>
+                        ` : ''}
+                    ` : `
+                        <div class="tag-container">
+                            ${sideEffects.map(effect => `<span class="tag side-effect">${effect}</span>`).join('')}
+                        </div>
+                    `}
                 </section>
             ` : ''}
 
-            ${pharmaClass.interactions ? `
+            ${drug.interactions && (drug.interactions.drugDrug || drug.interactions.drugDisease || drug.interactions.drugFood) ? `
                 <section class="detail-section">
-                    <h3>Drug Interactions</h3>
-                    <p>${pharmaClass.interactions}</p>
-                    ${pharmaClass.interactionDetails ? `<p><strong>Details:</strong> ${pharmaClass.interactionDetails}</p>` : ''}
+                    <h3>💊 Drug Interactions</h3>
+                    ${drug.interactions.drugDrug && drug.interactions.drugDrug.length ? `
+                        <div class="interactions-category">
+                            <h4>Drug-Drug Interactions</h4>
+                            <ul>${drug.interactions.drugDrug.map(i => `<li>${i}</li>`).join('')}</ul>
+                        </div>
+                    ` : ''}
+                    ${drug.interactions.drugDisease && drug.interactions.drugDisease.length ? `
+                        <div class="interactions-category">
+                            <h4>Drug-Disease Interactions</h4>
+                            <ul>${drug.interactions.drugDisease.map(i => `<li>${i}</li>`).join('')}</ul>
+                        </div>
+                    ` : ''}
+                    ${drug.interactions.drugFood && drug.interactions.drugFood.length ? `
+                        <div class="interactions-category">
+                            <h4>Drug-Food Interactions</h4>
+                            <ul>${drug.interactions.drugFood.map(i => `<li>${i}</li>`).join('')}</ul>
+                        </div>
+                    ` : ''}
+                </section>
+            ` : interactions ? `
+                <section class="detail-section">
+                    <h3>💊 Drug Interactions</h3>
+                    <p>${interactions}</p>
+                </section>
+            ` : ''}
+
+            ${drug.monitoring ? `
+                <section class="detail-section">
+                    <h3>🔍 Monitoring</h3>
+                    ${drug.monitoring.labs && drug.monitoring.labs.length ? `
+                        <div class="monitoring-category">
+                            <h4>Labs</h4>
+                            <ul>${drug.monitoring.labs.map(lab => `<li>${lab}</li>`).join('')}</ul>
+                        </div>
+                    ` : ''}
+                    ${drug.monitoring.vitals && drug.monitoring.vitals.length ? `
+                        <div class="monitoring-category">
+                            <h4>Vital Signs</h4>
+                            <ul>${drug.monitoring.vitals.map(vital => `<li>${vital}</li>`).join('')}</ul>
+                        </div>
+                    ` : ''}
+                    ${drug.monitoring.symptoms && drug.monitoring.symptoms.length ? `
+                        <div class="monitoring-category">
+                            <h4>Symptoms to Monitor</h4>
+                            <ul>${drug.monitoring.symptoms.map(symptom => `<li>${symptom}</li>`).join('')}</ul>
+                        </div>
+                    ` : ''}
+                    ${drug.monitoring.frequency ? `
+                        <p><strong>Frequency:</strong> ${drug.monitoring.frequency}</p>
+                    ` : ''}
+                </section>
+            ` : ''}
+
+            ${drug.pregnancy ? `
+                <section class="detail-section">
+                    <h3>🤰 Pregnancy & Breastfeeding</h3>
+                    ${drug.pregnancy.category ? `<p><strong>Category:</strong> ${drug.pregnancy.category}</p>` : ''}
+                    ${drug.pregnancy.considerations ? `<p>${drug.pregnancy.considerations}</p>` : ''}
+                </section>
+            ` : ''}
+
+            ${drug.clinicalPearls && drug.clinicalPearls.length ? `
+                <section class="detail-section pearls">
+                    <h3>💎 Clinical Pearls</h3>
+                    <ul class="pearls-list">
+                        ${drug.clinicalPearls.map(pearl => `<li>${pearl}</li>`).join('')}
+                    </ul>
                 </section>
             ` : ''}
 

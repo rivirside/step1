@@ -1470,3 +1470,182 @@ header {
         font-size: 1.25rem;
     }
 }
+
+/* Enhanced detail sections */
+
+/* Clinical Pearls section - highlighted box */
+.detail-section.pearls {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-left: 4px solid #f59e0b;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.detail-section.pearls h3 {
+    color: #92400e;
+    margin-bottom: 1rem;
+}
+
+.pearls-list {
+    list-style: none;
+    padding: 0;
+}
+
+.pearls-list li {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+.pearls-list li:before {
+    content: "💡 ";
+    margin-right: 0.5rem;
+}
+
+/* Black Box Warnings - danger section */
+.detail-section.danger {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border-left: 4px solid #dc2626;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.detail-section.danger h3 {
+    color: #991b1b;
+    margin-bottom: 1rem;
+}
+
+.black-box-list {
+    list-style: none;
+    padding: 0;
+}
+
+.black-box-list li {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.black-box-list li:before {
+    content: "⚠️ ";
+    margin-right: 0.5rem;
+}
+
+/* Comparison content - preformatted text */
+.comparison-content {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+/* Pharmacokinetics grid */
+.pk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.pk-grid p {
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    border-left: 3px solid #7c3aed;
+}
+
+/* Side effects categories */
+.side-effects-category {
+    margin-bottom: 1.5rem;
+}
+
+.side-effects-category h4 {
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.side-effects-category.serious h4 {
+    color: #dc2626;
+}
+
+.side-effects-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-effects-category ul li {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+    background: #f9fafb;
+    border-radius: 4px;
+    border-left: 2px solid #d1d5db;
+}
+
+.side-effects-category.serious ul li {
+    border-left-color: #dc2626;
+    background: #fef2f2;
+}
+
+/* Interactions categories */
+.interactions-category {
+    margin-bottom: 1.5rem;
+}
+
+.interactions-category h4 {
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.interactions-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.interactions-category ul li {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+    background: #f9fafb;
+    border-radius: 4px;
+    border-left: 2px solid #f59e0b;
+}
+
+/* Monitoring categories */
+.monitoring-category {
+    margin-bottom: 1.5rem;
+}
+
+.monitoring-category h4 {
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.monitoring-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.monitoring-category ul li {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+    background: #f0fdf4;
+    border-radius: 4px;
+    border-left: 2px solid #10b981;
+}
