@@ -583,6 +583,213 @@ const drugs = [
         "pageType": "drug"
     },
     {
+        "id": "repaglinide",
+        "name": "Repaglinide",
+        "pharmacologicClass": "meglitinides",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Non-sulfonylurea insulin secretagogue. Binds to SUR1 receptor on ATP-sensitive K+ channels in pancreatic beta cells (different binding site than sulfonylureas) → closes K+ channels → membrane depolarization → Ca²⁺ influx → rapid insulin granule exocytosis. Rapid onset and short duration of action.",
+        "features": "Rapid-acting insulin secretagogue, taken with meals. More potent meglitinide.",
+        "pharmacokinetics": {
+            "onset": "15-30 minutes (rapid onset)",
+            "peak": "Plasma concentration peaks at 1 hour",
+            "duration": "3-4 hours (short duration)",
+            "halfLife": "1 hour (very short half-life necessitates dosing with each meal)",
+            "metabolism": "Hepatic via CYP3A4 (major) and CYP2C8. Complete metabolism - no active metabolites.",
+            "excretion": "Primarily biliary/fecal (90%). <10% renal excretion (can use in renal impairment)."
+        },
+        "indications": [
+            "Type 2 Diabetes (as monotherapy or combination with metformin or TZDs)"
+        ],
+        "clinicalChoice": "Rarely used first-line. Consider for: (1) predominantly postprandial hyperglycemia with normal fasting glucose, (2) sulfa allergy (not sulfa-based), (3) mild-moderate renal impairment (biliary excretion), (4) irregular meal patterns (can skip dose if skip meal). Generally prefer DPP-4 inhibitors or GLP-1 agonists for better safety/convenience. Main limitation: 3x daily dosing with meals.",
+        "dosing": {
+            "typical": "Start 0.5 mg with each meal (if HbA1c <8%) or 1-2 mg with each meal (if HbA1c ≥8%). Take within 30 minutes before meals. Titrate weekly based on response. Max 4 mg per meal, 16 mg/day total. If skip meal, SKIP dose.",
+            "renal": "No dose adjustment needed (minimal renal excretion). Can use in severe renal impairment and dialysis (start conservatively 0.5 mg/meal).",
+            "hepatic": "Use caution in hepatic impairment (hepatic metabolism). Start with lower doses and titrate carefully.",
+            "elderly": "Start with 0.5 mg/meal. Titrate carefully due to increased hypoglycemia risk."
+        },
+        "contraindications": [
+            "Type 1 Diabetes",
+            "Diabetic ketoacidosis",
+            "Gemfibrozil use (severe drug interaction - CONTRAINDICATED)",
+            "Severe hepatic impairment"
+        ],
+        "sideEffects": {
+            "common": [
+                "Hypoglycemia (5-10%, lower than sulfonylureas)",
+                "Weight gain (1-2 kg, less than sulfonylureas)",
+                "Upper respiratory tract infection",
+                "Headache",
+                "Diarrhea"
+            ],
+            "serious": [
+                "Severe hypoglycemia (especially with gemfibrozil interaction)",
+                "Cardiovascular events (similar to other secretagogues)"
+            ],
+            "rare": [
+                "Angioedema (rare)",
+                "Hepatotoxicity (rare)"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "GEMFIBROZIL: CONTRAINDICATED - increases repaglinide AUC by 8-fold via CYP2C8 inhibition → severe prolonged hypoglycemia. DO NOT use together.",
+                "CYP3A4 inhibitors (ketoconazole, itraconazole, clarithromycin): increase repaglinide levels (monitor glucose closely, reduce repaglinide dose)",
+                "CYP2C8 inhibitors (trimethoprim): increase repaglinide levels",
+                "CYP3A4 inducers (rifampin, carbamazepine): decrease repaglinide levels (may need dose increase)",
+                "Beta-blockers: mask hypoglycemia symptoms",
+                "NSAIDs, salicylates: may potentiate hypoglycemic effect"
+            ],
+            "drugDisease": [
+                "Hepatic impairment: use caution (hepatic metabolism)",
+                "Severe renal impairment: can use but start low (although primarily biliary excretion)"
+            ],
+            "drugFood": [
+                "MUST take within 30 minutes BEFORE meals (0-30 min). If skip meal, skip dose.",
+                "Alcohol: increases hypoglycemia risk"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose: pre-meal and 2-hour postprandial (targets postprandial spikes)",
+                "HbA1c every 3 months (expect 1-1.5% reduction)",
+                "LFTs baseline and periodically (hepatic metabolism)"
+            ],
+            "vitals": [
+                "Weight (expect 1-2 kg gain)"
+            ],
+            "symptoms": [
+                "Hypoglycemia symptoms (tremor, palpitations, diaphoresis, confusion)",
+                "Adherence to meal-based dosing (3x daily is burden)"
+            ],
+            "frequency": "Frequent glucose monitoring initially. Assess adherence at each visit."
+        },
+        "pregnancy": {
+            "category": "Category C",
+            "considerations": "Limited data in pregnancy. Insulin is preferred for diabetes in pregnancy. Discontinue repaglinide if pregnancy occurs."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'rapid-acting insulin secretagogue' or 'take with meals'",
+            "Brand name: Prandin",
+            "Suffix: '-glinide' identifies meglitinides (repaglinide, nateglinide)",
+            "CRITICAL INTERACTION: Repaglinide + gemfibrozil = 8x increase in repaglinide levels → severe prolonged hypoglycemia → CONTRAINDICATED",
+            "Mechanism: Same TARGET (SUR1 receptor) as sulfonylureas but DIFFERENT binding site → rapid, short-duration effect",
+            "Faster onset (15-30 min) and shorter duration (3-4 hr) than sulfonylureas → targets postprandial glucose specifically",
+            "Key advantage: Can skip dose if skip meal (flexibility) - lower hypoglycemia risk than sulfonylureas",
+            "Key disadvantage: Must take 3x daily with meals (poor adherence) vs sulfonylureas 1-2x daily",
+            "Safe in renal impairment (90% biliary excretion) - can use in dialysis patients",
+            "Not sulfa-based - safe alternative for sulfa allergy patients",
+            "More potent than nateglinide (lower doses, greater HbA1c reduction)",
+            "Rarely used now - DPP-4 inhibitors offer similar postprandial control without hypoglycemia, once-daily",
+            "Classic vignette: T2DM with postprandial hyperglycemia, sulfa allergy, CKD stage 4 → repaglinide (safe in renal disease, not sulfa-based)",
+            "Common wrong answer: 'Use with gemfibrozil' - CONTRAINDICATED (severe interaction)",
+            "Mnemonic: 'RePAGlinide needs a PAGE turner' (turn the page = take before each meal)",
+            "If patient on gemfibrozil needs fibrate, switch to fenofibrate (no CYP2C8 interaction)"
+        ],
+        "pageType": "drug"
+    },
+    {
+        "id": "nateglinide",
+        "name": "Nateglinide",
+        "pharmacologicClass": "meglitinides",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Non-sulfonylurea insulin secretagogue derived from D-phenylalanine. Binds to SUR1 receptor on ATP-sensitive K+ channels in pancreatic beta cells → closes K+ channels → depolarization → Ca²⁺ influx → rapid insulin release. Fastest onset of all meglitinides.",
+        "features": "Ultra-rapid onset, shortest duration. Derived from amino acid D-phenylalanine. Less potent than repaglinide.",
+        "pharmacokinetics": {
+            "onset": "20 minutes (ultra-rapid, fastest of meglitinides)",
+            "peak": "Plasma concentration peaks at 1 hour",
+            "duration": "3-4 hours",
+            "halfLife": "1.5 hours",
+            "metabolism": "Hepatic via CYP2C9 (70%) and CYP3A4 (30%). Metabolized to weakly active metabolites.",
+            "excretion": "Renal (83%, mostly as metabolites) and fecal (10%)."
+        },
+        "indications": [
+            "Type 2 Diabetes (as monotherapy or combination with metformin or TZDs)"
+        ],
+        "clinicalChoice": "Rarely used - least effective oral diabetes medication (HbA1c reduction only 0.5-1%). Consider only for: (1) mild postprandial hyperglycemia, (2) sulfa allergy, (3) patient prefers oral over injectable. Generally prefer DPP-4 inhibitors, GLP-1 agonists, or even repaglinide (more effective). Main use: historical - less commonly prescribed now.",
+        "dosing": {
+            "typical": "120 mg three times daily, taken 1-30 minutes before each meal. Can use 60 mg TID if near HbA1c goal. Max 120 mg per meal. If skip meal, SKIP dose.",
+            "renal": "No dose adjustment needed in mild-moderate CKD. Use caution in severe renal impairment (83% renal excretion of metabolites).",
+            "hepatic": "Use caution in hepatic impairment (hepatic metabolism)",
+            "elderly": "No specific dose adjustment, but start conservatively due to hypoglycemia risk"
+        },
+        "contraindications": [
+            "Type 1 Diabetes",
+            "Diabetic ketoacidosis"
+        ],
+        "sideEffects": {
+            "common": [
+                "Hypoglycemia (less common than repaglinide or sulfonylureas)",
+                "Weight gain (minimal, 0.5-1 kg)",
+                "Upper respiratory infection",
+                "Diarrhea",
+                "Dizziness"
+            ],
+            "serious": [
+                "Severe hypoglycemia (rare)"
+            ],
+            "rare": [
+                "Elevated uric acid (hyperuricemia)"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "CYP2C9 inhibitors (fluconazole): increase nateglinide levels slightly (monitor glucose)",
+                "Beta-blockers: mask hypoglycemia symptoms",
+                "NSAIDs: may potentiate hypoglycemic effect (less interaction than repaglinide)",
+                "Corticosteroids: antagonize glucose-lowering effect"
+            ],
+            "drugDisease": [
+                "Hepatic impairment: use caution",
+                "Severe renal impairment: use caution (renal excretion of metabolites)"
+            ],
+            "drugFood": [
+                "Take 1-30 minutes BEFORE each meal. If skip meal, skip dose.",
+                "Alcohol: increases hypoglycemia risk"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose: pre-meal and postprandial",
+                "HbA1c every 3 months (expect modest 0.5-1% reduction)",
+                "Uric acid if patient has gout history (nateglinide may increase uric acid)"
+            ],
+            "vitals": [
+                "Weight (minimal weight gain expected)"
+            ],
+            "symptoms": [
+                "Hypoglycemia symptoms (less common than other secretagogues)",
+                "Adherence assessment (3x daily dosing)"
+            ],
+            "frequency": "Glucose monitoring as clinically indicated"
+        },
+        "pregnancy": {
+            "category": "Category C",
+            "considerations": "Limited data. Insulin preferred in pregnancy. Discontinue if pregnancy occurs."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'ultra-rapid onset meglitinide' or 'derived from D-phenylalanine'",
+            "Brand name: Starlix",
+            "Derived from D-phenylalanine (amino acid derivative) - structurally distinct from repaglinide",
+            "Fastest onset of all meglitinides (20 min) but LEAST potent/effective",
+            "Modest efficacy: HbA1c reduction only 0.5-1% (weakest oral diabetes drug)",
+            "Less potent than repaglinide - requires higher doses (60-120 mg vs 0.5-4 mg)",
+            "Fewer drug interactions than repaglinide (no gemfibrozil contraindication, metabolized by CYP2C9 not CYP2C8)",
+            "Minimal weight gain (0.5-1 kg) - less than repaglinide or sulfonylureas",
+            "Lower hypoglycemia risk than repaglinide or sulfonylureas due to rapid in/rapid out kinetics",
+            "Not sulfa-based - safe in sulfa allergy",
+            "Rarely used in practice - DPP-4 inhibitors preferred (once-daily, no hypoglycemia, similar or better efficacy)",
+            "Classic vignette: Mild T2DM with postprandial hyperglycemia only, wants oral medication, can't afford DPP-4i → nateglinide",
+            "Mnemonic: 'NATEglinide is Not As Terrific/Effective' (less effective than other agents)",
+            "May increase uric acid levels - use caution in gout patients",
+            "If patient needs meglitinide, prefer repaglinide (more effective) unless drug interactions are concern"
+        ],
+        "pageType": "drug"
+    },
+    {
         "id": "pioglitazone",
         "name": "Pioglitazone",
         "pharmacologicClass": "thiazolidinediones",

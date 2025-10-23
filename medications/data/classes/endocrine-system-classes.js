@@ -260,6 +260,95 @@ GLIMEPIRIDE (Amaryl):
         }
     },
     {
+        "id": "meglitinides",
+        "name": "Meglitinides",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Non-sulfonylurea insulin secretagogues. Bind to SUR1 receptor (different site than sulfonylureas) on pancreatic beta cells, stimulating insulin release.",
+        "sideEffects": [
+            "Hypoglycemia (less than sulfonylureas)",
+            "Weight gain (1-2 kg, less than sulfonylureas)",
+            "Upper respiratory infection"
+        ],
+        "interactions": "CYP3A4 and CYP2C8 interactions. Gemfibrozil significantly increases repaglinide levels.",
+        "interactionDetails": "",
+        "drugIds": [
+            "repaglinide",
+            "nateglinide"
+        ],
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "Meglitinides (also called glinides) are rapid-acting, short-duration insulin secretagogues chemically distinct from sulfonylureas. They stimulate prandial (mealtime) insulin release, targeting postprandial hyperglycemia. Key advantage: shorter half-life than sulfonylureas = lower hypoglycemia risk. Key disadvantage: must be taken with EACH meal (3x daily) = poor adherence. Less commonly used now - largely replaced by DPP-4 inhibitors and GLP-1 agonists for similar glycemic control with better safety and convenience.",
+            "clinicalApproach": [
+                "Target postprandial (after-meal) hyperglycemia specifically",
+                "MUST be taken immediately before each meal (0-30 min) - if skip meal, skip dose",
+                "Faster onset and shorter duration than sulfonylureas (rapid in, rapid out)",
+                "Lower hypoglycemia risk than sulfonylureas due to shorter duration",
+                "Can use in mild-moderate renal impairment (unlike some sulfonylureas)",
+                "Alternative for patients with sulfa allergy (not sulfa-based, unlike sulfonylureas)",
+                "Rarely used first-line - typically third-line after metformin ± other agents",
+                "Poor adherence due to 3x daily dosing with meals"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Rapid oral absorption. MUST take immediately before meals (0-30 minutes).",
+                "distribution": "Highly protein-bound (>98%). Limited distribution.",
+                "metabolism": "Hepatic metabolism - Repaglinide via CYP3A4 and CYP2C8, Nateglinide via CYP2C9 and CYP3A4.",
+                "excretion": "Primarily biliary/fecal (repaglinide 90%, nateglinide 83%). Minimal renal excretion allows use in renal impairment."
+            },
+            "comparison": {
+                "title": "Comparison of Meglitinides",
+                "description": "Key differences in potency, metabolism, and clinical use",
+                "content": `
+REPAGLINIDE (Prandin):
+- Potency: More potent (lower dose needed)
+- Dosing: 0.5-4 mg with each meal (3x daily)
+- Half-life: 1 hour (very short)
+- Metabolism: CYP3A4 and CYP2C8 (major gemfibrozil interaction!)
+- Efficacy: Reduces HbA1c by 1-1.5% (similar to sulfonylureas)
+- Use: Can use in renal impairment (hepatic metabolism)
+- Drug interactions: AVOID with gemfibrozil (8x increase in repaglinide levels → severe hypoglycemia)
+
+NATEGLINIDE (Starlix):
+- Potency: Less potent (higher dose needed)
+- Dosing: 60-120 mg with each meal (3x daily)
+- Half-life: 1.5 hours (very short)
+- Metabolism: CYP2C9 (70%) and CYP3A4
+- Efficacy: Reduces HbA1c by 0.5-1% (less effective than repaglinide)
+- Use: Can use in renal impairment
+- Drug interactions: Fewer interactions than repaglinide
+`
+            },
+            "monitoring": [
+                "Blood glucose: pre-meal and 2-hour postprandial (targeting postprandial spikes)",
+                "HbA1c every 3 months (expect 0.5-1.5% reduction depending on agent)",
+                "Signs/symptoms of hypoglycemia (less common than sulfonylureas)",
+                "Weight (expect modest 1-2 kg gain)",
+                "Adherence assessment (3x daily dosing is burden)"
+            ],
+            "contraindications": [
+                "Type 1 Diabetes (no beta cells to stimulate)",
+                "Diabetic ketoacidosis",
+                "Severe hepatic impairment (hepatic metabolism)",
+                "Gemfibrozil use (for repaglinide - severe interaction)"
+            ],
+            "clinicalPearls": [
+                "Suffix: '-glinide' identifies all meglitinides (rePAGLinide, naTEGLinide)",
+                "Step 1 buzzword: 'rapid-acting insulin secretagogue' or 'take with meals'",
+                "Mechanism: Bind to SUR1 receptor (SAME target as sulfonylureas) but DIFFERENT binding site → rapid, short-duration insulin release",
+                "Key advantage over sulfonylureas: Shorter duration → LOWER hypoglycemia risk, can skip dose if skip meal",
+                "Key disadvantage: Must take 3x daily with meals → poor adherence, less convenient than sulfonylureas",
+                "Mnemonic: 'Meglitinides are GLINDIN' (glinide suffix, taken with meals like eating/grindin')",
+                "CRITICAL: If skip meal, skip dose! (unlike sulfonylureas which are taken once/twice daily regardless of meals)",
+                "Alternative for sulfa allergy patients (not sulfonylurea-based, different chemical class)",
+                "Can use in renal impairment (primarily hepatic/biliary excretion) - advantage over glyburide",
+                "Repaglinide + gemfibrozil = SEVERE interaction (8x increase in repaglinide levels → prolonged severe hypoglycemia) - AVOID",
+                "Less commonly used now - DPP-4 inhibitors offer similar postprandial control without hypoglycemia, once-daily dosing",
+                "Classic vignette: T2DM patient with postprandial hyperglycemia, normal fasting glucose, sulfa allergy → meglitinide",
+                "Comparison to sulfonylureas: Faster onset (30 min vs 1-2 hr), shorter duration (4 hr vs 12-24 hr), lower hypoglycemia risk"
+            ]
+        }
+    },
+    {
         "id": "thiazolidinediones",
         "name": "Thiazolidinediones",
         "therapeuticClass": "diabetes-medications",
