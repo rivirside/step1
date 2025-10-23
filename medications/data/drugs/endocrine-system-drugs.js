@@ -980,24 +980,113 @@ const drugs = [
         "pharmacologicClass": "glp-1-receptor-agonists",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Mimic incretin hormones, glucose-dependent insulin release.",
-        "features": "Twice-daily injection, weight loss.",
-        "clinicalChoice": "T2DM with obesity.",
+        "mechanism": "Synthetic analog of exendin-4 (from Gila monster saliva). Acts as GLP-1 receptor agonist → stimulates glucose-dependent insulin secretion from pancreatic beta cells, suppresses inappropriately elevated glucagon secretion, slows gastric emptying, and reduces food intake via central satiety mechanisms.",
+        "features": "First GLP-1 agonist approved (2005). Twice-daily injection. Derived from Gila monster venom.",
+        "pharmacokinetics": {
+            "onset": "Rapid insulin secretion within minutes of injection",
+            "peak": "Plasma concentration peaks at 2 hours",
+            "duration": "5-6 hours (short-acting, requires BID dosing)",
+            "halfLife": "2.4 hours (short half-life necessitates twice-daily dosing)",
+            "metabolism": "Proteolytic degradation (similar to endogenous peptides)",
+            "excretion": "Primarily renal via glomerular filtration with subsequent proteolytic degradation"
+        },
         "indications": [
-            "Type 2 Diabetes"
+            "Type 2 Diabetes (as adjunct to diet and exercise)"
         ],
+        "clinicalChoice": "First-generation GLP-1 agonist, now largely replaced by once-daily (liraglutide) or once-weekly (dulaglutide, semaglutide) agents due to convenience. Consider if: (1) cost-sensitive (generic available), (2) patient accepts BID injections. Less commonly prescribed now due to inconvenient dosing and higher nausea vs newer agents.",
+        "dosing": {
+            "typical": "Start 5 mcg BID subcutaneously within 60 minutes before morning and evening meals (at least 6 hours apart). After 1 month, increase to 10 mcg BID if tolerated. Do NOT give after meals.",
+            "renal": "Use caution if CrCl 30-50 mL/min. Avoid if CrCl <30 mL/min or ESRD (limited data, reports of renal impairment)",
+            "hepatic": "No dose adjustment needed (not hepatically metabolized)",
+            "elderly": "No specific dose adjustment, but use caution (may have decreased renal function)"
+        },
         "contraindications": [
             "Type 1 Diabetes",
-            "Gastroparesis"
+            "Diabetic ketoacidosis",
+            "Personal or family history of medullary thyroid carcinoma (MTC)",
+            "Multiple Endocrine Neoplasia syndrome type 2 (MEN 2)",
+            "Severe gastrointestinal disease (gastroparesis, inflammatory bowel disease)",
+            "End-stage renal disease (ESRD) or severe renal impairment (CrCl <30)"
         ],
-        "sideEffects": [
-            "Nausea",
-            "Vomiting",
-            "Diarrhea",
-            "Pancreatitis risk"
+        "sideEffects": {
+            "common": [
+                "Nausea (44% - most common, dose-related, usually improves over 4-8 weeks)",
+                "Vomiting (13%)",
+                "Diarrhea (13%)",
+                "Headache",
+                "Feeling jittery"
+            ],
+            "serious": [
+                "Pancreatitis (rare: 0.1-0.2% - discontinue if suspected)",
+                "Severe hypoglycemia (when combined with insulin or sulfonylureas)",
+                "Acute renal failure (rare, usually in setting of volume depletion from vomiting/diarrhea)",
+                "Thyroid C-cell tumors (medullary thyroid cancer - rodent data, BLACK BOX)"
+            ],
+            "rare": [
+                "Anaphylaxis and angioedema",
+                "Hemorrhagic or necrotizing pancreatitis"
+            ]
+        },
+        "blackBoxWarnings": [
+            "Risk of Thyroid C-Cell Tumors: Exenatide causes dose-dependent and treatment-duration-dependent thyroid C-cell tumors (medullary thyroid carcinoma) in rodents. Unknown if occurs in humans. Contraindicated in patients with personal or family history of MTC or MEN 2. Patient counseling about thyroid tumors required."
         ],
-        "interactions": "Delay gastric emptying, affect oral drug absorption.",
-        "interactionDetails": "",
+        "interactions": {
+            "drugDrug": [
+                "Insulin or sulfonylureas: increased hypoglycemia risk (reduce dose by 50%)",
+                "Oral medications: delayed absorption due to delayed gastric emptying. Give oral meds at least 1 hour BEFORE exenatide.",
+                "Warfarin: potential for increased INR (monitor closely when initiating)",
+                "Digoxin: AUC decreased by 17% due to delayed absorption (give 1 hour before exenatide)"
+            ],
+            "drugDisease": [
+                "Gastroparesis: CONTRAINDICATED (worsens delayed gastric emptying)",
+                "Pancreatitis history: use with extreme caution or avoid (may increase recurrence risk)",
+                "Renal impairment: avoid if CrCl <30 (reports of renal dysfunction)"
+            ],
+            "drugFood": [
+                "MUST give within 60 minutes BEFORE meals (not after meals)",
+                "At least 6 hours between BID doses"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose and HbA1c every 3 months (expect 0.8-1% reduction)",
+                "Renal function (serum creatinine) - risk of acute renal failure in volume depletion",
+                "Lipase/amylase if pancreatitis suspected (persistent severe abdominal pain)",
+                "Calcitonin NOT routinely recommended (controversial)"
+            ],
+            "vitals": [
+                "Weight (expect 2-3 kg weight loss over 6-12 months)",
+                "Blood pressure (may have modest reduction)"
+            ],
+            "symptoms": [
+                "GI symptoms (nausea, vomiting, diarrhea - usually transient)",
+                "Abdominal pain (pancreatitis warning)",
+                "Signs of dehydration (from GI side effects)",
+                "Hypoglycemia symptoms (if on insulin/sulfonylureas)"
+            ],
+            "frequency": "Glucose monitoring as needed. Monitor renal function periodically, especially if volume depleted."
+        },
+        "pregnancy": {
+            "category": "Category C",
+            "considerations": "Limited human data. Insulin is preferred for diabetes in pregnancy. Discontinue exenatide if pregnancy occurs or is planned."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'derived from Gila monster venom' or 'BLACK BOX thyroid C-cell tumors'",
+            "Brand name: Byetta (immediate-release BID) or Bydureon (extended-release weekly)",
+            "First GLP-1 agonist approved (2005) - discovered from Gila monster (Heloderma suspectum) saliva",
+            "Exendin-4 is 53% homologous to human GLP-1 but resistant to DPP-4 degradation (longer half-life than native GLP-1)",
+            "BLACK BOX WARNING: Thyroid C-cell tumors (medullary thyroid cancer) in rodents - contraindicated in MTC/MEN 2",
+            "Nausea is VERY common (44%) - worse than liraglutide. START LOW, titrate slowly. Usually improves over weeks.",
+            "MUST give BEFORE meals (within 60 min) - NOT after meals. At least 6 hours between doses.",
+            "Weight loss: Average 2-3 kg (less than liraglutide's 3-5 kg or semaglutide's 5-10 kg)",
+            "BID dosing is major disadvantage - most patients prefer once-daily liraglutide or once-weekly agents",
+            "No hypoglycemia as monotherapy (glucose-dependent mechanism) - but risk increases with insulin/sulfonylureas",
+            "Pancreatitis: RARE (0.1-0.2%) but serious. Discontinue if persistent severe abdominal pain, nausea, vomiting.",
+            "EXSCEL trial (2017): CV safety demonstrated (non-inferior) but no CV benefit (unlike liraglutide)",
+            "Classic vignette: T2DM patient wants injectable for weight loss, cost-conscious → exenatide cheaper than liraglutide",
+            "Common wrong answer: 'Give after meals' - NO! Must give BEFORE meals (30-60 min before)",
+            "Renal caution: Reports of acute renal failure (usually with volume depletion from GI side effects)"
+        ],
         "pageType": "drug"
     },
     {
@@ -1006,25 +1095,119 @@ const drugs = [
         "pharmacologicClass": "glp-1-receptor-agonists",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Mimic incretin hormones, glucose-dependent insulin release.",
-        "features": "Once-daily, cardiovascular benefits.",
-        "clinicalChoice": "T2DM with CV risk.",
+        "mechanism": "Long-acting human GLP-1 analog (97% homology to native GLP-1). Acts as GLP-1 receptor agonist → stimulates glucose-dependent insulin secretion, suppresses glucagon, slows gastric emptying, and promotes satiety. Modified by fatty acid chain to bind albumin, providing prolonged half-life and once-daily dosing.",
+        "features": "Once-daily injection. PROVEN cardiovascular benefit (LEADER trial). Also approved for obesity.",
+        "pharmacokinetics": {
+            "onset": "Glucose-lowering effects within hours to days",
+            "peak": "Plasma concentration peaks at 8-12 hours",
+            "duration": "24 hours (once-daily dosing)",
+            "halfLife": "13 hours (long half-life allows once-daily dosing)",
+            "metabolism": "Proteolytic degradation (similar to endogenous peptides). Metabolized to smaller peptides and amino acids.",
+            "excretion": "Primarily renal and fecal after proteolytic degradation"
+        },
         "indications": [
-            "Type 2 Diabetes",
-            "Obesity"
+            "Type 2 Diabetes (as adjunct to diet and exercise)",
+            "Reduce risk of MACE in T2DM with established cardiovascular disease",
+            "Chronic weight management (Saxenda brand, higher dose 3 mg)"
         ],
+        "clinicalChoice": "PREFERRED GLP-1 agonist in patients with established ASCVD (atherosclerotic cardiovascular disease) due to PROVEN cardiovascular benefit. Choose liraglutide when: (1) patient has CVD (MI, stroke, PAD - reduces MACE by 13%), (2) need weight loss (3-5 kg average), (3) once-daily dosing acceptable (more convenient than exenatide BID). Most commonly prescribed GLP-1 agonist after semaglutide.",
+        "dosing": {
+            "typical": "Start 0.6 mg once daily subcutaneously for 1 week (to reduce nausea). Increase to 1.2 mg daily. Can further increase to 1.8 mg daily if needed for glycemic control. Give any time of day, with or without food. For obesity (Saxenda): up to 3 mg daily.",
+            "renal": "No dose adjustment needed for mild-moderate CKD. Use caution in severe CKD (CrCl <30) - limited data. Avoid in ESRD.",
+            "hepatic": "No dose adjustment needed (not hepatically metabolized)",
+            "elderly": "No specific dose adjustment needed"
+        },
         "contraindications": [
-            "MTC History",
-            "MEN 2"
+            "Personal or family history of medullary thyroid carcinoma (MTC)",
+            "Multiple Endocrine Neoplasia syndrome type 2 (MEN 2)",
+            "Type 1 Diabetes (not approved)",
+            "Diabetic ketoacidosis",
+            "Pregnancy (insulin preferred)"
         ],
-        "sideEffects": [
-            "Nausea",
-            "Vomiting",
-            "Diarrhea",
-            "Pancreatitis risk"
+        "sideEffects": {
+            "common": [
+                "Nausea (20-30% - most common, dose-related, usually transient)",
+                "Diarrhea (17%)",
+                "Vomiting (10%)",
+                "Decreased appetite",
+                "Headache",
+                "Constipation"
+            ],
+            "serious": [
+                "Pancreatitis (rare: 0.1% - discontinue if suspected)",
+                "Hypoglycemia (when combined with insulin or sulfonylureas - reduce their dose)",
+                "Acute gallbladder disease (cholelithiasis, cholecystitis - 1.5% vs 1% placebo)",
+                "Acute kidney injury (rare, usually from volume depletion)",
+                "Thyroid C-cell tumors (medullary thyroid cancer - rodent data, BLACK BOX)"
+            ],
+            "rare": [
+                "Anaphylaxis and angioedema",
+                "Increased heart rate (2-3 bpm average)",
+                "Suicidal ideation (with high-dose obesity formulation)"
+            ]
+        },
+        "blackBoxWarnings": [
+            "Risk of Thyroid C-Cell Tumors: Liraglutide causes dose-dependent and treatment-duration-dependent thyroid C-cell tumors (medullary thyroid carcinoma) in rodents at clinically relevant exposures. Unknown if occurs in humans. Contraindicated in patients with personal or family history of MTC or MEN 2 syndrome. Counsel patients about potential risk and symptoms of thyroid tumors (neck mass, dysphagia, dyspnea, persistent hoarseness)."
         ],
-        "interactions": "Delay gastric emptying, affect oral drug absorption.",
-        "interactionDetails": "",
+        "interactions": {
+            "drugDrug": [
+                "Insulin or sulfonylureas: increased hypoglycemia risk (reduce insulin dose by 20-50%, reduce sulfonylurea dose)",
+                "Oral medications: delayed absorption due to delayed gastric emptying. Give oral medications 1 hour before liraglutide if concerned about absorption.",
+                "Warfarin: monitor INR when initiating (case reports of increased INR)"
+            ],
+            "drugDisease": [
+                "Gastroparesis: contraindicated (worsens delayed gastric emptying)",
+                "Pancreatitis history: use with extreme caution (may increase recurrence risk)",
+                "Gallbladder disease: increased risk of cholelithiasis/cholecystitis (1.5%)",
+                "Renal impairment: use caution in severe CKD (limited data)"
+            ],
+            "drugFood": [
+                "Can take with or without food, at any time of day (flexible dosing)"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose and HbA1c every 3 months (expect 1-1.5% reduction)",
+                "Renal function periodically (risk of acute kidney injury with volume depletion)",
+                "Lipase/amylase if pancreatitis suspected (persistent severe abdominal pain)",
+                "Calcitonin NOT routinely recommended (controversial, no proven benefit)"
+            ],
+            "vitals": [
+                "Weight (expect 3-5 kg weight loss - therapeutic effect)",
+                "Heart rate (may increase by 2-3 bpm)",
+                "Blood pressure (may decrease modestly)"
+            ],
+            "symptoms": [
+                "GI symptoms (nausea, vomiting, diarrhea - usually transient, improve over weeks)",
+                "Abdominal pain (pancreatitis or gallbladder disease)",
+                "Hypoglycemia symptoms (if on insulin/sulfonylureas)",
+                "Thyroid mass, dysphagia, dyspnea (thyroid cancer concern)",
+                "Mood changes (especially at high doses for obesity)"
+            ],
+            "frequency": "Glucose monitoring as clinically indicated. Monitor weight monthly initially."
+        },
+        "pregnancy": {
+            "category": "Category C (Category X for obesity indication)",
+            "considerations": "Limited human data. Insulin is preferred for diabetes in pregnancy. Discontinue liraglutide at least 2 weeks before planned pregnancy. For obesity: contraindicated in pregnancy."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'cardiovascular benefit proven' or 'reduces MACE in ASCVD'",
+            "Brand names: Victoza (1.2-1.8 mg for diabetes), Saxenda (3 mg for obesity)",
+            "LEADER trial (2016): REDUCED cardiovascular events by 13% (MACE: CV death, MI, stroke) in T2DM with ASCVD → PREFERRED GLP-1 in CVD",
+            "97% homology to human GLP-1, but modified with fatty acid side chain → binds albumin → prolonged half-life (13 hr) → once-daily dosing",
+            "BLACK BOX WARNING: Thyroid C-cell tumors (medullary thyroid cancer) in rodents - contraindicated in MTC/MEN 2",
+            "Weight loss: Average 3-5 kg (MORE than exenatide 2-3 kg, but LESS than semaglutide 5-10 kg)",
+            "Once-daily dosing at ANY time of day (major convenience advantage over exenatide BID)",
+            "Better tolerated than exenatide: nausea 20-30% (vs 44% with exenatide). START LOW (0.6 mg), GO SLOW.",
+            "No hypoglycemia as monotherapy (glucose-dependent insulin release) - but risk with insulin/sulfonylureas",
+            "Pancreatitis: RARE (0.1%) but serious. Discontinue if persistent severe abdominal pain.",
+            "Gallbladder disease: increased risk (1.5% vs 1%) - rapid weight loss promotes gallstone formation",
+            "Also approved for obesity (Saxenda 3 mg) - one of few FDA-approved weight loss medications",
+            "Classic vignette: T2DM patient with prior MI, BMI 34, on metformin, HbA1c 8.5% → add liraglutide (CV benefit + weight loss)",
+            "Common wrong answer: 'Start at full dose' - NO! Start at 0.6 mg to minimize nausea, titrate weekly",
+            "Cardioprotection mechanism: Not fully understood - may be via weight loss, BP reduction, anti-inflammatory effects, direct cardiac effects",
+            "Mnemonic: 'Lira-GLUT-ide reduces GLUT-tony' (reduces weight/obesity)"
+        ],
         "pageType": "drug"
     },
     {

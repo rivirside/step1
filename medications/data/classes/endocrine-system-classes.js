@@ -407,20 +407,96 @@ LINAGLIPTIN (Tradjenta):
         "name": "GLP-1 Receptor Agonists",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Mimic incretin hormones, glucose-dependent insulin release.",
+        "mechanism": "Glucagon-like peptide-1 (GLP-1) receptor agonists that mimic endogenous incretin hormone GLP-1. Stimulate glucose-dependent insulin secretion, suppress glucagon, slow gastric emptying, and promote satiety.",
         "sideEffects": [
-            "Nausea",
+            "Nausea (40-50%, dose-related)",
             "Vomiting",
             "Diarrhea",
-            "Pancreatitis risk"
+            "Pancreatitis risk (rare)",
+            "Thyroid C-cell tumors (BLACK BOX - rodent data)"
         ],
-        "interactions": "Delay gastric emptying, affect oral drug absorption.",
+        "interactions": "Delay gastric emptying, affect oral drug absorption. Give other oral meds 1 hour before GLP-1 agonist.",
         "interactionDetails": "",
         "drugIds": [
             "exenatide",
             "liraglutide"
         ],
-        "pageType": "pharmacologic-class"
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "GLP-1 receptor agonists are injectable diabetes medications that mimic the effects of glucagon-like peptide-1 (GLP-1), an incretin hormone naturally released by the gut in response to food. They provide glucose-dependent insulin secretion (low hypoglycemia risk), promote weight loss (3-6 kg average), and have proven cardiovascular benefits. Considered second-line after metformin, especially in patients with obesity or established cardiovascular disease.",
+            "clinicalApproach": [
+                "Second-line for T2DM after metformin, or first-line if metformin contraindicated",
+                "PREFERRED in patients with: (1) obesity (promotes 3-6 kg weight loss), (2) established ASCVD (CV benefits proven), (3) need to avoid weight gain",
+                "Injectable route (subcutaneous) - barrier for some patients, but increasingly accepted",
+                "Newer weekly formulations (semaglutide, dulaglutide) improve adherence vs daily injections",
+                "Oral semaglutide now available (first oral GLP-1 agonist)",
+                "Do NOT use in patients with: personal/family history of medullary thyroid cancer, MEN 2 syndrome, gastroparesis",
+                "Superior to DPP-4 inhibitors for glucose lowering and weight loss, but more expensive and injectable"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Subcutaneous injection. Absorption rate varies by drug (exenatide faster, liraglutide slower). Oral semaglutide requires special absorption enhancer.",
+                "distribution": "Low volume of distribution. Does not cross blood-brain barrier significantly despite satiety effects (mediated via vagal afferents).",
+                "metabolism": "Proteolytic degradation (similar to endogenous peptides). Minimal CYP metabolism.",
+                "excretion": "Primarily renal after proteolytic degradation. Dose adjustment generally not needed in mild-moderate renal impairment."
+            },
+            "comparison": {
+                "title": "Comparison of GLP-1 Receptor Agonists",
+                "description": "Key differences in dosing frequency, origin, and clinical indications",
+                "content": `
+EXENATIDE (Byetta):
+- Dosing: Twice daily (BID) injection
+- Origin: Synthetic exendin-4 (from Gila monster saliva)
+- Half-life: 2-4 hours (short-acting)
+- Use case: Less convenient dosing, first-generation, less commonly used now
+- Weight loss: 2-3 kg average
+- CV data: Neutral (EXSCEL trial)
+
+LIRAGLUTIDE (Victoza):
+- Dosing: Once daily injection
+- Origin: Human GLP-1 analog (97% homology)
+- Half-life: 13 hours
+- Use case: PREFERRED in patients with established ASCVD (CV benefit proven)
+- Weight loss: 3-5 kg average
+- CV data: REDUCES CV events (LEADER trial: ↓ MACE by 13%)
+- Also approved for obesity (Saxenda brand, 3 mg dose)
+
+NEWER AGENTS (not detailed here):
+- Semaglutide: Once-weekly injection OR oral (first oral GLP-1), superior weight loss (5-10 kg)
+- Dulaglutide: Once-weekly injection, convenient
+- Exenatide ER: Once-weekly injection
+`
+            },
+            "monitoring": [
+                "Blood glucose and HbA1c every 3 months (expect 1-1.5% reduction in HbA1c)",
+                "Weight (monitor for therapeutic weight loss of 3-6 kg)",
+                "Lipase/amylase if pancreatitis suspected (persistent severe abdominal pain)",
+                "Renal function in patients with renal impairment (some risk of worsening in severe CKD)",
+                "Calcitonin levels NOT routinely recommended (controversial, no proven benefit)"
+            ],
+            "contraindications": [
+                "Personal or family history of medullary thyroid carcinoma (MTC)",
+                "Multiple Endocrine Neoplasia syndrome type 2 (MEN 2)",
+                "Gastroparesis or severe GI disease",
+                "Type 1 diabetes (not approved, though studied)",
+                "Diabetic ketoacidosis",
+                "Pregnancy (insulin preferred)"
+            ],
+            "clinicalPearls": [
+                "BLACK BOX WARNING: Thyroid C-cell tumors (medullary thyroid cancer) in rodents. Contraindicated in personal/family history of MTC or MEN 2.",
+                "Weight loss: Average 3-6 kg (major advantage over insulin, sulfonylureas, TZDs which cause weight gain)",
+                "Cardiovascular benefit: Liraglutide (LEADER trial) and semaglutide (SUSTAIN-6) reduce MACE by 13-26%",
+                "GI side effects: Nausea in 40-50% (usually transient, improves over 4-8 weeks). START LOW, GO SLOW to minimize nausea.",
+                "Delayed gastric emptying: Give other oral medications 1 hour BEFORE GLP-1 agonist to ensure absorption",
+                "No hypoglycemia as monotherapy (glucose-dependent insulin release) - but can occur when combined with insulin/sulfonylureas",
+                "Pancreatitis: RARE but serious (~0.1%). Discontinue if persistent severe abdominal pain.",
+                "Step 1 buzzword: 'weight loss and CV benefit' or 'contraindicated in MTC/MEN 2'",
+                "Mnemonic: 'GLP = Glucose Lowers, Pounds Lost' (glucose control + weight loss)",
+                "Classic vignette: Obese T2DM patient (BMI 35) on metformin, HbA1c 8.5%, wants to lose weight → add GLP-1 agonist",
+                "Incretin effect: GLP-1 is released from L-cells in gut in response to food → the 'incretin effect' accounts for 50-70% of postprandial insulin secretion",
+                "Compare to DPP-4i: GLP-1 agonists MORE effective (↓ HbA1c 1-1.5% vs 0.5-0.8%) and cause weight LOSS (vs neutral), but are injectable and more expensive",
+                "FDA approval expanding: Now approved for weight loss (higher doses), being studied for NASH, neurodegenerative diseases"
+            ]
+        }
     },
     {
         "id": "sglt2-inhibitors",
