@@ -291,23 +291,94 @@ const drugs = [
         "pharmacologicClass": "sulfonylureas",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Stimulate insulin release from pancreatic beta cells.",
+        "mechanism": "Binds to SUR1 (sulfonylurea receptor) on ATP-sensitive K+ channels in pancreatic beta cells → closes K+ channels → membrane depolarization → Ca²⁺ influx → insulin granule exocytosis. Stimulates insulin release regardless of glucose level.",
         "features": "Short-acting, liver metabolism.",
-        "clinicalChoice": "T2DM when metformin insufficient.",
+        "pharmacokinetics": {
+            "onset": "1-1.5 hours",
+            "peak": "2-3 hours",
+            "duration": "12-24 hours (depending on formulation)",
+            "halfLife": "2-4 hours (shortest of sulfonylureas)",
+            "metabolism": "Hepatic via CYP2C9 to INACTIVE metabolites",
+            "excretion": "Renal (60-70% as inactive metabolites), fecal (10%)"
+        },
         "indications": [
-            "Type 2 Diabetes"
+            "Type 2 Diabetes (as monotherapy or combination with metformin, insulin, or TZDs)"
         ],
+        "clinicalChoice": "Safest sulfonylurea in renal impairment (inactive metabolites don't accumulate). Preferred in elderly due to shorter duration and lower hypoglycemia risk vs glyburide. Choose when need sulfonylurea in patient with CKD or elderly.",
+        "dosing": {
+            "typical": "Start 5 mg once daily before breakfast. Titrate by 2.5-5 mg every few weeks. Max 40 mg/day (usually divided BID if >15 mg/day). Take 30 min before meals.",
+            "renal": "Start with low dose (2.5 mg). Safest sulfonylurea in renal disease (no active metabolites). Can use with caution even in moderate CKD.",
+            "hepatic": "Use caution in severe hepatic disease (decreased metabolism)",
+            "elderly": "Start 2.5 mg daily. Preferred sulfonylurea in elderly (lower hypoglycemia risk)."
+        },
         "contraindications": [
             "Type 1 Diabetes",
-            "Diabetic Ketoacidosis"
+            "Diabetic ketoacidosis",
+            "Sulfa allergy (cross-reactivity rare but possible)",
+            "Pregnancy/breastfeeding"
         ],
-        "sideEffects": [
-            "Hypoglycemia",
-            "Weight gain",
-            "SIADH"
+        "sideEffects": {
+            "common": [
+                "Hypoglycemia (10-20%, but lower than glyburide)",
+                "Weight gain (2-5 kg average)",
+                "GI upset (nausea, diarrhea)"
+            ],
+            "serious": [
+                "Severe hypoglycemia (confusion, seizures, coma - especially if skipped meals or alcohol)",
+                "SIADH (rare but classic board side effect)"
+            ],
+            "rare": [
+                "Hemolytic anemia",
+                "Cholestatic jaundice"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Sulfonamide antibiotics: potentiate hypoglycemia (both sulfon-)",
+                "Warfarin: displaced from protein binding → increased warfarin effect",
+                "Beta-blockers: mask hypoglycemia symptoms",
+                "Alcohol: disulfiram-like reaction (flushing, nausea), increased hypoglycemia",
+                "Salicylates: displace from protein binding → increased sulfonylurea effect"
+            ],
+            "drugDisease": [
+                "G6PD deficiency: risk of hemolytic anemia"
+            ],
+            "drugFood": [
+                "Take 30 minutes before meals for optimal effect",
+                "Alcohol: avoid (hypoglycemia risk, disulfiram reaction)"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose: frequent monitoring, especially during titration",
+                "HbA1c every 3 months",
+                "Renal function periodically"
+            ],
+            "vitals": [
+                "Weight (expect 2-5 kg gain)"
+            ],
+            "symptoms": [
+                "Hypoglycemia symptoms: tremor, palpitations, diaphoresis, confusion, hunger",
+                "SIADH symptoms: hyponatremia, confusion, seizures"
+            ],
+            "frequency": "Frequent glucose checks initially, teach patient to recognize hypoglycemia"
+        },
+        "pregnancy": {
+            "category": "Category C",
+            "considerations": "Not recommended in pregnancy. Switch to insulin for pregnancy (better glycemic control, no teratogenicity concerns)."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'safest sulfonylurea in renal disease'",
+            "Mnemonic: 'GlipiZIDE is Zafe' (safe in renal disease, no active metabolites)",
+            "Preferred over glyburide in elderly and CKD patients",
+            "Shortest half-life (2-4 hr) → lower risk of prolonged hypoglycemia",
+            "Inactive metabolites → don't accumulate in renal failure (unlike glyburide)",
+            "Classic vignette: Type 2 DM on metformin, HbA1c 8.5%, eGFR 35 → add glipizide (safe in CKD)",
+            "Hypoglycemia treatment: Rule of 15 - give 15g fast-acting carbs, recheck in 15 min",
+            "Take 30 min before meals (onset 1-1.5 hours)",
+            "Extended-release formulation (Glucotrol XL) available for once-daily dosing"
         ],
-        "interactions": "Sulfonamides potentiate effects.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {
@@ -316,23 +387,100 @@ const drugs = [
         "pharmacologicClass": "sulfonylureas",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Stimulate insulin release from pancreatic beta cells.",
+        "mechanism": "Binds to SUR1 (sulfonylurea receptor) on ATP-sensitive K+ channels in pancreatic beta cells → closes K+ channels → membrane depolarization → Ca²⁺ influx → insulin secretion. Most potent insulin secretagogue of the sulfonylureas.",
         "features": "Long-acting, higher hypoglycemia risk.",
-        "clinicalChoice": "T2DM, avoid in elderly.",
+        "pharmacokinetics": {
+            "onset": "1 hour",
+            "peak": "2-4 hours",
+            "duration": "16-24 hours (longest of sulfonylureas)",
+            "halfLife": "4-10 hours (longest half-life)",
+            "metabolism": "Hepatic via CYP2C9 and CYP3A4 to ACTIVE metabolites",
+            "excretion": "Renal (50%) and biliary (50%). Active metabolites excreted renally → accumulate in renal impairment"
+        },
         "indications": [
             "Type 2 Diabetes"
         ],
+        "clinicalChoice": "Generally AVOID - highest hypoglycemia risk of sulfonylureas due to long duration and active metabolites. Only use if: (1) normal renal function, (2) not elderly, (3) patient can't afford alternatives. Glipizide or glimepiride preferred.",
+        "dosing": {
+            "typical": "Start 1.25-2.5 mg once daily with breakfast. Titrate by 1.25-2.5 mg every 1-2 weeks. Max 20 mg/day (divided BID if >10 mg). Micronized formulation: start 0.75-1.5 mg.",
+            "renal": "AVOID if eGFR <60. Contraindicated if eGFR <30 (active metabolites accumulate → prolonged hypoglycemia)",
+            "hepatic": "Use caution in severe hepatic disease",
+            "elderly": "AVOID in elderly (Beer's Criteria - high risk prolonged hypoglycemia). If must use, start 1.25 mg and monitor closely."
+        },
         "contraindications": [
             "Type 1 Diabetes",
-            "Renal Impairment"
+            "Diabetic ketoacidosis",
+            "Renal impairment (eGFR <60 - relative, <30 - absolute)",
+            "Elderly patients (Beer's Criteria)",
+            "Pregnancy/breastfeeding",
+            "Sulfa allergy"
         ],
-        "sideEffects": [
-            "Hypoglycemia",
-            "Weight gain",
-            "SIADH"
+        "sideEffects": {
+            "common": [
+                "Hypoglycemia (20-30% - HIGHEST risk of all sulfonylureas)",
+                "Weight gain (2-5 kg)",
+                "GI upset"
+            ],
+            "serious": [
+                "Severe/prolonged hypoglycemia (can last 24+ hours due to long half-life and active metabolites)",
+                "SIADH (more common than with other sulfonylureas)"
+            ],
+            "rare": [
+                "Hemolytic anemia",
+                "Cholestatic jaundice",
+                "Disulfiram-like reaction with alcohol"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Sulfonamides: potentiate hypoglycemia",
+                "Warfarin: displaced from protein binding → increased INR",
+                "Beta-blockers: mask hypoglycemia, prolong hypoglycemia",
+                "CYP2C9 inhibitors (fluconazole): increase glyburide levels",
+                "Alcohol: severe disulfiram-like reaction, prolonged hypoglycemia"
+            ],
+            "drugDisease": [
+                "Renal impairment: AVOID (active metabolites accumulate)",
+                "Elderly: AVOID (prolonged hypoglycemia risk)",
+                "G6PD deficiency: hemolytic anemia risk"
+            ],
+            "drugFood": [
+                "Take with meals",
+                "Alcohol: AVOID (severe reactions)"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose: very frequent monitoring (highest hypoglycemia risk)",
+                "HbA1c every 3 months",
+                "Renal function: check regularly (if eGFR drops, switch to glipizide)"
+            ],
+            "vitals": [
+                "Weight"
+            ],
+            "symptoms": [
+                "Hypoglycemia symptoms (especially prolonged hypoglycemia lasting >24 hours)",
+                "SIADH symptoms"
+            ],
+            "frequency": "Daily glucose monitoring, especially first few weeks"
+        },
+        "pregnancy": {
+            "category": "Category C (Category B for gestational diabetes in some guidelines)",
+            "considerations": "Generally avoid in pregnancy. Insulin preferred. Some use in gestational DM but insulin is first choice."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'avoid in elderly and renal disease' or 'prolonged hypoglycemia'",
+            "Beer's Criteria: Glyburide is POTENTIALLY INAPPROPRIATE in elderly (high hypoglycemia risk)",
+            "HIGHEST hypoglycemia risk of all sulfonylureas due to: (1) long duration, (2) active metabolites, (3) renal excretion",
+            "Active metabolites accumulate in renal impairment → can cause hypoglycemia for DAYS",
+            "Brand names: Micronase, DiaBeta, Glynase (micronized)",
+            "Mnemonic: 'GLYburide is GLY-bad' (avoid due to hypoglycemia)",
+            "Classic vignette: Elderly T2DM patient on glyburide presents with confusion, diaphoresis → hypoglycemia",
+            "Common exam trap: 'Elderly patient on glyburide with CKD' → SWITCH to glipizide or glimepiride",
+            "If prolonged hypoglycemia occurs: may need D50 bolus + continuous D10 infusion for 24-48 hours",
+            "Generally being phased out - glipizide and glimepiride preferred for safety"
         ],
-        "interactions": "Sulfonamides potentiate effects.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {
@@ -341,23 +489,97 @@ const drugs = [
         "pharmacologicClass": "sulfonylureas",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Stimulate insulin release from pancreatic beta cells.",
+        "mechanism": "Binds to SUR1 (sulfonylurea receptor) on ATP-sensitive K+ channels in pancreatic beta cells → closes K+ channels → depolarization → Ca²⁺ influx → insulin release. Also has some extrapancreatic effects on insulin sensitivity.",
         "features": "Once-daily dosing.",
-        "clinicalChoice": "T2DM with compliance issues.",
+        "pharmacokinetics": {
+            "onset": "1 hour",
+            "peak": "2-3 hours",
+            "duration": "24 hours (once-daily dosing)",
+            "halfLife": "5-9 hours",
+            "metabolism": "Hepatic via CYP2C9 to mostly INACTIVE metabolites (one weakly active metabolite)",
+            "excretion": "Renal (60%) and fecal (40%). Less accumulation in renal impairment than glyburide."
+        },
         "indications": [
             "Type 2 Diabetes"
         ],
+        "clinicalChoice": "Good choice when once-daily convenience needed. Similar safety to glipizide (safer than glyburide). Can use in mild-moderate CKD with dose reduction. Choose when patient compliance concern or prefer single daily dose.",
+        "dosing": {
+            "typical": "Start 1-2 mg once daily with breakfast or first main meal. Titrate by 1-2 mg every 1-2 weeks. Max 8 mg/day. MUST take with meal (not on empty stomach).",
+            "renal": "Start 1 mg daily. Use caution if eGFR 30-60. Avoid if eGFR <30.",
+            "hepatic": "Use caution in severe hepatic disease",
+            "elderly": "Start 1 mg daily. Lower hypoglycemia risk than glyburide but still monitor closely."
+        },
         "contraindications": [
             "Type 1 Diabetes",
-            "Diabetic Ketoacidosis"
+            "Diabetic ketoacidosis",
+            "Severe renal impairment (eGFR <30)",
+            "Pregnancy/breastfeeding",
+            "Sulfa allergy"
         ],
-        "sideEffects": [
-            "Hypoglycemia",
-            "Weight gain",
-            "SIADH"
+        "sideEffects": {
+            "common": [
+                "Hypoglycemia (10-20%, lower than glyburide)",
+                "Weight gain (2-5 kg)",
+                "Dizziness, headache"
+            ],
+            "serious": [
+                "Severe hypoglycemia",
+                "SIADH (rare)",
+                "Cardiovascular events (some controversy)"
+            ],
+            "rare": [
+                "Hemolytic anemia",
+                "Hepatotoxicity"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Sulfonamides: potentiate effect",
+                "CYP2C9 inhibitors (fluconazole): increase glimepiride levels",
+                "Beta-blockers: mask hypoglycemia",
+                "Alcohol: increased hypoglycemia, possible disulfiram reaction",
+                "Rifampin: decreases glimepiride levels (CYP2C9 inducer)"
+            ],
+            "drugDisease": [
+                "Renal impairment: dose reduction needed",
+                "G6PD deficiency: hemolytic anemia risk"
+            ],
+            "drugFood": [
+                "MUST take with breakfast or first main meal (not on empty stomach)",
+                "Alcohol: avoid excessive use"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose monitoring",
+                "HbA1c every 3 months",
+                "Renal function periodically"
+            ],
+            "vitals": [
+                "Weight"
+            ],
+            "symptoms": [
+                "Hypoglycemia symptoms",
+                "SIADH symptoms"
+            ],
+            "frequency": "Regular glucose monitoring, especially during titration"
+        },
+        "pregnancy": {
+            "category": "Category C",
+            "considerations": "Not recommended in pregnancy. Switch to insulin."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'once-daily dosing' or 'good compliance'",
+            "Brand name: Amaryl",
+            "Once-daily convenience → better adherence than BID glipizide",
+            "Safer than glyburide (no active metabolites, shorter duration)",
+            "MUST take with meal (not on empty stomach) - reduced absorption if fasted",
+            "Possible cardiovascular benefit vs other sulfonylureas (some studies controversial)",
+            "Classic vignette: T2DM patient with compliance issues (missed doses) → switch to once-daily glimepiride",
+            "Intermediate choice: safer than glyburide, more convenient than glipizide",
+            "May have some insulin-sensitizing effects beyond just insulin secretion"
         ],
-        "interactions": "Sulfonamides potentiate effects.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {
