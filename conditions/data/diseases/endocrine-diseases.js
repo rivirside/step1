@@ -1125,7 +1125,204 @@ const endocrineDiseases = [
         acuity: "acute",
         pageType: "disease",
         detail: {
-            definition: "Type 2 diabetes complication. Glucose >600, pH >7.3, negative ketones, very high osmolality >320. AMS/coma from hyperosmolality. NO ketoacidosis. Treatment: aggressive IV fluids + insulin. Mortality 10-20% (higher than DKA)."
+            definition: "Life-threatening acute complication of Type 2 diabetes characterized by EXTREME HYPERGLYCEMIA (>600 mg/dL, often >1000), SEVERE HYPEROSMOLALITY (>320 mOsm/kg, often >340), PROFOUND DEHYDRATION (8-12L fluid deficit), and ALTERED MENTAL STATUS - WITHOUT significant ketoacidosis. Slower onset than DKA (days-weeks vs hours-days). More common in elderly (>65 years). Mortality 10-20% (2-4× higher than DKA). Precipitated by infection, inadequate insulin, dehydration, or acute illness. Treatment: aggressive IV fluid resuscitation (THE priority) → cautious insulin therapy → electrolyte replacement → treat precipitant. DISTINGUISH from DKA: HHS = NO ketoacidosis (pH >7.3, negative ketones), HIGHER glucose (>600 vs >250), HIGHER osmolality (>320 vs <320), MORE dehydration, SLOWER onset, Type 2 DM (vs Type 1).",
+
+            pathophysiology: "INSULIN DEFICIENCY (RELATIVE, not absolute - this is key difference from DKA): \n\nType 2 DM → still produces SOME insulin (enough to suppress ketogenesis but NOT enough to control glucose) → NO significant ketoacidosis (vs DKA - complete insulin absence → ketogenesis). \n\nHYPERGLYCEMIA CASCADE: \n1. Precipitant (infection, MI, stroke, medication non-adherence) → worsening hyperglycemia \n2. OSMOTIC DIURESIS: glucose >180 exceeds renal threshold → glucosuria → water follows glucose → polyuria (up to 10L/day loss) \n3. SEVERE DEHYDRATION: profound fluid loss (8-12L total deficit, average 10L - TWICE that of DKA) → decreased renal perfusion → decreased glucose excretion → VICIOUS CYCLE of worsening hyperglycemia (glucose often >1000 mg/dL) \n4. HYPEROSMOLALITY: glucose >600 + dehydration → serum osmolality >320 mOsm/kg (often >340-350) → water shifts from ICF to ECF → cellular dehydration, especially neurons \n5. NEUROLOGIC DYSFUNCTION: neuronal dehydration + hyperosmolality → altered mental status, confusion, lethargy, seizures, coma (more severe than DKA due to higher osmolality) \n\nELECTROLYTE EFFECTS: \n- Total body potassium DEFICIT (4-6 mEq/kg despite normal/high serum K+ initially - shift from ICF) \n- Total body sodium deficit despite hypernatremia (from water loss exceeding sodium loss) \n- Total body phosphate deficit \n\nWHY NO KETOACIDOSIS? Residual insulin (even small amounts) SUPPRESSES lipolysis and ketogenesis. Insulin deficiency is RELATIVE (not absolute like T1DM). Some patients may have MILD ketonemia but NOT significant ketoacidosis (pH >7.3). \n\nSLOWER ONSET than DKA: develops over days-weeks (vs hours-days for DKA). Patients often have impaired thirst mechanism (elderly, dementia, bedridden) → cannot compensate for fluid losses → progressive dehydration. \n\nHIGHER MORTALITY: 10-20% (vs 1-5% DKA) due to: older age, more comorbidities, more severe dehydration, thrombotic complications (stroke, MI, PE from hyperviscosity), precipitating illness severity.",
+
+            epidemiology: "Incidence: <1% of diabetes-related hospitalizations (less common than DKA but higher mortality). Age: typically >65 years (elderly - average age 60-70). More common in African Americans and Hispanics. Sex: slight female predominance. Type 2 diabetes (90-95% have known T2DM, 5-10% presenting feature). Nursing home residents at high risk (impaired thirst, limited access to water, cognitive impairment). Mortality: 10-20% (higher than DKA - reflects older age, comorbidities, severity of precipitant). Geographic: more common in warm climates (dehydration risk).",
+
+            riskFactors: [
+                "STRONGEST RISK FACTORS: Type 2 diabetes (especially poorly controlled, HbA1c >9%), elderly age (>65 years - impaired thirst mechanism, limited mobility), nursing home residence (limited access to water, cognitive impairment, inadequate monitoring)",
+                "PRECIPITANTS (trigger in >50% of cases): INFECTION most common (30-60% - pneumonia, UTI, sepsis), acute MI or stroke (cardiovascular event limits water intake), inadequate insulin or medication non-adherence (relative insulin deficiency worsens)",
+                "Medications that worsen hyperglycemia: STEROIDS (glucocorticoids → insulin resistance), THIAZIDE or LOOP diuretics (worsen dehydration + impair insulin secretion), atypical antipsychotics (olanzapine, clozapine → insulin resistance), immune checkpoint inhibitors, SGLT2 inhibitors (increased urinary glucose loss)",
+                "Impaired access to water: bedridden patients, dementia, stroke with dysphagia, intubated patients, post-operative state, homeless",
+                "Acute illness: pancreatitis, burns, heat stroke, dialysis, total parenteral nutrition (TPN - high dextrose)",
+                "Comorbidities: chronic kidney disease (impaired glucose clearance), heart failure, dementia, previous HHS episode (recurrence risk 50-70%)"
+            ],
+
+            presentation: "ONSET: DAYS to WEEKS (slower than DKA which is hours-days). INSIDIOUS progression. Often history of poor oral intake and progressive lethargy over 1-2 weeks. \n\nNEUROLOGIC (most prominent feature - reflects hyperosmolality): \n- ALTERED MENTAL STATUS (50-100%): ranges from confusion, disorientation, lethargy → obtundation → COMA (10-20%, more common than DKA). Severity correlates with osmolality (osmolality >340 → stupor/coma likely). \n- FOCAL NEUROLOGIC DEFICITS (10-15%): hemiparesis, aphasia, hemianopia - can MIMIC stroke (hyperosmolality effect, NOT true stroke - reversible with treatment). \n- SEIZURES (10-25%): focal or generalized - from hyperosmolality, more common than in DKA. \n\nDEHYDRATION (SEVERE - most prominent physical finding): \n- Profound volume depletion (average 10L deficit, 20-25% body water loss) \n- Dry mucous membranes (severely dry), poor skin turgor (skin tenting), sunken eyes \n- Oliguria or anuria (severe prerenal AKI common) \n- Hypotension (orthostatic → frank shock if severe) \n- Tachycardia (compensatory for hypovolemia) \n\nDIABETIC SYMPTOMS (days-weeks preceding): \n- POLYURIA (early - osmotic diuresis, then oliguria as kidneys fail from hypovolemia) \n- Polydipsia (if patient can access water - often inadequate due to impaired thirst, limited access) \n- Weakness, fatigue (progressive) \n- Weight loss (from fluid loss + catabolism) \n\nRESPIRATORY: \n- NORMAL breathing (NO Kussmaul respirations - NO acidosis to compensate for, KEY difference from DKA) \n- NORMAL breath (NO fruity/acetone odor - NO ketones) \n\nGASTROINTESTINAL (less common than DKA): \n- Nausea, vomiting (possible but LESS prominent than DKA - 10-20% vs 75% in DKA) \n- Abdominal pain (rare vs 50% in DKA) \n\nPRECIPITANT SYMPTOMS: fever (if infection), chest pain (if MI), dyspnea (if pneumonia), dysuria (if UTI), focal deficits (if stroke).",
+
+            physicalExam: [
+                "VITAL SIGNS: HYPOTENSION (orthostatic → supine if severe shock), TACHYCARDIA (110-130 bpm from hypovolemia), temperature VARIABLE (hypothermia if septic shock, fever if infection - elderly may be afebrile despite infection), respiratory rate NORMAL (12-20, NO Kussmaul - NO acidosis to compensate). Weight loss from baseline.",
+                "NEUROLOGIC: Glasgow Coma Scale often <15. ALTERED MENTAL STATUS (confusion, disorientation, lethargy, obtundation, coma). FOCAL deficits possible (hemiparesis, aphasia - reversible). Seizure activity. Decreased reflexes. Pupils may be sluggish.",
+                "DEHYDRATION signs (SEVERE): profoundly DRY mucous membranes (parched lips, dry tongue), POOR skin turgor (skin tenting on forehead or sternum - takes >3 seconds to recoil), SUNKEN eyes, DRY axillae. Jugular venous pressure (JVP) flat/undetectable.",
+                "CARDIOVASCULAR: Tachycardia. Hypotension (systolic <90 mmHg if severe). Weak, thready pulse. Prolonged capillary refill (>3 seconds). Cool extremities if shock. No JVD (volume depleted).",
+                "RESPIRATORY: Normal respiratory pattern (NO Kussmaul). Lung exam may show crackles if precipitant is pneumonia. NO fruity breath odor (NO ketones).",
+                "ABDOMINAL: Soft, non-tender typically (vs DKA which often has diffuse tenderness). Bowel sounds may be decreased (ileus from electrolyte abnormalities).",
+                "EXTREMITIES: Poor perfusion if shock. Look for infection source (cellulitis, foot ulcers in diabetics). No edema (volume depleted).",
+                "Other: Assess for precipitant - pneumonia (crackles), UTI (suprapubic tenderness), MI, stroke, wounds/ulcers"
+            ],
+
+            diagnosticCriteria: "HHS DIAGNOSTIC CRITERIA (all must be met): \n\n1. HYPERGLYCEMIA: plasma glucose >600 mg/dL (often >800-1000 mg/dL) \n2. HYPEROSMOLALITY: serum osmolality >320 mOsm/kg (often >340-350) \n   - Calculate: 2×[Na] + glucose/18 + BUN/2.8 \n   - Corrected Na = measured Na + 0.016×(glucose - 100) for true osmolality \n3. ARTERIAL pH >7.30 (NO significant acidosis - KEY distinction from DKA) \n4. Serum bicarbonate >15 mEq/L (mild decrease possible but NOT <15) \n5. NEGATIVE or SMALL ketonuria, NEGATIVE or SMALL ketonemia (β-hydroxybutyrate <3 mmol/L) - trace ketones acceptable but NOT large \n6. Effective osmolality >320 mOsm/kg (omit BUN: 2×[Na] + glucose/18) \n\nSEVERITY CLASSIFICATION: \nMILD HHS: osmolality 320-340, alert mental status \nMODERATE HHS: osmolality 340-360, lethargic/obtunded \nSEVERE HHS: osmolality >360, stupor/coma \n\nDISTINGUISH from DKA (may have overlap in 10-30% cases - 'mixed picture'): \n\nHHS:\n- Glucose >600 (often >1000) \n- pH >7.3 \n- HCO3 >15 \n- Negative/small ketones \n- Osmolality >320 \n- Type 2 DM \n- Slower onset (days-weeks) \n- Elderly (>65) \n- MORE dehydration (10L deficit) \n- MORE AMS/neuro sx \n- NORMAL respirations \n\nDKA:\n- Glucose >250 (usually 400-600) \n- pH <7.3 \n- HCO3 <15 \n- LARGE ketones \n- Osmolality <320 \n- Type 1 DM \n- Faster onset (hours-days) \n- Younger (<40) \n- LESS dehydration (3-6L deficit) \n- LESS AMS (unless severe) \n- Kussmaul respirations",
+
+            labs: [
+                "GLUCOSE: >600 mg/dL (diagnostic threshold), often 800-1200 mg/dL (much HIGHER than DKA). May be >2000 in extreme cases.",
+                "SERUM OSMOLALITY: >320 mOsm/kg (diagnostic threshold), often 340-380 mOsm/kg. Calculate: 2×[Na] + glucose/18 + BUN/2.8. Effective osmolality (omit BUN): 2×[Na] + glucose/18 should be >320. Osmolality >340 correlates with stupor/coma.",
+                "ARTERIAL BLOOD GAS (ABG): pH >7.30 (NO significant acidosis - KEY). Usually 7.30-7.45 (normal to mildly acidotic). If pH <7.30 → suspect mixed HHS + DKA or lactic acidosis from shock.",
+                "SERUM BICARBONATE (HCO3): >15 mEq/L (mild decrease from dehydration but NOT severe like DKA). Usually 15-25 mEq/L. If <15 → suspect mixed picture or lactic acidosis.",
+                "KETONES: NEGATIVE or SMALL. Serum β-hydroxybutyrate <3 mmol/L (usually <1). Urine ketones negative to small/trace (NOT moderate/large like DKA). KEY distinction from DKA.",
+                "ANION GAP: Usually NORMAL (8-12) or mildly elevated (<20). If anion gap >20 → suspect lactic acidosis (from shock), mixed HHS+DKA, or uremia. Calculate: Na - (Cl + HCO3).",
+                "SODIUM: Variable - LOW initially (pseudohyponatremia from hyperglycemia), then HIGH as corrected (HYPERNATREMIA common 145-165 mEq/L after correction). CORRECT Na for hyperglycemia: add 1.6 mEq/L for every 100 mg/dL glucose >100. Example: glucose 1000, Na 135 → corrected Na = 135 + 1.6×9 = 149 (hypernatremic).",
+                "POTASSIUM: Initially NORMAL or HIGH (4.5-6.5 mEq/L from shift out of cells) despite TOTAL BODY DEFICIT (4-6 mEq/kg deficit). Will DROP with insulin therapy and fluid resuscitation. MUST supplement K+ early.",
+                "BUN/CREATININE: Markedly elevated (BUN often 60-100, Cr 2-4) from prerenal AKI (severe dehydration). BUN:Cr ratio >20:1 (prerenal). Usually reversible with fluids but may progress to ATN if prolonged shock.",
+                "PHOSPHATE: Initially normal/high, then drops with insulin therapy. Total body deficit 1 mmol/kg. Severe hypophosphatemia (<1.0) can occur with treatment → muscle weakness, respiratory failure, hemolysis.",
+                "MAGNESIUM: Often low (total body deficit from osmotic diuresis). Check and replace if <1.5 mg/dL.",
+                "CBC: Leukocytosis (15,000-25,000 WBC) common even without infection (stress response, dehydration). If >25,000 or bandemia → infection likely. Hematocrit ELEVATED (50-60%) from hemoconcentration.",
+                "LACTATE: Check to rule out lactic acidosis from shock/sepsis. Elevated lactate (>4) worsens prognosis.",
+                "CRP, procalcitonin: If infection suspected (precipitant workup)."
+            ],
+
+            imaging: [
+                "CHEST X-RAY: Essential to evaluate for pneumonia (common precipitant). Also baseline before ICU admission.",
+                "HEAD CT (non-contrast): Indicated if focal neurologic deficits, coma, or seizures to RULE OUT stroke, intracranial hemorrhage, mass. Remember: HHS can MIMIC stroke with reversible focal deficits from hyperosmolality. If CT negative and deficits resolve with treatment → hyperosmolar effect, NOT stroke.",
+                "CT ABDOMEN/PELVIS: If abdominal pain or suspected intra-abdominal infection/acute abdomen (though less common than DKA).",
+                "ECG: Evaluate for MI (precipitant), ischemia. Check for peaked T waves if hyperkalemic. May show arrhythmias from electrolyte derangements.",
+                "Renal ultrasound: If AKI persists despite resuscitation (to rule out obstructive uropathy).",
+                "MRI brain: If focal deficits persist despite osmolality correction (true stroke vs hyperosmolar effect).",
+                "Venous doppler ultrasound: If DVT/PE suspected (HHS increases thrombosis risk from hyperviscosity, dehydration, immobility)."
+            ],
+
+            differentialDiagnosis: [
+                "Diabetic ketoacidosis (DKA): glucose >250, pH <7.3, LARGE ketones, anion gap >20, Type 1 DM. OVERLAP in 10-30% (mixed HHS+DKA). Key: HHS has NO significant acidosis, HIGHER glucose, HIGHER osmolality, Type 2 DM.",
+                "Stroke (CVA): focal neurologic deficits, altered mental status. BUT: HHS can MIMIC stroke with reversible deficits. Distinguish: check glucose, osmolality (elevated in HHS), head CT (negative in HHS unless concurrent stroke). HHS deficits resolve with osmolality correction.",
+                "Sepsis/septic shock: altered mental status, hypotension, leukocytosis, fever/hypothermia. Can COEXIST with HHS (infection is common precipitant). Check lactate, procalcitonin, blood cultures. Treat both simultaneously.",
+                "Hypoglycemia: altered mental status in diabetic. Distinguish: check glucose (LOW <70 vs HIGH >600 in HHS). Rapid test at bedside.",
+                "Uremia (acute or chronic kidney disease): altered mental status, elevated BUN/Cr, metabolic acidosis. Distinguish: HHS has profound hyperglycemia + hyperosmolality, NO ketones. Uremia may have uremic frost, pericardial rub, asterixis.",
+                "Hepatic encephalopathy: altered mental status, asterixis, elevated ammonia. Distinguish: liver disease history, normal glucose (unless hepatic glycogen depleted), elevated ammonia, hepatic stigmata.",
+                "Alcohol intoxication/withdrawal: altered mental status. History of alcohol use. BAC level. HHS has hyperglycemia + hyperosmolality.",
+                "Medication overdose: sedatives, opioids, antipsychotics. History, toxicology screen. HHS has metabolic derangements.",
+                "Hyponatremia/hypernatremia: altered mental status from severe electrolyte disturbance. Check CORRECTED sodium in HHS (pseudohyponatremia from hyperglycemia).",
+                "Meningitis/encephalitis: fever, headache, AMS, neck stiffness. LP if suspected (after CT if focal deficits). Can coexist as HHS precipitant.",
+                "Non-convulsive status epilepticus: altered mental status, seizure history. EEG shows seizure activity. HHS can cause seizures but also resolves with treatment."
+            ],
+
+            management: {
+                acute: [
+                    "SETTING: ICU admission for severe HHS (osmolality >340, AMS, hypotension, comorbidities). Step-down unit for mild HHS if alert and stable.",
+
+                    "MONITORING: Continuous cardiac monitoring (arrhythmia risk from electrolytes). Hourly vital signs, neurologic checks, urine output (Foley catheter). Fingerstick glucose every 1-2 hours. BMP every 2-4 hours (monitor K+, Na, osmolality). Calculate osmolality serially. Assess mental status (GCS) every 1-2 hours.",
+
+                    "**FIVE PILLARS OF HHS TREATMENT** (order is critical):",
+
+                    "**1. IV FLUID RESUSCITATION** (HIGHEST PRIORITY - more important than insulin in HHS):",
+                    "GOAL: Restore intravascular volume, improve renal perfusion, decrease osmolality. Average deficit 10L (100-200 mL/kg). AGGRESSIVE fluids crucial.",
+
+                    "INITIAL RESUSCITATION (first 1-2 hours): \n- 0.9% NORMAL SALINE (isotonic) at 15-20 mL/kg/hour (1-1.5L/hour for average adult) IF corrected Na NORMAL or LOW. Elderly/heart failure: slower rate 250-500 mL/hour to avoid pulmonary edema. \n- Goal: restore perfusion, stabilize BP, improve urine output >0.5 mL/kg/hour.",
+
+                    "SUBSEQUENT FLUIDS (after initial 1-2L): \n- If corrected Na HIGH (>150): switch to 0.45% HALF-NORMAL saline at 250-500 mL/hour. \n- If corrected Na NORMAL (135-150): continue 0.9% normal saline at 250-500 mL/hour. \n- If corrected Na LOW (<135): continue 0.9% normal saline.",
+
+                    "When GLUCOSE <300 mg/dL: \n- Switch to D5-0.45% saline (dextrose-containing fluid) at 150-250 mL/hour to prevent hypoglycemia while continuing to correct hyperosmolality. \n- GOAL GLUCOSE: 250-300 mg/dL (NOT <200 like DKA - osmolality correction is slower in HHS).",
+
+                    "FLUID GOALS: \n- Replace 50% of fluid deficit in first 12-24 hours (gradual correction to avoid cerebral edema, though less risk than DKA). \n- Osmolality should decrease by 3-8 mOsm/kg/hour (GRADUAL). \n- Total rehydration over 24-48 hours.",
+
+                    "**2. INSULIN THERAPY** (DELAYED and CAUTIOUS - start AFTER initial fluid resuscitation):",
+                    "TIMING: DO NOT start insulin immediately. Give 1-2L IV fluids FIRST to restore perfusion and stabilize patient. Insulin without adequate fluids → vascular collapse (worsens hypotension by shifting fluid intracellularly).",
+
+                    "BEFORE insulin, CHECK POTASSIUM: \n- If K+ <3.3 mEq/L → HOLD insulin, give K+ replacement until K+ >3.3 (insulin drives K+ into cells → life-threatening hypokalemia → arrhythmia). \n- If K+ 3.3-5.5 → safe to start insulin, give K+ supplementation with fluids. \n- If K+ >5.5 → start insulin, withhold K+ replacement initially.",
+
+                    "INSULIN REGIMEN (IV continuous infusion): \n- OPTIONAL BOLUS: 0.1 units/kg IV bolus (can SKIP bolus in HHS - not needed like DKA). Many protocols skip bolus in HHS. \n- CONTINUOUS INFUSION: 0.1 units/kg/hour IV (same as DKA but patients often MORE insulin sensitive). \n- Example: 70kg patient → 7 units/hour.",
+
+                    "INSULIN ADJUSTMENTS: \n- If glucose NOT decreasing 50-70 mg/dL/hour → increase insulin by 1 unit/hour every hour. \n- If glucose decreasing TOO fast (>100 mg/dL/hour) → decrease insulin. \n- GOAL: decrease glucose 50-70 mg/dL/hour (NOT faster - risk cerebral edema).",
+
+                    "When GLUCOSE <300 mg/dL: \n- DECREASE insulin to 0.05-0.1 units/kg/hour (3-7 units/hour for 70kg). \n- Add D5 to fluids (D5-0.45% saline). \n- MAINTAIN glucose 250-300 mg/dL until osmolality <315 and patient alert (unlike DKA where goal is 150-200).",
+
+                    "**3. POTASSIUM REPLACEMENT** (essential - all HHS patients have K+ deficit):",
+                    "ALL patients have TOTAL BODY K+ DEFICIT (4-6 mEq/kg, 300-600 mEq total) even if serum K+ normal/high initially. Insulin and fluids will SHIFT K+ into cells → life-threatening hypokalemia.",
+
+                    "K+ REPLACEMENT PROTOCOL: \n- If K+ <3.3 → HOLD insulin, give 20-40 mEq/hour K+ until K+ >3.3 (high-risk cardiac monitoring). \n- If K+ 3.3-4.0 → give 40 mEq K+ per liter IV fluid (aggressive replacement). \n- If K+ 4.0-5.5 → give 20-30 mEq K+ per liter IV fluid. \n- If K+ >5.5 → withhold K+, check every 2 hours (will drop with insulin/fluids).",
+
+                    "CHECK K+ every 2-4 hours. Adjust replacement based on levels. Most require 100-200 mEq K+ in first 24 hours.",
+
+                    "**4. IDENTIFY AND TREAT PRECIPITANT** (critical for preventing recurrence):",
+                    "Common precipitants: \n- INFECTION (30-60%): pneumonia (CXR, antibiotics), UTI (UA, urine culture, antibiotics), sepsis (blood cultures, broad-spectrum abx). \n- MI/ACS: ECG, troponin, cardiology consult, antiplatelet therapy. \n- STROKE: head CT/MRI, neurology consult (but remember HHS can mimic stroke). \n- Medication non-adherence: reinforce importance, diabetes education. \n- NEW diagnosis T2DM: long-term diabetes management plan.",
+
+                    "**5. PHOSPHATE AND MAGNESIUM REPLACEMENT** (if deficient):",
+                    "PHOSPHATE: drops with insulin therapy. Check levels. If <1.0 mg/dL → give potassium phosphate 20-30 mmol over 6 hours (risk rhabdomyolysis, respiratory failure, hemolysis if severe). Monitor Ca (phosphate lowers Ca).",
+
+                    "MAGNESIUM: check level. If <1.5 mg/dL → give 2-4g MgSO4 IV over 4-6 hours.",
+
+                    "ADJUNCTS:",
+                    "DVT PROPHYLAXIS: subcutaneous heparin 5000 units q8-12h OR enoxaparin 40mg daily (HHS = HIGH thrombosis risk from dehydration, hyperviscosity, immobility, elderly).",
+
+                    "FOLEY CATHETER: place to monitor urine output accurately (goal >0.5 mL/kg/hour, ideally 1-2 mL/kg/hour with fluids).",
+
+                    "NASOGASTRIC TUBE: if persistent vomiting or altered mental status (aspiration risk).",
+
+                    "AVOID: \n- Bicarbonate (NOT indicated - pH >7.3, NO significant acidosis in HHS). \n- Hypotonic fluids too early (risk cerebral edema). \n- Insulin before adequate fluid resuscitation (vascular collapse).",
+
+                    "HHS RESOLUTION CRITERIA (all must be met to stop IV insulin): \n1. Glucose <250 mg/dL (controlled) \n2. Serum osmolality <315 mOsm/kg (normalized) \n3. Patient ALERT and able to eat (mental status normalized) \n4. Volume status restored (urine output adequate, BP stable, no tachycardia)",
+
+                    "TRANSITION TO SUBCUTANEOUS INSULIN: \n- When resolution criteria met AND patient able to eat → give FIRST dose subcutaneous insulin (basal-bolus or basal + correction), continue IV insulin for 1-2 hours OVERLAP (prevent rebound hyperglycemia), then stop IV insulin. \n- If no prior insulin: start basal-bolus regimen 0.5-0.8 units/kg/day total (lower than T1DM). Basal (glargine/detemir) 50%, rapid-acting (lispro/aspart) 50% divided pre-meals. \n- If on home insulin: restart home regimen (may need higher dose - reassess as outpatient).",
+
+                    "DISPOSITION: \n- ICU until osmolality <320, mental status improved, hemodynamically stable. Then transfer to floor. \n- Hospital stay typically 3-7 days (longer than DKA due to severity, comorbidities, precipitant treatment)."
+                ],
+                chronic: [
+                    "DIABETES MANAGEMENT: HHS indicates SEVERE uncontrolled T2DM. Most will require INSULIN long-term (many previously on oral agents alone).",
+
+                    "INSULIN THERAPY: Start basal-bolus insulin regimen 0.5-0.8 units/kg/day total. Basal insulin (glargine, detemir, degludec) once daily + rapid-acting insulin (lispro, aspart, glulisine) before meals. Titrate to goal glucose 80-130 fasting, <180 postprandial.",
+
+                    "ORAL AGENTS: May add/continue metformin (if no contraindication - check kidney function post-HHS), GLP-1 agonist (cardiovascular benefit), SGLT2 inhibitor (if eGFR adequate - CAUTION: can precipitate DKA/HHS in insulin deficiency). Many will need insulin + oral agents.",
+
+                    "GLYCEMIC GOALS: HbA1c <7% for most (individualize based on age, comorbidities). Check HbA1c every 3 months until stable, then every 6 months.",
+
+                    "DIABETES EDUCATION: Essential for HHS survivors. Diabetes self-management education and support (DSMES). Teach: glucose monitoring (check fasting + pre-meal), insulin administration, hypoglycemia recognition/treatment, sick day management (KEY - prevent recurrence).",
+
+                    "SICK DAY MANAGEMENT (CRITICAL - prevent recurrence): \n- NEVER stop insulin (even if not eating - this precipitates HHS). \n- Check glucose every 2-4 hours if ill. \n- Stay hydrated (drink 8oz water every hour if possible). \n- Call provider if glucose >300×2, persistent vomiting, unable to tolerate liquids, signs of dehydration. \n- Have low threshold to go to ED if similar symptoms as HHS presentation.",
+
+                    "COMPLICATION SCREENING (same as all diabetes): \n- Annual: dilated eye exam (retinopathy), urine albumin-to-creatinine ratio (nephropathy), monofilament foot exam (neuropathy). \n- At each visit: foot inspection, BP check. \n- Lipid panel annually, statin therapy (ASCVD risk reduction). \n- Aspirin 81-162mg daily if ASCVD or high risk.",
+
+                    "CARDIOVASCULAR RISK REDUCTION: HHS patients often have CVD. \n- Statin therapy (high-intensity - atorvastatin 40-80mg or rosuvastatin 20-40mg). \n- BP control <130/80 (ACE-I or ARB preferred for nephropathy protection). \n- GLP-1 agonist (semaglutide, dulaglutide) or SGLT2 inhibitor (empagliflozin, dapagliflozin) for proven cardiovascular benefit in T2DM.",
+
+                    "AVOID PRECIPITANTS: \n- Minimize steroids (if needed for other conditions, increase insulin significantly). \n- Caution with thiazide/loop diuretics (dehydration risk - ensure adequate hydration). \n- Avoid antipsychotics that worsen hyperglycemia if possible (olanzapine, clozapine). \n- Medication adherence counseling.",
+
+                    "ENSURE WATER ACCESS: For nursing home residents, bedridden patients - ensure adequate hydration, regular drinks offered, address barriers to self-hydration. Family education.",
+
+                    "TREAT UNDERLYING CONDITIONS: Address comorbidities that precipitated HHS - infection treatment completion, post-MI care, post-stroke rehabilitation, depression/dementia management.",
+
+                    "FOLLOW-UP: \n- Endocrinology referral (all HHS patients - complex diabetes requiring specialist management). \n- PCP follow-up within 1-2 weeks post-discharge (medication reconciliation, glucose monitoring). \n- Endocrine follow-up within 2-4 weeks (insulin titration, long-term management).",
+
+                    "SOCIAL SUPPORT: Home health nursing (insulin teaching, glucose monitoring), social work (ensure housing, medication access), visiting nurse (for elderly, ensure safety, medication adherence).",
+
+                    "RECURRENCE PREVENTION: 50-70% recurrence risk if precipitants not addressed. Education on early warning signs (polyuria, weakness, confusion), sick day rules, importance of hydration, medication adherence."
+                ]
+            },
+
+            complications: [
+                "MORTALITY: 10-20% (2-4× higher than DKA). Risk factors for death: age >65, severe comorbidities (heart failure, CKD, CAD), osmolality >350, hypotension/shock, severe precipitant (sepsis, MI), delayed treatment.",
+                "THROMBOTIC EVENTS (10-25%): STROKE (arterial thrombosis), MI, mesenteric ischemia, DVT/PE. Mechanism: severe dehydration → hyperviscosity + hypercoagulability + immobility. Prophylactic heparin reduces risk.",
+                "ACUTE KIDNEY INJURY (50-75%): Prerenal AKI from severe hypovolemia. Usually reversible with fluids. Risk progression to ATN if prolonged shock. May require temporary dialysis if severe (rare). Long-term CKD risk if recurrent episodes.",
+                "CEREBRAL EDEMA (RARE in adults, <1%, more common in children): Rapid correction of osmolality (>10 mOsm/kg/hour) → water shifts into brain → edema. Prevent: gradual osmolality correction (3-8 mOsm/kg/hour). Symptoms: headache, altered mental status worsening despite treatment, papilledema, Cushing triad (bradycardia, hypertension, irregular respirations). Treatment: hypertonic saline 3% 250mL bolus, mannitol 1g/kg, intubation, neurosurgery consult.",
+                "HYPOKALEMIA (80-90% during treatment): Insulin + fluids shift K+ into cells. Can cause life-threatening arrhythmias (ventricular tachycardia, torsades de pointes, cardiac arrest). Prevent: aggressive K+ replacement, monitor q2-4h. Treatment: IV KCl, hold insulin if K+ <3.3.",
+                "HYPOGLYCEMIA (10-20%): From insulin therapy, especially if overly aggressive. More common if poor oral intake. Prevent: glucose monitoring q1-2h, decrease insulin when glucose <300, add D5 to fluids. Treatment: D50W IV.",
+                "HYPOPHOSPHATEMIA (<1.0 mg/dL in 50%): During treatment (insulin shifts phosphate into cells). Severe (<1.0) → rhabdomyolysis, respiratory muscle weakness, hemolysis, cardiac dysfunction. Replace if <1.0.",
+                "RHABDOMYOLYSIS (rare): From prolonged immobility, severe hypophosphatemia, seizures. Elevated CK, myoglobin. Can worsen AKI. Treatment: aggressive hydration.",
+                "ARRHYTHMIAS: From electrolyte disturbances (hypokalemia, hypomagnesemia, hypocalcemia). Monitor cardiac rhythm continuously in ICU.",
+                "PULMONARY EDEMA (5-10%): From aggressive IV fluid resuscitation, especially in elderly with heart failure. Prevent: cautious fluid rate in HF (250-500 mL/hour), monitor lung exam. Treatment: diuretics, oxygen.",
+                "SEIZURES (10-25% at presentation): From hyperosmolality. Usually resolve with osmolality correction. If persistent → workup for other causes (stroke, meningitis, metabolic).",
+                "ASPIRATION PNEUMONIA: In patients with altered mental status, vomiting. Prevent: NPO until alert, NG tube if needed. Treatment: antibiotics.",
+                "RECURRENCE: 50-70% if precipitants not addressed. Prevent: diabetes education, sick day rules, medication adherence, treat underlying conditions."
+            ],
+
+            prognosis: "MORTALITY: 10-20% (much higher than DKA 1-5%). Higher in: age >65 (mortality 20-30%), severe comorbidities, osmolality >350 mOsm/kg, sepsis/severe infection, hypotension/shock, nursing home residents. Mortality usually from precipitant (sepsis, MI, stroke) rather than HHS itself. \n\nRECOVERY: Most survivors recover fully if treated promptly. Neurologic deficits (focal deficits, seizures) typically RESOLVE completely as osmolality corrects (confirm NOT true stroke). Hospital stay typically 3-7 days (longer than DKA). ICU stay 1-3 days. \n\nRECURRENCE RISK: 50-70% within 1 year if precipitants not addressed and diabetes poorly controlled. Prevention: intensive diabetes management, education on sick day rules, medication adherence, ensure hydration access (especially nursing home, elderly). \n\nLONG-TERM: HHS indicates SEVERE uncontrolled T2DM. Most require lifelong insulin therapy (often previously on oral agents alone - HHS is 'wake-up call'). Increased risk of micro- and macrovascular complications (retinopathy, nephropathy, neuropathy, CVD, stroke). Aggressive diabetes management and cardiovascular risk reduction essential. \n\nFUNCTIONAL OUTCOMES: Elderly patients may have prolonged recovery, deconditioning, need for rehabilitation or skilled nursing facility. Recurrent HHS episodes increase dementia risk (repeated hyperosmolar insults). \n\nPREVENTION KEY: With proper diabetes education, medication adherence, sick day management, and early recognition of warning signs, recurrence can be prevented. Endocrinology follow-up essential for all HHS survivors.",
+
+            clinicalPearls: [
+                "HHS mnemonic: HIGH (High glucose >600, High osmolality >320), NO (NO ketoacidosis pH >7.3, NO Kussmaul breathing), T2 (Type 2 DM, not T1), SLOW (Slower onset days-weeks), OLD (Older age >65), MORE (MORE dehydration 10L, MORE AMS, MORE mortality 10-20%).",
+                "KEY DISTINCTION: HHS vs DKA = NO ketoacidosis (enough insulin to suppress ketogenesis but NOT enough to control glucose). HIGHER glucose (>600 vs >250). HIGHER osmolality (>320 vs <320). Type 2 DM (vs Type 1). Elderly (vs young). SLOWER onset.",
+                "MIXED PICTURE (10-30% of cases): Patients can have BOTH HHS and DKA features (euglycemic DKA on SGLT2 inhibitor, T1DM with extreme hyperglycemia, T2DM with starvation ketosis). If pH <7.3 + ketones + glucose >600 + osmolality >320 → treat as BOTH (aggressive fluids + insulin).",
+                "FLUIDS FIRST, INSULIN SECOND: Unlike DKA where insulin can start immediately, HHS requires 1-2L IV fluids FIRST before insulin (prevent vascular collapse). Fluids alone will lower glucose 25-50 mg/dL/hour initially.",
+                "OSMOLALITY CALCULATION: 2×[Na] + glucose/18 + BUN/2.8. Remember to use CORRECTED Na: add 1.6 mEq/L for every 100 mg/dL glucose >100. Effective osmolality (most important): 2×[Na] + glucose/18 (omit BUN - doesn't cross BBB).",
+                "SLOWER CORRECTION IN HHS: DKA resolves in 12-24 hours. HHS takes 24-48 hours (slower osmolality correction to prevent cerebral edema). Don't rush - patience is key.",
+                "GLUCOSE GOAL IN HHS: Maintain 250-300 mg/dL (NOT 150-200 like DKA) until osmolality <315 and patient alert. Preventing rebound hyperosmolality more important than tight glucose control acutely.",
+                "HHS CAN MIMIC STROKE: Hyperosmolality causes reversible focal neurologic deficits (hemiparesis, aphasia). ALWAYS check glucose, osmolality in elderly with 'stroke' symptoms. Head CT negative, deficits resolve with HHS treatment → NOT true stroke. But stroke can also be HHS precipitant - careful assessment needed.",
+                "POTASSIUM IS PRIORITY: ALL HHS patients have massive total body K+ deficit (300-600 mEq) even if serum K+ normal/high. Aggressive replacement essential. Check before insulin, monitor q2-4h. Most common preventable complication = hypokalemia arrhythmia.",
+                "THROMBOSIS RISK: HHS = HIGH thrombotic risk (dehydration, hyperviscosity, elderly, immobility). ALWAYS give DVT prophylaxis (subcutaneous heparin or enoxaparin). Screen for stroke, MI, DVT/PE.",
+                "INFECTION IS #1 PRECIPITANT: 30-60% of HHS cases. Always search for infection source - CXR (pneumonia), UA/culture (UTI), blood cultures (sepsis), wound cultures (cellulitis). Broad-spectrum antibiotics if sepsis suspected (don't wait for culture results).",
+                "SICK DAY RULES PREVENT RECURRENCE: Teach patients NEVER stop insulin when ill (this is how HHS happens). Check glucose q2-4h if sick. Drink fluids aggressively. Call provider early if glucose >300×2 or unable to drink. Prevention education is LIFE-SAVING.",
+                "NURSING HOME RESIDENTS AT HIGH RISK: Cognitive impairment, impaired thirst, limited water access, inadequate monitoring. Ensure adequate hydration protocols, regular glucose monitoring, staff education. Family involvement crucial.",
+                "MORTALITY CORRELATES WITH OSMOLALITY: Osmolality <320 → mortality 5%. Osmolality 320-340 → 10%. Osmolality >340 → 20-30%. Every 10 mOsm/kg increase → mortality increases. Prompt recognition and treatment saves lives.",
+                "ENDOCRINE FOLLOW-UP MANDATORY: ALL HHS patients need endocrinology referral. This is severe, life-threatening diabetes complication indicating need for specialist management. Most will need insulin therapy lifelong (wake-up call for inadequate diabetes control).",
+                "RECURRENCE = FAILURE OF PREVENTION: 50-70% recurrence if precipitants not addressed. Every HHS survivor needs: diabetes education, sick day management plan, medication adherence support, treatment of underlying conditions, ensure water access. Recurrent HHS → increased mortality, cognitive decline, poor quality of life."
+            ]
         }
     },
 
