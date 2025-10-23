@@ -777,23 +777,99 @@ const drugs = [
         "pharmacologicClass": "dpp-4-inhibitors",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Inhibit dipeptidyl peptidase-4, increase incretin levels.",
-        "features": "Weight neutral, low hypoglycemia risk.",
-        "clinicalChoice": "T2DM add-on therapy.",
+        "mechanism": "Selectively inhibits dipeptidyl peptidase-4 (DPP-4) enzyme → prevents degradation of incretin hormones (GLP-1 and GIP) → prolonged incretin activity → glucose-dependent insulin secretion from beta cells and suppression of glucagon from alpha cells. Glucose-dependent action minimizes hypoglycemia risk.",
+        "features": "Weight neutral, low hypoglycemia risk. First DPP-4 inhibitor approved (2006).",
+        "pharmacokinetics": {
+            "onset": "Immediate DPP-4 inhibition; glucose effects within hours",
+            "peak": "Plasma concentration peaks at 1-4 hours",
+            "duration": "24 hours (once-daily dosing)",
+            "halfLife": "12-14 hours",
+            "metabolism": "Minimal metabolism (~80% excreted unchanged)",
+            "excretion": "Primarily renal (87% unchanged in urine via active tubular secretion)"
+        },
         "indications": [
-            "Type 2 Diabetes"
+            "Type 2 Diabetes (as monotherapy or combination with metformin, sulfonylurea, TZD, insulin)"
         ],
+        "clinicalChoice": "Good second or third-line agent for T2DM. Choose sitagliptin when: (1) patient needs weight-neutral option (not losing weight like GLP-1, not gaining like insulin/SU/TZD), (2) low hypoglycemia risk desired, (3) oral medication preferred over injectable GLP-1. REQUIRES renal dose adjustment (disadvantage vs linagliptin in CKD).",
+        "dosing": {
+            "typical": "100 mg once daily, with or without food. Can take any time of day.",
+            "renal": "CrCl ≥50: 100 mg daily. CrCl 30-49: 50 mg daily. CrCl <30 or ESRD: 25 mg daily. (Renal dose adjustment REQUIRED - major difference from linagliptin)",
+            "hepatic": "No dose adjustment needed (not hepatically metabolized)",
+            "elderly": "No dose adjustment for age alone, but monitor renal function (age-related decline)"
+        },
         "contraindications": [
             "Type 1 Diabetes",
-            "Diabetic Ketoacidosis"
+            "Diabetic ketoacidosis",
+            "History of serious hypersensitivity to sitagliptin (anaphylaxis, angioedema, Stevens-Johnson syndrome)"
         ],
-        "sideEffects": [
-            "Upper respiratory infections",
-            "Headache",
-            "Pancreatitis (rare)"
+        "sideEffects": {
+            "common": [
+                "Upper respiratory tract infections (5-6%)",
+                "Nasopharyngitis",
+                "Headache (5%)"
+            ],
+            "serious": [
+                "Pancreatitis (rare: 0.1%, but serious - discontinue if suspected)",
+                "Severe hypersensitivity reactions (anaphylaxis, angioedema, Stevens-Johnson syndrome - rare)",
+                "Severe arthralgia/joint pain (can be disabling, resolves on discontinuation)"
+            ],
+            "rare": [
+                "Acute renal failure (rare, usually in setting of volume depletion)",
+                "Bullous pemphigoid (rare autoimmune blistering disorder)"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Insulin or insulin secretagogues (sulfonylureas): increased hypoglycemia risk when combined (reduce insulin/SU dose)",
+                "Digoxin: sitagliptin slightly increases digoxin levels (monitor, usually not clinically significant)",
+                "P-glycoprotein inhibitors: may increase sitagliptin levels (not clinically significant)"
+            ],
+            "drugDisease": [
+                "Renal impairment: dose adjustment required (see dosing section)",
+                "Pancreatitis history: use with caution (may increase risk of recurrence)",
+                "Heart failure: neutral to possible small benefit (TECOS trial showed CV safety)"
+            ],
+            "drugFood": [
+                "Can take with or without food (no food interactions)"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose and HbA1c every 3 months",
+                "Renal function (serum creatinine/eGFR) at baseline and periodically (for dose adjustment)",
+                "Lipase/amylase if pancreatitis suspected (abdominal pain)"
+            ],
+            "vitals": [
+                "Weight (should be stable - weight-neutral drug)"
+            ],
+            "symptoms": [
+                "Abdominal pain (pancreatitis warning sign)",
+                "Severe joint pain (arthralgia - discontinue if disabling)",
+                "Skin reactions (rash, blistering)"
+            ],
+            "frequency": "Glucose monitoring as clinically indicated. Check renal function annually or more often if declining."
+        },
+        "pregnancy": {
+            "category": "Category B (no human data)",
+            "considerations": "Limited data in pregnancy. Insulin is preferred for diabetes in pregnancy. Use only if benefit outweighs risk."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'DPP-4 inhibitor, weight-neutral, low hypoglycemia risk'",
+            "Brand name: Januvia (very commonly tested brand name)",
+            "Suffix '-gliptin' identifies all DPP-4 inhibitors",
+            "First-in-class DPP-4 inhibitor approved in 2006",
+            "Mechanism: glucose-DEPENDENT insulin release → no hypoglycemia as monotherapy (unlike sulfonylureas)",
+            "Weight-neutral: major advantage over insulin (gain), sulfonylureas (gain), TZDs (gain); but no weight loss like GLP-1",
+            "REQUIRES renal dose adjustment (unlike linagliptin) - reduce to 50 mg if CrCl 30-49, 25 mg if CrCl <30",
+            "Pancreatitis: RARE but classic board side effect. Discontinue if suspected (abdominal pain, elevated lipase)",
+            "Severe arthralgia: FDA warning 2015 - can cause disabling joint pain (reversible on discontinuation)",
+            "Classic vignette: T2DM on metformin, HbA1c 8.5%, wants to avoid weight gain and injections → add sitagliptin",
+            "Common wrong answer: 'Use same dose in all patients' - NO, must adjust for renal function",
+            "TECOS trial (2015): CV safety demonstrated (non-inferior to placebo) - safe in patients with CV disease",
+            "Modest efficacy: reduces HbA1c by 0.5-0.8% (similar to DPP-4 class, less than metformin or GLP-1)",
+            "Combination: often combined with metformin (Janumet) for convenience"
         ],
-        "interactions": "Few significant interactions.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {
@@ -802,22 +878,100 @@ const drugs = [
         "pharmacologicClass": "dpp-4-inhibitors",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "Inhibit dipeptidyl peptidase-4, increase incretin levels.",
-        "features": "Hepatic elimination, safe in renal disease.",
-        "clinicalChoice": "T2DM with kidney disease.",
+        "mechanism": "Selectively and reversibly inhibits dipeptidyl peptidase-4 (DPP-4) enzyme → prevents degradation of incretin hormones (GLP-1 and GIP) → prolonged incretin activity → glucose-dependent insulin secretion and reduced glucagon secretion. Glucose-dependent mechanism minimizes hypoglycemia risk.",
+        "features": "UNIQUE non-renal elimination among DPP-4 inhibitors. NO dose adjustment needed in ANY stage of CKD.",
+        "pharmacokinetics": {
+            "onset": "Immediate DPP-4 inhibition; glucose effects within hours",
+            "peak": "Plasma concentration peaks at 1.5 hours",
+            "duration": "24 hours (once-daily dosing)",
+            "halfLife": "~12 hours (effective half-life >100 hours due to DPP-4 binding)",
+            "metabolism": "Not significantly metabolized (minimal CYP involvement)",
+            "excretion": "Primarily enterohepatic elimination: 85% fecal (via bile), only 5% renal. UNIQUE among DPP-4 inhibitors."
+        },
         "indications": [
-            "Type 2 Diabetes"
+            "Type 2 Diabetes (as monotherapy or combination with metformin, sulfonylurea, TZD, insulin)"
         ],
+        "clinicalChoice": "PREFERRED DPP-4 inhibitor in chronic kidney disease (any stage, including ESRD and dialysis). Choose linagliptin when: (1) patient has renal impairment (no dose adjustment needed - major advantage), (2) need weight-neutral oral agent, (3) low hypoglycemia risk desired. Best DPP-4i for CKD patients.",
+        "dosing": {
+            "typical": "5 mg once daily, with or without food. Can take any time of day.",
+            "renal": "NO dose adjustment needed for ANY degree of renal impairment, including ESRD and dialysis. (UNIQUE advantage - only DPP-4 inhibitor that doesn't require renal dosing)",
+            "hepatic": "No dose adjustment needed (not hepatically metabolized)",
+            "elderly": "No dose adjustment needed"
+        },
         "contraindications": [
-            "Type 1 Diabetes"
+            "Type 1 Diabetes",
+            "Diabetic ketoacidosis",
+            "History of serious hypersensitivity to linagliptin (anaphylaxis, angioedema)"
         ],
-        "sideEffects": [
-            "Upper respiratory infections",
-            "Headache",
-            "Pancreatitis (rare)"
+        "sideEffects": {
+            "common": [
+                "Nasopharyngitis (5-7%)",
+                "Upper respiratory tract infections",
+                "Headache"
+            ],
+            "serious": [
+                "Pancreatitis (rare: <0.1% - discontinue if suspected)",
+                "Severe hypersensitivity reactions (anaphylaxis, angioedema, exfoliative skin conditions - rare)",
+                "Severe arthralgia (disabling joint pain - FDA warning, reversible)"
+            ],
+            "rare": [
+                "Bullous pemphigoid (rare autoimmune blistering disorder)",
+                "Rhabdomyolysis (very rare)"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Insulin or insulin secretagogues (sulfonylureas): increased hypoglycemia risk when combined (reduce insulin/SU dose)",
+                "Strong P-glycoprotein/CYP3A4 inducers (rifampin): decrease linagliptin levels by 40% (usually still effective)",
+                "Ritonavir: increases linagliptin levels 2-fold (no dose adjustment needed, well-tolerated)"
+            ],
+            "drugDisease": [
+                "Renal impairment: NO dose adjustment needed (safe in all stages of CKD, dialysis, ESRD)",
+                "Pancreatitis history: use with caution",
+                "Heart failure: CARMELINA trial showed CV safety (neutral effect)"
+            ],
+            "drugFood": [
+                "Can take with or without food (no food interactions)"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose and HbA1c every 3 months",
+                "Renal function for disease monitoring (NOT for dose adjustment - none needed)",
+                "Lipase/amylase if pancreatitis suspected (abdominal pain)"
+            ],
+            "vitals": [
+                "Weight (should be stable - weight-neutral)"
+            ],
+            "symptoms": [
+                "Abdominal pain (pancreatitis warning)",
+                "Severe joint pain (arthralgia - discontinue if disabling)",
+                "Skin reactions (rash, blistering)"
+            ],
+            "frequency": "Glucose monitoring as clinically indicated. No special monitoring required."
+        },
+        "pregnancy": {
+            "category": "Category B (no human data)",
+            "considerations": "Limited data in pregnancy. Insulin is preferred for diabetes in pregnancy. Use only if benefit outweighs risk."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'DPP-4 inhibitor safe in CKD' or 'no renal dose adjustment'",
+            "Brand name: Tradjenta",
+            "UNIQUE among DPP-4 inhibitors: primarily non-renal excretion (85% fecal) → NO dose adjustment in ANY stage of CKD",
+            "ONLY DPP-4 inhibitor approved for use in ESRD and dialysis without dose adjustment",
+            "Preferred DPP-4 inhibitor in chronic kidney disease (sitagliptin, saxagliptin, alogliptin all require renal dose adjustment)",
+            "Mechanism: glucose-DEPENDENT insulin release → no hypoglycemia as monotherapy",
+            "Weight-neutral: advantage over insulin, sulfonylureas, TZDs (which cause weight gain)",
+            "Pancreatitis: RARE but classic board complication - discontinue if abdominal pain/elevated lipase",
+            "Severe arthralgia: FDA warning 2015 - can cause severe, disabling joint pain (reversible on discontinuation)",
+            "Classic vignette: T2DM on metformin, HbA1c 8.5%, CKD stage 4 (eGFR 20) → add linagliptin (NO dose adjustment needed)",
+            "Common wrong answer: 'Reduce dose in CKD' - NO! Linagliptin needs NO dose adjustment in renal disease",
+            "CARMELINA trial (2019): CV safety demonstrated in high-risk patients with CKD",
+            "Modest efficacy: reduces HbA1c by 0.5-0.8% (similar to DPP-4 class)",
+            "Combination: often combined with metformin (Jentadueto) or empagliflozin (Glyxambi)",
+            "Mnemonic: 'LinaGLIPtin Loves Low GFR' (safe in low GFR/kidney disease)"
         ],
-        "interactions": "Few significant interactions.",
-        "interactionDetails": "",
         "pageType": "drug"
     },
     {

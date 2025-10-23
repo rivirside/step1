@@ -341,7 +341,66 @@ GLIMEPIRIDE (Amaryl):
             "sitagliptin",
             "linagliptin"
         ],
-        "pageType": "pharmacologic-class"
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "DPP-4 inhibitors (also called gliptins) work by inhibiting the enzyme dipeptidyl peptidase-4, which normally degrades incretin hormones (GLP-1 and GIP). By preventing incretin breakdown, these drugs enhance glucose-dependent insulin secretion and suppress glucagon. Second or third-line therapy for Type 2 DM. Well-tolerated with favorable side effect profile - no hypoglycemia, weight-neutral, oral administration.",
+            "clinicalApproach": [
+                "Second or third-line therapy (add to metformin or metformin + sulfonylurea)",
+                "Glucose-DEPENDENT insulin release - no hypoglycemia as monotherapy",
+                "Weight-neutral (unlike sulfonylureas, TZDs, insulin)",
+                "Oral administration (unlike GLP-1 agonists which are injectable)",
+                "Mild to moderate efficacy (HbA1c reduction 0.5-0.8%)",
+                "Generally well-tolerated with few drug interactions",
+                "Good option for patients concerned about hypoglycemia or weight gain",
+                "Choose between drugs based on renal function: linagliptin safe in CKD (no adjustment), sitagliptin requires adjustment"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Oral, well absorbed. Can take with or without food.",
+                "distribution": "Variable protein binding depending on agent.",
+                "metabolism": "Sitagliptin: minimally metabolized (79% unchanged). Linagliptin: primarily non-renal elimination.",
+                "excretion": "Sitagliptin: primarily renal (adjust dose in CKD). Linagliptin: primarily fecal/biliary (no adjustment in CKD)."
+            },
+            "comparison": {
+                "title": "Comparison of DPP-4 Inhibitors",
+                "description": "Choose based primarily on renal function",
+                "content": `
+SITAGLIPTIN (Januvia):
+- Half-life: 12 hours
+- Dosing: Once daily
+- Excretion: Renal (79% unchanged)
+- Renal adjustment: YES - reduce dose if eGFR <50
+- Use: First-line DPP-4i if normal renal function
+
+LINAGLIPTIN (Tradjenta):
+- Half-life: >100 hours (extensive tissue binding)
+- Dosing: Once daily
+- Excretion: Primarily fecal/biliary (non-renal)
+- Renal adjustment: NO - safe at all levels of CKD
+- Use: Preferred DPP-4i in chronic kidney disease
+`
+            },
+            "monitoring": [
+                "Blood glucose and HbA1c every 3 months",
+                "Renal function (especially for sitagliptin - adjust dose if eGFR declines)",
+                "Signs/symptoms of pancreatitis (rare but serious - abdominal pain)",
+                "Joint pain (rare - arthralgia reported)"
+            ],
+            "contraindications": [
+                "Type 1 Diabetes (not effective without endogenous insulin)",
+                "History of pancreatitis (relative contraindication - use caution)"
+            ],
+            "clinicalPearls": [
+                "Suffix: -gliptin (sitaGLIPTIN, linaGLIPTIN, saxagliptin, alogliptin)",
+                "Mechanism mnemonic: 'DPP-4 inhibitors preserve Incretins' (GLP-1, GIP)",
+                "Step 1 buzzword: 'weight-neutral' or 'no hypoglycemia as monotherapy'",
+                "Incretin effect: GLP-1 and GIP enhance GLUCOSE-DEPENDENT insulin secretion → no hypo when glucose normal",
+                "Key advantage: Oral (vs injectable GLP-1 agonists), weight-neutral (vs sulfonylureas/TZDs/insulin)",
+                "Pancreatitis: rare (0.1%) but FDA warning - discontinue if suspected",
+                "Linagliptin vs Sitagliptin: 'LinaGLIPTIN = liver/gut excretion' (safe in CKD, no adjustment)",
+                "Classic vignette: T2DM on metformin, eGFR 25, add DPP-4i → choose linagliptin (safe in CKD)",
+                "Combination products: Janumet (sitagliptin + metformin), common in practice"
+            ]
+        }
     },
     {
         "id": "glp-1-receptor-agonists",
