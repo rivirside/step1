@@ -219,6 +219,138 @@ ULTRA-LONG (Degludec):
         "pageType": "pharmacologic-class"
     },
     {
+        "id": "amylin-analogs",
+        "name": "Amylin Analogs",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Synthetic analog of amylin (hormone co-secreted with insulin). Slows gastric emptying, suppresses postprandial glucagon, and promotes satiety.",
+        "sideEffects": [
+            "Nausea",
+            "Hypoglycemia (when combined with insulin)",
+            "Injection site reactions"
+        ],
+        "interactions": "Delays absorption of oral medications due to delayed gastric emptying.",
+        "interactionDetails": "",
+        "drugIds": [
+            "pramlintide"
+        ],
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "Amylin is a hormone normally co-secreted with insulin from pancreatic beta cells. Pramlintide is a synthetic analog used as adjunct therapy with insulin in Type 1 and Type 2 DM. It complements insulin by addressing postprandial glucose spikes through multiple mechanisms.",
+            "clinicalApproach": [
+                "Only used as adjunct to insulin therapy (never alone)",
+                "Primarily targets postprandial hyperglycemia",
+                "Reduces insulin requirements by 30-50% (must reduce mealtime insulin when starting to avoid hypoglycemia)",
+                "Benefits: weight loss (unlike insulin), improved postprandial glucose control",
+                "Reserved for patients not at goal despite optimized insulin therapy"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Subcutaneous injection. Rapid absorption with peak at 20 minutes.",
+                "distribution": "Does not bind extensively to plasma proteins.",
+                "metabolism": "Primarily renal metabolism.",
+                "excretion": "Renal excretion. Avoid in severe renal impairment (CrCl <15 mL/min)."
+            },
+            "monitoring": [
+                "Blood glucose: before and after meals (watch for hypoglycemia)",
+                "Weight (amylin analogs promote weight loss)",
+                "Gastrointestinal symptoms (nausea is common initially)"
+            ],
+            "contraindications": [
+                "Gastroparesis (delayed gastric emptying)",
+                "Hypoglycemia unawareness",
+                "Confirmed diagnosis of gastroparesis"
+            ],
+            "clinicalPearls": [
+                "Must reduce mealtime insulin dose by 50% when starting pramlintide to avoid severe hypoglycemia",
+                "Give as separate injection from insulin (cannot mix)",
+                "Nausea is very common (60-70%) but usually improves over weeks",
+                "Step 1 buzzword: 'adjunct to insulin' or 'postprandial glucose control'",
+                "Mechanism mnemonic: Amylin = 'A meal is lingering' (slows gastric emptying)",
+                "Unique benefit: only diabetes drug that causes weight LOSS when combined with insulin"
+            ]
+        }
+    },
+    {
+        "id": "alpha-glucosidase-inhibitors",
+        "name": "Alpha-Glucosidase Inhibitors",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Inhibit intestinal alpha-glucosidase enzymes, delaying carbohydrate digestion and absorption. Reduces postprandial glucose spikes.",
+        "sideEffects": [
+            "Flatulence",
+            "Diarrhea",
+            "Abdominal pain"
+        ],
+        "interactions": "Intestinal adsorbents (charcoal) and digestive enzymes may reduce efficacy.",
+        "interactionDetails": "",
+        "drugIds": [
+            "acarbose",
+            "miglitol"
+        ],
+        "pageType": "pharmacologic-class",
+        "detail": {
+            "overview": "Alpha-glucosidase inhibitors work in the gut to delay breakdown of complex carbohydrates into simple sugars. By slowing digestion, they reduce postprandial glucose spikes. Modest efficacy (HbA1c reduction 0.5-0.8%) but no risk of hypoglycemia when used alone.",
+            "clinicalApproach": [
+                "Primarily reduce postprandial glucose (less effect on fasting glucose)",
+                "Must be taken with first bite of each meal to be effective",
+                "No hypoglycemia risk when used as monotherapy",
+                "Often used in combination with other diabetes drugs",
+                "Better for patients with predominantly postprandial hyperglycemia",
+                "GI side effects limit use - start low dose and titrate slowly"
+            ],
+            "pharmacokinetics": {
+                "absorption": "Acarbose: <2% absorbed systemically (acts locally in GI tract). Miglitol: well absorbed systemically.",
+                "distribution": "Minimal systemic distribution for acarbose (local GI action).",
+                "metabolism": "Acarbose: metabolized by intestinal bacteria and GI enzymes. Miglitol: not metabolized.",
+                "excretion": "Acarbose: fecal (metabolites). Miglitol: renal (unchanged). Avoid miglitol in severe renal impairment."
+            },
+            "comparison": {
+                "title": "Comparison of Alpha-Glucosidase Inhibitors",
+                "description": "Acarbose vs Miglitol - key differences",
+                "content": `
+ACARBOSE:
+- Absorption: <2% systemic absorption (mostly GI action)
+- Metabolism: By intestinal bacteria
+- Excretion: Fecal
+- Renal impairment: Can use (not systemically absorbed)
+- Liver effects: Rare reversible hepatotoxicity (monitor LFTs)
+- Dose: 25-100 mg TID with meals
+
+MIGLITOL:
+- Absorption: Well absorbed (>95%)
+- Metabolism: Not metabolized
+- Excretion: Renal (unchanged)
+- Renal impairment: Avoid if CrCl <25 mL/min
+- Liver effects: No hepatotoxicity
+- Dose: 25-100 mg TID with meals
+`
+            },
+            "monitoring": [
+                "Blood glucose: particularly postprandial levels",
+                "HbA1c every 3 months",
+                "LFTs for acarbose (rare hepatotoxicity, check at 3, 6, 12 months then annually)",
+                "GI symptoms (flatulence, diarrhea - dose-dependent)"
+            ],
+            "contraindications": [
+                "Inflammatory bowel disease",
+                "Colonic ulceration",
+                "Intestinal obstruction",
+                "Chronic intestinal diseases with malabsorption",
+                "Cirrhosis (for acarbose)",
+                "Severe renal impairment (for miglitol)"
+            ],
+            "clinicalPearls": [
+                "GI side effects (flatulence, diarrhea) occur in 70% of patients - caused by undigested carbs fermenting in colon",
+                "Must take with FIRST BITE of meal (not before, not after)",
+                "If hypoglycemia occurs (from concurrent insulin/sulfonylurea), treat with GLUCOSE (not sucrose) - drug blocks sucrose breakdown",
+                "Step 1 buzzword: 'flatulence' or 'must avoid in IBD'",
+                "Mechanism mnemonic: 'Alpha blockers block sugar breakdown in the Alimentary canal'",
+                "Weak efficacy but safe (no hypoglycemia as monotherapy, no weight gain)",
+                "Rarely used first-line due to GI side effects and modest efficacy - mostly used in combination"
+            ]
+        }
+    },
+    {
         "id": "diabetes-medications",
         "name": "Diabetes Medications",
         "system": "endocrine-system",
@@ -229,7 +361,9 @@ ULTRA-LONG (Degludec):
             "thiazolidinediones",
             "dpp-4-inhibitors",
             "glp-1-receptor-agonists",
-            "sglt2-inhibitors"
+            "sglt2-inhibitors",
+            "amylin-analogs",
+            "alpha-glucosidase-inhibitors"
         ],
         "pageType": "therapeutic-class"
     },

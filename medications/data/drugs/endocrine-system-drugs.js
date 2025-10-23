@@ -461,6 +461,270 @@ const drugs = [
         "pageType": "drug"
     },
     {
+        "id": "pramlintide",
+        "name": "Pramlintide",
+        "pharmacologicClass": "amylin-analogs",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Synthetic analog of amylin, a hormone co-secreted with insulin from pancreatic beta cells. Slows gastric emptying, suppresses postprandial glucagon secretion, and promotes satiety via central mechanisms.",
+        "features": "Only amylin analog available. Adjunct to insulin therapy.",
+        "clinicalChoice": "Type 1 or Type 2 DM on insulin not at goal. Provides postprandial glucose control and weight loss benefit.",
+        "pharmacokinetics": {
+            "onset": "Rapid (peak at 20 minutes)",
+            "peak": "20 minutes",
+            "duration": "3 hours",
+            "halfLife": "~48 minutes",
+            "metabolism": "Primarily renal metabolism",
+            "excretion": "Renal excretion"
+        },
+        "indications": [
+            "Type 1 Diabetes (as adjunct to mealtime insulin)",
+            "Type 2 Diabetes (as adjunct to mealtime insulin)"
+        ],
+        "clinicalChoice": "For patients on mealtime insulin who have inadequate glucose control despite optimal insulin therapy. Unique benefit of weight loss (3-4 kg average) unlike insulin alone. Particularly useful for obese diabetic patients.",
+        "dosing": {
+            "typical": "Type 1 DM: Start 15 mcg before meals, titrate to 30-60 mcg. Type 2 DM: Start 60 mcg before meals, titrate to 120 mcg. MUST reduce mealtime insulin by 50% when initiating.",
+            "renal": "Avoid in severe renal impairment (CrCl <15 mL/min)",
+            "hepatic": "No dose adjustment needed"
+        },
+        "contraindications": [
+            "Gastroparesis",
+            "Hypoglycemia unawareness"
+        ],
+        "sideEffects": {
+            "common": [
+                "Nausea (60-70%, usually improves over 4 weeks)",
+                "Vomiting",
+                "Anorexia",
+                "Headache"
+            ],
+            "serious": [
+                "Severe hypoglycemia (when not reducing insulin dose appropriately)",
+                "Injection site reactions"
+            ],
+            "rare": []
+        },
+        "blackBoxWarnings": [
+            "Risk of severe hypoglycemia, particularly in Type 1 DM. Occurs within 3 hours of injection. Must reduce mealtime insulin dose by 50% when starting pramlintide."
+        ],
+        "interactions": {
+            "drugDrug": [
+                "Insulin: increased hypoglycemia risk (reduce insulin dose by 50%)",
+                "Anticholinergics: may antagonize GI effects",
+                "Drugs requiring rapid absorption: pramlintide delays gastric emptying, give at least 1 hour before or 2 hours after pramlintide"
+            ],
+            "drugDisease": [
+                "Gastroparesis: absolutely contraindicated (worsens delayed emptying)"
+            ],
+            "drugFood": []
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose before and after meals",
+                "HbA1c every 3 months"
+            ],
+            "vitals": [
+                "Weight (monitor for weight loss - therapeutic effect)"
+            ],
+            "symptoms": [
+                "Hypoglycemia symptoms (especially in first 3 hours after dose)",
+                "Nausea/vomiting (usually transient)",
+                "Signs of gastroparesis"
+            ],
+            "frequency": "Frequent glucose monitoring initially, especially within 3 hours post-dose"
+        },
+        "pregnancy": {
+            "category": "Category C",
+            "considerations": "Limited data in pregnancy. Use only if benefit outweighs risk. Insulin monotherapy generally preferred in pregnancy."
+        },
+        "clinicalPearls": [
+            "BLACK BOX: Severe hypoglycemia - must reduce mealtime insulin by 50% when starting",
+            "Give as separate injection from insulin (cannot mix). Inject subcutaneously into abdomen or thigh.",
+            "Only diabetes medication that promotes weight LOSS when added to insulin",
+            "Nausea is almost universal (60-70%) but typically improves over 4 weeks - titrate slowly",
+            "Must take immediately BEFORE meal (within 15 minutes)",
+            "Step 1 buzzword: 'adjunct to insulin' or 'contraindicated in gastroparesis'",
+            "Mechanism mnemonic: 'Amylin makes A meal linger' (slows gastric emptying)",
+            "If hypoglycemia occurs, patient can still eat - unlike GLP-1 agonists which suppress appetite",
+            "Not commonly used in practice due to nausea, need for injections, and modest efficacy"
+        ],
+        "pageType": "drug"
+    },
+    {
+        "id": "acarbose",
+        "name": "Acarbose",
+        "pharmacologicClass": "alpha-glucosidase-inhibitors",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Reversibly inhibits alpha-glucosidase enzymes in small intestine brush border, delaying breakdown of complex carbohydrates (starch, sucrose) into absorbable monosaccharides. Reduces postprandial glucose spikes.",
+        "features": "Minimal systemic absorption (<2%). Acts locally in GI tract.",
+        "clinicalChoice": "Type 2 DM with predominantly postprandial hyperglycemia. Often used in combination therapy. Safe (no hypoglycemia alone) but GI side effects limit use.",
+        "pharmacokinetics": {
+            "onset": "Immediate (with first bite of meal)",
+            "peak": "Not applicable (minimal systemic absorption)",
+            "duration": "Duration of meal digestion",
+            "halfLife": "~2 hours (for absorbed fraction)",
+            "metabolism": "Metabolized by intestinal bacteria and digestive enzymes in GI tract",
+            "excretion": "Fecal excretion (>95% as metabolites and unchanged drug)"
+        },
+        "indications": [
+            "Type 2 Diabetes"
+        ],
+        "clinicalChoice": "For patients with elevated postprandial glucose but acceptable fasting glucose. Particularly useful in Asian populations (high-carbohydrate diets). No hypoglycemia risk as monotherapy. Can use in renal impairment (unlike miglitol).",
+        "dosing": {
+            "typical": "Start 25 mg TID with first bite of each meal. Titrate slowly: increase to 50 mg TID after 4-8 weeks, then to 100 mg TID if needed. Maximum 100 mg TID.",
+            "renal": "Avoid if CrCl <25 mL/min (not due to systemic effects, but lack of data and increased GI side effects)",
+            "hepatic": "Contraindicated in cirrhosis (rare hepatotoxicity reported)"
+        },
+        "contraindications": [
+            "Inflammatory bowel disease (Crohn's, ulcerative colitis)",
+            "Colonic ulceration",
+            "Intestinal obstruction",
+            "Chronic intestinal diseases with malabsorption",
+            "Cirrhosis"
+        ],
+        "sideEffects": {
+            "common": [
+                "Flatulence (75% of patients - due to colonic fermentation of undigested carbs)",
+                "Diarrhea (30%)",
+                "Abdominal pain/cramping (20%)"
+            ],
+            "serious": [
+                "Elevated liver enzymes (rare, reversible)"
+            ],
+            "rare": [
+                "Hepatotoxicity (rare, mostly with doses >300 mg/day)"
+            ]
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Digestive enzymes (pancreatin): may reduce acarbose efficacy",
+                "Intestinal adsorbents (charcoal): may reduce acarbose efficacy",
+                "Insulin/sulfonylureas: if hypoglycemia occurs, treat with GLUCOSE (not sucrose - acarbose blocks sucrose breakdown)"
+            ],
+            "drugDisease": [
+                "IBD: contraindicated (worsens GI symptoms)",
+                "Cirrhosis: contraindicated (hepatotoxicity risk)"
+            ],
+            "drugFood": []
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose (postprandial primarily)",
+                "HbA1c every 3 months",
+                "LFTs at baseline, then at 3, 6, 12 months, then annually (monitor for hepatotoxicity)"
+            ],
+            "vitals": [],
+            "symptoms": [
+                "GI symptoms (flatulence, diarrhea, abdominal pain)",
+                "Symptoms of hypoglycemia (if on concurrent insulin/sulfonylurea)"
+            ],
+            "frequency": "LFTs every 3 months for first year, then annually"
+        },
+        "pregnancy": {
+            "category": "Category B",
+            "considerations": "Generally safe (minimal systemic absorption). However, insulin is preferred in pregnancy."
+        },
+        "clinicalPearls": [
+            "Must take with FIRST BITE of meal (not before, not after) - timing is critical",
+            "GI side effects are dose-dependent and improve with slow titration",
+            "If patient develops hypoglycemia (from concurrent therapy), treat with GLUCOSE tablets/gel - NOT sucrose or complex carbs (acarbose blocks their breakdown)",
+            "Step 1 buzzword: 'flatulence and diarrhea' or 'contraindicated in IBD'",
+            "Mechanism: works in the gut, not systemically - 'Acarbose acts in the Alimentary canal'",
+            "Modest efficacy: reduces HbA1c by 0.5-0.8% (less than metformin)",
+            "No weight gain, no hypoglycemia as monotherapy - safe profile",
+            "Rarely used first-line due to GI side effects - mostly add-on therapy",
+            "Can use in renal impairment (minimal absorption) - advantage over miglitol"
+        ],
+        "pageType": "drug"
+    },
+    {
+        "id": "miglitol",
+        "name": "Miglitol",
+        "pharmacologicClass": "alpha-glucosidase-inhibitors",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Reversibly inhibits alpha-glucosidase enzymes in small intestine, delaying digestion and absorption of carbohydrates. Reduces postprandial glucose excursions.",
+        "features": "Well absorbed systemically (unlike acarbose). Renally excreted unchanged.",
+        "clinicalChoice": "Type 2 DM with postprandial hyperglycemia. Similar to acarbose but systemically absorbed. Avoid in renal impairment.",
+        "pharmacokinetics": {
+            "onset": "Immediate (with meal)",
+            "peak": "2-3 hours (plasma concentration)",
+            "duration": "Duration of meal digestion",
+            "halfLife": "~2 hours",
+            "metabolism": "Not metabolized (excreted unchanged)",
+            "excretion": "Renal excretion (>95% unchanged in urine)"
+        },
+        "indications": [
+            "Type 2 Diabetes"
+        ],
+        "clinicalChoice": "Alternative to acarbose with similar efficacy and side effect profile. Main difference: systemically absorbed and renally excreted (avoid in renal impairment). Choose acarbose over miglitol if patient has renal disease.",
+        "dosing": {
+            "typical": "Start 25 mg TID with first bite of each meal. Increase to 50 mg TID after 4-8 weeks, then 100 mg TID if needed. Maximum 100 mg TID.",
+            "renal": "Avoid if CrCl <25 mL/min (drug accumulation)",
+            "hepatic": "No dose adjustment needed (not hepatically metabolized)"
+        },
+        "contraindications": [
+            "Inflammatory bowel disease",
+            "Colonic ulceration",
+            "Intestinal obstruction",
+            "Severe renal impairment (CrCl <25 mL/min)",
+            "Chronic intestinal diseases with malabsorption"
+        ],
+        "sideEffects": {
+            "common": [
+                "Flatulence (70% - due to colonic fermentation)",
+                "Diarrhea (30%)",
+                "Abdominal pain (10-15%)"
+            ],
+            "serious": [],
+            "rare": []
+        },
+        "blackBoxWarnings": [],
+        "interactions": {
+            "drugDrug": [
+                "Digestive enzymes: may reduce efficacy",
+                "Propranolol, ranitidine: miglitol may reduce their bioavailability (give 2 hours apart)",
+                "Insulin/sulfonylureas: if hypoglycemia occurs, treat with GLUCOSE (not sucrose)"
+            ],
+            "drugDisease": [
+                "IBD: contraindicated",
+                "Severe renal impairment: contraindicated (drug accumulation)"
+            ],
+            "drugFood": []
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose (especially postprandial)",
+                "HbA1c every 3 months",
+                "Renal function (serum creatinine) - avoid if impaired"
+            ],
+            "vitals": [],
+            "symptoms": [
+                "GI symptoms (flatulence, diarrhea, abdominal discomfort)",
+                "Hypoglycemia symptoms (if on concurrent therapy)"
+            ],
+            "frequency": "Regular glucose monitoring, check renal function periodically"
+        },
+        "pregnancy": {
+            "category": "Category B",
+            "considerations": "Limited data. Insulin preferred in pregnancy. Use only if clearly needed."
+        },
+        "clinicalPearls": [
+            "Must take with FIRST BITE of each meal for efficacy",
+            "If hypoglycemia occurs (from concurrent insulin/sulfonylurea), treat with GLUCOSE - NOT table sugar (sucrose) which requires enzyme breakdown",
+            "Main difference vs acarbose: miglitol is systemically absorbed → renally excreted → avoid in renal impairment",
+            "Acarbose advantage: can use in renal disease (not absorbed)",
+            "Miglitol advantage: no hepatotoxicity (unlike rare cases with acarbose)",
+            "Step 1 buzzword: 'avoid in renal impairment' (unlike acarbose)",
+            "GI side effects same as acarbose - flatulence and diarrhea from carb fermentation in colon",
+            "Rarely first-line due to GI side effects and modest efficacy (HbA1c -0.5-0.8%)",
+            "No hypoglycemia as monotherapy, no weight gain - safe but limited by tolerability"
+        ],
+        "pageType": "drug"
+    },
+    {
         "id": "levothyroxine",
         "name": "Levothyroxine",
         "pharmacologicClass": "thyroid-hormones",
