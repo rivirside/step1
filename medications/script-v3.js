@@ -630,7 +630,22 @@ function renderDrugDetail(drug, pharmaClass) {
 
     // Use drug-specific or fall back to class-level data
     const mechanism = drug.mechanism || pharmaClass.mechanism || '';
-    const sideEffects = drug.sideEffects || pharmaClass.sideEffects || [];
+
+    // Handle sideEffects - convert object format to array for backwards compatibility
+    let sideEffects = [];
+    if (drug.sideEffects) {
+        if (Array.isArray(drug.sideEffects)) {
+            sideEffects = drug.sideEffects;
+        } else if (typeof drug.sideEffects === 'object') {
+            // New object format - flatten to array for fallback display
+            if (drug.sideEffects.common) sideEffects.push(...drug.sideEffects.common);
+            if (drug.sideEffects.serious) sideEffects.push(...drug.sideEffects.serious);
+            if (drug.sideEffects.rare) sideEffects.push(...drug.sideEffects.rare);
+        }
+    } else {
+        sideEffects = pharmaClass.sideEffects || [];
+    }
+
     const interactions = drug.interactions || pharmaClass.interactions || '';
 
     detailPanel.innerHTML = `

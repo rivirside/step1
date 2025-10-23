@@ -159,9 +159,21 @@ class MedicationDataLoader {
                 });
             }
 
-            // Index by side effects
+            // Index by side effects (handle both array and object formats)
             if (drug.sideEffects) {
-                drug.sideEffects.forEach(sideEffect => {
+                let sideEffectsList = [];
+
+                if (Array.isArray(drug.sideEffects)) {
+                    // Old format: array of strings
+                    sideEffectsList = drug.sideEffects;
+                } else if (typeof drug.sideEffects === 'object') {
+                    // New format: object with common/serious/rare arrays
+                    if (drug.sideEffects.common) sideEffectsList.push(...drug.sideEffects.common);
+                    if (drug.sideEffects.serious) sideEffectsList.push(...drug.sideEffects.serious);
+                    if (drug.sideEffects.rare) sideEffectsList.push(...drug.sideEffects.rare);
+                }
+
+                sideEffectsList.forEach(sideEffect => {
                     const key = sideEffect.toLowerCase();
                     if (!this.drugsBySideEffect.has(key)) {
                         this.drugsBySideEffect.set(key, []);
