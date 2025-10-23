@@ -274,7 +274,8 @@ GLIMEPIRIDE (Amaryl):
         "interactions": "CYP2C8 inhibitors increase levels.",
         "interactionDetails": "",
         "drugIds": [
-            "pioglitazone"
+            "pioglitazone",
+            "rosiglitazone"
         ],
         "pageType": "pharmacologic-class",
         "detail": {

@@ -588,24 +588,187 @@ const drugs = [
         "pharmacologicClass": "thiazolidinediones",
         "therapeuticClass": "diabetes-medications",
         "system": "endocrine-system",
-        "mechanism": "PPAR-γ agonists, increase insulin sensitivity in muscle and fat.",
+        "mechanism": "PPAR-γ (peroxisome proliferator-activated receptor gamma) agonist → activates PPAR-γ in adipocytes, skeletal muscle, and liver → increases expression of genes involved in glucose uptake and fatty acid metabolism → enhances insulin sensitivity without increasing insulin secretion.",
         "features": "Improves insulin sensitivity.",
-        "clinicalChoice": "T2DM with insulin resistance.",
+        "pharmacokinetics": {
+            "onset": "Gradual (weeks to months for full effect)",
+            "peak": "Plasma levels peak at 2 hours, but clinical effect takes 6-12 weeks",
+            "duration": "24 hours (once-daily dosing)",
+            "halfLife": "3-7 hours (parent drug), 16-24 hours (total, including metabolites)",
+            "metabolism": "Hepatic via CYP2C8 and CYP3A4 to active metabolites (M-III, M-IV)",
+            "excretion": "Fecal (primarily) and renal"
+        },
         "indications": [
-            "Type 2 Diabetes"
+            "Type 2 Diabetes (as monotherapy or combination therapy)"
         ],
+        "clinicalChoice": "Third-line option for T2DM with significant insulin resistance who cannot tolerate other agents. Safer cardiovascular profile than rosiglitazone (removed from market). Consider if: (1) patient has insulin resistance, (2) no heart failure, (3) no bladder cancer history, (4) acceptable to wait 8-12 weeks for effect.",
+        "dosing": {
+            "typical": "Start 15-30 mg once daily. Can increase to max 45 mg once daily. Take with or without food. Allow 8-12 weeks to assess response before increasing dose.",
+            "renal": "No dose adjustment needed (not renally excreted)",
+            "hepatic": "Do not use if ALT >2.5x ULN. Monitor LFTs.",
+            "elderly": "No specific dose adjustment but use caution (increased fracture and HF risk)"
+        },
         "contraindications": [
-            "Heart Failure",
-            "Bladder Cancer History"
+            "Heart failure (NYHA Class III-IV)",
+            "Active liver disease or ALT >2.5x ULN",
+            "History of bladder cancer",
+            "Active bladder cancer",
+            "Macroscopic hematuria of unknown etiology"
         ],
-        "sideEffects": [
-            "Weight gain",
-            "Fluid retention",
-            "Heart failure",
-            "Bone fractures"
+        "sideEffects": {
+            "common": [
+                "Weight gain (3-5 kg average due to adipose accumulation and fluid retention)",
+                "Edema (peripheral edema 5-10%)",
+                "Upper respiratory tract infection",
+                "Headache"
+            ],
+            "serious": [
+                "Heart failure exacerbation (3-5% - BLACK BOX WARNING)",
+                "Myocardial infarction (controversial, less than rosiglitazone)",
+                "Bone fractures (especially in women - distal limb fractures)",
+                "Hepatotoxicity (rare - check LFTs)",
+                "Macular edema (rare vision complication)",
+                "Bladder cancer (possible increased risk with prolonged use >1 year)"
+            ],
+            "rare": [
+                "Hepatic failure"
+            ]
+        },
+        "blackBoxWarnings": [
+            "Congestive Heart Failure: TZDs cause or exacerbate heart failure. Contraindicated in NYHA Class III-IV. Monitor for signs/symptoms of HF (weight gain, dyspnea, edema). If HF develops, discontinue or dose reduce."
         ],
-        "interactions": "CYP2C8 inhibitors increase levels.",
-        "interactionDetails": "",
+        "interactions": {
+            "drugDrug": [
+                "CYP2C8 inhibitors (gemfibrozil): increase pioglitazone levels 3-fold → reduce pioglitazone dose",
+                "CYP2C8 inducers (rifampin): decrease pioglitazone levels",
+                "Insulin or insulin secretagogues: increased risk of hypoglycemia when combined (reduce insulin dose)",
+                "Oral contraceptives: may reduce contraceptive efficacy (use backup method)"
+            ],
+            "drugDisease": [
+                "Heart failure: CONTRAINDICATED (causes fluid retention)",
+                "Bladder cancer: CONTRAINDICATED if history or active cancer",
+                "Liver disease: contraindicated if ALT >2.5x ULN",
+                "Osteoporosis: avoid (increased fracture risk)"
+            ],
+            "drugFood": [
+                "Can take with or without food"
+            ]
+        },
+        "monitoring": {
+            "labs": [
+                "Blood glucose and HbA1c (allow 8-12 weeks for full effect)",
+                "LFTs: baseline, then periodically (every 2-3 months for first year)",
+                "Lipid panel (may improve HDL and triglycerides)",
+                "Urinalysis if hematuria suspected (bladder cancer screening)"
+            ],
+            "vitals": [
+                "Weight (expect 3-5 kg gain)",
+                "Blood pressure (monitor for fluid retention effects)"
+            ],
+            "symptoms": [
+                "Signs of heart failure: dyspnea, edema, rapid weight gain, fatigue",
+                "Bone pain or fractures",
+                "Vision changes (macular edema)",
+                "Hematuria (bladder cancer concern)"
+            ],
+            "frequency": "Weight and HF symptoms at each visit. LFTs every 2-3 months year 1, then periodically."
+        },
+        "pregnancy": {
+            "category": "Category C",
+            "considerations": "Not recommended in pregnancy. Insulin is treatment of choice for diabetes in pregnancy. Discontinue before conception."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'contraindicated in heart failure' or 'takes 8-12 weeks for effect'",
+            "Brand name: Actos",
+            "BLACK BOX WARNING for heart failure - causes fluid retention via renal sodium reabsorption",
+            "Rosiglitazone (Avandia) removed from market 2010 due to MI risk - pioglitazone has better CV profile",
+            "Weight gain is ADIPOSE (subcutaneous), not muscle - redistributes fat from visceral → subcutaneous (paradoxically may improve metabolic profile)",
+            "Bone fractures: increased risk in postmenopausal women (2-3x) - distal limbs (wrists, ankles), not hip",
+            "Bladder cancer: possible association with use >1 year - avoid if history, monitor for hematuria",
+            "SLOW onset: takes 6-12 weeks for full glucose-lowering effect (counsel patient about delayed response)",
+            "No hypoglycemia as monotherapy (doesn't increase insulin secretion)",
+            "Classic vignette: T2DM on metformin + sulfonylurea, HbA1c 8.5%, develops CHF → STOP pioglitazone",
+            "Common wrong answer: 'Start pioglitazone in patient with CHF' - CONTRAINDICATED!",
+            "Mnemonic: 'Pio-GLITZ-azone makes you GLITZy' (shiny = edema)"
+        ],
+        "pageType": "drug"
+    },
+    {
+        "id": "rosiglitazone",
+        "name": "Rosiglitazone",
+        "pharmacologicClass": "thiazolidinediones",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "PPAR-γ agonist → increases insulin sensitivity in muscle and adipose tissue.",
+        "features": "REMOVED FROM MARKET (2010) due to cardiovascular risk.",
+        "pharmacokinetics": {
+            "onset": "Weeks to months",
+            "peak": "1 hour",
+            "duration": "24 hours",
+            "halfLife": "3-4 hours",
+            "metabolism": "Hepatic via CYP2C8 and CYP2C9",
+            "excretion": "Primarily renal (metabolites)"
+        },
+        "indications": [
+            "Previously: Type 2 Diabetes (NOW WITHDRAWN FROM MARKET)"
+        ],
+        "clinicalChoice": "NOT AVAILABLE - removed from US market in 2010 due to increased risk of myocardial infarction and cardiovascular death. Historically was marketed as Avandia.",
+        "dosing": {
+            "typical": "Historical: 4-8 mg daily (NOT CURRENTLY USED)",
+            "renal": "N/A - drug withdrawn",
+            "hepatic": "N/A - drug withdrawn",
+            "elderly": "N/A - drug withdrawn"
+        },
+        "contraindications": [
+            "DRUG WITHDRAWN FROM MARKET",
+            "Historical contraindications: Heart failure, liver disease"
+        ],
+        "sideEffects": {
+            "common": [
+                "Weight gain",
+                "Edema",
+                "Fluid retention"
+            ],
+            "serious": [
+                "Myocardial infarction (increased risk - reason for market withdrawal)",
+                "Cardiovascular death",
+                "Heart failure",
+                "Bone fractures"
+            ],
+            "rare": []
+        },
+        "blackBoxWarnings": [
+            "REMOVED FROM MARKET: Increased risk of myocardial infarction and cardiovascular events led to FDA restriction in 2010 and subsequent market withdrawal."
+        ],
+        "interactions": {
+            "drugDrug": [
+                "Historical: CYP2C8/2C9 interactions similar to pioglitazone"
+            ],
+            "drugDisease": [],
+            "drugFood": []
+        },
+        "monitoring": {
+            "labs": [],
+            "vitals": [],
+            "symptoms": [],
+            "frequency": "N/A - drug not available"
+        },
+        "pregnancy": {
+            "category": "Category C (when it was available)",
+            "considerations": "Drug no longer available."
+        },
+        "clinicalPearls": [
+            "Step 1 buzzword: 'removed from market due to MI risk' or 'Avandia scandal'",
+            "Brand name: Avandia",
+            "CLASSIC board question: Why was rosiglitazone removed? Answer: Increased MI and cardiovascular death",
+            "FDA initially restricted access in 2010, then completely withdrawn from US market",
+            "Meta-analysis by Nissen (2007) showed 43% increased risk of MI → led to black box warning then removal",
+            "Pioglitazone (Actos) remains on market - appears to have better CV safety profile",
+            "Important historical example of post-market surveillance leading to drug withdrawal",
+            "Compare: Pioglitazone = safer CV profile, Rosiglitazone = removed for CV risk",
+            "Mnemonic: 'Rosi-GOES-tazone' (it's GONE from the market)",
+            "Common exam question: Which TZD was removed and why? Rosiglitazone → MI risk"
+        ],
         "pageType": "drug"
     },
     {
