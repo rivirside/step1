@@ -7,6 +7,7 @@ import ExplorerNavigation from '../shared/explorer-navigation.js';
 import inlineLinker from '../shared/cross-links/inline-linker.js';
 import tooltipManager from '../shared/cross-links/tooltip-manager.js';
 import relationshipResolver from '../shared/cross-links/relationship-resolver.js';
+import QuizMode from './quiz-mode.js';
 
 // Application state
 const state = {
@@ -14,6 +15,9 @@ const state = {
     selectedEntity: null,
     selectedType: null // 'system', 'therapeutic-class', 'pharma-class', 'drug'
 };
+
+// Quiz mode instance
+let quizMode = null;
 
 // Initialize application
 async function init() {
@@ -51,6 +55,9 @@ async function init() {
 
     // Initialize tooltip manager
     tooltipManager.init();
+
+    // Initialize quiz mode
+    quizMode = new QuizMode(dataLoader);
 
     // Setup event listeners
     setupEventListeners();
@@ -160,6 +167,26 @@ function setupEventListeners() {
     if (searchBox) {
         searchBox.addEventListener('input', handleSearch);
     }
+
+    // Quiz mode button
+    const quizButton = document.getElementById('quiz-mode-button');
+    if (quizButton) {
+        quizButton.addEventListener('click', () => {
+            quizMode.showConfigModal('quiz');
+        });
+    }
+
+    // Learning mode button
+    const learningButton = document.getElementById('learning-mode-button');
+    if (learningButton) {
+        learningButton.addEventListener('click', () => {
+            quizMode.showConfigModal('learning');
+        });
+    }
+
+    // Listen for quiz events
+    document.addEventListener('quizStarted', handleQuizStarted);
+    document.addEventListener('quizEnded', handleQuizEnded);
 }
 
 // Handle search
@@ -236,7 +263,26 @@ function createSystemNode(system) {
     // Toggle expand/collapse
     header.addEventListener('click', (e) => {
         e.stopPropagation();
-        toggleNode(node, therapeuticContainer);
+
+        // Check quiz mode
+        if (quizMode && quizMode.isActive()) {
+            const isCorrect = quizMode.checkChoice('system', system.id);
+            if (isCorrect) {
+                node.classList.add('quiz-correct');
+                setTimeout(() => {
+                    node.classList.remove('quiz-correct');
+                    toggleNode(node, therapeuticContainer);
+                }, 500);
+            } else {
+                quizMode.drugIncorrect();
+                node.classList.add('quiz-incorrect');
+                setTimeout(() => {
+                    node.classList.remove('quiz-incorrect');
+                }, 500);
+            }
+        } else {
+            toggleNode(node, therapeuticContainer);
+        }
     });
 
     return node;
@@ -284,7 +330,26 @@ function createTherapeuticClassNode(therapeuticClass) {
     // Toggle expand/collapse
     header.addEventListener('click', (e) => {
         e.stopPropagation();
-        toggleNode(node, pharmaContainer);
+
+        // Check quiz mode
+        if (quizMode && quizMode.isActive()) {
+            const isCorrect = quizMode.checkChoice('therapeutic-class', therapeuticClass.id);
+            if (isCorrect) {
+                node.classList.add('quiz-correct');
+                setTimeout(() => {
+                    node.classList.remove('quiz-correct');
+                    toggleNode(node, pharmaContainer);
+                }, 500);
+            } else {
+                quizMode.drugIncorrect();
+                node.classList.add('quiz-incorrect');
+                setTimeout(() => {
+                    node.classList.remove('quiz-incorrect');
+                }, 500);
+            }
+        } else {
+            toggleNode(node, pharmaContainer);
+        }
     });
 
     // Click to show detail
@@ -333,7 +398,26 @@ function createPharmaClassNode(pharmaClass) {
     // Toggle expand/collapse
     header.addEventListener('click', (e) => {
         e.stopPropagation();
-        toggleNode(node, drugsContainer);
+
+        // Check quiz mode
+        if (quizMode && quizMode.isActive()) {
+            const isCorrect = quizMode.checkChoice('pharmacologic-class', pharmaClass.id);
+            if (isCorrect) {
+                node.classList.add('quiz-correct');
+                setTimeout(() => {
+                    node.classList.remove('quiz-correct');
+                    toggleNode(node, drugsContainer);
+                }, 500);
+            } else {
+                quizMode.drugIncorrect();
+                node.classList.add('quiz-incorrect');
+                setTimeout(() => {
+                    node.classList.remove('quiz-incorrect');
+                }, 500);
+            }
+        } else {
+            toggleNode(node, drugsContainer);
+        }
     });
 
     // Click to show detail
@@ -360,7 +444,26 @@ function createDrugNode(drug, pharmaClass) {
 
     node.addEventListener('click', (e) => {
         e.stopPropagation();
-        selectEntity({ drug, pharmaClass }, 'drug');
+
+        // Check quiz mode
+        if (quizMode && quizMode.isActive()) {
+            const isCorrect = quizMode.checkChoice('drug', drug.id);
+            if (isCorrect) {
+                node.classList.add('quiz-correct');
+                setTimeout(() => {
+                    quizMode.drugFound();
+                    selectEntity({ drug, pharmaClass }, 'drug');
+                }, 1000);
+            } else {
+                quizMode.drugIncorrect();
+                node.classList.add('quiz-incorrect');
+                setTimeout(() => {
+                    node.classList.remove('quiz-incorrect');
+                }, 500);
+            }
+        } else {
+            selectEntity({ drug, pharmaClass }, 'drug');
+        }
     });
 
     return node;
@@ -888,6 +991,58 @@ function showError(message) {
             </div>
         `;
     }
+}
+
+// Quiz mode event handlers
+function handleQuizStarted(event) {
+    console.log('Quiz started!', event.detail.targetDrug);
+
+    // Collapse all nodes and clear selection
+    document.querySelectorAll('.tree-node').forEach(node => {
+        node.classList.remove('selected', 'quiz-correct', 'quiz-incorrect');
+        const container = node.querySelector('.categories-container, .diseases-container');
+        if (container) {
+            container.style.display = 'none';
+        }
+        const expandIcon = node.querySelector('.expand-icon');
+        if (expandIcon) {
+            expandIcon.textContent = '▶';
+        }
+        node.classList.remove('expanded');
+    });
+
+    // Clear detail panel
+    const detailPanel = document.getElementById('detailPanel');
+    detailPanel.innerHTML = `
+        <div class="placeholder quiz-placeholder">
+            <h2>Quiz Mode Active!</h2>
+            <p>Navigate through the directory to find: <strong>${event.detail.targetDrug.name}</strong></p>
+            <ul style="text-align: left; margin-top: 1.5rem;">
+                <li>✅ Correct choices will turn <span style="color: #2ecc71; font-weight: bold;">green</span></li>
+                <li>❌ Incorrect choices will turn <span style="color: #e74c3c; font-weight: bold;">red</span></li>
+                <li>Keep navigating until you reach the drug!</li>
+            </ul>
+        </div>
+    `;
+}
+
+function handleQuizEnded() {
+    console.log('Quiz ended');
+
+    // Remove quiz feedback classes
+    document.querySelectorAll('.tree-node').forEach(node => {
+        node.classList.remove('quiz-correct', 'quiz-incorrect');
+    });
+
+    // Reset detail panel
+    const detailPanel = document.getElementById('detailPanel');
+    detailPanel.innerHTML = `
+        <div class="placeholder">
+            <h2>Welcome!</h2>
+            <p>Select a medication from the tree to view detailed information.</p>
+            <p>Click on system names to expand categories and drill down to specific drugs.</p>
+        </div>
+    `;
 }
 
 // Start application when DOM is ready
