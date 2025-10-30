@@ -1,21 +1,22 @@
 /**
  * STEP 1 EXPLORERS - NAVIGATION CONTROLLER
  *
- * Manages navigation between Conditions, Medications, and Bugs explorers.
+ * Manages navigation between Conditions, Medications, Hematopoiesis, and Bugs explorers.
  * Handles explorer switching, context preservation, and URL management.
  *
- * Last Updated: October 20, 2025
+ * Last Updated: October 30, 2025
  * Phase: 3 - Shared Design System
  */
 
 class ExplorerNavigation {
     constructor(currentExplorer, options = {}) {
-        this.current = currentExplorer; // 'conditions' | 'medications' | 'bugs'
+        this.current = currentExplorer; // 'conditions' | 'medications' | 'hematopoiesis' | 'bugs'
 
         // Base URLs for each explorer (relative paths work for both local and GitHub Pages)
         this.baseUrls = options.baseUrls || {
             conditions: this.getBasePath() + 'conditions/index.html',
             medications: this.getBasePath() + 'medications/index-v2.html',
+            hematopoiesis: this.getBasePath() + 'hematopoiesis/index.html',
             bugs: '#' // Future - not implemented yet
         };
 
@@ -41,8 +42,8 @@ class ExplorerNavigation {
 
         // If we're on GitHub Pages
         if (hostname.includes('github.io')) {
-            // If we're in a subdirectory (conditions/ or medications/), go up one level
-            if (path.includes('/conditions/') || path.includes('/medications/')) {
+            // If we're in a subdirectory (conditions/ or medications/ or hematopoiesis/), go up one level
+            if (path.includes('/conditions/') || path.includes('/medications/') || path.includes('/hematopoiesis/')) {
                 return '/step1/';
             }
             // If we're at the step1 root
@@ -50,8 +51,8 @@ class ExplorerNavigation {
         }
 
         // Local development
-        // If we're in a subdirectory (conditions/ or medications/), go up one level
-        if (path.includes('/conditions/') || path.includes('/medications/')) {
+        // If we're in a subdirectory (conditions/ or medications/ or hematopoiesis/), go up one level
+        if (path.includes('/conditions/') || path.includes('/medications/') || path.includes('/hematopoiesis/')) {
             return '../';
         }
 
@@ -180,6 +181,7 @@ class ExplorerNavigation {
         const names = {
             conditions: 'Conditions Explorer',
             medications: 'Medications Explorer',
+            hematopoiesis: 'Hematopoiesis Explorer',
             bugs: 'Bugs Explorer'
         };
         return names[explorer] || explorer;

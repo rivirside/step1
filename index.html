@@ -190,6 +190,32 @@
             border-bottom-color: white;
         }
 
+        .construction-notice {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #78350f;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .construction-notice strong {
+            color: #78350f;
+        }
+
+        .explorer-card.anatomy {
+            --accent-color: #06b6d4;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .explorer-card.anatomy:hover {
+            transform: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -207,6 +233,10 @@
 </head>
 <body>
     <div class="container">
+        <div class="construction-notice">
+            🚧 <strong>Project Under Active Development</strong> - Content and features are being continuously added. You may experience variability across different explorers.
+        </div>
+
         <div class="hero">
             <h1>Step 1 Medical Explorers</h1>
             <p>Interactive navigation for medical students preparing for USMLE Step 1</p>
@@ -285,6 +315,25 @@
                     <div class="stat">
                         <div class="stat-number">—</div>
                         <div class="stat-label">Organisms</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anatomy Explorer (Coming Soon) -->
+            <div class="explorer-card anatomy">
+                <div class="explorer-icon">🫀</div>
+                <h2 class="explorer-title">Anatomy <span class="badge">Coming Soon</span></h2>
+                <p class="explorer-description">
+                    Navigate anatomical structures by system. Learn landmarks, relationships, clinical correlations, and imaging.
+                </p>
+                <div class="explorer-stats">
+                    <div class="stat">
+                        <div class="stat-number">—</div>
+                        <div class="stat-label">Systems</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">—</div>
+                        <div class="stat-label">Structures</div>
                     </div>
                 </div>
             </div>

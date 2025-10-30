@@ -1,6 +1,7 @@
 // Hematopoiesis Explorer - Main Script
 
 import dataLoader from './data-loader.js';
+import HematopoiesisQuizMode from './quiz-mode.js';
 
 // Application state
 const state = {
@@ -8,6 +9,9 @@ const state = {
     selectedEntity: null,
     selectedType: null // 'system', 'lineage-group', 'cell'
 };
+
+// Quiz mode instance
+let quizMode = null;
 
 // Initialize application
 async function init() {
@@ -21,6 +25,10 @@ async function init() {
             hideLoadingOverlay();
             return;
         }
+
+        // Initialize quiz mode
+        quizMode = new HematopoiesisQuizMode(dataLoader);
+        window.quizMode = quizMode; // Make available globally for onclick handlers
 
         // Setup event listeners
         setupEventListeners();
@@ -59,6 +67,22 @@ function setupEventListeners() {
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             handleSearch(e.target.value);
+        });
+    }
+
+    // Quiz mode button
+    const quizButton = document.getElementById('quiz-mode-button');
+    if (quizButton) {
+        quizButton.addEventListener('click', () => {
+            quizMode.showCellSelection('quiz');
+        });
+    }
+
+    // Learning mode button
+    const learningButton = document.getElementById('learning-mode-button');
+    if (learningButton) {
+        learningButton.addEventListener('click', () => {
+            quizMode.showCellSelection('learning');
         });
     }
 
