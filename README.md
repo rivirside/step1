@@ -108,22 +108,74 @@ step1-conditions/
 - [x] Unified navigation
 - [x] Tree-based UI for both platforms
 - [x] GitHub Pages ready
+- [x] Subcategory organization system
+- [x] Flexible detail page content (algorithms, comparisons, clinical pearls)
 
-### 🔄 Phase 4: Cross-Platform Integration (Next)
+### 🔄 Phase 4: Cross-Platform Integration (In Progress)
 - [ ] Generate preview JSONs
 - [ ] Implement cross-reference links
 - [ ] Hover tooltips (condition ↔ medication)
 - [ ] Context-preserving navigation
+- [x] Category/subcategory detail pages with educational content
+- [x] Subcategory implementations (11 subcategories completed):
+  - [x] GI: Jaundice (hepatocellular/cholestatic)
+  - [x] GI: GI Bleeding (upper/lower)
+  - [x] GI: Hepatobiliary Disorders (viral/metabolic/cholestatic/cirrhosis)
+  - [x] Respiratory: Infectious Lung Disease (typical/atypical/TB)
+  - [x] Hematology: Anemia (microcytic/macrocytic/normocytic)
+  - [x] Hematology: Hemolytic Anemia (intrinsic/extrinsic)
+  - [x] Renal: Glomerular Diseases (nephrotic/nephritic)
+- [ ] Additional subcategory candidates (future):
+  - [ ] Cardiovascular: Valvular Disease (stenotic/regurgitant)
+  - [ ] Cardiovascular: Chest Pain (ACS/non-cardiac)
+  - [ ] Cardiovascular: Cardiomyopathies (dilated/hypertrophic/restrictive)
+  - [ ] Psychiatry: Mood Disorders (depressive/bipolar)
+  - [ ] Psychiatry: Psychotic Disorders (schizophrenia spectrum)
+  - [ ] Psychiatry: Anxiety Disorders (GAD/panic/phobias)
+  - [ ] Renal: Electrolyte Disorders (Na/K disorders)
+  - [ ] Endocrine: Thyroid Disorders (hypo/hyperthyroidism)
+  - [ ] Endocrine: Diabetes (Type 1/Type 2/complications)
 
 ### ⏳ Phase 5: Content Expansion
 - [ ] Add 100+ high-yield conditions
 - [ ] Expand medications coverage
-- [ ] Clinical pearls and mnemonics
+- [ ] Add subcategories for all major categories (jaundice, anemia, pneumonia, etc.)
+- [ ] Clinical pearls and mnemonics for each category
 
 ### 🔮 Phase 6: Bugs Explorer
 - [ ] Microbiology platform
 - [ ] Pathogen database
 - [ ] Antimicrobial linking
+
+### 🎯 Phase 7: Question Bank Integration
+- [ ] Interactive question bank linked to conditions/medications
+- [ ] Practice questions by system, category, or disease
+- [ ] Performance tracking and analytics
+- [ ] Spaced repetition algorithm
+- [ ] Explanations linked to explorer content
+
+### 🎥 Phase 8: Video Explainer Lessons
+- [ ] Short video explanations for high-yield topics
+- [ ] Animated pathophysiology walkthroughs
+- [ ] Video integration into detail pages
+- [ ] Concept-based mini-lectures
+- [ ] Integration with diagnostic algorithms
+
+### 📊 Phase 9: Interactive Learning Features
+- [ ] **High-Yield Toggles**: Show/hide advanced vs essential content
+- [ ] **Presentations Explorer**: Browse diseases by clinical presentation
+- [ ] **Biostatistics Explorer**: Interactive stats concepts and calculators
+- [ ] **Interactive Simulations**: Case-based learning scenarios
+- [ ] **Concept Maps**: Visual relationship diagrams
+- [ ] **Comparison Tables**: Side-by-side disease comparisons
+
+### 🔬 Phase 10: Advanced Study Tools
+- [ ] Flashcard generator from content
+- [ ] Personal notes and annotations
+- [ ] Study session tracking
+- [ ] Weak area identification
+- [ ] Exam mode with randomized questions
+- [ ] Progress dashboard
 
 ---
 
