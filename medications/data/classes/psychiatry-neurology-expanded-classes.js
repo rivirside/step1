@@ -162,12 +162,323 @@ const classes = [
         "pageType": "pharmacologic-class"
     },
     {
+        "id": "other-antiepileptics",
+        "name": "Other Antiepileptics",
+        "therapeuticClass": "comprehensive-antiepileptics",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Various mechanisms including SV2A binding and multi-modal actions.",
+        "sideEffects": [
+            "Variable by agent"
+        ],
+        "interactions": "Variable by agent.",
+        "interactionDetails": "",
+        "drugIds": [
+            "levetiracetam",
+            "topiramate"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
         "id": "comprehensive-antiepileptics",
         "name": "Comprehensive Antiepileptics",
         "system": "psychiatry-neurology-expanded",
         "pharmacologicClassIds": [
             "sodium-channel-blockers",
-            "gaba-enhancers"
+            "gaba-enhancers",
+            "other-antiepileptics"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "selective-serotonin-reuptake-inhibitors-ssris",
+        "name": "Selective Serotonin Reuptake Inhibitors (SSRIs)",
+        "therapeuticClass": "antidepressants",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Selectively inhibit serotonin reuptake, increasing synaptic serotonin.",
+        "sideEffects": [
+            "Sexual dysfunction",
+            "GI upset",
+            "Insomnia",
+            "Serotonin syndrome"
+        ],
+        "interactions": "MAOIs (serotonin syndrome), CYP interactions vary by agent.",
+        "interactionDetails": "",
+        "drugIds": [
+            "fluoxetine",
+            "sertraline",
+            "escitalopram",
+            "paroxetine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "serotonin-norepinephrine-reuptake-inhibitors-snris",
+        "name": "Serotonin-Norepinephrine Reuptake Inhibitors (SNRIs)",
+        "therapeuticClass": "antidepressants",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Inhibit both serotonin and norepinephrine reuptake.",
+        "sideEffects": [
+            "Hypertension",
+            "Sexual dysfunction",
+            "Nausea",
+            "Discontinuation syndrome"
+        ],
+        "interactions": "MAOIs (serotonin syndrome).",
+        "interactionDetails": "",
+        "drugIds": [
+            "venlafaxine",
+            "duloxetine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "tricyclic-antidepressants-tcas",
+        "name": "Tricyclic Antidepressants (TCAs)",
+        "therapeuticClass": "antidepressants",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Block reuptake of serotonin and norepinephrine; also block histamine, muscarinic, and alpha receptors.",
+        "sideEffects": [
+            "Anticholinergic effects",
+            "Sedation",
+            "Orthostatic hypotension",
+            "QT prolongation",
+            "Seizures"
+        ],
+        "interactions": "MAOIs, QT-prolonging drugs.",
+        "interactionDetails": "",
+        "drugIds": [
+            "amitriptyline",
+            "nortriptyline"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "atypical-antidepressants",
+        "name": "Atypical Antidepressants",
+        "therapeuticClass": "antidepressants",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Various mechanisms including dopamine/NE reuptake inhibition and alpha-2 antagonism.",
+        "sideEffects": [
+            "Variable by agent"
+        ],
+        "interactions": "Variable by agent.",
+        "interactionDetails": "",
+        "drugIds": [
+            "bupropion",
+            "mirtazapine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "monoamine-oxidase-inhibitors-maois",
+        "name": "Monoamine Oxidase Inhibitors (MAOIs)",
+        "therapeuticClass": "antidepressants",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Irreversibly inhibit MAO-A and MAO-B, increasing all monoamines.",
+        "sideEffects": [
+            "Hypertensive crisis (tyramine)",
+            "Orthostatic hypotension",
+            "Serotonin syndrome"
+        ],
+        "interactions": "Serotonergic drugs, sympathomimetics, tyramine.",
+        "interactionDetails": "",
+        "drugIds": [
+            "phenelzine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "antidepressants",
+        "name": "Antidepressants",
+        "system": "psychiatry-neurology-expanded",
+        "pharmacologicClassIds": [
+            "selective-serotonin-reuptake-inhibitors-ssris",
+            "serotonin-norepinephrine-reuptake-inhibitors-snris",
+            "tricyclic-antidepressants-tcas",
+            "atypical-antidepressants",
+            "monoamine-oxidase-inhibitors-maois"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "typical-antipsychotics",
+        "name": "Typical Antipsychotics",
+        "therapeuticClass": "antipsychotics",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Block D2 dopamine receptors in mesolimbic pathway.",
+        "sideEffects": [
+            "Extrapyramidal symptoms",
+            "Tardive dyskinesia",
+            "Neuroleptic malignant syndrome",
+            "QT prolongation"
+        ],
+        "interactions": "QT-prolonging drugs, anticholinergics.",
+        "interactionDetails": "",
+        "drugIds": [
+            "haloperidol",
+            "chlorpromazine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "atypical-antipsychotics",
+        "name": "Atypical Antipsychotics",
+        "therapeuticClass": "antipsychotics",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Block D2 and 5-HT2A receptors; serotonin antagonism reduces EPS risk.",
+        "sideEffects": [
+            "Weight gain",
+            "Metabolic syndrome",
+            "Hyperprolactinemia",
+            "QT prolongation"
+        ],
+        "interactions": "CYP450 substrates vary by agent.",
+        "interactionDetails": "",
+        "drugIds": [
+            "risperidone",
+            "olanzapine",
+            "quetiapine",
+            "aripiprazole",
+            "clozapine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "antipsychotics",
+        "name": "Antipsychotics",
+        "system": "psychiatry-neurology-expanded",
+        "pharmacologicClassIds": [
+            "typical-antipsychotics",
+            "atypical-antipsychotics"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "benzodiazepines",
+        "name": "Benzodiazepines",
+        "therapeuticClass": "anxiolytics-sedatives",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Enhance GABA-A receptor function, increase chloride influx.",
+        "sideEffects": [
+            "Sedation",
+            "Dependence",
+            "Respiratory depression",
+            "Cognitive impairment"
+        ],
+        "interactions": "CNS depressants (additive sedation), alcohol.",
+        "interactionDetails": "",
+        "drugIds": [
+            "lorazepam",
+            "diazepam",
+            "alprazolam",
+            "clonazepam"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "anxiolytics-sedatives",
+        "name": "Anxiolytics/Sedatives",
+        "system": "psychiatry-neurology-expanded",
+        "pharmacologicClassIds": [
+            "benzodiazepines"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "acetylcholinesterase-inhibitors",
+        "name": "Acetylcholinesterase Inhibitors",
+        "therapeuticClass": "dementia-medications",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Inhibit acetylcholinesterase to increase synaptic acetylcholine.",
+        "sideEffects": [
+            "Nausea",
+            "Diarrhea",
+            "Bradycardia",
+            "Insomnia"
+        ],
+        "interactions": "Anticholinergics antagonize effects.",
+        "interactionDetails": "",
+        "drugIds": [
+            "donepezil",
+            "rivastigmine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "nmda-antagonists",
+        "name": "NMDA Antagonists",
+        "therapeuticClass": "dementia-medications",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "NMDA receptor antagonist, reduces excitotoxicity.",
+        "sideEffects": [
+            "Dizziness",
+            "Confusion",
+            "Headache"
+        ],
+        "interactions": "Minimal drug interactions.",
+        "interactionDetails": "",
+        "drugIds": [
+            "memantine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "dementia-medications",
+        "name": "Dementia Medications",
+        "system": "psychiatry-neurology-expanded",
+        "pharmacologicClassIds": [
+            "acetylcholinesterase-inhibitors",
+            "nmda-antagonists"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "stimulants",
+        "name": "Stimulants",
+        "therapeuticClass": "adhd-medications",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Block dopamine and norepinephrine reuptake or increase release in prefrontal cortex.",
+        "sideEffects": [
+            "Insomnia",
+            "Decreased appetite",
+            "Growth suppression",
+            "Tachycardia",
+            "Hypertension"
+        ],
+        "interactions": "MAOIs (hypertensive crisis).",
+        "interactionDetails": "",
+        "drugIds": [
+            "methylphenidate",
+            "amphetamine-dextroamphetamine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "non-stimulant-adhd-medications",
+        "name": "Non-Stimulant ADHD Medications",
+        "therapeuticClass": "adhd-medications",
+        "system": "psychiatry-neurology-expanded",
+        "mechanism": "Selective norepinephrine reuptake inhibitor.",
+        "sideEffects": [
+            "Decreased appetite",
+            "Nausea",
+            "Insomnia",
+            "Suicidal ideation (black box warning)"
+        ],
+        "interactions": "CYP2D6 substrates.",
+        "interactionDetails": "",
+        "drugIds": [
+            "atomoxetine"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "adhd-medications",
+        "name": "ADHD Medications",
+        "system": "psychiatry-neurology-expanded",
+        "pharmacologicClassIds": [
+            "stimulants",
+            "non-stimulant-adhd-medications"
         ],
         "pageType": "therapeutic-class"
     }
