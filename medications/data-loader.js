@@ -179,6 +179,14 @@ class MedicationDataLoader {
         return this.systems;
     }
 
+    getAllClasses() {
+        return this.classes;
+    }
+
+    getAllDrugs() {
+        return this.drugs;
+    }
+
     getSystemById(id) {
         return this.systemsById.get(id);
     }
