@@ -19,7 +19,8 @@ const classes = [
         "drugIds": [
             "baclofen",
             "tizanidine",
-            "cyclobenzaprine"
+            "cyclobenzaprine",
+            "methocarbamol"
         ],
         "pageType": "pharmacologic-class"
     },
@@ -135,6 +136,61 @@ const classes = [
             "calcium-and-vitamin-d",
             "anabolic-agents",
             "rankl-inhibitors"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "jak-inhibitors",
+        "name": "JAK Inhibitors",
+        "therapeuticClass": "targeted-dmards",
+        "system": "musculoskeletal-system",
+        "mechanism": "Inhibit Janus kinases (JAK1, JAK3) to block cytokine signaling.",
+        "sideEffects": [
+            "Infection risk",
+            "Herpes zoster reactivation",
+            "Thrombosis",
+            "Malignancy risk"
+        ],
+        "interactions": "Live vaccines contraindicated, CYP3A4 interactions.",
+        "interactionDetails": "",
+        "drugIds": [
+            "tofacitinib"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "targeted-dmards",
+        "name": "Targeted DMARDs",
+        "system": "musculoskeletal-system",
+        "pharmacologicClassIds": [
+            "jak-inhibitors"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "xanthine-oxidase-inhibitors",
+        "name": "Xanthine Oxidase Inhibitors",
+        "therapeuticClass": "gout-medications",
+        "system": "musculoskeletal-system",
+        "mechanism": "Inhibit xanthine oxidase to reduce uric acid production.",
+        "sideEffects": [
+            "Gout flares initially",
+            "Liver enzyme elevation",
+            "Hypersensitivity reactions"
+        ],
+        "interactions": "Azathioprine/mercaptopurine (severe toxicity).",
+        "interactionDetails": "",
+        "drugIds": [
+            "febuxostat"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "gout-medications",
+        "name": "Gout Medications",
+        "system": "musculoskeletal-system",
+        "pharmacologicClassIds": [
+            "xanthine-oxidase-inhibitors"
         ],
         "pageType": "therapeutic-class"
     }

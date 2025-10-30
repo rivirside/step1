@@ -231,6 +231,113 @@ const drugs = [
         "interactions": "Ensure adequate calcium/vitamin D to prevent hypocalcemia.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "tofacitinib",
+        "name": "Tofacitinib",
+        "pharmacologicClass": "jak-inhibitors",
+        "therapeuticClass": "targeted-dmards",
+        "system": "musculoskeletal-system",
+        "mechanism": "Inhibit Janus kinases (JAK1, JAK3) to block cytokine signaling.",
+        "features": "Oral JAK inhibitor, alternative to biologics.",
+        "clinicalChoice": "Rheumatoid arthritis refractory to methotrexate.",
+        "indications": [
+            "Rheumatoid Arthritis",
+            "Psoriatic Arthritis",
+            "Ulcerative Colitis"
+        ],
+        "contraindications": [
+            "Active Infection",
+            "Severe Hepatic Impairment"
+        ],
+        "sideEffects": [
+            "Infection risk",
+            "Herpes zoster reactivation",
+            "Thrombosis",
+            "Malignancy risk"
+        ],
+        "interactions": "Live vaccines contraindicated, CYP3A4 interactions.",
+        "interactionDetails": "THROMBOSIS: MECHANISM - JAK inhibition may affect platelet production and coagulation pathways. CONSEQUENCE - Black box warning for increased risk of blood clots, cardiovascular death. Use caution in high-risk patients.",
+        "pageType": "drug"
+    },
+    {
+        "id": "tizanidine",
+        "name": "Tizanidine",
+        "pharmacologicClass": "central-acting-muscle-relaxants",
+        "therapeuticClass": "muscle-relaxants",
+        "system": "musculoskeletal-system",
+        "mechanism": "Alpha-2 adrenergic agonist, acts centrally to reduce muscle spasticity.",
+        "features": "Alpha-2 agonist, hepatotoxicity risk.",
+        "clinicalChoice": "Multiple sclerosis, spinal cord injury spasticity.",
+        "indications": [
+            "Multiple Sclerosis",
+            "Spinal Cord Injury"
+        ],
+        "contraindications": [
+            "Concurrent Ciprofloxacin or Fluvoxamine Use",
+            "Severe Hepatic Impairment"
+        ],
+        "sideEffects": [
+            "Sedation",
+            "Hypotension",
+            "Dry mouth",
+            "Hepatotoxicity"
+        ],
+        "interactions": "CYP1A2 inhibitors (ciprofloxacin, fluvoxamine) markedly increase levels.",
+        "interactionDetails": "CYP1A2 INHIBITORS: MECHANISM - Ciprofloxacin and fluvoxamine inhibit tizanidine metabolism. CONSEQUENCE - Severe hypotension and excessive sedation. Combination contraindicated.",
+        "pageType": "drug"
+    },
+    {
+        "id": "methocarbamol",
+        "name": "Methocarbamol",
+        "pharmacologicClass": "central-acting-muscle-relaxants",
+        "therapeuticClass": "muscle-relaxants",
+        "system": "musculoskeletal-system",
+        "mechanism": "Act centrally in spinal cord and brain to reduce muscle spasticity.",
+        "features": "Less sedating than cyclobenzaprine.",
+        "clinicalChoice": "Acute musculoskeletal pain and muscle spasms.",
+        "indications": [
+            "Acute Muscle Spasms",
+            "Musculoskeletal Pain"
+        ],
+        "contraindications": [
+            "Hypersensitivity",
+            "Myasthenia Gravis"
+        ],
+        "sideEffects": [
+            "Sedation",
+            "Dizziness",
+            "Nausea",
+            "Headache"
+        ],
+        "interactions": "CNS depressants (additive sedation).",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "febuxostat",
+        "name": "Febuxostat",
+        "pharmacologicClass": "xanthine-oxidase-inhibitors",
+        "therapeuticClass": "gout-medications",
+        "system": "musculoskeletal-system",
+        "mechanism": "Inhibit xanthine oxidase to reduce uric acid production.",
+        "features": "Alternative to allopurinol, no dose adjustment in mild-moderate renal impairment.",
+        "clinicalChoice": "Chronic gout in patients intolerant to allopurinol.",
+        "indications": [
+            "Chronic Gout",
+            "Hyperuricemia"
+        ],
+        "contraindications": [
+            "Concurrent Azathioprine or Mercaptopurine"
+        ],
+        "sideEffects": [
+            "Gout flares initially",
+            "Liver enzyme elevation",
+            "Cardiovascular mortality risk"
+        ],
+        "interactions": "Azathioprine/mercaptopurine (severe toxicity).",
+        "interactionDetails": "AZATHIOPRINE: MECHANISM - Xanthine oxidase inhibition prevents metabolism of azathioprine. CONSEQUENCE - Severe myelosuppression, potentially fatal. Contraindicated. CV RISK: Black box warning for increased cardiovascular death compared to allopurinol.",
+        "pageType": "drug"
     }
 
 ];export default drugs;
