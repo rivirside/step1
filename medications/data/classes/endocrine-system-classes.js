@@ -62,6 +62,25 @@ const classes = [
         "pageType": "pharmacologic-class"
     },
     {
+        "id": "meglitinides",
+        "name": "Meglitinides",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Non-sulfonylurea insulin secretagogues. Bind to SUR1 receptor (different site than sulfonylureas) on pancreatic beta cells, stimulating insulin release.",
+        "sideEffects": [
+            "Hypoglycemia (less than sulfonylureas)",
+            "Weight gain (1-2 kg, less than sulfonylureas)",
+            "Upper respiratory infection"
+        ],
+        "interactions": "CYP3A4 and CYP2C8 interactions. Gemfibrozil significantly increases repaglinide levels.",
+        "interactionDetails": "",
+        "drugIds": [
+            "repaglinide",
+            "nateglinide"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
         "id": "thiazolidinediones",
         "name": "Thiazolidinediones",
         "therapeuticClass": "diabetes-medications",
@@ -76,7 +95,8 @@ const classes = [
         "interactions": "CYP2C8 inhibitors increase levels.",
         "interactionDetails": "",
         "drugIds": [
-            "pioglitazone"
+            "pioglitazone",
+            "rosiglitazone"
         ],
         "pageType": "pharmacologic-class"
     },
@@ -140,6 +160,43 @@ const classes = [
         "pageType": "pharmacologic-class"
     },
     {
+        "id": "amylin-analogs",
+        "name": "Amylin Analogs",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Synthetic analog of amylin (hormone co-secreted with insulin). Slows gastric emptying, suppresses postprandial glucagon, and promotes satiety.",
+        "sideEffects": [
+            "Nausea",
+            "Hypoglycemia (when combined with insulin)",
+            "Injection site reactions"
+        ],
+        "interactions": "Delays absorption of oral medications due to delayed gastric emptying.",
+        "interactionDetails": "",
+        "drugIds": [
+            "pramlintide"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "alpha-glucosidase-inhibitors",
+        "name": "Alpha-Glucosidase Inhibitors",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Inhibit intestinal alpha-glucosidase enzymes, delaying carbohydrate digestion and absorption. Reduces postprandial glucose spikes.",
+        "sideEffects": [
+            "Flatulence",
+            "Diarrhea",
+            "Abdominal pain"
+        ],
+        "interactions": "Intestinal adsorbents (charcoal) and digestive enzymes may reduce efficacy.",
+        "interactionDetails": "",
+        "drugIds": [
+            "acarbose",
+            "miglitol"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
         "id": "diabetes-medications",
         "name": "Diabetes Medications",
         "system": "endocrine-system",
@@ -147,10 +204,13 @@ const classes = [
             "insulin",
             "biguanides",
             "sulfonylureas",
+            "meglitinides",
             "thiazolidinediones",
             "dpp-4-inhibitors",
             "glp-1-receptor-agonists",
-            "sglt2-inhibitors"
+            "sglt2-inhibitors",
+            "amylin-analogs",
+            "alpha-glucosidase-inhibitors"
         ],
         "pageType": "therapeutic-class"
     },

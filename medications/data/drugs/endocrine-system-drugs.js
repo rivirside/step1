@@ -207,6 +207,62 @@ const drugs = [
         "pageType": "drug"
     },
     {
+        "id": "repaglinide",
+        "name": "Repaglinide",
+        "pharmacologicClass": "meglitinides",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Non-sulfonylurea insulin secretagogue. Binds to SUR1 receptor on ATP-sensitive K+ channels in pancreatic beta cells (different binding site than sulfonylureas) → closes K+ channels → membrane depolarization → Ca²⁺ influx → rapid insulin granule exocytosis. Rapid onset and short duration of action.",
+        "features": "Rapid-acting insulin secretagogue, taken with meals. More potent meglitinide.",
+        "clinicalChoice": "Type 2 Diabetes (as monotherapy or combination with metformin or TZDs)",
+        "indications": [
+            "Type 2 Diabetes (as monotherapy or combination with metformin or TZDs)"
+        ],
+        "contraindications": [
+            "Type 1 Diabetes",
+            "Diabetic ketoacidosis",
+            "Gemfibrozil use (severe drug interaction - CONTRAINDICATED)",
+            "Severe hepatic impairment"
+        ],
+        "sideEffects": [
+            "Hypoglycemia (5-10%, lower than sulfonylureas)",
+            "Weight gain (1-2 kg, less than sulfonylureas)",
+            "Upper respiratory tract infection",
+            "Headache",
+            "Diarrhea"
+        ],
+        "interactions": "CYP3A4 and CYP2C8 interactions. Gemfibrozil CONTRAINDICATED - increases repaglinide AUC by 8-fold.",
+        "interactionDetails": "GEMFIBROZIL: CONTRAINDICATED - increases repaglinide AUC by 8-fold via CYP2C8 inhibition → severe prolonged hypoglycemia. DO NOT use together.",
+        "pageType": "drug"
+    },
+    {
+        "id": "nateglinide",
+        "name": "Nateglinide",
+        "pharmacologicClass": "meglitinides",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Non-sulfonylurea insulin secretagogue derived from D-phenylalanine. Binds to SUR1 receptor on ATP-sensitive K+ channels in pancreatic beta cells → closes K+ channels → depolarization → Ca²⁺ influx → rapid insulin release. Fastest onset of all meglitinides.",
+        "features": "Ultra-rapid onset, shortest duration. Derived from amino acid D-phenylalanine. Less potent than repaglinide.",
+        "clinicalChoice": "Type 2 Diabetes (as monotherapy or combination with metformin or TZDs)",
+        "indications": [
+            "Type 2 Diabetes (as monotherapy or combination with metformin or TZDs)"
+        ],
+        "contraindications": [
+            "Type 1 Diabetes",
+            "Diabetic ketoacidosis"
+        ],
+        "sideEffects": [
+            "Hypoglycemia (less common than repaglinide or sulfonylureas)",
+            "Weight gain (minimal, 0.5-1 kg)",
+            "Upper respiratory infection",
+            "Diarrhea",
+            "Dizziness"
+        ],
+        "interactions": "CYP2C9 inhibitors (fluconazole): increase nateglinide levels slightly (monitor glucose)",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
         "id": "pioglitazone",
         "name": "Pioglitazone",
         "pharmacologicClass": "thiazolidinediones",
@@ -230,6 +286,35 @@ const drugs = [
         ],
         "interactions": "CYP2C8 inhibitors increase levels.",
         "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "rosiglitazone",
+        "name": "Rosiglitazone",
+        "pharmacologicClass": "thiazolidinediones",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "PPAR-γ agonist → increases insulin sensitivity in muscle and adipose tissue.",
+        "features": "REMOVED FROM MARKET (2010) due to cardiovascular risk.",
+        "clinicalChoice": "NOT AVAILABLE - removed from US market in 2010 due to increased risk of myocardial infarction and cardiovascular death.",
+        "indications": [
+            "Previously: Type 2 Diabetes (NOW WITHDRAWN FROM MARKET)"
+        ],
+        "contraindications": [
+            "DRUG WITHDRAWN FROM MARKET",
+            "Historical contraindications: Heart failure, liver disease"
+        ],
+        "sideEffects": [
+            "Weight gain",
+            "Edema",
+            "Fluid retention",
+            "Myocardial infarction (increased risk - reason for market withdrawal)",
+            "Cardiovascular death",
+            "Heart failure",
+            "Bone fractures"
+        ],
+        "interactions": "Historical: CYP2C8/2C9 interactions similar to pioglitazone",
+        "interactionDetails": "REMOVED FROM MARKET: Increased risk of myocardial infarction and cardiovascular events led to FDA restriction in 2010 and subsequent market withdrawal.",
         "pageType": "drug"
     },
     {
@@ -384,6 +469,91 @@ const drugs = [
             "Dehydration"
         ],
         "interactions": "Diuretics increase dehydration risk.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "pramlintide",
+        "name": "Pramlintide",
+        "pharmacologicClass": "amylin-analogs",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Synthetic analog of amylin, a hormone co-secreted with insulin from pancreatic beta cells. Slows gastric emptying, suppresses postprandial glucagon secretion, and promotes satiety via central mechanisms.",
+        "features": "Only amylin analog available. Adjunct to insulin therapy.",
+        "clinicalChoice": "For patients on mealtime insulin who have inadequate glucose control despite optimal insulin therapy. Unique benefit of weight loss (3-4 kg average).",
+        "indications": [
+            "Type 1 Diabetes (as adjunct to mealtime insulin)",
+            "Type 2 Diabetes (as adjunct to mealtime insulin)"
+        ],
+        "contraindications": [
+            "Gastroparesis",
+            "Hypoglycemia unawareness"
+        ],
+        "sideEffects": [
+            "Nausea (60-70%, usually improves over 4 weeks)",
+            "Vomiting",
+            "Anorexia",
+            "Headache",
+            "Severe hypoglycemia (when not reducing insulin dose appropriately)"
+        ],
+        "interactions": "Insulin: increased hypoglycemia risk (reduce insulin dose by 50%). Drugs requiring rapid absorption: delayed by pramlintide.",
+        "interactionDetails": "BLACK BOX: Severe hypoglycemia - must reduce mealtime insulin by 50% when starting pramlintide.",
+        "pageType": "drug"
+    },
+    {
+        "id": "acarbose",
+        "name": "Acarbose",
+        "pharmacologicClass": "alpha-glucosidase-inhibitors",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Reversibly inhibits alpha-glucosidase enzymes in small intestine brush border, delaying breakdown of complex carbohydrates into absorbable monosaccharides. Reduces postprandial glucose spikes.",
+        "features": "Minimal systemic absorption (<2%). Acts locally in GI tract.",
+        "clinicalChoice": "For patients with elevated postprandial glucose but acceptable fasting glucose. Particularly useful in Asian populations (high-carbohydrate diets).",
+        "indications": [
+            "Type 2 Diabetes"
+        ],
+        "contraindications": [
+            "Inflammatory bowel disease (Crohn's, ulcerative colitis)",
+            "Colonic ulceration",
+            "Intestinal obstruction",
+            "Chronic intestinal diseases with malabsorption",
+            "Cirrhosis"
+        ],
+        "sideEffects": [
+            "Flatulence (75% of patients - due to colonic fermentation of undigested carbs)",
+            "Diarrhea (30%)",
+            "Abdominal pain/cramping (20%)",
+            "Elevated liver enzymes (rare, reversible)"
+        ],
+        "interactions": "Must take with FIRST BITE of meal. If hypoglycemia occurs, treat with GLUCOSE (not sucrose - acarbose blocks sucrose breakdown).",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "miglitol",
+        "name": "Miglitol",
+        "pharmacologicClass": "alpha-glucosidase-inhibitors",
+        "therapeuticClass": "diabetes-medications",
+        "system": "endocrine-system",
+        "mechanism": "Reversibly inhibits alpha-glucosidase enzymes in small intestine, delaying digestion and absorption of carbohydrates. Reduces postprandial glucose excursions.",
+        "features": "Well absorbed systemically (unlike acarbose). Renally excreted unchanged.",
+        "clinicalChoice": "Alternative to acarbose with similar efficacy and side effect profile. Avoid in renal impairment (systemically absorbed and renally excreted).",
+        "indications": [
+            "Type 2 Diabetes"
+        ],
+        "contraindications": [
+            "Inflammatory bowel disease",
+            "Colonic ulceration",
+            "Intestinal obstruction",
+            "Severe renal impairment (CrCl <25 mL/min)",
+            "Chronic intestinal diseases with malabsorption"
+        ],
+        "sideEffects": [
+            "Flatulence (70% - due to colonic fermentation)",
+            "Diarrhea (30%)",
+            "Abdominal pain (10-15%)"
+        ],
+        "interactions": "Must take with FIRST BITE of each meal. If hypoglycemia occurs, treat with GLUCOSE (not sucrose).",
         "interactionDetails": "",
         "pageType": "drug"
     },
