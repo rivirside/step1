@@ -235,6 +235,131 @@ const drugs = [
         "interactions": "Occlusive dressings increase absorption.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "tacrolimus-topical",
+        "name": "Tacrolimus (Topical)",
+        "pharmacologicClass": "topical-calcineurin-inhibitors",
+        "therapeuticClass": "topical-immunomodulators",
+        "system": "dermatology",
+        "mechanism": "Inhibit calcineurin to block T-cell activation and cytokine release.",
+        "features": "Steroid-sparing agent for sensitive areas (face, neck).",
+        "clinicalChoice": "Atopic dermatitis, especially on face and intertriginous areas.",
+        "indications": [
+            "Atopic Dermatitis"
+        ],
+        "contraindications": [
+            "Skin Infections",
+            "Immunocompromised Patients"
+        ],
+        "sideEffects": [
+            "Burning sensation",
+            "Skin infections",
+            "Potential lymphoma risk (black box warning)"
+        ],
+        "interactions": "CYP3A4 inhibitors may increase systemic absorption.",
+        "interactionDetails": "LYMPHOMA RISK: MECHANISM - Unclear, possibly related to local immunosuppression. CONSEQUENCE - Black box warning for potential malignancy risk, use as second-line therapy.",
+        "pageType": "drug"
+    },
+    {
+        "id": "pimecrolimus",
+        "name": "Pimecrolimus",
+        "pharmacologicClass": "topical-calcineurin-inhibitors",
+        "therapeuticClass": "topical-immunomodulators",
+        "system": "dermatology",
+        "mechanism": "Inhibit calcineurin to block T-cell activation and cytokine release.",
+        "features": "Lower potency than tacrolimus, for mild-moderate disease.",
+        "clinicalChoice": "Mild to moderate atopic dermatitis.",
+        "indications": [
+            "Mild to Moderate Atopic Dermatitis"
+        ],
+        "contraindications": [
+            "Skin Infections",
+            "Immunocompromised Patients"
+        ],
+        "sideEffects": [
+            "Burning sensation",
+            "Skin infections",
+            "Potential lymphoma risk (black box warning)"
+        ],
+        "interactions": "CYP3A4 inhibitors may increase systemic absorption.",
+        "interactionDetails": "LYMPHOMA RISK: MECHANISM - Unclear, possibly related to local immunosuppression. CONSEQUENCE - Black box warning for potential malignancy risk, use as second-line therapy.",
+        "pageType": "drug"
+    },
+    {
+        "id": "mupirocin",
+        "name": "Mupirocin",
+        "pharmacologicClass": "topical-antibiotics",
+        "therapeuticClass": "topical-antibacterials",
+        "system": "dermatology",
+        "mechanism": "Inhibit bacterial isoleucyl-tRNA synthetase, preventing protein synthesis.",
+        "features": "Effective against MRSA, used for nasal decolonization.",
+        "clinicalChoice": "Impetigo, MRSA decolonization.",
+        "indications": [
+            "Impetigo",
+            "MRSA Decolonization"
+        ],
+        "contraindications": [
+            "Hypersensitivity"
+        ],
+        "sideEffects": [
+            "Local irritation",
+            "Burning sensation"
+        ],
+        "interactions": "None significant.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "clindamycin-topical",
+        "name": "Clindamycin (Topical)",
+        "pharmacologicClass": "topical-antibiotics",
+        "therapeuticClass": "topical-antibacterials",
+        "system": "dermatology",
+        "mechanism": "Inhibit 50S ribosomal subunit, preventing bacterial protein synthesis.",
+        "features": "Topical antibiotic for acne, often combined with benzoyl peroxide.",
+        "clinicalChoice": "Moderate acne vulgaris.",
+        "indications": [
+            "Acne Vulgaris"
+        ],
+        "contraindications": [
+            "History of Pseudomembranous Colitis"
+        ],
+        "sideEffects": [
+            "Skin dryness",
+            "Peeling",
+            "Burning sensation"
+        ],
+        "interactions": "Benzoyl peroxide inactivates topical erythromycin but not clindamycin.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "ustekinumab",
+        "name": "Ustekinumab",
+        "pharmacologicClass": "il-12-23-inhibitors",
+        "therapeuticClass": "psoriasis-biologics",
+        "system": "dermatology",
+        "mechanism": "Monoclonal antibody against IL-12 and IL-23, reducing T-cell activation.",
+        "features": "IL-12/23 inhibitor, less frequent dosing (every 12 weeks).",
+        "clinicalChoice": "Moderate to severe psoriasis, psoriatic arthritis.",
+        "indications": [
+            "Moderate to Severe Psoriasis",
+            "Psoriatic Arthritis",
+            "Crohn Disease"
+        ],
+        "contraindications": [
+            "Active Infection",
+            "Latent TB"
+        ],
+        "sideEffects": [
+            "Infection risk",
+            "Injection site reactions",
+            "Antibody formation"
+        ],
+        "interactions": "Live vaccines contraindicated.",
+        "interactionDetails": "LIVE VACCINES: MECHANISM - IL-12/23 blockade impairs immune response. CONSEQUENCE - Risk of disseminated infection from live vaccines. Complete vaccinations before starting therapy.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

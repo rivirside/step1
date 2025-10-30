@@ -144,6 +144,89 @@ const classes = [
             "low-to-high-potency-steroids"
         ],
         "pageType": "therapeutic-class"
+    },
+    {
+        "id": "topical-calcineurin-inhibitors",
+        "name": "Topical Calcineurin Inhibitors",
+        "therapeuticClass": "topical-immunomodulators",
+        "system": "dermatology",
+        "mechanism": "Inhibit calcineurin to block T-cell activation and cytokine release.",
+        "sideEffects": [
+            "Burning sensation",
+            "Skin infections",
+            "Potential lymphoma risk (black box warning)"
+        ],
+        "interactions": "CYP3A4 inhibitors may increase systemic absorption.",
+        "interactionDetails": "",
+        "drugIds": [
+            "tacrolimus-topical",
+            "pimecrolimus"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "topical-immunomodulators",
+        "name": "Topical Immunomodulators",
+        "system": "dermatology",
+        "pharmacologicClassIds": [
+            "topical-calcineurin-inhibitors"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "topical-antibiotics",
+        "name": "Topical Antibiotics",
+        "therapeuticClass": "topical-antibacterials",
+        "system": "dermatology",
+        "mechanism": "Inhibit bacterial protein synthesis or cell wall formation.",
+        "sideEffects": [
+            "Local irritation",
+            "Skin dryness",
+            "Burning sensation"
+        ],
+        "interactions": "Variable by agent.",
+        "interactionDetails": "",
+        "drugIds": [
+            "mupirocin",
+            "clindamycin-topical"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "topical-antibacterials",
+        "name": "Topical Antibacterials",
+        "system": "dermatology",
+        "pharmacologicClassIds": [
+            "topical-antibiotics"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "il-12-23-inhibitors",
+        "name": "IL-12/23 Inhibitors",
+        "therapeuticClass": "psoriasis-biologics",
+        "system": "dermatology",
+        "mechanism": "Monoclonal antibody against IL-12 and IL-23, reducing T-cell activation.",
+        "sideEffects": [
+            "Infection risk",
+            "Injection site reactions",
+            "Antibody formation"
+        ],
+        "interactions": "Live vaccines contraindicated.",
+        "interactionDetails": "",
+        "drugIds": [
+            "ustekinumab"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "psoriasis-biologics",
+        "name": "Psoriasis Biologics",
+        "system": "dermatology",
+        "pharmacologicClassIds": [
+            "il-12-23-inhibitors"
+        ],
+        "pageType": "therapeutic-class"
     }
 ];
 
