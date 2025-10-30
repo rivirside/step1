@@ -197,6 +197,361 @@ const drugs = [
         "interactions": "May enhance effects of other inhaled therapies by improving deposition.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "albuterol",
+        "name": "Albuterol",
+        "pharmacologicClass": "short-acting-beta-2-agonists",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Stimulate beta-2 receptors to cause bronchodilation.",
+        "features": "Most commonly prescribed rescue inhaler, rapid onset (5 min).",
+        "clinicalChoice": "Acute asthma exacerbations, exercise-induced bronchospasm.",
+        "indications": [
+            "Asthma",
+            "COPD",
+            "Exercise-Induced Bronchospasm"
+        ],
+        "contraindications": [
+            "Hypersensitivity"
+        ],
+        "sideEffects": [
+            "Tremor",
+            "Tachycardia",
+            "Hypokalemia",
+            "Hyperglycemia"
+        ],
+        "interactions": "Beta-blockers antagonize bronchodilation.",
+        "interactionDetails": "BETA-BLOCKERS: MECHANISM - Beta-blockers competitively antagonize beta-2 receptor activation. CONSEQUENCE - Reduced bronchodilation and potential bronchospasm, especially with non-selective beta-blockers.",
+        "pageType": "drug"
+    },
+    {
+        "id": "levalbuterol",
+        "name": "Levalbuterol",
+        "pharmacologicClass": "short-acting-beta-2-agonists",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Stimulate beta-2 receptors to cause bronchodilation.",
+        "features": "R-enantiomer of albuterol, fewer cardiac side effects.",
+        "clinicalChoice": "Patients with cardiac disease requiring bronchodilation.",
+        "indications": [
+            "Asthma",
+            "COPD"
+        ],
+        "contraindications": [
+            "Hypersensitivity"
+        ],
+        "sideEffects": [
+            "Tremor",
+            "Tachycardia",
+            "Hypokalemia",
+            "Hyperglycemia"
+        ],
+        "interactions": "Beta-blockers antagonize bronchodilation.",
+        "interactionDetails": "BETA-BLOCKERS: MECHANISM - Beta-blockers competitively antagonize beta-2 receptor activation. CONSEQUENCE - Reduced bronchodilation and potential bronchospasm, especially with non-selective beta-blockers.",
+        "pageType": "drug"
+    },
+    {
+        "id": "salmeterol",
+        "name": "Salmeterol",
+        "pharmacologicClass": "long-acting-beta-2-agonists",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Long-acting beta-2 agonists provide sustained bronchodilation.",
+        "features": "12-hour duration, slow onset. Black box warning: increased asthma-related deaths when used without ICS.",
+        "clinicalChoice": "Asthma maintenance with ICS, COPD.",
+        "indications": [
+            "Asthma Maintenance",
+            "COPD"
+        ],
+        "contraindications": [
+            "Asthma Monotherapy",
+            "Acute Bronchospasm"
+        ],
+        "sideEffects": [
+            "Tremor",
+            "Tachycardia",
+            "Increased asthma deaths (without ICS)"
+        ],
+        "interactions": "Must be combined with ICS for asthma.",
+        "interactionDetails": "ICS REQUIREMENT: MECHANISM - LABAs may mask inflammation while allowing disease progression. CONSEQUENCE - Increased risk of severe asthma exacerbations and death. Always use with inhaled corticosteroids.",
+        "pageType": "drug"
+    },
+    {
+        "id": "formoterol",
+        "name": "Formoterol",
+        "pharmacologicClass": "long-acting-beta-2-agonists",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Long-acting beta-2 agonists provide sustained bronchodilation.",
+        "features": "12-hour duration, faster onset than salmeterol.",
+        "clinicalChoice": "Asthma maintenance with ICS, COPD.",
+        "indications": [
+            "Asthma Maintenance",
+            "COPD"
+        ],
+        "contraindications": [
+            "Asthma Monotherapy",
+            "Acute Bronchospasm"
+        ],
+        "sideEffects": [
+            "Tremor",
+            "Tachycardia",
+            "Increased asthma deaths (without ICS)"
+        ],
+        "interactions": "Must be combined with ICS for asthma.",
+        "interactionDetails": "ICS REQUIREMENT: MECHANISM - LABAs may mask inflammation while allowing disease progression. CONSEQUENCE - Increased risk of severe asthma exacerbations and death. Always use with inhaled corticosteroids.",
+        "pageType": "drug"
+    },
+    {
+        "id": "ipratropium",
+        "name": "Ipratropium",
+        "pharmacologicClass": "short-acting-anticholinergics",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Block muscarinic receptors to reduce bronchoconstriction and mucus secretion.",
+        "features": "Short-acting, often combined with albuterol (DuoNeb).",
+        "clinicalChoice": "COPD, asthma exacerbations.",
+        "indications": [
+            "COPD",
+            "Asthma"
+        ],
+        "contraindications": [
+            "Hypersensitivity to Atropine"
+        ],
+        "sideEffects": [
+            "Dry mouth",
+            "Urinary retention",
+            "Blurred vision"
+        ],
+        "interactions": "Additive anticholinergic effects with other antimuscarinics.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "tiotropium",
+        "name": "Tiotropium",
+        "pharmacologicClass": "long-acting-anticholinergics",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Long-acting muscarinic antagonists for sustained bronchodilation.",
+        "features": "Once-daily dosing, M3-selective.",
+        "clinicalChoice": "COPD maintenance therapy.",
+        "indications": [
+            "COPD"
+        ],
+        "contraindications": [
+            "Hypersensitivity",
+            "Narrow-Angle Glaucoma"
+        ],
+        "sideEffects": [
+            "Dry mouth",
+            "Urinary retention",
+            "Blurred vision"
+        ],
+        "interactions": "Additive anticholinergic effects with other antimuscarinics.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "aclidinium",
+        "name": "Aclidinium",
+        "pharmacologicClass": "long-acting-anticholinergics",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Long-acting muscarinic antagonists for sustained bronchodilation.",
+        "features": "Twice-daily dosing, rapid hydrolysis reduces systemic effects.",
+        "clinicalChoice": "COPD maintenance.",
+        "indications": [
+            "COPD"
+        ],
+        "contraindications": [
+            "Hypersensitivity",
+            "Narrow-Angle Glaucoma"
+        ],
+        "sideEffects": [
+            "Dry mouth",
+            "Urinary retention",
+            "Blurred vision"
+        ],
+        "interactions": "Additive anticholinergic effects with other antimuscarinics.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "fluticasone",
+        "name": "Fluticasone",
+        "pharmacologicClass": "inhaled-corticosteroids",
+        "therapeuticClass": "anti-inflammatory-agents",
+        "system": "respiratory-system",
+        "mechanism": "Local anti-inflammatory effects in airways.",
+        "features": "High-potency ICS, minimal systemic absorption.",
+        "clinicalChoice": "Moderate to severe persistent asthma.",
+        "indications": [
+            "Asthma",
+            "COPD"
+        ],
+        "contraindications": [
+            "Fungal Infections"
+        ],
+        "sideEffects": [
+            "Oral thrush",
+            "Hoarseness",
+            "Growth suppression"
+        ],
+        "interactions": "Minimal systemic interactions.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "budesonide",
+        "name": "Budesonide",
+        "pharmacologicClass": "inhaled-corticosteroids",
+        "therapeuticClass": "anti-inflammatory-agents",
+        "system": "respiratory-system",
+        "mechanism": "Local anti-inflammatory effects in airways.",
+        "features": "Medium-potency ICS, safe in pregnancy (Category B).",
+        "clinicalChoice": "Asthma in pregnancy, pediatric asthma.",
+        "indications": [
+            "Asthma",
+            "COPD",
+            "Crohn Disease"
+        ],
+        "contraindications": [
+            "Fungal Infections"
+        ],
+        "sideEffects": [
+            "Oral thrush",
+            "Hoarseness",
+            "Growth suppression"
+        ],
+        "interactions": "Minimal systemic interactions.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "fluticasone-salmeterol",
+        "name": "Fluticasone/Salmeterol",
+        "pharmacologicClass": "ics-laba-combinations",
+        "therapeuticClass": "combination-inhalers",
+        "system": "respiratory-system",
+        "mechanism": "Combination of inhaled corticosteroid and long-acting beta-2 agonist.",
+        "features": "Most commonly prescribed ICS/LABA combination (Advair).",
+        "clinicalChoice": "Moderate to severe asthma requiring both ICS and LABA.",
+        "indications": [
+            "Asthma",
+            "COPD"
+        ],
+        "contraindications": [
+            "Acute Bronchospasm"
+        ],
+        "sideEffects": [
+            "Oral thrush",
+            "Tremor",
+            "Tachycardia"
+        ],
+        "interactions": "CYP3A4 inhibitors may increase fluticasone levels.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "budesonide-formoterol",
+        "name": "Budesonide/Formoterol",
+        "pharmacologicClass": "ics-laba-combinations",
+        "therapeuticClass": "combination-inhalers",
+        "system": "respiratory-system",
+        "mechanism": "Combination of inhaled corticosteroid and long-acting beta-2 agonist.",
+        "features": "Faster-acting LABA (formoterol) than salmeterol, can be used as rescue (Symbicort SMART).",
+        "clinicalChoice": "Asthma maintenance and reliever therapy.",
+        "indications": [
+            "Asthma",
+            "COPD"
+        ],
+        "contraindications": [
+            "Acute Bronchospasm"
+        ],
+        "sideEffects": [
+            "Oral thrush",
+            "Tremor",
+            "Tachycardia"
+        ],
+        "interactions": "CYP3A4 inhibitors may increase budesonide levels.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "dextromethorphan",
+        "name": "Dextromethorphan",
+        "pharmacologicClass": "antitussives",
+        "therapeuticClass": "cough-suppressants",
+        "system": "respiratory-system",
+        "mechanism": "Suppress cough reflex in medullary cough center.",
+        "features": "OTC cough suppressant, NMDA receptor antagonist.",
+        "clinicalChoice": "Dry, nonproductive cough.",
+        "indications": [
+            "Cough"
+        ],
+        "contraindications": [
+            "MAOIs",
+            "Productive Cough"
+        ],
+        "sideEffects": [
+            "Drowsiness",
+            "Dizziness",
+            "Serotonin syndrome with MAOIs"
+        ],
+        "interactions": "MAOIs can cause serotonin syndrome.",
+        "interactionDetails": "MAOIS: MECHANISM - Dextromethorphan has serotonergic properties. MAOIs prevent serotonin breakdown. CONSEQUENCE - Risk of serotonin syndrome with hyperthermia, rigidity, and altered mental status.",
+        "pageType": "drug"
+    },
+    {
+        "id": "benzonatate",
+        "name": "Benzonatate",
+        "pharmacologicClass": "antitussives",
+        "therapeuticClass": "cough-suppressants",
+        "system": "respiratory-system",
+        "mechanism": "Suppress cough reflex in medullary cough center.",
+        "features": "Non-narcotic cough suppressant, local anesthetic action on stretch receptors.",
+        "clinicalChoice": "Persistent cough without CNS depression.",
+        "indications": [
+            "Cough"
+        ],
+        "contraindications": [
+            "Hypersensitivity"
+        ],
+        "sideEffects": [
+            "Drowsiness",
+            "Dizziness",
+            "Numbness in mouth"
+        ],
+        "interactions": "Minimal drug interactions.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "guaifenesin",
+        "name": "Guaifenesin",
+        "pharmacologicClass": "expectorants",
+        "therapeuticClass": "airway-clearance-agents",
+        "system": "respiratory-system",
+        "mechanism": "Increase respiratory tract secretions to facilitate mucus clearance.",
+        "features": "OTC expectorant, increases water content of mucus.",
+        "clinicalChoice": "Productive cough, chest congestion.",
+        "indications": [
+            "Productive Cough",
+            "Chest Congestion"
+        ],
+        "contraindications": [
+            "Hypersensitivity"
+        ],
+        "sideEffects": [
+            "Nausea",
+            "Drowsiness",
+            "Rash"
+        ],
+        "interactions": "Minimal drug interactions.",
+        "interactionDetails": "",
+        "pageType": "drug"
     }
 
 ];export default drugs;

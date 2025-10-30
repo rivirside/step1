@@ -192,11 +192,161 @@ const classes = [
         "pageType": "pharmacologic-class"
     },
     {
+        "id": "short-acting-anticholinergics",
+        "name": "Short-Acting Anticholinergics",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Block muscarinic receptors to reduce bronchoconstriction and mucus secretion.",
+        "sideEffects": [
+            "Dry mouth",
+            "Urinary retention",
+            "Blurred vision"
+        ],
+        "interactions": "Additive anticholinergic effects with other antimuscarinics.",
+        "interactionDetails": "",
+        "drugIds": [
+            "ipratropium"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "long-acting-anticholinergics",
+        "name": "Long-Acting Anticholinergics (LAMA)",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Long-acting muscarinic antagonists for sustained bronchodilation.",
+        "sideEffects": [
+            "Dry mouth",
+            "Urinary retention",
+            "Blurred vision"
+        ],
+        "interactions": "Additive anticholinergic effects with other antimuscarinics.",
+        "interactionDetails": "",
+        "drugIds": [
+            "tiotropium",
+            "aclidinium"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "short-acting-beta-2-agonists",
+        "name": "Short-Acting Beta-2 Agonists (SABA)",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Stimulate beta-2 receptors to cause bronchodilation.",
+        "sideEffects": [
+            "Tremor",
+            "Tachycardia",
+            "Hypokalemia",
+            "Hyperglycemia"
+        ],
+        "interactions": "Beta-blockers antagonize bronchodilation.",
+        "interactionDetails": "",
+        "drugIds": [
+            "albuterol",
+            "levalbuterol"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "long-acting-beta-2-agonists",
+        "name": "Long-Acting Beta-2 Agonists (LABA)",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Long-acting beta-2 agonists provide sustained bronchodilation.",
+        "sideEffects": [
+            "Tremor",
+            "Tachycardia",
+            "Increased asthma deaths (without ICS)"
+        ],
+        "interactions": "Must be combined with ICS for asthma.",
+        "interactionDetails": "",
+        "drugIds": [
+            "salmeterol",
+            "formoterol"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "ics-laba-combinations",
+        "name": "ICS/LABA Combinations",
+        "therapeuticClass": "combination-inhalers",
+        "system": "respiratory-system",
+        "mechanism": "Combination of inhaled corticosteroid and long-acting beta-2 agonist.",
+        "sideEffects": [
+            "Oral thrush",
+            "Tremor",
+            "Tachycardia"
+        ],
+        "interactions": "CYP3A4 inhibitors may increase steroid levels.",
+        "interactionDetails": "",
+        "drugIds": [
+            "fluticasone-salmeterol",
+            "budesonide-formoterol"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "antitussives",
+        "name": "Antitussives",
+        "therapeuticClass": "cough-suppressants",
+        "system": "respiratory-system",
+        "mechanism": "Suppress cough reflex in medullary cough center.",
+        "sideEffects": [
+            "Drowsiness",
+            "Dizziness"
+        ],
+        "interactions": "MAOIs with dextromethorphan can cause serotonin syndrome.",
+        "interactionDetails": "",
+        "drugIds": [
+            "dextromethorphan",
+            "benzonatate"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "expectorants",
+        "name": "Expectorants",
+        "therapeuticClass": "airway-clearance-agents",
+        "system": "respiratory-system",
+        "mechanism": "Increase respiratory tract secretions to facilitate mucus clearance.",
+        "sideEffects": [
+            "Nausea",
+            "Drowsiness",
+            "Rash"
+        ],
+        "interactions": "Minimal drug interactions.",
+        "interactionDetails": "",
+        "drugIds": [
+            "guaifenesin"
+        ],
+        "pageType": "pharmacologic-class"
+    },
+    {
+        "id": "combination-inhalers",
+        "name": "Combination Inhalers",
+        "system": "respiratory-system",
+        "pharmacologicClassIds": [
+            "ics-laba-combinations"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
+        "id": "cough-suppressants",
+        "name": "Cough Suppressants",
+        "system": "respiratory-system",
+        "pharmacologicClassIds": [
+            "antitussives"
+        ],
+        "pageType": "therapeutic-class"
+    },
+    {
         "id": "airway-clearance-agents",
         "name": "Airway Clearance Agents",
         "system": "respiratory-system",
         "pharmacologicClassIds": [
-            "mucolytics"
+            "mucolytics",
+            "expectorants"
         ],
         "pageType": "therapeutic-class"
     }
