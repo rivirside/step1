@@ -1080,7 +1080,6 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
-        ,
         "highYield": true,
         "pageType": "drug"
     },
@@ -1108,7 +1107,6 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
-        ,
         "highYield": true,
         "pageType": "drug"
     },
@@ -1136,7 +1134,6 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
-        ,
         "highYield": true,
         "pageType": "drug"
     },
@@ -1167,7 +1164,6 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
-        ,
         "highYield": true,
         "pageType": "drug"
     },
@@ -1195,7 +1191,6 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
-        ,
         "highYield": true,
         "pageType": "drug"
     },
@@ -1306,7 +1301,6 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
-        ,
         "highYield": true,
         "pageType": "drug"
     },
