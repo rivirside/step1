@@ -362,6 +362,127 @@ const drugs = [
         "interactions": "CYP3A4 inhibitors increase colchicine toxicity.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "tofacitinib",
+        "name": "Tofacitinib",
+        "pharmacologicClass": "jak-inhibitors",
+        "therapeuticClass": "rheumatoid-arthritis-medications",
+        "system": "immunology-rheumatology",
+        "mechanism": "Oral JAK inhibitor (JAK1/JAK3) that blocks cytokine signaling pathways involved in inflammation and immune response.",
+        "features": "First oral JAK inhibitor for RA, small molecule (not biologic), rapid onset.",
+        "clinicalChoice": "Moderate-severe RA refractory to methotrexate, alternative to biologics.",
+        "indications": [
+            "Rheumatoid Arthritis (moderate-severe)",
+            "Psoriatic Arthritis",
+            "Ulcerative Colitis (refractory)"
+        ],
+        "contraindications": [
+            "Active Serious Infections",
+            "Severe Hepatic Impairment"
+        ],
+        "sideEffects": [
+            "Infections (serious - TB, fungal, opportunistic)",
+            "Malignancy (lymphoma, skin cancer)",
+            "Thrombosis (DVT, PE, arterial - FDA black box)",
+            "GI perforation",
+            "Lipid elevations",
+            "Cytopenias (anemia, neutropenia, lymphopenia)"
+        ],
+        "interactions": "Strong CYP3A4 inhibitors/inducers (alter levels), live vaccines (contraindicated), immunosuppressants (additive immunosuppression).",
+        "interactionDetails": "CYP3A4 INHIBITORS: MECHANISM - Tofacitinib metabolized by CYP3A4. Inhibitors (ketoconazole, clarithromycin) increase tofacitinib levels. CONSEQUENCE - Increased immunosuppression and side effects. Reduce tofacitinib dose by 50% with strong inhibitors. CYP3A4 INDUCERS: MECHANISM - Inducers (rifampin) decrease tofacitinib levels. CONSEQUENCE - Reduced efficacy. May need dose increase or avoid concurrent use. LIVE VACCINES: MECHANISM - JAK inhibition impairs immune response. CONSEQUENCE - Risk of infection from live vaccine. Contraindicated. Update vaccines before starting therapy.",
+        "pageType": "drug"
+    },
+    {
+        "id": "anakinra",
+        "name": "Anakinra",
+        "pharmacologicClass": "il-1-inhibitors",
+        "therapeuticClass": "rheumatoid-arthritis-medications",
+        "system": "immunology-rheumatology",
+        "mechanism": "Recombinant IL-1 receptor antagonist that blocks interleukin-1 alpha and beta signaling.",
+        "features": "Daily subcutaneous injection, short half-life, rapid onset/offset.",
+        "clinicalChoice": "RA refractory to other DMARDs, cryopyrin-associated periodic syndromes (CAPS).",
+        "indications": [
+            "Rheumatoid Arthritis",
+            "Cryopyrin-Associated Periodic Syndromes (CAPS)",
+            "Systemic Juvenile Idiopathic Arthritis"
+        ],
+        "contraindications": [
+            "Active Infections",
+            "Hypersensitivity to E. coli-derived proteins"
+        ],
+        "sideEffects": [
+            "Injection site reactions (very common, 70%)",
+            "Infections (serious)",
+            "Neutropenia",
+            "Headache"
+        ],
+        "interactions": "TNF inhibitors (increased infection risk - not recommended), live vaccines (avoid).",
+        "interactionDetails": "TNF INHIBITORS: MECHANISM - Both anakinra (IL-1 blockade) and TNF inhibitors provide profound immunosuppression through different cytokine pathways. CONSEQUENCE - Significantly increased risk of serious infections without additional clinical benefit. Combination not recommended. LIVE VACCINES: MECHANISM - IL-1 is critical for immune response. Blockade impairs response to vaccines. CONSEQUENCE - Risk of infection from live vaccines. Avoid live vaccines during therapy.",
+        "pageType": "drug"
+    },
+    {
+        "id": "tocilizumab",
+        "name": "Tocilizumab",
+        "pharmacologicClass": "il-6-inhibitors",
+        "therapeuticClass": "rheumatoid-arthritis-medications",
+        "system": "immunology-rheumatology",
+        "mechanism": "Monoclonal antibody against IL-6 receptor (both soluble and membrane-bound), blocking IL-6 mediated inflammation.",
+        "features": "IV or subcutaneous, blocks IL-6 (key inflammatory cytokine), affects acute phase reactants (CRP, ESR).",
+        "clinicalChoice": "Moderate-severe RA refractory to methotrexate or TNF inhibitors, giant cell arteritis, cytokine release syndrome.",
+        "indications": [
+            "Rheumatoid Arthritis (moderate-severe)",
+            "Giant Cell Arteritis",
+            "Systemic Juvenile Idiopathic Arthritis",
+            "Cytokine Release Syndrome (CAR-T therapy)",
+            "COVID-19 (severe - off-label)"
+        ],
+        "contraindications": [
+            "Active Infections",
+            "Platelet count <50,000",
+            "ANC <500",
+            "Diverticulitis (GI perforation risk)"
+        ],
+        "sideEffects": [
+            "Infections (serious - TB, fungal, bacterial)",
+            "GI perforation (especially with diverticulitis)",
+            "Hepatotoxicity (transaminase elevations)",
+            "Cytopenias (neutropenia, thrombocytopenia)",
+            "Lipid elevations (total cholesterol, LDL, triglycerides)",
+            "Infusion reactions"
+        ],
+        "interactions": "Live vaccines (avoid), CYP450 substrates (IL-6 suppression normalizes CYP activity).",
+        "interactionDetails": "CYP450 SUBSTRATES: MECHANISM - IL-6 suppresses CYP450 enzymes. Tocilizumab blocks IL-6, restoring normal CYP activity and increasing metabolism of CYP substrates. CONSEQUENCE - Decreased levels of drugs metabolized by CYP450 (statins, warfarin, oral contraceptives, immunosuppressants). Monitor levels, may need dose adjustment. LIVE VACCINES: MECHANISM - IL-6 blockade impairs immune response. CONSEQUENCE - Risk of infection from live vaccines. Update vaccines before therapy.",
+        "pageType": "drug"
+    },
+    {
+        "id": "febuxostat",
+        "name": "Febuxostat",
+        "pharmacologicClass": "xanthine-oxidase-inhibitors",
+        "therapeuticClass": "gout-medications",
+        "system": "immunology-rheumatology",
+        "mechanism": "Non-purine selective xanthine oxidase inhibitor that reduces uric acid production.",
+        "features": "More potent than allopurinol, doesn't require renal dose adjustment (hepatic metabolism).",
+        "clinicalChoice": "Chronic gout/hyperuricemia in patients with CKD or allopurinol intolerance/failure.",
+        "indications": [
+            "Chronic Gout",
+            "Hyperuricemia",
+            "Tumor Lysis Syndrome Prevention"
+        ],
+        "contraindications": [
+            "Concurrent Azathioprine or Mercaptopurine (severe toxicity)",
+            "CV disease (FDA warning - increased CV death vs allopurinol)"
+        ],
+        "sideEffects": [
+            "Cardiovascular events (MI, stroke - FDA black box)",
+            "Gout flare (early treatment - prophylax with colchicine/NSAID)",
+            "Hepatotoxicity",
+            "Rash (including Stevens-Johnson syndrome)",
+            "Nausea"
+        ],
+        "interactions": "Azathioprine/mercaptopurine (CONTRAINDICATED - severe myelosuppression), theophylline (increased levels).",
+        "interactionDetails": "AZATHIOPRINE/MERCAPTOPURINE: MECHANISM - These prodrugs are metabolized by xanthine oxidase to inactive metabolites. Febuxostat blocks this metabolism. CONSEQUENCE - Severe, potentially fatal bone marrow suppression. Absolute contraindication. THEOPHYLLINE: MECHANISM - Theophylline is metabolized by xanthine oxidase. Febuxostat inhibition increases theophylline levels. CONSEQUENCE - Theophylline toxicity (seizures, arrhythmias). Monitor levels, reduce theophylline dose.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

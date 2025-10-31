@@ -1228,6 +1228,126 @@ const drugs = [
         "interactions": "Rifampin is major CYP450 inducer.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "daptomycin",
+        "name": "Daptomycin",
+        "pharmacologicClass": "lipopeptides",
+        "therapeuticClass": "antibacterials",
+        "system": "antimicrobials",
+        "mechanism": "Lipopeptide that inserts into bacterial cell membrane causing rapid depolarization and cell death.",
+        "features": "Bactericidal against gram-positive organisms including MRSA and VRE, calcium-dependent.",
+        "clinicalChoice": "Complicated skin/soft tissue infections, S. aureus bacteremia, right-sided endocarditis (MRSA/MSSA).",
+        "indications": [
+            "MRSA Bacteremia",
+            "Right-Sided Endocarditis",
+            "Complicated Skin/Soft Tissue Infections",
+            "VRE Infections"
+        ],
+        "contraindications": [
+            "Pneumonia (inactivated by pulmonary surfactant)"
+        ],
+        "sideEffects": [
+            "CPK elevation (myopathy, rhabdomyolysis - monitor weekly)",
+            "Eosinophilic pneumonia (rare)",
+            "Peripheral neuropathy",
+            "Injection site reactions"
+        ],
+        "interactions": "Statins (increased myopathy risk), warfarin (may increase INR).",
+        "interactionDetails": "STATINS: MECHANISM - Both daptomycin and statins can cause myopathy and rhabdomyolysis. Daptomycin disrupts muscle cell membranes, statins impair muscle metabolism. CONSEQUENCE - Significantly increased risk of CPK elevation, myopathy, and rhabdomyolysis. Consider discontinuing statin during daptomycin therapy. Monitor CPK weekly. HMG-CoA REDUCTASE INHIBITORS: Similar mechanism - additive muscle toxicity.",
+        "pageType": "drug"
+    },
+    {
+        "id": "linezolid",
+        "name": "Linezolid",
+        "pharmacologicClass": "oxazolidinones",
+        "therapeuticClass": "antibacterials",
+        "system": "antimicrobials",
+        "mechanism": "Inhibits bacterial protein synthesis by binding to 23S ribosomal RNA of 50S subunit, preventing formation of 70S initiation complex.",
+        "features": "Bacteriostatic, excellent oral bioavailability (100%), penetrates CSF, active against MRSA and VRE.",
+        "clinicalChoice": "VRE infections, MRSA pneumonia (where vancomycin penetration poor), complicated skin infections.",
+        "indications": [
+            "VRE Infections",
+            "MRSA Pneumonia",
+            "Complicated Skin/Soft Tissue Infections",
+            "MDR Gram-Positive Infections"
+        ],
+        "contraindications": [
+            "Concurrent MAOIs (or within 2 weeks)",
+            "Uncontrolled hypertension",
+            "Pheochromocytoma",
+            "Carcinoid syndrome"
+        ],
+        "sideEffects": [
+            "Myelosuppression (thrombocytopenia, anemia - monitor CBC weekly)",
+            "Peripheral neuropathy (prolonged use >28 days)",
+            "Optic neuropathy (irreversible - prolonged use)",
+            "Serotonin syndrome (weak MAO inhibitor)",
+            "Lactic acidosis (inhibits mitochondrial protein synthesis)"
+        ],
+        "interactions": "Serotonergic drugs (SSRIs, SNRIs, tramadol - serotonin syndrome), tyramine-rich foods (hypertensive crisis).",
+        "interactionDetails": "SEROTONERGIC DRUGS: MECHANISM - Linezolid is a weak, reversible MAO inhibitor. Combined with SSRIs, SNRIs, tramadol, or other serotonergic drugs increases serotonin levels. CONSEQUENCE - Serotonin syndrome (hyperthermia, agitation, hyperreflexia, tremor, confusion). Avoid concurrent serotonergic drugs. TYRAMINE-RICH FOODS: MECHANISM - MAO inhibition prevents tyramine breakdown, causing norepinephrine release. CONSEQUENCE - Hypertensive crisis. Avoid aged cheese, cured meats, red wine, fermented foods.",
+        "pageType": "drug"
+    },
+    {
+        "id": "tigecycline",
+        "name": "Tigecycline",
+        "pharmacologicClass": "glycylcyclines",
+        "therapeuticClass": "antibacterials",
+        "system": "antimicrobials",
+        "mechanism": "Glycylcycline (tetracycline derivative) that inhibits bacterial protein synthesis by binding 30S ribosomal subunit.",
+        "features": "Broad-spectrum including MDR organisms (MRSA, VRE, ESBL, carbapenem-resistant), bypasses common tetracycline resistance.",
+        "clinicalChoice": "Complicated intra-abdominal infections, complicated skin infections, polymicrobial MDR infections (reserve for resistant organisms).",
+        "indications": [
+            "Complicated Intra-Abdominal Infections",
+            "Complicated Skin/Soft Tissue Infections",
+            "Community-Acquired Pneumonia",
+            "MDR Gram-Positive/Negative Infections"
+        ],
+        "contraindications": [
+            "Pregnancy (Category D - tooth discoloration)",
+            "Children <8 years"
+        ],
+        "sideEffects": [
+            "Nausea/vomiting (very common, dose-limiting)",
+            "Increased mortality (FDA black box - avoid unless no alternatives)",
+            "Pancreatitis",
+            "Hepatotoxicity",
+            "Photosensitivity",
+            "Tooth discoloration"
+        ],
+        "interactions": "Warfarin (decreased INR), oral contraceptives (decreased efficacy).",
+        "interactionDetails": "WARFARIN: MECHANISM - Tigecycline may alter gut flora producing vitamin K, affecting warfarin metabolism. CONSEQUENCE - Decreased INR, reduced anticoagulation. Monitor INR closely. ORAL CONTRACEPTIVES: MECHANISM - Similar to tetracyclines, may reduce contraceptive efficacy through gut flora alteration or hepatic metabolism changes. CONSEQUENCE - Contraceptive failure. Use backup contraception.",
+        "pageType": "drug"
+    },
+    {
+        "id": "colistin",
+        "name": "Colistin (Polymyxin E)",
+        "pharmacologicClass": "polymyxins",
+        "therapeuticClass": "antibacterials",
+        "system": "antimicrobials",
+        "mechanism": "Cationic polypeptide that disrupts bacterial cell membrane via interaction with lipopolysaccharide, causing cell lysis.",
+        "features": "Last-resort antibiotic for MDR gram-negative organisms (carbapenem-resistant), narrow therapeutic index.",
+        "clinicalChoice": "Carbapenem-resistant Enterobacteriaceae (CRE), MDR Pseudomonas, MDR Acinetobacter - only when no alternatives.",
+        "indications": [
+            "Carbapenem-Resistant Enterobacteriaceae (CRE)",
+            "MDR Pseudomonas aeruginosa",
+            "MDR Acinetobacter baumannii",
+            "Last-resort for MDR Gram-Negatives"
+        ],
+        "contraindications": [
+            "Hypersensitivity to polymyxins"
+        ],
+        "sideEffects": [
+            "Nephrotoxicity (dose-dependent, reversible - monitor Cr)",
+            "Neurotoxicity (paresthesias, dizziness, ataxia, neuromuscular blockade)",
+            "Bronchospasm (inhaled form)",
+            "Apnea (high doses)",
+            "Electrolyte disturbances"
+        ],
+        "interactions": "Nephrotoxic drugs (aminoglycosides, vancomycin - additive nephrotoxicity), neuromuscular blockers (prolonged paralysis).",
+        "interactionDetails": "NEPHROTOXIC DRUGS: MECHANISM - Colistin causes dose-dependent nephrotoxicity. Additive with aminoglycosides, vancomycin, NSAIDs, contrast dye. CONSEQUENCE - Acute kidney injury. Avoid concurrent nephrotoxins when possible. Monitor renal function closely. NEUROMUSCULAR BLOCKERS: MECHANISM - Colistin can cause neuromuscular blockade by inhibiting acetylcholine release. Additive with succinylcholine, rocuronium, vecuronium. CONSEQUENCE - Prolonged paralysis, respiratory depression. Use with extreme caution in surgical/ICU settings.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

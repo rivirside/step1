@@ -266,6 +266,64 @@ const drugs = [
         "interactions": "CYP3A4 inhibitors (increased levels).",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "tamsulosin",
+        "name": "Tamsulosin",
+        "pharmacologicClass": "alpha-1-blockers",
+        "therapeuticClass": "benign-prostatic-hyperplasia-bph",
+        "systems": ["renal-genitourinary-system", "cardiovascular-system"],
+        "mechanism": "Selectively block alpha-1A receptors in prostate and bladder neck, relaxing smooth muscle and improving urinary flow.",
+        "features": "Highly selective for alpha-1A (prostate > vascular), less orthostatic hypotension than non-selective alpha-blockers.",
+        "clinicalChoice": "First-line for BPH with LUTS (lower urinary tract symptoms), rapid symptom relief.",
+        "indications": [
+            "Benign Prostatic Hyperplasia (BPH)",
+            "Ureteral Stones (off-label - facilitates passage)"
+        ],
+        "contraindications": [
+            "Hypersensitivity to tamsulosin",
+            "Severe Hepatic Impairment"
+        ],
+        "sideEffects": [
+            "Orthostatic hypotension (less than non-selective)",
+            "Dizziness",
+            "Retrograde ejaculation (common, 10-18%)",
+            "Intraoperative floppy iris syndrome (cataract surgery)",
+            "Rhinitis",
+            "Asthenia"
+        ],
+        "interactions": "Other alpha-blockers (additive hypotension), PDE5 inhibitors (hypotension), strong CYP3A4 inhibitors (increased levels).",
+        "interactionDetails": "PDE5 INHIBITORS: MECHANISM - Both tamsulosin and PDE5 inhibitors (sildenafil, tadalafil) cause vasodilation. Tamsulosin via alpha-blockade, PDE5 inhibitors via cGMP. CONSEQUENCE - Additive hypotension, especially orthostatic. Use lowest doses, monitor blood pressure. CYP3A4 INHIBITORS: MECHANISM - Tamsulosin metabolized by CYP3A4 and CYP2D6. Strong CYP3A4 inhibitors (ketoconazole, clarithromycin) increase tamsulosin levels. CONSEQUENCE - Enhanced alpha-blockade, increased hypotension and side effects. Avoid strong CYP3A4 inhibitors or reduce tamsulosin dose.",
+        "pageType": "drug"
+    },
+    {
+        "id": "terazosin",
+        "name": "Terazosin",
+        "pharmacologicClass": "alpha-1-blockers",
+        "therapeuticClass": "benign-prostatic-hyperplasia-bph",
+        "systems": ["renal-genitourinary-system", "cardiovascular-system"],
+        "mechanism": "Non-selective alpha-1 blocker (alpha-1A, alpha-1B, alpha-1D) that relaxes smooth muscle in prostate, bladder neck, and blood vessels.",
+        "features": "Non-selective alpha-1 blocker, requires dose titration, also effective for hypertension.",
+        "clinicalChoice": "BPH with concurrent hypertension (dual benefit), alternative if tamsulosin not tolerated.",
+        "indications": [
+            "Benign Prostatic Hyperplasia (BPH)",
+            "Hypertension"
+        ],
+        "contraindications": [
+            "Hypersensitivity to terazosin or quinazolines"
+        ],
+        "sideEffects": [
+            "Orthostatic hypotension (first-dose phenomenon - common)",
+            "Dizziness",
+            "Asthenia",
+            "Retrograde ejaculation",
+            "Headache",
+            "Peripheral edema",
+            "Syncope"
+        ],
+        "interactions": "Antihypertensives (additive hypotension), PDE5 inhibitors (hypotension).",
+        "interactionDetails": "ANTIHYPERTENSIVES: MECHANISM - Terazosin causes vasodilation via alpha-1 blockade. Additive with other blood pressure lowering drugs. CONSEQUENCE - Severe orthostatic hypotension, especially first dose. Start low dose at bedtime, titrate slowly. PDE5 INHIBITORS: MECHANISM - Additive vasodilation (alpha-blockade + increased cGMP). CONSEQUENCE - Significant hypotension. Avoid concurrent use if possible, or use lowest doses with close monitoring.",
+        "pageType": "drug"
     }
 
 ];export default drugs;
