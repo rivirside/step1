@@ -860,6 +860,61 @@ const drugs = [
         "interactions": "Anticoagulants (warfarin, DOACs - ↑ bleeding), NSAIDs (↑ bleeding), fibrinolytics.",
         "interactionDetails": "ANTICOAGULANTS: MECHANISM - Prasugrel inhibits platelet aggregation. Anticoagulants inhibit coagulation cascade. Combined effects are additive. CONSEQUENCE - Significantly increased bleeding risk. Use with caution, especially triple therapy (DAPT + anticoagulant). Monitor closely. NSAIDS: MECHANISM - NSAIDs inhibit COX-1, reducing thromboxane A2 and platelet function. Additive with prasugrel. CONSEQUENCE - Increased GI and systemic bleeding. Avoid concurrent NSAIDs when possible, use PPIs if necessary.",
         "pageType": "drug"
+    },
+    {
+        "id": "eltrombopag",
+        "name": "Eltrombopag",
+        "pharmacologicClass": "thrombopoietin-receptor-agonists",
+        "therapeuticClass": "platelet-disorders",
+        "system": "hematology-oncology",
+        "mechanism": "Oral thrombopoietin (TPO) receptor agonist → stimulates megakaryocyte proliferation and differentiation → ↑ platelet production.",
+        "features": "Oral agent (romiplostim is SC), requires monitoring for hepatotoxicity and cataracts.",
+        "clinicalChoice": "Chronic immune thrombocytopenia (ITP) refractory to steroids/IVIG, severe aplastic anemia, HCV-related thrombocytopenia.",
+        "indications": [
+            "Chronic Immune Thrombocytopenia (ITP)",
+            "Severe Aplastic Anemia",
+            "HCV-Related Thrombocytopenia (enabling interferon therapy)"
+        ],
+        "contraindications": [
+            "Hepatic Impairment (increased hepatotoxicity risk)"
+        ],
+        "sideEffects": [
+            "Hepatotoxicity (monitor LFTs)",
+            "Thromboembolism (especially with platelet count >400k)",
+            "Cataracts",
+            "Bone marrow reticulin deposition/fibrosis",
+            "Rebound thrombocytopenia (if abruptly stopped)"
+        ],
+        "interactions": "Polyvalent cations (antacids, calcium, iron) reduce absorption, statins (increased statin levels), CYP substrates.",
+        "interactionDetails": "POLYVALENT CATIONS: MECHANISM - Eltrombopag chelates metals (Ca²⁺, Mg²⁺, Fe²⁺, Al³⁺, Zn²⁺) in GI tract, forming poorly absorbed complexes. CONSEQUENCE - Significantly reduced eltrombopag absorption and efficacy. Separate dosing: give eltrombopag 2 hours before or 4 hours after antacids, calcium, iron. STATINS: MECHANISM - Eltrombopag inhibits OATP1B1 and BCRP transporters, reducing hepatic uptake and elimination of statins. CONSEQUENCE - Increased statin levels, ↑ risk of myopathy/rhabdomyolysis. Monitor CPK, consider reducing statin dose.",
+        "pageType": "drug"
+    },
+    {
+        "id": "romiplostim",
+        "name": "Romiplostim",
+        "pharmacologicClass": "thrombopoietin-receptor-agonists",
+        "therapeuticClass": "platelet-disorders",
+        "system": "hematology-oncology",
+        "mechanism": "Subcutaneous peptide-based TPO receptor agonist (Fc-peptide fusion) → activates TPO receptor → ↑ megakaryocyte proliferation → ↑ platelet production.",
+        "features": "Weekly SC injection, different structure from eltrombopag (peptide vs small molecule), less drug interactions.",
+        "clinicalChoice": "Chronic immune thrombocytopenia (ITP) refractory to steroids/IVIG, alternative to eltrombopag.",
+        "indications": [
+            "Chronic Immune Thrombocytopenia (ITP)"
+        ],
+        "contraindications": [
+            "Hypersensitivity to romiplostim or E. coli-derived proteins"
+        ],
+        "sideEffects": [
+            "Thromboembolism (especially platelet count >400k)",
+            "Headache",
+            "Arthralgia, myalgia",
+            "Bone marrow reticulin deposition/fibrosis",
+            "Rebound thrombocytopenia (if discontinued)",
+            "Increased risk of hematologic malignancies (theoretical)"
+        ],
+        "interactions": "Minimal drug interactions (peptide drug, not metabolized by CYP450).",
+        "interactionDetails": "",
+        "pageType": "drug"
     }
 
 ];export default drugs;

@@ -595,6 +595,63 @@ const drugs = [
         "interactions": "Cholestyramine and aluminum-based antacids reduce UDCA absorption.",
         "interactionDetails": "BILE ACID SEQUESTRANTS: MECHANISM - Cholestyramine binds bile acids in intestinal lumen, preventing UDCA absorption. CONSEQUENCE - Reduced UDCA efficacy. Give UDCA at least 1 hour before or 4-6 hours after bile acid sequestrants. ALUMINUM ANTACIDS: MECHANISM - Aluminum forms insoluble complexes with bile acids. CONSEQUENCE - Decreased UDCA absorption and effectiveness.",
         "pageType": "drug"
+    },
+    {
+        "id": "misoprostol",
+        "name": "Misoprostol",
+        "pharmacologicClass": "prostaglandin-analogs",
+        "therapeuticClass": "gastroprotective-agents",
+        "system": "gastrointestinal-system",
+        "mechanism": "Synthetic PGE1 analog that increases bicarbonate/mucus secretion, decreases acid secretion, and maintains mucosal blood flow.",
+        "features": "Protects gastric mucosa from NSAID damage, also used for labor induction.",
+        "clinicalChoice": "NSAID-induced ulcer prevention in high-risk patients, medical abortion (with mifepristone).",
+        "indications": [
+            "NSAID-Induced Ulcer Prevention",
+            "Medical Abortion (off-label with mifepristone)",
+            "Labor Induction (off-label)"
+        ],
+        "contraindications": [
+            "Pregnancy (Category X - causes uterine contractions)",
+            "Women of Childbearing Age (without contraception)"
+        ],
+        "sideEffects": [
+            "Diarrhea (dose-related, 30%)",
+            "Abdominal cramping",
+            "Uterine contractions/bleeding",
+            "Miscarriage risk"
+        ],
+        "interactions": "Antacids (magnesium-containing) worsen diarrhea.",
+        "interactionDetails": "MAGNESIUM ANTACIDS: MECHANISM - Both misoprostol and magnesium-containing antacids cause diarrhea via osmotic effect and increased intestinal motility. CONSEQUENCE - Severe diarrhea, dehydration, electrolyte imbalances. Avoid concurrent use or use aluminum-containing antacids instead.",
+        "pageType": "drug"
+    },
+    {
+        "id": "cholestyramine",
+        "name": "Cholestyramine",
+        "pharmacologicClass": "bile-acid-sequestrants",
+        "therapeuticClass": "lipid-lowering-agents",
+        "systems": ["gastrointestinal-system", "cardiovascular-system"],
+        "mechanism": "Bind bile acids in intestinal lumen, preventing reabsorption → ↑ hepatic conversion of cholesterol to bile acids → ↓ serum cholesterol. Also used to bind toxins/drugs in GI tract.",
+        "features": "Resin that binds bile acids, also treats pruritus in cholestasis and C. diff diarrhea (binds toxins).",
+        "clinicalChoice": "Pruritus in cholestatic liver disease, C. difficile diarrhea (adjunct), familial hypercholesterolemia (children).",
+        "indications": [
+            "Pruritus in Cholestasis",
+            "Hypercholesterolemia (adjunct to statins)",
+            "C. difficile Diarrhea (binds toxins)",
+            "Digitalis Toxicity (binds drug in gut)"
+        ],
+        "contraindications": [
+            "Complete Biliary Obstruction",
+            "Hypertriglyceridemia (can worsen)"
+        ],
+        "sideEffects": [
+            "GI upset (bloating, constipation, nausea)",
+            "Decreased absorption of fat-soluble vitamins (A, D, E, K)",
+            "Hyperchloremic metabolic acidosis (rare)",
+            "Hypertriglyceridemia"
+        ],
+        "interactions": "Binds many drugs (warfarin, digoxin, thyroid hormones, thiazides) - give other drugs 1 hour before or 4-6 hours after.",
+        "interactionDetails": "MULTIPLE DRUG INTERACTIONS: MECHANISM - Cholestyramine is a positively charged resin that binds negatively charged drugs and bile acids in the intestinal lumen, preventing their absorption. CONSEQUENCE - Reduced absorption and efficacy of: warfarin (↓ INR), digoxin (↓ levels → heart failure), levothyroxine (↓ thyroid hormone), thiazide diuretics (↓ BP control), fat-soluble vitamins (A, D, E, K deficiency). TIMING: Give other drugs 1 hour BEFORE or 4-6 hours AFTER cholestyramine.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

@@ -959,6 +959,68 @@ const drugs = [
         "interactions": "Antipsychotics (antagonize effects), CYP3A4 inhibitors (increase levels).",
         "interactionDetails": "ANTIPSYCHOTICS: MECHANISM - Dopamine receptor blockade by antipsychotics opposes cabergoline's dopamine agonist effects. CONSEQUENCE - Reduced efficacy for prolactinoma treatment. Antipsychotics increase prolactin, counteracting therapeutic goal. Avoid combination. CYP3A4 INHIBITORS: MECHANISM - Cabergoline metabolized by CYP3A4. Inhibitors increase cabergoline levels. CONSEQUENCE - Enhanced side effects. Use lower cabergoline dose with strong CYP3A4 inhibitors.",
         "pageType": "drug"
+    },
+    {
+        "id": "raloxifene",
+        "name": "Raloxifene",
+        "pharmacologicClass": "selective-estrogen-receptor-modulators",
+        "therapeuticClass": "bone-metabolism-disorders",
+        "system": "endocrine-system",
+        "mechanism": "Selective estrogen receptor modulator (SERM) - estrogen agonist on bone and lipids, estrogen antagonist on breast and uterus.",
+        "features": "SERM with bone protection, reduced breast cancer risk, but no uterine stimulation (unlike tamoxifen).",
+        "clinicalChoice": "Postmenopausal osteoporosis prevention/treatment, breast cancer risk reduction in high-risk women.",
+        "indications": [
+            "Postmenopausal Osteoporosis (prevention and treatment)",
+            "Breast Cancer Risk Reduction (invasive breast cancer in postmenopausal women)"
+        ],
+        "contraindications": [
+            "Premenopausal Women",
+            "Pregnancy/Lactation",
+            "History of Venous Thromboembolism (VTE)",
+            "Active or History of Stroke/TIA"
+        ],
+        "sideEffects": [
+            "Hot flashes (common)",
+            "Leg cramps",
+            "Venous thromboembolism (DVT, PE) - 3x increased risk",
+            "Stroke (increased risk)",
+            "Fatal stroke (increased in women with CAD risk factors)"
+        ],
+        "interactions": "Cholestyramine (reduces raloxifene absorption), warfarin (decreases PT/INR).",
+        "interactionDetails": "CHOLESTYRAMINE: MECHANISM - Cholestyramine binds raloxifene in GI tract, preventing absorption. CONSEQUENCE - Reduced raloxifene efficacy. Avoid concurrent use or separate dosing by several hours. WARFARIN: MECHANISM - Raloxifene may decrease warfarin absorption or enhance its metabolism. CONSEQUENCE - Decreased PT/INR, potential loss of anticoagulation. Monitor INR closely when initiating or stopping raloxifene.",
+        "pageType": "drug"
+    },
+    {
+        "id": "teriparatide",
+        "name": "Teriparatide",
+        "pharmacologicClass": "parathyroid-hormone-analogs",
+        "therapeuticClass": "bone-metabolism-disorders",
+        "system": "endocrine-system",
+        "mechanism": "Recombinant PTH (1-34) fragment - intermittent exposure stimulates osteoblast activity more than osteoclast activity → net bone formation (anabolic).",
+        "features": "Only anabolic agent for osteoporosis, increases bone density more than bisphosphonates, daily SC injection.",
+        "clinicalChoice": "Severe osteoporosis with high fracture risk, osteoporosis with fragility fracture, glucocorticoid-induced osteoporosis.",
+        "indications": [
+            "Severe Osteoporosis (postmenopausal women, men)",
+            "Glucocorticoid-Induced Osteoporosis",
+            "High Fracture Risk"
+        ],
+        "contraindications": [
+            "Paget's Disease of Bone",
+            "Prior Skeletal Radiation",
+            "Bone Metastases/Skeletal Malignancies",
+            "Hypercalcemia",
+            "Children/Young Adults (open epiphyses)"
+        ],
+        "sideEffects": [
+            "Hypercalcemia (transient, 2-4 hours post-injection)",
+            "Orthostatic hypotension/dizziness",
+            "Leg cramps",
+            "Nausea",
+            "Osteosarcoma (BLACK BOX WARNING - seen in rats with high doses/long duration, avoid use >2 years)"
+        ],
+        "interactions": "Digoxin (hypercalcemia increases digoxin toxicity risk).",
+        "interactionDetails": "DIGOXIN: MECHANISM - Teriparatide can cause transient hypercalcemia. Hypercalcemia increases myocardial sensitivity to digoxin and predisposes to digoxin toxicity. CONSEQUENCE - Increased risk of digoxin-induced arrhythmias. Monitor serum calcium and digoxin levels closely. Avoid concurrent use if possible.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

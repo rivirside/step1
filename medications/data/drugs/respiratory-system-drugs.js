@@ -635,6 +635,65 @@ const drugs = [
         "interactions": "Minimal drug interactions (monoclonal antibody).",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "theophylline",
+        "name": "Theophylline",
+        "pharmacologicClass": "methylxanthines",
+        "therapeuticClass": "bronchodilators",
+        "system": "respiratory-system",
+        "mechanism": "Non-selective phosphodiesterase inhibitor → ↑ cAMP → bronchodilation. Also antagonizes adenosine receptors and has anti-inflammatory effects.",
+        "features": "Narrow therapeutic index (10-20 mcg/mL), extensive drug interactions, requires therapeutic drug monitoring.",
+        "clinicalChoice": "Third-line for asthma/COPD (after beta-agonists and anticholinergics), nocturnal asthma, apnea of prematurity.",
+        "indications": [
+            "Asthma (not first-line)",
+            "COPD",
+            "Apnea of Prematurity"
+        ],
+        "contraindications": [
+            "Uncontrolled Arrhythmias",
+            "Seizure Disorders (lowers seizure threshold)",
+            "Active Peptic Ulcer Disease"
+        ],
+        "sideEffects": [
+            "Narrow therapeutic index - toxicity common",
+            "Nausea/vomiting",
+            "Tachycardia, arrhythmias",
+            "Seizures (with toxicity)",
+            "Insomnia, tremor, headache",
+            "GI upset"
+        ],
+        "interactions": "CYP1A2 inhibitors (ciprofloxacin, fluvoxamine) increase levels, CYP1A2 inducers (smoking, phenytoin) decrease levels, adenosine (theophylline blocks adenosine effects).",
+        "interactionDetails": "CYP1A2 INHIBITORS: MECHANISM - Theophylline metabolized by CYP1A2. Inhibitors (ciprofloxacin, fluvoxamine, cimetidine) decrease metabolism. CONSEQUENCE - Theophylline toxicity: seizures, arrhythmias, vomiting. Monitor levels closely, reduce dose. CYP1A2 INDUCERS: MECHANISM - Smoking, phenytoin, rifampin induce CYP1A2. CONSEQUENCE - Decreased theophylline levels and efficacy. Need higher doses in smokers; adjust when smoking cessation occurs. ADENOSINE: MECHANISM - Theophylline competitively antagonizes adenosine receptors. CONSEQUENCE - Adenosine ineffective for PSVT termination. Require higher adenosine doses (up to 12 mg) or alternative agent.",
+        "pageType": "drug"
+    },
+    {
+        "id": "cromolyn",
+        "name": "Cromolyn Sodium",
+        "pharmacologicClass": "mast-cell-stabilizers",
+        "therapeuticClass": "asthma",
+        "system": "respiratory-system",
+        "mechanism": "Stabilizes mast cell membranes, preventing degranulation and release of histamine and inflammatory mediators. Prophylactic only.",
+        "features": "Prophylactic agent (NOT for acute bronchospasm), very safe profile, used mainly in children or exercise-induced asthma.",
+        "clinicalChoice": "Mild persistent asthma (alternative to low-dose ICS), exercise-induced bronchoconstriction (prophylaxis), allergic rhinitis.",
+        "indications": [
+            "Mild Persistent Asthma (prophylaxis)",
+            "Exercise-Induced Bronchoconstriction (prevention)",
+            "Allergic Rhinitis",
+            "Allergic Conjunctivitis"
+        ],
+        "contraindications": [
+            "Acute Asthma Attack (ineffective - prophylactic only)"
+        ],
+        "sideEffects": [
+            "Very safe - minimal systemic absorption",
+            "Cough, throat irritation (inhalation)",
+            "Unpleasant taste",
+            "Bronchospasm (rare, paradoxical)"
+        ],
+        "interactions": "Minimal drug interactions (not systemically absorbed).",
+        "interactionDetails": "",
+        "pageType": "drug"
     }
 
 ];export default drugs;

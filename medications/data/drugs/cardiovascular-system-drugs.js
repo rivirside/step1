@@ -1436,6 +1436,91 @@ const drugs = [
         "interactions": "Fibrates (increased risk of cholelithiasis), cyclosporine (increased ezetimibe levels), bile acid sequestrants (reduce ezetimibe absorption).",
         "interactionDetails": "FIBRATES: MECHANISM - Both ezetimibe and fibrates increase biliary cholesterol excretion and can promote gallstone formation. CONSEQUENCE - Increased risk of cholelithiasis. Use combination cautiously, monitor for gallstones. BILE ACID SEQUESTRANTS: MECHANISM - Cholestyramine and colestipol bind ezetimibe in intestine, reducing absorption. CONSEQUENCE - Decreased ezetimibe efficacy. Give ezetimibe at least 2 hours before or 4+ hours after bile acid sequestrant. CYCLOSPORINE: MECHANISM - Cyclosporine increases ezetimibe levels through unclear mechanism. CONSEQUENCE - Monitor for increased side effects. May need dose adjustment.",
         "pageType": "drug"
+    },
+    {
+        "id": "milrinone",
+        "name": "Milrinone",
+        "pharmacologicClass": "phosphodiesterase-inhibitors",
+        "therapeuticClass": "inotropes",
+        "system": "cardiovascular-system",
+        "mechanism": "Inhibits phosphodiesterase-3 (PDE3) in cardiac and vascular smooth muscle → ↑ cAMP → ↑ cardiac contractility (positive inotropy) and vasodilation (↓ afterload/preload).",
+        "features": "Inodilator (combined positive inotrope + vasodilator), does not increase myocardial oxygen demand as much as beta-agonists.",
+        "clinicalChoice": "Acute decompensated heart failure (cardiogenic shock), bridge to transplant, short-term IV use only.",
+        "indications": [
+            "Acute Decompensated Heart Failure",
+            "Cardiogenic Shock",
+            "Bridge to Cardiac Transplant"
+        ],
+        "contraindications": [
+            "Severe Aortic/Pulmonary Stenosis",
+            "Acute MI (within 24 hours)"
+        ],
+        "sideEffects": [
+            "Arrhythmias (ventricular, atrial)",
+            "Hypotension",
+            "Thrombocytopenia",
+            "Increased mortality with long-term use"
+        ],
+        "interactions": "Other vasodilators/antihypertensives (additive hypotension).",
+        "interactionDetails": "VASODILATORS/ANTIHYPERTENSIVES: MECHANISM - Milrinone causes vasodilation via increased cAMP. Additive with other vasodilators (nitrates, hydralazine, ACE-I, ARBs). CONSEQUENCE - Severe hypotension, especially in volume-depleted patients. Monitor BP closely, adjust doses.",
+        "pageType": "drug"
+    },
+    {
+        "id": "dobutamine",
+        "name": "Dobutamine",
+        "pharmacologicClass": "beta-agonists",
+        "therapeuticClass": "inotropes",
+        "system": "cardiovascular-system",
+        "mechanism": "Synthetic catecholamine, predominantly β1-adrenergic agonist → ↑ cardiac contractility and heart rate. Mild β2 agonism causes peripheral vasodilation.",
+        "features": "Positive inotrope with less tachycardia than isoproterenol, used in stress echocardiography.",
+        "clinicalChoice": "Acute decompensated heart failure with low cardiac output, cardiogenic shock, pharmacologic stress testing.",
+        "indications": [
+            "Acute Decompensated Heart Failure (low CO)",
+            "Cardiogenic Shock",
+            "Pharmacologic Stress Testing"
+        ],
+        "contraindications": [
+            "Idiopathic Hypertrophic Subaortic Stenosis (IHSS)",
+            "Uncorrected Tachyarrhythmias"
+        ],
+        "sideEffects": [
+            "Tachycardia",
+            "Arrhythmias (ventricular, atrial)",
+            "Hypotension (due to β2 vasodilation at high doses)",
+            "Increased myocardial oxygen demand",
+            "Tolerance with prolonged use"
+        ],
+        "interactions": "Beta-blockers (antagonize effects), MAOIs (hypertensive crisis), general anesthetics (arrhythmia risk).",
+        "interactionDetails": "BETA-BLOCKERS: MECHANISM - Beta-blockers competitively antagonize dobutamine's β1-adrenergic effects. CONSEQUENCE - Reduced inotropic effect, may need higher dobutamine doses. MAOIS: MECHANISM - MAOIs inhibit catecholamine metabolism, prolonging and intensifying dobutamine's effects. CONSEQUENCE - Severe hypertension, arrhythmias. Avoid or use very low doses. GENERAL ANESTHETICS: MECHANISM - Halogenated anesthetics sensitize myocardium to catecholamines. CONSEQUENCE - Increased risk of ventricular arrhythmias.",
+        "pageType": "drug"
+    },
+    {
+        "id": "nesiritide",
+        "name": "Nesiritide",
+        "pharmacologicClass": "natriuretic-peptides",
+        "therapeuticClass": "heart-failure",
+        "system": "cardiovascular-system",
+        "mechanism": "Recombinant human B-type natriuretic peptide (BNP) → binds to guanylate cyclase receptors → ↑ cGMP → vasodilation (↓ preload/afterload), ↑ natriuresis/diuresis.",
+        "features": "Recombinant BNP, rapid hemodynamic improvement, controversial mortality data.",
+        "clinicalChoice": "Acute decompensated heart failure with dyspnea at rest (limited use due to concerns about worsening renal function).",
+        "indications": [
+            "Acute Decompensated Heart Failure (ADHF)"
+        ],
+        "contraindications": [
+            "Cardiogenic Shock",
+            "SBP <90 mmHg",
+            "Significant Valvular Stenosis"
+        ],
+        "sideEffects": [
+            "Hypotension (dose-related, 15-30%)",
+            "Worsening renal function",
+            "Headache",
+            "Nausea",
+            "Ventricular arrhythmias (rare)"
+        ],
+        "interactions": "ACE-I/ARBs (additive hypotension), other vasodilators (hypotension).",
+        "interactionDetails": "ACE-I/ARBS: MECHANISM - Both nesiritide and RAAS inhibitors cause vasodilation. Nesiritide via increased cGMP, ACE-I/ARBs via reduced angiotensin II. CONSEQUENCE - Additive hypotension, potentially severe. Monitor BP closely, may need to hold ACE-I/ARB temporarily. VASODILATORS: MECHANISM - Additive vasodilation with nitrates, hydralazine, etc. CONSEQUENCE - Profound hypotension. Use lowest effective doses, monitor BP continuously.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

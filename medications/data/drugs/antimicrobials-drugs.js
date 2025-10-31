@@ -1348,6 +1348,62 @@ const drugs = [
         "interactions": "Nephrotoxic drugs (aminoglycosides, vancomycin - additive nephrotoxicity), neuromuscular blockers (prolonged paralysis).",
         "interactionDetails": "NEPHROTOXIC DRUGS: MECHANISM - Colistin causes dose-dependent nephrotoxicity. Additive with aminoglycosides, vancomycin, NSAIDs, contrast dye. CONSEQUENCE - Acute kidney injury. Avoid concurrent nephrotoxins when possible. Monitor renal function closely. NEUROMUSCULAR BLOCKERS: MECHANISM - Colistin can cause neuromuscular blockade by inhibiting acetylcholine release. Additive with succinylcholine, rocuronium, vecuronium. CONSEQUENCE - Prolonged paralysis, respiratory depression. Use with extreme caution in surgical/ICU settings.",
         "pageType": "drug"
+    },
+    {
+        "id": "fosfomycin",
+        "name": "Fosfomycin",
+        "pharmacologicClass": "cell-wall-synthesis-inhibitors",
+        "therapeuticClass": "antibacterials",
+        "system": "antimicrobials",
+        "mechanism": "Inhibits MurA enzyme (UDP-N-acetylglucosamine enolpyruvyl transferase), blocking peptidoglycan synthesis at an earlier step than beta-lactams.",
+        "features": "Single-dose oral treatment for uncomplicated UTI, achieves high urinary concentrations.",
+        "clinicalChoice": "Uncomplicated cystitis (single-dose therapy), UTI caused by ESBL-producing organisms, patient convenience.",
+        "indications": [
+            "Uncomplicated Urinary Tract Infection (Cystitis)",
+            "ESBL-Producing UTI"
+        ],
+        "contraindications": [
+            "Pyelonephritis (inadequate tissue penetration)",
+            "Complicated UTI"
+        ],
+        "sideEffects": [
+            "Diarrhea",
+            "Nausea",
+            "Headache",
+            "Vaginal candidiasis",
+            "Well tolerated overall"
+        ],
+        "interactions": "Metoclopramide (decreases fosfomycin absorption).",
+        "interactionDetails": "METOCLOPRAMIDE: MECHANISM - Metoclopramide increases GI motility, decreasing intestinal transit time and fosfomycin absorption. CONSEQUENCE - Reduced fosfomycin efficacy. Avoid concurrent use or give fosfomycin first, separate by several hours.",
+        "pageType": "drug"
+    },
+    {
+        "id": "fidaxomicin",
+        "name": "Fidaxomicin",
+        "pharmacologicClass": "macrolides",
+        "therapeuticClass": "antibacterials",
+        "system": "antimicrobials",
+        "mechanism": "Macrocyclic antibiotic that inhibits bacterial RNA polymerase, preventing transcription. Narrow spectrum, preserves normal gut flora better than vancomycin.",
+        "features": "Narrow spectrum targeting C. difficile, minimal systemic absorption, lower recurrence rates than vancomycin.",
+        "clinicalChoice": "C. difficile infection (first recurrence, or initial severe episode), preferred over vancomycin for recurrence prevention.",
+        "indications": [
+            "Clostridioides difficile Infection",
+            "Recurrent C. difficile Infection"
+        ],
+        "contraindications": [
+            "Hypersensitivity to fidaxomicin"
+        ],
+        "sideEffects": [
+            "Nausea",
+            "Vomiting",
+            "Abdominal pain",
+            "GI bleeding (rare)",
+            "Anemia",
+            "Well tolerated - similar to placebo"
+        ],
+        "interactions": "P-glycoprotein inhibitors (cyclosporine may increase fidaxomicin levels).",
+        "interactionDetails": "P-GLYCOPROTEIN INHIBITORS: MECHANISM - Fidaxomicin is a P-gp substrate. Inhibitors (cyclosporine, verapamil) may increase systemic exposure. CONSEQUENCE - Unknown clinical significance due to minimal systemic absorption. Monitor for increased side effects if combined with strong P-gp inhibitors.",
+        "pageType": "drug"
     }
 
 ];export default drugs;
