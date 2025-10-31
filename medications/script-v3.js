@@ -234,6 +234,9 @@ function createSystemNode(system) {
 
     node.appendChild(header);
 
+    // Get therapeutic classes for this system
+    const therapeuticClasses = dataLoader.getTherapeuticClassesBySystem(system.id);
+
     // Therapeutic classes container (initially hidden)
     const therapeuticContainer = document.createElement('div');
     therapeuticContainer.className = 'categories-container';
@@ -301,6 +304,9 @@ function createTherapeuticClassNode(therapeuticClass) {
     `;
 
     node.appendChild(header);
+
+    // Get pharmacologic classes for this therapeutic class
+    const pharmaClasses = dataLoader.getPharmacologicClassesByTherapeuticClass(therapeuticClass.id);
 
     // Pharmacologic classes container (initially hidden)
     const pharmaContainer = document.createElement('div');
