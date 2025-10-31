@@ -229,22 +229,8 @@ function createSystemNode(system) {
     header.innerHTML = `
         <span class="expand-icon">▶</span>
         <span class="node-title">${system.name}</span>
+        <span class="info-icon" title="View system details">→</span>
     `;
-
-    // Count total drugs in this system
-    const therapeuticClasses = dataLoader.getTherapeuticClassesBySystem(system.id);
-    let drugCount = 0;
-    therapeuticClasses.forEach(tc => {
-        const pharmaClasses = dataLoader.getPharmacologicClassesByTherapeuticClass(tc.id);
-        pharmaClasses.forEach(pc => {
-            drugCount += dataLoader.getDrugsByPharmacologicClass(pc.id).length;
-        });
-    });
-
-    const badge = document.createElement('span');
-    badge.className = 'count-badge';
-    badge.textContent = drugCount;
-    header.appendChild(badge);
 
     node.appendChild(header);
 
@@ -260,8 +246,13 @@ function createSystemNode(system) {
 
     node.appendChild(therapeuticContainer);
 
-    // Toggle expand/collapse
+    // Toggle expand/collapse (except when clicking info icon)
     header.addEventListener('click', (e) => {
+        // Don't toggle if clicking the info icon
+        if (e.target.classList.contains('info-icon')) {
+            return;
+        }
+
         e.stopPropagation();
 
         // Check quiz mode
@@ -285,6 +276,13 @@ function createSystemNode(system) {
         }
     });
 
+    // Show system detail when clicking info icon
+    const infoIcon = header.querySelector('.info-icon');
+    infoIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectEntity(system, 'system');
+    });
+
     return node;
 }
 
@@ -299,19 +297,8 @@ function createTherapeuticClassNode(therapeuticClass) {
     header.innerHTML = `
         <span class="expand-icon">▶</span>
         <span class="node-title">${therapeuticClass.name}</span>
+        <span class="info-icon" title="View class details">→</span>
     `;
-
-    // Count drugs
-    const pharmaClasses = dataLoader.getPharmacologicClassesByTherapeuticClass(therapeuticClass.id);
-    let drugCount = 0;
-    pharmaClasses.forEach(pc => {
-        drugCount += dataLoader.getDrugsByPharmacologicClass(pc.id).length;
-    });
-
-    const badge = document.createElement('span');
-    badge.className = 'count-badge';
-    badge.textContent = drugCount;
-    header.appendChild(badge);
 
     node.appendChild(header);
 
@@ -327,8 +314,13 @@ function createTherapeuticClassNode(therapeuticClass) {
 
     node.appendChild(pharmaContainer);
 
-    // Toggle expand/collapse
+    // Toggle expand/collapse (except when clicking info icon)
     header.addEventListener('click', (e) => {
+        // Don't toggle if clicking the info icon
+        if (e.target.classList.contains('info-icon')) {
+            return;
+        }
+
         e.stopPropagation();
 
         // Check quiz mode
@@ -352,9 +344,9 @@ function createTherapeuticClassNode(therapeuticClass) {
         }
     });
 
-    // Click to show detail
-    node.addEventListener('click', (e) => {
-        if (e.target === header || e.target.parentElement === header) return;
+    // Show therapeutic class detail when clicking info icon
+    const infoIcon = header.querySelector('.info-icon');
+    infoIcon.addEventListener('click', (e) => {
         e.stopPropagation();
         selectEntity(therapeuticClass, 'therapeutic-class');
     });
@@ -373,13 +365,8 @@ function createPharmaClassNode(pharmaClass) {
     header.innerHTML = `
         <span class="expand-icon">▶</span>
         <span class="node-title">${pharmaClass.name}</span>
+        <span class="info-icon" title="View class details">→</span>
     `;
-
-    const drugs = dataLoader.getDrugsByPharmacologicClass(pharmaClass.id);
-    const badge = document.createElement('span');
-    badge.className = 'count-badge';
-    badge.textContent = drugs.length;
-    header.appendChild(badge);
 
     node.appendChild(header);
 
@@ -388,6 +375,7 @@ function createPharmaClassNode(pharmaClass) {
     drugsContainer.className = 'diseases-container';
     drugsContainer.style.display = 'none';
 
+    const drugs = dataLoader.getDrugsByPharmacologicClass(pharmaClass.id);
     drugs.forEach(drug => {
         const drugNode = createDrugNode(drug, pharmaClass);
         drugsContainer.appendChild(drugNode);
@@ -395,8 +383,13 @@ function createPharmaClassNode(pharmaClass) {
 
     node.appendChild(drugsContainer);
 
-    // Toggle expand/collapse
+    // Toggle expand/collapse (except when clicking info icon)
     header.addEventListener('click', (e) => {
+        // Don't toggle if clicking the info icon
+        if (e.target.classList.contains('info-icon')) {
+            return;
+        }
+
         e.stopPropagation();
 
         // Check quiz mode
@@ -420,9 +413,9 @@ function createPharmaClassNode(pharmaClass) {
         }
     });
 
-    // Click to show detail
-    node.addEventListener('click', (e) => {
-        if (e.target === header || e.target.parentElement === header) return;
+    // Show pharmacologic class detail when clicking info icon
+    const infoIcon = header.querySelector('.info-icon');
+    infoIcon.addEventListener('click', (e) => {
         e.stopPropagation();
         selectEntity(pharmaClass, 'pharma-class');
     });
