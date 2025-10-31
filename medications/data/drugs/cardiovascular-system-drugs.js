@@ -1343,6 +1343,99 @@ const drugs = [
         "interactions": "Verapamil/diltiazem (severe bradycardia), insulin (masks hypoglycemia), CYP2D6 interactions.",
         "interactionDetails": "CALCIUM CHANNEL BLOCKERS: MECHANISM - Both carvedilol and non-dihydropyridine CCBs (verapamil, diltiazem) have negative chronotropic and inotropic effects. CONSEQUENCE - Severe bradycardia, heart block, hypotension, or heart failure exacerbation. INSULIN/ORAL HYPOGLYCEMICS: MECHANISM - Beta-blockade masks sympathetic symptoms of hypoglycemia (tachycardia, tremor) and impairs glycogenolysis. CONSEQUENCE - Prolonged hypoglycemia without typical warning signs. Monitor glucose closely.",
         "pageType": "drug"
+    },
+    {
+        "id": "clonidine",
+        "name": "Clonidine",
+        "pharmacologicClass": "central-alpha-2-agonists",
+        "therapeuticClass": "antihypertensives",
+        "systems": ["cardiovascular-system", "nervous-system"],
+        "mechanism": "Central alpha-2 adrenergic agonist that decreases sympathetic outflow from CNS, reducing peripheral vascular resistance and heart rate.",
+        "features": "Central-acting antihypertensive, also used for ADHD, opioid/alcohol withdrawal.",
+        "clinicalChoice": "Hypertensive urgency, ADHD (non-stimulant), opioid withdrawal symptoms.",
+        "indications": [
+            "Hypertension",
+            "Hypertensive Urgency",
+            "ADHD",
+            "Opioid Withdrawal",
+            "Alcohol Withdrawal"
+        ],
+        "contraindications": [
+            "Hypersensitivity to clonidine"
+        ],
+        "sideEffects": [
+            "Dry mouth (very common)",
+            "Sedation/drowsiness",
+            "Orthostatic hypotension",
+            "Rebound hypertension (abrupt discontinuation - DANGEROUS)",
+            "Bradycardia",
+            "Constipation",
+            "Depression"
+        ],
+        "interactions": "Beta-blockers (severe bradycardia), TCAs (reduce clonidine efficacy), CNS depressants (additive sedation).",
+        "interactionDetails": "BETA-BLOCKERS: MECHANISM - Both clonidine and beta-blockers reduce heart rate through different mechanisms. Clonidine via central sympathetic suppression, beta-blockers via peripheral blockade. CONSEQUENCE - Severe bradycardia, heart block. If discontinuing clonidine with concurrent beta-blocker, STOP BETA-BLOCKER FIRST, then taper clonidine to avoid rebound hypertension. TRICYCLIC ANTIDEPRESSANTS: MECHANISM - TCAs block alpha-2 receptors, antagonizing clonidine's effects. CONSEQUENCE - Reduced antihypertensive efficacy, hypertensive crisis risk. Avoid combination or use alternative antihypertensive.",
+        "pageType": "drug"
+    },
+    {
+        "id": "methyldopa",
+        "name": "Methyldopa",
+        "pharmacologicClass": "central-alpha-2-agonists",
+        "therapeuticClass": "antihypertensives",
+        "system": "cardiovascular-system",
+        "mechanism": "Prodrug converted to alpha-methylnorepinephrine, a central alpha-2 agonist that decreases sympathetic outflow.",
+        "features": "Pregnancy Category B - safe in pregnancy (drug of choice for chronic HTN in pregnancy).",
+        "clinicalChoice": "Hypertension in pregnancy (first-line), chronic hypertension in patients where other agents contraindicated.",
+        "indications": [
+            "Hypertension in Pregnancy",
+            "Chronic Hypertension"
+        ],
+        "contraindications": [
+            "Active Hepatic Disease",
+            "Pheochromocytoma",
+            "MAOIs"
+        ],
+        "sideEffects": [
+            "Positive direct Coombs test (10-20% - usually no hemolysis)",
+            "Hemolytic anemia (rare but serious)",
+            "Hepatotoxicity (monitor LFTs)",
+            "Sedation",
+            "Dry mouth",
+            "Orthostatic hypotension",
+            "Drug-induced lupus (rare)",
+            "Sexual dysfunction"
+        ],
+        "interactions": "Iron supplements (reduce methyldopa absorption), MAOIs (hypertensive crisis), lithium (increased lithium toxicity).",
+        "interactionDetails": "IRON SUPPLEMENTS: MECHANISM - Iron chelates methyldopa in GI tract, forming poorly absorbed complexes. CONSEQUENCE - Reduced methyldopa absorption and antihypertensive efficacy. Separate dosing by 2+ hours. MAOIS: MECHANISM - Both increase CNS catecholamine levels through different pathways. CONSEQUENCE - Hypertensive crisis, excitation, hallucinations. Contraindicated. LITHIUM: MECHANISM - Methyldopa may increase lithium levels or enhance lithium neurotoxicity. CONSEQUENCE - Lithium toxicity (tremor, confusion). Monitor lithium levels closely.",
+        "pageType": "drug"
+    },
+    {
+        "id": "ezetimibe",
+        "name": "Ezetimibe",
+        "pharmacologicClass": "cholesterol-absorption-inhibitors",
+        "therapeuticClass": "lipid-lowering-agents",
+        "system": "cardiovascular-system",
+        "mechanism": "Inhibits NPC1L1 transporter in small intestine brush border, blocking dietary and biliary cholesterol absorption.",
+        "features": "Unique mechanism (not a statin), additive with statins, lowers LDL ~18-20%.",
+        "clinicalChoice": "Add-on to statin for LDL goal not met, statin intolerance, combination therapy (ezetimibe/simvastatin).",
+        "indications": [
+            "Primary Hyperlipidemia",
+            "Familial Hypercholesterolemia",
+            "Homozygous Sitosterolemia"
+        ],
+        "contraindications": [
+            "Active Liver Disease (when combined with statin)",
+            "Pregnancy (when combined with statin)"
+        ],
+        "sideEffects": [
+            "Diarrhea",
+            "Arthralgia/myalgia (mild)",
+            "Upper respiratory infection",
+            "Hepatotoxicity (rare, mainly with statin)",
+            "Rhabdomyolysis (rare, mainly with statin)"
+        ],
+        "interactions": "Fibrates (increased risk of cholelithiasis), cyclosporine (increased ezetimibe levels), bile acid sequestrants (reduce ezetimibe absorption).",
+        "interactionDetails": "FIBRATES: MECHANISM - Both ezetimibe and fibrates increase biliary cholesterol excretion and can promote gallstone formation. CONSEQUENCE - Increased risk of cholelithiasis. Use combination cautiously, monitor for gallstones. BILE ACID SEQUESTRANTS: MECHANISM - Cholestyramine and colestipol bind ezetimibe in intestine, reducing absorption. CONSEQUENCE - Decreased ezetimibe efficacy. Give ezetimibe at least 2 hours before or 4+ hours after bile acid sequestrant. CYCLOSPORINE: MECHANISM - Cyclosporine increases ezetimibe levels through unclear mechanism. CONSEQUENCE - Monitor for increased side effects. May need dose adjustment.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

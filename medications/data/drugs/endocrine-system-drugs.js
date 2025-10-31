@@ -895,6 +895,70 @@ const drugs = [
         "interactions": "Verapamil/diltiazem (severe bradycardia), epinephrine (unopposed alpha-stimulation), insulin (masks hypoglycemia).",
         "interactionDetails": "CALCIUM CHANNEL BLOCKERS: MECHANISM - Both propranolol and non-dihydropyridine CCBs have negative chronotropic and inotropic effects. CONSEQUENCE - Severe bradycardia, AV block, or heart failure. EPINEPHRINE: MECHANISM - Beta-blockade leaves alpha-receptors unopposed during epinephrine use. CONSEQUENCE - Severe hypertension and bradycardia (paradoxical response). INSULIN: MECHANISM - Beta-blockade masks hypoglycemia symptoms and impairs glycogenolysis. CONSEQUENCE - Prolonged, unrecognized hypoglycemia in diabetic patients.",
         "pageType": "drug"
+    },
+    {
+        "id": "bromocriptine",
+        "name": "Bromocriptine",
+        "pharmacologicClass": "dopamine-agonists",
+        "therapeuticClass": "pituitary-disorders",
+        "system": "endocrine-system",
+        "mechanism": "Ergot-derived dopamine D2 receptor agonist that inhibits prolactin secretion and suppresses growth hormone in acromegaly.",
+        "features": "Oral dopamine agonist, shorter-acting than cabergoline, ergot derivative.",
+        "clinicalChoice": "Prolactinoma (first-line), acromegaly (adjunct to surgery/somatostatin analogs), Parkinson's disease.",
+        "indications": [
+            "Prolactinoma (Hyperprolactinemia)",
+            "Acromegaly",
+            "Parkinson's Disease",
+            "Type 2 Diabetes (quick-release formulation)"
+        ],
+        "contraindications": [
+            "Uncontrolled Hypertension",
+            "Pregnancy (for acromegaly indication)",
+            "Ergot allergy"
+        ],
+        "sideEffects": [
+            "Nausea/vomiting (common, dose-related)",
+            "Orthostatic hypotension",
+            "Headache",
+            "Fatigue",
+            "Impulse control disorders (gambling, hypersexuality)",
+            "Cardiac valvulopathy (rare, with high doses)",
+            "Pleuropulmonary fibrosis (rare)"
+        ],
+        "interactions": "Antipsychotics (antagonize dopamine effects), macrolide antibiotics (increase bromocriptine levels).",
+        "interactionDetails": "ANTIPSYCHOTICS: MECHANISM - Antipsychotics (especially typical) block dopamine receptors, directly opposing bromocriptine's dopamine agonist effects. CONSEQUENCE - Reduced bromocriptine efficacy for prolactinoma or Parkinson's. Antipsychotics may also increase prolactin. Avoid combination. MACROLIDES: MECHANISM - Macrolide antibiotics (erythromycin, clarithromycin) inhibit CYP3A4, increasing bromocriptine levels. CONSEQUENCE - Enhanced side effects including hypotension, nausea, dyskinesias. Monitor closely or avoid concurrent use.",
+        "pageType": "drug"
+    },
+    {
+        "id": "cabergoline",
+        "name": "Cabergoline",
+        "pharmacologicClass": "dopamine-agonists",
+        "therapeuticClass": "pituitary-disorders",
+        "system": "endocrine-system",
+        "mechanism": "Long-acting ergot-derived dopamine D2 receptor agonist that suppresses prolactin secretion.",
+        "features": "Longer half-life (65 hours), twice-weekly dosing, better tolerated than bromocriptine.",
+        "clinicalChoice": "Prolactinoma (preferred over bromocriptine - better efficacy and tolerability), hyperprolactinemia.",
+        "indications": [
+            "Prolactinoma (Hyperprolactinemia)",
+            "Lactation Suppression (off-label)"
+        ],
+        "contraindications": [
+            "Uncontrolled Hypertension",
+            "History of Cardiac Valvulopathy",
+            "Pregnancy (discontinue once pregnancy confirmed for prolactinoma)"
+        ],
+        "sideEffects": [
+            "Nausea (less than bromocriptine)",
+            "Headache",
+            "Dizziness",
+            "Orthostatic hypotension",
+            "Impulse control disorders",
+            "Cardiac valvulopathy (dose-related, monitor with echo)",
+            "Hallucinations (rare)"
+        ],
+        "interactions": "Antipsychotics (antagonize effects), CYP3A4 inhibitors (increase levels).",
+        "interactionDetails": "ANTIPSYCHOTICS: MECHANISM - Dopamine receptor blockade by antipsychotics opposes cabergoline's dopamine agonist effects. CONSEQUENCE - Reduced efficacy for prolactinoma treatment. Antipsychotics increase prolactin, counteracting therapeutic goal. Avoid combination. CYP3A4 INHIBITORS: MECHANISM - Cabergoline metabolized by CYP3A4. Inhibitors increase cabergoline levels. CONSEQUENCE - Enhanced side effects. Use lower cabergoline dose with strong CYP3A4 inhibitors.",
+        "pageType": "drug"
     }
 
 ];export default drugs;
