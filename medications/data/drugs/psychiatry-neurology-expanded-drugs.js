@@ -54,6 +54,7 @@ const drugs = [
         ],
         "interactions": "MAOIs, high-protein meals reduce absorption.",
         "interactionDetails": "MAOIS: MECHANISM - MAOIs prevent dopamine breakdown, while levodopa increases dopamine production. CONSEQUENCE - Risk of hypertensive crisis from excessive dopamine. Use MAO-B selective inhibitors only.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -79,6 +80,7 @@ const drugs = [
         ],
         "interactions": "Antipsychotics antagonize effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -104,6 +106,7 @@ const drugs = [
         ],
         "interactions": "Antipsychotics antagonize effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -128,6 +131,7 @@ const drugs = [
         ],
         "interactions": "Meperidine, tramadol (serotonin syndrome).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -152,6 +156,7 @@ const drugs = [
         ],
         "interactions": "Meperidine, tramadol (serotonin syndrome).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -178,6 +183,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive sedation).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -203,6 +209,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive sedation).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -232,6 +239,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), CYP2D6 inhibition.",
         "interactionDetails": "MAOIS: MECHANISM - Both increase synaptic serotonin through different pathways. CONSEQUENCE - Life-threatening serotonin syndrome with hyperthermia, rigidity, autonomic instability. Requires 2-week washout for most SSRIs, 5 weeks for fluoxetine.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -261,6 +269,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), CYP2D6 inhibition.",
         "interactionDetails": "MAOIS: MECHANISM - Both increase synaptic serotonin through different pathways. CONSEQUENCE - Life-threatening serotonin syndrome with hyperthermia, rigidity, autonomic instability. Requires 2-week washout for most SSRIs, 5 weeks for fluoxetine.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -288,6 +297,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), minimal CYP interactions.",
         "interactionDetails": "MAOIS: MECHANISM - Both increase synaptic serotonin through different pathways. CONSEQUENCE - Life-threatening serotonin syndrome with hyperthermia, rigidity, autonomic instability. Requires 2-week washout for most SSRIs, 5 weeks for fluoxetine.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -318,6 +328,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), strong CYP2D6 inhibition.",
         "interactionDetails": "MAOIS: MECHANISM - Both increase synaptic serotonin through different pathways. CONSEQUENCE - Life-threatening serotonin syndrome with hyperthermia, rigidity, autonomic instability. Requires 2-week washout for most SSRIs, 5 weeks for fluoxetine.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -346,6 +357,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -375,6 +387,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -405,6 +418,7 @@ const drugs = [
         ],
         "interactions": "MAOIs, QT-prolonging drugs.",
         "interactionDetails": "MAOIS: MECHANISM - Combined serotonin and norepinephrine effects. CONSEQUENCE - Risk of serotonin syndrome and hypertensive crisis. QT PROLONGATION: TCAs have quinidine-like effects, can cause fatal arrhythmias in overdose.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -434,6 +448,7 @@ const drugs = [
         ],
         "interactions": "MAOIs, QT-prolonging drugs.",
         "interactionDetails": "MAOIS: MECHANISM - Combined serotonin and norepinephrine effects. CONSEQUENCE - Risk of serotonin syndrome and hypertensive crisis. QT PROLONGATION: TCAs have quinidine-like effects, can cause fatal arrhythmias in overdose.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -463,6 +478,7 @@ const drugs = [
         ],
         "interactions": "CYP2D6 inhibition, lowers seizure threshold.",
         "interactionDetails": "SEIZURE RISK: MECHANISM - Bupropion lowers seizure threshold in dose-dependent manner. CONSEQUENCE - Contraindicated in eating disorders, seizure history, or conditions that lower seizure threshold.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -488,6 +504,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -515,6 +532,7 @@ const drugs = [
         ],
         "interactions": "Serotonergic drugs, sympathomimetics, tyramine.",
         "interactionDetails": "TYRAMINE: MECHANISM - MAOIs prevent breakdown of tyramine. Dietary tyramine (cheese, wine, aged meats) acts as indirect sympathomimetic. CONSEQUENCE - Hypertensive crisis with severe headache, stroke risk. SEROTONERGIC DRUGS: Risk of serotonin syndrome, requires 2-week washout.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -544,6 +562,7 @@ const drugs = [
         ],
         "interactions": "QT-prolonging drugs, anticholinergics.",
         "interactionDetails": "EPS: MECHANISM - D2 blockade in nigrostriatal pathway causes extrapyramidal symptoms. CONSEQUENCE - Acute dystonia, akathisia, parkinsonism. NMS: Rare but life-threatening with fever, rigidity, autonomic instability.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -574,6 +593,7 @@ const drugs = [
         ],
         "interactions": "QT-prolonging drugs, anticholinergics.",
         "interactionDetails": "EPS: MECHANISM - D2 blockade in nigrostriatal pathway causes extrapyramidal symptoms. CONSEQUENCE - Acute dystonia, akathisia, parkinsonism. NMS: Rare but life-threatening with fever, rigidity, autonomic instability.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -601,6 +621,7 @@ const drugs = [
         ],
         "interactions": "CYP2D6 substrates.",
         "interactionDetails": "METABOLIC SYNDROME: MECHANISM - 5-HT2C antagonism and histamine H1 blockade. CONSEQUENCE - Weight gain, diabetes, dyslipidemia. Monitor BMI and metabolic panel.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -628,6 +649,7 @@ const drugs = [
         ],
         "interactions": "CYP1A2 substrates.",
         "interactionDetails": "METABOLIC SYNDROME: MECHANISM - 5-HT2C antagonism and histamine H1 blockade. CONSEQUENCE - Weight gain, diabetes, dyslipidemia. Monitor BMI and metabolic panel.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -655,6 +677,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 substrates.",
         "interactionDetails": "METABOLIC SYNDROME: MECHANISM - 5-HT2C antagonism and histamine H1 blockade. CONSEQUENCE - Weight gain, diabetes, dyslipidemia. Monitor BMI and metabolic panel.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -681,6 +704,7 @@ const drugs = [
         ],
         "interactions": "CYP2D6 and CYP3A4 substrates.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -708,6 +732,7 @@ const drugs = [
         ],
         "interactions": "Requires weekly WBC monitoring, CYP1A2 substrates.",
         "interactionDetails": "AGRANULOCYTOSIS: MECHANISM - Immune-mediated bone marrow suppression. CONSEQUENCE - Life-threatening infection risk. Requires weekly CBC monitoring for 6 months, then biweekly. Discontinue if WBC <3000 or ANC <1500.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -736,6 +761,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive sedation), alcohol.",
         "interactionDetails": "CNS DEPRESSANTS/ALCOHOL: MECHANISM - Additive GABAergic effects. CONSEQUENCE - Profound sedation, respiratory depression, risk of death in overdose. Black box warning for combination with opioids.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -765,6 +791,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive sedation), alcohol.",
         "interactionDetails": "CNS DEPRESSANTS/ALCOHOL: MECHANISM - Additive GABAergic effects. CONSEQUENCE - Profound sedation, respiratory depression, risk of death in overdose. Black box warning for combination with opioids.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -792,6 +819,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive sedation), CYP3A4 inhibitors.",
         "interactionDetails": "CNS DEPRESSANTS/ALCOHOL: MECHANISM - Additive GABAergic effects. CONSEQUENCE - Profound sedation, respiratory depression, risk of death in overdose. Black box warning for combination with opioids.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -820,6 +848,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive sedation), alcohol.",
         "interactionDetails": "CNS DEPRESSANTS/ALCOHOL: MECHANISM - Additive GABAergic effects. CONSEQUENCE - Profound sedation, respiratory depression, risk of death in overdose. Black box warning for combination with opioids.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -851,6 +880,7 @@ const drugs = [
         ],
         "interactions": "Lamotrigine (increases lamotrigine levels), aspirin.",
         "interactionDetails": "LAMOTRIGINE: MECHANISM - Valproate inhibits lamotrigine metabolism. CONSEQUENCE - Doubles lamotrigine levels, increasing Stevens-Johnson syndrome risk. Reduce lamotrigine dose by 50%. PREGNANCY: Major teratogen causing neural tube defects and cognitive impairment.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -880,6 +910,7 @@ const drugs = [
         ],
         "interactions": "CYP450 inducer (reduces levels of many drugs).",
         "interactionDetails": "CYP INDUCTION: MECHANISM - Carbamazepine induces CYP3A4, CYP2C9. CONSEQUENCE - Reduces levels of oral contraceptives, warfarin, many psychiatric drugs. Also induces own metabolism (autoinduction). HLA-B*1502: Asian patients at high risk for Stevens-Johnson syndrome, screen before starting.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -906,6 +937,7 @@ const drugs = [
         ],
         "interactions": "Valproate (doubles lamotrigine levels), oral contraceptives (reduce lamotrigine levels).",
         "interactionDetails": "STEVENS-JOHNSON SYNDROME: MECHANISM - Immune-mediated severe cutaneous reaction. CONSEQUENCE - Life-threatening skin sloughing. Risk increased by rapid titration, valproate co-administration. Titrate slowly, discontinue at first sign of rash.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -936,6 +968,7 @@ const drugs = [
         ],
         "interactions": "Strong CYP450 inducer, zero-order kinetics.",
         "interactionDetails": "ZERO-ORDER KINETICS: MECHANISM - At therapeutic levels, metabolism enzymes are saturated. CONSEQUENCE - Small dose increases cause large serum level increases. Risk of toxicity. CYP INDUCTION: Reduces levels of many drugs including oral contraceptives, warfarin.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -962,6 +995,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -989,6 +1023,7 @@ const drugs = [
         ],
         "interactions": "Reduces oral contraceptive efficacy.",
         "interactionDetails": "COGNITIVE EFFECTS: MECHANISM - Multiple CNS effects including carbonic anhydrase inhibition. CONSEQUENCE - Word-finding difficulty, memory problems ('Dopamax'). KIDNEY STONES: Carbonic anhydrase inhibition causes metabolic acidosis and stone formation.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1093,6 +1128,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (hypertensive crisis).",
         "interactionDetails": "CARDIAC EFFECTS: MECHANISM - Increased catecholamines. CONSEQUENCE - Tachycardia, hypertension. Screen for cardiac disease before starting. GROWTH SUPPRESSION: Monitor height/weight in children, consider drug holidays.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1148,6 +1184,7 @@ const drugs = [
         ],
         "interactions": "CYP2D6 substrates.",
         "interactionDetails": "SUICIDAL IDEATION: MECHANISM - Unknown. CONSEQUENCE - Black box warning for increased suicidal thoughts in children/adolescents. Monitor closely especially early in treatment.",
+        "highYield": true,
         "pageType": "drug"
     }
 

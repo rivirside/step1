@@ -27,6 +27,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines contraindicated, increased infection risk.",
         "interactionDetails": "LIVE VACCINES: MECHANISM - DMARDs suppress immune system function, reducing ability to mount adequate immune response. CONSEQUENCE - Risk of disseminated infection from live vaccines, potentially fatal. Use killed vaccines only.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -54,6 +55,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines, other immunosuppressants.",
         "interactionDetails": "OTHER IMMUNOSUPPRESSANTS: MECHANISM - Additive immunosuppressive effects when combined with conventional DMARDs or corticosteroids. CONSEQUENCE - Significantly increased risk of opportunistic infections including PCP, TB reactivation, and fungal infections.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -80,6 +82,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines, other immunosuppressants.",
         "interactionDetails": "OTHER IMMUNOSUPPRESSANTS: MECHANISM - Additive immunosuppressive effects when combined with conventional DMARDs or corticosteroids. CONSEQUENCE - Significantly increased risk of opportunistic infections including PCP, TB reactivation, and fungal infections.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -106,6 +109,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines, other immunosuppressants.",
         "interactionDetails": "OTHER IMMUNOSUPPRESSANTS: MECHANISM - Additive immunosuppressive effects when combined with conventional DMARDs or corticosteroids. CONSEQUENCE - Significantly increased risk of opportunistic infections including PCP, TB reactivation, and fungal infections.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -133,6 +137,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors markedly increase levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -158,6 +163,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors markedly increase levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -208,6 +214,7 @@ const drugs = [
         ],
         "interactions": "Allopurinol increases azathioprine toxicity; antacids reduce mycophenolate absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -258,6 +265,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inducers reduce efficacy, live vaccines.",
         "interactionDetails": "CYP3A4 INDUCERS: MECHANISM - Rifampin, phenytoin increase cortisol metabolism, reducing therapeutic levels. CONSEQUENCE - Loss of anti-inflammatory efficacy, potential disease flare. May need dose adjustment.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -285,6 +293,7 @@ const drugs = [
         ],
         "interactions": "Azathioprine with allopurinol (severe toxicity).",
         "interactionDetails": "AZATHIOPRINE: MECHANISM - Allopurinol inhibits xanthine oxidase, which metabolizes azathioprine. This leads to accumulation of toxic metabolites. CONSEQUENCE - Severe myelosuppression and life-threatening bone marrow toxicity requiring dose reduction.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -310,6 +319,7 @@ const drugs = [
         ],
         "interactions": "Azathioprine with allopurinol (severe toxicity).",
         "interactionDetails": "AZATHIOPRINE: MECHANISM - Allopurinol inhibits xanthine oxidase, which metabolizes azathioprine. This leads to accumulation of toxic metabolites. CONSEQUENCE - Severe myelosuppression and life-threatening bone marrow toxicity requiring dose reduction.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -335,6 +345,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors increase colchicine toxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -361,6 +372,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors increase colchicine toxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -391,6 +403,7 @@ const drugs = [
         ],
         "interactions": "Strong CYP3A4 inhibitors/inducers (alter levels), live vaccines (contraindicated), immunosuppressants (additive immunosuppression).",
         "interactionDetails": "CYP3A4 INHIBITORS: MECHANISM - Tofacitinib metabolized by CYP3A4. Inhibitors (ketoconazole, clarithromycin) increase tofacitinib levels. CONSEQUENCE - Increased immunosuppression and side effects. Reduce tofacitinib dose by 50% with strong inhibitors. CYP3A4 INDUCERS: MECHANISM - Inducers (rifampin) decrease tofacitinib levels. CONSEQUENCE - Reduced efficacy. May need dose increase or avoid concurrent use. LIVE VACCINES: MECHANISM - JAK inhibition impairs immune response. CONSEQUENCE - Risk of infection from live vaccine. Contraindicated. Update vaccines before starting therapy.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -419,6 +432,7 @@ const drugs = [
         ],
         "interactions": "TNF inhibitors (increased infection risk - not recommended), live vaccines (avoid).",
         "interactionDetails": "TNF INHIBITORS: MECHANISM - Both anakinra (IL-1 blockade) and TNF inhibitors provide profound immunosuppression through different cytokine pathways. CONSEQUENCE - Significantly increased risk of serious infections without additional clinical benefit. Combination not recommended. LIVE VACCINES: MECHANISM - IL-1 is critical for immune response. Blockade impairs response to vaccines. CONSEQUENCE - Risk of infection from live vaccines. Avoid live vaccines during therapy.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -453,6 +467,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines (avoid), CYP450 substrates (IL-6 suppression normalizes CYP activity).",
         "interactionDetails": "CYP450 SUBSTRATES: MECHANISM - IL-6 suppresses CYP450 enzymes. Tocilizumab blocks IL-6, restoring normal CYP activity and increasing metabolism of CYP substrates. CONSEQUENCE - Decreased levels of drugs metabolized by CYP450 (statins, warfarin, oral contraceptives, immunosuppressants). Monitor levels, may need dose adjustment. LIVE VACCINES: MECHANISM - IL-6 blockade impairs immune response. CONSEQUENCE - Risk of infection from live vaccines. Update vaccines before therapy.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -482,6 +497,7 @@ const drugs = [
         ],
         "interactions": "Azathioprine/mercaptopurine (CONTRAINDICATED - severe myelosuppression), theophylline (increased levels).",
         "interactionDetails": "AZATHIOPRINE/MERCAPTOPURINE: MECHANISM - These prodrugs are metabolized by xanthine oxidase to inactive metabolites. Febuxostat blocks this metabolism. CONSEQUENCE - Severe, potentially fatal bone marrow suppression. Absolute contraindication. THEOPHYLLINE: MECHANISM - Theophylline is metabolized by xanthine oxidase. Febuxostat inhibition increases theophylline levels. CONSEQUENCE - Theophylline toxicity (seizures, arrhythmias). Monitor levels, reduce theophylline dose.",
+        "highYield": true,
         "pageType": "drug"
     }
 

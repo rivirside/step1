@@ -28,6 +28,7 @@ const drugs = [
         ],
         "interactions": "Reduce absorption of pH-dependent drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -54,6 +55,7 @@ const drugs = [
         ],
         "interactions": "Reduce absorption of pH-dependent drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -80,6 +82,7 @@ const drugs = [
         ],
         "interactions": "Reduce absorption of pH-dependent drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -105,6 +108,7 @@ const drugs = [
         ],
         "interactions": "Cimetidine inhibits CYP enzymes.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -130,6 +134,7 @@ const drugs = [
         ],
         "interactions": "Cimetidine inhibits CYP enzymes.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -155,6 +160,7 @@ const drugs = [
         ],
         "interactions": "Cimetidine inhibits CYP enzymes.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -232,6 +238,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants additive effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -282,6 +289,7 @@ const drugs = [
         ],
         "interactions": "MAOIs contraindicated with loperamide.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -306,6 +314,7 @@ const drugs = [
         ],
         "interactions": "MAOIs contraindicated with loperamide.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -404,6 +413,7 @@ const drugs = [
         ],
         "interactions": "Concurrent NSAIDs increase renal risk.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -431,6 +441,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines contraindicated.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "biologic-agents",
@@ -485,6 +496,7 @@ const drugs = [
         ],
         "interactions": "Additive diarrhea with other laxatives.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -509,6 +521,7 @@ const drugs = [
         ],
         "interactions": "Additive diarrhea with other laxatives.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -537,6 +550,7 @@ const drugs = [
         ],
         "interactions": "Drugs prolonging QT interval (increased arrhythmia risk), apomorphine (profound hypotension).",
         "interactionDetails": "QT-PROLONGING DRUGS: MECHANISM - Ondansetron blocks cardiac potassium channels (hERG), prolonging repolarization. Additive with other QT-prolonging drugs. CONSEQUENCE - Increased risk of torsades de pointes, especially with Class IA/III antiarrhythmics. APOMORPHINE: MECHANISM - Both drugs affect serotonergic pathways. Ondansetron may enhance apomorphine's hypotensive effects. CONSEQUENCE - Severe, potentially fatal hypotension and loss of consciousness.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -565,6 +579,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -594,6 +609,7 @@ const drugs = [
         ],
         "interactions": "Cholestyramine and aluminum-based antacids reduce UDCA absorption.",
         "interactionDetails": "BILE ACID SEQUESTRANTS: MECHANISM - Cholestyramine binds bile acids in intestinal lumen, preventing UDCA absorption. CONSEQUENCE - Reduced UDCA efficacy. Give UDCA at least 1 hour before or 4-6 hours after bile acid sequestrants. ALUMINUM ANTACIDS: MECHANISM - Aluminum forms insoluble complexes with bile acids. CONSEQUENCE - Decreased UDCA absorption and effectiveness.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -622,6 +638,7 @@ const drugs = [
         ],
         "interactions": "Antacids (magnesium-containing) worsen diarrhea.",
         "interactionDetails": "MAGNESIUM ANTACIDS: MECHANISM - Both misoprostol and magnesium-containing antacids cause diarrhea via osmotic effect and increased intestinal motility. CONSEQUENCE - Severe diarrhea, dehydration, electrolyte imbalances. Avoid concurrent use or use aluminum-containing antacids instead.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -651,6 +668,7 @@ const drugs = [
         ],
         "interactions": "Binds many drugs (warfarin, digoxin, thyroid hormones, thiazides) - give other drugs 1 hour before or 4-6 hours after.",
         "interactionDetails": "MULTIPLE DRUG INTERACTIONS: MECHANISM - Cholestyramine is a positively charged resin that binds negatively charged drugs and bile acids in the intestinal lumen, preventing their absorption. CONSEQUENCE - Reduced absorption and efficacy of: warfarin (↓ INR), digoxin (↓ levels → heart failure), levothyroxine (↓ thyroid hormone), thiazide diuretics (↓ BP control), fat-soluble vitamins (A, D, E, K deficiency). TIMING: Give other drugs 1 hour BEFORE or 4-6 hours AFTER cholestyramine.",
+        "highYield": true,
         "pageType": "drug"
     }
 

@@ -77,6 +77,7 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides potentiate blockade.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -103,6 +104,7 @@ const drugs = [
         ],
         "interactions": "Calcium, antacids reduce absorption.",
         "interactionDetails": "CALCIUM/ANTACIDS: MECHANISM - Divalent cations (Ca2+, Mg2+) chelate bisphosphonates, forming insoluble complexes. CONSEQUENCE - Markedly reduced oral bioavailability and therapeutic efficacy. Take on empty stomach.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -128,6 +130,7 @@ const drugs = [
         ],
         "interactions": "Calcium, antacids reduce absorption.",
         "interactionDetails": "CALCIUM/ANTACIDS: MECHANISM - Divalent cations (Ca2+, Mg2+) chelate bisphosphonates, forming insoluble complexes. CONSEQUENCE - Markedly reduced oral bioavailability and therapeutic efficacy. Take on empty stomach.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -206,6 +209,7 @@ const drugs = [
         ],
         "interactions": "Avoid combination with other hypercalcemia-inducing therapies.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -230,6 +234,7 @@ const drugs = [
         ],
         "interactions": "Ensure adequate calcium/vitamin D to prevent hypocalcemia.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -258,6 +263,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines contraindicated, CYP3A4 interactions.",
         "interactionDetails": "THROMBOSIS: MECHANISM - JAK inhibition may affect platelet production and coagulation pathways. CONSEQUENCE - Black box warning for increased risk of blood clots, cardiovascular death. Use caution in high-risk patients.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -337,6 +343,7 @@ const drugs = [
         ],
         "interactions": "Azathioprine/mercaptopurine (severe toxicity).",
         "interactionDetails": "AZATHIOPRINE: MECHANISM - Xanthine oxidase inhibition prevents metabolism of azathioprine. CONSEQUENCE - Severe myelosuppression, potentially fatal. Contraindicated. CV RISK: Black box warning for increased cardiovascular death compared to allopurinol.",
+        "highYield": true,
         "pageType": "drug"
     }
 

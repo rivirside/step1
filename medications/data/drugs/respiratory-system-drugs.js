@@ -27,6 +27,7 @@ const drugs = [
         ],
         "interactions": "CYP inhibitors (ciprofloxacin, cimetidine) increase toxicity; smoking induces metabolism.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -52,6 +53,7 @@ const drugs = [
         ],
         "interactions": "Minimal systemic interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -76,6 +78,7 @@ const drugs = [
         ],
         "interactions": "CYP450 interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -146,6 +149,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines contraindicated while on therapy.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -223,6 +227,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize bronchodilation.",
         "interactionDetails": "BETA-BLOCKERS: MECHANISM - Beta-blockers competitively antagonize beta-2 receptor activation. CONSEQUENCE - Reduced bronchodilation and potential bronchospasm, especially with non-selective beta-blockers.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -275,6 +280,7 @@ const drugs = [
         ],
         "interactions": "Must be combined with ICS for asthma.",
         "interactionDetails": "ICS REQUIREMENT: MECHANISM - LABAs may mask inflammation while allowing disease progression. CONSEQUENCE - Increased risk of severe asthma exacerbations and death. Always use with inhaled corticosteroids.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -301,6 +307,7 @@ const drugs = [
         ],
         "interactions": "Must be combined with ICS for asthma.",
         "interactionDetails": "ICS REQUIREMENT: MECHANISM - LABAs may mask inflammation while allowing disease progression. CONSEQUENCE - Increased risk of severe asthma exacerbations and death. Always use with inhaled corticosteroids.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -326,6 +333,7 @@ const drugs = [
         ],
         "interactions": "Additive anticholinergic effects with other antimuscarinics.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -351,6 +359,7 @@ const drugs = [
         ],
         "interactions": "Additive anticholinergic effects with other antimuscarinics.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -401,6 +410,7 @@ const drugs = [
         ],
         "interactions": "Minimal systemic interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -427,6 +437,7 @@ const drugs = [
         ],
         "interactions": "Minimal systemic interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -579,6 +590,7 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "ANTICHOLINERGICS: MECHANISM - Additive antimuscarinic effects with other anticholinergic drugs. CONSEQUENCE - Increased risk of dry mouth, urinary retention, constipation, or glaucoma. Use caution with multiple anticholinergic medications.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -608,6 +620,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4/1A2 inducers reduce roflumilast levels, CYP3A4/1A2 inhibitors increase levels.",
         "interactionDetails": "CYP450 INDUCERS: MECHANISM - Roflumilast metabolized by CYP3A4 and CYP1A2. Inducers (rifampin, phenobarbital, carbamazepine) increase metabolism. CONSEQUENCE - Reduced roflumilast efficacy. Avoid strong CYP inducers. CYP450 INHIBITORS: MECHANISM - Inhibitors (ketoconazole, erythromycin, cimetidine) decrease roflumilast metabolism. CONSEQUENCE - Increased roflumilast levels and side effects.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -634,6 +647,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions (monoclonal antibody).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -665,6 +679,7 @@ const drugs = [
         ],
         "interactions": "CYP1A2 inhibitors (ciprofloxacin, fluvoxamine) increase levels, CYP1A2 inducers (smoking, phenytoin) decrease levels, adenosine (theophylline blocks adenosine effects).",
         "interactionDetails": "CYP1A2 INHIBITORS: MECHANISM - Theophylline metabolized by CYP1A2. Inhibitors (ciprofloxacin, fluvoxamine, cimetidine) decrease metabolism. CONSEQUENCE - Theophylline toxicity: seizures, arrhythmias, vomiting. Monitor levels closely, reduce dose. CYP1A2 INDUCERS: MECHANISM - Smoking, phenytoin, rifampin induce CYP1A2. CONSEQUENCE - Decreased theophylline levels and efficacy. Need higher doses in smokers; adjust when smoking cessation occurs. ADENOSINE: MECHANISM - Theophylline competitively antagonizes adenosine receptors. CONSEQUENCE - Adenosine ineffective for PSVT termination. Require higher adenosine doses (up to 12 mg) or alternative agent.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -693,6 +708,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions (not systemically absorbed).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     }
 

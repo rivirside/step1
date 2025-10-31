@@ -25,6 +25,9 @@ class MedicationDataLoader {
         this.drugsByContraindication = new Map();
         this.drugsBySideEffect = new Map();
 
+        // High yield index
+        this.highYieldDrugs = [];
+
         this.loaded = false;
     }
 
@@ -185,9 +188,15 @@ class MedicationDataLoader {
                     this.drugsBySideEffect.get(key).push(drug);
                 });
             }
+
+            // Index high yield drugs
+            if (drug.highYield === true) {
+                this.highYieldDrugs.push(drug);
+            }
         });
 
         console.log('✓ Indexes built');
+        console.log(`✓ Found ${this.highYieldDrugs.length} high yield drugs`);
     }
 
     // Getter methods
@@ -229,6 +238,10 @@ class MedicationDataLoader {
 
     getClassesBySystem(systemId) {
         return this.classesBySystem.get(systemId) || [];
+    }
+
+    getHighYieldDrugs() {
+        return this.highYieldDrugs;
     }
 
     // Get therapeutic classes for a system
@@ -350,6 +363,7 @@ class MedicationDataLoader {
             pharmacologicClasses: this.classes.filter(c => c.pageType === 'pharmacologic-class').length,
             totalClasses: this.classes.length,
             drugs: this.drugs.length,
+            highYieldDrugs: this.highYieldDrugs.length,
             indications: this.drugsByIndication.size,
             contraindications: this.drugsByContraindication.size,
             sideEffects: this.drugsBySideEffect.size

@@ -28,6 +28,7 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides (increased ototoxicity), lithium (increased levels).",
         "interactionDetails": "AMINOGLYCOSIDES: MECHANISM - Both loop diuretics and aminoglycosides have direct ototoxic effects on hair cells in the cochlea. Loop diuretics may increase aminoglycoside concentration in the inner ear. CONSEQUENCE - Synergistic ototoxicity leading to permanent hearing loss, especially high-frequency hearing. LITHIUM: MECHANISM - Loop diuretics cause volume depletion, leading to increased proximal tubule lithium reabsorption. CONSEQUENCE - Elevated lithium levels with risk of lithium toxicity including tremor, confusion, and nephrotoxicity.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -54,6 +55,7 @@ const drugs = [
         ],
         "interactions": "Lithium (increased levels), NSAIDs (reduced efficacy).",
         "interactionDetails": "LITHIUM: MECHANISM - Thiazides cause mild volume depletion, increasing proximal tubule sodium and lithium reabsorption. CONSEQUENCE - Increased lithium levels with risk of toxicity. NSAIDS: MECHANISM - Thiazides work partly through prostaglandin-mediated vasodilation. NSAIDs inhibit prostaglandin synthesis. CONSEQUENCE - Reduced antihypertensive efficacy and potential for acute kidney injury.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -80,6 +82,7 @@ const drugs = [
         ],
         "interactions": "ACE inhibitors, ARBs (hyperkalemia risk).",
         "interactionDetails": "ACE INHIBITORS/ARBS: MECHANISM - ACE inhibitors and ARBs reduce aldosterone production, leading to potassium retention. Potassium-sparing diuretics independently block potassium excretion. CONSEQUENCE - Additive hyperkalemia with risk of fatal cardiac arrhythmias, especially in patients with kidney disease or diabetes.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -107,6 +110,7 @@ const drugs = [
         ],
         "interactions": "Salicylates (increased toxicity).",
         "interactionDetails": "SALICYLATES: MECHANISM - Both carbonic anhydrase inhibitors and salicylates can cause metabolic acidosis. Acetazolamide may also increase salicylate levels by altering renal elimination. CONSEQUENCE - Enhanced salicylate toxicity with confusion, tinnitus, and potentially fatal metabolic acidosis.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -135,6 +139,7 @@ const drugs = [
         ],
         "interactions": "Additive nephrotoxicity with other nephrotoxic agents.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -161,6 +166,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -186,6 +192,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -212,6 +219,7 @@ const drugs = [
         ],
         "interactions": "Antacids (reduced absorption).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -239,6 +247,7 @@ const drugs = [
         ],
         "interactions": "NSAIDs (potentiate ADH effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -265,6 +274,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors (increased levels).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -294,6 +304,7 @@ const drugs = [
         ],
         "interactions": "Other alpha-blockers (additive hypotension), PDE5 inhibitors (hypotension), strong CYP3A4 inhibitors (increased levels).",
         "interactionDetails": "PDE5 INHIBITORS: MECHANISM - Both tamsulosin and PDE5 inhibitors (sildenafil, tadalafil) cause vasodilation. Tamsulosin via alpha-blockade, PDE5 inhibitors via cGMP. CONSEQUENCE - Additive hypotension, especially orthostatic. Use lowest doses, monitor blood pressure. CYP3A4 INHIBITORS: MECHANISM - Tamsulosin metabolized by CYP3A4 and CYP2D6. Strong CYP3A4 inhibitors (ketoconazole, clarithromycin) increase tamsulosin levels. CONSEQUENCE - Enhanced alpha-blockade, increased hypotension and side effects. Avoid strong CYP3A4 inhibitors or reduce tamsulosin dose.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -323,6 +334,7 @@ const drugs = [
         ],
         "interactions": "Antihypertensives (additive hypotension), PDE5 inhibitors (hypotension).",
         "interactionDetails": "ANTIHYPERTENSIVES: MECHANISM - Terazosin causes vasodilation via alpha-1 blockade. Additive with other blood pressure lowering drugs. CONSEQUENCE - Severe orthostatic hypotension, especially first dose. Start low dose at bedtime, titrate slowly. PDE5 INHIBITORS: MECHANISM - Additive vasodilation (alpha-blockade + increased cGMP). CONSEQUENCE - Significant hypotension. Avoid concurrent use if possible, or use lowest doses with close monitoring.",
+        "highYield": true,
         "pageType": "drug"
     }
 

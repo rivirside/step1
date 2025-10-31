@@ -26,6 +26,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers mask hypoglycemia symptoms.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -52,6 +53,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers mask hypoglycemia symptoms.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -77,6 +79,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers mask hypoglycemia symptoms.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -102,6 +105,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers mask hypoglycemia symptoms.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -129,6 +133,7 @@ const drugs = [
         ],
         "interactions": "Contrast agents increase lactic acidosis risk.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -154,6 +159,7 @@ const drugs = [
         ],
         "interactions": "Sulfonamides potentiate effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -179,6 +185,7 @@ const drugs = [
         ],
         "interactions": "Sulfonamides potentiate effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -286,6 +293,7 @@ const drugs = [
         ],
         "interactions": "CYP2C8 inhibitors increase levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -315,6 +323,7 @@ const drugs = [
         ],
         "interactions": "Historical: CYP2C8/2C9 interactions similar to pioglitazone",
         "interactionDetails": "REMOVED FROM MARKET: Increased risk of myocardial infarction and cardiovascular events led to FDA restriction in 2010 and subsequent market withdrawal.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -340,6 +349,7 @@ const drugs = [
         ],
         "interactions": "Few significant interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -364,6 +374,7 @@ const drugs = [
         ],
         "interactions": "Few significant interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -527,6 +538,7 @@ const drugs = [
         ],
         "interactions": "Must take with FIRST BITE of meal. If hypoglycemia occurs, treat with GLUCOSE (not sucrose - acarbose blocks sucrose breakdown).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -555,6 +567,7 @@ const drugs = [
         ],
         "interactions": "Must take with FIRST BITE of each meal. If hypoglycemia occurs, treat with GLUCOSE (not sucrose).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -580,6 +593,7 @@ const drugs = [
         ],
         "interactions": "Iron, calcium reduce absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -605,6 +619,7 @@ const drugs = [
         ],
         "interactions": "Iron, calcium reduce absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -630,6 +645,7 @@ const drugs = [
         ],
         "interactions": "Warfarin effects enhanced.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -655,6 +671,7 @@ const drugs = [
         ],
         "interactions": "Warfarin effects enhanced.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -684,6 +701,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inducers/inhibitors affect levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "glucocorticoids",
@@ -715,6 +733,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inducers/inhibitors affect levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "glucocorticoids",
@@ -745,6 +764,7 @@ const drugs = [
         ],
         "interactions": "NSAIDs reduce effectiveness.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -776,6 +796,7 @@ const drugs = [
         ],
         "interactions": "Delays gastric emptying (affects oral drug absorption), insulin/sulfonylureas (hypoglycemia risk).",
         "interactionDetails": "ORAL MEDICATIONS: MECHANISM - Semaglutide delays gastric emptying, potentially reducing absorption of oral medications. CONSEQUENCE - May affect timing and absorption of oral drugs, especially those requiring rapid absorption. INSULIN/SULFONYLUREAS: MECHANISM - Additive glucose-lowering effects. CONSEQUENCE - Increased hypoglycemia risk. Reduce insulin or sulfonylurea dose when initiating semaglutide.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -804,6 +825,7 @@ const drugs = [
         ],
         "interactions": "Delays gastric emptying (affects oral drug absorption), insulin/sulfonylureas (hypoglycemia).",
         "interactionDetails": "Similar to semaglutide - delays gastric emptying affecting oral drug absorption. Additive hypoglycemia risk with insulin or sulfonylureas requiring dose adjustment.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -834,6 +856,7 @@ const drugs = [
         ],
         "interactions": "Diuretics (volume depletion), insulin/sulfonylureas (hypoglycemia).",
         "interactionDetails": "DIURETICS: MECHANISM - Both SGLT2 inhibitors and diuretics cause volume loss through different mechanisms (glycosuria vs natriuresis). CONSEQUENCE - Additive volume depletion, hypotension, acute kidney injury. Monitor volume status. INSULIN/SULFONYLUREAS: MECHANISM - Additive glucose-lowering. CONSEQUENCE - Increased hypoglycemia risk, dose adjustment needed.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -861,6 +884,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4/5 inhibitors (increase saxagliptin levels), insulin/sulfonylureas (hypoglycemia).",
         "interactionDetails": "CYP3A4/5 INHIBITORS: MECHANISM - Saxagliptin metabolized by CYP3A4/5. Strong inhibitors (ketoconazole, clarithromycin) increase levels. CONSEQUENCE - Increased drug exposure. Reduce saxagliptin dose to 2.5mg with strong CYP3A4/5 inhibitors. INSULIN/SULFONYLUREAS: MECHANISM - Additive glucose-lowering. CONSEQUENCE - Hypoglycemia risk, especially with insulin or sulfonylureas.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -927,6 +951,7 @@ const drugs = [
         ],
         "interactions": "Antipsychotics (antagonize dopamine effects), macrolide antibiotics (increase bromocriptine levels).",
         "interactionDetails": "ANTIPSYCHOTICS: MECHANISM - Antipsychotics (especially typical) block dopamine receptors, directly opposing bromocriptine's dopamine agonist effects. CONSEQUENCE - Reduced bromocriptine efficacy for prolactinoma or Parkinson's. Antipsychotics may also increase prolactin. Avoid combination. MACROLIDES: MECHANISM - Macrolide antibiotics (erythromycin, clarithromycin) inhibit CYP3A4, increasing bromocriptine levels. CONSEQUENCE - Enhanced side effects including hypotension, nausea, dyskinesias. Monitor closely or avoid concurrent use.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -958,6 +983,7 @@ const drugs = [
         ],
         "interactions": "Antipsychotics (antagonize effects), CYP3A4 inhibitors (increase levels).",
         "interactionDetails": "ANTIPSYCHOTICS: MECHANISM - Dopamine receptor blockade by antipsychotics opposes cabergoline's dopamine agonist effects. CONSEQUENCE - Reduced efficacy for prolactinoma treatment. Antipsychotics increase prolactin, counteracting therapeutic goal. Avoid combination. CYP3A4 INHIBITORS: MECHANISM - Cabergoline metabolized by CYP3A4. Inhibitors increase cabergoline levels. CONSEQUENCE - Enhanced side effects. Use lower cabergoline dose with strong CYP3A4 inhibitors.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -988,6 +1014,7 @@ const drugs = [
         ],
         "interactions": "Cholestyramine (reduces raloxifene absorption), warfarin (decreases PT/INR).",
         "interactionDetails": "CHOLESTYRAMINE: MECHANISM - Cholestyramine binds raloxifene in GI tract, preventing absorption. CONSEQUENCE - Reduced raloxifene efficacy. Avoid concurrent use or separate dosing by several hours. WARFARIN: MECHANISM - Raloxifene may decrease warfarin absorption or enhance its metabolism. CONSEQUENCE - Decreased PT/INR, potential loss of anticoagulation. Monitor INR closely when initiating or stopping raloxifene.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1020,6 +1047,7 @@ const drugs = [
         ],
         "interactions": "Digoxin (hypercalcemia increases digoxin toxicity risk).",
         "interactionDetails": "DIGOXIN: MECHANISM - Teriparatide can cause transient hypercalcemia. Hypercalcemia increases myocardial sensitivity to digoxin and predisposes to digoxin toxicity. CONSEQUENCE - Increased risk of digoxin-induced arrhythmias. Monitor serum calcium and digoxin levels closely. Avoid concurrent use if possible.",
+        "highYield": true,
         "pageType": "drug"
     }
 

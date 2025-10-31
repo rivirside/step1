@@ -29,6 +29,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), warfarin (increased bleeding).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -56,6 +57,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), warfarin (increased bleeding).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -83,6 +85,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), warfarin (increased bleeding).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -110,6 +113,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), warfarin (increased bleeding).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -136,6 +140,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome), warfarin (increased bleeding).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -163,6 +168,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -190,6 +196,7 @@ const drugs = [
         ],
         "interactions": "MAOIs (serotonin syndrome).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -214,6 +221,7 @@ const drugs = [
         ],
         "interactions": "Drug-specific.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -237,6 +245,7 @@ const drugs = [
         ],
         "interactions": "Drug-specific.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -264,6 +273,7 @@ const drugs = [
         ],
         "interactions": "Alcohol (increased CNS depression).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -291,6 +301,7 @@ const drugs = [
         ],
         "interactions": "Alcohol (increased CNS depression).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -317,6 +328,7 @@ const drugs = [
         ],
         "interactions": "Alcohol (increased CNS depression).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -365,6 +377,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors increase levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -414,6 +427,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -439,6 +453,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -464,6 +479,7 @@ const drugs = [
         ],
         "interactions": "CYP450 interactions vary by drug.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -489,6 +505,7 @@ const drugs = [
         ],
         "interactions": "CYP450 interactions vary by drug.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -514,6 +531,7 @@ const drugs = [
         ],
         "interactions": "CYP450 interactions vary by drug.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -539,6 +557,7 @@ const drugs = [
         ],
         "interactions": "CYP450 interactions vary by drug.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -565,6 +584,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -592,6 +612,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -618,6 +639,7 @@ const drugs = [
         ],
         "interactions": "Many are enzyme inducers.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "sodium-channel-blockers"
@@ -648,6 +670,7 @@ const drugs = [
         ],
         "interactions": "Many are enzyme inducers.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "anticonvulsants-as-mood-stabilizers",
@@ -677,6 +700,7 @@ const drugs = [
         ],
         "interactions": "Many are enzyme inducers.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "anticonvulsants-as-mood-stabilizers",

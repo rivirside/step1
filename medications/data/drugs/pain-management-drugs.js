@@ -28,6 +28,7 @@ const drugs = [
         ],
         "interactions": "Warfarin, ACE inhibitors, lithium.",
         "interactionDetails": "WARFARIN: MECHANISM - NSAIDs displace warfarin from protein binding sites (increasing free active drug) and independently inhibit platelet aggregation via COX-1 blockade. Some NSAIDs also inhibit warfarin metabolism. CONSEQUENCE - Dramatically increased bleeding risk through dual anticoagulant/antiplatelet effects. ACE INHIBITORS: MECHANISM - NSAIDs block cyclooxygenase, reducing prostaglandin E2 and prostacyclin production. These prostaglandins normally cause vasodilation and help maintain renal blood flow. CONSEQUENCE - Reduced antihypertensive efficacy and increased risk of acute kidney injury. LITHIUM: MECHANISM - NSAIDs reduce renal blood flow and glomerular filtration rate, decreasing lithium clearance. Lithium has a narrow therapeutic window. CONSEQUENCE - Lithium toxicity with neurological symptoms (tremor, confusion, seizures) and potential nephrotoxicity.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -55,6 +56,7 @@ const drugs = [
         ],
         "interactions": "Warfarin, ACE inhibitors, lithium.",
         "interactionDetails": "WARFARIN: MECHANISM - NSAIDs displace warfarin from protein binding sites (increasing free active drug) and independently inhibit platelet aggregation via COX-1 blockade. Some NSAIDs also inhibit warfarin metabolism. CONSEQUENCE - Dramatically increased bleeding risk through dual anticoagulant/antiplatelet effects. ACE INHIBITORS: MECHANISM - NSAIDs block cyclooxygenase, reducing prostaglandin E2 and prostacyclin production. These prostaglandins normally cause vasodilation and help maintain renal blood flow. CONSEQUENCE - Reduced antihypertensive efficacy and increased risk of acute kidney injury. LITHIUM: MECHANISM - NSAIDs reduce renal blood flow and glomerular filtration rate, decreasing lithium clearance. Lithium has a narrow therapeutic window. CONSEQUENCE - Lithium toxicity with neurological symptoms (tremor, confusion, seizures) and potential nephrotoxicity.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -107,6 +109,7 @@ const drugs = [
         ],
         "interactions": "Warfarin (high doses), alcohol increases hepatotoxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -134,6 +137,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants, MAOIs, CYP3A4 inhibitors.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -161,6 +165,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants, MAOIs, CYP3A4 inhibitors.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -186,6 +191,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants, MAOIs, CYP3A4 inhibitors.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -212,6 +218,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants, MAOIs, CYP3A4 inhibitors.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -238,6 +245,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants, MAOIs, CYP3A4 inhibitors.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -312,6 +320,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 substrates.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {

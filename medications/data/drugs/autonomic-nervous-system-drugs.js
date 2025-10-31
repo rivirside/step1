@@ -29,6 +29,7 @@ const drugs = [
         ],
         "interactions": "Anticholinergics antagonize effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -135,6 +136,7 @@ const drugs = [
         ],
         "interactions": "Succinylcholine effects prolonged.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -184,6 +186,7 @@ const drugs = [
         ],
         "interactions": "Succinylcholine effects prolonged.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -209,6 +212,7 @@ const drugs = [
         ],
         "interactions": "Succinylcholine effects prolonged.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -310,6 +314,7 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -336,6 +341,7 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -362,6 +368,7 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "anticholinergics",
@@ -391,6 +398,7 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "anticholinergics",
@@ -422,6 +430,7 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -474,6 +483,7 @@ const drugs = [
         ],
         "interactions": "Other anticholinergics (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -627,6 +637,7 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides potentiate blockade.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "neuromuscular-blocking-agents",
@@ -655,6 +666,7 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides potentiate blockade.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -681,6 +693,7 @@ const drugs = [
         ],
         "interactions": "MAOIs potentiate effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -706,6 +719,7 @@ const drugs = [
         ],
         "interactions": "MAOIs potentiate effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -732,6 +746,7 @@ const drugs = [
         ],
         "interactions": "MAOIs and β-blockers modify response.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -757,6 +772,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers blunt effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -782,6 +798,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -808,6 +825,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "selective-β2-agonists",
@@ -837,6 +855,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "long-acting-beta-2-agonists-laba",
@@ -866,6 +885,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers antagonize effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "long-acting-beta-2-agonists-laba",
@@ -925,6 +945,7 @@ const drugs = [
         ],
         "interactions": "MAOIs enhance effects, α-blockers antagonize.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "nasal-decongestants",
@@ -980,6 +1001,7 @@ const drugs = [
         ],
         "interactions": "MAOIs and sympathomimetics potentiate hypertensive crises.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1058,6 +1080,8 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
+        ,
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1084,6 +1108,8 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
+        ,
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1110,6 +1136,8 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
+        ,
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1139,6 +1167,8 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
+        ,
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1165,6 +1195,8 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
+        ,
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1274,6 +1306,8 @@ const drugs = [
         ],
         "interactions": "Calcium channel blockers, amiodarone.",
         "interactionDetails": "MECHANISM: Both beta blockers and calcium channel blockers (especially verapamil and diltiazem) independently suppress cardiac conduction and contractility. Beta blockers block sympathetic stimulation of the heart, while non-dihydropyridine CCBs block L-type calcium channels crucial for cardiac conduction and contraction. CLINICAL CONSEQUENCE: When combined, these effects are additive, creating dangerous negative inotropic (reduced contractility) and negative chronotropic (reduced heart rate) effects. This can lead to severe bradycardia, complete heart block, cardiogenic shock, and hemodynamic collapse. AMIODARONE: Has additional risks due to its multiple mechanisms - blocks sodium, potassium, and calcium channels while also having anti-adrenergic effects, creating a \"quadruple block\" when combined with beta blockers.",
+        ,
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1299,6 +1333,7 @@ const drugs = [
         ],
         "interactions": "Other antihypertensives (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1324,6 +1359,7 @@ const drugs = [
         ],
         "interactions": "Other antihypertensives (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "alpha-1-blockers",
@@ -1353,6 +1389,7 @@ const drugs = [
         ],
         "interactions": "Other antihypertensives (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "alpha-1-blockers",
@@ -1381,6 +1418,7 @@ const drugs = [
         ],
         "interactions": "Other antihypertensives (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "alpha-1-blockers",
@@ -1433,6 +1471,7 @@ const drugs = [
         ],
         "interactions": "Other antihypertensives (additive effects).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1459,6 +1498,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants enhance sedation.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1484,6 +1524,7 @@ const drugs = [
         ],
         "interactions": "CNS depressants enhance sedation.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {

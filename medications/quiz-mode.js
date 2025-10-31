@@ -17,7 +17,8 @@ class QuizMode {
                 numberOfQuestions: 10, // For quiz mode
                 stopOnFirstMistake: false, // For quiz mode - move to next question on first mistake
                 correctionsNeeded: 2, // For learning mode
-                resetOnWrong: true // For learning mode
+                resetOnWrong: true, // For learning mode
+                highYieldOnly: false // Filter to show only high yield drugs
             },
             progress: {
                 drugStats: new Map(), // drugId -> { correct: 0, attempts: 0 }
@@ -70,6 +71,12 @@ class QuizMode {
                         <button class="btn btn-small btn-secondary" id="select-all-btn">Select All</button>
                         <button class="btn btn-small btn-secondary" id="deselect-all-btn">Deselect All</button>
                         <span class="drug-count-inline" id="drug-count-inline">0 selected</span>
+                    </div>
+                    <div class="high-yield-filter-container">
+                        <label class="checkbox-label high-yield-filter">
+                            <input type="checkbox" id="high-yield-only-checkbox">
+                            <span>🎯 Show High Yield Drugs Only</span>
+                        </label>
                     </div>
                     <div id="drug-tree" class="drug-selection-tree"></div>
                 </div>
@@ -165,6 +172,13 @@ class QuizMode {
             this.state.config.resetOnWrong = e.target.checked;
         });
 
+        // High yield filter checkbox
+        modal.querySelector('#high-yield-only-checkbox').addEventListener('change', (e) => {
+            this.state.config.highYieldOnly = e.target.checked;
+            // Repopulate tree with filter
+            this.populateDrugTree(modal);
+        });
+
         // Start button
         modal.querySelector('#start-quiz').addEventListener('click', () => {
             this.startSession();
@@ -247,12 +261,26 @@ class QuizMode {
         // Get children and count drugs
         if (type === 'system') {
             children = this.dataLoader.getTherapeuticClassesBySystem(item.id);
-            drugCount = this.dataLoader.getDrugsBySystem(item.id).length;
+            let allDrugs = this.dataLoader.getDrugsBySystem(item.id);
+            // Filter by high yield if enabled
+            if (this.state.config.highYieldOnly) {
+                allDrugs = allDrugs.filter(d => d.highYield === true);
+            }
+            drugCount = allDrugs.length;
         } else if (type === 'therapeutic') {
             children = this.dataLoader.getPharmacologicClassesByTherapeuticClass(item.id);
-            drugCount = this.dataLoader.getDrugsByTherapeuticClass(item.id).length;
+            let allDrugs = this.dataLoader.getDrugsByTherapeuticClass(item.id);
+            // Filter by high yield if enabled
+            if (this.state.config.highYieldOnly) {
+                allDrugs = allDrugs.filter(d => d.highYield === true);
+            }
+            drugCount = allDrugs.length;
         } else if (type === 'pharmacologic') {
             children = this.dataLoader.getDrugsByPharmacologicClass(item.id);
+            // Filter by high yield if enabled
+            if (this.state.config.highYieldOnly) {
+                children = children.filter(d => d.highYield === true);
+            }
             drugCount = children.length;
         }
 

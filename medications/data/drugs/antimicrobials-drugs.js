@@ -26,6 +26,7 @@ const drugs = [
         ],
         "interactions": "Probenecid increases levels, tetracyclines may interfere.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -51,6 +52,7 @@ const drugs = [
         ],
         "interactions": "Probenecid increases levels, tetracyclines may interfere.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -75,6 +77,7 @@ const drugs = [
         ],
         "interactions": "Probenecid increases levels, tetracyclines may interfere.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -196,6 +199,7 @@ const drugs = [
         ],
         "interactions": "Valproate levels decreased, raising seizure risk.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -219,6 +223,7 @@ const drugs = [
         ],
         "interactions": "Minimal cross-reactivity with other beta-lactams.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -244,6 +249,7 @@ const drugs = [
         ],
         "interactions": "Other nephrotoxic drugs increase toxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -268,6 +274,7 @@ const drugs = [
         ],
         "interactions": "Statins increase risk of myopathy.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -294,6 +301,7 @@ const drugs = [
         ],
         "interactions": "Loop diuretics increase ototoxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -319,6 +327,7 @@ const drugs = [
         ],
         "interactions": "Loop diuretics increase ototoxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -344,6 +353,7 @@ const drugs = [
         ],
         "interactions": "Loop diuretics increase ototoxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -395,6 +405,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibition, increases levels of many drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -419,6 +430,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibition, increases levels of many drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -444,6 +456,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibition, increases levels of many drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -472,6 +485,7 @@ const drugs = [
         ],
         "interactions": "Divalent cations reduce absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "oral-antibiotics",
@@ -503,6 +517,7 @@ const drugs = [
         ],
         "interactions": "Divalent cations reduce absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "oral-antibiotics",
@@ -533,6 +548,7 @@ const drugs = [
         ],
         "interactions": "Divalent cations reduce absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -583,6 +599,7 @@ const drugs = [
         ],
         "interactions": "Antagonistic when combined with macrolides.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -609,6 +626,7 @@ const drugs = [
         ],
         "interactions": "MAO inhibition potentiates serotonergic drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -635,6 +653,7 @@ const drugs = [
         ],
         "interactions": "Divalent cations reduce absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -661,6 +680,7 @@ const drugs = [
         ],
         "interactions": "Divalent cations reduce absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -686,6 +706,7 @@ const drugs = [
         ],
         "interactions": "Divalent cations reduce absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -713,6 +734,7 @@ const drugs = [
         ],
         "interactions": "Warfarin effects enhanced.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -795,6 +817,7 @@ const drugs = [
         ],
         "interactions": "Nephrotoxic drugs increase risk.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -820,6 +843,7 @@ const drugs = [
         ],
         "interactions": "Nephrotoxic drugs increase risk.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -845,6 +869,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibition affects many drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -871,6 +896,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibition affects many drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -895,6 +921,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibition affects many drugs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -920,6 +947,7 @@ const drugs = [
         ],
         "interactions": "Few significant interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -945,6 +973,7 @@ const drugs = [
         ],
         "interactions": "Probenecid increases levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -969,6 +998,7 @@ const drugs = [
         ],
         "interactions": "Probenecid increases levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -995,6 +1025,7 @@ const drugs = [
         ],
         "interactions": "Probenecid increases levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1019,6 +1050,7 @@ const drugs = [
         ],
         "interactions": "Few significant interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1044,6 +1076,7 @@ const drugs = [
         ],
         "interactions": "Few significant interactions.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1070,6 +1103,7 @@ const drugs = [
         ],
         "interactions": "QT-prolonging drugs increase arrhythmia risk.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1122,6 +1156,7 @@ const drugs = [
         ],
         "interactions": "QT-prolonging drugs increase arrhythmia risk.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "disease-modifying-antirheumatic-drugs-dmards",
@@ -1255,6 +1290,7 @@ const drugs = [
         ],
         "interactions": "Statins (increased myopathy risk), warfarin (may increase INR).",
         "interactionDetails": "STATINS: MECHANISM - Both daptomycin and statins can cause myopathy and rhabdomyolysis. Daptomycin disrupts muscle cell membranes, statins impair muscle metabolism. CONSEQUENCE - Significantly increased risk of CPK elevation, myopathy, and rhabdomyolysis. Consider discontinuing statin during daptomycin therapy. Monitor CPK weekly. HMG-CoA REDUCTASE INHIBITORS: Similar mechanism - additive muscle toxicity.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1287,6 +1323,7 @@ const drugs = [
         ],
         "interactions": "Serotonergic drugs (SSRIs, SNRIs, tramadol - serotonin syndrome), tyramine-rich foods (hypertensive crisis).",
         "interactionDetails": "SEROTONERGIC DRUGS: MECHANISM - Linezolid is a weak, reversible MAO inhibitor. Combined with SSRIs, SNRIs, tramadol, or other serotonergic drugs increases serotonin levels. CONSEQUENCE - Serotonin syndrome (hyperthermia, agitation, hyperreflexia, tremor, confusion). Avoid concurrent serotonergic drugs. TYRAMINE-RICH FOODS: MECHANISM - MAO inhibition prevents tyramine breakdown, causing norepinephrine release. CONSEQUENCE - Hypertensive crisis. Avoid aged cheese, cured meats, red wine, fermented foods.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1318,6 +1355,7 @@ const drugs = [
         ],
         "interactions": "Warfarin (decreased INR), oral contraceptives (decreased efficacy).",
         "interactionDetails": "WARFARIN: MECHANISM - Tigecycline may alter gut flora producing vitamin K, affecting warfarin metabolism. CONSEQUENCE - Decreased INR, reduced anticoagulation. Monitor INR closely. ORAL CONTRACEPTIVES: MECHANISM - Similar to tetracyclines, may reduce contraceptive efficacy through gut flora alteration or hepatic metabolism changes. CONSEQUENCE - Contraceptive failure. Use backup contraception.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1347,6 +1385,7 @@ const drugs = [
         ],
         "interactions": "Nephrotoxic drugs (aminoglycosides, vancomycin - additive nephrotoxicity), neuromuscular blockers (prolonged paralysis).",
         "interactionDetails": "NEPHROTOXIC DRUGS: MECHANISM - Colistin causes dose-dependent nephrotoxicity. Additive with aminoglycosides, vancomycin, NSAIDs, contrast dye. CONSEQUENCE - Acute kidney injury. Avoid concurrent nephrotoxins when possible. Monitor renal function closely. NEUROMUSCULAR BLOCKERS: MECHANISM - Colistin can cause neuromuscular blockade by inhibiting acetylcholine release. Additive with succinylcholine, rocuronium, vecuronium. CONSEQUENCE - Prolonged paralysis, respiratory depression. Use with extreme caution in surgical/ICU settings.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1375,6 +1414,7 @@ const drugs = [
         ],
         "interactions": "Metoclopramide (decreases fosfomycin absorption).",
         "interactionDetails": "METOCLOPRAMIDE: MECHANISM - Metoclopramide increases GI motility, decreasing intestinal transit time and fosfomycin absorption. CONSEQUENCE - Reduced fosfomycin efficacy. Avoid concurrent use or give fosfomycin first, separate by several hours.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1403,6 +1443,7 @@ const drugs = [
         ],
         "interactions": "P-glycoprotein inhibitors (cyclosporine may increase fidaxomicin levels).",
         "interactionDetails": "P-GLYCOPROTEIN INHIBITORS: MECHANISM - Fidaxomicin is a P-gp substrate. Inhibitors (cyclosporine, verapamil) may increase systemic exposure. CONSEQUENCE - Unknown clinical significance due to minimal systemic absorption. Monitor for increased side effects if combined with strong P-gp inhibitors.",
+        "highYield": true,
         "pageType": "drug"
     }
 

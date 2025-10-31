@@ -28,6 +28,7 @@ const drugs = [
         ],
         "interactions": "Many drugs affect INR - antibiotics, NSAIDs, amiodarone.",
         "interactionDetails": "ANTIBIOTICS: MECHANISM - Antibiotics kill gut bacteria that produce vitamin K, reducing vitamin K availability. CONSEQUENCE - Enhanced anticoagulation and increased bleeding risk. NSAIDS: MECHANISM - NSAIDs inhibit platelet function and increase GI bleeding risk. CONSEQUENCE - Additive bleeding risk, especially GI bleeding.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -157,6 +158,7 @@ const drugs = [
         ],
         "interactions": "P-gp inhibitors (increased levels), rifampin (decreased levels).",
         "interactionDetails": "P-GLYCOPROTEIN INHIBITORS: MECHANISM - DOACs are substrates for P-gp efflux pump. Inhibitors like amiodarone, verapamil increase DOAC levels. CONSEQUENCE - Increased bleeding risk requiring dose reduction.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -183,6 +185,7 @@ const drugs = [
         ],
         "interactions": "P-gp inhibitors (increased levels), rifampin (decreased levels).",
         "interactionDetails": "P-GLYCOPROTEIN INHIBITORS: MECHANISM - DOACs are substrates for P-gp efflux pump. Inhibitors like amiodarone, verapamil increase DOAC levels. CONSEQUENCE - Increased bleeding risk requiring dose reduction.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -208,6 +211,7 @@ const drugs = [
         ],
         "interactions": "P-gp inhibitors (increased levels), rifampin (decreased levels).",
         "interactionDetails": "P-GLYCOPROTEIN INHIBITORS: MECHANISM - DOACs are substrates for P-gp efflux pump. Inhibitors like amiodarone, verapamil increase DOAC levels. CONSEQUENCE - Increased bleeding risk requiring dose reduction.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -243,6 +247,7 @@ const drugs = [
         ],
         "interactions": "Warfarin (increased bleeding), methotrexate (increased toxicity), ACE inhibitors, lithium.",
         "interactionDetails": "WARFARIN: MECHANISM - Aspirin affects platelet function while warfarin affects coagulation cascade. NSAIDs also displace warfarin from protein binding sites. CONSEQUENCE - Additive bleeding risk affecting both primary and secondary hemostasis. ACE INHIBITORS: MECHANISM - NSAIDs block cyclooxygenase, reducing prostaglandin E2 and prostacyclin production. CONSEQUENCE - Reduced antihypertensive efficacy and increased risk of acute kidney injury. LITHIUM: MECHANISM - NSAIDs reduce renal blood flow and GFR, decreasing lithium clearance. CONSEQUENCE - Lithium toxicity.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -269,6 +274,7 @@ const drugs = [
         ],
         "interactions": "CYP2C19 inhibitors affect clopidogrel efficacy.",
         "interactionDetails": "CYP2C19 INHIBITORS: MECHANISM - Clopidogrel is a prodrug requiring CYP2C19 activation. Inhibitors like omeprazole reduce active metabolite formation. CONSEQUENCE - Reduced antiplatelet efficacy and increased thrombotic risk.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -443,6 +449,7 @@ const drugs = [
         ],
         "interactions": "Live vaccines (immunosuppression).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -493,6 +500,7 @@ const drugs = [
         ],
         "interactions": "Dexrazoxane mitigates doxorubicin cardiotoxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -518,6 +526,7 @@ const drugs = [
         ],
         "interactions": "Dexrazoxane mitigates doxorubicin cardiotoxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -547,6 +556,7 @@ const drugs = [
         ],
         "interactions": "Folate supplements reduce methotrexate efficacy.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "antimetabolites",
@@ -602,6 +612,7 @@ const drugs = [
         ],
         "interactions": "Strong CYP3A4 inhibitors increase toxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -627,6 +638,7 @@ const drugs = [
         ],
         "interactions": "Strong CYP3A4 inhibitors increase toxicity.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -701,6 +713,7 @@ const drugs = [
         ],
         "interactions": "Concomitant cardiotoxic or anticoagulant therapy increases adverse effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -725,6 +738,7 @@ const drugs = [
         ],
         "interactions": "Concomitant cardiotoxic or anticoagulant therapy increases adverse effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -751,6 +765,7 @@ const drugs = [
         ],
         "interactions": "Concomitant cardiotoxic or anticoagulant therapy increases adverse effects.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -830,6 +845,7 @@ const drugs = [
         ],
         "interactions": "P-glycoprotein inhibitors/inducers (alter edoxaban levels), antiplatelet agents (↑ bleeding).",
         "interactionDetails": "P-GLYCOPROTEIN INHIBITORS: MECHANISM - Edoxaban is a P-gp substrate. Inhibitors (quinidine, verapamil, dronedarone) increase edoxaban levels. CONSEQUENCE - Increased bleeding risk. Reduce edoxaban dose by 50% with potent P-gp inhibitors. P-GLYCOPROTEIN INDUCERS: MECHANISM - Inducers (rifampin, phenytoin) decrease edoxaban levels. CONSEQUENCE - Reduced anticoagulant efficacy, increased thrombosis risk. Avoid concurrent use. ANTIPLATELETS: MECHANISM - Additive antiplatelet and anticoagulant effects. CONSEQUENCE - Significantly increased bleeding risk. Use caution with aspirin, NSAIDs, or P2Y12 inhibitors.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -859,6 +875,7 @@ const drugs = [
         ],
         "interactions": "Anticoagulants (warfarin, DOACs - ↑ bleeding), NSAIDs (↑ bleeding), fibrinolytics.",
         "interactionDetails": "ANTICOAGULANTS: MECHANISM - Prasugrel inhibits platelet aggregation. Anticoagulants inhibit coagulation cascade. Combined effects are additive. CONSEQUENCE - Significantly increased bleeding risk. Use with caution, especially triple therapy (DAPT + anticoagulant). Monitor closely. NSAIDS: MECHANISM - NSAIDs inhibit COX-1, reducing thromboxane A2 and platelet function. Additive with prasugrel. CONSEQUENCE - Increased GI and systemic bleeding. Avoid concurrent NSAIDs when possible, use PPIs if necessary.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -887,6 +904,7 @@ const drugs = [
         ],
         "interactions": "Polyvalent cations (antacids, calcium, iron) reduce absorption, statins (increased statin levels), CYP substrates.",
         "interactionDetails": "POLYVALENT CATIONS: MECHANISM - Eltrombopag chelates metals (Ca²⁺, Mg²⁺, Fe²⁺, Al³⁺, Zn²⁺) in GI tract, forming poorly absorbed complexes. CONSEQUENCE - Significantly reduced eltrombopag absorption and efficacy. Separate dosing: give eltrombopag 2 hours before or 4 hours after antacids, calcium, iron. STATINS: MECHANISM - Eltrombopag inhibits OATP1B1 and BCRP transporters, reducing hepatic uptake and elimination of statins. CONSEQUENCE - Increased statin levels, ↑ risk of myopathy/rhabdomyolysis. Monitor CPK, consider reducing statin dose.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -914,6 +932,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions (peptide drug, not metabolized by CYP450).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     }
 

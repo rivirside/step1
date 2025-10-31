@@ -149,6 +149,7 @@ const drugs = [
         ],
         "interactions": "None significant.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -177,6 +178,7 @@ const drugs = [
         ],
         "interactions": "Occlusive dressings increase absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "glucocorticoids",

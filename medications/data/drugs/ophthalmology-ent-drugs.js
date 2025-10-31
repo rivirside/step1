@@ -223,6 +223,7 @@ const drugs = [
         ],
         "interactions": "Minimal systemic absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "inhaled-corticosteroids",
@@ -253,6 +254,7 @@ const drugs = [
         ],
         "interactions": "Minimal systemic absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "inhaled-corticosteroids",

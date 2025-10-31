@@ -28,6 +28,7 @@ const drugs = [
         ],
         "interactions": "Potassium-sparing diuretics, NSAIDs.",
         "interactionDetails": "POTASSIUM-SPARING DIURETICS: MECHANISM - ACE inhibitors reduce aldosterone production (via decreased Angiotensin II), leading to potassium retention. Potassium-sparing diuretics independently block aldosterone receptors or epithelial sodium channels, also causing potassium retention. CONSEQUENCE - Additive hyperkalemia can cause dangerous cardiac arrhythmias, including fatal ventricular arrhythmias and asystole. NSAIDS: MECHANISM - ACE inhibitors work partly through increased prostaglandin E2 and prostacyclin (vasodilators). NSAIDs block cyclooxygenase, reducing these protective prostaglandins. CONSEQUENCE - Reduced antihypertensive efficacy and increased risk of acute kidney injury, especially in patients with pre-existing renal disease, elderly patients, or volume-depleted states.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -54,6 +55,7 @@ const drugs = [
         ],
         "interactions": "Potassium-sparing diuretics, NSAIDs.",
         "interactionDetails": "POTASSIUM-SPARING DIURETICS: MECHANISM - ACE inhibitors reduce aldosterone production (via decreased Angiotensin II), leading to potassium retention. Potassium-sparing diuretics independently block aldosterone receptors or epithelial sodium channels, also causing potassium retention. CONSEQUENCE - Additive hyperkalemia can cause dangerous cardiac arrhythmias, including fatal ventricular arrhythmias and asystole. NSAIDS: MECHANISM - ACE inhibitors work partly through increased prostaglandin E2 and prostacyclin (vasodilators). NSAIDs block cyclooxygenase, reducing these protective prostaglandins. CONSEQUENCE - Reduced antihypertensive efficacy and increased risk of acute kidney injury, especially in patients with pre-existing renal disease, elderly patients, or volume-depleted states.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -80,6 +82,7 @@ const drugs = [
         ],
         "interactions": "Potassium-sparing diuretics, NSAIDs.",
         "interactionDetails": "POTASSIUM-SPARING DIURETICS: MECHANISM - ACE inhibitors reduce aldosterone production (via decreased Angiotensin II), leading to potassium retention. Potassium-sparing diuretics independently block aldosterone receptors or epithelial sodium channels, also causing potassium retention. CONSEQUENCE - Additive hyperkalemia can cause dangerous cardiac arrhythmias, including fatal ventricular arrhythmias and asystole. NSAIDS: MECHANISM - ACE inhibitors work partly through increased prostaglandin E2 and prostacyclin (vasodilators). NSAIDs block cyclooxygenase, reducing these protective prostaglandins. CONSEQUENCE - Reduced antihypertensive efficacy and increased risk of acute kidney injury, especially in patients with pre-existing renal disease, elderly patients, or volume-depleted states.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -106,6 +109,7 @@ const drugs = [
         ],
         "interactions": "Potassium-sparing diuretics, NSAIDs.",
         "interactionDetails": "POTASSIUM-SPARING DIURETICS: MECHANISM - ACE inhibitors reduce aldosterone production (via decreased Angiotensin II), leading to potassium retention. Potassium-sparing diuretics independently block aldosterone receptors or epithelial sodium channels, also causing potassium retention. CONSEQUENCE - Additive hyperkalemia can cause dangerous cardiac arrhythmias, including fatal ventricular arrhythmias and asystole. NSAIDS: MECHANISM - ACE inhibitors work partly through increased prostaglandin E2 and prostacyclin (vasodilators). NSAIDs block cyclooxygenase, reducing these protective prostaglandins. CONSEQUENCE - Reduced antihypertensive efficacy and increased risk of acute kidney injury, especially in patients with pre-existing renal disease, elderly patients, or volume-depleted states.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -131,6 +135,7 @@ const drugs = [
         ],
         "interactions": "Potassium-sparing diuretics, NSAIDs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -156,6 +161,7 @@ const drugs = [
         ],
         "interactions": "Potassium-sparing diuretics, NSAIDs.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -208,6 +214,7 @@ const drugs = [
         ],
         "interactions": "Often require concomitant β-blocker/diuretic to blunt reflex responses.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -234,6 +241,7 @@ const drugs = [
         ],
         "interactions": "Often require concomitant β-blocker/diuretic to blunt reflex responses.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -310,6 +318,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers (increased risk of heart block).",
         "interactionDetails": "BETA-BLOCKERS: MECHANISM - Non-dihydropyridine CCBs (verapamil, diltiazem) have negative chronotropic and dromotropic effects on the AV node. Beta-blockers also slow AV node conduction and reduce heart rate. CONSEQUENCE - Combined use significantly increases risk of symptomatic bradycardia, AV block (first-, second-, or third-degree), and potential asystole, especially in elderly patients or those with pre-existing conduction abnormalities.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -336,6 +345,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers (increased risk of heart block).",
         "interactionDetails": "BETA-BLOCKERS: MECHANISM - Non-dihydropyridine CCBs (verapamil, diltiazem) have negative chronotropic and dromotropic effects on the AV node. Beta-blockers also slow AV node conduction and reduce heart rate. CONSEQUENCE - Combined use significantly increases risk of symptomatic bradycardia, AV block (first-, second-, or third-degree), and potential asystole, especially in elderly patients or those with pre-existing conduction abnormalities.",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "calcium-channel-blockers",
@@ -366,6 +376,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers (increased risk of heart block).",
         "interactionDetails": "BETA-BLOCKERS: MECHANISM - Non-dihydropyridine CCBs (verapamil, diltiazem) have negative chronotropic and dromotropic effects on the AV node. Beta-blockers also slow AV node conduction and reduce heart rate. CONSEQUENCE - Combined use significantly increases risk of symptomatic bradycardia, AV block (first-, second-, or third-degree), and potential asystole, especially in elderly patients or those with pre-existing conduction abnormalities.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -392,6 +403,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers (increased risk of heart block).",
         "interactionDetails": "BETA-BLOCKERS: MECHANISM - Non-dihydropyridine CCBs (verapamil, diltiazem) have negative chronotropic and dromotropic effects on the AV node. Beta-blockers also slow AV node conduction and reduce heart rate. CONSEQUENCE - Combined use significantly increases risk of symptomatic bradycardia, AV block (first-, second-, or third-degree), and potential asystole, especially in elderly patients or those with pre-existing conduction abnormalities.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -419,6 +431,7 @@ const drugs = [
         ],
         "interactions": "Sildenafil and other PDE5 inhibitors (severe hypotension).",
         "interactionDetails": "PDE5 INHIBITORS: MECHANISM - Nitrates increase cGMP levels through nitric oxide release. PDE5 inhibitors (sildenafil, tadalafil, vardenafil) prevent cGMP breakdown by inhibiting phosphodiesterase-5. CONSEQUENCE - Synergistic vasodilation leads to severe, potentially life-threatening hypotension that may not respond to fluids and requires vasopressors.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -444,6 +457,7 @@ const drugs = [
         ],
         "interactions": "Sildenafil and other PDE5 inhibitors (severe hypotension).",
         "interactionDetails": "PDE5 INHIBITORS: MECHANISM - Nitrates increase cGMP levels through nitric oxide release. PDE5 inhibitors (sildenafil, tadalafil, vardenafil) prevent cGMP breakdown by inhibiting phosphodiesterase-5. CONSEQUENCE - Synergistic vasodilation leads to severe, potentially life-threatening hypotension that may not respond to fluids and requires vasopressors.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -470,6 +484,7 @@ const drugs = [
         ],
         "interactions": "Sildenafil and other PDE5 inhibitors (severe hypotension).",
         "interactionDetails": "PDE5 INHIBITORS: MECHANISM - Nitrates increase cGMP levels through nitric oxide release. PDE5 inhibitors (sildenafil, tadalafil, vardenafil) prevent cGMP breakdown by inhibiting phosphodiesterase-5. CONSEQUENCE - Synergistic vasodilation leads to severe, potentially life-threatening hypotension that may not respond to fluids and requires vasopressors.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -498,6 +513,7 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides (ototoxicity), lithium (increased levels).",
         "interactionDetails": "AMINOGLYCOSIDES: MECHANISM - Both loop diuretics and aminoglycosides have direct ototoxic effects on hair cells in the cochlea. CONSEQUENCE - Synergistic permanent hearing loss. LITHIUM: MECHANISM - Volume depletion increases lithium reabsorption. CONSEQUENCE - Lithium toxicity with tremor and confusion.",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "loop-diuretics"
@@ -528,6 +544,7 @@ const drugs = [
         ],
         "interactions": "Aminoglycosides (ototoxicity), lithium (increased levels).",
         "interactionDetails": "AMINOGLYCOSIDES: MECHANISM - Both loop diuretics and aminoglycosides have direct ototoxic effects on hair cells in the cochlea. CONSEQUENCE - Synergistic permanent hearing loss. LITHIUM: MECHANISM - Volume depletion increases lithium reabsorption. CONSEQUENCE - Lithium toxicity with tremor and confusion.",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "loop-diuretics"
@@ -586,6 +603,7 @@ const drugs = [
         ],
         "interactions": "Lithium (increased levels), NSAIDs (reduced efficacy).",
         "interactionDetails": "LITHIUM: MECHANISM - Thiazides cause volume depletion, increasing lithium reabsorption. CONSEQUENCE - Lithium toxicity. NSAIDS: MECHANISM - Thiazides work partly through prostaglandin-mediated vasodilation, NSAIDs block this. CONSEQUENCE - Reduced antihypertensive effect.",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "thiazide-diuretics"
@@ -616,6 +634,7 @@ const drugs = [
         ],
         "interactions": "ACE inhibitors, ARBs (hyperkalemia).",
         "interactionDetails": "ACE INHIBITORS/ARBS: MECHANISM - Both reduce aldosterone and block potassium excretion. CONSEQUENCE - Dangerous hyperkalemia with risk of fatal arrhythmias.",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "potassium-sparing-diuretics"
@@ -643,6 +662,7 @@ const drugs = [
         ],
         "interactions": "ACE inhibitors, ARBs (hyperkalemia).",
         "interactionDetails": "ACE INHIBITORS/ARBS: MECHANISM - Both reduce aldosterone and block potassium excretion. CONSEQUENCE - Dangerous hyperkalemia with risk of fatal arrhythmias.",
+        "highYield": true,
         "pageType": "drug",
         "pharmacologicClasses": [
             "potassium-sparing-diuretics"
@@ -773,6 +793,7 @@ const drugs = [
         ],
         "interactions": "Drugs that prolong QT interval.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -800,6 +821,7 @@ const drugs = [
         ],
         "interactions": "Drugs that prolong QT interval.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -826,6 +848,7 @@ const drugs = [
         ],
         "interactions": "Dipyridamole and carbamazepine potentiate adenosine; methylxanthines antagonize.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -879,6 +902,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors increase levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -904,6 +928,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors increase levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -929,6 +954,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors increase levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -954,6 +980,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors increase levels.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -977,6 +1004,7 @@ const drugs = [
         ],
         "interactions": "Bile acid resins decrease ezetimibe absorption.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1001,6 +1029,7 @@ const drugs = [
         ],
         "interactions": "Reduce absorption of many drugs (digoxin, warfarin).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1048,6 +1077,7 @@ const drugs = [
         ],
         "interactions": "Gemfibrozil increases statin levels via OATP inhibition.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1071,6 +1101,7 @@ const drugs = [
         ],
         "interactions": "Gemfibrozil increases statin levels via OATP inhibition.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1124,6 +1155,7 @@ const drugs = [
         ],
         "interactions": "Diuretics (hypokalemia increases toxicity), amiodarone, quinidine.",
         "interactionDetails": "DIURETICS: MECHANISM - Digoxin toxicity is potentiated by hypokalemia because potassium competes with digoxin for binding to Na+/K+-ATPase. CONSEQUENCE - Low potassium increases digoxin binding and toxicity, leading to dangerous arrhythmias. AMIODARONE/QUINIDINE: MECHANISM - These drugs inhibit P-glycoprotein, reducing digoxin clearance. CONSEQUENCE - Increased digoxin levels requiring dose reduction.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1148,6 +1180,7 @@ const drugs = [
         ],
         "interactions": "Additive hypotension with other vasodilators.",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1175,6 +1208,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions (monoclonal antibody).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1201,6 +1235,7 @@ const drugs = [
         ],
         "interactions": "Minimal drug interactions (monoclonal antibody).",
         "interactionDetails": "",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1226,6 +1261,7 @@ const drugs = [
         ],
         "interactions": "Anticoagulants/antiplatelets (increased bleeding risk).",
         "interactionDetails": "ANTICOAGULANTS/ANTIPLATELETS: MECHANISM - Omega-3 fatty acids have mild antiplatelet effects by reducing thromboxane A2 production. CONSEQUENCE - Additive bleeding risk with warfarin, DOACs, aspirin, or clopidogrel. Monitor for bleeding.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1254,6 +1290,7 @@ const drugs = [
         ],
         "interactions": "ACE inhibitors (do NOT use together - angioedema risk), potassium-sparing diuretics (hyperkalemia).",
         "interactionDetails": "ACE INHIBITORS: MECHANISM - Both neprilysin inhibitors and ACE inhibitors increase bradykinin levels. Neprilysin degrades bradykinin; ACE-I prevents bradykinin breakdown. CONSEQUENCE - Severe angioedema risk. Require 36-hour washout after stopping ACE-I before starting sacubitril/valsartan. POTASSIUM-SPARING DIURETICS: MECHANISM - ARB component reduces aldosterone, neprilysin inhibition increases ANP/BNP (promote natriuresis but can affect potassium). CONSEQUENCE - Hyperkalemia risk, especially with K-sparing diuretics or K supplements.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1283,6 +1320,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors (increase ivabradine levels - bradycardia risk), other negative chronotropes (additive bradycardia).",
         "interactionDetails": "CYP3A4 INHIBITORS: MECHANISM - Ivabradine is metabolized by CYP3A4. Strong inhibitors (ketoconazole, clarithromycin, grapefruit juice) increase ivabradine levels. CONSEQUENCE - Excessive bradycardia. Avoid strong CYP3A4 inhibitors. NEGATIVE CHRONOTROPES: MECHANISM - Additive heart rate lowering with beta-blockers, digoxin, diltiazem, verapamil. CONSEQUENCE - Severe bradycardia or heart block. Use cautiously with appropriate monitoring.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1311,6 +1349,7 @@ const drugs = [
         ],
         "interactions": "CYP3A4 inhibitors/inducers (alter ranolazine levels), QT-prolonging drugs, digoxin (increases digoxin levels).",
         "interactionDetails": "CYP3A4 INHIBITORS: MECHANISM - Ranolazine is metabolized by CYP3A4. Inhibitors increase ranolazine levels. CONSEQUENCE - QT prolongation, arrhythmia risk. Contraindicated with strong inhibitors. DIGOXIN: MECHANISM - Ranolazine inhibits P-glycoprotein, reducing digoxin clearance. CONSEQUENCE - Increased digoxin levels and toxicity. Monitor digoxin levels, consider dose reduction.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1342,6 +1381,7 @@ const drugs = [
         ],
         "interactions": "Verapamil/diltiazem (severe bradycardia), insulin (masks hypoglycemia), CYP2D6 interactions.",
         "interactionDetails": "CALCIUM CHANNEL BLOCKERS: MECHANISM - Both carvedilol and non-dihydropyridine CCBs (verapamil, diltiazem) have negative chronotropic and inotropic effects. CONSEQUENCE - Severe bradycardia, heart block, hypotension, or heart failure exacerbation. INSULIN/ORAL HYPOGLYCEMICS: MECHANISM - Beta-blockade masks sympathetic symptoms of hypoglycemia (tachycardia, tremor) and impairs glycogenolysis. CONSEQUENCE - Prolonged hypoglycemia without typical warning signs. Monitor glucose closely.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1374,6 +1414,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers (severe bradycardia), TCAs (reduce clonidine efficacy), CNS depressants (additive sedation).",
         "interactionDetails": "BETA-BLOCKERS: MECHANISM - Both clonidine and beta-blockers reduce heart rate through different mechanisms. Clonidine via central sympathetic suppression, beta-blockers via peripheral blockade. CONSEQUENCE - Severe bradycardia, heart block. If discontinuing clonidine with concurrent beta-blocker, STOP BETA-BLOCKER FIRST, then taper clonidine to avoid rebound hypertension. TRICYCLIC ANTIDEPRESSANTS: MECHANISM - TCAs block alpha-2 receptors, antagonizing clonidine's effects. CONSEQUENCE - Reduced antihypertensive efficacy, hypertensive crisis risk. Avoid combination or use alternative antihypertensive.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1406,6 +1447,7 @@ const drugs = [
         ],
         "interactions": "Iron supplements (reduce methyldopa absorption), MAOIs (hypertensive crisis), lithium (increased lithium toxicity).",
         "interactionDetails": "IRON SUPPLEMENTS: MECHANISM - Iron chelates methyldopa in GI tract, forming poorly absorbed complexes. CONSEQUENCE - Reduced methyldopa absorption and antihypertensive efficacy. Separate dosing by 2+ hours. MAOIS: MECHANISM - Both increase CNS catecholamine levels through different pathways. CONSEQUENCE - Hypertensive crisis, excitation, hallucinations. Contraindicated. LITHIUM: MECHANISM - Methyldopa may increase lithium levels or enhance lithium neurotoxicity. CONSEQUENCE - Lithium toxicity (tremor, confusion). Monitor lithium levels closely.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1435,6 +1477,7 @@ const drugs = [
         ],
         "interactions": "Fibrates (increased risk of cholelithiasis), cyclosporine (increased ezetimibe levels), bile acid sequestrants (reduce ezetimibe absorption).",
         "interactionDetails": "FIBRATES: MECHANISM - Both ezetimibe and fibrates increase biliary cholesterol excretion and can promote gallstone formation. CONSEQUENCE - Increased risk of cholelithiasis. Use combination cautiously, monitor for gallstones. BILE ACID SEQUESTRANTS: MECHANISM - Cholestyramine and colestipol bind ezetimibe in intestine, reducing absorption. CONSEQUENCE - Decreased ezetimibe efficacy. Give ezetimibe at least 2 hours before or 4+ hours after bile acid sequestrant. CYCLOSPORINE: MECHANISM - Cyclosporine increases ezetimibe levels through unclear mechanism. CONSEQUENCE - Monitor for increased side effects. May need dose adjustment.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1463,6 +1506,7 @@ const drugs = [
         ],
         "interactions": "Other vasodilators/antihypertensives (additive hypotension).",
         "interactionDetails": "VASODILATORS/ANTIHYPERTENSIVES: MECHANISM - Milrinone causes vasodilation via increased cAMP. Additive with other vasodilators (nitrates, hydralazine, ACE-I, ARBs). CONSEQUENCE - Severe hypotension, especially in volume-depleted patients. Monitor BP closely, adjust doses.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1492,6 +1536,7 @@ const drugs = [
         ],
         "interactions": "Beta-blockers (antagonize effects), MAOIs (hypertensive crisis), general anesthetics (arrhythmia risk).",
         "interactionDetails": "BETA-BLOCKERS: MECHANISM - Beta-blockers competitively antagonize dobutamine's β1-adrenergic effects. CONSEQUENCE - Reduced inotropic effect, may need higher dobutamine doses. MAOIS: MECHANISM - MAOIs inhibit catecholamine metabolism, prolonging and intensifying dobutamine's effects. CONSEQUENCE - Severe hypertension, arrhythmias. Avoid or use very low doses. GENERAL ANESTHETICS: MECHANISM - Halogenated anesthetics sensitize myocardium to catecholamines. CONSEQUENCE - Increased risk of ventricular arrhythmias.",
+        "highYield": true,
         "pageType": "drug"
     },
     {
@@ -1520,6 +1565,7 @@ const drugs = [
         ],
         "interactions": "ACE-I/ARBs (additive hypotension), other vasodilators (hypotension).",
         "interactionDetails": "ACE-I/ARBS: MECHANISM - Both nesiritide and RAAS inhibitors cause vasodilation. Nesiritide via increased cGMP, ACE-I/ARBs via reduced angiotensin II. CONSEQUENCE - Additive hypotension, potentially severe. Monitor BP closely, may need to hold ACE-I/ARB temporarily. VASODILATORS: MECHANISM - Additive vasodilation with nitrates, hydralazine, etc. CONSEQUENCE - Profound hypotension. Use lowest effective doses, monitor BP continuously.",
+        "highYield": true,
         "pageType": "drug"
     }
 
