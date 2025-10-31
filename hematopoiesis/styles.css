@@ -43,8 +43,9 @@
 }
 
 .tree-children {
-    margin-left: 1.25rem;
-    margin-top: 0.25rem;
+    margin-left: 1.2rem;
+    border-left: 2px solid #ecf0f1;
+    padding-left: 0.5rem;
 }
 
 .tree-node.collapsed .tree-children {
@@ -53,90 +54,73 @@
 
 /* Tree Node Headers */
 .tree-node-header {
-    padding: 0.5rem 0.75rem;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
 }
 
 .tree-node-header:hover {
-    background: #f1f3f5;
+    background: #ecf0f1;
 }
 
 .tree-node.selected > .tree-node-header {
-    background: var(--primary-color);
+    background: #3498db;
     color: white;
-    font-weight: 500;
 }
 
-/* Progenitor Cell Styling */
-.tree-node-progenitor-cell > .tree-node-header {
+/* Level-based styling */
+.tree-node[data-depth="0"] > .tree-node-header {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    background: #ecf0f1;
+}
+
+.tree-node[data-depth="1"] > .tree-node-header {
     font-weight: 600;
-    background: #f8f9fa;
-    border-left: 3px solid var(--primary-color);
+    font-size: 1rem;
+    color: #34495e;
 }
 
-.tree-node-progenitor-cell > .tree-node-header:hover {
-    background: #e9ecef;
-}
-
-/* Lineage Styling */
-.tree-node-lineage > .tree-node-header {
+.tree-node[data-depth="2"] > .tree-node-header {
     font-weight: 500;
-    color: var(--primary-color);
+    font-size: 0.95rem;
+    color: #7f8c8d;
 }
 
-.tree-node-lineage > .tree-node-header:hover {
-    background: #fff5f5;
+.tree-node[data-depth="3"] > .tree-node-header {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #95a5a6;
 }
 
 /* Tree Icons */
 .tree-icon {
     font-size: 0.7rem;
-    display: inline-block;
-    width: 12px;
-    min-width: 12px;
-    cursor: pointer;
+    margin-right: 0.5rem;
     transition: transform 0.2s;
+}
+
+.tree-node.collapsed .tree-icon {
+    transform: rotate(0deg);
 }
 
 .tree-icon-spacer {
     display: inline-block;
     width: 12px;
-    min-width: 12px;
+    margin-right: 0.5rem;
 }
 
 .tree-node-icon {
     font-size: 1rem;
-    line-height: 1;
+    margin-right: 0.5rem;
 }
 
 .tree-label {
     flex: 1;
-    cursor: pointer;
-}
-
-/* Level-based indentation and styling */
-.tree-node[data-depth="0"] > .tree-node-header {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.tree-node[data-depth="1"] > .tree-node-header {
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.tree-node[data-depth="2"] > .tree-node-header {
-    font-size: 0.9rem;
-}
-
-.tree-node[data-depth="3"] > .tree-node-header {
-    font-size: 0.9rem;
-    color: #495057;
 }
 
 /* Detail Panel */
