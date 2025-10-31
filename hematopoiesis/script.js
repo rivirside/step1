@@ -162,11 +162,13 @@ function createTreeNodeElement(node, depth = 0) {
     nodeHeader.className = `tree-node-header tree-node-header-${node.type}`;
 
     const hasChildren = node.children && node.children.length > 0;
+    const hasDetailPage = node.pageType === 'lineage' || node.pageType === 'cell';
 
     nodeHeader.innerHTML = `
         ${hasChildren ? `<span class="tree-icon">${startCollapsed ? '▶' : '▼'}</span>` : '<span class="tree-icon-spacer"></span>'}
         ${node.icon ? `<span class="tree-node-icon">${node.icon}</span>` : ''}
         <span class="tree-label">${node.name}</span>
+        ${hasDetailPage ? '<span class="info-icon" title="View details">→</span>' : ''}
     `;
 
     nodeDiv.appendChild(nodeHeader);
@@ -183,11 +185,11 @@ function createTreeNodeElement(node, depth = 0) {
 
         nodeDiv.appendChild(childrenContainer);
 
-        // Toggle children - make entire header clickable for expand/collapse
+        // Toggle children - make entire header clickable for expand/collapse (except info icon)
         nodeHeader.addEventListener('click', (e) => {
-            // Only if clicking the icon or header (not the label for detail view)
-            if (e.target.classList.contains('tree-label')) {
-                return; // Let the label handler deal with it
+            // Don't toggle if clicking the info icon
+            if (e.target.classList.contains('info-icon')) {
+                return;
             }
 
             e.stopPropagation();
@@ -199,24 +201,26 @@ function createTreeNodeElement(node, depth = 0) {
         });
     }
 
-    // Click handler for node label - show detail
-    const labelEl = nodeHeader.querySelector('.tree-label');
-    if (labelEl) {
-        labelEl.addEventListener('click', (e) => {
-            e.stopPropagation();
+    // Click handler for info icon - show detail
+    if (hasDetailPage) {
+        const infoIcon = nodeHeader.querySelector('.info-icon');
+        if (infoIcon) {
+            infoIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
 
-            // Highlight selected
-            document.querySelectorAll('.tree-node').forEach(el => el.classList.remove('selected'));
-            nodeDiv.classList.add('selected');
+                // Highlight selected
+                document.querySelectorAll('.tree-node').forEach(el => el.classList.remove('selected'));
+                nodeDiv.classList.add('selected');
 
-            // Show detail based on node type
-            if (node.pageType === 'lineage') {
-                showLineageDetail(node.id);
-            } else if (node.pageType === 'cell') {
-                const cell = dataLoader.getCellById(node.id);
-                if (cell) showCellDetail(cell);
-            }
-        });
+                // Show detail based on node type
+                if (node.pageType === 'lineage') {
+                    showLineageDetail(node.id);
+                } else if (node.pageType === 'cell') {
+                    const cell = dataLoader.getCellById(node.id);
+                    if (cell) showCellDetail(cell);
+                }
+            });
+        }
     }
 
     return nodeDiv;
