@@ -1149,6 +1149,200 @@ const drugs = [
         "interactions": "Additive hypotension with other vasodilators.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "evolocumab",
+        "name": "Evolocumab",
+        "pharmacologicClass": "pcsk9-inhibitors",
+        "therapeuticClass": "lipid-lowering-agents",
+        "system": "cardiovascular-system",
+        "mechanism": "Monoclonal antibody that inhibits PCSK9, preventing degradation of LDL receptors and increasing hepatic LDL clearance.",
+        "features": "Injectable biologic, dramatically lowers LDL-C (50-60%).",
+        "clinicalChoice": "Familial hypercholesterolemia, statin-intolerant patients, high CV risk despite maximally tolerated statin.",
+        "indications": [
+            "Familial Hypercholesterolemia",
+            "Atherosclerotic Cardiovascular Disease (statin inadequate)",
+            "Statin Intolerance"
+        ],
+        "contraindications": [
+            "Hypersensitivity to evolocumab"
+        ],
+        "sideEffects": [
+            "Injection site reactions",
+            "Myalgias",
+            "Upper respiratory infections",
+            "Nasopharyngitis"
+        ],
+        "interactions": "Minimal drug interactions (monoclonal antibody).",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "alirocumab",
+        "name": "Alirocumab",
+        "pharmacologicClass": "pcsk9-inhibitors",
+        "therapeuticClass": "lipid-lowering-agents",
+        "system": "cardiovascular-system",
+        "mechanism": "Monoclonal antibody that inhibits PCSK9, preventing degradation of LDL receptors and increasing hepatic LDL clearance.",
+        "features": "Injectable biologic, alternative PCSK9 inhibitor to evolocumab.",
+        "clinicalChoice": "Similar to evolocumab - familial hypercholesterolemia, high CV risk.",
+        "indications": [
+            "Familial Hypercholesterolemia",
+            "Atherosclerotic Cardiovascular Disease (statin inadequate)"
+        ],
+        "contraindications": [
+            "Hypersensitivity to alirocumab"
+        ],
+        "sideEffects": [
+            "Injection site reactions",
+            "Myalgias",
+            "Upper respiratory infections",
+            "Flu-like symptoms"
+        ],
+        "interactions": "Minimal drug interactions (monoclonal antibody).",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "icosapent-ethyl",
+        "name": "Icosapent Ethyl (Vascepa)",
+        "pharmacologicClass": "omega-3-fatty-acids",
+        "therapeuticClass": "lipid-lowering-agents",
+        "system": "cardiovascular-system",
+        "mechanism": "Purified EPA (eicosapentaenoic acid) reduces triglyceride synthesis and increases fatty acid oxidation.",
+        "features": "Pure EPA (not mixed omega-3), proven CV outcomes benefit.",
+        "clinicalChoice": "Hypertriglyceridemia with established CVD or diabetes plus risk factors, on statin therapy.",
+        "indications": [
+            "Hypertriglyceridemia (>150 mg/dL) with CVD or diabetes",
+            "Cardiovascular Risk Reduction"
+        ],
+        "contraindications": [
+            "Fish or shellfish allergy"
+        ],
+        "sideEffects": [
+            "Atrial fibrillation (increased risk)",
+            "Bleeding (minor)",
+            "Musculoskeletal pain"
+        ],
+        "interactions": "Anticoagulants/antiplatelets (increased bleeding risk).",
+        "interactionDetails": "ANTICOAGULANTS/ANTIPLATELETS: MECHANISM - Omega-3 fatty acids have mild antiplatelet effects by reducing thromboxane A2 production. CONSEQUENCE - Additive bleeding risk with warfarin, DOACs, aspirin, or clopidogrel. Monitor for bleeding.",
+        "pageType": "drug"
+    },
+    {
+        "id": "sacubitril-valsartan",
+        "name": "Sacubitril/Valsartan (Entresto)",
+        "pharmacologicClass": "arni",
+        "therapeuticClass": "heart-failure",
+        "system": "cardiovascular-system",
+        "mechanism": "Combination: Sacubitril (neprilysin inhibitor) increases natriuretic peptides + Valsartan (ARB) blocks angiotensin II.",
+        "features": "First ARNI, superior to ACE-I in HFrEF, reduces CV death and hospitalizations.",
+        "clinicalChoice": "HFrEF (EF ≤40%) to replace ACE-I/ARB, NYHA class II-IV.",
+        "indications": [
+            "Heart Failure with Reduced Ejection Fraction (HFrEF)"
+        ],
+        "contraindications": [
+            "Concomitant ACE-I (angioedema risk - 36hr washout required)",
+            "History of angioedema",
+            "Pregnancy"
+        ],
+        "sideEffects": [
+            "Hypotension",
+            "Hyperkalemia",
+            "Renal dysfunction",
+            "Angioedema (rare but serious)",
+            "Cough (less than ACE-I)"
+        ],
+        "interactions": "ACE inhibitors (do NOT use together - angioedema risk), potassium-sparing diuretics (hyperkalemia).",
+        "interactionDetails": "ACE INHIBITORS: MECHANISM - Both neprilysin inhibitors and ACE inhibitors increase bradykinin levels. Neprilysin degrades bradykinin; ACE-I prevents bradykinin breakdown. CONSEQUENCE - Severe angioedema risk. Require 36-hour washout after stopping ACE-I before starting sacubitril/valsartan. POTASSIUM-SPARING DIURETICS: MECHANISM - ARB component reduces aldosterone, neprilysin inhibition increases ANP/BNP (promote natriuresis but can affect potassium). CONSEQUENCE - Hyperkalemia risk, especially with K-sparing diuretics or K supplements.",
+        "pageType": "drug"
+    },
+    {
+        "id": "ivabradine",
+        "name": "Ivabradine",
+        "pharmacologicClass": "if-channel-blockers",
+        "therapeuticClass": "heart-failure",
+        "system": "cardiovascular-system",
+        "mechanism": "Selectively inhibits If (funny current) channels in SA node, reducing heart rate without affecting contractility.",
+        "features": "Pure heart rate reducer, no effect on blood pressure or contractility.",
+        "clinicalChoice": "HFrEF (EF ≤35%) in sinus rhythm with HR ≥70 despite beta-blocker, or beta-blocker intolerant.",
+        "indications": [
+            "Heart Failure with Reduced Ejection Fraction",
+            "Stable Angina (Europe)"
+        ],
+        "contraindications": [
+            "Resting HR <60 bpm",
+            "Sick sinus syndrome",
+            "AV block",
+            "Atrial fibrillation"
+        ],
+        "sideEffects": [
+            "Bradycardia",
+            "Phosphenes (visual brightness, 15%)",
+            "Blurred vision",
+            "Atrial fibrillation"
+        ],
+        "interactions": "CYP3A4 inhibitors (increase ivabradine levels - bradycardia risk), other negative chronotropes (additive bradycardia).",
+        "interactionDetails": "CYP3A4 INHIBITORS: MECHANISM - Ivabradine is metabolized by CYP3A4. Strong inhibitors (ketoconazole, clarithromycin, grapefruit juice) increase ivabradine levels. CONSEQUENCE - Excessive bradycardia. Avoid strong CYP3A4 inhibitors. NEGATIVE CHRONOTROPES: MECHANISM - Additive heart rate lowering with beta-blockers, digoxin, diltiazem, verapamil. CONSEQUENCE - Severe bradycardia or heart block. Use cautiously with appropriate monitoring.",
+        "pageType": "drug"
+    },
+    {
+        "id": "ranolazine",
+        "name": "Ranolazine",
+        "pharmacologicClass": "late-sodium-channel-blockers",
+        "therapeuticClass": "antianginals",
+        "system": "cardiovascular-system",
+        "mechanism": "Inhibits late sodium current in cardiomyocytes, reducing intracellular calcium overload and improving diastolic relaxation.",
+        "features": "Antianginal without affecting heart rate or blood pressure.",
+        "clinicalChoice": "Chronic stable angina refractory to other antianginals (add-on therapy).",
+        "indications": [
+            "Chronic Stable Angina (refractory)"
+        ],
+        "contraindications": [
+            "QT prolongation",
+            "Cirrhosis",
+            "Strong CYP3A4 inhibitors"
+        ],
+        "sideEffects": [
+            "QT prolongation",
+            "Dizziness",
+            "Constipation",
+            "Nausea",
+            "Headache"
+        ],
+        "interactions": "CYP3A4 inhibitors/inducers (alter ranolazine levels), QT-prolonging drugs, digoxin (increases digoxin levels).",
+        "interactionDetails": "CYP3A4 INHIBITORS: MECHANISM - Ranolazine is metabolized by CYP3A4. Inhibitors increase ranolazine levels. CONSEQUENCE - QT prolongation, arrhythmia risk. Contraindicated with strong inhibitors. DIGOXIN: MECHANISM - Ranolazine inhibits P-glycoprotein, reducing digoxin clearance. CONSEQUENCE - Increased digoxin levels and toxicity. Monitor digoxin levels, consider dose reduction.",
+        "pageType": "drug"
+    },
+    {
+        "id": "carvedilol",
+        "name": "Carvedilol",
+        "pharmacologicClass": "beta-blockers",
+        "therapeuticClass": "heart-failure",
+        "systems": ["cardiovascular-system"],
+        "mechanism": "Non-selective beta-blocker (β1, β2) with additional alpha-1 blocking properties, providing vasodilation.",
+        "features": "Beta-blocker with alpha-blocking (vasodilation), proven mortality benefit in HF.",
+        "clinicalChoice": "Heart failure (HFrEF), hypertension, post-MI.",
+        "indications": [
+            "Heart Failure with Reduced Ejection Fraction",
+            "Hypertension",
+            "Post-Myocardial Infarction"
+        ],
+        "contraindications": [
+            "Decompensated heart failure",
+            "Severe bradycardia",
+            "AV block",
+            "Asthma/COPD (relative)"
+        ],
+        "sideEffects": [
+            "Bradycardia",
+            "Hypotension (more than selective beta-blockers)",
+            "Fatigue",
+            "Dizziness",
+            "Weight gain"
+        ],
+        "interactions": "Verapamil/diltiazem (severe bradycardia), insulin (masks hypoglycemia), CYP2D6 interactions.",
+        "interactionDetails": "CALCIUM CHANNEL BLOCKERS: MECHANISM - Both carvedilol and non-dihydropyridine CCBs (verapamil, diltiazem) have negative chronotropic and inotropic effects. CONSEQUENCE - Severe bradycardia, heart block, hypotension, or heart failure exacerbation. INSULIN/ORAL HYPOGLYCEMICS: MECHANISM - Beta-blockade masks sympathetic symptoms of hypoglycemia (tachycardia, tremor) and impairs glycogenolysis. CONSEQUENCE - Prolonged hypoglycemia without typical warning signs. Monitor glucose closely.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

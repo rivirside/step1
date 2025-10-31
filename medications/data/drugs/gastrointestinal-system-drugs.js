@@ -510,6 +510,91 @@ const drugs = [
         "interactions": "Additive diarrhea with other laxatives.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "ondansetron",
+        "name": "Ondansetron",
+        "pharmacologicClass": "5-ht3-antagonists",
+        "therapeuticClass": "antiemetics",
+        "system": "gastrointestinal-system",
+        "mechanism": "Block serotonin (5-HT3) receptors in CTZ and GI tract, preventing nausea/vomiting.",
+        "features": "First-line antiemetic for chemotherapy-induced nausea.",
+        "clinicalChoice": "Chemotherapy-induced nausea, postoperative nausea, severe vomiting.",
+        "indications": [
+            "Chemotherapy-Induced Nausea/Vomiting",
+            "Postoperative Nausea/Vomiting",
+            "Radiation-Induced Nausea"
+        ],
+        "contraindications": [
+            "Congenital Long QT Syndrome",
+            "Apomorphine (serotonin syndrome risk)"
+        ],
+        "sideEffects": [
+            "QT prolongation",
+            "Headache",
+            "Constipation",
+            "Serotonin syndrome (rare)"
+        ],
+        "interactions": "Drugs prolonging QT interval (increased arrhythmia risk), apomorphine (profound hypotension).",
+        "interactionDetails": "QT-PROLONGING DRUGS: MECHANISM - Ondansetron blocks cardiac potassium channels (hERG), prolonging repolarization. Additive with other QT-prolonging drugs. CONSEQUENCE - Increased risk of torsades de pointes, especially with Class IA/III antiarrhythmics. APOMORPHINE: MECHANISM - Both drugs affect serotonergic pathways. Ondansetron may enhance apomorphine's hypotensive effects. CONSEQUENCE - Severe, potentially fatal hypotension and loss of consciousness.",
+        "pageType": "drug"
+    },
+    {
+        "id": "lubiprostone",
+        "name": "Lubiprostone",
+        "pharmacologicClass": "chloride-channel-activators",
+        "therapeuticClass": "laxatives",
+        "system": "gastrointestinal-system",
+        "mechanism": "Activate ClC-2 chloride channels in intestinal epithelium, increasing fluid secretion into lumen.",
+        "features": "Locally acting, enhances intestinal fluid secretion.",
+        "clinicalChoice": "Chronic idiopathic constipation, IBS with constipation, opioid-induced constipation.",
+        "indications": [
+            "Chronic Idiopathic Constipation",
+            "IBS with Constipation",
+            "Opioid-Induced Constipation"
+        ],
+        "contraindications": [
+            "Mechanical GI Obstruction",
+            "Pregnancy (Category C)"
+        ],
+        "sideEffects": [
+            "Nausea",
+            "Diarrhea",
+            "Abdominal pain",
+            "Dyspnea (rare)"
+        ],
+        "interactions": "Minimal drug interactions.",
+        "interactionDetails": "",
+        "pageType": "drug"
+    },
+    {
+        "id": "ursodeoxycholic-acid",
+        "name": "Ursodeoxycholic Acid (UDCA, Ursodiol)",
+        "pharmacologicClass": "bile-acids",
+        "therapeuticClass": "portal-and-hepatic-disorders",
+        "system": "gastrointestinal-system",
+        "mechanism": "Hydrophilic bile acid that reduces cholesterol absorption, decreases bile cholesterol saturation, and has cytoprotective/anti-inflammatory effects on hepatocytes.",
+        "features": "First-line for primary biliary cholangitis, dissolves cholesterol gallstones.",
+        "clinicalChoice": "Primary biliary cholangitis (PBC), cholesterol gallstone dissolution.",
+        "indications": [
+            "Primary Biliary Cholangitis",
+            "Cholesterol Gallstones (dissolution)",
+            "Primary Sclerosing Cholangitis (limited benefit)"
+        ],
+        "contraindications": [
+            "Complete Biliary Obstruction",
+            "Calcified/Pigment Gallstones",
+            "Acute Cholecystitis"
+        ],
+        "sideEffects": [
+            "Diarrhea",
+            "Abdominal pain",
+            "Nausea",
+            "Hair thinning (rare)"
+        ],
+        "interactions": "Cholestyramine and aluminum-based antacids reduce UDCA absorption.",
+        "interactionDetails": "BILE ACID SEQUESTRANTS: MECHANISM - Cholestyramine binds bile acids in intestinal lumen, preventing UDCA absorption. CONSEQUENCE - Reduced UDCA efficacy. Give UDCA at least 1 hour before or 4-6 hours after bile acid sequestrants. ALUMINUM ANTACIDS: MECHANISM - Aluminum forms insoluble complexes with bile acids. CONSEQUENCE - Decreased UDCA absorption and effectiveness.",
+        "pageType": "drug"
     }
 
 ];export default drugs;
