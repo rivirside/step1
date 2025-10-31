@@ -122,109 +122,89 @@ function renderLineageTree() {
     const treeContainer = document.getElementById('hematopoiesisTree');
     if (!treeContainer) return;
 
-    const tree = dataLoader.getLineageTree();
+    const tree = dataLoader.getTree();
+    if (!tree) return;
+
     treeContainer.innerHTML = '';
 
-    tree.forEach(system => {
-        const systemEl = createSystemElement(system);
-        treeContainer.appendChild(systemEl);
-    });
+    // Render the root and its children
+    const treeEl = createTreeNodeElement(tree);
+    treeContainer.appendChild(treeEl);
 }
 
-function createSystemElement(system) {
-    const systemDiv = document.createElement('div');
-    systemDiv.className = 'tree-system';
-    systemDiv.dataset.id = system.id;
+function createTreeNodeElement(node, depth = 0) {
+    const nodeDiv = document.createElement('div');
+    nodeDiv.className = `tree-node tree-node-${node.type || 'root'}`;
+    nodeDiv.dataset.id = node.id;
+    nodeDiv.dataset.depth = depth;
 
-    const systemHeader = document.createElement('div');
-    systemHeader.className = 'tree-system-header';
-    systemHeader.innerHTML = `
-        <span class="tree-icon">▼</span>
-        <span class="tree-label">${system.name}</span>
+    // For root node, only render its children
+    if (node.type === 'root') {
+        const childrenContainer = document.createElement('div');
+        childrenContainer.className = 'tree-children';
+
+        (node.children || []).forEach(child => {
+            const childEl = createTreeNodeElement(child, depth);
+            childrenContainer.appendChild(childEl);
+        });
+
+        return childrenContainer;
+    }
+
+    // Create node header
+    const nodeHeader = document.createElement('div');
+    nodeHeader.className = `tree-node-header tree-node-header-${node.type}`;
+
+    const hasChildren = node.children && node.children.length > 0;
+    const icon = node.icon || (hasChildren ? '▼' : '');
+
+    nodeHeader.innerHTML = `
+        ${hasChildren ? '<span class="tree-icon">▼</span>' : '<span class="tree-icon-spacer"></span>'}
+        ${icon ? `<span class="tree-node-icon">${icon}</span>` : ''}
+        <span class="tree-label">${node.name}</span>
     `;
 
-    systemDiv.appendChild(systemHeader);
+    nodeDiv.appendChild(nodeHeader);
 
-    // Create lineage groups container
-    const lineageGroupsContainer = document.createElement('div');
-    lineageGroupsContainer.className = 'tree-lineage-groups';
+    // Create children container if node has children
+    if (hasChildren) {
+        const childrenContainer = document.createElement('div');
+        childrenContainer.className = 'tree-children';
 
-    (system.lineageGroups || []).forEach(lineageGroup => {
-        const lineageGroupEl = createLineageGroupElement(lineageGroup);
-        lineageGroupsContainer.appendChild(lineageGroupEl);
-    });
+        node.children.forEach(child => {
+            const childEl = createTreeNodeElement(child, depth + 1);
+            childrenContainer.appendChild(childEl);
+        });
 
-    systemDiv.appendChild(lineageGroupsContainer);
+        nodeDiv.appendChild(childrenContainer);
 
-    // Toggle system
-    systemHeader.addEventListener('click', () => {
-        systemDiv.classList.toggle('collapsed');
-        const icon = systemHeader.querySelector('.tree-icon');
-        icon.textContent = systemDiv.classList.contains('collapsed') ? '▶' : '▼';
-    });
+        // Toggle children
+        nodeHeader.querySelector('.tree-icon').addEventListener('click', (e) => {
+            e.stopPropagation();
+            nodeDiv.classList.toggle('collapsed');
+            const iconEl = nodeHeader.querySelector('.tree-icon');
+            iconEl.textContent = nodeDiv.classList.contains('collapsed') ? '▶' : '▼';
+        });
+    }
 
-    return systemDiv;
-}
-
-function createLineageGroupElement(lineageGroup) {
-    const lineageDiv = document.createElement('div');
-    lineageDiv.className = 'tree-lineage-group';
-    lineageDiv.dataset.id = lineageGroup.id;
-
-    const lineageHeader = document.createElement('div');
-    lineageHeader.className = 'tree-lineage-header';
-    lineageHeader.innerHTML = `
-        <span class="tree-icon">▼</span>
-        <span class="tree-label">${lineageGroup.name}</span>
-        <span class="tree-count">${lineageGroup.cells.length}</span>
-    `;
-
-    lineageDiv.appendChild(lineageHeader);
-
-    // Create cells container
-    const cellsContainer = document.createElement('div');
-    cellsContainer.className = 'tree-cells';
-
-    (lineageGroup.cells || []).forEach(cell => {
-        const cellEl = createCellElement(cell);
-        cellsContainer.appendChild(cellEl);
-    });
-
-    lineageDiv.appendChild(cellsContainer);
-
-    // Toggle lineage group
-    lineageHeader.addEventListener('click', (e) => {
+    // Click handler for node label
+    nodeHeader.querySelector('.tree-label').addEventListener('click', (e) => {
         e.stopPropagation();
-        lineageDiv.classList.toggle('collapsed');
-        const icon = lineageHeader.querySelector('.tree-icon');
-        icon.textContent = lineageDiv.classList.contains('collapsed') ? '▶' : '▼';
-    });
-
-    // Click lineage group label to show info
-    lineageHeader.querySelector('.tree-label').addEventListener('click', (e) => {
-        e.stopPropagation();
-        showLineageGroupDetail(lineageGroup);
-    });
-
-    return lineageDiv;
-}
-
-function createCellElement(cell) {
-    const cellDiv = document.createElement('div');
-    cellDiv.className = 'tree-cell';
-    cellDiv.dataset.id = cell.id;
-    cellDiv.innerHTML = `<span class="tree-label">${cell.name}</span>`;
-
-    cellDiv.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showCellDetail(cell);
 
         // Highlight selected
-        document.querySelectorAll('.tree-cell').forEach(el => el.classList.remove('selected'));
-        cellDiv.classList.add('selected');
+        document.querySelectorAll('.tree-node').forEach(el => el.classList.remove('selected'));
+        nodeDiv.classList.add('selected');
+
+        // Show detail based on node type
+        if (node.pageType === 'lineage') {
+            showLineageDetail(node.id);
+        } else if (node.pageType === 'cell') {
+            const cell = dataLoader.getCellById(node.id);
+            if (cell) showCellDetail(cell);
+        }
     });
 
-    return cellDiv;
+    return nodeDiv;
 }
 
 function showCellDetail(cell) {
@@ -264,6 +244,13 @@ function showCellDetail(cell) {
                 <p>${cell.function}</p>
                 ${cell.lifespan ? `<p><strong>Lifespan:</strong> ${cell.lifespan}</p>` : ''}
             </section>
+
+            ${cell.mechanisticDetail ? `
+                <section class="detail-section">
+                    <h2>🔬 Mechanistic Detail</h2>
+                    <p>${cell.mechanisticDetail}</p>
+                </section>
+            ` : ''}
 
             ${cell.transcriptionFactors ? `
                 <section class="detail-section">
@@ -334,6 +321,191 @@ function showCellDetail(cell) {
     `;
 
     detailPanel.scrollTop = 0;
+}
+
+function showLineageDetail(lineageId) {
+    const lineage = dataLoader.getLineageById(lineageId);
+    if (!lineage) return;
+
+    state.selectedEntity = lineage;
+    state.selectedType = 'lineage';
+
+    const detailPanel = document.getElementById('detailPanel');
+    if (!detailPanel) return;
+
+    const overview = lineage.overview || {};
+    const stages = lineage.stages || [];
+
+    detailPanel.innerHTML = `
+        <div class="lineage-detail">
+            <h1 class="lineage-name">${lineage.icon || ''} ${lineage.name}</h1>
+
+            ${overview.description ? `
+                <section class="detail-section lineage-overview">
+                    <h2>📖 Overview</h2>
+                    <p>${overview.description}</p>
+                    ${overview.timeline ? `<p><strong>Timeline:</strong> ${overview.timeline}</p>` : ''}
+                </section>
+            ` : ''}
+
+            ${overview.keyTranscriptionFactors ? `
+                <section class="detail-section">
+                    <h2>🧬 Key Transcription Factors</h2>
+                    <div class="tags-container">
+                        ${overview.keyTranscriptionFactors.map(tf => `<span class="tag tag-tf">${tf}</span>`).join('')}
+                    </div>
+                </section>
+            ` : ''}
+
+            ${overview.keyCytokines ? `
+                <section class="detail-section">
+                    <h2>🔄 Key Cytokines</h2>
+                    <ul>
+                        ${overview.keyCytokines.map(c => `<li>${c}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
+
+            ${overview.keyMechanism ? `
+                <section class="detail-section">
+                    <h2>⚙️ Key Mechanism</h2>
+                    <p>${overview.keyMechanism}</p>
+                </section>
+            ` : ''}
+
+            <div class="lineage-stages">
+                <h2>🔬 Maturation Stages</h2>
+                ${stages.map((stage, index) => renderLineageStage(stage, index)).join('')}
+            </div>
+
+            ${lineage.clinicalCorrelations ? `
+                <section class="detail-section">
+                    <h2>🏥 Clinical Correlations</h2>
+                    <ul>
+                        ${lineage.clinicalCorrelations.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
+
+            ${lineage.step1HighYieldConcepts ? `
+                <section class="detail-section step1-pearls">
+                    <h2>🎯 Step 1 High-Yield Concepts</h2>
+                    <ul>
+                        ${lineage.step1HighYieldConcepts.map(concept => `<li>${concept}</li>`).join('')}
+                    </ul>
+                </section>
+            ` : ''}
+        </div>
+    `;
+
+    detailPanel.scrollTop = 0;
+}
+
+function renderLineageStage(stage, index) {
+    return `
+        <div class="lineage-stage" id="stage-${stage.id}">
+            <div class="stage-header">
+                <span class="stage-number">Stage ${stage.stageNumber || index + 1}</span>
+                <h3 class="stage-name">${stage.name}</h3>
+            </div>
+
+            ${stage.markers ? `
+                <div class="stage-section">
+                    <h4>🔬 Surface Markers</h4>
+                    <div class="tags-container">
+                        ${stage.markers.map(m => `<span class="tag tag-marker">${m}</span>`).join('')}
+                    </div>
+                </div>
+            ` : ''}
+
+            <div class="stage-section">
+                <h4>📝 Morphology</h4>
+                <p>${stage.morphology}</p>
+                ${stage.size ? `<p><strong>Size:</strong> ${stage.size}</p>` : ''}
+                ${stage.nucleusCytoplasmRatio ? `<p><strong>N:C Ratio:</strong> ${stage.nucleusCytoplasmRatio}</p>` : ''}
+            </div>
+
+            ${stage.function ? `
+                <div class="stage-section">
+                    <h4>⚙️ Function</h4>
+                    <p>${stage.function}</p>
+                </div>
+            ` : ''}
+
+            ${stage.mechanisticDetail ? `
+                <div class="stage-section">
+                    <h4>🔬 Mechanistic Detail</h4>
+                    <p>${stage.mechanisticDetail}</p>
+                </div>
+            ` : ''}
+
+            ${stage.transcriptionFactors ? `
+                <div class="stage-section">
+                    <h4>🧬 Transcription Factors</h4>
+                    <div class="tags-container">
+                        ${stage.transcriptionFactors.map(tf => `<span class="tag tag-tf">${tf}</span>`).join('')}
+                    </div>
+                </div>
+            ` : ''}
+
+            ${stage.cytokines ? `
+                <div class="stage-section">
+                    <h4>🔄 Cytokines</h4>
+                    ${renderCytokines(stage.cytokines)}
+                </div>
+            ` : ''}
+
+            ${stage.granuleContents ? `
+                <div class="stage-section">
+                    <h4>🎯 Granule Contents</h4>
+                    ${renderGranuleContents(stage.granuleContents)}
+                </div>
+            ` : ''}
+
+            ${stage.surfaceReceptors ? `
+                <div class="stage-section">
+                    <h4>📡 Surface Receptors</h4>
+                    <ul>
+                        ${stage.surfaceReceptors.map(r => `<li>${r}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : ''}
+
+            ${stage.secretedFactors ? `
+                <div class="stage-section">
+                    <h4>📤 Secreted Factors</h4>
+                    ${renderCytokines(stage.secretedFactors)}
+                </div>
+            ` : ''}
+
+            ${stage.clinicalRelevance ? `
+                <div class="stage-section">
+                    <h4>🏥 Clinical Relevance</h4>
+                    <ul>
+                        ${stage.clinicalRelevance.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : ''}
+
+            ${stage.diseases ? `
+                <div class="stage-section">
+                    <h4>🦠 Associated Diseases</h4>
+                    <ul>
+                        ${stage.diseases.map(d => `<li>${d}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : ''}
+
+            ${stage.step1Pearls ? `
+                <div class="stage-section stage-pearls">
+                    <h4>🎯 Step 1 Pearls</h4>
+                    <ul>
+                        ${stage.step1Pearls.map(pearl => `<li>${pearl}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : ''}
+        </div>
+    `;
 }
 
 function showLineageGroupDetail(lineageGroup) {

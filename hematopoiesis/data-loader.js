@@ -1,15 +1,17 @@
 /**
  * Hematopoiesis Data Loader
- * Loads and indexes cell and lineage data
+ * Loads and indexes progenitor cells and lineage data
  */
 
 import allCells from './data/cells/all-cells.js';
-import allLineages from './data/lineages/hematopoietic-lineages.js';
+import allLineages from './data/lineages/all-lineages.js';
+import hematopoiesisTree from './data/hematopoiesis-tree.js';
 
 class HematopoiesisDataLoader {
     constructor() {
         this.cells = [];
         this.lineages = [];
+        this.tree = null;
         this.cellsById = new Map();
         this.lineagesById = new Map();
         this.cellsByLineage = new Map();
@@ -20,13 +22,17 @@ class HematopoiesisDataLoader {
         try {
             console.log('Loading hematopoiesis data...');
 
-            // Load cells
+            // Load progenitor cells
             this.cells = allCells;
-            console.log(`✓ Loaded ${this.cells.length} cells`);
+            console.log(`✓ Loaded ${this.cells.length} progenitor cells`);
 
             // Load lineages
             this.lineages = allLineages;
             console.log(`✓ Loaded ${this.lineages.length} lineages`);
+
+            // Load tree structure
+            this.tree = hematopoiesisTree;
+            console.log(`✓ Loaded hematopoiesis tree structure`);
 
             // Build indexes
             this.buildIndexes();
@@ -41,7 +47,7 @@ class HematopoiesisDataLoader {
     }
 
     buildIndexes() {
-        // Index cells by ID
+        // Index progenitor cells by ID
         this.cells.forEach(cell => {
             this.cellsById.set(cell.id, cell);
         });
@@ -51,12 +57,14 @@ class HematopoiesisDataLoader {
             this.lineagesById.set(lineage.id, lineage);
         });
 
-        // Index cells by lineage
+        // Index cells by old lineage field (for backward compatibility)
         this.cells.forEach(cell => {
-            if (!this.cellsByLineage.has(cell.lineage)) {
-                this.cellsByLineage.set(cell.lineage, []);
+            if (cell.lineage) {
+                if (!this.cellsByLineage.has(cell.lineage)) {
+                    this.cellsByLineage.set(cell.lineage, []);
+                }
+                this.cellsByLineage.get(cell.lineage).push(cell);
             }
-            this.cellsByLineage.get(cell.lineage).push(cell);
         });
 
         console.log('✓ Indexes built');
@@ -77,6 +85,14 @@ class HematopoiesisDataLoader {
 
     getAllCells() {
         return this.cells;
+    }
+
+    getAllLineages() {
+        return this.lineages;
+    }
+
+    getTree() {
+        return this.tree;
     }
 
     getAllLineages() {
