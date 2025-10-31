@@ -114,13 +114,29 @@ class MedicationDataLoader {
             // (Even single-class drugs now use the array internally)
             drug.pharmacologicClass = drug.pharmacologicClasses[0] || null;
 
+            // ALWAYS normalize to systems array (support multiple systems per drug)
+            // This allows drugs to appear in multiple clinical contexts (e.g., diuretics in both renal and CV)
+            if (!drug.systems) {
+                // Old format: single system string → convert to array
+                drug.systems = drug.system ? [drug.system] : [];
+            } else if (!Array.isArray(drug.systems)) {
+                // Ensure it's an array
+                drug.systems = [drug.systems];
+            }
+
+            // Set system to first for backward compatibility
+            drug.system = drug.systems[0] || null;
+
             this.drugsById.set(drug.id, drug);
 
-            // Group by system
-            if (!this.drugsBySystem.has(drug.system)) {
-                this.drugsBySystem.set(drug.system, []);
-            }
-            this.drugsBySystem.get(drug.system).push(drug);
+            // Group by systems (NOW SUPPORTS MULTIPLE!)
+            // Add drug to index for EACH of its systems
+            drug.systems.forEach(system => {
+                if (!this.drugsBySystem.has(system)) {
+                    this.drugsBySystem.set(system, []);
+                }
+                this.drugsBySystem.get(system).push(drug);
+            });
 
             // Group by therapeutic class
             if (!this.drugsByTherapeuticClass.has(drug.therapeuticClass)) {
