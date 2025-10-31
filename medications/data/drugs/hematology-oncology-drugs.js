@@ -803,6 +803,63 @@ const drugs = [
         "interactions": "Lithium may potentiate neutrophil production.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "edoxaban",
+        "name": "Edoxaban",
+        "pharmacologicClass": "direct-factor-xa-inhibitors",
+        "therapeuticClass": "anticoagulants",
+        "system": "hematology-oncology",
+        "mechanism": "Directly inhibit Factor Xa, preventing thrombin generation and clot formation.",
+        "features": "Once-daily dosing, renal dose adjustment required, NO reversal agent (andexanet alfa for class).",
+        "clinicalChoice": "Non-valvular atrial fibrillation, VTE treatment (after 5-10 days of heparin).",
+        "indications": [
+            "Non-Valvular Atrial Fibrillation (stroke prevention)",
+            "Venous Thromboembolism (DVT/PE treatment)"
+        ],
+        "contraindications": [
+            "Active Bleeding",
+            "Severe Hepatic Impairment",
+            "CrCl >95 mL/min (paradoxically CONTRAINDICATED in A-fib due to ↓ efficacy)"
+        ],
+        "sideEffects": [
+            "Bleeding (major/minor)",
+            "Anemia",
+            "Rash",
+            "Liver enzyme elevations"
+        ],
+        "interactions": "P-glycoprotein inhibitors/inducers (alter edoxaban levels), antiplatelet agents (↑ bleeding).",
+        "interactionDetails": "P-GLYCOPROTEIN INHIBITORS: MECHANISM - Edoxaban is a P-gp substrate. Inhibitors (quinidine, verapamil, dronedarone) increase edoxaban levels. CONSEQUENCE - Increased bleeding risk. Reduce edoxaban dose by 50% with potent P-gp inhibitors. P-GLYCOPROTEIN INDUCERS: MECHANISM - Inducers (rifampin, phenytoin) decrease edoxaban levels. CONSEQUENCE - Reduced anticoagulant efficacy, increased thrombosis risk. Avoid concurrent use. ANTIPLATELETS: MECHANISM - Additive antiplatelet and anticoagulant effects. CONSEQUENCE - Significantly increased bleeding risk. Use caution with aspirin, NSAIDs, or P2Y12 inhibitors.",
+        "pageType": "drug"
+    },
+    {
+        "id": "prasugrel",
+        "name": "Prasugrel",
+        "pharmacologicClass": "p2y12-inhibitors",
+        "therapeuticClass": "antiplatelet-agents",
+        "system": "hematology-oncology",
+        "mechanism": "Irreversibly inhibit P2Y12 receptor on platelets, preventing ADP-mediated platelet activation and aggregation.",
+        "features": "More potent and faster onset than clopidogrel, prodrug requiring activation.",
+        "clinicalChoice": "ACS managed with PCI, patients with clopidogrel resistance (CYP2C19 poor metabolizers).",
+        "indications": [
+            "Acute Coronary Syndrome (with PCI)",
+            "STEMI/NSTEMI"
+        ],
+        "contraindications": [
+            "Active Bleeding",
+            "History of Stroke/TIA (increased bleeding risk)",
+            "Age ≥75 years (relative contraindication)",
+            "Body weight <60 kg (relative contraindication)"
+        ],
+        "sideEffects": [
+            "Bleeding (higher risk than clopidogrel)",
+            "Thrombotic thrombocytopenic purpura (rare)",
+            "Anemia",
+            "Bruising"
+        ],
+        "interactions": "Anticoagulants (warfarin, DOACs - ↑ bleeding), NSAIDs (↑ bleeding), fibrinolytics.",
+        "interactionDetails": "ANTICOAGULANTS: MECHANISM - Prasugrel inhibits platelet aggregation. Anticoagulants inhibit coagulation cascade. Combined effects are additive. CONSEQUENCE - Significantly increased bleeding risk. Use with caution, especially triple therapy (DAPT + anticoagulant). Monitor closely. NSAIDS: MECHANISM - NSAIDs inhibit COX-1, reducing thromboxane A2 and platelet function. Additive with prasugrel. CONSEQUENCE - Increased GI and systemic bleeding. Avoid concurrent NSAIDs when possible, use PPIs if necessary.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

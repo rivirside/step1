@@ -746,6 +746,155 @@ const drugs = [
         "interactions": "NSAIDs reduce effectiveness.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "semaglutide",
+        "name": "Semaglutide",
+        "pharmacologicClass": "glp-1-agonists",
+        "therapeuticClass": "diabetes",
+        "system": "endocrine-system",
+        "mechanism": "GLP-1 receptor agonist that enhances glucose-dependent insulin secretion, suppresses glucagon, slows gastric emptying, promotes satiety.",
+        "features": "Once-weekly injectable or daily oral, significant weight loss (10-15%), proven CV benefits.",
+        "clinicalChoice": "Type 2 diabetes with obesity or established CV disease, weight management.",
+        "indications": [
+            "Type 2 Diabetes Mellitus",
+            "Obesity/Weight Management",
+            "Cardiovascular Risk Reduction"
+        ],
+        "contraindications": [
+            "Personal/family history of medullary thyroid carcinoma",
+            "MEN 2 syndrome",
+            "Pancreatitis history"
+        ],
+        "sideEffects": [
+            "Nausea/vomiting (common, dose-dependent)",
+            "Diarrhea",
+            "Pancreatitis (rare)",
+            "Thyroid C-cell tumors (animal studies)",
+            "Gastroparesis",
+            "Gallstones"
+        ],
+        "interactions": "Delays gastric emptying (affects oral drug absorption), insulin/sulfonylureas (hypoglycemia risk).",
+        "interactionDetails": "ORAL MEDICATIONS: MECHANISM - Semaglutide delays gastric emptying, potentially reducing absorption of oral medications. CONSEQUENCE - May affect timing and absorption of oral drugs, especially those requiring rapid absorption. INSULIN/SULFONYLUREAS: MECHANISM - Additive glucose-lowering effects. CONSEQUENCE - Increased hypoglycemia risk. Reduce insulin or sulfonylurea dose when initiating semaglutide.",
+        "pageType": "drug"
+    },
+    {
+        "id": "dulaglutide",
+        "name": "Dulaglutide",
+        "pharmacologicClass": "glp-1-agonists",
+        "therapeuticClass": "diabetes",
+        "system": "endocrine-system",
+        "mechanism": "GLP-1 receptor agonist that enhances glucose-dependent insulin secretion, suppresses glucagon, slows gastric emptying.",
+        "features": "Once-weekly subcutaneous injection, single-use pen.",
+        "clinicalChoice": "Type 2 diabetes requiring injectable therapy, CV risk reduction.",
+        "indications": [
+            "Type 2 Diabetes Mellitus",
+            "Cardiovascular Risk Reduction"
+        ],
+        "contraindications": [
+            "Personal/family history of medullary thyroid carcinoma",
+            "MEN 2 syndrome"
+        ],
+        "sideEffects": [
+            "Nausea/vomiting",
+            "Diarrhea",
+            "Abdominal pain",
+            "Pancreatitis (rare)",
+            "Injection site reactions"
+        ],
+        "interactions": "Delays gastric emptying (affects oral drug absorption), insulin/sulfonylureas (hypoglycemia).",
+        "interactionDetails": "Similar to semaglutide - delays gastric emptying affecting oral drug absorption. Additive hypoglycemia risk with insulin or sulfonylureas requiring dose adjustment.",
+        "pageType": "drug"
+    },
+    {
+        "id": "dapagliflozin",
+        "name": "Dapagliflozin",
+        "pharmacologicClass": "sglt2-inhibitors",
+        "therapeuticClass": "diabetes",
+        "system": "endocrine-system",
+        "mechanism": "Inhibit SGLT2 in proximal tubule, preventing glucose reabsorption and causing glucosuria.",
+        "features": "Additional heart failure and CKD benefits beyond glucose control.",
+        "clinicalChoice": "Type 2 diabetes with heart failure, CKD, or ASCVD.",
+        "indications": [
+            "Type 2 Diabetes Mellitus",
+            "Heart Failure (HFrEF and HFpEF)",
+            "Chronic Kidney Disease"
+        ],
+        "contraindications": [
+            "Severe Renal Impairment (eGFR <25)",
+            "Dialysis"
+        ],
+        "sideEffects": [
+            "Genital mycotic infections (common)",
+            "UTIs",
+            "Euglycemic DKA (rare but serious)",
+            "Volume depletion",
+            "Fournier's gangrene (rare)",
+            "Acute kidney injury"
+        ],
+        "interactions": "Diuretics (volume depletion), insulin/sulfonylureas (hypoglycemia).",
+        "interactionDetails": "DIURETICS: MECHANISM - Both SGLT2 inhibitors and diuretics cause volume loss through different mechanisms (glycosuria vs natriuresis). CONSEQUENCE - Additive volume depletion, hypotension, acute kidney injury. Monitor volume status. INSULIN/SULFONYLUREAS: MECHANISM - Additive glucose-lowering. CONSEQUENCE - Increased hypoglycemia risk, dose adjustment needed.",
+        "pageType": "drug"
+    },
+    {
+        "id": "saxagliptin",
+        "name": "Saxagliptin",
+        "pharmacologicClass": "dpp4-inhibitors",
+        "therapeuticClass": "diabetes",
+        "system": "endocrine-system",
+        "mechanism": "Inhibit DPP-4 enzyme, increasing incretin (GLP-1, GIP) levels, enhancing glucose-dependent insulin secretion.",
+        "features": "Oral, weight-neutral, low hypoglycemia risk.",
+        "clinicalChoice": "Type 2 diabetes as add-on to metformin, patients unable to tolerate GLP-1 agonists.",
+        "indications": [
+            "Type 2 Diabetes Mellitus"
+        ],
+        "contraindications": [
+            "Type 1 Diabetes",
+            "Diabetic Ketoacidosis"
+        ],
+        "sideEffects": [
+            "Upper respiratory infections",
+            "Headache",
+            "Heart failure (increased hospitalizations)",
+            "Pancreatitis (rare)",
+            "Severe joint pain"
+        ],
+        "interactions": "CYP3A4/5 inhibitors (increase saxagliptin levels), insulin/sulfonylureas (hypoglycemia).",
+        "interactionDetails": "CYP3A4/5 INHIBITORS: MECHANISM - Saxagliptin metabolized by CYP3A4/5. Strong inhibitors (ketoconazole, clarithromycin) increase levels. CONSEQUENCE - Increased drug exposure. Reduce saxagliptin dose to 2.5mg with strong CYP3A4/5 inhibitors. INSULIN/SULFONYLUREAS: MECHANISM - Additive glucose-lowering. CONSEQUENCE - Hypoglycemia risk, especially with insulin or sulfonylureas.",
+        "pageType": "drug"
+    },
+    {
+        "id": "propranolol-thyroid",
+        "name": "Propranolol (for Thyroid Storm)",
+        "pharmacologicClass": "beta-blockers",
+        "therapeuticClass": "thyroid-disorders",
+        "systems": ["endocrine-system", "cardiovascular-system"],
+        "mechanism": "Non-selective beta-blocker that blocks peripheral conversion of T4 to T3 and provides symptomatic relief (tachycardia, tremor).",
+        "features": "Unique among beta-blockers for blocking T4→T3 conversion, critical for thyroid storm.",
+        "clinicalChoice": "Thyroid storm (emergency), symptomatic hyperthyroidism.",
+        "indications": [
+            "Thyroid Storm",
+            "Hyperthyroidism (symptomatic relief)",
+            "Hypertension",
+            "Migraine Prophylaxis"
+        ],
+        "contraindications": [
+            "Asthma/COPD",
+            "Severe Bradycardia",
+            "Cardiogenic Shock",
+            "Decompensated Heart Failure"
+        ],
+        "sideEffects": [
+            "Bradycardia",
+            "Hypotension",
+            "Bronchospasm",
+            "Fatigue",
+            "Cold extremities",
+            "Depression"
+        ],
+        "interactions": "Verapamil/diltiazem (severe bradycardia), epinephrine (unopposed alpha-stimulation), insulin (masks hypoglycemia).",
+        "interactionDetails": "CALCIUM CHANNEL BLOCKERS: MECHANISM - Both propranolol and non-dihydropyridine CCBs have negative chronotropic and inotropic effects. CONSEQUENCE - Severe bradycardia, AV block, or heart failure. EPINEPHRINE: MECHANISM - Beta-blockade leaves alpha-receptors unopposed during epinephrine use. CONSEQUENCE - Severe hypertension and bradycardia (paradoxical response). INSULIN: MECHANISM - Beta-blockade masks hypoglycemia symptoms and impairs glycogenolysis. CONSEQUENCE - Prolonged, unrecognized hypoglycemia in diabetic patients.",
+        "pageType": "drug"
     }
 
 ];export default drugs;

@@ -552,6 +552,89 @@ const drugs = [
         "interactions": "Minimal drug interactions.",
         "interactionDetails": "",
         "pageType": "drug"
+    },
+    {
+        "id": "umeclidinium",
+        "name": "Umeclidinium",
+        "pharmacologicClass": "long-acting-muscarinic-antagonists",
+        "therapeuticClass": "copd",
+        "system": "respiratory-system",
+        "mechanism": "Competitive antagonist of muscarinic receptors (M3) in bronchial smooth muscle, causing bronchodilation.",
+        "features": "Once-daily LAMA, often combined with LABA (vilanterol).",
+        "clinicalChoice": "COPD maintenance therapy, alternative to tiotropium.",
+        "indications": [
+            "COPD (maintenance)"
+        ],
+        "contraindications": [
+            "Hypersensitivity to umeclidinium",
+            "Severe milk protein allergy"
+        ],
+        "sideEffects": [
+            "Dry mouth",
+            "Nasopharyngitis",
+            "Upper respiratory infection",
+            "Cough",
+            "Urinary retention (rare)",
+            "Narrow-angle glaucoma (rare)"
+        ],
+        "interactions": "Other anticholinergics (additive effects).",
+        "interactionDetails": "ANTICHOLINERGICS: MECHANISM - Additive antimuscarinic effects with other anticholinergic drugs. CONSEQUENCE - Increased risk of dry mouth, urinary retention, constipation, or glaucoma. Use caution with multiple anticholinergic medications.",
+        "pageType": "drug"
+    },
+    {
+        "id": "roflumilast",
+        "name": "Roflumilast",
+        "pharmacologicClass": "pde4-inhibitors",
+        "therapeuticClass": "copd",
+        "system": "respiratory-system",
+        "mechanism": "Selective PDE4 inhibitor that increases intracellular cAMP in inflammatory cells, reducing inflammation.",
+        "features": "Oral anti-inflammatory for severe COPD, not a bronchodilator.",
+        "clinicalChoice": "Severe COPD with chronic bronchitis and frequent exacerbations, as add-on to bronchodilators.",
+        "indications": [
+            "Severe COPD (chronic bronchitis phenotype)",
+            "Frequent Exacerbations"
+        ],
+        "contraindications": [
+            "Moderate to Severe Liver Impairment",
+            "Depression/Suicidal Ideation (monitor)"
+        ],
+        "sideEffects": [
+            "Diarrhea (common, dose-limiting)",
+            "Weight loss (significant)",
+            "Nausea",
+            "Headache",
+            "Depression/psychiatric effects",
+            "Insomnia"
+        ],
+        "interactions": "CYP3A4/1A2 inducers reduce roflumilast levels, CYP3A4/1A2 inhibitors increase levels.",
+        "interactionDetails": "CYP450 INDUCERS: MECHANISM - Roflumilast metabolized by CYP3A4 and CYP1A2. Inducers (rifampin, phenobarbital, carbamazepine) increase metabolism. CONSEQUENCE - Reduced roflumilast efficacy. Avoid strong CYP inducers. CYP450 INHIBITORS: MECHANISM - Inhibitors (ketoconazole, erythromycin, cimetidine) decrease roflumilast metabolism. CONSEQUENCE - Increased roflumilast levels and side effects.",
+        "pageType": "drug"
+    },
+    {
+        "id": "mepolizumab",
+        "name": "Mepolizumab",
+        "pharmacologicClass": "il-5-inhibitors",
+        "therapeuticClass": "asthma",
+        "system": "respiratory-system",
+        "mechanism": "Monoclonal antibody against IL-5, reducing eosinophil production, activation, and survival.",
+        "features": "Injectable biologic for severe eosinophilic asthma.",
+        "clinicalChoice": "Severe eosinophilic asthma despite high-dose ICS + LABA, blood eosinophils ≥150-300 cells/µL.",
+        "indications": [
+            "Severe Eosinophilic Asthma",
+            "Eosinophilic Granulomatosis with Polyangiitis (EGPA)"
+        ],
+        "contraindications": [
+            "Hypersensitivity to mepolizumab"
+        ],
+        "sideEffects": [
+            "Injection site reactions",
+            "Headache",
+            "Hypersensitivity reactions (rare)",
+            "Herpes zoster infection (increased risk)"
+        ],
+        "interactions": "Minimal drug interactions (monoclonal antibody).",
+        "interactionDetails": "",
+        "pageType": "drug"
     }
 
 ];export default drugs;
