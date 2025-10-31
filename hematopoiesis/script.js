@@ -151,16 +151,21 @@ function createTreeNodeElement(node, depth = 0) {
         return childrenContainer;
     }
 
+    // Start collapsed by default (except for the root HSC node at depth 0)
+    const startCollapsed = depth > 0;
+    if (startCollapsed) {
+        nodeDiv.classList.add('collapsed');
+    }
+
     // Create node header
     const nodeHeader = document.createElement('div');
     nodeHeader.className = `tree-node-header tree-node-header-${node.type}`;
 
     const hasChildren = node.children && node.children.length > 0;
-    const icon = node.icon || (hasChildren ? '▼' : '');
 
     nodeHeader.innerHTML = `
-        ${hasChildren ? '<span class="tree-icon">▼</span>' : '<span class="tree-icon-spacer"></span>'}
-        ${icon ? `<span class="tree-node-icon">${icon}</span>` : ''}
+        ${hasChildren ? `<span class="tree-icon">${startCollapsed ? '▶' : '▼'}</span>` : '<span class="tree-icon-spacer"></span>'}
+        ${node.icon ? `<span class="tree-node-icon">${node.icon}</span>` : ''}
         <span class="tree-label">${node.name}</span>
     `;
 
@@ -178,31 +183,41 @@ function createTreeNodeElement(node, depth = 0) {
 
         nodeDiv.appendChild(childrenContainer);
 
-        // Toggle children
-        nodeHeader.querySelector('.tree-icon').addEventListener('click', (e) => {
+        // Toggle children - make entire header clickable for expand/collapse
+        nodeHeader.addEventListener('click', (e) => {
+            // Only if clicking the icon or header (not the label for detail view)
+            if (e.target.classList.contains('tree-label')) {
+                return; // Let the label handler deal with it
+            }
+
             e.stopPropagation();
             nodeDiv.classList.toggle('collapsed');
             const iconEl = nodeHeader.querySelector('.tree-icon');
-            iconEl.textContent = nodeDiv.classList.contains('collapsed') ? '▶' : '▼';
+            if (iconEl) {
+                iconEl.textContent = nodeDiv.classList.contains('collapsed') ? '▶' : '▼';
+            }
         });
     }
 
-    // Click handler for node label
-    nodeHeader.querySelector('.tree-label').addEventListener('click', (e) => {
-        e.stopPropagation();
+    // Click handler for node label - show detail
+    const labelEl = nodeHeader.querySelector('.tree-label');
+    if (labelEl) {
+        labelEl.addEventListener('click', (e) => {
+            e.stopPropagation();
 
-        // Highlight selected
-        document.querySelectorAll('.tree-node').forEach(el => el.classList.remove('selected'));
-        nodeDiv.classList.add('selected');
+            // Highlight selected
+            document.querySelectorAll('.tree-node').forEach(el => el.classList.remove('selected'));
+            nodeDiv.classList.add('selected');
 
-        // Show detail based on node type
-        if (node.pageType === 'lineage') {
-            showLineageDetail(node.id);
-        } else if (node.pageType === 'cell') {
-            const cell = dataLoader.getCellById(node.id);
-            if (cell) showCellDetail(cell);
-        }
-    });
+            // Show detail based on node type
+            if (node.pageType === 'lineage') {
+                showLineageDetail(node.id);
+            } else if (node.pageType === 'cell') {
+                const cell = dataLoader.getCellById(node.id);
+                if (cell) showCellDetail(cell);
+            }
+        });
+    }
 
     return nodeDiv;
 }
