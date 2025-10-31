@@ -165,11 +165,26 @@ class DataLoader {
         this.diseasesBySystem.clear();
 
         this.diseases.forEach(disease => {
-            const systemId = disease.system;
-            if (!this.diseasesBySystem.has(systemId)) {
-                this.diseasesBySystem.set(systemId, []);
+            // Normalize to systems array (support multiple systems per disease)
+            // Same pattern as categories - diseases can belong to multiple systems
+            if (!disease.systems) {
+                // Old format: single system string → convert to array
+                disease.systems = disease.system ? [disease.system] : [];
+            } else if (!Array.isArray(disease.systems)) {
+                // Ensure it's an array
+                disease.systems = [disease.systems];
             }
-            this.diseasesBySystem.get(systemId).push(disease);
+
+            // Set system to first for backward compatibility
+            disease.system = disease.systems[0] || null;
+
+            // Add disease to index for EACH of its systems
+            disease.systems.forEach(systemId => {
+                if (!this.diseasesBySystem.has(systemId)) {
+                    this.diseasesBySystem.set(systemId, []);
+                }
+                this.diseasesBySystem.get(systemId).push(disease);
+            });
         });
     }
 
